@@ -1,16 +1,12 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Layout from '../components/Layout';
-import { SEO } from '../components';
+import { Layout, SEO } from '../components';
 
 import { Typography, Card, Row, Col } from 'antd';
 import styled from 'styled-components';
 
-const { Title: AntdTitle } = Typography;
-const { Meta } = Card;
-
-const Title = styled(AntdTitle)({
+const Title = styled(Typography.Title)({
   textAlign: 'center',
 });
 
@@ -34,7 +30,7 @@ export const query = graphql`
 const ResourceCard = ({ title, desc, path, date }) => (
   <Link to={path}>
     <Card hoverable title={title} extra={date}>
-      <Meta description={desc} />
+      <Card.Meta description={desc} />
     </Card>
   </Link>
 );
@@ -49,11 +45,11 @@ const Dashboard = ({
       <SEO title="Dashboard" />
       <Title>Adrian, skyrocket your career</Title>
       <Row gutter={16}>
-        <Col span={8}>
-          {edges.map(({ node: { frontmatter } }) => (
-            <ResourceCard {...frontmatter} key={frontmatter.title} />
-          ))}
-        </Col>
+        {edges.map(({ node: { frontmatter } }) => (
+          <Col span={8} key={frontmatter.title}>
+            <ResourceCard {...frontmatter} />
+          </Col>
+        ))}
       </Row>
     </Layout>
   );

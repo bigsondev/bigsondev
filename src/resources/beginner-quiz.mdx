@@ -1,0 +1,19 @@
+---
+title: Beginner Quiz
+desc: Starting with Frontend? Test how much you already know
+path: /beginner-quiz
+date: 2020-09-07
+---
+
+import { Typography } from 'antd';
+import { Text } from '../components';
+
+<Typography.Title level={2}>
+  {props.pageContext.frontmatter.title}
+</Typography.Title>
+
+<Typography.Title>Knowledge Pill</Typography.Title>
+Placeholder
+
+<Typography.Title>Overview</Typography.Title>
+<Text>{props.pageContext.frontmatter.desc}</Text>

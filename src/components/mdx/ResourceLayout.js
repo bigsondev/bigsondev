@@ -7,11 +7,18 @@
 
 import React from 'react';
 import { Link } from 'gatsby';
-import { Layout as AntdLayout, Menu } from 'antd';
+import { Layout, Menu } from 'antd';
 import styled from 'styled-components';
+
+import { Breadcrumb } from './Breadcrumb';
 
 const Container = styled.div({
   maxWidth: 1200,
+  margin: '0 auto',
+});
+
+const ContentContainer = styled.div({
+  maxWidth: 800,
   margin: '0 auto',
 });
 
@@ -25,15 +32,20 @@ const Logo = styled.div({
   color: '#FFF',
 });
 
-const Content = styled(AntdLayout.Content)({
+const Content = styled(Layout.Content)({
   background: '#FFF',
   paddingTop: 40,
 });
 
-export const Layout = ({ children }) => {
+const ResourceLayout = ({
+  children,
+  pageContext: {
+    frontmatter: { title },
+  },
+}) => {
   return (
-    <AntdLayout>
-      <AntdLayout.Header>
+    <Layout>
+      <Layout.Header>
         <Container>
           <FlexWrapper>
             <Link to="/">
@@ -44,13 +56,16 @@ export const Layout = ({ children }) => {
             </Menu>
           </FlexWrapper>
         </Container>
-      </AntdLayout.Header>
+      </Layout.Header>
       <Content>
-        <Container>
+        <ContentContainer>
+          <Breadcrumb title={title} />
           <main>{children}</main>
-        </Container>
+        </ContentContainer>
       </Content>
       {/* TODO implement Footer */}
-    </AntdLayout>
+    </Layout>
   );
 };
+
+export default ResourceLayout;

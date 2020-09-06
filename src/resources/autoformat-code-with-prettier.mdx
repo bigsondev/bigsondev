@@ -1,0 +1,39 @@
+---
+title: Autoformat code with Prettier
+desc: Prettier saves a lot of time and can automate code
+  formatting for your Code Editor, CI/CD and unify code formatting rules of
+  the entire team. How to integrate and recommended setup is included in this resource.
+path: /autoformat-code-with-prettier
+date: 2020-09-06
+---
+
+import { Typography } from 'antd';
+import { Text } from '../components';
+
+<Typography.Title level={2}>
+  {props.pageContext.frontmatter.title}
+</Typography.Title>
+
+<Typography.Title>Knowledge Pill</Typography.Title>
+Reference: https://prettier.io/docs/en/install.html and https://prettier.io/docs/en/editors.html
+
+<ul>
+  <li>yarn add --dev --exact prettier</li>
+</ul>
+
+<Typography.Title>Overview</Typography.Title>
+<Text>{props.pageContext.frontmatter.desc}</Text>
+<Typography.Title>Prerequites</Typography.Title>
+You need Node installed and NPM: read more here. Best if you have a Terminal and
+know some basics commands: read more here. Also great if you have some IDE (e.g.
+VSCode) installed. You need a package.json (init a project)
+<Typography.Title>Installation</Typography.Title>
+Placeholder
+<Typography.Title level={2}>Automation</Typography.Title>
+Automate with IDE / husky Placeholder
+<Typography.Title level={2}>Recommended setup</Typography.Title>
+<Typography.Title level={2}>
+  Most used commands / tips and tricks
+</Typography.Title>
+<Typography.Title level={2}>Prettify extension</Typography.Title>
+<Typography.Title level={2}>References</Typography.Title>
