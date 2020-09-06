@@ -1,22 +1,62 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link, graphql } from 'gatsby';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/Layout';
+import { SEO } from '../components';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+import { Typography, Card, Row, Col } from 'antd';
+import styled from 'styled-components';
 
-export default IndexPage
+const { Title: AntdTitle } = Typography;
+const { Meta } = Card;
+
+const Title = styled(AntdTitle)({
+  textAlign: 'center',
+});
+
+export const query = graphql`
+  query homepageQuery {
+    allMdx {
+      edges {
+        node {
+          frontmatter {
+            title
+            desc
+            path
+            date(formatString: "MMM D")
+          }
+        }
+      }
+    }
+  }
+`;
+
+const ResourceCard = ({ title, desc, path, date }) => (
+  <Link to={path}>
+    <Card hoverable title={title} extra={date}>
+      <Meta description={desc} />
+    </Card>
+  </Link>
+);
+
+const Dashboard = ({
+  data: {
+    allMdx: { edges },
+  },
+}) => {
+  return (
+    <Layout>
+      <SEO title="Dashboard" />
+      <Title>Adrian, skyrocket your career</Title>
+      <Row gutter={16}>
+        <Col span={8}>
+          {edges.map(({ node: { frontmatter } }) => (
+            <ResourceCard {...frontmatter} key={frontmatter.title} />
+          ))}
+        </Col>
+      </Row>
+    </Layout>
+  );
+};
+
+export default Dashboard;

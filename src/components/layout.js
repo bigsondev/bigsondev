@@ -6,16 +6,10 @@
  */
 
 import React from 'react';
-import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
-import { Layout as AntdLayout, Menu, Typography, Card, Row, Col } from 'antd';
+import { Layout as AntdLayout, Menu } from 'antd';
 import styled from 'styled-components';
 
-import 'antd/dist/antd.css';
-
-const { Header, Content: AntdContent, Footer } = AntdLayout;
-const { Title: AntdTitle } = Typography;
-const { Meta } = Card;
+const { Header, Content: AntdContent } = AntdLayout;
 
 const Container = styled.div({
   maxWidth: 1200,
@@ -34,23 +28,10 @@ const Logo = styled.div({
 
 const Content = styled(AntdContent)({
   background: '#FFF',
-});
-
-const Title = styled(AntdTitle)({
-  marginTop: 20,
+  paddingTop: 40,
 });
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <AntdLayout>
       <Header>
@@ -65,41 +46,12 @@ const Layout = ({ children }) => {
       </Header>
       <Content>
         <Container>
-          <Title>Hi, Adrian</Title>
-          <Row gutter={16}>
-            <Col span={8}>
-              <Card>
-                <Meta
-                  title="Junior Quiz"
-                  description="In this quiz you can test your knowledge as a Junior Frontend Developer"
-                />
-              </Card>
-            </Col>
-            <Col span={8}>
-              <Card>
-                <Meta
-                  title="Regular Quiz"
-                  description="In this quiz you can test your knowledge as a Regular Frontend Developer"
-                />
-              </Card>
-            </Col>
-            <Col span={8}>
-              <Card>
-                <Meta
-                  title="Senior Quiz"
-                  description="In this quiz you can test your knowledge as a Senior Frontend Developer"
-                />
-              </Card>
-            </Col>
-          </Row>
+          <main>{children}</main>
         </Container>
       </Content>
+      {/* TODO implement Footer */}
     </AntdLayout>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default Layout;
