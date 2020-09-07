@@ -6,14 +6,43 @@ date: 2020-09-07
 ---
 
 import { Typography } from 'antd';
-import { Text } from '../components';
+import { Text, Quiz } from '../components';
+
+export const data = [
+  {
+    question: 'What are browser Developer Tools?',
+    answers: [
+      `They don't exist`,
+      'They are tools used to write browser extensions',
+      'They are tools used by Frontend Developers to do a range of things browser related, e.g. inspect HTML, CSS, JS',
+      'They are a premium version of the browser that allows to do analytics, data tracking and is more secure',
+    ],
+    correct: 2,
+  },
+  {
+    question: 'Placeholder Question 2?',
+    answers: [
+      `They don't exist`,
+      'They are tools used to write browser extensions',
+      'They are tools used by Frontend Developers to do a range of things browser related, e.g. inspect HTML, CSS, JS',
+      'They are a premium version of the browser that allows to do analytics, data tracking and is more secure',
+    ],
+    correct: 2,
+  },
+  {
+    question: 'Another Placeholder 3?',
+    answers: [
+      `They don't exist`,
+      'They are tools used to write browser extensions',
+      'They are tools used by Frontend Developers to do a range of things browser related, e.g. inspect HTML, CSS, JS',
+      'They are a premium version of the browser that allows to do analytics, data tracking and is more secure',
+    ],
+    correct: 2,
+  },
+];
 
 <Typography.Title level={2}>
   {props.pageContext.frontmatter.title}
 </Typography.Title>
 
-<Typography.Title>Knowledge Pill</Typography.Title>
-Placeholder
-
-<Typography.Title>Overview</Typography.Title>
-<Text>{props.pageContext.frontmatter.desc}</Text>
+<Quiz data={data} />

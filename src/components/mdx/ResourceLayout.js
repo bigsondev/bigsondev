@@ -10,7 +10,7 @@ import { Link } from 'gatsby';
 import { Layout, Menu } from 'antd';
 import styled from 'styled-components';
 
-import { Breadcrumb } from './Breadcrumb';
+import { Breadcrumb } from '..';
 
 const Container = styled.div({
   maxWidth: 1200,
