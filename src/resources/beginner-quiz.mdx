@@ -5,8 +5,7 @@ path: /beginner-quiz
 date: 2020-09-07
 ---
 
-import { Typography } from 'antd';
-import { Text, Quiz } from '../components';
+import { Text, Quiz, Title } from '../components';
 
 export const data = [
   {
@@ -95,7 +94,7 @@ export const data = [
   {
     question: 'What is the difference between Frontend and Backend?',
     answers: [
-      `Frontend is responsible for writing HTML and Backend is responsible for CSS, especially animations`,
+      `Frontend is responsible for writing HTML and Backend is responsible for writing CSS, especially animations`,
       'Frontend writes server code in the browser, Backend writes server code for desktop applications',
       'There is no difference, they do the same thing',
       'Frontend is responsible for client-side code, such as HTML, CSS, JS, Backend implements business logic on the server side and exposes it through an API to the client',
@@ -104,8 +103,6 @@ export const data = [
   },
 ];
 
-<Typography.Title level={2}>
-  {props.pageContext.frontmatter.title}
-</Typography.Title>
+<Title level={2}>{props.pageContext.frontmatter.title}</Title>
 
 <Quiz data={data} desc={props.pageContext.frontmatter.desc} />

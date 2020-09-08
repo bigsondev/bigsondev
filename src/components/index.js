@@ -1,6 +1,10 @@
 export { Layout } from './Layout';
 export { Image } from './Image';
 export { SEO } from './SEO';
-export { Text } from './Text';
-export { Quiz } from './Quiz';
+export { Quiz } from './quiz';
 export { Breadcrumb } from './Breadcrumb';
+export { Box } from './Box';
+export { Section } from './Section';
+export { Text, Title, Link } from './Typography';
+export * from './notifications';
+export * from './messages';
