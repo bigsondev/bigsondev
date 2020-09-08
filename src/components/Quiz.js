@@ -7,6 +7,9 @@ import {
   Card as AntdCard,
   Divider,
   Avatar as AntdAvatar,
+  Row,
+  Col,
+  Button,
 } from 'antd';
 
 const QuizCard = styled(AntdCard)({
@@ -60,6 +63,10 @@ const AnswerCard = styled(AntdCard)({
 const AnswerText = styled(Typography.Text)({
   fontSize: 16,
 });
+const Text = styled(Typography.Text)({
+  fontSize: 16,
+  display: 'block',
+});
 
 const Avatar = styled(AntdAvatar)({
   backgroundColor: '#CEF7F1',
@@ -74,16 +81,95 @@ const Avatar = styled(AntdAvatar)({
   },
 });
 
-const letters = ['A', 'B', 'C', 'D'];
+const QuizDescription = styled(Typography.Title)({
+  fontWeight: '400 !important',
+  marginBottom: '16px !important',
+});
 
-export const Quiz = ({ data }) => {
+const StartButton = styled(Button)({
+  marginTop: 16,
+  width: 150,
+  textTransform: 'uppercase',
+  borderRadius: 12,
+});
+
+const LearningResources = styled.div({
+  marginTop: 40,
+});
+
+const LearningLink = styled(Typography.Link)({
+  fontSize: 16,
+  display: 'block',
+});
+
+const letters = ['A', 'B', 'C', 'D'];
+const STAGES = {
+  NOT_STARTED: 'NOT_STARTED',
+  IN_PROGRESS: 'IN_PROGRESS',
+  FINISHED: 'FINISHED',
+};
+
+export const Quiz = ({ data, desc }) => {
   const [selections, setSelection] = useState([]);
+  const [stage, setStage] = useState(STAGES.NOT_STARTED);
   const currentQuestionIndex = selections.length;
   const percent = Math.ceil((currentQuestionIndex / data.length) * 100);
+
+  const handleQuizStartClick = () => {
+    setStage(STAGES.IN_PROGRESS);
+  };
 
   const handleAnswerSelection = (index) => {
     setSelection([...selections, index]);
   };
+
+  if (stage === STAGES.NOT_STARTED) {
+    return (
+      <>
+        <QuizDescription level={4}>{desc}</QuizDescription>
+        <Row gutter={[0, 8]}>
+          <Col span={24}>
+            <Text>
+              - There are <strong>{data.length} questions</strong> without time
+              limit, maximum score is <strong>{data.length} points</strong>
+            </Text>
+          </Col>
+          <Col span={24}>
+            <Text>
+              - Each question has 4 possible answers,
+              <strong> but only one is correct</strong>
+            </Text>
+          </Col>
+          <Col span={24}>
+            <Text>- You can take the Quiz at anytime</Text>
+          </Col>
+          <Col span={24}>
+            <Text>
+              - If you want to prepare before starting, check out below links
+            </Text>
+          </Col>
+          <Col span={24}>
+            <StartButton
+              type="primary"
+              size="large"
+              onClick={handleQuizStartClick}
+            >
+              Start
+            </StartButton>
+          </Col>
+          <Col span={24}>
+            <LearningResources>
+              <QuizDescription level={4}>Learning Resources</QuizDescription>
+              <LearningLink>Placeholder 1</LearningLink>
+              <LearningLink>Placeholder 2</LearningLink>
+              <LearningLink>Placeholder 3</LearningLink>
+              <LearningLink>Placeholder 4</LearningLink>
+            </LearningResources>
+          </Col>
+        </Row>
+      </>
+    );
+  }
 
   return (
     <QuizCard>
