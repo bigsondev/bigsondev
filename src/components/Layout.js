@@ -10,7 +10,7 @@ import { Link } from 'gatsby';
 import { Layout as AntdLayout, Menu } from 'antd';
 import styled from 'styled-components';
 
-import { Box } from '../components';
+import { Box } from '.';
 
 const Container = styled.div({
   maxWidth: 1200,
