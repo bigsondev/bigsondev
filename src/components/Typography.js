@@ -55,14 +55,14 @@ export const Link = styled(Typography.Link)(
 const LevelOneHolder = styled.div(
   ({
     align = 'left',
-    transform = 'none',
+    transform = 'capitalize',
     fontWeight,
     fontSize = '2.86em',
   }) => ({
     textAlign: align,
     fontWeight,
-    textTransform: transform,
     '& h1': {
+      textTransform: transform,
       fontSize,
     },
   })
@@ -71,25 +71,30 @@ const LevelOneHolder = styled.div(
 const LevelTwoHolder = styled.div(
   ({
     align = 'left',
-    transform = 'none',
+    transform = 'capitalize',
     fontWeight,
     fontSize = '2.46em',
   }) => ({
     textAlign: align,
     fontWeight,
-    textTransform: transform,
     '& h2': {
+      textTransform: transform,
       fontSize,
     },
   })
 );
 
 const LevelThreeHolder = styled.div(
-  ({ align = 'left', transform = 'none', fontWeight, fontSize = '2em' }) => ({
+  ({
+    align = 'left',
+    transform = 'capitalize',
+    fontWeight,
+    fontSize = '2em',
+  }) => ({
     textAlign: align,
     fontWeight,
-    textTransform: transform,
     '& h3': {
+      textTransform: transform,
       fontSize,
     },
   })
@@ -98,14 +103,14 @@ const LevelThreeHolder = styled.div(
 const LevelFourHolder = styled.div(
   ({
     align = 'left',
-    transform = 'none',
+    transform = 'uppercase',
     fontWeight,
     fontSize = '1.58em',
   }) => ({
     textAlign: align,
     fontWeight,
-    textTransform: transform,
     '& h4': {
+      textTransform: transform,
       fontSize,
     },
   })
@@ -114,43 +119,43 @@ const LevelFourHolder = styled.div(
 const LevelFiveHolder = styled.div(
   ({
     align = 'left',
-    transform = 'none',
+    transform = 'uppercase',
     fontWeight,
     fontSize = '1.45em',
   }) => ({
     textAlign: align,
     fontWeight,
-    textTransform: transform,
     '& h5': {
+      textTransform: transform,
       fontSize,
     },
   })
 );
 
-export const Title = ({ level = 1, ...props }) => {
+export const Title = ({ level = 1, transform, ...props }) => {
   const levelMap = {
     1: (
-      <LevelOneHolder>
+      <LevelOneHolder transform={transform}>
         <Typography.Title level={1} {...props} />
       </LevelOneHolder>
     ),
     2: (
-      <LevelTwoHolder>
+      <LevelTwoHolder transform={transform}>
         <Typography.Title level={2} {...props} />
       </LevelTwoHolder>
     ),
     3: (
-      <LevelThreeHolder>
+      <LevelThreeHolder transform={transform}>
         <Typography.Title level={3} {...props} />
       </LevelThreeHolder>
     ),
     4: (
-      <LevelFourHolder>
+      <LevelFourHolder transform={transform}>
         <Typography.Title level={4} {...props} />
       </LevelFourHolder>
     ),
     5: (
-      <LevelFiveHolder>
+      <LevelFiveHolder transform={transform}>
         <Typography.Title level={5} {...props} />
       </LevelFiveHolder>
     ),

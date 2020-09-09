@@ -5,11 +5,11 @@ path: /beginner-quiz
 date: 2020-09-07
 ---
 
-import { Text, Quiz, Title } from '../components';
+import { Text, Quiz, Title, Paragraph, Box } from '../components';
 
 export const data = [
   {
-    question: 'What are browser Developer Tools?',
+    question: 'What Are Browser Developer Tools?',
     answers: [
       `They don't exist`,
       'Tools used to write browser extensions',
@@ -19,7 +19,7 @@ export const data = [
     correct: 2,
   },
   {
-    question: 'What is Git?',
+    question: 'What Is Git?',
     answers: [
       `Programming language`,
       'VCS - Version Control System for managing project changes',
@@ -30,12 +30,12 @@ export const data = [
   },
   {
     question:
-      'Which of the following Client-side storages in the browser do not exist?',
+      'Which Of The Following Client-Side Storages In The Browser Does Not Exist?',
     answers: [`Cookies`, 'Web Storage', 'IndexedDB', 'Sandwiches'],
     correct: 3,
   },
   {
-    question: 'What is CLI?',
+    question: 'What Is CLI?',
     answers: [
       `Command-line interface, it allows to interact with a computer through commands`,
       'Programming language to create static websites',
@@ -45,7 +45,7 @@ export const data = [
     correct: 0,
   },
   {
-    question: 'What is an IDE?',
+    question: 'What Is An IDE?',
     answers: [
       `Integrated Development Environment, simplifes different aspects of writing a computer program`,
       'JavaScript garbage collection mechanism',
@@ -60,7 +60,7 @@ export const data = [
     correct: 2,
   },
   {
-    question: 'What is index.html used for?',
+    question: 'What Is index.html Used For?',
     answers: [
       `Helps with securing the website`,
       'Represents starting page to load from the server',
@@ -70,7 +70,7 @@ export const data = [
     correct: 1,
   },
   {
-    question: 'What is HTML, CSS and JS?',
+    question: 'What Is HTML, CSS And JS?',
     answers: [
       `Markup language for web documents, style sheet language for describing the presentation of web documents 
       and programming language for implementing behavior on web pages`,
@@ -82,7 +82,7 @@ export const data = [
   },
   {
     question:
-      'How would you describe a Component in relation to the Frontend / User Interface?',
+      'How Would You Describe A Component In Relation To The Frontend / User Interface?',
     answers: [
       `Browser extension to automate manual tasks`,
       'Base building block that allows to compose more complex structures e.g. Navigation or even entire web pages',
@@ -92,7 +92,7 @@ export const data = [
     correct: 1,
   },
   {
-    question: 'What is the difference between Frontend and Backend?',
+    question: 'What Is The Difference Between Frontend And Backend?',
     answers: [
       `Frontend is responsible for writing HTML and Backend is responsible for writing CSS, especially animations`,
       'Frontend writes server code in the browser, Backend writes server code for desktop applications',
@@ -103,6 +103,8 @@ export const data = [
   },
 ];
 
-<Title>{props.pageContext.frontmatter.title}</Title>
+<Box mb={5}>
+  <Title>{props.pageContext.frontmatter.title}</Title>
+</Box>
 
 <Quiz data={data} desc={props.pageContext.frontmatter.desc} />

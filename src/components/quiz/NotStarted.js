@@ -1,9 +1,9 @@
 import React from 'react';
-import { Row, Col, Button, Space } from 'antd';
+import { Row, Col, Button, Space, Divider } from 'antd';
 import { InfoCircleOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 
-import { Section, Title, Text, Box, Link } from '..';
+import { Section, Title, Text, Box, Link, QuickSummary } from '..';
 
 const StartButton = styled(Button)({
   width: 150,
@@ -11,49 +11,45 @@ const StartButton = styled(Button)({
   borderRadius: 12,
 });
 
+const InfoIcon = styled(InfoCircleOutlined)({
+  marginRight: 8,
+});
+
 export const NotStarted = ({ desc, questionsCount, onStartClick }) => (
   <>
     <Section>
-      <Row gutter={[0, 8]}>
-        <Col span={24}>
-          <Title level={4}>{desc}</Title>
-        </Col>
-        <Col span={24}>
-          <Text>
-            <InfoCircleOutlined /> There are{' '}
-            <strong>{questionsCount} questions</strong> without time limit,
-            maximum score is <strong>{questionsCount} points</strong>
-          </Text>
-        </Col>
-        <Col span={24}>
-          <Text>
-            <InfoCircleOutlined /> Each question has 4 possible answers,
-            <strong> but only one is correct</strong>
-          </Text>
-        </Col>
-        <Col span={24}>
-          <Text>
-            <InfoCircleOutlined /> You can take the Quiz at anytime
-          </Text>
-        </Col>
-        <Col span={24}>
-          <Text>
-            <InfoCircleOutlined /> If you want to prepare before starting, check
-            out below links
-          </Text>
-        </Col>
-      </Row>
+      <QuickSummary desc={desc} />
+      <Title level={3}>Before you Start</Title>
+      <Space direction="vertical">
+        <Text>
+          <InfoIcon /> There are <strong>{questionsCount} questions</strong>{' '}
+          without time limit, maximum score is{' '}
+          <strong>{questionsCount} points</strong>
+        </Text>
+        <Text>
+          <InfoIcon /> Each question has 4 possible answers,
+          <strong> but only one is correct</strong>
+        </Text>
+        <Text>
+          <InfoIcon /> You can take the Quiz at anytime
+        </Text>
+        <Text>
+          <InfoIcon /> If you want to prepare before starting, check out below
+          links
+        </Text>
+      </Space>
     </Section>
     <Row>
       <Col span={24}>
-        <Box mt={2}>
+        <Box mt={4}>
           <StartButton type="primary" size="large" onClick={onStartClick}>
             Start
           </StartButton>
         </Box>
       </Col>
       <Col span={24}>
-        <Box mt={5}>
+        <Box mt={4}>
+          <Divider />
           <Space direction="vertical">
             <Title level={4}>Learning Resources</Title>
             <Link size="small">Placeholder 1</Link>

@@ -66,20 +66,24 @@ export const InProgress = ({ data, selections, onAnswerClick }) => {
           ({ question, answers }, index) =>
             currentQuestionIndex === index && (
               <Fade duration={1500} key={question}>
-                <Title level={2} align="center" transform="uppercase">
+                <Title level={2} align="center" transform="none">
                   {question}
                 </Title>
                 <Divider />
-                <Row gutter={[0, 8]} justify="center">
-                  {answers.map((answer, index) => (
-                    <Col span={20} key={answer}>
-                      <Answer onClick={() => onAnswerClick(index)}>
-                        <AnswerLetter style={{}}>{letters[index]}</AnswerLetter>
-                        <Text>{answer}</Text>
-                      </Answer>
-                    </Col>
-                  ))}
-                </Row>
+                <Box mb={2}>
+                  <Row gutter={[0, 8]} justify="center">
+                    {answers.map((answer, index) => (
+                      <Col span={20} key={answer}>
+                        <Answer onClick={() => onAnswerClick(index)}>
+                          <AnswerLetter style={{}}>
+                            {letters[index]}
+                          </AnswerLetter>
+                          <Text>{answer}</Text>
+                        </Answer>
+                      </Col>
+                    ))}
+                  </Row>
+                </Box>
               </Fade>
             )
         )}

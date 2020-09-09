@@ -96,7 +96,7 @@ export const QuestionsLookup = ({ data, selections }) => (
         <Col span={2} key={index}>
           <Popover
             title={
-              <Title level={4} align="center">
+              <Title level={4} align="center" transform="none">
                 {question}
               </Title>
             }

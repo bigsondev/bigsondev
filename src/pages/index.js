@@ -43,7 +43,9 @@ const ResourceCard = styled.div({
 const Resource = ({ title, desc, path, date }) => (
   <Link to={path}>
     <ResourceCard>
-      <Title level={3}>{title}</Title>
+      <Title level={4} transform="capitalize">
+        {title}
+      </Title>
       <Paragraph type="secondary">{truncate(desc)}</Paragraph>
       <Paragraph>
         <Space>

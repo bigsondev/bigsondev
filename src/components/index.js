@@ -8,3 +8,4 @@ export { Section } from './Section';
 export { Text, Title, Link, Paragraph } from './Typography';
 export * from './notifications';
 export * from './messages';
+export { QuickSummary } from './QuickSummary';

@@ -2,21 +2,19 @@
 title: 10 Technical Interview Tips
 desc:
   Technical Interview can be a hard nut to crack. It's challenging, it's different, it's evolving.
-  These days, you need to not only show your coding & problem-solving skills, but also have a personality that plays well with the team.
+  These days, you need to not only show your coding and problem-solving skills, but also have a personality that plays well with the team.
   I prepared 10 universal tips which will help you beat the next interview.
 path: /technical-interview-tips
 date: 2020-09-08
 ---
 
 import { Space, Divider } from 'antd';
-import { Text, Title, Paragraph } from '../components';
+import { Text, Title, Paragraph, QuickSummary, Box } from '../components';
 
-<Title>{props.pageContext.frontmatter.title}</Title>
-<Title level={3}>Quick Summary</Title>
-<Paragraph fontStyle="italic" type="secondary">
-  {props.pageContext.frontmatter.desc}
-</Paragraph>
-<Divider />
+<Box mb={5}>
+  <Title>{props.pageContext.frontmatter.title}</Title>
+</Box>
+<QuickSummary desc={props.pageContext.frontmatter.desc} />
 <Title level={3}>Introduction</Title>
 <Paragraph>
   I have been working as a Technical Recruiter for almost 2 years. All these

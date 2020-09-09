@@ -39,7 +39,7 @@ export const Completed = ({
     <Fade duration={1500}>
       <Result
         icon={<SmileOutlined />}
-        title={<Box mb={2}>Nicely done, Quiz completed!</Box>}
+        title={<Box mb={2}>Nicely Done, Quiz Completed!</Box>}
         subTitle={
           <Row justify="center">
             <Col span={6}>
