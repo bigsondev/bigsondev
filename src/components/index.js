@@ -5,6 +5,6 @@ export { Quiz } from './quiz';
 export { Breadcrumb } from './Breadcrumb';
 export { Box } from './Box';
 export { Section } from './Section';
-export { Text, Title, Link } from './Typography';
+export { Text, Title, Link, Paragraph } from './Typography';
 export * from './notifications';
 export * from './messages';

@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, List, Alert, Popover, Button } from 'antd';
 import styled from 'styled-components';
 
-import { Text, Link } from '..';
+import { Text, Link, Title } from '..';
 
 const CorrectAnswer = styled(List.Item)({
   backgroundColor: '#1890ff',
@@ -75,10 +75,15 @@ export const QuestionsLookup = ({ data, selections }) => (
                     />
                   </Col>
                   <Col span={24}>
-                    <Text type="secondary" display="block" align="center">
+                    <Text
+                      type="secondary"
+                      display="block"
+                      align="center"
+                      size="small"
+                    >
                       Learning resource
                     </Text>
-                    <Link>Introduction to Chrome DevTools</Link>
+                    <Link size="small">Introduction to Chrome DevTools</Link>
                   </Col>
                 </Row>
               )}
@@ -90,7 +95,11 @@ export const QuestionsLookup = ({ data, selections }) => (
       return (
         <Col span={2} key={index}>
           <Popover
-            title={question}
+            title={
+              <Title level={4} align="center">
+                {question}
+              </Title>
+            }
             content={popoverContent}
             trigger="click"
             overlayStyle={{

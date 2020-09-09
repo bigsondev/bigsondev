@@ -10,6 +10,8 @@ import { Link } from 'gatsby';
 import { Layout as AntdLayout, Menu } from 'antd';
 import styled from 'styled-components';
 
+import { Box } from '../components';
+
 const Container = styled.div({
   maxWidth: 1200,
   margin: '0 auto',
@@ -37,7 +39,9 @@ export const Layout = ({ children }) => {
         <Container>
           <FlexWrapper>
             <Link to="/">
-              <Logo>BIGSONDEV - LIBRARY</Logo>
+              <Box pl={3}>
+                <Logo>BIGSONDEV - LIBRARY</Logo>
+              </Box>
             </Link>
             <Menu theme="dark" mode="horizontal">
               <Menu.Item key="1">Profile</Menu.Item>

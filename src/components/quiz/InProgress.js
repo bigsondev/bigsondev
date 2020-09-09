@@ -26,6 +26,7 @@ const Answer = styled(Card)({
 const AnswerLetter = styled(Avatar)({
   backgroundColor: '#CEF7F1',
   marginRight: 16,
+  marginTop: -6,
   transition: 'background-color 0.1s',
 
   '& .ant-avatar-string': {
@@ -52,14 +53,20 @@ export const InProgress = ({ data, selections, onAnswerClick }) => {
         showInfo={false}
       />
       <Box maxWidth={600} margin="0 auto">
-        <Text strong align="center" gutterBottom display="block">
+        <Text
+          type="secondary"
+          align="center"
+          gutterBottom
+          display="block"
+          size="small"
+        >
           Question {currentQuestionIndex + 1}/{data.length}
         </Text>
         {data.map(
           ({ question, answers }, index) =>
             currentQuestionIndex === index && (
               <Fade duration={1500} key={question}>
-                <Title level={3} align="center" transform="uppercase">
+                <Title level={2} align="center" transform="uppercase">
                   {question}
                 </Title>
                 <Divider />

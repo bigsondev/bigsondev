@@ -104,8 +104,6 @@ export const data = [
   },
 ];
 
-<Typography.Title level={2}>
-  {props.pageContext.frontmatter.title}
-</Typography.Title>
+<Typography.Title>{props.pageContext.frontmatter.title}</Typography.Title>
 
 <Quiz data={data} desc={props.pageContext.frontmatter.desc} />

@@ -56,10 +56,10 @@ export const NotStarted = ({ desc, questionsCount, onStartClick }) => (
         <Box mt={5}>
           <Space direction="vertical">
             <Title level={4}>Learning Resources</Title>
-            <Link>Placeholder 1</Link>
-            <Link>Placeholder 2</Link>
-            <Link>Placeholder 3</Link>
-            <Link>Placeholder 4</Link>
+            <Link size="small">Placeholder 1</Link>
+            <Link size="small">Placeholder 2</Link>
+            <Link size="small">Placeholder 3</Link>
+            <Link size="small">Placeholder 4</Link>
           </Space>
         </Box>
       </Col>
