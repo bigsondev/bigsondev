@@ -66,9 +66,13 @@ export const InProgress = ({ data, selections, onAnswerClick }) => {
           ({ question, answers }, index) =>
             currentQuestionIndex === index && (
               <Fade duration={1500} key={question}>
-                <Title level={2} align="center" transform="none">
-                  {question}
-                </Title>
+                {typeof question === 'string' ? (
+                  <Title level={2} align="center" transform="none">
+                    {question}
+                  </Title>
+                ) : (
+                  question
+                )}
                 <Divider />
                 <Box mb={2}>
                   <Row gutter={[0, 8]} justify="center">

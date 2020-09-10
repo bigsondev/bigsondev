@@ -5,105 +5,33 @@ path: /junior-quiz
 date: 2020-09-07
 ---
 
-import { Typography } from 'antd';
-import { Text, Quiz } from '../components';
+import {
+  Title,
+  Text,
+  Quiz,
+  SyntaxHighlighter,
+  Box,
+  Paragraph,
+} from '../components';
 
 export const data = [
   {
-    question: 'What are browser Developer Tools?',
-    answers: [
-      `They don't exist`,
-      'Tools used to write browser extensions',
-      'Tools used by Developers to do a range of things browser related, e.g. inspect HTML, CSS, JS',
-      'Premium versions of the browser which include analytics, data tracking and are more secure',
-    ],
-    correct: 2,
-  },
-  {
-    question: 'What is Git?',
-    answers: [
-      `Programming language`,
-      'VCS - Version Control System for managing project changes',
-      'Chrome extension',
-      'Paradigm which defines how to style CSS',
-    ],
-    correct: 1,
-  },
-  {
-    question:
-      'Which of the following Client-side storages in the browser do not exist?',
-    answers: [`Cookies`, 'Web Storage', 'IndexedDB', 'Sandwiches'],
-    correct: 3,
-  },
-  {
-    question: 'What is CLI?',
-    answers: [
-      `Command-line interface, it allows to interact with a computer through commands`,
-      'Programming language to create static websites',
-      'Antivirus',
-      'Productivity rule',
-    ],
-    correct: 0,
-  },
-  {
-    question: 'What is an IDE?',
-    answers: [
-      `Integrated Development Environment, simplifes different aspects of writing a computer program`,
-      'JavaScript garbage collection mechanism',
-      'Recommended HTML tree structure for developers',
-      'CSS preprocessor library',
-    ],
-    correct: 0,
-  },
-  {
-    question: '1 + 5 = 12, 2 + 10 = 24, 3 + 15 = 36, 5 + 25 = ?',
-    answers: [`30`, '45', '60', '100'],
-    correct: 2,
-  },
-  {
-    question: 'What is index.html used for?',
-    answers: [
-      `Helps with securing the website`,
-      'Represents starting page to load from the server',
-      'Organizes Table of Contents in the website',
-      'Improves performance of CSS animations',
-    ],
-    correct: 1,
-  },
-  {
-    question: 'What is HTML, CSS and JS?',
-    answers: [
-      `Markup language for web documents, style sheet language for describing the presentation of web documents 
-      and programming language for implementing behavior on web pages`,
-      'Design System for Boostrap, styling solution to the browser, scripting language used on web pages',
-      'Markup language for web documents, animation library, programming language for implementing behavior on web pages',
-      'JS Framework, styling library, scripting language used on web pages',
-    ],
-    correct: 0,
-  },
-  {
-    question:
-      'How would you describe a Component in relation to the Frontend / User Interface?',
-    answers: [
-      `Browser extension to automate manual tasks`,
-      'Base building block that allows to compose more complex structures e.g. Navigation or even entire web pages',
-      'Behavior and experience of the user while using the website',
-      'Hidden part of the software which communicates with the server under the hood',
-    ],
-    correct: 1,
-  },
-  {
-    question: 'What is the difference between Frontend and Backend?',
-    answers: [
-      `Frontend is responsible for writing HTML and Backend is responsible for CSS, especially animations`,
-      'Frontend writes server code in the browser, Backend writes server code for desktop applications',
-      'There is no difference, they do the same thing',
-      'Frontend is responsible for client-side code, such as HTML, CSS, JS, Backend implements business logic on the server side and exposes it through an API to the client',
-    ],
+    question: (
+      <>
+        <Text size="preNormal">Given the following JS:</Text>
+        <SyntaxHighlighter>console.log(0.1 + 0.2);</SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What will show up in the console?
+        </Title>
+      </>
+    ),
+    answers: [`0102`, '0.3', '0.10.2', '0.30000000000000004'],
     correct: 3,
   },
 ];
 
-<Typography.Title>{props.pageContext.frontmatter.title}</Typography.Title>
+<Box mb={5}>
+  <Title>{props.pageContext.frontmatter.title}</Title>
+</Box>
 
 <Quiz data={data} desc={props.pageContext.frontmatter.desc} />

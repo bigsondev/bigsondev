@@ -9,3 +9,6 @@ export { Text, Title, Link, Paragraph } from './Typography';
 export * from './notifications';
 export * from './messages';
 export { QuickSummary } from './QuickSummary';
+export { PostTitle } from './PostTitle';
+export * from './widgets';
+export * from './SyntaxHighlighter';

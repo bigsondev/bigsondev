@@ -6,3 +6,4 @@
 
 // You can delete this file if you're not using it
 import 'antd/dist/antd.css';
+import 'highlight.js/styles/a11y-light.css';

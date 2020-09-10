@@ -96,9 +96,13 @@ export const QuestionsLookup = ({ data, selections }) => (
         <Col span={2} key={index}>
           <Popover
             title={
-              <Title level={4} align="center" transform="none">
-                {question}
-              </Title>
+              typeof question === 'string' ? (
+                <Title level={4} align="center" transform="none">
+                  {question}
+                </Title>
+              ) : (
+                question
+              )
             }
             content={popoverContent}
             trigger="click"

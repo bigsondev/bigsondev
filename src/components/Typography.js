@@ -3,9 +3,10 @@ import { Typography } from 'antd';
 import styled from 'styled-components';
 
 const TEXT_SIZE = {
-  micro: '1.08em',
-  small: '1.15em',
-  normal: '1.43em',
+  micro: '0.9375rem',
+  small: '1rem',
+  preNormal: '1.125rem',
+  normal: '1.27rem',
 };
 
 export const Text = styled(Typography.Text)(
@@ -31,7 +32,7 @@ export const Paragraph = styled(Typography.Paragraph)(
     align = 'left',
     fontWeight = 300,
     size = 'normal',
-    gutterBottom = false,
+    marginBottom = '1.75rem',
     display = 'block',
     fontStyle = 'normal',
   }) => ({
@@ -40,12 +41,12 @@ export const Paragraph = styled(Typography.Paragraph)(
     fontSize: TEXT_SIZE[size],
     fontWeight,
     fontStyle,
-    marginBottom: gutterBottom && 8,
+    marginBottom: `${marginBottom} !important`,
   })
 );
 
-export const Link = styled(Typography.Link)(
-  ({ align = 'left', fontWeight, size = 'normal' }) => ({
+export const LinkHolder = styled.span(
+  ({ align = 'left', fontWeight = 300, size = 'normal' }) => ({
     textAlign: align,
     fontSize: TEXT_SIZE[size],
     fontWeight,
@@ -57,7 +58,7 @@ const LevelOneHolder = styled.div(
     align = 'left',
     transform = 'capitalize',
     fontWeight,
-    fontSize = '2.86em',
+    fontSize = '2.5rem',
   }) => ({
     textAlign: align,
     fontWeight,
@@ -73,7 +74,7 @@ const LevelTwoHolder = styled.div(
     align = 'left',
     transform = 'capitalize',
     fontWeight,
-    fontSize = '2.46em',
+    fontSize = '2.125rem',
   }) => ({
     textAlign: align,
     fontWeight,
@@ -89,13 +90,14 @@ const LevelThreeHolder = styled.div(
     align = 'left',
     transform = 'capitalize',
     fontWeight,
-    fontSize = '2em',
+    fontSize = '1.75rem',
   }) => ({
     textAlign: align,
     fontWeight,
     '& h3': {
       textTransform: transform,
       fontSize,
+      marginBottom: '1rem !important',
     },
   })
 );
@@ -105,13 +107,14 @@ const LevelFourHolder = styled.div(
     align = 'left',
     transform = 'uppercase',
     fontWeight,
-    fontSize = '1.58em',
+    fontSize = '1.375rem',
   }) => ({
     textAlign: align,
     fontWeight,
     '& h4': {
       textTransform: transform,
       fontSize,
+      marginBottom: '1em !important',
     },
   })
 );
@@ -121,7 +124,7 @@ const LevelFiveHolder = styled.div(
     align = 'left',
     transform = 'uppercase',
     fontWeight,
-    fontSize = '1.45em',
+    fontSize = '1.25rem',
   }) => ({
     textAlign: align,
     fontWeight,
@@ -130,6 +133,19 @@ const LevelFiveHolder = styled.div(
       fontSize,
     },
   })
+);
+
+export const Link = ({
+  rel = 'noopener norefferer',
+  target = '_blank',
+  align,
+  fontWeight,
+  size,
+  ...props
+}) => (
+  <LinkHolder align={align} fontWeight={fontWeight} size={size}>
+    <Typography.Link rel={rel} target={target} {...props} />
+  </LinkHolder>
 );
 
 export const Title = ({ level = 1, transform, ...props }) => {
