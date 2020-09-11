@@ -1,0 +1,110 @@
+---
+title: Junior Quiz
+desc: The following Quiz is best for Junior Frontend Developers with minimal experience (couple of months).
+path: /library/junior-quiz
+date: 2020-09-07
+---
+
+import {
+  Title,
+  Text,
+  Quiz,
+  SyntaxHighlighter,
+  Box,
+  Paragraph,
+} from '~components';
+
+export const data = [
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following code:</Text>
+        <SyntaxHighlighter>console.log(0.1 + 0.2);</SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What Will Show Up In The Console?
+        </Title>
+      </>
+    ),
+    answers: ['0102', '0.3', '0.10.2', '0.30000000000000004'],
+    correct: 3,
+  },
+  {
+    question: 'Which Of The Following Data Types Do Not Exist In JavaScript?',
+    answers: ['BigInt', 'Symbol', 'Double', 'Object'],
+    correct: 2,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following HTML code:</Text>
+        <SyntaxHighlighter language="html">
+          {`<div id="i-rule" class="no-i-rule">Hello CSS Specificity</div>`}
+        </SyntaxHighlighter>
+        <Text size="preNormal">And the following CSS code:</Text>
+        <SyntaxHighlighter language="css">
+          {`#i-rule {
+  background-color: red;
+}\n
+div {
+background-color: green;
+}\n
+.no-i-rule {
+background-color: blue;
+}`}
+        </SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What Will Be The Color Of div?
+        </Title>
+      </>
+    ),
+    answers: ['red', 'white', 'green', 'blue'],
+    correct: 0,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following code:</Text>
+        <SyntaxHighlighter>{`1. console.log(false == '');\n2. console.log(false === '');\n3. console.log(42 == '42')\n4. console.log(42 === '42')`}</SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What Will Show Up In The Console?
+        </Title>
+      </>
+    ),
+    answers: [
+      '1: true, 2: true, 3: true, 4: true',
+      '1: false, 2: false, 3: false, 4: false',
+      '1: false, 2: true, 3: false, 4: true',
+      '1: true, 2: false, 3: true, 4: false',
+    ],
+    correct: 3,
+  },
+  {
+    question: 'What Is The Structure Of DOM?',
+    answers: ['List', 'Tree', 'Heap', 'Queue'],
+    correct: 1,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following code:</Text>
+        <SyntaxHighlighter>{`theAnswerToLife = 42;\nvar theAnswerToLife;\n\nconsole.log(theAnswerToLife);`}</SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What Will Show Up In The Console?
+        </Title>
+      </>
+    ),
+    answers: [
+      'undefined',
+      '42',
+      'null',
+      'Uncaught SyntaxError: Missing initializer in var declaration',
+    ],
+    correct: 2,
+  },
+];
+
+<Box mb={5}>
+  <Title>{props.pageContext.frontmatter.title}</Title>
+</Box>
+
+<Quiz data={data} desc={props.pageContext.frontmatter.desc} />

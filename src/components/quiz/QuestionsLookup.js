@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, List, Alert, Popover, Button } from 'antd';
 import styled from 'styled-components';
 
-import { Text, Link, Title } from '..';
+import { Text, Link, Title, Box } from '..';
 
 const CorrectAnswer = styled(List.Item)({
   backgroundColor: '#1890ff',
@@ -61,7 +61,11 @@ export const QuestionsLookup = ({ data, selections }) => (
             <Col span={24}>
               {correct === selection ? (
                 <Alert
-                  message="Well done, you chose the correct answer!"
+                  message={
+                    <Text align="center" display="block" size="small">
+                      Well done, you chose the correct answer!
+                    </Text>
+                  }
                   type="info"
                   showIcon
                 />
@@ -69,7 +73,11 @@ export const QuestionsLookup = ({ data, selections }) => (
                 <Row gutter={[0, 8]}>
                   <Col span={24}>
                     <Alert
-                      message="Unfortunately you chose the wrong answer"
+                      message={
+                        <Text align="center" display="block" size="small">
+                          Unfortunately you chose the wrong answer
+                        </Text>
+                      }
                       type="warning"
                       showIcon
                     />
@@ -83,7 +91,9 @@ export const QuestionsLookup = ({ data, selections }) => (
                     >
                       Learning resource
                     </Text>
-                    <Link size="small">Introduction to Chrome DevTools</Link>
+                    <Box display="flex" justify="center">
+                      <Link size="small">Introduction to Chrome DevTools</Link>
+                    </Box>
                   </Col>
                 </Row>
               )}
@@ -96,19 +106,20 @@ export const QuestionsLookup = ({ data, selections }) => (
         <Col span={2} key={index}>
           <Popover
             title={
-              typeof question === 'string' ? (
-                <Title level={4} align="center" transform="none">
-                  {question}
-                </Title>
-              ) : (
-                question
-              )
+              <Box mt={2}>
+                {typeof question === 'string' ? (
+                  <Title level={4} align="center" transform="none">
+                    {question}
+                  </Title>
+                ) : (
+                  question
+                )}
+              </Box>
             }
             content={popoverContent}
             trigger="click"
             overlayStyle={{
               maxWidth: 480,
-              textAlign: 'center',
             }}
           >
             <Button type={isCorrect ? 'primary' : 'default'}>

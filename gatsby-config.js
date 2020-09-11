@@ -23,21 +23,29 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `resources`,
-        path: `${__dirname}/src/resources/`,
+        name: `library`,
+        path: `${__dirname}/src/mdx/library/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/src/mdx/blog/`,
       },
     },
     {
       resolve: 'gatsby-plugin-page-creator',
       options: {
-        path: `${__dirname}/src/resources`,
+        path: `${__dirname}/src/mdx`,
       },
     },
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
-          resources: require.resolve('./src/components/mdx/ResourceLayout.js'),
+          library: require.resolve('./src/components/layout/LibraryLayout.js'),
+          blog: require.resolve('./src/components/layout/BlogLayout.js'),
         },
       },
     },
@@ -54,6 +62,12 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: 'gatsby-plugin-styled-components',
+    },
+    {
+      resolve: 'gatsby-plugin-antd',
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

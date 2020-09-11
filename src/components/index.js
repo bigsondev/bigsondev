@@ -1,8 +1,8 @@
-export { Layout } from './Layout';
+export * from './layout';
 export { Image } from './Image';
 export { SEO } from './SEO';
 export { Quiz } from './quiz';
-export { Breadcrumb } from './Breadcrumb';
+export { BackButton } from './BackButton';
 export { Box } from './Box';
 export { Section } from './Section';
 export { Text, Title, Link, Paragraph } from './Typography';

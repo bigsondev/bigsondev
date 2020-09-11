@@ -1,39 +1,39 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-type Justify =
-  | 'start'
-  | 'center'
-  | 'end'
-  | 'left'
-  | 'right'
-  | 'flex-start'
-  | 'space-between'
-  | 'space-around'
-  | 'flex-end';
+// type Justify =
+//   | 'start'
+//   | 'center'
+//   | 'end'
+//   | 'left'
+//   | 'right'
+//   | 'flex-start'
+//   | 'space-between'
+//   | 'space-around'
+//   | 'flex-end';
 
-type Alignment = 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
+// type Alignment = 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
 
-export interface IBoxProps {
-  margin?: string;
-  m?: number;
-  mt?: number;
-  mr?: number;
-  mb?: number;
-  ml?: number;
-  padding?: string;
-  p?: number;
-  pt?: number;
-  pr?: number;
-  pb?: number;
-  pl?: number;
-  children?: ReactNode;
-  display?: 'block' | 'flex';
-  justify?: Justify;
-  align?: Alignment;
-  className?: string;
-  maxWidth?: number;
-}
+// export interface IBoxProps {
+//   margin?: string;
+//   m?: number;
+//   mt?: number;
+//   mr?: number;
+//   mb?: number;
+//   ml?: number;
+//   padding?: string;
+//   p?: number;
+//   pt?: number;
+//   pr?: number;
+//   pb?: number;
+//   pl?: number;
+//   children?: ReactNode;
+//   display?: 'block' | 'flex';
+//   justify?: Justify;
+//   align?: Alignment;
+//   className?: string;
+//   maxWidth?: number;
+// }
 
 const SPACING_SCALE = 8;
 
@@ -55,7 +55,7 @@ const BoxWrapper = styled.div(
     pb,
     pl,
     maxWidth,
-  }: IBoxProps) => ({
+  }) => ({
     display,
     justifyContent: justify,
     alignItems: align,
@@ -73,6 +73,6 @@ const BoxWrapper = styled.div(
   })
 );
 
-export const Box = ({ ...props }: IBoxProps) => {
+export const Box = ({ ...props }) => {
   return <BoxWrapper {...props} />;
 };

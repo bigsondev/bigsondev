@@ -13,7 +13,6 @@ export const Text = styled(Typography.Text)(
   ({
     align = 'left',
     fontWeight = 300,
-    gutterBottom = false,
     display = 'inline',
     fontStyle = 'normal',
     size = 'normal',
@@ -23,16 +22,14 @@ export const Text = styled(Typography.Text)(
     fontSize: TEXT_SIZE[size],
     fontWeight,
     fontStyle,
-    marginBottom: gutterBottom && 8,
   })
 );
 
-export const Paragraph = styled(Typography.Paragraph)(
+export const ParagraphHolder = styled(Typography.Paragraph)(
   ({
     align = 'left',
     fontWeight = 300,
     size = 'normal',
-    marginBottom = '1.75rem',
     display = 'block',
     fontStyle = 'normal',
   }) => ({
@@ -41,15 +38,20 @@ export const Paragraph = styled(Typography.Paragraph)(
     fontSize: TEXT_SIZE[size],
     fontWeight,
     fontStyle,
-    marginBottom: `${marginBottom} !important`,
   })
 );
 
 export const LinkHolder = styled.span(
-  ({ align = 'left', fontWeight = 300, size = 'normal' }) => ({
+  ({
+    align = 'left',
+    fontWeight = 300,
+    size = 'normal',
+    display = 'inline',
+  }) => ({
     textAlign: align,
     fontSize: TEXT_SIZE[size],
     fontWeight,
+    display,
   })
 );
 
@@ -114,7 +116,7 @@ const LevelFourHolder = styled.div(
     '& h4': {
       textTransform: transform,
       fontSize,
-      marginBottom: '1em !important',
+      marginBottom: '1rem !important',
     },
   })
 );
@@ -133,6 +135,13 @@ const LevelFiveHolder = styled.div(
       fontSize,
     },
   })
+);
+
+export const Paragraph = ({ lastParagraph = false, ...props }) => (
+  <ParagraphHolder
+    style={{ marginBottom: lastParagraph ? '5rem' : '1.75rem' }}
+    {...props}
+  />
 );
 
 export const Link = ({

@@ -53,15 +53,11 @@ export const InProgress = ({ data, selections, onAnswerClick }) => {
         showInfo={false}
       />
       <Box maxWidth={600} margin="0 auto">
-        <Text
-          type="secondary"
-          align="center"
-          gutterBottom
-          display="block"
-          size="small"
-        >
-          Question {currentQuestionIndex + 1}/{data.length}
-        </Text>
+        <Box mb={1}>
+          <Text type="secondary" align="center" display="block" size="small">
+            Question {currentQuestionIndex + 1}/{data.length}
+          </Text>
+        </Box>
         {data.map(
           ({ question, answers }, index) =>
             currentQuestionIndex === index && (
