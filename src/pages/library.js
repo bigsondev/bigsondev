@@ -10,7 +10,7 @@ import {
 import styled from 'styled-components';
 
 import { Layout, SEO, Title, Paragraph, Text, Box } from '~components';
-import { truncate } from '../utils';
+import { truncate } from '~utils';
 
 export const query = graphql`
   query LibraryQuery {

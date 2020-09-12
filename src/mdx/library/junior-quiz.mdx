@@ -13,6 +13,7 @@ import {
   Box,
   Paragraph,
 } from '~components';
+import { shuffle } from '~utils';
 
 export const data = [
   {
@@ -29,7 +30,7 @@ export const data = [
     correct: 3,
   },
   {
-    question: 'Which Of The Following Data Types Do Not Exist In JavaScript?',
+    question: `Which Of The Following Data Types Don't Exist In JavaScript?`,
     answers: ['BigInt', 'Symbol', 'Double', 'Object'],
     correct: 2,
   },
@@ -64,7 +65,7 @@ background-color: blue;
     question: (
       <>
         <Text size="preNormal">Given the following code:</Text>
-        <SyntaxHighlighter>{`1. console.log(false == '');\n2. console.log(false === '');\n3. console.log(42 == '42')\n4. console.log(42 === '42')`}</SyntaxHighlighter>
+        <SyntaxHighlighter>{`1. console.log(false == '');\n\n2. console.log(false === '');\n\n3. console.log(42 == '42')\n\n4. console.log(42 === '42')`}</SyntaxHighlighter>
         <Title level={2} align="center" transform="none">
           What Will Show Up In The Console?
         </Title>
@@ -99,7 +100,132 @@ background-color: blue;
       'null',
       'Uncaught SyntaxError: Missing initializer in var declaration',
     ],
+    correct: 1,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">After executing the following command:</Text>
+        <SyntaxHighlighter language="console">{`git pull`}</SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What Happens Under The Hood?
+        </Title>
+      </>
+    ),
+    answers: [
+      'git fetch followed by git rebase',
+      'cherrypick commits on the current branch',
+      'git fetch followed by git merge',
+      'git fetch only',
+    ],
     correct: 2,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following code:</Text>
+        <SyntaxHighlighter>{`console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());`}</SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What Will Show Up In The Console?
+        </Title>
+      </>
+    ),
+    answers: ['banana', 'ba aa', 'ba+aa', 'ba 11'],
+    correct: 0,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          What Is A Polyfill?
+        </Title>
+      </>
+    ),
+    answers: [
+      'JavaScript function for doing iterations on objects',
+      `Code which provides the fallback solution for some specific functionality that you expect to work in latest browsers, 
+      but might not be available in older browsers e.g. in IE11 and you need to support it`,
+      `It's a well-known Design Pattern that allows to create a mechanism of Publish-subscribe, mostly used for messaging systems`,
+      `It's a hexagonal shape available in D3.js`,
+    ],
+    correct: 1,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following code:</Text>
+        <SyntaxHighlighter>{`const multiply = (a) => (b) => a * b;`}</SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What Is The Name Of Technique Used?
+        </Title>
+      </>
+    ),
+    answers: ['Proxying', 'Singletoning', 'Decoratoring', 'Currying'],
+    correct: 3,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          Which Of The Styling Techniques Don't Exist?
+        </Title>
+      </>
+    ),
+    answers: ['CSS-in-JS', 'Flux', 'BEM', 'SMACSS'],
+    correct: 1,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following code:</Text>
+        <SyntaxHighlighter>{`for (var i = 0; i < 5; i++) {\n  setTimeout(() => console.log(i), i * 1000)\n}`}</SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What Will Show Up In The Console?
+        </Title>
+      </>
+    ),
+    answers: [
+      '5 5 5 5 5',
+      '0 1 2 3 4',
+      'undefined undefined undefined undefined undefined',
+      '0 0 0 0 0',
+    ],
+    correct: 0,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following code:</Text>
+        <SyntaxHighlighter>{`const friends = [];\n\n1. friends.push('Jimmy');\n\n2. friends.splice(friends.length, 0, 'Jimmy')\n\n3. friends[friends.length] = 'Jimmy'\n\n4. const updatedFriends = [...friends, 'Jimmy']`}</SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          Which Method Won't Mutate The Original Array?
+        </Title>
+      </>
+    ),
+    answers: ['1', '2', '3', '4'],
+    correct: 3,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          Which Method Can't Be Used On An Array?
+        </Title>
+      </>
+    ),
+    answers: ['concat', 'reduceRight', 'clear', 'includes'],
+    correct: 2,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          Which Method Can't Be Used On Object Constructor?
+        </Title>
+      </>
+    ),
+    answers: ['keys', 'values', 'seal', 'reduce'],
+    correct: 3,
   },
 ];
 
@@ -107,4 +233,4 @@ background-color: blue;
   <Title>{props.pageContext.frontmatter.title}</Title>
 </Box>
 
-<Quiz data={data} desc={props.pageContext.frontmatter.desc} />
+<Quiz data={shuffle(data)} desc={props.pageContext.frontmatter.desc} />

@@ -6,6 +6,7 @@ date: 2020-09-07
 ---
 
 import { Text, Quiz, Title, Paragraph, Box } from '~components';
+import { shuffle } from '~utils';
 
 export const data = [
   {
@@ -30,7 +31,7 @@ export const data = [
   },
   {
     question:
-      'Which Of The Following Client-Side Storages In Browser Do Not Exist?',
+      `Which Of The Following Client-Side Storages In Browser Don't Exist?`,
     answers: [`Cookies`, 'Web Storage', 'IndexedDB', 'Sandwiches'],
     correct: 3,
   },
@@ -45,7 +46,7 @@ export const data = [
     correct: 0,
   },
   {
-    question: 'What Is IDE?',
+    question: 'What Is An IDE?',
     answers: [
       `Integrated Development Environment, simplifes different aspects of writing a computer program`,
       'JavaScript garbage collection mechanism',
@@ -107,4 +108,4 @@ export const data = [
   <Title>{props.pageContext.frontmatter.title}</Title>
 </Box>
 
-<Quiz data={data} desc={props.pageContext.frontmatter.desc} />
+<Quiz data={shuffle(data)} desc={props.pageContext.frontmatter.desc} />

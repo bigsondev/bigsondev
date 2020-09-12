@@ -11,7 +11,7 @@ export const Header = () => (
       <Box display="flex" align="center" justify="space-between">
         <Link to="/">
           <Box pl={3}>
-            <Logo>BIGSONDEV - LIBRARY</Logo>
+            <Logo>BIGSONDEV</Logo>
           </Box>
         </Link>
         <Menu theme="dark" mode="horizontal">
@@ -20,6 +20,12 @@ export const Header = () => (
           </Menu.Item>
           <Menu.Item key="2">
             <Link to="/blog">Blog</Link>
+          </Menu.Item>
+          <Menu.Item key="3">
+            <Link to="/coaching">Coaching</Link>
+          </Menu.Item>
+          <Menu.Item key="4">
+            <Link to="/contact">Contact</Link>
           </Menu.Item>
         </Menu>
       </Box>

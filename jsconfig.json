@@ -6,7 +6,8 @@
     "paths": {
       //Assuming your components/utilities live in ./src
       //Update this path as necessary
-      "~components/*": ["./src/components/*"]
+      "~components/*": ["./src/components/*"],
+      "~utils/*": ["./src/utils/*"]
     }
   },
   //Add any build/compiled folders here to stop vscode searching those

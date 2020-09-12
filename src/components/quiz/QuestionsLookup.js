@@ -23,7 +23,7 @@ const IncorrectAnswer = styled(List.Item)({
 });
 
 export const QuestionsLookup = ({ data, selections }) => (
-  <Row justify="center">
+  <Row justify="center" gutter={[8, 16]}>
     {selections.map((_, index) => {
       const { correct, question, answers } = data[index];
       const selection = selections[index];
@@ -103,7 +103,7 @@ export const QuestionsLookup = ({ data, selections }) => (
       );
 
       return (
-        <Col span={2} key={index}>
+        <Col key={index}>
           <Popover
             title={
               <Box mt={2}>
