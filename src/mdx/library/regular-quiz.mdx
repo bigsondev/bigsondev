@@ -1,0 +1,182 @@
+---
+title: Regular Quiz
+desc: The following Quiz is best for Regular Frontend Developers with average experience of around 2 years.
+path: /library/regular-quiz
+date: 2020-09-07
+---
+
+import {
+  Title,
+  Text,
+  Quiz,
+  SyntaxHighlighter,
+  Box,
+  Paragraph,
+} from '~components';
+import { shuffle } from '~utils';
+
+export const data = [
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          What Is Virtual DOM?
+        </Title>
+      </>
+    ),
+    answers: [
+      'In-memory representation of the real DOM, allows to do expensive operations and batch all updates to the real DOM into one final update to increase performance',
+      'Shadow DOM for Web Components to encapsulate styling and create layers of abstraction',
+      'Native browser implementation of DOM which exposes methods through an API',
+      'Graphical representation of the DOM used for debugging performance bottlenecks',
+    ],
+    correct: 0,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          What Is GraphQL?
+        </Title>
+      </>
+    ),
+    answers: [
+      'REST API which fundamentals are based on CRUD paradigm',
+      'Alternative to REST API where clients can ask for exact data they need through one endpoint',
+      'Logging service for Node.js',
+      'Library written in React for state management',
+    ],
+    correct: 1,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following React code:</Text>
+        <SyntaxHighlighter>
+          {`Hello.jsx\n\nexport const Hello = () => <div>Hello World!</div>;`}
+        </SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          Will It Execute Properly?
+        </Title>
+      </>
+    ),
+    answers: [
+      'Yes, Hello component will be created and can be used like that: <Hello />',
+      'No, "Hello World!"" text needs to be passed as props',
+      'No, there is no import of React which is needed for JSX transpilation, even in Stateless Component',
+      'No, file name should be Hello.js, there is no such extension as .jsx',
+    ],
+    correct: 2,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          You Are Asked To cherry-pick A commit, What Does That Mean?
+        </Title>
+      </>
+    ),
+    answers: [
+      'Remove commit from git history',
+      'Squash all commits after a cherry-picked commit, using its hash',
+      'Choose a commit from one branch and apply it onto another',
+      'Spread your commit on all remote branches',
+    ],
+    correct: 2,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following code:</Text>
+        <SyntaxHighlighter language="typescript">
+          {`interface IQuizCardProps extends CardProps {\n  isCompleted?: boolean;\n}`}
+        </SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What Language Is That?
+        </Title>
+      </>
+    ),
+    answers: [
+      `Latest ECMAScript 2020 which includes static typing in JavaScript`,
+      'Flow, a Static Type Checker for JavaScript',
+      'TypeScript',
+      'CoffeScript',
+    ],
+    correct: 2,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          Which Of The Following Testing Techniques Don't Exist?
+        </Title>
+      </>
+    ),
+    answers: ['Mocking', 'Spying', 'Stubbing', 'Stumping'],
+    correct: 3,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          What Is The Order Of Execution In Redux When Using Sagas?
+        </Title>
+      </>
+    ),
+    answers: [
+      'action -> reducer -> saga',
+      'action -> saga -> reducer',
+      'reducer -> action -> saga',
+      'saga -> reducer -> action',
+    ],
+    correct: 0,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following code:</Text>
+        <SyntaxHighlighter>
+          {`function mysteriousFunction(callback, wait) {\n  let timeout;\n  return (...args) => {\n    const context = this;\n    clearTimeout(timeout);\n    timeout = setTimeout(() => callback.apply(context, args), wait);\n  };\n}`}
+        </SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What Is The mysteriousFunction Doing?
+        </Title>
+      </>
+    ),
+    answers: [`Throttling`, 'Debouncing', 'Memoizing', 'Counting seconds'],
+    correct: 1,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          Which Of The Following Won't Help With Code Quality?
+        </Title>
+      </>
+    ),
+    answers: ['Prettier', 'Husky', 'ESLint', 'Nodemon'],
+    correct: 3,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          What Is The Difference Between Observable and Promise?
+        </Title>
+      </>
+    ),
+    answers: [
+      `Promises can be stacked, but Observables can't`,
+      'Promise has better error handling',
+      `Observable can be cancelled, but Promise can't`,
+      'Both implement the same API',
+    ],
+    correct: 2,
+  },
+];
+
+<Box mb={5}>
+  <Title>{props.pageContext.frontmatter.title}</Title>
+</Box>
+
+<Quiz data={shuffle(data)} desc={props.pageContext.frontmatter.desc} />
