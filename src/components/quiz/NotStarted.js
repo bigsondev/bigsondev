@@ -15,9 +15,12 @@ const InfoIcon = styled(InfoCircleOutlined)({
   marginRight: 8,
 });
 
-export const NotStarted = ({ desc, questionsCount, onStartClick }) => (
+export const NotStarted = ({ title, desc, questionsCount, onStartClick }) => (
   <>
     <Section>
+      <Box mb={5}>
+        <Title>{title}</Title>
+      </Box>
       <QuickSummary desc={desc} />
       <Title level={3}>Before you Start</Title>
       <Space direction="vertical">
@@ -33,10 +36,6 @@ export const NotStarted = ({ desc, questionsCount, onStartClick }) => (
         <Text>
           <InfoIcon /> You can take the Quiz at anytime
         </Text>
-        <Text>
-          <InfoIcon /> If you want to prepare before starting, check out below
-          links
-        </Text>
       </Space>
     </Section>
     <Row>
@@ -47,18 +46,21 @@ export const NotStarted = ({ desc, questionsCount, onStartClick }) => (
           </StartButton>
         </Box>
       </Col>
-      <Col span={24}>
-        <Box mt={4}>
-          <Divider />
-          <Space direction="vertical">
-            <Title level={4}>Learning Resources</Title>
-            <Link size="small">Placeholder 1</Link>
-            <Link size="small">Placeholder 2</Link>
-            <Link size="small">Placeholder 3</Link>
-            <Link size="small">Placeholder 4</Link>
-          </Space>
-        </Box>
-      </Col>
+      {/* Add Learning Resources if there are any */}
+      {false && (
+        <Col span={24}>
+          <Box mt={4}>
+            <Divider />
+            <Space direction="vertical">
+              <Title level={4}>Learning Resources</Title>
+              <Link size="small">Placeholder 1</Link>
+              <Link size="small">Placeholder 2</Link>
+              <Link size="small">Placeholder 3</Link>
+              <Link size="small">Placeholder 4</Link>
+            </Space>
+          </Box>
+        </Col>
+      )}
     </Row>
   </>
 );

@@ -5,8 +5,7 @@ path: /library/beginner-quiz
 date: 2020-09-07
 ---
 
-import { Text, Quiz, Title, Paragraph, Box } from '~components';
-import { shuffle } from '~utils';
+import { Quiz } from '~components';
 
 export const data = [
   {
@@ -103,8 +102,9 @@ export const data = [
   },
 ];
 
-<Box mb={5}>
-  <Title>{props.pageContext.frontmatter.title}</Title>
-</Box>
-
-<Quiz data={shuffle(data)} desc={props.pageContext.frontmatter.desc} />
+<Quiz
+  data={data}
+  title={props.pageContext.frontmatter.title}
+  desc={props.pageContext.frontmatter.desc}
+  next="junior-quiz"
+/>

@@ -1,0 +1,185 @@
+---
+title: Senior Quiz
+desc: The following Quiz is best for Senior Frontend Developers with average experience of around 5+ years.
+path: /library/senior-quiz
+date: 2020-09-13
+---
+
+import { Title, Text, Quiz, SyntaxHighlighter } from '~components';
+
+export const data = [
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          What Is A Purpose Of sideEffects Property In Webpack?
+        </Title>
+      </>
+    ),
+    answers: [
+      'To detect all non-pure functions in the code and report logs about them',
+      'To expand on Tree Shaking concept and allow safe pruning of unused exports',
+      'To create a separate chunk for all side effects code',
+      'To eliminate all side effects code from the bundle',
+    ],
+    correct: 1,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          Which Of The Following Is Cypress Bottleneck?
+        </Title>
+      </>
+    ),
+    answers: [
+      'Multiple origin tests',
+      'Headless support',
+      'Lacking mock support',
+      'Multi browser support',
+    ],
+    correct: 0,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          What Would You Use For Supporting Feature Flags In A Complex System?
+        </Title>
+      </>
+    ),
+    answers: [
+      'JS native implementation of feature flags',
+      'Sentry',
+      'HotJar',
+      'LaunchDarkly',
+    ],
+    correct: 3,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          What Are peerDependencies?
+        </Title>
+      </>
+    ),
+    answers: [
+      'Production dependencies only passed with prod flag when doing npm install',
+      'All dependencies that are required both for developing and production',
+      'E.g. in a custom components library, dependencies which contain libraries that are required to be installed on the consumer level',
+      'E.g. in a custom components library, dependencies that are symlinked to the project',
+    ],
+    correct: 2,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following code:</Text>
+        <SyntaxHighlighter>
+          {`const mysteriousFunction = (string) => {\n  string = string.toLowerCase();\n  return string === string.split('').reverse().join('');\n};`}
+        </SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What Is mysteriousFunction Doing?
+        </Title>
+      </>
+    ),
+    answers: [
+      `Checking if a string is Monad`,
+      'Checking if a string is Palindrome',
+      'Checking if a string is Acronym',
+      'Checking if a string is Emordnilap',
+    ],
+    correct: 1,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          What Web Worker Can't do?
+        </Title>
+      </>
+    ),
+    answers: [
+      'Access DOM directly, without sending a message to the UI thread',
+      'Manage processor-intensive calculations without blocking the UI thread',
+      'Polling URLs in the background',
+      'Compressing/Decompressing files',
+    ],
+    correct: 0,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          What Is A/B Testing?
+        </Title>
+      </>
+    ),
+    answers: [
+      'HotJar Heatmap functionality',
+      'Method of testing positive and negative cases of what pure function can potentially produce',
+      'Testing scenarios of two different user paths on the same page in order to check User Experience',
+      'Method of comparing two versions of a page against each other to determine which one performs better',
+    ],
+    correct: 3,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          What Is Temporal Dead Zone?
+        </Title>
+      </>
+    ),
+    answers: [
+      'Function scope for var',
+      `Period between entering scope and being declared for let and const where they can't be accessed`,
+      'Hoisting of let and const variables',
+      'Special scope for variables to isolate them into one scope and disable access from outer scopes',
+    ],
+    correct: 1,
+  },
+  {
+    question: (
+      <>
+        <Text size="preNormal">Given the following code:</Text>
+        <SyntaxHighlighter>
+          {`const foo = undefined ?? 'default placeholder';\n`}
+        </SyntaxHighlighter>
+        <Title level={2} align="center" transform="none">
+          What Is The ?? Operator Called?
+        </Title>
+      </>
+    ),
+    answers: [
+      'Nullish Coalescing Operator',
+      `Optional Chaining Operator`,
+      'Bitwise Operator',
+      'Logical Operator',
+    ],
+    correct: 0,
+  },
+  {
+    question: (
+      <>
+        <Title level={2} align="center" transform="none">
+          What Are Micro Frontends?
+        </Title>
+      </>
+    ),
+    answers: [
+      'Paradigm for building modern mobile applications',
+      `PWA approach for supporting offline mode`,
+      'Individual, semi-independent applications for better scalability of a main application and working in isolation by a dedicated team',
+      'Components libraries deployed on Bit to be used by different teams',
+    ],
+    correct: 2,
+  },
+];
+
+<Quiz
+  data={data}
+  title={props.pageContext.frontmatter.title}
+  desc={props.pageContext.frontmatter.desc}
+/>

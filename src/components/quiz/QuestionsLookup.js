@@ -82,19 +82,24 @@ export const QuestionsLookup = ({ data, selections }) => (
                       showIcon
                     />
                   </Col>
-                  <Col span={24}>
-                    <Text
-                      type="secondary"
-                      display="block"
-                      align="center"
-                      size="small"
-                    >
-                      Learning resource
-                    </Text>
-                    <Box display="flex" justify="center">
-                      <Link size="small">Introduction to Chrome DevTools</Link>
-                    </Box>
-                  </Col>
+                  {/* TODO Add learning resources if there will be any */}
+                  {false && (
+                    <Col span={24}>
+                      <Text
+                        type="secondary"
+                        display="block"
+                        align="center"
+                        size="small"
+                      >
+                        Learning resource
+                      </Text>
+                      <Box display="flex" justify="center">
+                        <Link size="small">
+                          Introduction to Chrome DevTools
+                        </Link>
+                      </Box>
+                    </Col>
+                  )}
                 </Row>
               )}
             </Col>

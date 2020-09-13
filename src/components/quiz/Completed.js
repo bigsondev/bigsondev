@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { Row, Col, Result, Statistic, Button, Space } from 'antd';
 import {
   SmileOutlined,
@@ -26,6 +27,7 @@ export const Completed = ({
   data,
   selections,
   timeElapsed,
+  next,
   onTryAgainClick,
 }) => (
   <QuizCard>
@@ -63,9 +65,13 @@ export const Completed = ({
       >
         <Box display="flex" justify="center">
           <Space>
-            <Button type="primary" size="large" onClick={() => {}}>
-              Next Quiz
-            </Button>
+            {next && (
+              <Link to={`/library/${next}`}>
+                <Button type="primary" size="large">
+                  Next Quiz
+                </Button>
+              </Link>
+            )}
             <Button size="large" onClick={() => onTryAgainClick()}>
               Try Again
             </Button>

@@ -2,18 +2,10 @@
 title: Regular Quiz
 desc: The following Quiz is best for Regular Frontend Developers with average experience of around 2 years.
 path: /library/regular-quiz
-date: 2020-09-07
+date: 2020-09-12
 ---
 
-import {
-  Title,
-  Text,
-  Quiz,
-  SyntaxHighlighter,
-  Box,
-  Paragraph,
-} from '~components';
-import { shuffle } from '~utils';
+import { Title, Text, Quiz, SyntaxHighlighter } from '~components';
 
 export const data = [
   {
@@ -136,10 +128,10 @@ export const data = [
       <>
         <Text size="preNormal">Given the following code:</Text>
         <SyntaxHighlighter>
-          {`function mysteriousFunction(callback, wait) {\n  let timeout;\n  return (...args) => {\n    const context = this;\n    clearTimeout(timeout);\n    timeout = setTimeout(() => callback.apply(context, args), wait);\n  };\n}`}
+          {`const mysteriousFunction = (callback, wait) => {\n  let timeout;\n  return (...args) => {\n    const context = this;\n    clearTimeout(timeout);\n    timeout = setTimeout(() => callback.apply(context, args), wait);\n  };\n}`}
         </SyntaxHighlighter>
         <Title level={2} align="center" transform="none">
-          What Is The mysteriousFunction Doing?
+          What Is mysteriousFunction Doing?
         </Title>
       </>
     ),
@@ -175,8 +167,9 @@ export const data = [
   },
 ];
 
-<Box mb={5}>
-  <Title>{props.pageContext.frontmatter.title}</Title>
-</Box>
-
-<Quiz data={shuffle(data)} desc={props.pageContext.frontmatter.desc} />
+<Quiz
+  data={data}
+  title={props.pageContext.frontmatter.title}
+  desc={props.pageContext.frontmatter.desc}
+  next="senior-quiz"
+/>

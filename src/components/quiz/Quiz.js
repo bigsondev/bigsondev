@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import { shuffle } from '~utils';
 
 import {
   didYouKnowQuestionButtonNotification,
@@ -14,11 +16,16 @@ const STAGES = {
   COMPLETED: 'COMPLETED',
 };
 
-export const Quiz = ({ data, desc }) => {
+export const Quiz = ({ data: initialData, title, desc, next }) => {
+  const [data, setData] = useState(undefined);
   const [selections, setSelection] = useState([]);
   const [stage, setStage] = useState(STAGES.NOT_STARTED);
   const [timer, setTimer] = useState(undefined);
   const [timeElapsed, setTimeElapsed] = useState(0);
+
+  useEffect(() => {
+    setData(shuffle(initialData));
+  }, [initialData]);
 
   const startTimer = () => {
     const timer = setInterval(() => {
@@ -56,9 +63,14 @@ export const Quiz = ({ data, desc }) => {
     setStage(STAGES.IN_PROGRESS);
   };
 
+  if (!data) {
+    return null;
+  }
+
   const stagesMap = {
     NOT_STARTED: (
       <NotStarted
+        title={title}
         desc={desc}
         questionsCount={data.length}
         onStartClick={handleStartClick}
@@ -76,6 +88,7 @@ export const Quiz = ({ data, desc }) => {
         data={data}
         selections={selections}
         timeElapsed={timeElapsed}
+        next={next}
         onTryAgainClick={handleTryAgainClick}
       />
     ),
