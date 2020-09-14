@@ -1,27 +1,35 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Row, Col, Space, Divider } from 'antd';
+import { Row, Col, Space, Divider, Tooltip } from 'antd';
+import styled from 'styled-components';
 import {
   CalendarOutlined,
   FieldTimeOutlined,
-  Html5Outlined,
-  GithubOutlined,
+  ArrowRightOutlined,
+  CodeSandboxOutlined,
+  UnorderedListOutlined,
 } from '@ant-design/icons';
-import styled from 'styled-components';
 
 import { Layout, SEO, Title, Paragraph, Text, Box } from '~components';
 import { truncate } from '~utils';
 
 export const query = graphql`
   query BlogQuery {
-    allMdx(filter: { fileAbsolutePath: { regex: "/mdx/blog/" } }) {
+    allMdx(
+      filter: { fileAbsolutePath: { regex: "/mdx/blog/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           frontmatter {
             title
             desc
             path
-            date(formatString: "MMM D")
+            hasKnowledgePill
+            hasTodoList
+            readTime
+            tags
+            date(formatString: "MMM D, YYYY")
           }
         }
       }
@@ -29,10 +37,12 @@ export const query = graphql`
   }
 `;
 
-const ResourceCard = styled.div({
+export const ArticleCard = styled.div({
   transition: 'box-shadow 0.3s',
   cursor: 'pointer',
+  position: 'relative',
   padding: 24,
+  minHeight: 400,
 
   '&:hover': {
     boxShadow: `0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
@@ -40,34 +50,84 @@ const ResourceCard = styled.div({
   },
 });
 
-const Resource = ({ title, desc, path, date }) => (
+const ArrowIcon = styled(ArrowRightOutlined)({
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  fontSize: 24,
+  padding: 24,
+  display: 'block',
+});
+
+const KnowledgePillIcon = styled(CodeSandboxOutlined)({
+  fontSize: 24,
+  color: '#000',
+});
+
+const TodoListIcon = styled(UnorderedListOutlined)({
+  fontSize: 24,
+  color: '#000',
+});
+
+const Article = ({
+  title,
+  desc,
+  path,
+  hasKnowledgePill,
+  hasTodoList,
+  readTime,
+  tags,
+  date,
+}) => (
   <Link to={path}>
-    <ResourceCard>
+    <ArticleCard>
+      <Box mb={1}>
+        <Row justify="space-between">
+          <Col>
+            <Space size="middle">
+              <Text size="micro" type="secondary">
+                <Space>
+                  <CalendarOutlined />
+                  <span>{date}</span>
+                </Space>
+              </Text>
+              <Text size="micro" type="secondary">
+                <Space>
+                  <FieldTimeOutlined />
+                  <span>{readTime} min read</span>
+                </Space>
+              </Text>
+            </Space>
+          </Col>
+          <Col>
+            <Space size="large">
+              {hasKnowledgePill && (
+                <Tooltip title="Article contains Knowledge Pill to help you find information quicker">
+                  <KnowledgePillIcon />
+                </Tooltip>
+              )}
+              {hasTodoList && (
+                <Tooltip title="Article contains Todo List to let you practice the theory">
+                  <TodoListIcon />
+                </Tooltip>
+              )}
+            </Space>
+          </Col>
+        </Row>
+      </Box>
       <Title level={4} transform="capitalize">
         {title}
       </Title>
       <Paragraph type="secondary">{truncate(desc)}</Paragraph>
-      <Paragraph>
-        <Space>
-          <Html5Outlined />
-          <GithubOutlined />
-        </Space>
-      </Paragraph>
       <Space size="middle">
-        <Text size="small">
-          <Space>
-            <CalendarOutlined />
-            <span>{date}</span>
-          </Space>
-        </Text>
-        <Text size="small">
-          <Space>
-            <FieldTimeOutlined />
-            <span>5 min read</span>
-          </Space>
-        </Text>
+        {tags.split(',').map((tag) => (
+          <Text size="micro" transform="capitalize" key={tag} code>
+            {tag}
+          </Text>
+        ))}
       </Space>
-    </ResourceCard>
+      <ArrowIcon />
+    </ArticleCard>
   </Link>
 );
 
@@ -86,7 +146,7 @@ const Blog = ({
       <Row gutter={[16, 16]}>
         {edges.map(({ node: { frontmatter } }) => (
           <Col span={8} key={frontmatter.title}>
-            <Resource {...frontmatter} />
+            <Article {...frontmatter} />
           </Col>
         ))}
       </Row>

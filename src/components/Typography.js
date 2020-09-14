@@ -16,12 +16,14 @@ export const Text = styled(Typography.Text)(
     display = 'inline',
     fontStyle = 'normal',
     size = 'normal',
+    transform = 'none',
   }) => ({
     textAlign: align,
     display,
     fontSize: TEXT_SIZE[size],
     fontWeight,
     fontStyle,
+    textTransform: transform,
   })
 );
 
