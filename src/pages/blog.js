@@ -9,6 +9,7 @@ import {
   CodeSandboxOutlined,
   UnorderedListOutlined,
 } from '@ant-design/icons';
+import moment from 'moment';
 
 import { Layout, SEO, Title, Paragraph, Text, Box } from '~components';
 import { truncate } from '~utils';
@@ -88,13 +89,13 @@ const Article = ({
               <Text size="micro" type="secondary">
                 <Space>
                   <CalendarOutlined />
-                  <span>{date}</span>
+                  <span>{moment(date).format('MMM D')}</span>
                 </Space>
               </Text>
               <Text size="micro" type="secondary">
                 <Space>
                   <FieldTimeOutlined />
-                  <span>{readTime} min read</span>
+                  <span>{readTime} min</span>
                 </Space>
               </Text>
             </Space>
@@ -139,14 +140,19 @@ const Blog = ({
   return (
     <Layout>
       <SEO title="Blog" />
-      <Box ml={3}>
-        <Title>Latest Articles</Title>
-        <Divider />
-      </Box>
-      <Row gutter={[16, 16]}>
+      <Title>Latest Articles</Title>
+      <Divider />
+      <Row gutter={[40, 16]}>
         {edges.map(({ node: { frontmatter } }) => (
-          <Col span={8} key={frontmatter.title}>
-            <Article {...frontmatter} />
+          <Col
+            xs={{ span: 24 }}
+            sm={{ span: 12 }}
+            xl={{ span: 8 }}
+            key={frontmatter.title}
+          >
+            <Box ml={-3}>
+              <Article {...frontmatter} />
+            </Box>
           </Col>
         ))}
       </Row>

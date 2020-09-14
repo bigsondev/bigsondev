@@ -1,34 +1,64 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Row, Col } from 'antd';
+import styled from 'styled-components';
+import { MenuOutlined } from '@ant-design/icons';
+import { useMedia } from 'react-media';
 
-import { Box } from '..';
-import { Container, Logo } from './styled';
+import { Logo } from './styled';
 
-export const Header = () => (
-  <Layout.Header>
-    <Container>
-      <Box display="flex" align="center" justify="space-between">
-        <Link to="/">
-          <Box pl={3}>
-            <Logo>BIGSONDEV</Logo>
-          </Box>
-        </Link>
-        <Menu theme="dark" mode="horizontal">
-          <Menu.Item key="1">
-            <Link to="/library">Library</Link>
-          </Menu.Item>
-          <Menu.Item key="2">
-            <Link to="/blog">Blog</Link>
-          </Menu.Item>
-          <Menu.Item key="3">
-            <Link to="/coaching">Coaching</Link>
-          </Menu.Item>
-          <Menu.Item key="4">
-            <Link to="/contact">Contact</Link>
-          </Menu.Item>
-        </Menu>
-      </Box>
-    </Container>
-  </Layout.Header>
+const Holder = styled(Layout.Header)({
+  padding: 0,
+});
+
+const HamburgerIcon = styled(MenuOutlined)({
+  fontSize: 20,
+  color: '#FAFAFA',
+});
+
+const LeftMenu = () => (
+  <Link to="/">
+    <Logo>BIGSONDEV</Logo>
+  </Link>
 );
+
+const RightMenu = ({ isMobile }) =>
+  isMobile ? (
+    <HamburgerIcon />
+  ) : (
+    <Menu theme="dark" mode="horizontal">
+      <Menu.Item key="1">
+        <Link to="/library">Library</Link>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <Link to="/blog">Blog</Link>
+      </Menu.Item>
+      <Menu.Item key="3">
+        <Link to="/coaching">Coaching</Link>
+      </Menu.Item>
+      <Menu.Item key="4">
+        <Link to="/contact">Contact</Link>
+      </Menu.Item>
+    </Menu>
+  );
+
+export const Header = () => {
+  const isMobile = useMedia({ query: '(max-width: 576px)' });
+
+  return (
+    <Holder>
+      <Row align="center">
+        <Col xs={{ span: 22 }} xl={{ span: 16 }}>
+          <Row justify="space-between" align="center">
+            <Col>
+              <LeftMenu />
+            </Col>
+            <Col>
+              <RightMenu isMobile={isMobile} />
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </Holder>
+  );
+};

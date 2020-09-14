@@ -6,17 +6,12 @@
  */
 
 import React from 'react';
-import { Layout } from 'antd';
-import styled from 'styled-components';
+import { Layout, Row, Col } from 'antd';
 
 import { BackButton } from '..';
 import { Header } from './Header';
-import { Content } from './styled';
-
-const ContentContainer = styled.div({
-  maxWidth: 800,
-  margin: '0 auto',
-});
+import { ContentHolder } from './styled';
+import { GlobalStyles } from './GlobalStyles';
 
 const LibraryLayout = ({
   children,
@@ -26,13 +21,16 @@ const LibraryLayout = ({
 }) => {
   return (
     <Layout>
+      <GlobalStyles />
       <Header />
-      <Content>
-        <ContentContainer>
-          <BackButton to="/library" />
-          <main>{children}</main>
-        </ContentContainer>
-      </Content>
+      <ContentHolder>
+        <Row justify="center">
+          <Col xs={{ span: 22 }} md={{ span: 12 }} xxl={{ span: 10 }}>
+            <BackButton to="/library" />
+            <main>{children}</main>
+          </Col>
+        </Row>
+      </ContentHolder>
       {/* TODO implement Footer */}
     </Layout>
   );

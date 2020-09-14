@@ -12,22 +12,9 @@ tags: performance
 date: 2020-09-08
 ---
 
-import {
-  Text,
-  Title,
-  Paragraph,
-  QuickSummary,
-  Link,
-  PostTitle,
-  Todo,
-} from '~components';
+import { Text, Title, Paragraph, Link, Todo, Post } from '~components';
 
-<Todo />
-<PostTitle
-  title={props.pageContext.frontmatter.title}
-  date={props.pageContext.frontmatter.date}
-/>
-<QuickSummary desc={props.pageContext.frontmatter.desc} />
+<Post title={props.pageContext.frontmatter.title} desc={props.pageContext.frontmatter.desc} date={props.pageContext.frontmatter.date} readTime={props.pageContext.frontmatter.readTime} showSubtitle>
 <Title level={3}>Introduction</Title>
 <Paragraph>
   I have been working as a{' '}
@@ -61,7 +48,6 @@ import {
   What is the company size? What are the recent activities/events the company
   organized?
 </Paragraph>
-
 <Paragraph>
   The above questions are a bare minimum you should research. If it's possible,
   attend meetups (more likely Webinars due to COVID situation in the world).
@@ -243,3 +229,5 @@ import {
   special. It will earn you bonus points and maybe even{' '}
   <Text strong>prevail about the result</Text>.
 </Paragraph>
+</Post>
+

@@ -79,14 +79,19 @@ const Library = ({
   return (
     <Layout>
       <SEO title="Library" />
-      <Box ml={3}>
-        <Title>Adrian, skyrocket your career</Title>
-        <Divider />
-      </Box>
+      <Title>Adrian, skyrocket your career</Title>
+      <Divider />
       <Row gutter={[16, 16]}>
         {edges.map(({ node: { frontmatter } }) => (
-          <Col span={8} key={frontmatter.title}>
-            <Resource {...frontmatter} />
+          <Col
+            xs={{ span: 24 }}
+            sm={{ span: 12 }}
+            xl={{ span: 8 }}
+            key={frontmatter.title}
+          >
+            <Box ml={-3}>
+              <Resource {...frontmatter} />
+            </Box>
           </Col>
         ))}
       </Row>

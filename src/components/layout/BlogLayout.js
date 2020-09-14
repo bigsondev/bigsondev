@@ -6,17 +6,13 @@
  */
 
 import React from 'react';
-import { Layout } from 'antd';
-import styled from 'styled-components';
+import { Layout, Row, Col } from 'antd';
+import { useMedia } from 'react-media';
 
-import { BackButton } from '..';
+import { BackButton, Paragraph } from '..';
 import { Header } from './Header';
-import { Content } from './styled';
-
-const ContentContainer = styled.div({
-  maxWidth: 800,
-  margin: '0 auto',
-});
+import { ContentHolder } from './styled';
+import { GlobalStyles } from './GlobalStyles';
 
 const BlogLayout = ({
   children,
@@ -24,15 +20,32 @@ const BlogLayout = ({
     frontmatter: { title },
   },
 }) => {
+  const hideOnSmallScreen = useMedia({ query: '(max-width: 1200px)' });
+
   return (
     <Layout>
+      <GlobalStyles />
       <Header />
-      <Content>
-        <ContentContainer>
-          <BackButton to="/blog" />
-          <main>{children}</main>
-        </ContentContainer>
-      </Content>
+      <ContentHolder>
+        <Row justify="center">
+          {!hideOnSmallScreen && (
+            <Col xl={{ span: 6 }}>
+              <Paragraph align="center" transform="capitalize">
+                ABOUT ADRIAN
+              </Paragraph>
+            </Col>
+          )}
+          <Col xs={{ span: 22 }} md={{ span: 16 }} xl={{ span: 12 }}>
+            <BackButton to="/blog" />
+            <main>{children}</main>
+          </Col>
+          <Col xs={{ span: 24 }} md={{ span: 6 }}>
+            <Paragraph align="center" transform="capitalize">
+              Newsletter
+            </Paragraph>
+          </Col>
+        </Row>
+      </ContentHolder>
       {/* TODO implement Footer */}
     </Layout>
   );

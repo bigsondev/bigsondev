@@ -7,20 +7,21 @@
 
 import React from 'react';
 import { Layout as AntdLayout } from 'antd';
+import styled from 'styled-components';
 
+import { GlobalStyles } from './GlobalStyles';
 import { Header } from './Header';
-import { Container, Content } from './styled';
+import { Content } from './Content';
+
+const Holder = styled(AntdLayout)({});
 
 export const Layout = ({ children }) => {
   return (
-    <AntdLayout>
+    <Holder>
+      <GlobalStyles />
       <Header />
-      <Content>
-        <Container>
-          <main>{children}</main>
-        </Container>
-      </Content>
+      <Content>{children}</Content>
       {/* TODO implement Footer */}
-    </AntdLayout>
+    </Holder>
   );
 };

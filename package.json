@@ -28,6 +28,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-highlight": "^0.12.0",
+    "react-media": "^2.0.0-rc.1",
     "react-reveal": "^1.2.2",
     "styled-components": "^5.2.0"
   },

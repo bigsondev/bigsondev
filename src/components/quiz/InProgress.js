@@ -78,7 +78,7 @@ export const InProgress = ({ data, selections, onAnswerClick }) => {
                           <AnswerLetter style={{}}>
                             {letters[index]}
                           </AnswerLetter>
-                          <Text>{answer}</Text>
+                          <Text size="preNormal">{answer}</Text>
                         </Answer>
                       </Col>
                     ))}
