@@ -46,7 +46,7 @@ background-color: blue;
 }`}
         </SyntaxHighlighter>
         <Title level={2} align="center" transform="none">
-          What Will Be The Color Of div?
+          What Will Be Background Color Of div?
         </Title>
       </>
     ),
@@ -135,8 +135,8 @@ background-color: blue;
     ),
     answers: [
       'JavaScript function for doing iterations on objects',
-      `Code which provides the fallback solution for some specific functionality that you expect to work in latest browsers, 
-      but might not be available in older browsers e.g. in IE11 and you need to support it`,
+      `Code which provides the fallback solution for some specific functionality that is expected to work in latest browsers, 
+      but might not be available in older browsers e.g. in IE11 and needs to be supported there`,
       `A well-known Design Pattern that allows to create a mechanism of Publish-subscribe, mostly used for messaging systems`,
       `A hexagonal shape available in D3.js`,
     ],
@@ -188,7 +188,7 @@ background-color: blue;
     question: (
       <>
         <Text size="preNormal">Given the following code:</Text>
-        <SyntaxHighlighter>{`const friends = [];\n\n1. friends.push('Jimmy');\n\n2. friends.splice(friends.length, 0, 'Jimmy')\n\n3. friends[friends.length] = 'Jimmy'\n\n4. const updatedFriends = [...friends, 'Jimmy']`}</SyntaxHighlighter>
+        <SyntaxHighlighter>{`const friends = ['Joe'];\n\n1. friends.push('Jimmy');\n\n2. friends.splice(friends.length, 0, 'Jimmy')\n\n3. friends[friends.length] = 'Jimmy'\n\n4. const updatedFriends = [...friends, 'Jimmy']`}</SyntaxHighlighter>
         <Title level={2} align="center" transform="none">
           Which Method Won't Mutate The Original Array?
         </Title>
