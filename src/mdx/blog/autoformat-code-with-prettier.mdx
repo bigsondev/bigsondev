@@ -1,15 +1,131 @@
 ---
 title: Autoformat Code with Prettier
-desc: Prettier saves a lot of time and automates code formatting. Learn how to integrate with it, recommended setup is included.
+desc: Prettier saves a lot of time and automates code formatting. Learn how to integrate with it, ESLint, Husky integration and recommended setup is included.
 path: /blog/autoformat-code-with-prettier
-hasKnowledgePill: true
+hasCheatSheet: true
 hasTodoList: false
 readTime: 5
 tags: tools, code quality, automation
 date: 2020-09-06
 ---
 
-import { Title, Paragraph, Text, Post, PostList, Link } from '~components';
+import { Space } from 'antd';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  PostCard,
+  SyntaxHighlighter,
+  Link,
+} from '~components';
+
+export const postListData = [
+  <>
+    <Link
+      href="https://phoenixnap.com/kb/install-node-js-npm-on-windows"
+      size="small"
+    >
+      Node.js and NPM
+    </Link>{' '}
+    installed
+  </>,
+  <>
+    Terminal and Editor of your choice, I use{' '}
+    <Link href="https://iterm2.com/" size="small">
+      iTerm
+    </Link>{' '}
+    and{' '}
+    <Link href="https://code.visualstudio.com/" size="small">
+      VSCode
+    </Link>
+  </>,
+  <>
+    Create project e.g. through{' '}
+    <Link href="https://create-react-app.dev/" size="small">
+      CRA
+    </Link>
+  </>,
+  <>
+    Best if you have at least{' '}
+    <Text size="small" strong>
+      Junior Frontend Developer knowledge
+    </Text>
+    , but everything will be explained step by step
+  </>,
+];
+
+export const cheatSheetData = [
+  <>
+    <Text size="preNormal">
+      Run following command in the terminal to install Prettier locally. Make
+      sure you are at the root of your project, where you have a{' '}
+      <Text size="preNormal" code>
+        package.json
+      </Text>{' '}
+      file.
+    </Text>
+    <SyntaxHighlighter showCopy>
+      npm install --save-dev --save-exact prettier
+    </SyntaxHighlighter>
+  </>,
+  <>
+    <Text size="preNormal">
+      Create a{' '}
+      <Text size="preNormal" code>
+        .prettierrc
+      </Text>{' '}
+      file next to the{' '}
+      <Text size="preNormal" code>
+        package.json
+      </Text>{' '}
+      file and add the following setup. (mostly defaults with an exception for
+      quotes, you can experiment with what fits you the best by checking{' '}
+      <Link size="preNormal" href="https://prettier.io/docs/en/options.html">
+        the documentation
+      </Link>
+      ):
+    </Text>
+    <SyntaxHighlighter language="json" showCopy>
+      {`{
+  "singleQuote": true,
+}`}
+    </SyntaxHighlighter>
+  </>,
+  <>
+    <Text size="preNormal">
+      Create a{' '}
+      <Text size="preNormal" code>
+        .prettierignore
+      </Text>{' '}
+      file with the following setup: (extend it if you have any specific files
+      or directories in your project to ignore)
+    </Text>
+    <SyntaxHighlighter language="markdown" showCopy>
+      {`# Ignore files/directories that should not be formatted
+\n.cache
+package.json
+package-lock.json
+\n# Ignore artifacts
+build
+public
+coverage
+\n# Ignore big 3rd party directories
+\*\*/node_modules`}
+    </SyntaxHighlighter>
+  </>,
+  <>
+    <Text size="preNormal">
+      Last but not least,{' '}
+      <Link href="https://prettier.io/docs/en/editors.html" size="preNormal">
+        Integrate Prettier with your Editor
+      </Link>
+      . For me, automatic formatting whenever I save a file works the best.
+    </Text>
+  </>,
+  'For more in-depth explanation and integration with ESLint and Husky, please read the full article',
+];
 
 <Post
   title={props.pageContext.frontmatter.title}
@@ -19,28 +135,9 @@ import { Title, Paragraph, Text, Post, PostList, Link } from '~components';
   showSubtitle
 >
   <Title level={3}>Prerequites</Title>
-  <Paragraph lastParagraph>
-    <PostList data={[<><Link href="https://phoenixnap.com/kb/install-node-js-npm-on-windows" size="small">Node.js and NPM</Link> installed</>, <>Terminal and IDE of your choice, I use <Link href="https://iterm2.com/" size="small">iTerm</Link> and <Link href="https://code.visualstudio.com/" size="small">VSCode</Link></>, <>Created project e.g. through <Link href="https://create-react-app.dev/" size="small">CRA</Link></>, <>Best if you have at least <Text size="small" strong>Junior Frontend Developer knowledge</Text>, but everything will be explained step by step</>]} />
-    </Paragraph>
-
-
-<Title level={3}>Knowledge Pill</Title>
-Reference: https://prettier.io/docs/en/install.html and https://prettier.io/docs/en/editors.html
-<ul>
-  <li>yarn add --dev --exact prettier</li>
-</ul>
-
-You need Node installed and NPM: read more here. Best if you have a Terminal
-and know some basics commands: read more here. Also great if you have some IDE
-(e.g. VSCode) installed. You need a package.json (init a project)
-
-  <Title>Installation</Title>
-  Placeholder
-  <Title level={2}>Automation</Title>
-  Automate with IDE / husky Placeholder
-  <Title level={2}>Recommended setup</Title>
-  <Title level={2}>Most used commands / tips and tricks</Title>
-  <Title level={2}>Prettify extension</Title>
-  <Title level={2}>References</Title>
+  <PostList data={postListData} />
+  <Paragraph lastParagraph />
+  <PostCard title="Cheat Sheet" data={cheatSheetData} />
+  <Paragraph lastParagraph />
+  <Title level={3}>Installation</Title>
 </Post>
-

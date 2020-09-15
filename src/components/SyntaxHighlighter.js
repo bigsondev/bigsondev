@@ -3,6 +3,8 @@ import { Button, Popover } from 'antd';
 import Highlight from 'react-highlight';
 import styled from 'styled-components';
 
+import { Text } from '.';
+
 const copyToClipboard = (textToCopy) => {
   const textArea = document.createElement('textarea');
   textArea.setAttribute('style', 'position: absolute; left: -2000px');
@@ -20,13 +22,14 @@ const Holder = styled.div({
     backgroundColor: '#ecd9c26e',
     padding: 24,
     borderRadius: 8,
+    marginTop: 8,
   },
 });
 
 const CopyButton = styled(Button)({
   position: 'absolute',
   borderRadius: 8,
-  top: 8,
+  top: 16,
   right: 8,
 });
 
@@ -53,7 +56,11 @@ export const SyntaxHighlighter = ({
       </Highlight>
       {showCopy && (
         <Popover trigger="click" content="Copied!" visible={visible}>
-          <CopyButton onClick={handleCopyClick}>Copy</CopyButton>
+          <CopyButton onClick={handleCopyClick}>
+            <Text type="secondary" size="micro" strong>
+              Copy
+            </Text>
+          </CopyButton>
         </Popover>
       )}
     </Holder>

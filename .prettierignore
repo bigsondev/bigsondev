@@ -1,4 +1,13 @@
+# Ignore files/directories that should not be formatted
+
 .cache
 package.json
 package-lock.json
+
+# Ignore artifacts
+build
 public
+coverage
+
+# Ignore big 3rd party directories
+**/node_modules

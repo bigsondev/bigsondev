@@ -26,7 +26,7 @@ export const query = graphql`
             title
             desc
             path
-            hasKnowledgePill
+            hasCheatSheet
             hasTodoList
             readTime
             tags
@@ -60,7 +60,7 @@ const ArrowIcon = styled(ArrowRightOutlined)({
   display: 'block',
 });
 
-const KnowledgePillIcon = styled(CodeSandboxOutlined)({
+const CheatSheetIcon = styled(CodeSandboxOutlined)({
   fontSize: 24,
   color: '#000',
 });
@@ -74,7 +74,7 @@ const Article = ({
   title,
   desc,
   path,
-  hasKnowledgePill,
+  hasCheatSheet,
   hasTodoList,
   readTime,
   tags,
@@ -102,9 +102,9 @@ const Article = ({
           </Col>
           <Col>
             <Space size="large">
-              {hasKnowledgePill && (
-                <Tooltip title="Article contains Knowledge Pill to help you find information quicker">
-                  <KnowledgePillIcon />
+              {hasCheatSheet && (
+                <Tooltip title="Article contains Cheat Sheet to help you find information quicker. For a complete knowledge, please read the full article">
+                  <CheatSheetIcon />
                 </Tooltip>
               )}
               {hasTodoList && (

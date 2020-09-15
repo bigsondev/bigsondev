@@ -5,7 +5,7 @@ desc:
   These days, you need to not only show your coding and problem-solving skills, but also have a personality that plays well with the team.
   I prepared 10 universal tips which will help you beat the next interview.
 path: /blog/technical-interview-tips
-hasKnowledgePill: false
+hasCheatSheet: false
 hasTodoList: true
 readTime: 6
 tags: performance
@@ -21,6 +21,15 @@ import {
   Post,
   PostCard,
 } from '~components';
+
+export const homeworkData = [
+  <Text delete>Read the article.</Text>,
+  `Take a look at your CV (study all the technologies and skills you've added to it)`,
+  'Gather information about the company you are applying for',
+  'Practice code challenges (min. 3)',
+  'Write down the interview cheatsheet (questions you will ask, answers to questions you expect from the recruiter) one day before',
+  'Do a Mock Interview',
+];
 
 <Post
   title={props.pageContext.frontmatter.title}
@@ -241,15 +250,5 @@ import {
     practice before the next interview. <Text strong>Thank you</Text> for
     reading and good luck. ❤️
   </Paragraph>
-  <PostCard
-    title="Homework"
-    data={[
-      <Text delete>Read the article</Text>,
-      `Take a look at your CV (study all the technologies and skills you've added to it)`,
-      'Gather information about the company you are applying for',
-      'Practice code challenges (min. 3)',
-      'Write down the interview cheatsheet (questions you will ask, answers to questions you expect from the recruiter) one day before',
-      'Do a Mock Interview',
-    ]}
-  />
+  <PostCard title="Homework" data={homeworkData} />
 </Post>

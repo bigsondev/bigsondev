@@ -44,7 +44,7 @@ export const PostCard = ({ title, data }) => (
           <Item>
             <Number>{index + 1}</Number>
             {typeof item === 'string' ? (
-              <Text size="preNormal">{item}</Text>
+              <Text size="preNormal">{item}.</Text>
             ) : (
               item
             )}
