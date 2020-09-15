@@ -33,13 +33,13 @@ const Number = styled(Avatar)({
   },
 });
 
-export const PostCardList = ({ title, items }) => (
+export const PostCard = ({ title, data }) => (
   <Holder>
     <Title level={3} align="center">
       {title}
     </Title>
     <Row justify="center" gutter={[0, 16]}>
-      {items.map((item, index) => (
+      {data.map((item, index) => (
         <Col span={20} key={index}>
           <Item>
             <Number>{index + 1}</Number>

@@ -1,6 +1,6 @@
 ---
 title: Autoformat Code with Prettier
-desc: Prettier saves a lot of time and automates code formatting. Learn how to integrate with it, recommended setup included.
+desc: Prettier saves a lot of time and automates code formatting. Learn how to integrate with it, recommended setup is included.
 path: /blog/autoformat-code-with-prettier
 hasKnowledgePill: true
 hasTodoList: false
@@ -9,7 +9,7 @@ tags: tools, code quality, automation
 date: 2020-09-06
 ---
 
-import { Title, Text, Post } from '~components';
+import { Title, Paragraph, Text, Post, PostList, Link } from '~components';
 
 <Post
   title={props.pageContext.frontmatter.title}
@@ -18,17 +18,22 @@ import { Title, Text, Post } from '~components';
   readTime={props.pageContext.frontmatter.readTime}
   showSubtitle
 >
-  <Title level={3}>Knowledge Pill</Title>
-  Reference: https://prettier.io/docs/en/install.html and https://prettier.io/docs/en/editors.html
-  <ul>
-    <li>yarn add --dev --exact prettier</li>
-  </ul>
-  <Title>Overview</Title>
-  <Text>{props.pageContext.frontmatter.desc}</Text>
-  <Title>Prerequites</Title>
-  You need Node installed and NPM: read more here. Best if you have a Terminal
-  and know some basics commands: read more here. Also great if you have some IDE
-  (e.g. VSCode) installed. You need a package.json (init a project)
+  <Title level={3}>Prerequites</Title>
+  <Paragraph lastParagraph>
+    <PostList data={[<><Link href="https://phoenixnap.com/kb/install-node-js-npm-on-windows" size="small">Node.js and NPM</Link> installed</>, <>Terminal and IDE of your choice, I use <Link href="https://iterm2.com/" size="small">iTerm</Link> and <Link href="https://code.visualstudio.com/" size="small">VSCode</Link></>, <>Created project e.g. through <Link href="https://create-react-app.dev/" size="small">CRA</Link></>, <>Best if you have at least <Text size="small" strong>Junior Frontend Developer knowledge</Text>, but everything will be explained step by step</>]} />
+    </Paragraph>
+
+
+<Title level={3}>Knowledge Pill</Title>
+Reference: https://prettier.io/docs/en/install.html and https://prettier.io/docs/en/editors.html
+<ul>
+  <li>yarn add --dev --exact prettier</li>
+</ul>
+
+You need Node installed and NPM: read more here. Best if you have a Terminal
+and know some basics commands: read more here. Also great if you have some IDE
+(e.g. VSCode) installed. You need a package.json (init a project)
+
   <Title>Installation</Title>
   Placeholder
   <Title level={2}>Automation</Title>
@@ -38,3 +43,4 @@ import { Title, Text, Post } from '~components';
   <Title level={2}>Prettify extension</Title>
   <Title level={2}>References</Title>
 </Post>
+

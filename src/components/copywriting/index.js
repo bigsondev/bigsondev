@@ -1,2 +1,3 @@
 export { Post } from './Post';
-export { PostCardList } from './PostCardList';
+export { PostCard } from './PostCard';
+export { PostList } from './PostList';

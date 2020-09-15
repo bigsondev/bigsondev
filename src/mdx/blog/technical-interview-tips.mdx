@@ -19,7 +19,7 @@ import {
   Link,
   Todo,
   Post,
-  PostCardList,
+  PostCard,
 } from '~components';
 
 <Post
@@ -241,9 +241,9 @@ import {
     practice before the next interview. <Text strong>Thank you</Text> for
     reading and good luck. ❤️
   </Paragraph>
-  <PostCardList
+  <PostCard
     title="Homework"
-    items={[
+    data={[
       <Text delete>Read the article</Text>,
       `Take a look at your CV (study all the technologies and skills you've added to it)`,
       'Gather information about the company you are applying for',
