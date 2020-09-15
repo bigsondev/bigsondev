@@ -11,7 +11,6 @@ import { Title, Text } from '..';
 
 export const PostTitle = ({ title, showSubtitle = false, date, readTime }) => (
   <>
-    <Title>{title}</Title>
     {showSubtitle && (
       <Row align="middle" justify="space-between">
         <Col>
@@ -33,5 +32,6 @@ export const PostTitle = ({ title, showSubtitle = false, date, readTime }) => (
         </Col>
       </Row>
     )}
+    <Title>{title}</Title>
   </>
 );

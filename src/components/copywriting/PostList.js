@@ -11,7 +11,7 @@ const ListItemMeta = styled(List.Item.Meta)({
 
 export const PostList = ({ data }) => (
   <List
-    itemLayout="horizontal"
+    itemLayout="vertical"
     split={false}
     dataSource={data}
     renderItem={(item) => (
@@ -19,9 +19,13 @@ export const PostList = ({ data }) => (
         <ListItemMeta
           avatar={<MinusOutlined />}
           description={
-            <Text size="small" type="secondary">
-              {item}.
-            </Text>
+            typeof item === 'string' ? (
+              <Text size="small" type="secondary">
+                {item}.
+              </Text>
+            ) : (
+              item
+            )
           }
         />
       </List.Item>
