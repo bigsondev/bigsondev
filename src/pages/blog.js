@@ -108,7 +108,7 @@ const Article = ({
                 </Tooltip>
               )}
               {hasTodoList && (
-                <Tooltip title="Article contains Todo List to let you practice the theory">
+                <Tooltip title="Article contains Homework to let you practice the theory">
                   <TodoListIcon />
                 </Tooltip>
               )}

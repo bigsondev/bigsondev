@@ -12,222 +12,244 @@ tags: performance
 date: 2020-09-08
 ---
 
-import { Text, Title, Paragraph, Link, Todo, Post } from '~components';
+import {
+  Text,
+  Title,
+  Paragraph,
+  Link,
+  Todo,
+  Post,
+  PostCardList,
+} from '~components';
 
-<Post title={props.pageContext.frontmatter.title} desc={props.pageContext.frontmatter.desc} date={props.pageContext.frontmatter.date} readTime={props.pageContext.frontmatter.readTime} showSubtitle>
-<Title level={3}>Introduction</Title>
-<Paragraph>
-  I have been working as a{' '}
-  <Text strong>Technical Recruiter for almost 2 years</Text>. All these days
-  where we can just code and be happy are gone. Soft-skills are sharpening as a
-  crucial ability in the IT world, especially Frontend. Co-op with Designers,
-  Product Owners, clients, brainstorming with the team are just a few terms
-  which require excellent communication skills.
-</Paragraph>
-<Paragraph>
-  Don't get me wrong, problem-solving skills, great mind and desire to learn are
-  still up to date, but to be the best, it's time to combine these two different
-  worlds.
-</Paragraph>
-<Paragraph lastParagraph>
-  Let's jump into the topic and learn how you can improve your next interview.
-</Paragraph>
-<Title level={3}>The Actual Tips</Title>
-<Paragraph>
-  Soft skills, logical thinking, coding kata practice, being honest, being
-  enthusiastic, stress relief, meditation, sleep and more are crucial keywords
-  for <Text strong>succeeding at the interview</Text>.
-</Paragraph>
-<Paragraph lastParagraph>
-  I hope the following list will be something new and you can learn from it.
-  Sharing is caring, goodluck with your next interview!
-</Paragraph>
-<Title level={4}>1. Research the company</Title>
-<Paragraph>
-  What are the main projects? For which clients do they make these projects?
-  What is the company size? What are the recent activities/events the company
-  organized?
-</Paragraph>
-<Paragraph>
-  The above questions are a bare minimum you should research. If it's possible,
-  attend meetups (more likely Webinars due to COVID situation in the world).
-  It's important to show your interests by knowing about the company activities,
-  history, technologies they use and so on.
-</Paragraph>
-<Paragraph>
-  A very common question during the interview is -{' '}
-  <Text strong>What do you know about us?</Text>
-</Paragraph>
-<Paragraph lastParagraph>
-  Don't lose the chance. <Text strong>Research</Text>.
-</Paragraph>
-<Title level={4}>2. Study your CV one more time</Title>
-<Paragraph>
-  Look for typos, check contact details, links to your projects on{' '}
-  <Link href="https://github.com/">GitHub</Link> or other platforms. Be honest
-  with your knowledge, when you don't have too much experience, you can have
-  that irresistible feeling to pack your CV with technologies which you might
-  not use at all.
-</Paragraph>
-<Paragraph lastParagraph>
-  Instead, do some side projects, learn which technologies are most used and
-  enhance your CV with these. You will have strong arguments with the side
-  projects and feel more confident. Don't forget about mentioning soft skills
-  which could consist of <Text strong>being a team player</Text>,{' '}
-  <Text strong>open minded</Text>, <Text strong>likes brainstorming</Text> etc.
-</Paragraph>
-<Title level={4}>3. Practice communication skills and language</Title>
-<Paragraph>
-  Chances are that English is not your native language, and neither is it for
-  me. Practice is a different thing. Watch courses in English, e.g. on{' '}
-  <Link href="https://egghead.io/">Egghead</Link>,{' '}
-  <Link href="https://frontendmasters.com/">FrontendMasters</Link>,{' '}
-  <Link href="https://www.udemy.com/">Udemy</Link> or{' '}
-  <Link href="https://www.pluralsight.com/">Pluralsight</Link>.
-</Paragraph>
-<Paragraph>
-  You can kill two birds with one stone, become fluent with additional language
-  and get some extra knowledge Frontend related.
-</Paragraph>
-<Paragraph>
-  Remember about looking at the recruiter, don't get frustrated, don't speak too
-  fast, control your speech. If you are confident enough,{' '}
-  <Text strong>lead the conversation towards your strengths</Text>, make a
-  situational joke.
-</Paragraph>
-<Paragraph lastParagraph>Believe in yourself.</Paragraph>
-<Title level={4}>4. Say hi and be nice</Title>
-<Paragraph>
-  It's connected with the previous tip, but just a simple <Text strong>Hi</Text>{' '}
-  at the start can change first impression diametrically.
-</Paragraph>
-<Paragraph lastParagraph>
-  There is a{' '}
-  <Link href="https://cxl.com/blog/cialdinis-principles-persuasion/">
-    Rule of Sympathy
-  </Link>{' '}
-  which can help a lot during the interview. Recruiters love enthusiastic
-  candidates, believe or not, but you can make friends within the conversation
-  for a new job.
-</Paragraph>
-<Title level={4}>5. Do some katas</Title>
-<Paragraph>
-  Algorithms, a little bit of JS practice, will train your brain, after all it's
-  a muscle which needs some help from you to grow. Try out katas on{' '}
-  <Link href="codewars.com">Codewars</Link>. If you like games,{' '}
-  <Link href="https://www.codingame.com/">CodinGame</Link> is great. For
-  analytical minds, <Link href="https://projecteuler.net/">Project Euler</Link>{' '}
-  will be perfect.
-</Paragraph>
-<Paragraph>
-  <Text strong>
-    Practicing before the interview will make you more confident and prepared
-    for potential code challenges.
-  </Text>
-</Paragraph>
-<Paragraph lastParagraph>
-  If interview is fully online, prepare microphone, camera, internet connection
-  and all the tools you need. Usually it's on{' '}
-  <Link href="https://codepen.io/">CodePen</Link>,{' '}
-  <Link href="https://jsfiddle.net/">JSFiddle</Link> or similar code editors
-  with live sharing enabled. Otherwise ask a HR person who contacted you if you
-  need to bring a Laptop.
-</Paragraph>
-<Title level={4}>6. Prepare questions and answers before</Title>
-<Paragraph>
-  Ask about benefits, work culture, project you will work on if you pass the
-  interview. Ask about activities, events, the team.{' '}
-  <Text strong>Write questions down one day before the interview</Text>, it will
-  help you to remember. It's quite common to forget an important things when you
-  are under the pressure or stressed. Overcome it.
-</Paragraph>
-<Paragraph>
-  It's also worth preparing for questions. What was the biggest challenge in
-  your previous work? Where do you see yourself in 5 years? Describe your
-  previous projects and work.
-</Paragraph>
-<Paragraph lastParagraph>
-  The above are just the examples, you can research for more, but take{' '}
-  <Link href="https://www.indeed.com/career-advice/interviewing/common-technical-interview-questions-and-answers">
-    this list
-  </Link>{' '}
-  as an example of questions you will need to answer.
-</Paragraph>
-<Title level={4}>7. Do Mock Interview</Title>
-<Paragraph>
-  Call it a warmup or pre-interview.{' '}
-  <Link href="https://www.pramp.com/#/">Services</Link> like this exists, there
-  are plenty of them on the Web, but they are usually very general and have
-  hardcoded plan which won't prepare you well enough.
-</Paragraph>
-<Paragraph>
-  It appears I offer such services.{' '}
-  <Text strong>
-    I will first treat you individually and get to know what is your skill level
-    and experience
-  </Text>
-  . After that we will have a <Link href="#">Mock Interview</Link> targeted at concrete
-  position such as <Text strong>Junior</Text>, <Text strong>Regular</Text> or <Text
-    strong
-  >
-    Senior
-  </Text>. When I was being interviewed, I received feedback rarely and it didn't
-  motivate me.
-</Paragraph>
-<Paragraph>
-  After the Mock Interview with me, I will send you a{' '}
-  <Text strong>robust feedback</Text> which will help with the future learning
-  and simplify understanding where you are in your IT career. Sometimes we delay
-  the raise, because of being unsure about our skills.
-</Paragraph>
-<Paragraph lastParagraph>Let's change that.</Paragraph>
-<Title level={4}>8. Relieve Stress</Title>
-<Paragraph>
-  Maybe you already know how to deal with the stress, but often we get angry,
-  scream or hide in a cozy corner to avoid everyone.
-</Paragraph>
-<Paragraph>
-  <Text strong>Meditation</Text>, or I would rather say exercises to control
-  your breath can help you relax. I recommend{' '}
-  <Link href="https://www.calm.com/">Calm</Link> as it's very well suited for
-  beginners. Try it out, maybe it's the way for you to relieve stress.
-</Paragraph>
-<Paragraph>
-  If that doesn't help, you can{' '}
-  <Text strong>try to understand your feelings</Text> by learning what makes you
-  angry or being shy. This exercise will help you to work out better control
-  over yourself.
-</Paragraph>
-<Paragraph lastParagraph>
-  Stress during the interview can mess up with your memory, block from answering
-  the questions. It's good to overcome it.
-</Paragraph>
-<Title level={4}>9. Sleep, Eat and Drink well</Title>
-<Paragraph>
-  <Text strong>Our brains are mostly made out of water</Text>, drink often, not
-  all at once, but around 8 glasses per day. Use{' '}
-  <Link href="https://www.lifehack.org/668261/best-habit-tracking-apps">
-    Habit tracking apps
-  </Link>{' '}
-  to help you remember.
-</Paragraph>
-<Paragraph lastParagraph>
-  After executing the previous step, you should already know how to deal with
-  the stress, <Text strong>get some good sleep</Text> and wake up refreshed and
-  full of energy for the interview.
-</Paragraph>
-<Title level={4}>10. Surprise Everyone</Title>
-<Paragraph>
-  In the past I was mentoring my friend and helping him with writing the CV. He
-  added a note about understanding{' '}
-  <Text strong>Graceful Degradation and Progressive Enhancment</Text> in it.
-  Thanks to that, he was invited to the interview and succeded at it.
-</Paragraph>
-<Paragraph lastParagraph>
-  Knowing weird or geek things as a Developer is a great way to shine during the
-  recruitment process. Mention some hobby, technology or anything what makes you
-  special. It will earn you bonus points and maybe even{' '}
-  <Text strong>prevail about the result</Text>.
-</Paragraph>
+<Post
+  title={props.pageContext.frontmatter.title}
+  desc={props.pageContext.frontmatter.desc}
+  date={props.pageContext.frontmatter.date}
+  readTime={props.pageContext.frontmatter.readTime}
+  showSubtitle
+>
+  <Title level={3}>Introduction</Title>
+  <Paragraph>
+    I have been working as a{' '}
+    <Text strong>Technical Recruiter for almost 2 years</Text>. All these days
+    where we can just code and be happy are gone. Soft-skills are sharpening as
+    a crucial ability in the IT world, especially Frontend. Co-op with
+    Designers, Product Owners, clients, brainstorming with the team are just a
+    few terms which require excellent communication skills.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    Don't get me wrong, problem-solving skills, great mind and desire to learn
+    are still up to date, but to be the best, it's time to combine these two
+    different worlds.
+  </Paragraph>
+  <Title level={3}>The Actual Tips</Title>
+  <Paragraph lastParagraph>
+    Let's jump into the topic and learn how you can improve your next interview.
+  </Paragraph>
+  <Title level={4}>1. Research the company</Title>
+  <Paragraph>
+    What are the main projects? For which clients do they make these projects?
+    What is the company size? What are the recent activities/events the company
+    organized?
+  </Paragraph>
+  <Paragraph>
+    The above questions are a bare minimum you should research. If it's
+    possible, attend meetups (more likely Webinars due to COVID situation in the
+    world). It's important to show your interests by knowing about the company
+    activities, history, technologies they use and so on.
+  </Paragraph>
+  <Paragraph>
+    A very common question during the interview is -{' '}
+    <Text strong>What do you know about us?</Text>
+  </Paragraph>
+  <Paragraph lastParagraph>
+    Don't lose the chance. <Text strong>Research</Text>.
+  </Paragraph>
+  <Title level={4}>2. Study your CV one more time</Title>
+  <Paragraph>
+    Look for typos, check contact details, links to your projects on{' '}
+    <Link href="https://github.com/">GitHub</Link> or other platforms. Be honest
+    with your knowledge, when you don't have too much experience, you can have
+    that irresistible feeling to pack your CV with technologies which you might
+    not use at all.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    Instead, do some side projects, learn which technologies are most used and
+    enhance your CV with these. You will have strong arguments with the side
+    projects and feel more confident. Don't forget about mentioning soft skills
+    which could consist of <Text strong>being a team player</Text>,{' '}
+    <Text strong>open minded</Text>, <Text strong>likes brainstorming</Text>{' '}
+    etc.
+  </Paragraph>
+  <Title level={4}>3. Practice communication skills and language</Title>
+  <Paragraph>
+    Chances are that English is not your native language, and neither is it for
+    me. Practice is a different thing. Watch courses in English, e.g. on{' '}
+    <Link href="https://egghead.io/">Egghead</Link>,{' '}
+    <Link href="https://frontendmasters.com/">FrontendMasters</Link>,{' '}
+    <Link href="https://www.udemy.com/">Udemy</Link> or{' '}
+    <Link href="https://www.pluralsight.com/">Pluralsight</Link>.
+  </Paragraph>
+  <Paragraph>
+    You can kill two birds with one stone, become fluent with additional
+    language and get some extra knowledge Frontend related.
+  </Paragraph>
+  <Paragraph>
+    Remember about looking at the recruiter, don't get frustrated, don't speak
+    too fast, control your speech. If you are confident enough,{' '}
+    <Text strong>lead the conversation towards your strengths</Text>, make a
+    situational joke.
+  </Paragraph>
+  <Paragraph lastParagraph>Believe in yourself.</Paragraph>
+  <Title level={4}>4. Say hi and be nice</Title>
+  <Paragraph>
+    It's connected with the previous tip, but just a simple{' '}
+    <Text strong>Hi</Text> at the start can change first impression
+    diametrically.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    There is a{' '}
+    <Link href="https://cxl.com/blog/cialdinis-principles-persuasion/">
+      Rule of Sympathy
+    </Link>{' '}
+    which can help a lot during the interview. Recruiters love enthusiastic
+    candidates, believe or not, but you can make friends within the conversation
+    for a new job.
+  </Paragraph>
+  <Title level={4}>5. Do some katas</Title>
+  <Paragraph>
+    Algorithms, a little bit of JS practice, will train your brain, after all
+    it's a muscle which needs some help from you to grow. Try out katas on{' '}
+    <Link href="codewars.com">Codewars</Link>. If you like games,{' '}
+    <Link href="https://www.codingame.com/">CodinGame</Link> is great. For
+    analytical minds,{' '}
+    <Link href="https://projecteuler.net/">Project Euler</Link> will be perfect.
+  </Paragraph>
+  <Paragraph>
+    <Text strong>
+      Practicing before the interview will make you more confident and prepared
+      for potential code challenges.
+    </Text>
+  </Paragraph>
+  <Paragraph lastParagraph>
+    If interview is fully online, prepare microphone, camera, internet
+    connection and all the tools you need. Usually it's on{' '}
+    <Link href="https://codepen.io/">CodePen</Link>,{' '}
+    <Link href="https://jsfiddle.net/">JSFiddle</Link> or similar code editors
+    with live sharing enabled. Otherwise ask a HR person who contacted you if
+    you need to bring a Laptop.
+  </Paragraph>
+  <Title level={4}>6. Prepare questions and answers before</Title>
+  <Paragraph>
+    Ask about benefits, work culture, project you will work on if you pass the
+    interview. Ask about activities, events, the team.{' '}
+    <Text strong>Write questions down one day before the interview</Text>, it
+    will help you to remember. It's quite common to forget an important things
+    when you are under the pressure or stressed. Overcome it.
+  </Paragraph>
+  <Paragraph>
+    It's also worth preparing for questions. What was the biggest challenge in
+    your previous work? Where do you see yourself in 5 years? Describe your
+    previous projects and work.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    The above are just the examples, you can research for more, but take{' '}
+    <Link href="https://www.indeed.com/career-advice/interviewing/common-technical-interview-questions-and-answers">
+      this list
+    </Link>{' '}
+    as an example of questions you will need to answer.
+  </Paragraph>
+  <Title level={4}>7. Do Mock Interview</Title>
+  <Paragraph>
+    Call it a warmup or pre-interview.{' '}
+    <Link href="https://www.pramp.com/#/">Services</Link> like this exists,
+    there are plenty of them on the Web, but they are usually very general and
+    have hardcoded plan which won't prepare you well enough.
+  </Paragraph>
+  <Paragraph>
+    It appears I offer such services.{' '}
+    <Text strong>
+      I will first treat you individually and get to know what is your skill
+      level and experience
+    </Text>
+    . After that we will have a <Link href="#">Mock Interview</Link> targeted at
+    concrete position such as <Text strong>Junior</Text>, <Text strong>
+      Regular
+    </Text> or <Text strong>Senior</Text>. When I was being interviewed, I received
+    feedback rarely and it didn't motivate me.
+  </Paragraph>
+  <Paragraph>
+    After the Mock Interview with me, I will send you a{' '}
+    <Text strong>robust feedback</Text> which will help with the future learning
+    and simplify understanding where you are in your IT career. Sometimes we
+    delay the raise, because of being unsure about our skills.
+  </Paragraph>
+  <Paragraph lastParagraph>Let's change that.</Paragraph>
+  <Title level={4}>8. Relieve Stress</Title>
+  <Paragraph>
+    Maybe you already know how to deal with the stress, but often we get angry,
+    scream or hide in a cozy corner to avoid everyone.
+  </Paragraph>
+  <Paragraph>
+    <Text strong>Meditation</Text>, or I would rather say exercises to control
+    your breath can help you relax. I recommend{' '}
+    <Link href="https://www.calm.com/">Calm</Link> as it's very well suited for
+    beginners. Try it out, maybe it's the way for you to relieve stress.
+  </Paragraph>
+  <Paragraph>
+    If that doesn't help, you can{' '}
+    <Text strong>try to understand your feelings</Text> by learning what makes
+    you angry or being shy. This exercise will help you to work out better
+    control over yourself.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    Stress during the interview can mess up with your memory, block from
+    answering the questions. It's good to overcome it.
+  </Paragraph>
+  <Title level={4}>9. Sleep, Eat and Drink well</Title>
+  <Paragraph>
+    <Text strong>Our brains are mostly made out of water</Text>, drink often,
+    not all at once, but around 8 glasses per day. Use{' '}
+    <Link href="https://www.lifehack.org/668261/best-habit-tracking-apps">
+      Habit tracking apps
+    </Link>{' '}
+    to help you remember.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    After executing the previous step, you should already know how to deal with
+    the stress, <Text strong>get some good sleep</Text> and wake up refreshed
+    and full of energy for the interview.
+  </Paragraph>
+  <Title level={4}>10. Surprise Everyone</Title>
+  <Paragraph>
+    In the past I was mentoring my friend and helping him with writing the CV.
+    He added a note about understanding{' '}
+    <Text strong>Graceful Degradation and Progressive Enhancment</Text> in it.
+    Thanks to that, he was invited to the interview and succeded at it.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    Knowing weird or geek things as a Developer is a great way to shine during
+    the recruitment process. Mention some hobby, technology or anything what
+    makes you special. It will earn you bonus points and maybe even{' '}
+    <Text strong>prevail about the result</Text>.
+  </Paragraph>
+  <Title level={3}>Closing Notes</Title>
+  <Paragraph lastParagraph>
+    I hope the above list was something new and you could learn a thing or two
+    from it. Sharing is caring and that's why I prepared homework to let you
+    practice before the next interview. <Text strong>Thank you</Text> for
+    reading and good luck. ❤️
+  </Paragraph>
+  <PostCardList
+    title="Homework"
+    items={[
+      <Text delete>Read the article</Text>,
+      `Take a look at your CV (study all the technologies and skills you've added to it)`,
+      'Gather information about the company you are applying for',
+      'Practice code challenges (min. 3)',
+      'Write down the interview cheatsheet (questions you will ask, answers to questions you expect from the recruiter) one day before',
+      'Do a Mock Interview',
+    ]}
+  />
 </Post>
-

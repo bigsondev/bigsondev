@@ -14,7 +14,7 @@ export const Content = ({ children }) => {
   return (
     <ContentHolder>
       <Row>
-        <Col xs={{ offset: 1, span: 23 }} xl={{ offset: 4, span: 16 }}>
+        <Col xs={{ offset: 1, span: 22 }} xl={{ offset: 4, span: 16 }}>
           <main>{children}</main>
         </Col>
       </Row>

@@ -10,4 +10,4 @@ export * from './notifications';
 export * from './messages';
 export { Todo } from './widgets';
 export { SyntaxHighlighter } from './SyntaxHighlighter';
-export { Post } from './copywriting';
+export { Post, PostCardList } from './copywriting';

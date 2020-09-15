@@ -71,13 +71,11 @@ export const InProgress = ({ data, selections, onAnswerClick }) => {
                 )}
                 <Divider />
                 <Box mb={2}>
-                  <Row gutter={[0, 8]} justify="center">
+                  <Row gutter={[0, 16]} justify="center">
                     {answers.map((answer, index) => (
                       <Col span={20} key={answer}>
                         <Answer onClick={() => onAnswerClick(index)}>
-                          <AnswerLetter style={{}}>
-                            {letters[index]}
-                          </AnswerLetter>
+                          <AnswerLetter>{letters[index]}</AnswerLetter>
                           <Text size="preNormal">{answer}</Text>
                         </Answer>
                       </Col>
