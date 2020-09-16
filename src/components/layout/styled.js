@@ -7,6 +7,6 @@ export const Logo = styled.div({
 
 export const ContentHolder = styled(Layout.Content)({
   background: '#FFF',
-  paddingTop: 60,
+  paddingTop: 32,
   paddingBottom: 80,
 });

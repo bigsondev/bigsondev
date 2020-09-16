@@ -1,0 +1,33 @@
+---
+title: Hello World
+path: /library/beginner-hello-world
+desc: The "Hello World!" paragraph should be displayed on the screen using HTML.
+date: 2020-09-15
+---
+
+import { Post, Text, CodeEditor } from '~components';
+
+import { getIframeContent } from '~utils';
+
+export const tasksListData = [
+  <Text size="small" color="#FAFAFA">
+    HTML p element exists.
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    Hello World! text is inside of the p element.
+  </Text>,
+];
+export const tabs = ['html', 'css', 'js'];
+export const tests = [
+  () => getIframeContent().find('p').length > 0,
+  () => getIframeContent().find('p').text().trim() === 'Hello World!',
+];
+
+<Post>
+  <CodeEditor
+    tasks={tasksListData}
+    tabs={tabs}
+    tests={tests}
+    result={props.pageContext.frontmatter.desc}
+  />
+</Post>

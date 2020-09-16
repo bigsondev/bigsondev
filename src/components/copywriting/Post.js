@@ -15,18 +15,22 @@ export const Post = ({
   children,
 }) => (
   <>
-    <Box mb={5}>
-      <PostTitle
-        title={title}
-        date={date}
-        readTime={readTime}
-        showSubtitle={showSubtitle}
-      />
-    </Box>
-    <Box mb={6}>
-      <QuickSummary desc={desc} />
-      <Divider />
-    </Box>
+    {title && (
+      <Box mb={5}>
+        <PostTitle
+          title={title}
+          date={date}
+          readTime={readTime}
+          showSubtitle={showSubtitle}
+        />
+      </Box>
+    )}
+    {desc && (
+      <Box mb={6}>
+        <QuickSummary desc={desc} />
+        <Divider />
+      </Box>
+    )}
     {children}
   </>
 );

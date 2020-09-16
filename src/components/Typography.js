@@ -17,6 +17,7 @@ export const Text = styled(Typography.Text)(
     fontStyle = 'normal',
     size = 'normal',
     transform = 'none',
+    color,
   }) => ({
     textAlign: align,
     display,
@@ -24,6 +25,7 @@ export const Text = styled(Typography.Text)(
     fontWeight,
     fontStyle,
     textTransform: transform,
+    color,
   })
 );
 
