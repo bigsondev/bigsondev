@@ -8,7 +8,7 @@ import Fade from 'react-reveal/Fade';
 import {
   Title,
   Paragraph,
-  testsFailedMessage,
+  testsFailMessage,
   jsInTheConsoleNotification,
 } from '..';
 import { Tasks } from './Tasks';
@@ -127,7 +127,7 @@ export const CodeEditor = ({
     if (allTestsPassed) {
       setChallengeCompleted(true);
     } else {
-      testsFailedMessage();
+      testsFailMessage();
       setChallengeCompleted(false);
     }
 

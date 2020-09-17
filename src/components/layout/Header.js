@@ -37,7 +37,7 @@ const RightMenu = ({ isMobile }) =>
         <Link to="/coaching">Coaching</Link>
       </Menu.Item>
       <Menu.Item key="4">
-        <Link to="/contact">Contact</Link>
+        <Link to="/reach-out">Reach Out</Link>
       </Menu.Item>
     </Menu>
   );

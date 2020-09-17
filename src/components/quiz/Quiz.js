@@ -4,7 +4,7 @@ import { shuffle } from '~utils';
 
 import {
   didYouKnowQuestionButtonNotification,
-  quizResultsSavedMessage,
+  quizResultsSaveMessage,
 } from '..';
 import { NotStarted } from './NotStarted';
 import { InProgress } from './InProgress';
@@ -47,7 +47,7 @@ export const Quiz = ({ data: initialData, title, desc, next }) => {
       setTimer(undefined);
       setSelection([...selections, index]);
 
-      quizResultsSavedMessage();
+      quizResultsSaveMessage();
       didYouKnowQuestionButtonNotification();
 
       return setStage(STAGES.COMPLETED);
