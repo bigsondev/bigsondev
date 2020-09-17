@@ -9,7 +9,7 @@ import React from 'react';
 import { Layout, Row, Col } from 'antd';
 import { useMedia } from 'react-media';
 
-import { BackButton, Paragraph } from '..';
+import { Paragraph, Box } from '..';
 import { Header } from './Header';
 import { ContentHolder } from './styled';
 import { GlobalStyles } from './GlobalStyles';
@@ -27,24 +27,25 @@ const BlogLayout = ({
       <GlobalStyles />
       <Header />
       <ContentHolder>
-        <Row justify="center">
-          {!hideOnSmallScreen && (
-            <Col xl={{ span: 6 }}>
+        <Box mt={5}>
+          <Row justify="center">
+            {!hideOnSmallScreen && (
+              <Col xl={{ span: 6 }}>
+                <Paragraph align="center" transform="capitalize">
+                  ABOUT ADRIAN
+                </Paragraph>
+              </Col>
+            )}
+            <Col xs={{ span: 22 }} md={{ span: 16 }} xl={{ span: 12 }}>
+              <main>{children}</main>
+            </Col>
+            <Col xs={{ span: 24 }} md={{ span: 6 }}>
               <Paragraph align="center" transform="capitalize">
-                ABOUT ADRIAN
+                Newsletter
               </Paragraph>
             </Col>
-          )}
-          <Col xs={{ span: 22 }} md={{ span: 16 }} xl={{ span: 12 }}>
-            <BackButton to="/blog" />
-            <main>{children}</main>
-          </Col>
-          <Col xs={{ span: 24 }} md={{ span: 6 }}>
-            <Paragraph align="center" transform="capitalize">
-              Newsletter
-            </Paragraph>
-          </Col>
-        </Row>
+          </Row>
+        </Box>
       </ContentHolder>
       {/* TODO implement Footer */}
     </Layout>

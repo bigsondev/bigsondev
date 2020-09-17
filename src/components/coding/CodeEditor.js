@@ -1,19 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { Tabs, Space, Button } from 'antd';
+import { Tabs, Space, Button, Result } from 'antd';
 import {
   PlayCircleOutlined,
-  BorderOutlined,
   CheckSquareOutlined,
   CloseSquareOutlined,
 } from '@ant-design/icons';
-import { Controlled as CodeMirror } from 'react-codemirror2';
+import { Controlled } from 'react-codemirror2';
 import styled from 'styled-components';
+import Fade from 'react-reveal/Fade';
 
-import { Title, Paragraph } from '..';
+import {
+  Title,
+  Paragraph,
+  testsFailedMessage,
+  jsInTheConsoleNotification,
+} from '..';
 
 const Holder = styled.div({
   backgroundColor: '#434B52',
   borderRadius: 12,
+});
+
+const CodeMirror = styled(Controlled)({
+  '& .CodeMirror': {
+    height: 225,
+  },
 });
 
 const TasksHolder = styled.div({
@@ -22,7 +33,7 @@ const TasksHolder = styled.div({
 
 const RunTestsButton = styled(Button)({
   position: 'absolute',
-  top: '-17%',
+  top: '-22%',
   right: 16,
   borderRadius: 8,
 });
@@ -59,6 +70,7 @@ const TabPaneHolder = styled(Tabs.TabPane)({
 
 const IframeResult = styled.iframe({
   width: '100%',
+  minHeight: 225,
   background: '#FAFAFA',
   resize: 'vertical',
 });
@@ -97,6 +109,13 @@ export const CodeEditor = ({
   );
   const [runTimes, setRunTimes] = useState(0);
   const [executedTests, setExecutedTests] = useState([]);
+  const [challengeCompleted, setChallengeCompleted] = useState(false);
+
+  useEffect(() => {
+    if (tabs.includes('js')) {
+      jsInTheConsoleNotification();
+    }
+  }, []);
 
   useEffect(() => {
     if (timeoutId) {
@@ -124,8 +143,22 @@ export const CodeEditor = ({
       return testResult;
     });
 
+    const allTestsPassed = executedTests.every((test) => test);
+
+    if (allTestsPassed) {
+      setChallengeCompleted(true);
+    } else {
+      testsFailedMessage();
+      setChallengeCompleted(false);
+    }
+
     setRunTimes(runTimes + 1);
     setExecutedTests(executedTests);
+  };
+
+  const handleRestartChallengeClick = () => {
+    setChallengeCompleted(false);
+    setExecutedTests([]);
   };
 
   const TABS_MAPPER = {
@@ -155,6 +188,26 @@ export const CodeEditor = ({
         Expected Result
       </Title>
       <Paragraph size="preNormal">{result}</Paragraph>
+      {challengeCompleted && (
+        <Fade duration={1500}>
+          <Result
+            status="success"
+            title="Challenge Completed!"
+            subTitle="If you are happy with the solution, save it on GitHub repository to save the progress."
+            extra={[
+              <Button type="primary" key="save-on-github">
+                Save on GitHub
+              </Button>,
+              <Button
+                key="restart-challenge"
+                onClick={handleRestartChallengeClick}
+              >
+                Restart Challenge
+              </Button>,
+            ]}
+          />
+        </Fade>
+      )}
       <Holder>
         <TasksHolder>
           <Space direction="vertical" size="middle">
@@ -163,17 +216,19 @@ export const CodeEditor = ({
                 <Space size="middle">
                   {executedTests.length > 0 ? (
                     executedTests[index] ? (
-                      <CheckSquareOutlined
-                        style={{ color: '#52c41a', fontSize: 16 }}
-                      />
+                      <Fade>
+                        <CheckSquareOutlined
+                          style={{ color: '#52c41a', fontSize: 16 }}
+                        />
+                      </Fade>
                     ) : (
-                      <CloseSquareOutlined
-                        style={{ color: '#f5222d', fontSize: 16 }}
-                      />
+                      <Fade>
+                        <CloseSquareOutlined
+                          style={{ color: '#f5222d', fontSize: 16 }}
+                        />
+                      </Fade>
                     )
-                  ) : (
-                    <BorderOutlined style={{ color: '#FFF', fontSize: 16 }} />
-                  )}
+                  ) : null}
                   {test}
                 </Space>
               </TestItemHolder>
@@ -203,7 +258,7 @@ export const CodeEditor = ({
                     showHint: true,
                     extraKeys: { 'Ctrl-Space': 'autocomplete' },
                   }}
-                  onBeforeChange={(editor, data, value) => setter(value)}
+                  onBeforeChange={(editor, data, code) => setter(code)}
                 />
                 <RunTestsButton
                   type="primary"

@@ -8,7 +8,6 @@
 import React from 'react';
 import { Layout, Row, Col } from 'antd';
 
-import { BackButton } from '..';
 import { Header } from './Header';
 import { ContentHolder } from './styled';
 import { GlobalStyles } from './GlobalStyles';
@@ -26,7 +25,6 @@ const LibraryLayout = ({
       <ContentHolder>
         <Row justify="center">
           <Col xs={{ span: 22 }} md={{ span: 12 }} xxl={{ span: 10 }}>
-            <BackButton to="/library" />
             <main>{children}</main>
           </Col>
         </Row>
