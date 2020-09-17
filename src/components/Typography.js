@@ -141,9 +141,13 @@ const LevelFiveHolder = styled.div(
   })
 );
 
-export const Paragraph = ({ lastParagraph = false, ...props }) => (
+export const Paragraph = ({
+  lastParagraph = false,
+  marginBottom,
+  ...props
+}) => (
   <ParagraphHolder
-    style={{ marginBottom: lastParagraph ? '5rem' : '1.75rem' }}
+    style={{ marginBottom: lastParagraph ? '5rem' : marginBottom || '1.75rem' }}
     {...props}
   />
 );

@@ -1,0 +1,48 @@
+---
+title: External Link
+path: /library/beginner-external-link
+desc: Create your first link that will navigate to an external page.
+date: 2020-09-15
+type: beginner
+tags: html
+order: 4
+difficulty: 1
+---
+
+import { Post, Text, CodeEditor, Link } from '~components';
+import { getIframeContent } from '~utils';
+
+export const tasksListData = [
+  <Text size="small" color="#FAFAFA">
+    a element exists.{' '}
+    <Link size="small" href="https://www.w3schools.com/html/html_links.asp">
+      View Learning Resource.
+    </Link>
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    Open Me text is inside of the a element.
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    Link opens in a new tab.
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    Link has non-empty href attribute (start from https:// to open external
+    page, e.g. https://facebook.com).
+  </Text>,
+];
+export const tabs = ['html'];
+export const tests = [
+  () => getIframeContent().find('a').length > 0,
+  () => getIframeContent().find('a').text().toLowerCase().trim() === 'open me',
+  () => getIframeContent().find('a').attr('target') == '_blank',
+  () => getIframeContent().find('a').attr('href'),
+];
+
+<Post>
+  <CodeEditor
+    tasks={tasksListData}
+    tabs={tabs}
+    tests={tests}
+    result={`The "Open Me" link is displayed on the screen, opens in a new tab and navigates to an external page.`}
+  />
+</Post>
