@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Tabs, Space, Button, Result } from 'antd';
-import {
-  PlayCircleOutlined,
-  CheckSquareOutlined,
-  CloseSquareOutlined,
-} from '@ant-design/icons';
+import { Tabs, Button, Result } from 'antd';
+import { PlayCircleOutlined } from '@ant-design/icons';
 import { Controlled } from 'react-codemirror2';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
@@ -15,6 +11,8 @@ import {
   testsFailedMessage,
   jsInTheConsoleNotification,
 } from '..';
+import { Tasks } from './Tasks';
+import { createIframeContent } from './utils';
 
 const Holder = styled.div({
   backgroundColor: '#434B52',
@@ -27,18 +25,12 @@ const CodeMirror = styled(Controlled)({
   },
 });
 
-const TasksHolder = styled.div({
-  padding: 16,
-});
-
 const RunTestsButton = styled(Button)({
   position: 'absolute',
   top: '-22%',
   right: 16,
   borderRadius: 8,
 });
-
-const TestItemHolder = styled.div({});
 
 const TabsHolder = styled(Tabs)({
   '& .ant-tabs-nav': {
@@ -75,25 +67,6 @@ const IframeResult = styled.iframe({
   resize: 'vertical',
 });
 
-const createIframeContent = ({ html, css, js }) => `
-<html>
-  <head>
-    <style>
-      body {
-        font-size: 1.125rem;
-      }
-      ${css}
-    </style>
-  </head>
-  <body>
-      ${html}
-  <script>
-    ${js}
-  </script>
-  </body>
-</html>
-`;
-
 export const CodeEditor = ({
   result = 'Provide a result text',
   tabs = ['html', 'css', 'js'],
@@ -111,8 +84,18 @@ export const CodeEditor = ({
   const [executedTests, setExecutedTests] = useState([]);
   const [challengeCompleted, setChallengeCompleted] = useState(false);
 
+  const updateIframe = () => {
+    const newIframeContent = createIframeContent({ html, css, js });
+
+    if (iframeContent.localeCompare(newIframeContent) !== 0) {
+      setIframeContent(newIframeContent);
+    }
+  };
+
   useEffect(() => {
-    if (tabs.includes('js')) {
+    const showJsNotification = tabs.includes('js');
+
+    if (showJsNotification) {
       jsInTheConsoleNotification();
     }
   }, []);
@@ -124,11 +107,7 @@ export const CodeEditor = ({
     }
 
     const newTimeoutId = setTimeout(() => {
-      const newIframeContent = createIframeContent({ html, css, js });
-
-      if (iframeContent.localeCompare(newIframeContent) !== 0) {
-        setIframeContent(newIframeContent);
-      }
+      updateIframe();
     }, 300);
 
     setTimeoutId(newTimeoutId);
@@ -209,32 +188,7 @@ export const CodeEditor = ({
         </Fade>
       )}
       <Holder>
-        <TasksHolder>
-          <Space direction="vertical" size="middle">
-            {tasks.map((test, index) => (
-              <TestItemHolder key={index}>
-                <Space size="middle">
-                  {executedTests.length > 0 ? (
-                    executedTests[index] ? (
-                      <Fade>
-                        <CheckSquareOutlined
-                          style={{ color: '#52c41a', fontSize: 16 }}
-                        />
-                      </Fade>
-                    ) : (
-                      <Fade>
-                        <CloseSquareOutlined
-                          style={{ color: '#f5222d', fontSize: 16 }}
-                        />
-                      </Fade>
-                    )
-                  ) : null}
-                  {test}
-                </Space>
-              </TestItemHolder>
-            ))}
-          </Space>
-        </TasksHolder>
+        <Tasks tasks={tasks} executedTests={executedTests} />
         <TabsHolder type="card">
           {tabs.map((name, index) => {
             const { mode, tab, value, setter } = TABS_MAPPER[name];
