@@ -26,10 +26,15 @@ const FORM_NAME = 'reach-out';
 
 const ReachOut = () => {
   const [messageSent, setMessageSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [triedToSubmit, setTriedToSubmit] = useState(false);
+
   const handleSubmit = (values) => {
     if (values[`bot-field`] === undefined) {
       delete values[`bot-field`];
     }
+
+    setIsSubmitting(true);
 
     fetch(`/`, {
       method: `POST`,
@@ -39,8 +44,14 @@ const ReachOut = () => {
         ...values,
       }),
     })
-      .then(() => setMessageSent(true))
-      .catch((error) => reachOutFailMessage());
+      .then(() => {
+        setMessageSent(true);
+        setIsSubmitting(false);
+      })
+      .catch((error) => {
+        reachOutFailMessage();
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -77,10 +88,8 @@ const ReachOut = () => {
           <Form
             name="reach-out-ant-form"
             method="post"
-            onFinish={handleSubmit}
             layout="vertical"
             size="large"
-            validateTrigger="onBlur"
             labelCol={{
               xs: 24,
               md: {
@@ -95,6 +104,8 @@ const ReachOut = () => {
                 offset: 4,
               },
             }}
+            validateTrigger={triedToSubmit ? 'onChange' : 'onSubmit'}
+            onFinish={handleSubmit}
           >
             <Form.Item
               name="bot-field"
@@ -155,6 +166,8 @@ const ReachOut = () => {
                   type="primary"
                   size="large"
                   htmlType="submit"
+                  loading={isSubmitting}
+                  onClick={() => setTriedToSubmit(true)}
                   icon={<SendOutlined />}
                 >
                   Send
