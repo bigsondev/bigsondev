@@ -14,22 +14,25 @@ import { getIframeContent } from '~utils';
 
 export const tasksListData = [
   <Text size="small" color="#FAFAFA">
-    a element exists.{' '}
-    <Link size="small" href="https://www.w3schools.com/html/html_links.asp">
-      View Learning Resource.
-    </Link>
+    a element exists
   </Text>,
   <Text size="small" color="#FAFAFA">
-    Open Me text is inside of the a element.
+    Open Me text is inside of the a element
   </Text>,
   <Text size="small" color="#FAFAFA">
-    Link opens in a new tab.
+    Link opens in a new tab
   </Text>,
   <Text size="small" color="#FAFAFA">
     Link has non-empty href attribute (start from https:// to open external
-    page, e.g. https://facebook.com).
+    page, e.g. https://facebook.com)
   </Text>,
 ];
+export const helpListData = [
+  <Link size="small" href="https://www.w3schools.com/html/html_links.asp">
+    External Links
+  </Link>,
+];
+
 export const tabs = ['html'];
 export const tests = [
   () => getIframeContent().find('a').length > 0,
@@ -41,6 +44,7 @@ export const tests = [
 <Post>
   <CodeEditor
     tasks={tasksListData}
+    help={helpListData}
     tabs={tabs}
     tests={tests}
     result={`The "Open Me" link is displayed on the screen, opens in a new tab and navigates to an external page.`}

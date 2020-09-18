@@ -1,8 +1,6 @@
 import React from 'react';
-import { Space } from 'antd';
-import { CheckSquareOutlined, CloseSquareOutlined } from '@ant-design/icons';
+import { Space, Badge, Tooltip } from 'antd';
 import styled from 'styled-components';
-import Fade from 'react-reveal/Fade';
 
 const TasksHolder = styled.div({
   padding: 16,
@@ -10,27 +8,24 @@ const TasksHolder = styled.div({
 
 export const Tasks = ({ tasks, executedTests }) => (
   <TasksHolder>
-    <Space direction="vertical" size="middle">
+    <Space size="small">
       {tasks.map((test, index) => (
         <div key={index}>
-          <Space size="middle">
-            {executedTests.length > 0 ? (
-              executedTests[index] ? (
-                <Fade>
-                  <CheckSquareOutlined
-                    style={{ color: '#52c41a', fontSize: 16 }}
-                  />
-                </Fade>
-              ) : (
-                <Fade>
-                  <CloseSquareOutlined
-                    style={{ color: '#f5222d', fontSize: 16 }}
-                  />
-                </Fade>
-              )
-            ) : null}
-            {test}
-          </Space>
+          {executedTests.length > 0 ? (
+            executedTests[index] ? (
+              <Tooltip title={test}>
+                <Badge status="success" />
+              </Tooltip>
+            ) : (
+              <Tooltip title={test}>
+                <Badge status="error" />
+              </Tooltip>
+            )
+          ) : (
+            <Tooltip title={test} placement="bottom">
+              <Badge status="default" />
+            </Tooltip>
+          )}
         </div>
       ))}
     </Space>

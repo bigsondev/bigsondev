@@ -44,6 +44,7 @@ export const ArticleCard = styled.div({
   padding: 24,
   minHeight: 450,
   border: '1px solid #d6e4ff',
+  borderRadius: 8,
 
   '&:hover': {
     boxShadow: `0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),

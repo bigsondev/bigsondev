@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Tabs, Button, Result } from 'antd';
+import { Tabs, Button, Result, Row, Col, Space } from 'antd';
 import { PlayCircleOutlined } from '@ant-design/icons';
 import { Controlled } from 'react-codemirror2';
 import styled from 'styled-components';
@@ -8,6 +8,7 @@ import Fade from 'react-reveal/Fade';
 import {
   Title,
   Paragraph,
+  Box,
   testsFailMessage,
   jsInTheConsoleNotification,
 } from '..';
@@ -21,7 +22,7 @@ const Holder = styled.div({
 
 const CodeMirror = styled(Controlled)({
   '& .CodeMirror': {
-    height: 225,
+    height: 200,
   },
 });
 
@@ -62,7 +63,7 @@ const TabPaneHolder = styled(Tabs.TabPane)({
 
 const IframeResult = styled.iframe({
   width: '100%',
-  minHeight: 225,
+  minHeight: 200,
   background: '#FAFAFA',
   resize: 'vertical',
 });
@@ -72,6 +73,7 @@ export const CodeEditor = ({
   tabs = ['html', 'css', 'js'],
   tasks = [],
   tests = [],
+  help = [],
 }) => {
   const [html, setHtml] = useState('');
   const [css, setCss] = useState('');
@@ -188,7 +190,20 @@ export const CodeEditor = ({
         </Fade>
       )}
       <Holder>
-        <Tasks tasks={tasks} executedTests={executedTests} />
+        <Row justify="space-between" align="center">
+          <Col>
+            <Tasks tasks={tasks} executedTests={executedTests} />
+          </Col>
+          <Col>
+            <Box pt={2} mr={2}>
+              <Space>
+                {help.map((help, index) => (
+                  <span key={index}>{help}</span>
+                ))}
+              </Space>
+            </Box>
+          </Col>
+        </Row>
         <TabsHolder type="card">
           {tabs.map((name, index) => {
             const { mode, tab, value, setter } = TABS_MAPPER[name];
