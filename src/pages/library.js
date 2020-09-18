@@ -34,9 +34,12 @@ const ResourceCard = styled.div({
   position: 'relative',
   padding: 24,
   minHeight: 320,
+  border: '1px solid #d6e4ff',
 
-  boxShadow: `0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
-  0 9px 28px 8px rgba(0, 0, 0, 0.05)`,
+  '&:hover': {
+    boxShadow: `0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05)`,
+  },
 });
 
 const BottomHolder = styled.div({
@@ -74,7 +77,9 @@ const Resource = ({ title, desc, path, tags, difficulty }) => (
             <Rate value={difficulty} allowHalf disabled />
           </Col>
           <Col span={22}>
-            <Button block>Start Coding</Button>
+            <Button size="large" block>
+              Start Coding
+            </Button>
           </Col>
         </Row>
       </BottomHolder>

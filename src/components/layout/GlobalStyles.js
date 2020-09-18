@@ -27,6 +27,12 @@ export const GlobalStyles = createGlobalStyle`
 
   @media (min-width: 1200px) {
     html {
+        font-size: 15px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    html {
         font-size: 16px;
     }
   }

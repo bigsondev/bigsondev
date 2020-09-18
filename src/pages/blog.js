@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Row, Col, Space, Divider, Tooltip } from 'antd';
+import { Row, Col, Space, Divider, Tooltip, Button } from 'antd';
 import styled from 'styled-components';
 import {
   CalendarOutlined,
   FieldTimeOutlined,
-  ArrowRightOutlined,
   CodeSandboxOutlined,
   UnorderedListOutlined,
 } from '@ant-design/icons';
@@ -43,7 +42,8 @@ export const ArticleCard = styled.div({
   cursor: 'pointer',
   position: 'relative',
   padding: 24,
-  minHeight: 400,
+  minHeight: 450,
+  border: '1px solid #d6e4ff',
 
   '&:hover': {
     boxShadow: `0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
@@ -51,13 +51,11 @@ export const ArticleCard = styled.div({
   },
 });
 
-const ArrowIcon = styled(ArrowRightOutlined)({
+const BottomHolder = styled.div({
   position: 'absolute',
-  bottom: 0,
   left: 0,
-  fontSize: 24,
-  padding: 24,
-  display: 'block',
+  bottom: 16,
+  width: '100%',
 });
 
 const CheatSheetIcon = styled(CodeSandboxOutlined)({
@@ -120,14 +118,27 @@ const Article = ({
         {title}
       </Title>
       <Paragraph type="secondary">{truncate(desc)}</Paragraph>
-      <Space size="middle">
-        {tags.split(',').map((tag) => (
-          <Text size="micro" transform="capitalize" key={tag} code>
-            {tag}
-          </Text>
-        ))}
-      </Space>
-      <ArrowIcon />
+      <Row>
+        <Col span={24}>
+          <Space size="middle">
+            {tags.split(',').map((tag) => (
+              <Text size="micro" transform="capitalize" key={tag} code>
+                {tag}
+              </Text>
+            ))}
+          </Space>
+        </Col>
+      </Row>
+
+      <BottomHolder>
+        <Row justify="center">
+          <Col span={22}>
+            <Button block size="large" type="secondary">
+              Read More
+            </Button>
+          </Col>
+        </Row>
+      </BottomHolder>
     </ArticleCard>
   </Link>
 );
@@ -150,9 +161,7 @@ const Blog = ({
             xl={{ span: 8 }}
             key={frontmatter.title}
           >
-            <Box ml={-3}>
-              <Article {...frontmatter} />
-            </Box>
+            <Article {...frontmatter} />
           </Col>
         ))}
       </Row>

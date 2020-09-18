@@ -123,10 +123,15 @@ export const NewsletterForm = () => {
               name="consent"
               valuePropName="checked"
               rules={[
-                {
-                  required: true,
-                  message: `I will need your consent to send emails.`,
-                },
+                () => ({
+                  validator(rule, value) {
+                    return Boolean(value)
+                      ? Promise.resolve()
+                      : Promise.reject(
+                          'I will need your consent to send emails.'
+                        );
+                  },
+                }),
               ]}
             >
               <Checkbox>

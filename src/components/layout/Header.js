@@ -48,7 +48,7 @@ export const Header = () => {
   return (
     <Holder>
       <Row align="center">
-        <Col xs={{ span: 22 }} xl={{ span: 16 }}>
+        <Col xs={{ span: 22 }} xl={{ span: 20 }}>
           <Row justify="space-between" align="center">
             <Col>
               <LeftMenu />
