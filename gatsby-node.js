@@ -20,6 +20,7 @@ exports.onCreateWebpackConfig = ({ stage, actions, loaders }) => {
       resolve: {
         alias: {
           '~components': path.resolve(__dirname, 'src/components'),
+          '~modules': path.resolve(__dirname, 'src/modules'),
           '~utils': path.resolve(__dirname, 'src/utils'),
         },
       },
@@ -29,6 +30,7 @@ exports.onCreateWebpackConfig = ({ stage, actions, loaders }) => {
       resolve: {
         alias: {
           '~components': path.resolve(__dirname, 'src/components'),
+          '~modules': path.resolve(__dirname, 'src/modules'),
           '~utils': path.resolve(__dirname, 'src/utils'),
         },
       },

@@ -7,6 +7,7 @@
       //Assuming your components/utilities live in ./src
       //Update this path as necessary
       "~components/*": ["./src/components/*"],
+      "~modules/*": ["./src/modules/*"],
       "~utils/*": ["./src/utils/*"]
     }
   },

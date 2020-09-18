@@ -7,6 +7,6 @@ export const testsFailMessage = () => {
   message.error(`Some of the tests didn't pass, fix your code and try again`);
 };
 
-export const reachOutFailMessage = () => {
+export const failMessage = () => {
   message.error(`Woops, something went wrong, please try again later.`);
 };

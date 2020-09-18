@@ -10,6 +10,7 @@ module.exports = {
     'import/resolver': {
       alias: [
         ['~components', './src/components'],
+        ['~modules', './src/modules'],
         ['~utils', './src/utils'],
       ],
     },
