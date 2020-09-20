@@ -87,6 +87,7 @@ const Resource = ({ title, desc, path, tags, difficulty }) => (
               key={tag}
               transform="uppercase"
               strong
+              size="small"
               color={TAG_COLOR_MAPPER[tag.trim()]}
             >
               {tag}
