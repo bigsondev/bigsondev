@@ -4,8 +4,17 @@ import { Row, Col, Space, Divider, Button, Rate } from 'antd';
 
 import styled from 'styled-components';
 
-import { Layout, SEO, Title, Paragraph, Text, Box } from '~components';
+import { Layout, SEO, Title, Paragraph, Text, Box, Icon } from '~components';
 import { truncate } from '~utils';
+
+const RateHolder = styled(Rate)({
+  '& .ant-rate-star-full path': {
+    fill: '#fff566',
+  },
+  '& .ant-rate-star-zero path': {
+    fill: '#f0f0f0',
+  },
+});
 
 export const query = graphql`
   query LibraryQuery {
@@ -54,15 +63,32 @@ const StartQuizButton = styled(Button)({
   position: 'relative',
   top: -4,
   borderRadius: 8,
+  background: '#ffc069',
+  border: 'none',
+
+  '&:hover': {
+    background: '#ffc069',
+  },
 });
+
+const TAG_COLOR_MAPPER = {
+  html: '#ffc069',
+  css: '#91d5ff',
+  js: '#ffec3d',
+};
 
 const Resource = ({ title, desc, path, tags, difficulty }) => (
   <Link to={path}>
     <ResourceCard>
       <Paragraph marginBottom="1rem">
-        <Space>
+        <Space size="middle">
           {tags.split(',').map((tag) => (
-            <Text key={tag} transform="uppercase" code>
+            <Text
+              key={tag}
+              transform="uppercase"
+              strong
+              color={TAG_COLOR_MAPPER[tag.trim()]}
+            >
               {tag}
             </Text>
           ))}
@@ -75,7 +101,11 @@ const Resource = ({ title, desc, path, tags, difficulty }) => (
       <BottomHolder>
         <Row justify="center" gutter={[0, 16]}>
           <Col>
-            <Rate value={difficulty} allowHalf disabled />
+            <RateHolder
+              character={<Icon type="duck" />}
+              value={difficulty}
+              disabled
+            />
           </Col>
           <Col span={22}>
             <Button size="large" block>
@@ -124,7 +154,7 @@ const Library = ({
       <SEO title="Library" />
       <Title>skyrocket your career</Title>
       <Divider />
-      <Box mb={5} display="flex" justify="center">
+      <Box mb={8}>
         <Space>
           <Button
             type={filter === FILTERS.beginner ? 'primary' : 'secondary'}

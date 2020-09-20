@@ -49,22 +49,22 @@ const RightMenu = ({ isMobile }) =>
     <MenuHolder theme="dark" mode="horizontal">
       <MenuItem key="1">
         <Link to="/library">
-          <Text>Library</Text>
+          <Text size="preNormal">Library</Text>
         </Link>
       </MenuItem>
       <MenuItem key="2">
         <Link to="/blog">
-          <Text>Blog</Text>
+          <Text size="preNormal">Blog</Text>
         </Link>
       </MenuItem>
       <MenuItem key="3">
         <Link to="/mentoring">
-          <Text>Mentoring</Text>
+          <Text size="preNormal">Mentoring</Text>
         </Link>
       </MenuItem>
       <MenuItem key="4">
         <Link to="/reach-out">
-          <Text>Reach Out</Text>
+          <Text size="preNormal">Reach Out</Text>
         </Link>
       </MenuItem>
     </MenuHolder>

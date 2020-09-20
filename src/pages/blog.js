@@ -2,15 +2,10 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { Row, Col, Space, Divider, Tooltip, Button } from 'antd';
 import styled from 'styled-components';
-import {
-  CalendarOutlined,
-  FieldTimeOutlined,
-  CodeSandboxOutlined,
-  UnorderedListOutlined,
-} from '@ant-design/icons';
+import { CalendarOutlined, FieldTimeOutlined } from '@ant-design/icons';
 import moment from 'moment';
 
-import { Layout, SEO, Title, Paragraph, Text, Box } from '~components';
+import { Layout, SEO, Title, Paragraph, Text, Box, Icon } from '~components';
 import { truncate } from '~utils';
 
 export const query = graphql`
@@ -59,16 +54,6 @@ const BottomHolder = styled.div({
   width: '100%',
 });
 
-const CheatSheetIcon = styled(CodeSandboxOutlined)({
-  fontSize: 24,
-  color: '#000',
-});
-
-const TodoListIcon = styled(UnorderedListOutlined)({
-  fontSize: 24,
-  color: '#000',
-});
-
 const Article = ({
   title,
   desc,
@@ -103,12 +88,12 @@ const Article = ({
             <Space size="large">
               {hasCheatSheet && (
                 <Tooltip title="Article contains Cheat Sheet to help you find information quicker. For a complete knowledge, please read the full article">
-                  <CheatSheetIcon />
+                  <Icon type="cheatSheet" width={24} />
                 </Tooltip>
               )}
               {hasTodoList && (
                 <Tooltip title="Article contains Homework to let you practice the theory">
-                  <TodoListIcon />
+                  <Icon type="homework" width={24} />
                 </Tooltip>
               )}
             </Space>

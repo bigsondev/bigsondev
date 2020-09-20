@@ -22,7 +22,6 @@ const ILLUSTRATION_MAPPER = {
   developmentPlan: <DevelopmentPlan />,
 };
 
-export const Illustration = ({ type }) => {
-  console.log(type);
-  return <Holder>{ILLUSTRATION_MAPPER[type]}</Holder>;
+export const Illustration = ({ type, ...props }) => {
+  return <Holder {...props}>{ILLUSTRATION_MAPPER[type]}</Holder>;
 };

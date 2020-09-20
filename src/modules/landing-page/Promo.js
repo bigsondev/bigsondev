@@ -11,13 +11,13 @@ const PromoButton = styled(Button)({
   height: 70,
   fontSize: 20,
   borderRadius: 8,
-  background: '#FBBC3D',
+  background: '#ffc069',
   border: 'none',
   transition: 'box-shadow 0.3s',
 
   '&:hover': {
-    boxShadow: `0px 0px 5px 0px #FBBC3D`,
-    background: '#FBBC3D',
+    boxShadow: `0px 0px 5px 0px #ffc069`,
+    background: '#ffc069',
   },
 });
 

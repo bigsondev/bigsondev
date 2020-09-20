@@ -104,8 +104,8 @@ export const SkyrocketYourCareer = () => {
               <Col span={20}>
                 <Text align="center" display="block" type="secondary">
                   Feeling stuck in your career? I felt the same and created one
-                  to push my own limits. Now, I can create one for you, let's
-                  skyrocket in Frontend together.
+                  to push my own limits. Now, I would love to create one for
+                  you, let's skyrocket in Frontend together.
                 </Text>
               </Col>
               <LearnMoreButton type="secondary" size="large" block>

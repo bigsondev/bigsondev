@@ -7,8 +7,13 @@ import { Title, Text, Box, Link, Post } from '..';
 
 const StartButton = styled(Button)({
   width: 150,
-  textTransform: 'uppercase',
   borderRadius: 12,
+  background: '#ffc069',
+  border: 'none',
+
+  '&:hover': {
+    background: '#ffc069',
+  },
 });
 
 const InfoIcon = styled(InfoCircleOutlined)({
