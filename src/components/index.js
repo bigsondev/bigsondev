@@ -13,3 +13,4 @@ export { Post, PostCard, PostList } from './copywriting';
 export { CodeEditor } from './coding';
 export { Illustration } from './Illustration';
 export { Icon } from './Icon';
+export * from './MediaQueries';

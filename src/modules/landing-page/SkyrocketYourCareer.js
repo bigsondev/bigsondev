@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Title, Text, Illustration, Box } from '~components';
 
 const Holder = styled.div({
-  padding: '104px 0',
+  padding: '104px 16px',
   backgroundColor: '#91d5ff',
   width: '100vw',
 });
@@ -16,9 +16,16 @@ const OfferCard = styled.div({
   position: 'relative',
   padding: 24,
   paddingBottom: 0,
-  minHeight: 530,
+  minHeight: 540,
   borderRadius: 16,
   background: '#FFF',
+
+  '@media (max-width: 480px)': {
+    minHeight: 520,
+  },
+  '@media (min-width: 481px) and (max-width: 768px)': {
+    minHeight: 450,
+  },
 
   '&:hover': {
     boxShadow: `0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
@@ -42,7 +49,7 @@ export const SkyrocketYourCareer = () => {
         </Title>
       </Box>
       <Row justify="center" gutter={[24, 24]}>
-        <Col xs={22} sm={13} lg={7} xxl={6}>
+        <Col xs={22} sm={16} lg={8} xl={7} xxl={6}>
           <OfferCard>
             <Row justify="center" gutter={[0, 26]}>
               <Col span={12}>
@@ -66,7 +73,7 @@ export const SkyrocketYourCareer = () => {
             </Row>
           </OfferCard>
         </Col>
-        <Col xs={22} sm={13} lg={7} xxl={6}>
+        <Col xs={22} sm={16} lg={8} xl={7} xxl={6}>
           <OfferCard>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={10}>
@@ -90,7 +97,7 @@ export const SkyrocketYourCareer = () => {
             </Row>
           </OfferCard>
         </Col>
-        <Col xs={22} sm={13} lg={7} xxl={6}>
+        <Col xs={22} sm={16} lg={8} xl={7} xxl={6}>
           <OfferCard>
             <Row justify="center" gutter={[0, 28]}>
               <Col span={11}>

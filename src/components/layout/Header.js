@@ -3,9 +3,8 @@ import { Link } from 'gatsby';
 import { Layout, Menu, Row, Col } from 'antd';
 import styled from 'styled-components';
 import { MenuOutlined } from '@ant-design/icons';
-import { useMedia } from 'react-media';
 
-import { Box, Text } from '~components';
+import { Box, Text, SmallOnly, ExceptSmall } from '~components';
 import { LogoBase } from '~assets';
 
 import { Logo } from './styled';
@@ -42,37 +41,39 @@ const LeftMenu = () => (
   </Link>
 );
 
-const RightMenu = ({ isMobile }) =>
-  isMobile ? (
-    <HamburgerIcon />
-  ) : (
-    <MenuHolder theme="dark" mode="horizontal">
-      <MenuItem key="1">
-        <Link to="/library">
-          <Text size="preNormal">Library</Text>
-        </Link>
-      </MenuItem>
-      <MenuItem key="2">
-        <Link to="/blog">
-          <Text size="preNormal">Blog</Text>
-        </Link>
-      </MenuItem>
-      <MenuItem key="3">
-        <Link to="/mentoring">
-          <Text size="preNormal">Mentoring</Text>
-        </Link>
-      </MenuItem>
-      <MenuItem key="4">
-        <Link to="/reach-out">
-          <Text size="preNormal">Reach Out</Text>
-        </Link>
-      </MenuItem>
-    </MenuHolder>
-  );
+const RightMenu = () => (
+  <>
+    <SmallOnly>
+      <HamburgerIcon />
+    </SmallOnly>
+    <ExceptSmall>
+      <MenuHolder theme="dark" mode="horizontal">
+        <MenuItem key="1">
+          <Link to="/library">
+            <Text size="preNormal">Library</Text>
+          </Link>
+        </MenuItem>
+        <MenuItem key="2">
+          <Link to="/blog">
+            <Text size="preNormal">Blog</Text>
+          </Link>
+        </MenuItem>
+        <MenuItem key="3">
+          <Link to="/mentoring">
+            <Text size="preNormal">Mentoring</Text>
+          </Link>
+        </MenuItem>
+        <MenuItem key="4">
+          <Link to="/reach-out">
+            <Text size="preNormal">Reach Out</Text>
+          </Link>
+        </MenuItem>
+      </MenuHolder>
+    </ExceptSmall>
+  </>
+);
 
 export const Header = () => {
-  const isMobile = useMedia({ query: '(max-width: 576px)' });
-
   return (
     <Holder>
       <Row align="center">
@@ -83,7 +84,7 @@ export const Header = () => {
                 <LeftMenu />
               </Col>
               <Col>
-                <RightMenu isMobile={isMobile} />
+                <RightMenu />
               </Col>
             </Row>
           </Box>

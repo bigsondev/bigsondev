@@ -2,9 +2,17 @@ import React from 'react';
 import { Row, Col, Button } from 'antd';
 import { ArrowDownOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
-import { useMedia } from 'react-media';
 
-import { Title, Text, Paragraph, Illustration, Box } from '~components';
+import {
+  Title,
+  Text,
+  Paragraph,
+  Illustration,
+  Box,
+  MobileOnly,
+  TabletOnly,
+  DesktopOnly,
+} from '~components';
 
 const PromoButton = styled(Button)({
   width: 230,
@@ -158,17 +166,16 @@ const BigScreenPromo = () => (
   </Box>
 );
 
-export const Promo = () => {
-  const isMobile = useMedia({ query: '(max-width: 480px)' });
-  const isMedium = useMedia({ query: '(max-width: 1000px)' });
-
-  if (isMobile) {
-    return <MobileScreenPromo />;
-  }
-
-  if (isMedium) {
-    return <MediumScreenPromo />;
-  }
-
-  return <BigScreenPromo />;
-};
+export const Promo = () => (
+  <>
+    <MobileOnly>
+      <MobileScreenPromo />
+    </MobileOnly>
+    <TabletOnly>
+      <MediumScreenPromo />
+    </TabletOnly>
+    <DesktopOnly>
+      <BigScreenPromo />
+    </DesktopOnly>
+  </>
+);
