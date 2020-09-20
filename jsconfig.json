@@ -8,7 +8,9 @@
       //Update this path as necessary
       "~components/*": ["./src/components/*"],
       "~modules/*": ["./src/modules/*"],
-      "~utils/*": ["./src/utils/*"]
+      "~utils/*": ["./src/utils/*"],
+      "~assets/*": ["./src/assets/*"],
+      "~svg/*": ["./src/svg/*"]
     }
   },
   //Add any build/compiled folders here to stop vscode searching those

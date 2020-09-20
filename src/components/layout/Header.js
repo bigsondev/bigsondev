@@ -5,10 +5,30 @@ import styled from 'styled-components';
 import { MenuOutlined } from '@ant-design/icons';
 import { useMedia } from 'react-media';
 
+import { Box, Text } from '~components';
+import { LogoBase } from '~assets';
+
 import { Logo } from './styled';
 
 const Holder = styled(Layout.Header)({
   padding: 0,
+  height: 80,
+});
+
+const MenuHolder = styled(Menu)({
+  borderBottom: 'none',
+});
+
+const MenuItem = styled(Menu.Item)({
+  '& > a > span': {
+    color: '#AAA !important',
+  },
+  '&:hover': {
+    background: 'inherit !important',
+    '& > a > span': {
+      color: '#FFF !important',
+    },
+  },
 });
 
 const HamburgerIcon = styled(MenuOutlined)({
@@ -18,7 +38,7 @@ const HamburgerIcon = styled(MenuOutlined)({
 
 const LeftMenu = () => (
   <Link to="/">
-    <Logo>BIGSONDEV</Logo>
+    <Logo src={LogoBase} alt="Bigson Dev Logo" />
   </Link>
 );
 
@@ -26,20 +46,28 @@ const RightMenu = ({ isMobile }) =>
   isMobile ? (
     <HamburgerIcon />
   ) : (
-    <Menu theme="dark" mode="horizontal">
-      <Menu.Item key="1">
-        <Link to="/library">Library</Link>
-      </Menu.Item>
-      <Menu.Item key="2">
-        <Link to="/blog">Blog</Link>
-      </Menu.Item>
-      <Menu.Item key="3">
-        <Link to="/coaching">Coaching</Link>
-      </Menu.Item>
-      <Menu.Item key="4">
-        <Link to="/reach-out">Reach Out</Link>
-      </Menu.Item>
-    </Menu>
+    <MenuHolder theme="dark" mode="horizontal">
+      <MenuItem key="1">
+        <Link to="/library">
+          <Text>Library</Text>
+        </Link>
+      </MenuItem>
+      <MenuItem key="2">
+        <Link to="/blog">
+          <Text>Blog</Text>
+        </Link>
+      </MenuItem>
+      <MenuItem key="3">
+        <Link to="/mentoring">
+          <Text>Mentoring</Text>
+        </Link>
+      </MenuItem>
+      <MenuItem key="4">
+        <Link to="/reach-out">
+          <Text>Reach Out</Text>
+        </Link>
+      </MenuItem>
+    </MenuHolder>
   );
 
 export const Header = () => {
@@ -48,15 +76,17 @@ export const Header = () => {
   return (
     <Holder>
       <Row align="center">
-        <Col xs={{ span: 22 }} xl={{ span: 20 }}>
-          <Row justify="space-between" align="center">
-            <Col>
-              <LeftMenu />
-            </Col>
-            <Col>
-              <RightMenu isMobile={isMobile} />
-            </Col>
-          </Row>
+        <Col xs={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 16 }}>
+          <Box mt={1}>
+            <Row justify="space-between" align="center">
+              <Col>
+                <LeftMenu />
+              </Col>
+              <Col>
+                <RightMenu isMobile={isMobile} />
+              </Col>
+            </Row>
+          </Box>
         </Col>
       </Row>
     </Holder>

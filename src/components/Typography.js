@@ -7,6 +7,7 @@ const TEXT_SIZE = {
   small: '1rem',
   preNormal: '1.125rem',
   normal: '1.27rem',
+  h1: '2.5rem',
 };
 
 export const Text = styled(Typography.Text)(
@@ -18,10 +19,11 @@ export const Text = styled(Typography.Text)(
     size = 'normal',
     transform = 'none',
     color,
+    fontSize,
   }) => ({
     textAlign: align,
     display,
-    fontSize: TEXT_SIZE[size],
+    fontSize: fontSize || TEXT_SIZE[size],
     fontWeight,
     fontStyle,
     textTransform: transform,
@@ -51,9 +53,10 @@ export const LinkHolder = styled.span(
     fontWeight = 300,
     size = 'normal',
     display = 'inline',
+    fontSize,
   }) => ({
     textAlign: align,
-    fontSize: TEXT_SIZE[size],
+    fontSize: fontSize || TEXT_SIZE[size],
     fontWeight,
     display,
   })
@@ -65,12 +68,14 @@ const LevelOneHolder = styled.div(
     transform = 'capitalize',
     fontWeight,
     fontSize = '2.5rem',
+    marginBottom = '0.5em',
   }) => ({
     textAlign: align,
-    fontWeight,
     '& h1': {
+      fontWeight,
       textTransform: transform,
       fontSize,
+      marginBottom,
     },
   })
 );
@@ -81,10 +86,12 @@ const LevelTwoHolder = styled.div(
     transform = 'capitalize',
     fontWeight,
     fontSize = '2.125rem',
+    color,
   }) => ({
     textAlign: align,
     fontWeight,
     '& h2': {
+      color,
       textTransform: transform,
       fontSize,
     },
@@ -165,15 +172,28 @@ export const Link = ({
   </LinkHolder>
 );
 
-export const Title = ({ level = 1, transform, ...props }) => {
+export const Title = ({
+  level = 1,
+  transform,
+  fontSize,
+  fontWeight,
+  marginBottom,
+  color,
+  ...props
+}) => {
   const levelMap = {
     1: (
-      <LevelOneHolder transform={transform}>
+      <LevelOneHolder
+        marginBottom={marginBottom}
+        fontSize={fontSize}
+        fontWeight={fontWeight}
+        transform={transform}
+      >
         <Typography.Title level={1} {...props} />
       </LevelOneHolder>
     ),
     2: (
-      <LevelTwoHolder transform={transform}>
+      <LevelTwoHolder color={color} transform={transform}>
         <Typography.Title level={2} {...props} />
       </LevelTwoHolder>
     ),

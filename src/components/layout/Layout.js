@@ -10,17 +10,20 @@ import { Layout as AntdLayout } from 'antd';
 import styled from 'styled-components';
 
 import { GlobalStyles } from './GlobalStyles';
+import { ContentHolder } from './styled';
 import { Header } from './Header';
-import { Content } from './Content';
+import { Section } from './Section';
 
 const Holder = styled(AntdLayout)({});
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, fixedContent = true }) => {
   return (
     <Holder>
       <GlobalStyles />
       <Header />
-      <Content>{children}</Content>
+      <ContentHolder>
+        {fixedContent ? <Section>{children}</Section> : children}
+      </ContentHolder>
       {/* TODO implement Footer */}
     </Holder>
   );

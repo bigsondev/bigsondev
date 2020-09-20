@@ -4,7 +4,7 @@ import { openPopupWidget } from 'react-calendly';
 
 import { Layout, SEO, Title } from '~components';
 
-const openCoachingEvent = () => {
+const openMentoringEvent = () => {
   openPopupWidget({
     url: 'https://calendly.com/bigson-dev/coaching',
     pageSettings: {
@@ -14,19 +14,19 @@ const openCoachingEvent = () => {
   });
 };
 
-const Coaching = () => {
+const Mentoring = () => {
   return (
     <Layout>
-      <SEO title="Bigson Dev | Coaching | Adrian Bigaj" />
+      <SEO title="Bigson Dev | Mentoring | Adrian Bigaj" />
       <Title>COACHING PLACEHOLDER</Title>
       <Divider />
       <Row gutter={16}>
         <Col span={8}>
           <Card
-            title="Coaching"
+            title="Mentoring"
             actions={[
-              <Button type="primary" size="large" onClick={openCoachingEvent}>
-                I need a coach
+              <Button type="primary" size="large" onClick={openMentoringEvent}>
+                I need a mentor
               </Button>,
             ]}
           >
@@ -68,4 +68,4 @@ const Coaching = () => {
   );
 };
 
-export default Coaching;
+export default Mentoring;

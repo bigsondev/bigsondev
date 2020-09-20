@@ -10,16 +10,16 @@ import { NotStarted } from './NotStarted';
 import { InProgress } from './InProgress';
 import { Completed } from './Completed';
 
-const STAGES = {
-  NOT_STARTED: 'NOT_STARTED',
-  IN_PROGRESS: 'IN_PROGRESS',
-  COMPLETED: 'COMPLETED',
+const STAGE_MAPPER = {
+  notStarted: 'NOT_STARTED',
+  inProgress: 'IN_PROGRESS',
+  completed: 'COMPLETED',
 };
 
 export const Quiz = ({ data: initialData, title, desc, next }) => {
   const [data, setData] = useState(undefined);
   const [selections, setSelection] = useState([]);
-  const [stage, setStage] = useState(STAGES.NOT_STARTED);
+  const [stage, setStage] = useState(STAGE_MAPPER.notStarted);
   const [timer, setTimer] = useState(undefined);
   const [timeElapsed, setTimeElapsed] = useState(0);
 
@@ -36,7 +36,7 @@ export const Quiz = ({ data: initialData, title, desc, next }) => {
   };
 
   const handleStartClick = () => {
-    setStage(STAGES.IN_PROGRESS);
+    setStage(STAGE_MAPPER.inProgress);
 
     startTimer();
   };
@@ -50,7 +50,7 @@ export const Quiz = ({ data: initialData, title, desc, next }) => {
       quizResultsSaveMessage();
       didYouKnowQuestionButtonNotification();
 
-      return setStage(STAGES.COMPLETED);
+      return setStage(STAGE_MAPPER.completed);
     }
 
     setSelection([...selections, index]);
@@ -60,15 +60,15 @@ export const Quiz = ({ data: initialData, title, desc, next }) => {
     setSelection([]);
     setTimeElapsed(0);
     startTimer();
-    setStage(STAGES.IN_PROGRESS);
+    setStage(STAGE_MAPPER.inProgress);
   };
 
   if (!data) {
     return null;
   }
 
-  const stagesMap = {
-    NOT_STARTED: (
+  const stages = {
+    [STAGE_MAPPER.notStarted]: (
       <NotStarted
         title={title}
         desc={desc}
@@ -76,14 +76,14 @@ export const Quiz = ({ data: initialData, title, desc, next }) => {
         onStartClick={handleStartClick}
       />
     ),
-    IN_PROGRESS: (
+    [STAGE_MAPPER.inProgress]: (
       <InProgress
         data={data}
         selections={selections}
         onAnswerClick={handleAnswerClick}
       />
     ),
-    COMPLETED: (
+    [STAGE_MAPPER.completed]: (
       <Completed
         data={data}
         selections={selections}
@@ -94,5 +94,5 @@ export const Quiz = ({ data: initialData, title, desc, next }) => {
     ),
   };
 
-  return stagesMap[stage];
+  return stages[stage];
 };

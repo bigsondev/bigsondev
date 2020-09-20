@@ -1,15 +1,24 @@
 import React from 'react';
-import { Divider } from 'antd';
 
-import { Layout, SEO, Title } from '~components';
-import { NewsletterForm } from '~modules/landing-page';
+import { Layout, Section, SEO, Box } from '~components';
+import {
+  NewsletterForm,
+  Promo,
+  SkyrocketYourCareer,
+} from '~modules/landing-page';
 
 const Landing = () => {
   return (
-    <Layout>
-      <SEO title="Bigson Dev - Coach, Frontend Tech Leader, Your Friend" />
-      <Title>LANDING PAGE PLACEHOLDER</Title>
-      <Divider />
+    <Layout fixedContent={false}>
+      <SEO title="Bigson Dev - Front-end Developer, Recruiter, Mentor & Your Friend" />
+      <Box mb={5}>
+        <Section>
+          <Promo />
+        </Section>
+      </Box>
+      <Section fullWidth>
+        <SkyrocketYourCareer />
+      </Section>
       <NewsletterForm />
     </Layout>
   );

@@ -22,6 +22,8 @@ exports.onCreateWebpackConfig = ({ stage, actions, loaders }) => {
           '~components': path.resolve(__dirname, 'src/components'),
           '~modules': path.resolve(__dirname, 'src/modules'),
           '~utils': path.resolve(__dirname, 'src/utils'),
+          '~assets': path.resolve(__dirname, 'src/assets'),
+          '~svg': path.resolve(__dirname, 'src/svg'),
         },
       },
     });
@@ -32,6 +34,8 @@ exports.onCreateWebpackConfig = ({ stage, actions, loaders }) => {
           '~components': path.resolve(__dirname, 'src/components'),
           '~modules': path.resolve(__dirname, 'src/modules'),
           '~utils': path.resolve(__dirname, 'src/utils'),
+          '~assets': path.resolve(__dirname, 'src/assets'),
+          '~svg': path.resolve(__dirname, 'src/svg'),
         },
       },
     });

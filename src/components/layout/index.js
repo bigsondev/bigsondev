@@ -1,3 +1,2 @@
 export { Layout } from './Layout';
-export { BlogLayout } from './BlogLayout';
-export { LibraryLayout } from './LibraryLayout';
+export { Section } from './Section';

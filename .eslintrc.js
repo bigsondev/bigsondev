@@ -12,6 +12,8 @@ module.exports = {
         ['~components', './src/components'],
         ['~modules', './src/modules'],
         ['~utils', './src/utils'],
+        ['~assets', './src/assets'],
+        ['~svg', './src/svg'],
       ],
     },
   },

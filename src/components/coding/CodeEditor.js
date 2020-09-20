@@ -142,7 +142,7 @@ export const CodeEditor = ({
     setExecutedTests([]);
   };
 
-  const TABS_MAPPER = {
+  const TAB_MAPPER = {
     html: {
       mode: 'htmlembedded',
       tab: 'HTML',
@@ -206,7 +206,7 @@ export const CodeEditor = ({
         </Row>
         <TabsHolder type="card">
           {tabs.map((name, index) => {
-            const { mode, tab, value, setter } = TABS_MAPPER[name];
+            const { mode, tab, value, setter } = TAB_MAPPER[name];
 
             return (
               <TabPaneHolder tab={tab} key={index}>

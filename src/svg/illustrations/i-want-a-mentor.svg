@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="624.9" height="381.3" viewBox="0 0 624.9 381.3">
+  <defs>
+    <style>
+      .cls-1 {
+        isolation: isolate;
+      }
+
+      .cls-2 {
+        fill: #e8e8e8;
+      }
+
+      .cls-3 {
+        opacity: 0.2;
+        mix-blend-mode: multiply;
+      }
+
+      .cls-4 {
+        fill: #2a2b38;
+      }
+
+      .cls-5 {
+        fill: #95cde8;
+      }
+
+      .cls-6 {
+        fill: #e7958b;
+      }
+
+      .cls-7 {
+        fill: #137099;
+      }
+
+      .cls-8 {
+        fill: #fec343;
+      }
+
+      .cls-9 {
+        fill: #fff;
+      }
+
+      .cls-10 {
+        fill: #cc2f2f;
+      }
+
+      .cls-11 {
+        fill: #2ecc71;
+      }
+
+      .cls-12 {
+        fill: #ffe933;
+      }
+
+      .cls-13 {
+        fill: #2a9a38;
+      }
+
+      .cls-14 {
+        fill: #0e4554;
+      }
+    </style>
+  </defs>
+  <g class="cls-1">
+    <g id="Warstwa_2" data-name="Warstwa 2">
+      <g id="Warstwa_1-2" data-name="Warstwa 1">
+        <g>
+          <rect class="cls-2" x="419.9" y="296.4" width="53.2" height="62.93" transform="translate(893 655.7) rotate(-180)"/>
+          <rect class="cls-2" x="381.2" y="341.3" width="130.5" height="20.93" transform="translate(893 703.6) rotate(-180)"/>
+          <g class="cls-3">
+            <rect x="419.9" y="296.4" width="53.2" height="23.1"/>
+          </g>
+          <rect class="cls-2" x="268.1" y="108" width="356.8" height="201.25" rx="6" transform="translate(893 417.3) rotate(-180)"/>
+          <path class="cls-4" d="M268.1,74.3H624.9a0,0,0,0,1,0,0V269.5a6,6,0,0,1-6,6H274.1a6,6,0,0,1-6-6V74.3A0,0,0,0,1,268.1,74.3Z" transform="translate(893 349.9) rotate(-180)"/>
+          <rect class="cls-5" x="280.8" y="86.9" width="331.4" height="177.9" transform="translate(893 351.7) rotate(-180)"/>
+          <polygon class="cls-6" points="192 133.1 117.7 56.3 117.7 194.8 164.8 252.8 205.3 193.6 192 133.1"/>
+          <path class="cls-7" d="M413.4,242.6s-35.7,65.3-82,65.3c-15.8-22.9-28.4-82.4-54.3-97.5-17.5-10.2-71.8-16.8-71.8-16.8-12.1,12.6-25.2,21.6-40.5,20.9s-34.9-7.8-47.1-19.7c0,0-61.2,2.5-78.1,14.3-13,9.2-36.4,27.2-39.1,59.4C-1.9,297.6,5,381.3,5,381.3H55.4l9.9-75.8,8.4,75.8H257.3l7.8-48.6s26.7,47,66.8,42.7C437.7,364,445.1,259.6,445.1,259.6Z"/>
+          <g class="cls-3">
+            <path d="M205.3,193.6c-12.1,12.6-25.2,21.6-40.5,20.9s-34.9-7.8-47.1-19.7c0,0-61.2,2.5-78.1,14.3-13,9.2-36.4,27.2-39.1,59.4C-1.9,297.6,5,381.3,5,381.3H55.4l9.9-75.8,8.4,75.8h9c7.5-27.6,25-82,64.1-84.5,61.7-3.9,58.5-103.2,58.5-103.2Z"/>
+          </g>
+          <g class="cls-3">
+            <polygon points="117.7 194.8 107.5 225.2 137.6 268.5 117.7 194.8"/>
+          </g>
+          <path class="cls-6" d="M160.9,151.7s38.5,29.7,54.6,9.9,5.6-131.3,5.6-131.3L117.7,26v96.6Z"/>
+          <g class="cls-3">
+            <path d="M221.1,30.3,117.7,26v7.6l2.2,7.5.7,71.5,19.6-27,2.1-31.4A7.7,7.7,0,0,1,150,47l72.4.3C221.7,37,221.1,30.3,221.1,30.3Z"/>
+          </g>
+          <path class="cls-8" d="M223.2,42.7,248.5,9.4l-22.6,8.5L227.4,0H140.3L128.6,16.2l-17.1-.9,6.2,21.2.7,71.5,19.5-27,2.2-32.4a6.8,6.8,0,0,1,6.8-6.2Z"/>
+          <path class="cls-9" d="M117.7,194.8l-6.2,28.9,26.1,44.8,29.7-30.7,35.7,27,10.2-40.6-7.9-30.6s-14.2,15.7-41.2,17.1C140.5,211.8,117.7,194.8,117.7,194.8Z"/>
+          <circle class="cls-6" cx="122.1" cy="91.4" r="19.8"/>
+          <g class="cls-3">
+            <path d="M199.7,168.4s-26.8,0-44.8-20.8c10.3,13.7,21.9,26.5,46.8,29.7Z"/>
+          </g>
+          <g class="cls-3">
+            <path d="M412.4,244.4a196.4,196.4,0,0,1-12.9,19.2l39.7,23.8h0c1.6-5.1,2.8-9.7,3.7-13.7v-.2a22.1,22.1,0,0,0,.5-2.5c.1-.2.1-.4.2-.6l.3-2c.1-.3.1-.6.2-.8a10,10,0,0,0,.2-1.6c.1-.3.1-.5.2-.8a5.1,5.1,0,0,1,.2-1.3h0Z"/>
+          </g>
+          <g>
+            <rect class="cls-2" x="307.1" y="106.1" width="278.7" height="146.69" rx="3.1"/>
+            <g>
+              <circle id="Ellipse_40" data-name="Ellipse 40" class="cls-10" cx="320.6" cy="119.9" r="3.9"/>
+              <circle id="Ellipse_41" data-name="Ellipse 41" class="cls-11" cx="334.4" cy="119.9" r="3.9"/>
+              <circle id="Ellipse_42" data-name="Ellipse 42" class="cls-12" cx="348.2" cy="119.9" r="3.9"/>
+            </g>
+          </g>
+          <g>
+            <g>
+              <rect class="cls-9" x="446.5" y="130.3" width="119" height="112.81"/>
+              <rect class="cls-7" x="446.5" y="130.3" width="119" height="17.33"/>
+              <g>
+                <rect class="cls-2" x="456.1" y="154.6" width="28.1" height="29.93"/>
+                <rect class="cls-2" x="492" y="154.6" width="28.1" height="29.93"/>
+                <rect class="cls-2" x="527.8" y="154.6" width="28.1" height="29.93"/>
+                <g class="cls-3">
+                  <rect x="456.1" y="133.9" width="28.1" height="9.02"/>
+                </g>
+                <g class="cls-3">
+                  <rect x="492" y="133.9" width="28.1" height="9.02"/>
+                </g>
+                <g class="cls-3">
+                  <rect x="527.8" y="133.9" width="28.1" height="9.02"/>
+                </g>
+              </g>
+              <rect class="cls-2" x="456.1" y="198" width="99.8" height="38.88"/>
+            </g>
+            <g>
+              <rect class="cls-4" x="327.4" y="130.3" width="119" height="112.81"/>
+              <g>
+                <rect class="cls-12" x="405.5" y="161" width="31.5" height="5.99" rx="1" transform="matrix(-1, 0, 0, -1, 842.46, 327.97)"/>
+                <g>
+                  <rect class="cls-13" x="371.2" y="161" width="31.5" height="5.99" rx="1"/>
+                  <g>
+                    <rect class="cls-10" x="337" y="206.4" width="100" height="5.99" rx="1" transform="translate(773.9 418.7) rotate(-180)"/>
+                    <rect class="cls-13" x="337" y="191.2" width="15.1" height="5.99" rx="1"/>
+                    <rect class="cls-13" x="357.3" y="191.2" width="40.8" height="5.99" rx="1"/>
+                    <rect class="cls-12" x="400.8" y="191.2" width="36.1" height="5.99" rx="1" transform="translate(837.8 388.5) rotate(180)"/>
+                    <g>
+                      <rect class="cls-13" x="365.2" y="176.1" width="71.7" height="5.99" rx="1"/>
+                      <rect class="cls-9" x="337" y="176.1" width="24.3" height="5.99" rx="1"/>
+                    </g>
+                    <g>
+                      <rect class="cls-10" x="376.2" y="221.5" width="60.8" height="5.99" rx="1" transform="translate(813.1 449) rotate(180)"/>
+                      <rect class="cls-13" x="337" y="221.5" width="30.2" height="5.99" rx="1"/>
+                    </g>
+                    <rect class="cls-9" x="337" y="161" width="31.5" height="5.99" rx="1"/>
+                    <g>
+                      <rect class="cls-12" x="365.2" y="145.9" width="71.7" height="5.99" rx="1" transform="translate(802.2 297.7) rotate(180)"/>
+                      <rect class="cls-9" x="337" y="145.9" width="24.3" height="5.99" rx="1"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+          <path class="cls-6" d="M452.1,169c10.2,5-7.7,39.1-7.7,39.1s33.4,12.3,29.2,27.3-21.3,33.9-21.3,33.9l-42.4-26.5S444,165,452.1,169Z"/>
+          <rect class="cls-14" x="397.2" y="249.3" width="60.1" height="23.09" transform="translate(194.5 -182.4) rotate(30.9)"/>
+          <circle class="cls-9" cx="411.3" cy="249.1" r="3.9"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
