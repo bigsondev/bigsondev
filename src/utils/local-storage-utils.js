@@ -5,9 +5,13 @@ const KEY_MAPPER = {
 };
 
 export const getItem = (key) =>
-  JSON.parse(localStorage.getItem(KEY_MAPPER[key]));
+  typeof window !== 'undefined'
+    ? JSON.parse(localStorage.getItem(KEY_MAPPER[key]))
+    : undefined;
 export const setItem = (key, value) =>
-  JSON.stringify(localStorage.setItem(KEY_MAPPER[key], value));
+  typeof window !== 'undefined'
+    ? JSON.stringify(localStorage.setItem(KEY_MAPPER[key], value))
+    : () => {};
 
 export const initializeStorageData = () => {
   const isEmpty = getItem('codeTutorial') === null;

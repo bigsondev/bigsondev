@@ -4,7 +4,7 @@ import { SendOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 
-import { Box, faileMessage } from '~components';
+import { Box, failMessage } from '~components';
 import { encode } from '~utils';
 
 import { REACH_OUT_FORM_NAME } from './constants';
@@ -38,7 +38,7 @@ export const ReachOutForm = () => {
         setIsSubmitting(false);
       })
       .catch((error) => {
-        faileMessage();
+        failMessage();
         setIsSubmitting(false);
       });
   };
