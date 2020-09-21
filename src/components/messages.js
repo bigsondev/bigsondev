@@ -8,5 +8,11 @@ export const testsFailMessage = () => {
 };
 
 export const failMessage = () => {
-  message.error(`Woops, something went wrong, please try again later.`);
+  message.error(`Woops, something went wrong, please try again later`);
 };
+
+export const linkCopiedMessage = () =>
+  message.success('Link copied to clipboard');
+
+export const solutionLoadedMessage = () =>
+  message.success('Solution from the URL has been loaded in the editor');

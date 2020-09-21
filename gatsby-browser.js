@@ -25,3 +25,6 @@ import 'codemirror/addon/hint/html-hint.js';
 import 'codemirror/addon/hint/css-hint.js';
 import 'codemirror/addon/hint/anyword-hint.js';
 
+import { initializeStorageData } from '~utils';
+
+initializeStorageData();

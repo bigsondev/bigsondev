@@ -14,3 +14,4 @@ export { CodeEditor } from './coding';
 export { Illustration } from './Illustration';
 export { Icon } from './Icon';
 export * from './MediaQueries';
+export { TutorialTooltip } from './TutorialTooltip';

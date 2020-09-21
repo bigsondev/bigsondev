@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'gatsby';
 import { Tabs, Button, Result, Row, Col, Space } from 'antd';
 import { PlayCircleOutlined } from '@ant-design/icons';
 import { Controlled } from 'react-codemirror2';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import queryString from 'query-string';
+
+import { Text, TutorialTooltip } from '~components';
+import { copyToClipboard, setItem } from '~utils';
 
 import {
   Title,
   Paragraph,
   Box,
   testsFailMessage,
+  linkCopiedMessage,
+  solutionLoadedMessage,
   jsInTheConsoleNotification,
 } from '..';
 import { Tasks } from './Tasks';
@@ -74,11 +81,13 @@ export const CodeEditor = ({
   tasks = [],
   tests = [],
   help = [],
+  nextChallengeLink,
 }) => {
   const [html, setHtml] = useState('');
   const [css, setCss] = useState('');
   const [js, setJs] = useState('');
   const [timeoutId, setTimeoutId] = useState(undefined);
+  const [codeTutorialCounter, setCodeTutorialCounter] = useState(0);
   const [iframeContent, setIframeContent] = useState(
     createIframeContent({ html: '', css: '', js: '' })
   );
@@ -93,6 +102,19 @@ export const CodeEditor = ({
       setIframeContent(newIframeContent);
     }
   };
+
+  useEffect(() => {
+    const { html: htmlQuery, css: cssQuery, js: jsQuery } = queryString.parse(
+      window.location.search
+    );
+
+    if (htmlQuery || cssQuery || jsQuery) {
+      setHtml(htmlQuery);
+      setCss(cssQuery);
+      setJs(jsQuery);
+      solutionLoadedMessage();
+    }
+  }, []);
 
   useEffect(() => {
     const showJsNotification = tabs.includes('js');
@@ -137,9 +159,15 @@ export const CodeEditor = ({
     setExecutedTests(executedTests);
   };
 
-  const handleRestartChallengeClick = () => {
-    setChallengeCompleted(false);
-    setExecutedTests([]);
+  const handleCopyLinkClick = () => {
+    const link = `${window.location.href}?html=${html}&css=${css}&js=${js}`;
+
+    linkCopiedMessage();
+    copyToClipboard(link);
+  };
+
+  const handleOkClick = () => {
+    setCodeTutorialCounter(codeTutorialCounter + 1);
   };
 
   const TAB_MAPPER = {
@@ -163,90 +191,174 @@ export const CodeEditor = ({
     },
   };
 
+  const hasNextChallenge = Boolean(nextChallengeLink);
+
   return (
     <>
       <Title level={4} transform="capitalize">
         Expected Result
       </Title>
-      <Paragraph size="preNormal">{result}</Paragraph>
+      <TutorialTooltip
+        title="Hi, please read the instructions before diving into the code"
+        type="codeTutorial"
+        onClick={handleOkClick}
+        visible={codeTutorialCounter === 0}
+      >
+        <Paragraph size="preNormal">{result}</Paragraph>
+      </TutorialTooltip>
       {challengeCompleted && (
         <Fade duration={1500}>
           <Result
             status="success"
             title="Challenge Completed!"
-            subTitle="If you are happy with the solution, save it on GitHub repository to save the progress."
-            extra={[
-              <Button type="primary" key="save-on-github">
-                Save on GitHub
-              </Button>,
-              <Button
-                key="restart-challenge"
-                onClick={handleRestartChallengeClick}
-              >
-                Restart Challenge
-              </Button>,
-            ]}
+            subTitle={
+              hasNextChallenge
+                ? 'If you are happy with the solution, copy the link and share it with someone, or just continue to the next challenge.'
+                : `You've completed all challenges on this path.`
+            }
+            extra={
+              hasNextChallenge
+                ? [
+                    <Button
+                      type="primary"
+                      key="copy-link"
+                      onClick={handleCopyLinkClick}
+                    >
+                      Copy Link
+                    </Button>,
+                    <Link to={nextChallengeLink}>
+                      <Button key="next-challenge">Next Challenge</Button>
+                    </Link>,
+                  ]
+                : [
+                    <Button
+                      type="primary"
+                      key="copy-link"
+                      onClick={handleCopyLinkClick}
+                    >
+                      Copy Link
+                    </Button>,
+                    <Link to="/library">
+                      <Button key="back-to-library">Back to Library</Button>
+                    </Link>,
+                  ]
+            }
           />
         </Fade>
       )}
       <Holder>
         <Row justify="space-between" align="center">
           <Col>
-            <Tasks tasks={tasks} executedTests={executedTests} />
+            <TutorialTooltip
+              title="You can hover over these dots to check which tests are
+              running against your code, they will turn green or red
+              depending if your solution is correct"
+              type="codeTutorial"
+              onClick={handleOkClick}
+              visible={codeTutorialCounter === 1}
+            >
+              <Tasks tasks={tasks} executedTests={executedTests} />
+            </TutorialTooltip>
           </Col>
           <Col>
-            <Box pt={2} mr={2}>
-              <Space>
-                {help.map((help, index) => (
-                  <span key={index}>{help}</span>
-                ))}
-              </Space>
-            </Box>
+            <TutorialTooltip
+              title="If the code challenge is a bit too hard for you, get some
+              help by going through resources and learning about the
+              problem"
+              type="codeTutorial"
+              onClick={handleOkClick}
+              visible={codeTutorialCounter === 2}
+            >
+              <Box pt={2} mr={2}>
+                <Text
+                  strong
+                  color="#FFF"
+                  display="block"
+                  size="small"
+                  align="right"
+                >
+                  Resources
+                </Text>
+                <Space>
+                  {help.map((help, index) => (
+                    <span key={index}>{help}</span>
+                  ))}
+                </Space>
+              </Box>
+            </TutorialTooltip>
           </Col>
         </Row>
-        <TabsHolder type="card">
-          {tabs.map((name, index) => {
-            const { mode, tab, value, setter } = TAB_MAPPER[name];
+        <TutorialTooltip
+          title="Write some actual code, below the tests you can have maximum 3
+          tabs (HTML, CSS, JS), make sure you are writing code in a proper
+          one"
+          type="codeTutorial"
+          onClick={handleOkClick}
+          visible={codeTutorialCounter === 3}
+        >
+          <TabsHolder type="card">
+            {tabs.map((name, index) => {
+              const { mode, tab, value, setter } = TAB_MAPPER[name];
 
-            return (
-              <TabPaneHolder tab={tab} key={index}>
-                <CodeMirror
-                  value={value}
-                  options={{
-                    mode,
-                    lineNumbers: true,
-                    lineWrapping: true,
-                    theme: 'material',
-                    tabSize: 2,
-                    showCursorWhenSelecting: true,
-                    autofocus: true,
-                    matchBrackets: true,
-                    autoCloseBrackets: true,
-                    matchTags: true,
-                    autoCloseTags: true,
-                    showHint: true,
-                    extraKeys: { 'Ctrl-Space': 'autocomplete' },
-                  }}
-                  onBeforeChange={(editor, data, code) => setter(code)}
-                />
-                <RunTestsButton
-                  type="primary"
-                  icon={<PlayCircleOutlined />}
-                  onClick={handleRunTestsClick}
-                >
-                  Run Tests
-                </RunTestsButton>
-              </TabPaneHolder>
-            );
-          })}
-        </TabsHolder>
-        <IframeResult
-          frameBorder="0"
-          border="0"
-          cellSpacing="0"
-          id="BigsonDev__ResultIframe"
-          srcDoc={iframeContent}
-        />
+              return (
+                <TabPaneHolder tab={tab} key={index}>
+                  <CodeMirror
+                    value={value}
+                    options={{
+                      mode,
+                      lineNumbers: true,
+                      lineWrapping: true,
+                      theme: 'material',
+                      tabSize: 2,
+                      showCursorWhenSelecting: true,
+                      autofocus: true,
+                      matchBrackets: true,
+                      autoCloseBrackets: true,
+                      matchTags: true,
+                      autoCloseTags: true,
+                      showHint: true,
+                      extraKeys: { 'Ctrl-Space': 'autocomplete' },
+                    }}
+                    onBeforeChange={(editor, data, code) => setter(code)}
+                  />
+                  <TutorialTooltip
+                    title="When you are ready, click this button and validate
+                    your solution"
+                    type="codeTutorial"
+                    onClick={() => {
+                      handleOkClick();
+                      setItem('codeTutorial', true);
+                    }}
+                    visible={codeTutorialCounter === 5}
+                  >
+                    <RunTestsButton
+                      type="primary"
+                      icon={<PlayCircleOutlined />}
+                      onClick={handleRunTestsClick}
+                    >
+                      Run Tests
+                    </RunTestsButton>
+                  </TutorialTooltip>
+                </TabPaneHolder>
+              );
+            })}
+          </TabsHolder>
+        </TutorialTooltip>
+        <TutorialTooltip
+          title="Watch the result dynamically changing as you write code. Yes, in
+          real-time"
+          type="codeTutorial"
+          onClick={handleOkClick}
+          visible={codeTutorialCounter === 4}
+        >
+          <IframeResult
+            frameBorder="0"
+            border="0"
+            cellSpacing="0"
+            id="BigsonDev__ResultIframe"
+            srcDoc={iframeContent}
+          />
+        </TutorialTooltip>
       </Holder>
     </>
   );

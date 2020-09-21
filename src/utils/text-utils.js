@@ -26,3 +26,14 @@ export const shuffle = (array) => {
 
   return array;
 };
+
+export const copyToClipboard = (textToCopy) => {
+  const textArea = document.createElement('textarea');
+  textArea.setAttribute('style', 'position: absolute; left: -2000px');
+  textArea.textContent = textToCopy;
+  document.body.append(textArea);
+  textArea.select();
+  document.execCommand('copy');
+  const parent = textArea.parentElement;
+  parent && parent.removeChild(textArea);
+};

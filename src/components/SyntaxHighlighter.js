@@ -3,18 +3,9 @@ import { Button, Popover } from 'antd';
 import Highlight from 'react-highlight';
 import styled from 'styled-components';
 
-import { Text } from '.';
+import { copyToClipboard } from '~utils';
 
-const copyToClipboard = (textToCopy) => {
-  const textArea = document.createElement('textarea');
-  textArea.setAttribute('style', 'position: absolute; left: -2000px');
-  textArea.textContent = textToCopy;
-  document.body.append(textArea);
-  textArea.select();
-  document.execCommand('copy');
-  const parent = textArea.parentElement;
-  parent && parent.removeChild(textArea);
-};
+import { Text } from '.';
 
 const Holder = styled.div({
   position: 'relative',
