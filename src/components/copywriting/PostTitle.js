@@ -51,7 +51,7 @@ const shareOnFacebook = () =>
 export const PostTitle = ({ title, showSubtitle = false, date, readTime }) => (
   <>
     {showSubtitle && (
-      <Row align="middle" justify="space-between">
+      <Row align="middle" justify="space-between" gutter={[0, 16]}>
         <Col>
           <Space size="large">
             <Text type="secondary" size="small">

@@ -12,7 +12,7 @@ const ReachOut = () => (
     <Title level={3} align="center">
       And it never hurts to help.
     </Title>
-    <Paragraph align="center" type="secondary" lastParagraph>
+    <Paragraph align="center" type="secondary" breakParagraph>
       Ask about anything and sincere thank you for taking the time.
     </Paragraph>
     <ReachOutForm />
