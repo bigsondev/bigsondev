@@ -150,6 +150,7 @@ export const CodeEditor = ({
 
     if (allTestsPassed) {
       setChallengeCompleted(true);
+      window.scrollTo(0, 0);
     } else {
       testsFailMessage();
       setChallengeCompleted(false);

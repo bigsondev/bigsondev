@@ -1,6 +1,8 @@
 import React from 'react';
-import { Typography } from 'antd';
+import { Typography, Space } from 'antd';
 import styled from 'styled-components';
+
+import { Icon, Box } from '.';
 
 const TEXT_SIZE = {
   micro: '0.9375rem',
@@ -150,13 +152,27 @@ const LevelFiveHolder = styled.div(
 
 export const Paragraph = ({
   lastParagraph = false,
+  breakParagraph = false,
   marginBottom,
   ...props
 }) => (
-  <ParagraphHolder
-    style={{ marginBottom: lastParagraph ? '5rem' : marginBottom || '1.75rem' }}
-    {...props}
-  />
+  <>
+    <ParagraphHolder
+      style={{
+        marginBottom: breakParagraph ? '5rem' : marginBottom || '1.75rem',
+      }}
+      {...props}
+    />
+    {lastParagraph && (
+      <Box mt={5} mb={5} display="flex" justify="center">
+        <Space>
+          <Icon width={16} type="feather" />
+          <Icon width={16} type="feather" />
+          <Icon width={16} type="feather" />
+        </Space>
+      </Box>
+    )}
+  </>
 );
 
 export const Link = ({
@@ -165,9 +181,15 @@ export const Link = ({
   align,
   fontWeight,
   size,
+  className,
   ...props
 }) => (
-  <LinkHolder align={align} fontWeight={fontWeight} size={size}>
+  <LinkHolder
+    align={align}
+    fontWeight={fontWeight}
+    size={size}
+    className={className}
+  >
     <Typography.Link rel={rel} target={target} {...props} />
   </LinkHolder>
 );

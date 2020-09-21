@@ -2,7 +2,7 @@ import React from 'react';
 import AntdIcon from '@ant-design/icons';
 import styled from 'styled-components';
 
-import { HomeworkIcon, CheatSheetIcon, DuckIcon } from '~svg';
+import { HomeworkIcon, CheatSheetIcon, DuckIcon, FeatherIcon } from '~svg';
 
 const Holder = styled(AntdIcon)(({ width = 32 }) => ({
   '& svg': {
@@ -15,6 +15,7 @@ const ICON_MAPPER = {
   homework: HomeworkIcon,
   cheatSheet: CheatSheetIcon,
   duck: DuckIcon,
+  feather: FeatherIcon,
 };
 
 export const Icon = ({ type, ...props }) => {

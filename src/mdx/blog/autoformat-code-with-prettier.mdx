@@ -166,11 +166,10 @@ export const resourcesListData = [
   showSubtitle
 >
   <Title level={3}>Prerequites</Title>
-  <Paragraph lastParagraph>
+  <Paragraph>
     <PostList data={postListData} />
   </Paragraph>
   <PostCard title="Cheat Sheet" data={cheatSheetData} />
-  <Paragraph lastParagraph />
   <Title level={3}>Installation</Title>
   <Paragraph>
     Looking at the Cheat Sheet, <Text code>--save-dev</Text> flag will add
@@ -224,7 +223,7 @@ export const resourcesListData = [
     avoid when integrating with other tools.
   </Paragraph>
   <Title level={3}>Integrations</Title>
-  <Paragraph lastParagraph>
+  <Paragraph breakParagraph>
     Use Prettier for code formatting concerns, and linters for code-quality
     concerns as stated in{' '}
     <Link href="https://prettier.io/docs/en/integrating-with-linters.html">
@@ -330,7 +329,6 @@ export const resourcesListData = [
     useful!
   </Paragraph>
   <PostCard title="Final Thoughts" data={finalThoughtsListData} />
-  <Paragraph lastParagraph />
   <Title level={3}>Resources</Title>
   <Paragraph>
     When learning, you can never get enough. The following resources will help
