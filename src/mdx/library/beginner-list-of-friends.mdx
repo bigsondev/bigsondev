@@ -1,0 +1,81 @@
+---
+title: List of Friends
+path: /library/beginner-list-of-friends
+desc: Let's learn how to create lists in HTML.
+date: 2020-09-15
+type: beginner
+tags: html
+order: 5
+difficulty: 1
+---
+
+import $ from 'cash-dom';
+
+import { Post, Text, CodeEditor, Link } from '~components';
+import { getIframeContent } from '~utils';
+
+export const tasksListData = [
+  <Text size="small" color="#FAFAFA">
+    ul element exists
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    ol element exists
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    ul has 3 non-empty li elements
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    ol has 3 non-empty li elements
+  </Text>,
+];
+export const helpListData = [
+  <Link size="small" href="https://www.w3schools.com/css/css_list.asp">
+    Lists
+  </Link>,
+];
+
+export const tabs = ['html'];
+export const tests = [
+  () => getIframeContent().find('ul').length > 0,
+  () => getIframeContent().find('ol').length > 0,
+  () => {
+    const listElements = getIframeContent().find('ul li');
+    let isFilled = true;
+    if (listElements.length < 3) {
+      return false;
+    }
+    listElements.each((_, value) => {
+      const text = Boolean($(value).text().trim());
+      if (!text) {
+        isFilled = false;
+        return false;
+      }
+    });
+    return isFilled;
+  },
+  () => {
+    const listElements = getIframeContent().find('ol li');
+    let isFilled = true;
+    if (listElements.length < 3) {
+      return false;
+    }
+    listElements.each((_, value) => {
+      const text = Boolean($(value).text().trim());
+      if (!text) {
+        isFilled = false;
+        return false;
+      }
+    });
+    return isFilled;
+  },
+];
+
+<Post>
+  <CodeEditor
+    tasks={tasksListData}
+    help={helpListData}
+    tabs={tabs}
+    tests={tests}
+    result="There are 2 lists displayed on the screen, both lists have at least 3 li elements with non-empty content. Best to fill them with friend names!"
+  />
+</Post>

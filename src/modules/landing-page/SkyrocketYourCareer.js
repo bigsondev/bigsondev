@@ -6,8 +6,9 @@ import { Title, Text, Illustration, Box } from '~components';
 
 const Holder = styled.div({
   padding: '104px 16px',
-  backgroundColor: '#91d5ff',
+  backgroundColor: '#1890ff',
   width: '100vw',
+  position: 'relative',
 });
 
 const OfferCard = styled.div({
