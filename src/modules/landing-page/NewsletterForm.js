@@ -134,7 +134,7 @@ export const NewsletterForm = () => {
             >
               <Checkbox>
                 I want to receive Newsletter - knowledge about Frontend,
-                library, blog updates and mentoring special offers
+                library, blog updates and mentorship special offers
               </Checkbox>
             </Form.Item>
             <Form.Item>

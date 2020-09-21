@@ -214,6 +214,13 @@ const Library = ({
         <Paragraph align="center" type="secondary">
           I will be more than happy to help you learn Frontend the right way.
         </Paragraph>
+        <Box display="flex" justify="center">
+          <Link to="/mentorship">
+            <Button type="primary" size="large">
+              I Want Mentorship
+            </Button>
+          </Link>
+        </Box>
       </Box>
     </Layout>
   );

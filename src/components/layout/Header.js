@@ -59,8 +59,8 @@ const RightMenu = () => (
           </Link>
         </MenuItem>
         <MenuItem key="3">
-          <Link to="/mentoring">
-            <Text size="preNormal">Mentoring</Text>
+          <Link to="/mentorship">
+            <Text size="preNormal">Mentorship</Text>
           </Link>
         </MenuItem>
         <MenuItem key="4">
