@@ -1,8 +1,8 @@
 ---
-title: Hello World
-path: /library/beginner-hello-world
-desc: The very first challenge for all aspiring Frontend Developers.
-date: 2020-09-15
+title: Inline Elements
+path: /library/beginner-inline-elements
+desc: Create your first inline element.
+date: 2020-09-21
 type: beginner
 tags: html
 order: 2
@@ -14,24 +14,25 @@ import { getIframeContent } from '~utils';
 
 export const tasksListData = [
   <Text size="small" color="#FAFAFA">
-    p element exists
+    span element exists
   </Text>,
   <Text size="small" color="#FAFAFA">
-    Hello World text is inside of the p element
+    Hello Inline text is inside of the span element
   </Text>,
 ];
 
 export const helpListData = [
-  <Link size="small" href="https://www.w3schools.com/html/html_paragraphs.asp">
-    Paragraphs
+  <Link size="small" href="https://www.w3schools.com/html/html_blocks.asp">
+    Block and Inline Elements
   </Link>,
 ];
 
 export const tabs = ['html'];
 export const tests = [
-  () => getIframeContent().find('p').length > 0,
+  () => getIframeContent().find('span').length > 0,
   () =>
-    getIframeContent().find('p').text().toLowerCase().trim() === 'hello world',
+    getIframeContent().find('span').text().toLowerCase().trim() ===
+    'hello inline',
 ];
 
 <Post>
@@ -40,6 +41,6 @@ export const tests = [
     help={helpListData}
     tabs={tabs}
     tests={tests}
-    result={`"Hello World" paragraph is displayed on the screen.`}
+    result={`"Hello Inline" span is displayed on the screen.`}
   />
 </Post>

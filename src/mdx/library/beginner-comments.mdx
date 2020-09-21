@@ -1,0 +1,44 @@
+---
+title: Comments
+path: /library/beginner-comments
+desc: Learn how to add comments.
+date: 2020-09-21
+type: beginner
+tags: html
+order: 3
+difficulty: 0
+---
+
+import { Post, Text, CodeEditor, Link } from '~components';
+import { getIframeContent } from '~utils';
+
+export const tasksListData = [
+  <Text size="small" color="#FAFAFA">
+    Valid HTML comment with any content exists
+  </Text>,
+];
+
+export const helpListData = [
+  <Link size="small" href="https://www.w3schools.com/html/html_comments.asp">
+    Comments
+  </Link>,
+];
+
+export const tabs = ['html'];
+export const tests = [
+  () =>
+    getIframeContent()
+      .find('body')
+      .html()
+      .match(/<!--.*?-->/g),
+];
+
+<Post>
+  <CodeEditor
+    tasks={tasksListData}
+    help={helpListData}
+    tabs={tabs}
+    tests={tests}
+    result={`Valid comment is added in the HTML tab.`}
+  />
+</Post>

@@ -1,0 +1,48 @@
+---
+title: Image
+path: /library/beginner-image
+desc: Create your first image.
+date: 2020-09-21
+type: beginner
+tags: html
+order: 6
+difficulty: 1
+---
+
+import { Post, Text, CodeEditor, Link } from '~components';
+import { getIframeContent } from '~utils';
+
+export const tasksListData = [
+  <Text size="small" color="#FAFAFA">
+    img element exists
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    Image is properly loading (find one e.g. on https://unsplash.com/ and copy
+    it's url for src attribute)
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    Image has an alternative non-empty text
+  </Text>,
+];
+export const helpListData = [
+  <Link size="small" href="https://www.w3schools.com/html/html_images.asp">
+    Images
+  </Link>,
+];
+
+export const tabs = ['html'];
+export const tests = [
+  () => getIframeContent().find('img').length > 0,
+  () => getIframeContent().find('img').attr('src'),
+  () => getIframeContent().find('img').attr('alt'),
+];
+
+<Post>
+  <CodeEditor
+    tasks={tasksListData}
+    help={helpListData}
+    tabs={tabs}
+    tests={tests}
+    result={`Image is displayed on the screen and has an alternative non-empty text.`}
+  />
+</Post>

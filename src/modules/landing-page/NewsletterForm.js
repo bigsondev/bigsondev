@@ -23,8 +23,6 @@ export const NewsletterForm = () => {
       delete values[`bot-field`];
     }
 
-    console.log(values);
-
     setIsSubmitting(true);
 
     fetch(`/`, {
