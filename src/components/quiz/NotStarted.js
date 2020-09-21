@@ -1,9 +1,8 @@
 import React from 'react';
 import { Row, Col, Button, Space, Divider } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 
-import { Title, Text, Box, Link, Post } from '..';
+import { Title, Text, Box, Link, PostList, Paragraph } from '..';
 
 const StartButton = styled(Button)({
   width: 150,
@@ -16,27 +15,24 @@ const StartButton = styled(Button)({
   },
 });
 
-const InfoIcon = styled(InfoCircleOutlined)({
-  marginRight: 8,
-});
-
-export const NotStarted = ({ title, desc, questionsCount, onStartClick }) => (
-  <Post title={title} desc={desc}>
+export const NotStarted = ({ questionsCount, onStartClick }) => (
+  <>
     <Title level={3}>Before you Start</Title>
-    <Space direction="vertical">
-      <Text>
-        <InfoIcon /> There are <strong>{questionsCount} questions</strong>{' '}
-        without time limit, maximum score is{' '}
-        <strong>{questionsCount} points</strong>
-      </Text>
-      <Text>
-        <InfoIcon /> Each question has 4 possible answers,
-        <strong> but only one is correct</strong>
-      </Text>
-      <Text>
-        <InfoIcon /> You can take the Quiz at anytime
-      </Text>
-    </Space>
+    <Paragraph>
+      <PostList
+        data={[
+          <Text size="preNormal">
+            There are <strong>{questionsCount} questions</strong> without time
+            limit, maximum score is <strong>{questionsCount} points</strong>.
+          </Text>,
+          <Text size="preNormal">
+            Each question has 4 possible answers,
+            <strong> but only one is correct</strong>.
+          </Text>,
+          <Text size="preNormal">You can take the Quiz at anytime.</Text>,
+        ]}
+      />
+    </Paragraph>
     <Row>
       <Col span={24}>
         <Box mt={4}>
@@ -61,5 +57,5 @@ export const NotStarted = ({ title, desc, questionsCount, onStartClick }) => (
         </Col>
       )}
     </Row>
-  </Post>
+  </>
 );

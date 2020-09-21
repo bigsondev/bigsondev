@@ -52,7 +52,7 @@ export const InProgress = ({ data, selections, onAnswerClick }) => {
         percent={progress}
         showInfo={false}
       />
-      <Box maxWidth={600} margin="0 auto">
+      <Box maxWidth={600} margin="0 auto" padding="0 16px">
         <Box mb={1}>
           <Text type="secondary" align="center" display="block" size="small">
             Question {currentQuestionIndex + 1}/{data.length}
@@ -63,7 +63,7 @@ export const InProgress = ({ data, selections, onAnswerClick }) => {
             currentQuestionIndex === index && (
               <Fade duration={1500} key={question}>
                 {typeof question === 'string' ? (
-                  <Title level={2} align="center" transform="none">
+                  <Title level={3} align="center" transform="none">
                     {question}
                   </Title>
                 ) : (

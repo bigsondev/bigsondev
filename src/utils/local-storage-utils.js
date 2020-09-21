@@ -1,5 +1,6 @@
 const KEY_MAPPER = {
   codeTutorial: 'code-tutorial',
+  quizQuestionLookup: 'quiz-question-lookup',
   cookiesAcknowledged: 'cookies-acknowledged',
 };
 
@@ -13,6 +14,7 @@ export const initializeStorageData = () => {
 
   if (isEmpty) {
     setItem('codeTutorial', false);
+    setItem('quizQuestionLookup', false);
     setItem('cookiesAcknowledged', false);
   }
 };

@@ -63,9 +63,9 @@ export const SkyrocketYourCareer = () => {
               </Col>
               <Col span={20}>
                 <Text align="center" display="block" type="secondary">
-                  I will treat you individually, listen to your story, find
-                  weaknesses, empower strengths, and create a unique learning
-                  path to help you improve quickly.
+                  I will treat you individually, listen to your story, fix weak
+                  points, empower strengths, and create a unique learning path
+                  to help you improve quickly.
                 </Text>
               </Col>
               <LearnMoreButton type="secondary" size="large" block>

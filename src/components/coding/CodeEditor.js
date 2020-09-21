@@ -81,7 +81,7 @@ export const CodeEditor = ({
   tasks = [],
   tests = [],
   help = [],
-  nextChallengeLink,
+  next,
 }) => {
   const [html, setHtml] = useState('');
   const [css, setCss] = useState('');
@@ -191,7 +191,7 @@ export const CodeEditor = ({
     },
   };
 
-  const hasNextChallenge = Boolean(nextChallengeLink);
+  const hasNextChallenge = Boolean(next);
 
   return (
     <>
@@ -226,7 +226,7 @@ export const CodeEditor = ({
                     >
                       Copy Link
                     </Button>,
-                    <Link to={nextChallengeLink}>
+                    <Link to={`/library/${next}`}>
                       <Button key="next-challenge">Next Challenge</Button>
                     </Link>,
                   ]

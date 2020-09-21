@@ -2,10 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { shuffle } from '~utils';
 
-import {
-  didYouKnowQuestionButtonNotification,
-  quizResultsSaveMessage,
-} from '..';
+import { Post } from '..';
 import { NotStarted } from './NotStarted';
 import { InProgress } from './InProgress';
 import { Completed } from './Completed';
@@ -47,9 +44,6 @@ export const Quiz = ({ data: initialData, title, desc, next }) => {
       setTimer(undefined);
       setSelection([...selections, index]);
 
-      quizResultsSaveMessage();
-      didYouKnowQuestionButtonNotification();
-
       return setStage(STAGE_MAPPER.completed);
     }
 
@@ -78,6 +72,7 @@ export const Quiz = ({ data: initialData, title, desc, next }) => {
     ),
     [STAGE_MAPPER.inProgress]: (
       <InProgress
+        title={title}
         data={data}
         selections={selections}
         onAnswerClick={handleAnswerClick}
@@ -94,5 +89,9 @@ export const Quiz = ({ data: initialData, title, desc, next }) => {
     ),
   };
 
-  return stages[stage];
+  return (
+    <Post title={title} desc={stage === STAGE_MAPPER.notStarted ? desc : null}>
+      {stages[stage]}
+    </Post>
+  );
 };

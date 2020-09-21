@@ -9,7 +9,7 @@ import {
 import Fade from 'react-reveal/Fade';
 import moment from 'moment';
 
-import { Box } from '..';
+import { Box, TutorialTooltip } from '..';
 
 import { QuizCard, QuizProgress } from './styled';
 import { QuestionsLookup } from './QuestionsLookup';
@@ -43,8 +43,8 @@ export const Completed = ({
         icon={<SmileOutlined />}
         title={<Box mb={2}>Nicely Done, Quiz Completed!</Box>}
         subTitle={
-          <Row justify="center">
-            <Col span={6}>
+          <Row justify="center" gutter={[0, 16]}>
+            <Col xs={24} sm={8} xl={6}>
               <Statistic
                 title="Score"
                 value={countScore(data, selections)}
@@ -52,7 +52,7 @@ export const Completed = ({
                 suffix={` / ${data.length}`}
               />
             </Col>
-            <Col span={6}>
+            <Col xs={24} sm={8} xl={6}>
               <Statistic
                 prefix={<FieldTimeOutlined />}
                 title="Time Elapsed"
@@ -61,7 +61,14 @@ export const Completed = ({
             </Col>
           </Row>
         }
-        extra={<QuestionsLookup data={data} selections={selections} />}
+        extra={
+          <TutorialTooltip
+            title="Try clicking on the question button, check which answer you selected, and compare it with the correct one"
+            type="quizQuestionLookup"
+          >
+            <QuestionsLookup data={data} selections={selections} />
+          </TutorialTooltip>
+        }
       >
         <Box display="flex" justify="center">
           <Space>

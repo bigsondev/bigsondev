@@ -154,6 +154,11 @@ const Library = ({
     <Layout>
       <SEO title="Library" />
       <Title>skyrocket your career</Title>
+      <Paragraph type="secondary">
+        I've prepared some fun activities to help in your learning journey.
+        <br />
+        Try out coding challenges or test your skills in a Quiz, happy coding!
+      </Paragraph>
       <Divider />
       <Box mb={8}>
         <Space>
@@ -185,7 +190,7 @@ const Library = ({
       </Box>
       <Box mb={2}>
         <Space size="large" align="baseline">
-          <Title level={3} transform="capitalize">
+          <Title level={2} transform="capitalize">
             {filter} path
           </Title>
           <StartQuizButton type="primary" size="large">

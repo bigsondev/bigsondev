@@ -9,9 +9,14 @@ const ListItemMeta = styled(List.Item.Meta)({
   alignItems: 'center',
 });
 
-export const PostList = ({ data }) => (
+export const PostList = ({
+  direction = 'vertical',
+  data,
+  size = 'small',
+  type = 'secondary',
+}) => (
   <List
-    itemLayout="vertical"
+    itemLayout={direction}
     split={false}
     dataSource={data}
     renderItem={(item) => (
@@ -20,7 +25,7 @@ export const PostList = ({ data }) => (
           avatar={<MinusOutlined />}
           description={
             typeof item === 'string' ? (
-              <Text size="small" type="secondary">
+              <Text size={size} type={type}>
                 {item}.
               </Text>
             ) : (
