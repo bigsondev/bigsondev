@@ -15,3 +15,4 @@ export { Illustration } from './Illustration';
 export { Icon } from './Icon';
 export * from './MediaQueries';
 export { TutorialTooltip } from './TutorialTooltip';
+export { PromoBanner } from './PromoBanner';

@@ -9,6 +9,13 @@ import {
   RedditOutlined,
 } from '@ant-design/icons';
 
+import {
+  shareOnReddit,
+  shareOnTwitter,
+  shareOnLinkedin,
+  shareOnFacebook,
+} from '~utils';
+
 import { Title, Text, Link } from '..';
 
 const IconHolder = styled(Link)({
@@ -26,27 +33,6 @@ const IconHolder = styled(Link)({
     color: '#000 !important',
   },
 });
-
-const shareOnReddit = () =>
-  `http://www.reddit.com/submit?url=${encodeURIComponent(
-    window.location.href
-  )}`;
-
-const shareOnTwitter = (title) =>
-  `http://twitter.com/intent/tweet?url=${encodeURIComponent(
-    window.location.href
-  )}
-    &text=${encodeURIComponent(title)}&via=bigsondev`;
-
-const shareOnLinkedin = () =>
-  `https://www.linkedin.com/shareArticle/?url=${encodeURIComponent(
-    window.location.href
-  )}`;
-
-const shareOnFacebook = () =>
-  `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-    window.location.href
-  )}`;
 
 export const PostTitle = ({ title, showSubtitle = false, date, readTime }) => (
   <>

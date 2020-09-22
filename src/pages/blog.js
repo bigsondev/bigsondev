@@ -2,10 +2,24 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { Row, Col, Space, Divider, Tooltip, Button } from 'antd';
 import styled from 'styled-components';
-import { CalendarOutlined, FieldTimeOutlined } from '@ant-design/icons';
+import {
+  CalendarOutlined,
+  FieldTimeOutlined,
+  SlackOutlined,
+} from '@ant-design/icons';
 import moment from 'moment';
 
-import { Layout, SEO, Title, Paragraph, Text, Box, Icon } from '~components';
+import { SlackForm } from '~modules/blog';
+import {
+  Layout,
+  SEO,
+  Title,
+  Paragraph,
+  Text,
+  Box,
+  Icon,
+  PromoBanner,
+} from '~components';
 import { truncate } from '~utils';
 
 export const query = graphql`
@@ -151,6 +165,25 @@ const Blog = ({
           </Col>
         ))}
       </Row>
+      <Box mt={10}>
+        <PromoBanner
+          title={
+            <>
+              <Paragraph color="#FFF" strong size="h1">
+                <SlackOutlined /> slack
+              </Paragraph>
+            </>
+          }
+          desc={
+            <>
+              Let's chat, ask questions, share your Frontend story, review code.{' '}
+              <br />
+              Build a community with me that will help each other.
+            </>
+          }
+          content={<SlackForm />}
+        />
+      </Box>
     </Layout>
   );
 };

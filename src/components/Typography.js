@@ -10,6 +10,7 @@ const TEXT_SIZE = {
   preNormal: '1.125rem',
   normal: '1.27rem',
   h1: '2.5rem',
+  h4: '1.375rem',
 };
 
 export const Text = styled(Typography.Text)(
@@ -40,8 +41,14 @@ export const ParagraphHolder = styled(Typography.Paragraph)(
     size = 'normal',
     display = 'block',
     fontStyle = 'normal',
+    color,
+    transform,
+    spacing,
   }) => ({
+    color,
     textAlign: align,
+    textTransform: transform,
+    letterSpacing: spacing,
     display,
     fontSize: TEXT_SIZE[size],
     fontWeight,
@@ -71,9 +78,11 @@ const LevelOneHolder = styled.div(
     fontWeight,
     fontSize = '2.5rem',
     marginBottom = '0.5em',
+    color,
   }) => ({
     textAlign: align,
     '& h1': {
+      color,
       fontWeight,
       textTransform: transform,
       fontSize,
@@ -106,10 +115,12 @@ const LevelThreeHolder = styled.div(
     transform = 'capitalize',
     fontWeight,
     fontSize = '1.75rem',
+    color,
   }) => ({
     textAlign: align,
     fontWeight,
     '& h3': {
+      color,
       textTransform: transform,
       fontSize,
       marginBottom: '1rem !important',
@@ -123,10 +134,12 @@ const LevelFourHolder = styled.div(
     transform = 'uppercase',
     fontWeight,
     fontSize = '1.375rem',
+    color,
   }) => ({
     textAlign: align,
     fontWeight,
     '& h4': {
+      color,
       textTransform: transform,
       fontSize,
       marginBottom: '1rem !important',
@@ -140,10 +153,12 @@ const LevelFiveHolder = styled.div(
     transform = 'uppercase',
     fontWeight,
     fontSize = '1.25rem',
+    color,
   }) => ({
     textAlign: align,
     fontWeight,
     '& h5': {
+      color,
       textTransform: transform,
       fontSize,
     },
@@ -206,6 +221,7 @@ export const Title = ({
   const levelMap = {
     1: (
       <LevelOneHolder
+        color={color}
         marginBottom={marginBottom}
         fontSize={fontSize}
         fontWeight={fontWeight}
@@ -220,17 +236,17 @@ export const Title = ({
       </LevelTwoHolder>
     ),
     3: (
-      <LevelThreeHolder transform={transform}>
+      <LevelThreeHolder color={color} transform={transform}>
         <Typography.Title level={3} {...props} />
       </LevelThreeHolder>
     ),
     4: (
-      <LevelFourHolder transform={transform}>
+      <LevelFourHolder color={color} transform={transform}>
         <Typography.Title level={4} {...props} />
       </LevelFourHolder>
     ),
     5: (
-      <LevelFiveHolder transform={transform}>
+      <LevelFiveHolder color={color} transform={transform}>
         <Typography.Title level={5} {...props} />
       </LevelFiveHolder>
     ),

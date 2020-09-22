@@ -11,12 +11,7 @@ import { Layout, Row, Col } from 'antd';
 import { Header } from './Header';
 import { ContentHolder } from './styled';
 import { GlobalStyles } from './GlobalStyles';
-const LibraryLayout = ({
-  children,
-  pageContext: {
-    frontmatter: { title },
-  },
-}) => {
+const LibraryLayout = ({ children }) => {
   return (
     <Layout>
       <GlobalStyles />

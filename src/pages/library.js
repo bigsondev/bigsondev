@@ -4,7 +4,16 @@ import { Row, Col, Space, Divider, Button, Rate } from 'antd';
 
 import styled from 'styled-components';
 
-import { Layout, SEO, Title, Paragraph, Text, Box, Icon } from '~components';
+import {
+  Layout,
+  SEO,
+  Title,
+  Paragraph,
+  Text,
+  Box,
+  Icon,
+  PromoBanner,
+} from '~components';
 import { truncate } from '~utils';
 
 const RateHolder = styled(Rate)({
@@ -69,6 +78,11 @@ const StartQuizButton = styled(Button)({
   '&:hover': {
     background: '#ffc069',
   },
+});
+
+const PromoButton = styled(Button)({
+  width: 250,
+  height: 50,
 });
 
 const TAG_COLOR_MAPPER = {
@@ -212,20 +226,12 @@ const Library = ({
           </Col>
         ))}
       </Row>
-      <Box mt={20}>
-        <Title level={3} align="center">
-          Feeling a bit lost?
-        </Title>
-        <Paragraph align="center" type="secondary">
-          I will be more than happy to help you learn Frontend the right way.
-        </Paragraph>
-        <Box display="flex" justify="center">
-          <Link to="/mentorship">
-            <Button type="primary" size="large">
-              I Want Mentorship
-            </Button>
-          </Link>
-        </Box>
+      <Box mt={10}>
+        <PromoBanner
+          title="Feeling a bit lost?"
+          desc="I will be more than happy to help you learn Frontend the right way."
+          content={<PromoButton size="large">I WANT MENTORSHIP</PromoButton>}
+        />
       </Box>
     </Layout>
   );
