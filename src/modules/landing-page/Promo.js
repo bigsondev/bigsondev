@@ -44,13 +44,18 @@ const MobileScreenPromo = () => (
         </Text>{' '}
         is tough.
       </Title>
-      <Title transform="none" fontWeight="300" fontSize={'2.2rem'}>
+      <Title
+        transform="none"
+        fontWeight="300"
+        fontSize={'2.2rem'}
+        marginBottom="1.5rem"
+      >
         Let me help you with{' '}
         <Text size="h1" fontSize={'2.2rem'} strong>
           IT.
         </Text>
       </Title>
-      <Paragraph size={'small'}>
+      <Paragraph size={'small'} marginBottom="2.5rem">
         I'm Adrian, Front-end Developer, Recruiter, Mentor.
         <br />
         And your friend. I love sharing my knowledge with others.
@@ -59,7 +64,7 @@ const MobileScreenPromo = () => (
     <Col span={24}>
       <Illustration type="promo" />
     </Col>
-    <Box mt={3} style={{ width: '100%' }}>
+    <Box mt={5} style={{ width: '100%' }}>
       <PromoButton
         type="primary"
         block
@@ -138,13 +143,18 @@ const BigScreenPromo = () => (
             </Text>{' '}
             is tough.
           </Title>
-          <Title transform="none" fontWeight="300" fontSize={'3rem'}>
+          <Title
+            transform="none"
+            fontWeight="300"
+            fontSize={'3rem'}
+            marginBottom="2rem"
+          >
             Let me help you with{' '}
             <Text size="h1" fontSize={'3rem'} strong>
               IT.
             </Text>
           </Title>
-          <Paragraph size={'preNormal'}>
+          <Paragraph size={'preNormal'} marginBottom="2rem">
             I'm Adrian, Front-end Developer, Recruiter, Mentor.
             <br />
             And your friend. I love sharing my knowledge with others.

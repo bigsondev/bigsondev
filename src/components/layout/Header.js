@@ -133,7 +133,7 @@ export const Header = () => {
               </Col>
             </Row>
             <SmallOnly>
-              <Fade collapse duration={150} when={isExpanded}>
+              <Fade collapse duration={300} when={isExpanded}>
                 <MenuHolder theme="dark" mode="inline">
                   <MenuItem key="1" isSelected={matchUrl('library')} isMobile>
                     <Link to="/library">

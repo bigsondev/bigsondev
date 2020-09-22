@@ -41,7 +41,7 @@ export const PostCard = ({ title, data }) => (
     </Title>
     <Row justify="center" gutter={[0, 16]}>
       {data.map((item, index) => (
-        <Col span={20} key={index}>
+        <Col xs={24} sm={20} key={index}>
           <Item>
             <Number>{index + 1}</Number>
             {typeof item === 'string' ? (
