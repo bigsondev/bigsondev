@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Button, Space, Divider } from 'antd';
 import styled from 'styled-components';
 
-import { Title, Text, Box, Link, PostList, Paragraph } from '..';
+import { Title, Text, Box, Link, PostList } from '..';
 
 const StartButton = styled(Button)({
   width: 150,
@@ -18,21 +18,19 @@ const StartButton = styled(Button)({
 export const NotStarted = ({ questionsCount, onStartClick }) => (
   <>
     <Title level={3}>Before you Start</Title>
-    <Paragraph>
-      <PostList
-        data={[
-          <Text size="preNormal">
-            There are <strong>{questionsCount} questions</strong> without time
-            limit, maximum score is <strong>{questionsCount} points</strong>.
-          </Text>,
-          <Text size="preNormal">
-            Each question has 4 possible answers,
-            <strong> but only one is correct</strong>.
-          </Text>,
-          <Text size="preNormal">You can take the Quiz at anytime.</Text>,
-        ]}
-      />
-    </Paragraph>
+    <PostList
+      data={[
+        <Text size="preNormal">
+          There are <strong>{questionsCount} questions</strong> without time
+          limit, maximum score is <strong>{questionsCount} points</strong>.
+        </Text>,
+        <Text size="preNormal">
+          Each question has 4 possible answers,
+          <strong> but only one is correct</strong>.
+        </Text>,
+        <Text size="preNormal">You can take the Quiz at anytime.</Text>,
+      ]}
+    />
     <Row>
       <Col span={24}>
         <Box mt={4}>

@@ -23,51 +23,51 @@ import {
 } from '~components';
 
 export const postListData = [
-  <Text size="small" type="secondary">
+  <Text size="preNormal">
     Some knowledge of{' '}
-    <Link href="https://reactjs.org/" size="small">
+    <Link href="https://reactjs.org/" size="preNormal">
       React
     </Link>
     .
   </Text>,
-  <Text size="small" type="secondary">
+  <Text size="preNormal">
     Basic understanding of{' '}
     <Link
       href="https://bradfrost.com/blog/post/atomic-web-design/"
-      size="small"
+      size="preNormal"
     >
       Atomic Web Design
     </Link>
     .
   </Text>,
-  <Text size="small" type="secondary">
+  <Text size="preNormal">
     Not mandatory, but good to know the difference between{' '}
     <Link
       href="https://reactjs.org/docs/composition-vs-inheritance.html#gatsby-focus-wrapper"
-      size="small"
+      size="preNormal"
     >
       Composition vs Inheritance
     </Link>
     .
   </Text>,
-  <Text size="small" type="secondary">
+  <Text size="preNormal">
     Best if you have some experience with{' '}
-    <Link href="https://material-ui.com/" size="small">
+    <Link href="https://material-ui.com/" size="preNormal">
       Material UI
     </Link>{' '}
     or{' '}
-    <Link href="https://ant.design/" size="small">
+    <Link href="https://ant.design/" size="preNormal">
       Ant Design
     </Link>
     .
   </Text>,
-  <Text size="small" type="secondary">
+  <Text size="preNormal">
     I will refer to Material UI as{' '}
-    <Text size="small" strong>
+    <Text size="preNormal" strong>
       MUI
     </Text>{' '}
     and to Ant Design as{' '}
-    <Text size="small" strong>
+    <Text size="preNormal" strong>
       Antd
     </Text>{' '}
     in this article.
@@ -166,13 +166,15 @@ export const cheatSheetData = [
 ];
 
 export const resourcesListData = [
-  <Link href="https://prettier.io/docs/en/index.html">
+  <Link size="preNormal" href="https://prettier.io/docs/en/index.html">
     Prettier Documentation
   </Link>,
-  <Link href="https://prettier.io/docs/en/cli.html">
+  <Link size="preNormal" href="https://prettier.io/docs/en/cli.html">
     Prettier CLI Documentation
   </Link>,
-  <Link href="https://github.com/typicode/husky">Husky Reference</Link>,
+  <Link size="preNormal" href="https://github.com/typicode/husky">
+    Husky Reference
+  </Link>,
 ];
 
 <Post
@@ -183,9 +185,7 @@ export const resourcesListData = [
   showSubtitle
 >
   <Title level={3}>Prerequisites</Title>
-  <Paragraph>
-    <PostList data={postListData} />
-  </Paragraph>
+  <PostList data={postListData} />
   <PostCard title="Cheat Sheet" data={cheatSheetData} />
   <Title level={3}>Installation</Title>
   <Paragraph>
