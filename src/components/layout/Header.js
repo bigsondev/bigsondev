@@ -79,14 +79,14 @@ const RightMenu = ({
     </SmallOnly>
     <ExceptSmall>
       <MenuHolder theme="dark" mode="horizontal">
-        <MenuItem key="1" isSelected={matchUrl('library')}>
-          <Link to="/library">
-            <Text size="preNormal">Library</Text>
-          </Link>
-        </MenuItem>
-        <MenuItem key="2" isSelected={matchUrl('blog')}>
+        <MenuItem key="1" isSelected={matchUrl('blog')}>
           <Link to="/blog">
             <Text size="preNormal">Blog</Text>
+          </Link>
+        </MenuItem>
+        <MenuItem key="2" isSelected={matchUrl('library')}>
+          <Link to="/library">
+            <Text size="preNormal">Library</Text>
           </Link>
         </MenuItem>
         <MenuItem key="3" isSelected={matchUrl('mentorship')}>
@@ -135,14 +135,14 @@ export const Header = () => {
             <SmallOnly>
               <Fade collapse duration={300} when={isExpanded}>
                 <MenuHolder theme="dark" mode="inline">
-                  <MenuItem key="1" isSelected={matchUrl('library')} isMobile>
-                    <Link to="/library">
-                      <Text size="preNormal">Library</Text>
-                    </Link>
-                  </MenuItem>
-                  <MenuItem key="2" isSelected={matchUrl('blog')} isMobile>
+                  <MenuItem key="1" isSelected={matchUrl('blog')} isMobile>
                     <Link to="/blog">
                       <Text size="preNormal">Blog</Text>
+                    </Link>
+                  </MenuItem>
+                  <MenuItem key="2" isSelected={matchUrl('library')} isMobile>
+                    <Link to="/library">
+                      <Text size="preNormal">Library</Text>
                     </Link>
                   </MenuItem>
                   <MenuItem

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Button } from 'antd';
-import { ArrowDownOutlined } from '@ant-design/icons';
+import { DownCircleFilled } from '@ant-design/icons';
 import styled from 'styled-components';
 
 import {
@@ -55,7 +55,7 @@ const MobileScreenPromo = () => (
           IT.
         </Text>
       </Title>
-      <Paragraph size={'small'} marginBottom="2.5rem">
+      <Paragraph size={'small'} marginBottom="2.5rem" fontStyle="italic">
         I'm Adrian, Front-end Developer, Recruiter, Mentor.
         <br />
         And your friend. I love sharing my knowledge with others.
@@ -104,7 +104,7 @@ const MediumScreenPromo = () => (
             IT.
           </Text>
         </Title>
-        <Paragraph size="preNormal" align="center">
+        <Paragraph size="preNormal" align="center" fontStyle="italic">
           I'm Adrian, Front-end Developer, Recruiter, Mentor.
           <br />
           And your friend. I love sharing my knowledge with others.
@@ -154,7 +154,12 @@ const BigScreenPromo = () => (
               IT.
             </Text>
           </Title>
-          <Paragraph size={'preNormal'} marginBottom="2rem">
+          <Paragraph
+            size={'preNormal'}
+            marginBottom="2rem"
+            fontStyle="italic"
+            fontWeight="200"
+          >
             I'm Adrian, Front-end Developer, Recruiter, Mentor.
             <br />
             And your friend. I love sharing my knowledge with others.
@@ -168,8 +173,15 @@ const BigScreenPromo = () => (
         <Illustration type="promo" />
       </Col>
       <Col span={24}>
-        <Box mt={5} display="flex" justify="center">
-          <ArrowDownOutlined style={{ fontSize: 32 }} />
+        <Box mt={2} display="flex" justify="center">
+          <DownCircleFilled
+            style={{ fontSize: 60, color: '#bae7ff', cursor: 'pointer' }}
+            onClick={() =>
+              document
+                .getElementById('skyrocket-your-career')
+                .scrollIntoView({ behavior: 'smooth' })
+            }
+          />
         </Box>
       </Col>
     </Row>

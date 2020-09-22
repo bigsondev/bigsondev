@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Button } from 'antd';
 import styled from 'styled-components';
 
-import { Title, Paragraph, Text, Illustration, Box } from '~components';
+import { Title, Text, Illustration, Box } from '~components';
 
 const Holder = styled.div({
   padding: '96px 16px',
@@ -48,13 +48,9 @@ export const SkyrocketYourCareer = () => {
         <Title level={2} align="center">
           Skyrocket your career
         </Title>
-        <Paragraph align="center" fontWeight="200">
-          Looking for code review, real-world projects, or ready to test your
-          skills? Let me React to this.
-        </Paragraph>
       </Box>
       <Row justify="center" gutter={[24, 24]}>
-        <Col xs={22} sm={16} xl={7} xxl={6}>
+        <Col xs={22} sm={16} lg={8} xl={7} xxl={6}>
           <OfferCard>
             <Row justify="center" gutter={[0, 26]}>
               <Col span={12}>
@@ -66,7 +62,7 @@ export const SkyrocketYourCareer = () => {
                 </Title>
               </Col>
               <Col span={20}>
-                <Text align="center" display="block" fontWeight="200">
+                <Text align="center" display="block" type="secondary">
                   I will treat you individually, listen to your story, fix weak
                   points, empower strengths, and create a unique learning path
                   to help you improve quickly.
@@ -78,7 +74,7 @@ export const SkyrocketYourCareer = () => {
             </Row>
           </OfferCard>
         </Col>
-        <Col xs={22} sm={16} xl={7} xxl={6}>
+        <Col xs={22} sm={16} lg={8} xl={7} xxl={6}>
           <OfferCard>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={10}>
@@ -90,19 +86,19 @@ export const SkyrocketYourCareer = () => {
                 </Title>
               </Col>
               <Col span={20}>
-                <Text align="center" display="block" fontWeight="200">
+                <Text align="center" display="block" type="secondary">
                   Have you ever talked to a ghost? Stress-free conversation,
                   warm-up for your next technical interview. I will adjust
                   questions and coding challenges to your skill level.
                 </Text>
               </Col>
-              <LearnMoreButton size="large" block>
+              <LearnMoreButton type="secondary" size="large" block>
                 Learn More
               </LearnMoreButton>
             </Row>
           </OfferCard>
         </Col>
-        <Col xs={22} sm={16} xl={7} xxl={6}>
+        <Col xs={22} sm={16} lg={8} xl={7} xxl={6}>
           <OfferCard>
             <Row justify="center" gutter={[0, 28]}>
               <Col span={11}>
@@ -114,7 +110,7 @@ export const SkyrocketYourCareer = () => {
                 </Title>
               </Col>
               <Col span={20}>
-                <Text align="center" display="block" fontWeight="200">
+                <Text align="center" display="block" type="secondary">
                   Feeling stuck in your career? I felt the same and created one
                   to push my own limits. Now, I would love to create one for
                   you, let's skyrocket in Frontend together.

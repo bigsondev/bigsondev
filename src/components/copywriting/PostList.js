@@ -1,12 +1,18 @@
 import React from 'react';
 import { List } from 'antd';
-import { MinusOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 
 import { Paragraph, Text } from '..';
 
 const ListItemMeta = styled(List.Item.Meta)({
   alignItems: 'center',
+  marginBottom: '0 !important',
+});
+
+const Avatar = styled.div({
+  fontSize: '2rem',
+  marginBottom: '0.3rem',
+  color: '#FFC068',
 });
 
 export const PostList = ({
@@ -23,7 +29,7 @@ export const PostList = ({
       renderItem={(item) => (
         <List.Item>
           <ListItemMeta
-            avatar={<MinusOutlined />}
+            avatar={<Avatar>•</Avatar>}
             description={
               typeof item === 'string' ? (
                 <Text size={size} type={type}>

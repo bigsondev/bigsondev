@@ -68,6 +68,7 @@ export const LinkHolder = styled.span(
     fontSize: fontSize || TEXT_SIZE[size],
     fontWeight,
     display,
+    textDecoration: 'underline',
   })
 );
 
@@ -98,11 +99,13 @@ const LevelTwoHolder = styled.div(
     fontWeight,
     fontSize = '2.125rem',
     color,
+    letterSpacing,
   }) => ({
     textAlign: align,
     fontWeight,
     '& h2': {
       color,
+      letterSpacing,
       textTransform: transform,
       fontSize,
     },
@@ -135,6 +138,7 @@ const LevelFourHolder = styled.div(
     fontWeight,
     fontSize = '1.375rem',
     color,
+    marginBottom = '1rem',
   }) => ({
     textAlign: align,
     fontWeight,
@@ -142,7 +146,7 @@ const LevelFourHolder = styled.div(
       color,
       textTransform: transform,
       fontSize,
-      marginBottom: '1rem !important',
+      marginBottom,
     },
   })
 );
@@ -216,6 +220,7 @@ export const Title = ({
   fontWeight,
   marginBottom,
   color,
+  letterSpacing,
   ...props
 }) => {
   const levelMap = {
@@ -231,7 +236,11 @@ export const Title = ({
       </LevelOneHolder>
     ),
     2: (
-      <LevelTwoHolder color={color} transform={transform}>
+      <LevelTwoHolder
+        letterSpacing={letterSpacing}
+        color={color}
+        transform={transform}
+      >
         <Typography.Title level={2} {...props} />
       </LevelTwoHolder>
     ),
@@ -241,7 +250,11 @@ export const Title = ({
       </LevelThreeHolder>
     ),
     4: (
-      <LevelFourHolder color={color} transform={transform}>
+      <LevelFourHolder
+        marginBottom={marginBottom}
+        color={color}
+        transform={transform}
+      >
         <Typography.Title level={4} {...props} />
       </LevelFourHolder>
     ),

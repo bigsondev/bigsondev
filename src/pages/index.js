@@ -2,9 +2,11 @@ import React from 'react';
 
 import { Layout, Section, SEO, Box } from '~components';
 import {
-  NewsletterForm,
   Promo,
   SkyrocketYourCareer,
+  BlogLibrary,
+  WhoIAm,
+  NewsletterForm,
 } from '~modules/landing-page';
 
 const Landing = () => {
@@ -18,6 +20,12 @@ const Landing = () => {
       </Box>
       <Section fullWidth>
         <SkyrocketYourCareer />
+      </Section>
+      <Section fullWidth>
+        <BlogLibrary />
+      </Section>
+      <Section fullWidth>
+        <WhoIAm />
       </Section>
       <NewsletterForm />
     </Layout>
