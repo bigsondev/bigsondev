@@ -68,7 +68,7 @@ const BlogLayout = ({
             )}
             <Col xs={{ span: 22 }} md={{ span: 16 }} xl={{ span: 12 }}>
               <main>{children}</main>
-              <Box mt={5}>
+              <Box mt={7}>
                 <PromoBanner
                   title="spread the word"
                   desc="Did you like the article? Share it with someone!"
