@@ -60,7 +60,10 @@ const LeftMenu = () => (
   </Link>
 );
 
-const matchUrl = (url) => window.location.href.indexOf(url) !== -1;
+const matchUrl = (url) =>
+  typeof window !== 'undefined'
+    ? window.location.href.indexOf(url) !== -1
+    : undefined;
 
 const RightMenu = ({
   isExpanded,
