@@ -11,6 +11,7 @@ import { Layout, Row, Col } from 'antd';
 import { Header } from './Header';
 import { ContentHolder } from './styled';
 import { GlobalStyles } from './GlobalStyles';
+
 const LibraryLayout = ({ children }) => {
   return (
     <Layout>
@@ -23,7 +24,6 @@ const LibraryLayout = ({ children }) => {
           </Col>
         </Row>
       </ContentHolder>
-      {/* TODO implement Footer */}
     </Layout>
   );
 };

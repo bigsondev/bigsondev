@@ -3,7 +3,6 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-
 import 'highlight.js/styles/a11y-light.css';
 
 // The following two imports is for the theme.
@@ -28,3 +27,8 @@ import 'codemirror/addon/hint/anyword-hint.js';
 import { initializeStorageData } from '~utils';
 
 initializeStorageData();
+
+// TODO make it work?
+export const shouldUpdateScroll = () => {
+  return [0, 0];
+};

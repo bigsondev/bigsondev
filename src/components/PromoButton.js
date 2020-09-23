@@ -24,7 +24,7 @@ export const PromoButton = styled(Button)(({ size = 'normal' }) => ({
   fontWeight: 500,
   borderRadius: 24,
   color: '#FFF !important',
-  background: '#ffc069 !important',
+  backgroundColor: '#ffc069 !important',
   border: 'none',
   transition: 'box-shadow 0.3s',
   position: 'relative',
@@ -32,10 +32,7 @@ export const PromoButton = styled(Button)(({ size = 'normal' }) => ({
 
   '&:hover': {
     boxShadow: `0px 0px 5px 0px #ffc069`,
-    background: '#ffc069 !important',
+    backgroundColor: '#ffc069 !important',
     color: '#FFF !important',
-  },
-  '&:active': {
-    background: '#ffc069 !important',
   },
 }));

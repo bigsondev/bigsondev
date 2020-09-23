@@ -27,8 +27,10 @@ import { Paragraph, Box, PromoBanner, Link } from '..';
 import { Header } from './Header';
 import { ContentHolder } from './styled';
 import { GlobalStyles } from './GlobalStyles';
+import { Footer } from './Footer';
 
 const IconHolder = styled(Link)({
+  fontSize: '3.125rem',
   color: '#FFF !important',
   '& a': {
     color: '#FFF !important',
@@ -75,16 +77,16 @@ const BlogLayout = ({
                   content={
                     <Space size="middle">
                       <IconHolder href={shareOnReddit()}>
-                        <RedditSquareFilled style={{ fontSize: 50 }} />
+                        <RedditSquareFilled />
                       </IconHolder>
                       <IconHolder href={shareOnTwitter(title)}>
-                        <TwitterSquareFilled style={{ fontSize: 50 }} />
+                        <TwitterSquareFilled />
                       </IconHolder>
                       <IconHolder href={shareOnLinkedin()}>
-                        <LinkedinFilled style={{ fontSize: 50 }} />
+                        <LinkedinFilled />
                       </IconHolder>
                       <IconHolder href={shareOnFacebook()}>
-                        <FacebookFilled style={{ fontSize: 50 }} />
+                        <FacebookFilled />
                       </IconHolder>
                     </Space>
                   }
@@ -99,7 +101,7 @@ const BlogLayout = ({
           </Row>
         </Box>
       </ContentHolder>
-      {/* TODO implement Footer */}
+      <Footer />
     </Layout>
   );
 };
