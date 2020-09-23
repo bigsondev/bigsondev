@@ -10,7 +10,7 @@ export const SecondaryButton = styled(Button)({
   borderRadius: 24,
   border: '1px solid #24B2DB',
   backgroundColor: '#FFF',
-  margin: '2rem',
+  margin: '1.5rem',
   textTransform: 'uppercase',
   transition: 'background-color 0.3s, color 0.3s',
 

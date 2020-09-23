@@ -76,7 +76,7 @@ const LevelOneHolder = styled.div(
   ({
     align = 'left',
     transform = 'capitalize',
-    fontWeight,
+    fontWeight = 600,
     fontSize = '2.5rem',
     marginBottom = '0.5em',
     color,
@@ -96,14 +96,14 @@ const LevelTwoHolder = styled.div(
   ({
     align = 'left',
     transform = 'capitalize',
-    fontWeight,
+    fontWeight = 500,
     fontSize = '2.125rem',
     color,
     letterSpacing,
   }) => ({
     textAlign: align,
-    fontWeight,
     '& h2': {
+      fontWeight,
       color,
       letterSpacing,
       textTransform: transform,
@@ -116,13 +116,13 @@ const LevelThreeHolder = styled.div(
   ({
     align = 'left',
     transform = 'capitalize',
-    fontWeight,
+    fontWeight = 400,
     fontSize = '1.75rem',
     color,
   }) => ({
     textAlign: align,
-    fontWeight,
     '& h3': {
+      fontWeight,
       color,
       textTransform: transform,
       fontSize,
@@ -135,14 +135,14 @@ const LevelFourHolder = styled.div(
   ({
     align = 'left',
     transform = 'uppercase',
-    fontWeight,
+    fontWeight = 500,
     fontSize = '1.375rem',
     color,
     marginBottom = '1rem',
   }) => ({
     textAlign: align,
-    fontWeight,
     '& h4': {
+      fontWeight,
       color,
       textTransform: transform,
       fontSize,

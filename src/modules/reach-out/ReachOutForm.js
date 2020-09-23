@@ -1,16 +1,23 @@
 import React, { useState } from 'react';
-import { Form, Input as AntdInput, Button, Result } from 'antd';
-import { SendOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
+import { Form, Input as AntdInput, Result, Row, Col } from 'antd';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 
-import { Box, failMessage } from '~components';
+import { Box, failMessage, SecondaryButton } from '~components';
 import { encode } from '~utils';
 
 import { REACH_OUT_FORM_NAME } from './constants';
 
 const Input = styled(AntdInput)({
   height: 50,
+});
+
+const FormItem = styled(Form.Item)({
+  '& label': {
+    fontSize: '1.125rem',
+    height: 'initial !important',
+    color: 'rgba(0, 0, 0, 0.45)',
+  },
 });
 
 export const ReachOutForm = () => {
@@ -70,20 +77,6 @@ export const ReachOutForm = () => {
             method="post"
             layout="vertical"
             size="large"
-            labelCol={{
-              xs: 24,
-              md: {
-                span: 16,
-                offset: 4,
-              },
-            }}
-            wrapperCol={{
-              xs: 24,
-              md: {
-                span: 16,
-                offset: 4,
-              },
-            }}
             validateTrigger={triedToSubmit ? 'onChange' : 'onSubmit'}
             onFinish={handleSubmit}
           >
@@ -94,64 +87,74 @@ export const ReachOutForm = () => {
             >
               <Input type="hidden" />
             </Form.Item>
-            <Form.Item
-              name="name"
-              rules={[
-                { required: true, message: `I'm Adrian, and you are? :)` },
-              ]}
-            >
-              <Input prefix={<UserOutlined />} placeholder="Your Name" />
-            </Form.Item>
-            <Form.Item
-              name="email"
-              rules={[
-                {
-                  required: true,
-                  message: `I will need your email to respond back.`,
-                },
-                {
-                  type: 'email',
-                  message: `Please provide a valid email address.`,
-                },
-              ]}
-            >
-              <Input prefix={<MailOutlined />} placeholder="Email" />
-            </Form.Item>
-            <Form.Item
-              name="message"
-              rules={[
-                {
-                  required: true,
-                  message: `I thought you wanted to ask about something. :(`,
-                },
-                {
-                  min: 10,
-                  message: `Write a little more. (min. 10 characters)`,
-                },
-                {
-                  max: 2000,
-                  message: `Woops, a bit too long. (max. 2000 characters)`,
-                },
-              ]}
-            >
-              <Input.TextArea
-                rows={7}
-                placeholder="Hi, I want to ask about..."
-              />
-            </Form.Item>
+            <Row justify="center" gutter={[24, 24]}>
+              <Col xs={22} md={8}>
+                <FormItem
+                  label="Name"
+                  name="name"
+                  required={false}
+                  rules={[
+                    { required: true, message: `I'm Adrian, and you are? :)` },
+                  ]}
+                >
+                  <Input placeholder="John Doe" />
+                </FormItem>
+              </Col>
+              <Col xs={22} md={8}>
+                <FormItem
+                  label="Email"
+                  name="email"
+                  required={false}
+                  rules={[
+                    {
+                      required: true,
+                      message: `I will need your email to respond back.`,
+                    },
+                    {
+                      type: 'email',
+                      message: `Please provide a valid email address.`,
+                    },
+                  ]}
+                >
+                  <Input placeholder="email@example.com" />
+                </FormItem>
+              </Col>
+              <Col xs={22} md={16}>
+                <FormItem
+                  label="Message"
+                  name="message"
+                  required={false}
+                  rules={[
+                    {
+                      required: true,
+                      message: `I thought you wanted to ask about something. :(`,
+                    },
+                    {
+                      min: 10,
+                      message: `Write a little more. (min. 10 characters)`,
+                    },
+                    {
+                      max: 2000,
+                      message: `Woops, a bit too long. (max. 2000 characters)`,
+                    },
+                  ]}
+                >
+                  <Input.TextArea
+                    rows={7}
+                    placeholder="Hi, I want to ask about..."
+                  />
+                </FormItem>
+              </Col>
+            </Row>
             <Form.Item>
-              <Box display="flex" justify="center">
-                <Button
-                  block
-                  type="primary"
-                  size="large"
+              <Box display="flex" justify="center" mt={-3}>
+                <SecondaryButton
                   htmlType="submit"
                   loading={isSubmitting}
                   onClick={() => setTriedToSubmit(true)}
-                  icon={<SendOutlined />}
                 >
-                  Send
-                </Button>
+                  Send message
+                </SecondaryButton>
               </Box>
             </Form.Item>
           </Form>

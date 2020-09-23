@@ -150,7 +150,7 @@ const Library = ({
     <Layout>
       <SEO title="Library" />
       <Title>skyrocket your career</Title>
-      <Paragraph type="secondary">
+      <Paragraph fontWeight="200">
         I've prepared some fun activities to help in your learning journey.
         <br />
         Try out coding challenges or test your skills in a Quiz, happy coding!

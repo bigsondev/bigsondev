@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
   @media (max-width: 480px) {
     html {
         font-size: 14px;
