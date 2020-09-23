@@ -21,6 +21,10 @@ const MenuHolder = styled(Menu)({
   borderBottom: 'none',
 });
 
+const MobileMenuSpace = styled.div({
+  height: 20,
+});
+
 const MenuItem = styled(Menu.Item)(({ isSelected, isMobile }) => ({
   '&.ant-menu-item': {
     padding: isMobile && '0 !important',
@@ -156,12 +160,12 @@ export const Header = () => {
                 <MenuHolder theme="dark" mode="inline">
                   <MenuItem key="1" isSelected={matchUrl('blog')} isMobile>
                     <Link to="/blog">
-                      <Text size="preNormal">Blog</Text>
+                      <Text>Blog</Text>
                     </Link>
                   </MenuItem>
                   <MenuItem key="2" isSelected={matchUrl('library')} isMobile>
                     <Link to="/library">
-                      <Text size="preNormal">Library</Text>
+                      <Text>Library</Text>
                     </Link>
                   </MenuItem>
                   <MenuItem
@@ -170,15 +174,16 @@ export const Header = () => {
                     isMobile
                   >
                     <Link to="/mentorship">
-                      <Text size="preNormal">Mentorship</Text>
+                      <Text>Mentorship</Text>
                     </Link>
                   </MenuItem>
                   <MenuItem key="4" isSelected={matchUrl('reach-out')} isMobile>
                     <Link to="/reach-out">
-                      <Text size="preNormal">Reach Out</Text>
+                      <Text>Reach Out</Text>
                     </Link>
                   </MenuItem>
                 </MenuHolder>
+                <MobileMenuSpace />
               </Fade>
             </SmallOnly>
           </Box>
