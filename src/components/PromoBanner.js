@@ -8,7 +8,7 @@ const Holder = styled.div({
   flexDirection: 'column',
   alignItems: 'center',
   backgroundColor: '#2f4586e8',
-  padding: '5rem 0 8rem',
+  padding: '5rem 1.5rem',
 });
 
 export const PromoBanner = ({ title, desc, content }) => (
