@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-  html, body {
+  body {
     max-width: 100%;
     overflow-x: hidden;
   }

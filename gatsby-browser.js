@@ -27,8 +27,3 @@ import 'codemirror/addon/hint/anyword-hint.js';
 import { initializeStorageData } from '~utils';
 
 initializeStorageData();
-
-// TODO make it work?
-export const shouldUpdateScroll = () => {
-  return [0, 0];
-};
