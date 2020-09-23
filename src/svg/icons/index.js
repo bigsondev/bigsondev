@@ -5,6 +5,7 @@ import FeatherIcon from './feather.svg';
 import DeveloperIcon from './developer.svg';
 import RecruiterIcon from './recruiter.svg';
 import MentorIcon from './mentor.svg';
+import DotIcon from './dot.svg';
 
 export {
   HomeworkIcon,
@@ -14,4 +15,5 @@ export {
   DeveloperIcon,
   RecruiterIcon,
   MentorIcon,
+  DotIcon,
 };

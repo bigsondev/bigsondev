@@ -13,6 +13,9 @@ import {
   Box,
   Icon,
   PromoBanner,
+  CardButton,
+  PromoButton,
+  PromoBannerButton,
 } from '~components';
 import { truncate } from '~utils';
 
@@ -51,7 +54,7 @@ const ResourceCard = styled.div({
   cursor: 'pointer',
   position: 'relative',
   padding: 24,
-  minHeight: 320,
+  minHeight: 350,
   border: '1px solid #d6e4ff',
   borderRadius: 8,
 
@@ -64,25 +67,8 @@ const ResourceCard = styled.div({
 const BottomHolder = styled.div({
   position: 'absolute',
   left: 0,
-  bottom: 0,
+  bottom: 80,
   width: '100%',
-});
-
-const StartQuizButton = styled(Button)({
-  position: 'relative',
-  top: -4,
-  borderRadius: 8,
-  background: '#ffc069',
-  border: 'none',
-
-  '&:hover': {
-    background: '#ffc069',
-  },
-});
-
-const PromoButton = styled(Button)({
-  width: 250,
-  height: 50,
 });
 
 const TAG_COLOR_MAPPER = {
@@ -122,13 +108,9 @@ const Resource = ({ title, desc, path, tags, difficulty }) => (
               disabled
             />
           </Col>
-          <Col span={22}>
-            <Button size="large" block>
-              Start Coding
-            </Button>
-          </Col>
         </Row>
       </BottomHolder>
+      <CardButton>Start Coding</CardButton>
     </ResourceCard>
   </Link>
 );
@@ -207,9 +189,9 @@ const Library = ({
           <Title level={2} transform="capitalize">
             {filter} path
           </Title>
-          <StartQuizButton type="primary" size="large">
+          <PromoButton size="small">
             <Link to={quiz.path}>Start Quiz</Link>
-          </StartQuizButton>
+          </PromoButton>
         </Space>
       </Box>
       <Row gutter={[16, 16]}>
@@ -230,7 +212,7 @@ const Library = ({
         <PromoBanner
           title="Feeling a bit lost?"
           desc="I will be more than happy to help you learn Frontend the right way."
-          content={<PromoButton size="large">I WANT MENTORSHIP</PromoButton>}
+          content={<PromoBannerButton>I WANT MENTORSHIP</PromoBannerButton>}
         />
       </Box>
     </Layout>

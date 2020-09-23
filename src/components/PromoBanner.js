@@ -29,7 +29,7 @@ export const PromoBanner = ({ title, desc, content }) => (
     <Paragraph
       color="#FFF"
       fontWeight="400"
-      marginBottom="3rem"
+      marginBottom="2rem"
       align="center"
       size="h4"
     >

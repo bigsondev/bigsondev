@@ -1,7 +1,7 @@
 import React from 'react';
-import { Row, Col, Button } from 'antd';
+import { Row, Col } from 'antd';
 import { DownCircleFilled } from '@ant-design/icons';
-import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 import {
   Title,
@@ -12,22 +12,8 @@ import {
   MobileOnly,
   TabletOnly,
   DesktopOnly,
+  PromoButton,
 } from '~components';
-
-const PromoButton = styled(Button)({
-  width: 230,
-  height: 70,
-  fontSize: 20,
-  borderRadius: 8,
-  background: '#ffc069',
-  border: 'none',
-  transition: 'box-shadow 0.3s',
-
-  '&:hover': {
-    boxShadow: `0px 0px 5px 0px #ffc069`,
-    background: '#ffc069',
-  },
-});
 
 const MobileScreenPromo = () => (
   <Row align="middle">
@@ -64,14 +50,10 @@ const MobileScreenPromo = () => (
     <Col span={24}>
       <Illustration type="promo" />
     </Col>
-    <Box mt={5} style={{ width: '100%' }}>
-      <PromoButton
-        type="primary"
-        block
-        style={{ width: '100%', height: 60, fontSize: 18 }}
-      >
-        I Want To Improve
-      </PromoButton>
+    <Box mt={5} width="100%" display="flex" justify="center">
+      <Link to="/mentorship">
+        <PromoButton>I want to improve</PromoButton>
+      </Link>
     </Box>
   </Row>
 );
@@ -114,14 +96,10 @@ const MediumScreenPromo = () => (
     <Col span={12}>
       <Illustration type="promo" />
     </Col>
-    <Box mt={5} style={{ width: '100%', textAlign: 'center' }}>
-      <PromoButton
-        type="primary"
-        block
-        style={{ width: '50%', height: 60, fontSize: 18 }}
-      >
-        I Want To Improve
-      </PromoButton>
+    <Box mt={5} width="100%" display="flex" justify="center">
+      <Link to="/mentorship">
+        <PromoButton>I want to improve</PromoButton>
+      </Link>
     </Box>
   </Row>
 );
@@ -164,9 +142,9 @@ const BigScreenPromo = () => (
             <br />
             And your friend. I love sharing my knowledge with others.
           </Paragraph>
-          <PromoButton type="primary" size="large">
-            I Want To Improve
-          </PromoButton>
+          <Link to="/mentorship">
+            <PromoButton>I want to improve</PromoButton>
+          </Link>
         </Box>
       </Col>
       <Col span={12}>

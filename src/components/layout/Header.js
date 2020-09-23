@@ -67,18 +67,29 @@ const matchUrl = (url) =>
 
 const RightMenu = ({
   isExpanded,
+  isClicked,
+  onFirstClick,
   onMobileMenuOpenClick,
   onMobileMenuCloseClick,
 }) => (
   <>
     <SmallOnly>
-      <Roll left cascade duration={300}>
-        {isExpanded ? (
-          <CloseIcon onClick={onMobileMenuCloseClick} />
-        ) : (
-          <HamburgerIcon onClick={onMobileMenuOpenClick} />
-        )}
-      </Roll>
+      {isClicked ? (
+        <Roll left cascade duration={300}>
+          {isExpanded ? (
+            <CloseIcon onClick={onMobileMenuCloseClick} />
+          ) : (
+            <HamburgerIcon onClick={onMobileMenuOpenClick} />
+          )}
+        </Roll>
+      ) : (
+        <HamburgerIcon
+          onClick={() => {
+            onFirstClick();
+            onMobileMenuOpenClick();
+          }}
+        />
+      )}
     </SmallOnly>
     <ExceptSmall>
       <MenuHolder theme="dark" mode="horizontal">
@@ -109,6 +120,7 @@ const RightMenu = ({
 
 export const Header = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
 
   const handleMobileMenuOpenClick = () => {
     setIsExpanded(true);
@@ -117,6 +129,8 @@ export const Header = () => {
   const handleMobileMenuCloseClick = () => {
     setIsExpanded(false);
   };
+
+  const setFirstClick = () => setIsClicked(true);
 
   return (
     <Holder>
@@ -130,6 +144,8 @@ export const Header = () => {
               <Col>
                 <RightMenu
                   isExpanded={isExpanded}
+                  isClicked={isClicked}
+                  onFirstClick={setFirstClick}
                   onMobileMenuOpenClick={handleMobileMenuOpenClick}
                   onMobileMenuCloseClick={handleMobileMenuCloseClick}
                 />

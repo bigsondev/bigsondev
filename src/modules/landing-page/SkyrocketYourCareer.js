@@ -2,7 +2,14 @@ import React from 'react';
 import { Row, Col, Button } from 'antd';
 import styled from 'styled-components';
 
-import { Title, Paragraph, Text, Illustration, Box } from '~components';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Illustration,
+  Box,
+  CardButton,
+} from '~components';
 
 const Holder = styled.div({
   padding: '96px 16px',
@@ -34,13 +41,6 @@ const OfferCard = styled.div({
   },
 });
 
-const LearnMoreButton = styled(Button)({
-  borderRadius: 8,
-  position: 'absolute',
-  bottom: 24,
-  width: '90%',
-});
-
 export const SkyrocketYourCareer = () => {
   return (
     <Holder id="skyrocket-your-career">
@@ -48,10 +48,14 @@ export const SkyrocketYourCareer = () => {
         <Title level={2} align="center">
           Skyrocket your career
         </Title>
-        <Paragraph align="center" fontWeight="200">
-          Looking for code review, real-world projects, or ready to test your
-          skills? Let me React to this.
-        </Paragraph>
+        <Row justify="center">
+          <Col xs={20} sm={12}>
+            <Paragraph align="center" fontWeight="200">
+              Looking for code review, real-world projects, or ready to test
+              your skills? Let me React to this.
+            </Paragraph>
+          </Col>
+        </Row>
       </Box>
       <Row justify="center" gutter={[24, 24]}>
         <Col xs={22} sm={16} xl={7} xxl={6}>
@@ -72,9 +76,7 @@ export const SkyrocketYourCareer = () => {
                   to help you improve quickly.
                 </Text>
               </Col>
-              <LearnMoreButton type="secondary" size="large" block>
-                Learn More
-              </LearnMoreButton>
+              <CardButton>learn more</CardButton>
             </Row>
           </OfferCard>
         </Col>
@@ -96,9 +98,7 @@ export const SkyrocketYourCareer = () => {
                   questions and coding challenges to your skill level.
                 </Text>
               </Col>
-              <LearnMoreButton size="large" block>
-                Learn More
-              </LearnMoreButton>
+              <CardButton>LEARN MORE</CardButton>
             </Row>
           </OfferCard>
         </Col>
@@ -120,9 +120,7 @@ export const SkyrocketYourCareer = () => {
                   you, let's skyrocket in Frontend together.
                 </Text>
               </Col>
-              <LearnMoreButton type="secondary" size="large" block>
-                Learn More
-              </LearnMoreButton>
+              <CardButton>LEARN MORE</CardButton>
             </Row>
           </OfferCard>
         </Col>

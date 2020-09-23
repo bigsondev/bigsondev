@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Form, Input as AntdInput, Button, Result } from 'antd';
+import { Form, Input as AntdInput, Result } from 'antd';
 import { MailOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 
-import { Box, failMessage } from '~components';
+import { Box, failMessage, PromoBannerButton } from '~components';
 import { encode } from '~utils';
 
 import { SLACK_FORM_NAME } from './constants';
@@ -109,16 +109,13 @@ export const SlackForm = () => {
             </Form.Item>
             <Form.Item>
               <Box display="flex" justify="center">
-                <Button
-                  block
-                  type="primary"
-                  size="large"
+                <PromoBannerButton
                   htmlType="submit"
                   loading={isSubmitting}
                   onClick={() => setTriedToSubmit(true)}
                 >
                   Request Invite
-                </Button>
+                </PromoBannerButton>
               </Box>
             </Form.Item>
           </Form>

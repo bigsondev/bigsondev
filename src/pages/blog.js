@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Row, Col, Space, Divider, Tooltip, Button } from 'antd';
+import { Row, Col, Space, Divider, Tooltip } from 'antd';
 import styled from 'styled-components';
 import {
   CalendarOutlined,
@@ -19,6 +19,7 @@ import {
   Box,
   Icon,
   PromoBanner,
+  CardButton,
 } from '~components';
 import { truncate } from '~utils';
 
@@ -59,13 +60,6 @@ export const ArticleCard = styled.div({
     boxShadow: `0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
   0 9px 28px 8px rgba(0, 0, 0, 0.05)`,
   },
-});
-
-const BottomHolder = styled.div({
-  position: 'absolute',
-  left: 0,
-  bottom: 16,
-  width: '100%',
 });
 
 const Article = ({
@@ -129,16 +123,7 @@ const Article = ({
           </Space>
         </Col>
       </Row>
-
-      <BottomHolder>
-        <Row justify="center">
-          <Col span={22}>
-            <Button block size="large" type="secondary">
-              Read More
-            </Button>
-          </Col>
-        </Row>
-      </BottomHolder>
+      <CardButton>read more</CardButton>
     </ArticleCard>
   </Link>
 );

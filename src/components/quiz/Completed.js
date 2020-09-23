@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Row, Col, Result, Statistic, Button, Space } from 'antd';
+import { Row, Col, Result, Statistic, Space } from 'antd';
 import {
   SmileOutlined,
   FieldTimeOutlined,
@@ -9,7 +9,7 @@ import {
 import Fade from 'react-reveal/Fade';
 import moment from 'moment';
 
-import { Box, TutorialTooltip } from '..';
+import { Box, TutorialTooltip, PrimaryButton, SecondaryButton } from '..';
 
 import { QuizCard, QuizProgress } from './styled';
 import { QuestionsLookup } from './QuestionsLookup';
@@ -72,16 +72,17 @@ export const Completed = ({
       >
         <Box display="flex" justify="center">
           <Space>
-            {next && (
+            {next ? (
               <Link to={`/library/${next}`}>
-                <Button type="primary" size="large">
-                  Next Quiz
-                </Button>
+                <PrimaryButton>Start Next Quiz</PrimaryButton>
+              </Link>
+            ) : (
+              <Link to="/library">
+                <SecondaryButton onClick={() => onTryAgainClick()}>
+                  Back to library
+                </SecondaryButton>
               </Link>
             )}
-            <Button size="large" onClick={() => onTryAgainClick()}>
-              Try Again
-            </Button>
           </Space>
         </Box>
       </Result>

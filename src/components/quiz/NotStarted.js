@@ -1,19 +1,7 @@
 import React from 'react';
-import { Row, Col, Button, Space, Divider } from 'antd';
-import styled from 'styled-components';
+import { Row, Col, Space, Divider } from 'antd';
 
-import { Title, Text, Box, Link, PostList } from '..';
-
-const StartButton = styled(Button)({
-  width: 150,
-  borderRadius: 12,
-  background: '#ffc069',
-  border: 'none',
-
-  '&:hover': {
-    background: '#ffc069',
-  },
-});
+import { Title, Text, Box, Link, PostList, PromoButton } from '..';
 
 export const NotStarted = ({ questionsCount, onStartClick }) => (
   <>
@@ -34,9 +22,9 @@ export const NotStarted = ({ questionsCount, onStartClick }) => (
     <Row>
       <Col span={24}>
         <Box mt={4}>
-          <StartButton type="primary" size="large" onClick={onStartClick}>
+          <PromoButton size="small" onClick={onStartClick}>
             Start
-          </StartButton>
+          </PromoButton>
         </Box>
       </Col>
       {/* Add Learning Resources if there are any */}

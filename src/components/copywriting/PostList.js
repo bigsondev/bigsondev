@@ -2,17 +2,19 @@ import React from 'react';
 import { List } from 'antd';
 import styled from 'styled-components';
 
-import { Paragraph, Text } from '..';
+import { Paragraph, Text, Icon } from '..';
 
 const ListItemMeta = styled(List.Item.Meta)({
   alignItems: 'center',
-  marginBottom: '0 !important',
 });
 
-const Avatar = styled.div({
-  fontSize: '2rem',
-  marginBottom: '0.3rem',
-  color: '#FFC068',
+const IconHolder = styled.span({
+  '& svg path, & svg circle': {
+    fill: '#FFC068 !important',
+  },
+  '& span': {
+    verticalAlign: 'middle',
+  },
 });
 
 export const PostList = ({
@@ -29,7 +31,11 @@ export const PostList = ({
       renderItem={(item) => (
         <List.Item>
           <ListItemMeta
-            avatar={<Avatar>•</Avatar>}
+            avatar={
+              <IconHolder>
+                <Icon type="dot" width={6} />
+              </IconHolder>
+            }
             description={
               typeof item === 'string' ? (
                 <Text size={size} type={type}>

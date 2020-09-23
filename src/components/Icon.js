@@ -10,6 +10,7 @@ import {
   DeveloperIcon,
   RecruiterIcon,
   MentorIcon,
+  DotIcon,
 } from '~svg';
 
 const Holder = styled(AntdIcon)(({ width = 32 }) => ({
@@ -27,6 +28,7 @@ const ICON_MAPPER = {
   developer: DeveloperIcon,
   recruiter: RecruiterIcon,
   mentor: MentorIcon,
+  dot: DotIcon,
 };
 
 export const Icon = ({ type, ...props }) => {

@@ -7,7 +7,12 @@ import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import queryString from 'query-string';
 
-import { Text, TutorialTooltip } from '~components';
+import {
+  Text,
+  TutorialTooltip,
+  PrimaryButton,
+  SecondaryButton,
+} from '~components';
 import { copyToClipboard, setItem } from '~utils';
 
 import {
@@ -220,27 +225,30 @@ export const CodeEditor = ({
             extra={
               hasNextChallenge
                 ? [
-                    <Button
-                      type="primary"
+                    <PrimaryButton
                       key="copy-link"
                       onClick={handleCopyLinkClick}
                     >
                       Copy Link
-                    </Button>,
+                    </PrimaryButton>,
                     <Link to={`/library/${next}`}>
-                      <Button key="next-challenge">Next Challenge</Button>
+                      <SecondaryButton key="next-challenge">
+                        Start Next Challenge
+                      </SecondaryButton>
                     </Link>,
                   ]
                 : [
-                    <Button
+                    <PrimaryButton
                       type="primary"
                       key="copy-link"
                       onClick={handleCopyLinkClick}
                     >
                       Copy Link
-                    </Button>,
+                    </PrimaryButton>,
                     <Link to="/library">
-                      <Button key="back-to-library">Back to Library</Button>
+                      <SecondaryButton key="back-to-library">
+                        Back to Library
+                      </SecondaryButton>
                     </Link>,
                   ]
             }

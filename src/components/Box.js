@@ -42,6 +42,7 @@ const BoxWrapper = styled.div(
     display = 'block',
     justify = 'start',
     align = 'flex-start',
+    direction = 'row',
     m,
     margin,
     padding,
@@ -55,10 +56,12 @@ const BoxWrapper = styled.div(
     pb,
     pl,
     maxWidth,
+    width,
   }) => ({
     display,
     justifyContent: justify,
     alignItems: align,
+    flexDirection: direction,
     margin: (margin && margin) || (m && m * SPACING_SCALE),
     marginTop: mt && mt * SPACING_SCALE,
     marginRight: mr && mr * SPACING_SCALE,
@@ -70,6 +73,7 @@ const BoxWrapper = styled.div(
     paddingBottom: pb && pb * SPACING_SCALE,
     paddingLeft: pl && pl * SPACING_SCALE,
     maxWidth,
+    width,
   })
 );
 
