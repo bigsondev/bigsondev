@@ -219,7 +219,7 @@ export const CodeEditor = ({
             title="Challenge Completed!"
             subTitle={
               hasNextChallenge
-                ? 'If you are happy with the solution, copy the link and share it with someone, or just continue to the next challenge.'
+                ? `If you're happy with the solution, copy the link and share it with someone, or just continue to the next challenge.`
                 : `You've completed all challenges on this path.`
             }
             extra={
@@ -299,7 +299,7 @@ export const CodeEditor = ({
         </Row>
         <TutorialTooltip
           title="Write some actual code, below the tests you can have maximum 3
-          tabs (HTML, CSS, JS), make sure you are writing code in a proper
+          tabs (HTML, CSS, JS), make sure you're writing code in a proper
           one"
           type="codeTutorial"
           onClick={handleOkClick}
@@ -331,7 +331,7 @@ export const CodeEditor = ({
                     onBeforeChange={(editor, data, code) => setter(code)}
                   />
                   <TutorialTooltip
-                    title="When you are ready, click this button and validate
+                    title="When you're ready, click this button and validate
                     your solution"
                     type="codeTutorial"
                     onClick={() => {

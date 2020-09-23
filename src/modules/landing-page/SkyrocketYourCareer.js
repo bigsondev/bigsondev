@@ -62,7 +62,7 @@ export const SkyrocketYourCareer = () => {
               </Col>
               <Col span={20}>
                 <Text align="center" display="block" size="preNormal">
-                  I will treat you individually, listen to your story, fix weak
+                  I'll treat you individually, listen to your story, fix weak
                   points, empower strengths, and create a unique learning path
                   to help you improve quickly.
                 </Text>
@@ -85,7 +85,7 @@ export const SkyrocketYourCareer = () => {
               <Col span={20}>
                 <Text align="center" display="block" size="preNormal">
                   Have you ever talked to a ghost? Stress-free conversation,
-                  warm-up for your next technical interview. I will adjust
+                  warm-up for your next technical interview. I'll adjust
                   questions and coding challenges to your skill level.
                 </Text>
               </Col>

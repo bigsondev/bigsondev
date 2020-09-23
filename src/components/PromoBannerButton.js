@@ -1,8 +1,13 @@
 import { Button } from 'antd';
 import styled from 'styled-components';
 
-export const PromoBannerButton = styled(Button)({
-  color: '#455991',
+const colorMapper = {
+  normal: '#2f4586e8',
+  promotion: '#795548',
+};
+
+export const PromoBannerButton = styled(Button)(({ color = 'normal' }) => ({
+  color: `${colorMapper[color]} !important`,
   width: 250,
   height: '3.25rem',
   fontSize: 18,
@@ -10,19 +15,16 @@ export const PromoBannerButton = styled(Button)({
   fontWeight: 500,
   borderRadius: 24,
   letterSpacing: 1,
-  border: '1px solid #455991',
-  backgroundColor: '#FFF',
+  border: `1px solid ${colorMapper[color]} !important`,
+  backgroundColor: '#FFF !important',
   margin: '1.5rem',
   transition: 'box-shadow 0.3s',
   textTransform: 'uppercase',
 
   '&:hover': {
-    boxShadow: `0px 0px 5px 0px #455991`,
-    backgroundColor: '#FFF',
-    color: '#455991',
-    border: '1px solid #455991',
+    boxShadow: `0px 0px 5px 0px ${colorMapper[color]}`,
+    backgroundColor: '#FFF !important',
+    color: `${colorMapper[color]} !important`,
+    border: `1px solid ${colorMapper[color]} !important`,
   },
-  '&:active': {
-    border: '1px solid #455991',
-  },
-});
+}));

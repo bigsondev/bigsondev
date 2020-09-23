@@ -3,16 +3,21 @@ import styled from 'styled-components';
 
 import { Paragraph } from './Typography';
 
-const Holder = styled.div({
+const colorMapper = {
+  normal: '#2f4586e8',
+  promotion: '#795548',
+};
+
+const Holder = styled.div(({ color = 'normal' }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  backgroundColor: '#2f4586e8',
+  backgroundColor: colorMapper[color],
   padding: '5rem 1.5rem',
-});
+}));
 
-export const PromoBanner = ({ title, desc, content }) => (
-  <Holder>
+export const PromoBanner = ({ title, desc, content, color }) => (
+  <Holder color={color}>
     {typeof title === 'string' ? (
       <Paragraph
         transform="uppercase"

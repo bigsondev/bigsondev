@@ -87,7 +87,7 @@ export const NewsletterForm = () => {
                     return Boolean(value)
                       ? Promise.resolve()
                       : Promise.reject(
-                          'I will need your consent to send emails.'
+                          `I'll need your consent to send emails.`
                         );
                   },
                 }),
@@ -110,7 +110,7 @@ export const NewsletterForm = () => {
               rules={[
                 {
                   required: true,
-                  message: `I will need your email to respond back.`,
+                  message: `I'll need your email to send the newsletter.`,
                 },
                 {
                   type: 'email',
@@ -118,7 +118,7 @@ export const NewsletterForm = () => {
                 },
               ]}
             >
-              <Input placeholder="email@example.com" />
+              <Input placeholder="john.doe@example.com" />
             </Form.Item>
             <Form.Item>
               <Box>

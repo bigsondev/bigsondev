@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Input as AntdInput, Result } from 'antd';
-import { MailOutlined } from '@ant-design/icons';
+import { Form, Input as AntdInput, Result, Row, Col } from 'antd';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 
@@ -68,19 +67,6 @@ export const SlackForm = () => {
             method="post"
             layout="vertical"
             size="large"
-            wrapperCol={{
-              xs: {
-                span: 24,
-              },
-              sm: {
-                span: 22,
-                offset: 1,
-              },
-              md: {
-                span: 14,
-                offset: 5,
-              },
-            }}
             style={{ width: '100%', padding: 16 }}
             validateTrigger={triedToSubmit ? 'onChange' : 'onSubmit'}
             onFinish={handleSubmit}
@@ -92,21 +78,26 @@ export const SlackForm = () => {
             >
               <Input type="hidden" />
             </Form.Item>
-            <Form.Item
-              name="email"
-              rules={[
-                {
-                  required: true,
-                  message: `I will need your email to respond back.`,
-                },
-                {
-                  type: 'email',
-                  message: `Please provide a valid email address.`,
-                },
-              ]}
-            >
-              <Input prefix={<MailOutlined />} placeholder="Email" />
-            </Form.Item>
+            <Row justify="center">
+              <Col xs={22} sm={16} md={12}>
+                <Form.Item
+                  name="email"
+                  rules={[
+                    {
+                      required: true,
+                      message: `I'll need your email to send the invite.`,
+                    },
+                    {
+                      type: 'email',
+                      message: `Please provide a valid email address.`,
+                    },
+                  ]}
+                >
+                  <Input placeholder="john.doe@example.com" />
+                </Form.Item>
+              </Col>
+            </Row>
+
             <Form.Item>
               <Box display="flex" justify="center">
                 <PromoBannerButton

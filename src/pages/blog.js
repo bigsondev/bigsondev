@@ -163,7 +163,7 @@ const Blog = ({
           }
           desc={
             <>
-              Let's chat, ask questions, share your story, review code. <br />
+              Let's chat, ask questions, share your project, review code. <br />
               Build a community with me that will help each other in Frontend.
             </>
           }

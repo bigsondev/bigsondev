@@ -210,9 +210,16 @@ const Library = ({
       </Row>
       <Box mt={10}>
         <PromoBanner
+          color="promotion"
           title="Feeling a bit lost?"
-          desc="I will be more than happy to help you learn Frontend the right way."
-          content={<PromoBannerButton>I WANT MENTORSHIP</PromoBannerButton>}
+          desc="I'll be more than happy to help you learn Frontend the right way."
+          content={
+            <Link to="/mentorship">
+              <PromoBannerButton color="promotion">
+                I WANT MENTORSHIP
+              </PromoBannerButton>
+            </Link>
+          }
         />
       </Box>
     </Layout>

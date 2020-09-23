@@ -57,7 +57,7 @@ export const ReachOutForm = () => {
           <Result
             status="success"
             title="Message Received, Thanks!"
-            subTitle="I will try to answer ASAP."
+            subTitle="I'll try to answer ASAP."
           />
         </Fade>
       ) : (
@@ -94,7 +94,7 @@ export const ReachOutForm = () => {
                   name="name"
                   required={false}
                   rules={[
-                    { required: true, message: `I'm Adrian, and you are? :)` },
+                    { required: true, message: `I'm Adrian, and you're? :)` },
                   ]}
                 >
                   <Input placeholder="John Doe" />
@@ -108,7 +108,7 @@ export const ReachOutForm = () => {
                   rules={[
                     {
                       required: true,
-                      message: `I will need your email to respond back.`,
+                      message: `I'll need your email to respond back.`,
                     },
                     {
                       type: 'email',
@@ -116,7 +116,7 @@ export const ReachOutForm = () => {
                     },
                   ]}
                 >
-                  <Input placeholder="email@example.com" />
+                  <Input placeholder="john.doe@example.com" />
                 </FormItem>
               </Col>
               <Col xs={22} md={16}>
