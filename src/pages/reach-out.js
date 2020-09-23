@@ -15,7 +15,7 @@ const ReachOut = () => (
       And it never hurts to help.
     </Title>
     <Box mb={5}>
-      <Paragraph align="center">
+      <Paragraph align="center" type="secondary" size="preNormal">
         Ask about anything and sincere thank you for taking the time.
       </Paragraph>
     </Box>

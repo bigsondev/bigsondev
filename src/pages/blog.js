@@ -140,7 +140,7 @@ const Blog = ({
       <SEO title="Blog" />
       <Title level={2}>Latest Articles</Title>
       <Divider />
-      <Row gutter={[40, 16]}>
+      <Row gutter={[24, 24]}>
         {edges.map(({ node: { frontmatter } }) => (
           <Col
             xs={{ span: 24 }}

@@ -152,10 +152,8 @@ const Library = ({
     <Layout>
       <SEO title="Library" />
       <Title level={2}>skyrocket your career</Title>
-      <Paragraph>
+      <Paragraph type="secondary" size="preNormal">
         I've prepared some fun activities to help in your learning journey.
-        <br />
-        Try out coding challenges or test your skills in a Quiz, happy coding!
       </Paragraph>
       <Divider />
       <Box mb={8}>
@@ -188,7 +186,7 @@ const Library = ({
       </Box>
       <Box mb={2}>
         <Space size="large" align="baseline">
-          <Title level={2} transform="capitalize">
+          <Title level={3} transform="capitalize">
             {filter} path
           </Title>
           <PromoButton size="small">
@@ -196,7 +194,7 @@ const Library = ({
           </PromoButton>
         </Space>
       </Box>
-      <Row gutter={[16, 16]}>
+      <Row gutter={[24, 24]}>
         {challenges.map((challenge) => (
           <Col
             xs={{ span: 24 }}
