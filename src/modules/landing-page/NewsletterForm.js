@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Form, Input as AntdInput, Button, Result, Checkbox } from 'antd';
-import { MailOutlined, UserOutlined } from '@ant-design/icons';
+import { Form, Input as AntdInput, Result, Checkbox } from 'antd';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 
-import { Box, failMessage } from '~components';
+import { Box, failMessage, PromoButton, Paragraph } from '~components';
 import { encode } from '~utils';
 
 import { NEWSLETTER_FORM_NAME } from './constants';
@@ -61,7 +60,6 @@ export const NewsletterForm = () => {
             data-netlify-honeypot="bot-field"
             hidden
           >
-            <input type="text" name="name" />
             <input type="email" name="email" />
             <input type="checkbox" name="consent" />
           </form>
@@ -70,20 +68,6 @@ export const NewsletterForm = () => {
             method="post"
             layout="vertical"
             size="large"
-            labelCol={{
-              xs: 24,
-              md: {
-                span: 16,
-                offset: 4,
-              },
-            }}
-            wrapperCol={{
-              xs: 24,
-              md: {
-                span: 16,
-                offset: 4,
-              },
-            }}
             validateTrigger={triedToSubmit ? 'onChange' : 'onSubmit'}
             onFinish={handleSubmit}
           >
@@ -93,29 +77,6 @@ export const NewsletterForm = () => {
               style={{ display: 'none' }}
             >
               <Input type="hidden" />
-            </Form.Item>
-            <Form.Item
-              name="name"
-              rules={[
-                { required: true, message: `I'm Adrian, and you are? :)` },
-              ]}
-            >
-              <Input prefix={<UserOutlined />} placeholder="Your Name" />
-            </Form.Item>
-            <Form.Item
-              name="email"
-              rules={[
-                {
-                  required: true,
-                  message: `I will need your email to respond back.`,
-                },
-                {
-                  type: 'email',
-                  message: `Please provide a valid email address.`,
-                },
-              ]}
-            >
-              <Input prefix={<MailOutlined />} placeholder="Email" />
             </Form.Item>
             <Form.Item
               name="consent"
@@ -132,23 +93,37 @@ export const NewsletterForm = () => {
                 }),
               ]}
             >
-              <Checkbox>
-                I want to receive Newsletter - knowledge about Frontend,
-                library, blog updates and mentorship special offers
-              </Checkbox>
+              <Checkbox>I'm ok with receiving emails from Bigson Dev</Checkbox>
+            </Form.Item>
+            <Paragraph size="micro" type="secondary" fontStyle="italic">
+              From time to time, I'll send you messages about new blog posts,
+              coding challenges, and mentoring promotions. Only valuable
+              knowledge, no spam included. You can unsubscribe at any time.
+            </Paragraph>
+            <Form.Item
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: `I will need your email to respond back.`,
+                },
+                {
+                  type: 'email',
+                  message: `Please provide a valid email address.`,
+                },
+              ]}
+            >
+              <Input placeholder="email@example.com" />
             </Form.Item>
             <Form.Item>
-              <Box display="flex" justify="center">
-                <Button
-                  block
-                  type="primary"
-                  size="large"
+              <Box>
+                <PromoButton
                   htmlType="submit"
                   loading={isSubmitting}
                   onClick={() => setTriedToSubmit(true)}
                 >
-                  Apply for the Newsletter
-                </Button>
+                  Subscribe & Get Guide
+                </PromoButton>
               </Box>
             </Form.Item>
           </Form>

@@ -6,11 +6,13 @@ const SIZE_MAPPER = {
     width: 150,
     height: '2.5rem',
     fontSize: 18,
+    margin: 0,
   },
   normal: {
     width: 300,
     height: '3.5rem',
     fontSize: 22,
+    margin: '1rem 0',
   },
 };
 
@@ -18,10 +20,11 @@ export const PromoButton = styled(Button)(({ size = 'normal' }) => ({
   width: SIZE_MAPPER[size].width,
   height: SIZE_MAPPER[size].height,
   fontSize: SIZE_MAPPER[size].fontSize,
+  margin: SIZE_MAPPER[size].margin,
   fontWeight: 500,
   borderRadius: 24,
-  color: '#FFF',
-  background: '#ffc069',
+  color: '#FFF !important',
+  background: '#ffc069 !important',
   border: 'none',
   transition: 'box-shadow 0.3s',
   position: 'relative',
@@ -29,10 +32,10 @@ export const PromoButton = styled(Button)(({ size = 'normal' }) => ({
 
   '&:hover': {
     boxShadow: `0px 0px 5px 0px #ffc069`,
-    background: '#ffc069',
-    color: '#FFF',
+    background: '#ffc069 !important',
+    color: '#FFF !important',
   },
   '&:active': {
-    background: '#ffc069',
+    background: '#ffc069 !important',
   },
 }));

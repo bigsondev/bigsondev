@@ -6,7 +6,7 @@ import {
   SkyrocketYourCareer,
   BlogLibrary,
   WhoIAm,
-  NewsletterForm,
+  Newsletter,
 } from '~modules/landing-page';
 
 const Landing = () => {
@@ -27,7 +27,9 @@ const Landing = () => {
       <Section fullWidth>
         <WhoIAm />
       </Section>
-      <NewsletterForm />
+      <Section fullWidth>
+        <Newsletter />
+      </Section>
     </Layout>
   );
 };
