@@ -23,64 +23,41 @@ import {
 } from '~components';
 
 export const postListData = [
-  <Text size="preNormal">
-    Some knowledge of{' '}
-    <Link href="https://reactjs.org/" size="preNormal">
-      React
-    </Link>
-    .
+  <Text>
+    Some knowledge of <Link href="https://reactjs.org/">React</Link>.
   </Text>,
-  <Text size="preNormal">
+  <Text>
     Basic understanding of{' '}
-    <Link
-      href="https://bradfrost.com/blog/post/atomic-web-design/"
-      size="preNormal"
-    >
+    <Link href="https://bradfrost.com/blog/post/atomic-web-design/">
       Atomic Web Design
     </Link>
     .
   </Text>,
-  <Text size="preNormal">
+  <Text>
     Not mandatory, but good to know the difference between{' '}
-    <Link
-      href="https://reactjs.org/docs/composition-vs-inheritance.html#gatsby-focus-wrapper"
-      size="preNormal"
-    >
+    <Link href="https://reactjs.org/docs/composition-vs-inheritance.html#gatsby-focus-wrapper">
       Composition vs Inheritance
     </Link>
     .
   </Text>,
-  <Text size="preNormal">
+  <Text>
     Best if you have some experience with{' '}
-    <Link href="https://material-ui.com/" size="preNormal">
-      Material UI
-    </Link>{' '}
-    or{' '}
-    <Link href="https://ant.design/" size="preNormal">
-      Ant Design
-    </Link>
-    .
+    <Link href="https://material-ui.com/">Material UI</Link> or{' '}
+    <Link href="https://ant.design/">Ant Design</Link>.
   </Text>,
-  <Text size="preNormal">
-    I will refer to Material UI as{' '}
-    <Text size="preNormal" strong>
-      MUI
-    </Text>{' '}
-    and to Ant Design as{' '}
-    <Text size="preNormal" strong>
-      Antd
-    </Text>{' '}
-    in this article.
+  <Text>
+    I will refer to Material UI as <Text strong>MUI</Text> and to Ant Design as{' '}
+    <Text strong>Antd</Text> in this article.
   </Text>,
 ];
 
 export const cheatSheetData = [
   <Text size="preNormal">
-    <Link href="https://material-ui.com/components/grid/" size="small">
+    <Link href="https://material-ui.com/components/grid/" size="preNormal">
       MUI Grid
     </Link>{' '}
     and{' '}
-    <Link href="https://ant.design/components/grid/" size="small">
+    <Link href="https://ant.design/components/grid/" size="preNormal">
       Antd Grid
     </Link>
     , great for composing entire layouts, creating views for different breakpoints,
@@ -88,17 +65,20 @@ export const cheatSheetData = [
     CSS headache.
   </Text>,
   <Text size="preNormal">
-    <Link href="https://material-ui.com/components/box/#box" size="small">
+    <Link href="https://material-ui.com/components/box/#box" size="preNormal">
       MUI Box
     </Link>{' '}
     and supplementary example of using it: (hard to find in the documentation){' '}
-    <Link href="https://material-ui.com/components/box/#example" size="small">
+    <Link
+      href="https://material-ui.com/components/box/#example"
+      size="preNormal"
+    >
       Usage
     </Link>
     , it's this missing component that you are looking for when using various Grid
     systems, e.g. for applying additional spacing or just any css property when you
     want to avoid additional boilerplate by creating a <Link
-      size="small"
+      size="preNormal"
       href="https://styled-components.com/"
     >
       styled-components
@@ -106,18 +86,21 @@ export const cheatSheetData = [
     one in Antd.
   </Text>,
   <Text size="preNormal">
-    <Link size="small" href="https://material-ui.com/components/typography/">
+    <Link
+      size="preNormal"
+      href="https://material-ui.com/components/typography/"
+    >
       MUI Typography
     </Link>{' '}
     and{' '}
-    <Link size="small" href="https://ant.design/components/typography">
+    <Link size="preNormal" href="https://ant.design/components/typography">
       Antd Typography
     </Link>
     , as the name suggests, it's a complex, well-thought component to handle texts
     on your website, from headings to paragraphs with a lot of utilities included.
   </Text>,
   <Text size="preNormal">
-    <Link size="small" href="https://ant.design/components/space/">
+    <Link size="preNormal" href="https://ant.design/components/space/">
       Antd Space
     </Link>
     , only found it int Antd, another utility component used for spacing, simplifies
@@ -125,7 +108,7 @@ export const cheatSheetData = [
     e.g. group of buttons.
   </Text>,
   <Text size="preNormal">
-    <Link size="small" href="https://material-ui.com/components/hidden/">
+    <Link size="preNormal" href="https://material-ui.com/components/hidden/">
       MUI Hidden
     </Link>
     , I miss it a lot in Antd, had to implement my own components for hiding content
@@ -133,7 +116,7 @@ export const cheatSheetData = [
     API that allows to manipulate content easily for different devices.
   </Text>,
   <Text size="preNormal">
-    <Link size="small" href="https://ant.design/components/descriptions/">
+    <Link size="preNormal" href="https://ant.design/components/descriptions/">
       Antd Descriptions
     </Link>
     , often in admin portals, there is a lot of detail views where content should
@@ -142,11 +125,11 @@ export const cheatSheetData = [
     two powerful component libraries would make the world better.
   </Text>,
   <Text size="preNormal">
-    <Link size="small" href="https://material-ui.com/components/icons/">
+    <Link size="preNormal" href="https://material-ui.com/components/icons/">
       MUI Icons
     </Link>{' '}
     and{' '}
-    <Link size="small" href="https://ant.design/components/icon/">
+    <Link size="preNormal" href="https://ant.design/components/icon/">
       Antd Icons
     </Link>{' '}
     , at some point, I got bored of finding perfect icons for my websites,
@@ -155,7 +138,7 @@ export const cheatSheetData = [
     system and it's better for designers to create only brand, unique icons.
     There are optimization methods for decreasing bundle size, e.g.{' '}
     <Link
-      size="small"
+      size="preNormal"
       href="https://material-ui.com/guides/minimizing-bundle-size/#option-2"
     >
       this one
@@ -166,15 +149,13 @@ export const cheatSheetData = [
 ];
 
 export const resourcesListData = [
-  <Link size="preNormal" href="https://prettier.io/docs/en/index.html">
+  <Link href="https://prettier.io/docs/en/index.html">
     Prettier Documentation
   </Link>,
-  <Link size="preNormal" href="https://prettier.io/docs/en/cli.html">
+  <Link href="https://prettier.io/docs/en/cli.html">
     Prettier CLI Documentation
   </Link>,
-  <Link size="preNormal" href="https://github.com/typicode/husky">
-    Husky Reference
-  </Link>,
+  <Link href="https://github.com/typicode/husky">Husky Reference</Link>,
 ];
 
 <Post

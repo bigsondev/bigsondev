@@ -18,7 +18,7 @@ export const Section = ({ children, fullWidth = false }) => {
         xl={{ offset: 2, span: 20 }}
         xxl={{ offset: 4, span: 16 }}
       >
-        <section>{children}</section>
+        <main>{children}</main>
       </Col>
     </Row>
   );

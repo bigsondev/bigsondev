@@ -17,7 +17,7 @@ const openMentorshipEvent = () => {
 const Mentorship = () => {
   return (
     <Layout>
-      <SEO title="Bigson Dev | Mentorship | Adrian Bigaj" />
+      <SEO title="BigsonDev | Mentorship | Adrian Bigaj" />
       <Title level={2}>COACHING PLACEHOLDER</Title>
       <Divider />
       <Row gutter={16}>

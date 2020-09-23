@@ -5,13 +5,13 @@ const SIZE_MAPPER = {
   small: {
     width: 150,
     height: '2.5rem',
-    fontSize: 18,
+    fontSize: '1.125rem',
     margin: 0,
   },
   normal: {
     width: 300,
     height: '3.5rem',
-    fontSize: 22,
+    fontSize: '1.375rem',
     margin: '1rem 0',
   },
 };

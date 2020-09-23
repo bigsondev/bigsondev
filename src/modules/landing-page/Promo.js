@@ -132,12 +132,7 @@ const BigScreenPromo = () => (
               IT.
             </Text>
           </Title>
-          <Paragraph
-            size={'preNormal'}
-            marginBottom="2rem"
-            fontStyle="italic"
-            fontWeight="200"
-          >
+          <Paragraph size={'preNormal'} marginBottom="2rem" fontStyle="italic">
             I'm Adrian, Front-end Developer, Recruiter, Mentor.
             <br />
             And your friend. I love sharing my knowledge with others.
@@ -157,7 +152,7 @@ const BigScreenPromo = () => (
             onClick={() =>
               document
                 .getElementById('skyrocket-your-career')
-                .scrollIntoView({ behavior: 'smooth' })
+                .scrollIntoView({ behavior: 'smooth', block: 'center' })
             }
           />
         </Box>

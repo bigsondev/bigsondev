@@ -5,7 +5,7 @@ export const SecondaryButton = styled(Button)({
   color: '#24B2DB',
   width: 250,
   height: '3.25rem',
-  fontSize: 18,
+  fontSize: '1.125rem',
   fontWeight: 500,
   borderRadius: 24,
   border: '1px solid #24B2DB',

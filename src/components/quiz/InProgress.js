@@ -63,7 +63,7 @@ export const InProgress = ({ data, selections, onAnswerClick }) => {
             currentQuestionIndex === index && (
               <Fade duration={1500} key={question}>
                 {typeof question === 'string' ? (
-                  <Title level={3} align="center" transform="none">
+                  <Title level={4} align="center" transform="none">
                     {question}
                   </Title>
                 ) : (

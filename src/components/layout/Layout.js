@@ -13,6 +13,7 @@ import { GlobalStyles } from './GlobalStyles';
 import { ContentHolder } from './styled';
 import { Header } from './Header';
 import { Section } from './Section';
+import { Footer } from './Footer';
 
 const Holder = styled(AntdLayout)({});
 
@@ -24,7 +25,7 @@ export const Layout = ({ children, fixedContent = true }) => {
       <ContentHolder>
         {fixedContent ? <Section>{children}</Section> : children}
       </ContentHolder>
-      {/* TODO implement Footer */}
+      <Footer />
     </Holder>
   );
 };

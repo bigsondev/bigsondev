@@ -36,7 +36,7 @@ const Number = styled(Avatar)({
 
 export const PostCard = ({ title, data }) => (
   <Holder>
-    <Title level={3} align="center">
+    <Title level={4} align="center">
       {title}
     </Title>
     <Row justify="center" gutter={[0, 16]}>

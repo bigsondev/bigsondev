@@ -8,15 +8,15 @@ export const NotStarted = ({ questionsCount, onStartClick }) => (
     <Title level={3}>Before you Start</Title>
     <PostList
       data={[
-        <Text size="preNormal">
+        <Text>
           There are <strong>{questionsCount} questions</strong> without time
           limit, maximum score is <strong>{questionsCount} points</strong>.
         </Text>,
-        <Text size="preNormal">
+        <Text>
           Each question has 4 possible answers,
           <strong> but only one is correct</strong>.
         </Text>,
-        <Text size="preNormal">You can take the Quiz at anytime.</Text>,
+        <Text>You can take the Quiz at anytime.</Text>,
       ]}
     />
     <Row>

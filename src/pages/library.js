@@ -98,7 +98,9 @@ const Resource = ({ title, desc, path, tags, difficulty }) => (
       <Title level={4} transform="capitalize">
         {title}
       </Title>
-      <Paragraph type="secondary">{truncate(desc)}</Paragraph>
+      <Paragraph type="secondary" size="preNormal">
+        {truncate(desc)}
+      </Paragraph>
       <BottomHolder>
         <Row justify="center" gutter={[0, 16]}>
           <Col>
@@ -150,7 +152,7 @@ const Library = ({
     <Layout>
       <SEO title="Library" />
       <Title level={2}>skyrocket your career</Title>
-      <Paragraph fontWeight="200">
+      <Paragraph>
         I've prepared some fun activities to help in your learning journey.
         <br />
         Try out coding challenges or test your skills in a Quiz, happy coding!

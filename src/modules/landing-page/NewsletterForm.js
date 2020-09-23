@@ -93,9 +93,14 @@ export const NewsletterForm = () => {
                 }),
               ]}
             >
-              <Checkbox>I'm ok with receiving emails from Bigson Dev</Checkbox>
+              <Checkbox>I'm ok with receiving emails from BigsonDev</Checkbox>
             </Form.Item>
-            <Paragraph size="micro" type="secondary" fontStyle="italic">
+            <Paragraph
+              size="micro"
+              type="secondary"
+              fontWeight="200"
+              fontStyle="italic"
+            >
               From time to time, I'll send you messages about new blog posts,
               coding challenges, and mentoring promotions. Only valuable
               knowledge, no spam included. You can unsubscribe at any time.

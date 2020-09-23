@@ -60,7 +60,7 @@ const CloseIcon = styled(CloseOutlined)({
 
 const LeftMenu = () => (
   <Link to="/">
-    <Logo src={LogoBase} alt="Bigson Dev Logo" />
+    <Logo src={LogoBase} alt="BigsonDev Logo" />
   </Link>
 );
 

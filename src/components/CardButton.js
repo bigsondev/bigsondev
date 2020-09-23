@@ -5,7 +5,7 @@ export const CardButton = styled(Button)({
   color: '#FFF',
   width: '80%',
   height: '3.25rem',
-  fontSize: 18,
+  fontSize: '1.125rem',
   fontStyle: 'italic',
   fontWeight: 500,
   borderRadius: 24,

@@ -111,7 +111,9 @@ const Article = ({
       <Title level={4} transform="capitalize">
         {title}
       </Title>
-      <Paragraph type="secondary">{truncate(desc)}</Paragraph>
+      <Paragraph type="secondary" size="preNormal">
+        {truncate(desc)}
+      </Paragraph>
       <Row>
         <Col span={24}>
           <Space size="middle">
