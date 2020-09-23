@@ -136,7 +136,7 @@ const Blog = ({
   return (
     <Layout>
       <SEO title="Blog" />
-      <Title>Latest Articles</Title>
+      <Title level={2}>Latest Articles</Title>
       <Divider />
       <Row gutter={[40, 16]}>
         {edges.map(({ node: { frontmatter } }) => (

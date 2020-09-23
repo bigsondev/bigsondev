@@ -18,7 +18,7 @@ const Mentorship = () => {
   return (
     <Layout>
       <SEO title="Bigson Dev | Mentorship | Adrian Bigaj" />
-      <Title>COACHING PLACEHOLDER</Title>
+      <Title level={2}>COACHING PLACEHOLDER</Title>
       <Divider />
       <Row gutter={16}>
         <Col span={8}>

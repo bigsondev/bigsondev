@@ -159,9 +159,11 @@ export const WhoIAm = () => {
                   </Title>
                 </Col>
                 <Col span={20}>
-                  <Paragraph align="center" fontWeight="200" size="preNormal">
-                    I create individual plans and have empathic approach.
-                  </Paragraph>
+                  <Box margin="-0.5rem 0 0 0">
+                    <Paragraph align="center" fontWeight="200" size="preNormal">
+                      I create individual plans and have empathic approach.
+                    </Paragraph>
+                  </Box>
                 </Col>
                 <Col span={20}>
                   <Title level={5} align="center" transform="none">

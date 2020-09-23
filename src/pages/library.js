@@ -149,7 +149,7 @@ const Library = ({
   return (
     <Layout>
       <SEO title="Library" />
-      <Title>skyrocket your career</Title>
+      <Title level={2}>skyrocket your career</Title>
       <Paragraph fontWeight="200">
         I've prepared some fun activities to help in your learning journey.
         <br />
