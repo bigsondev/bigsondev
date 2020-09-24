@@ -1,6 +1,6 @@
 ---
 title: Autoformat Code with Prettier
-desc: Prettier saves a lot of time and automates code formatting. Learn how to integrate with it, ESLint, Husky integration and recommended setup is also included.
+desc: Prettier saves a lot of time and automates code formatting. Learn how to integrate with it, ESLint, Husky integration, and recommended setup is also included.
 path: /blog/autoformat-code-with-prettier
 hasCheatSheet: true
 hasTodoList: false
@@ -35,7 +35,7 @@ export const postListData = [
     <Link href="https://code.visualstudio.com/">VSCode.</Link>
   </Text>,
   <Text>
-    Create project e.g. through{' '}
+    Create a project e.g. through{' '}
     <Link href="https://create-react-app.dev/">CRA</Link> and connect it to{' '}
     <Link href="https://git-scm.com/">git</Link>.
   </Text>,
@@ -49,8 +49,8 @@ export const postListData = [
 export const cheatSheetData = [
   <>
     <Text size="preNormal">
-      Run following command in the terminal to install Prettier locally. Make
-      sure you're at the root of your project, where you have a{' '}
+      Run the following command in the terminal to install Prettier locally.
+      Make sure you're at the root of your project, where you have a{' '}
       <Text size="preNormal" code>
         package.json
       </Text>{' '}
@@ -93,7 +93,7 @@ export const cheatSheetData = [
       or directories in your project to ignore)
     </Text>
     <SyntaxHighlighter language="markdown" showCopy>
-      {`# Ignore files/directories that should not be formatted
+      {`# Ignore files/directories that shouldn't be formatted
 \n.cache
 package.json
 package-lock.json
@@ -114,7 +114,7 @@ coverage
       . For me, automatic formatting whenever I save a file works the best.
     </Text>
   </>,
-  'For more in-depth explanation and integration with ESLint and Husky, please read the full article',
+  'For a more in-depth explanation and integration with ESLint and Husky, please read the full article',
 ];
 
 export const finalThoughtsListData = [
@@ -162,15 +162,15 @@ export const resourcesListData = [
   </Paragraph>
   <Paragraph>
     For the purpose of this article, npm is used, but personally I prefer{' '}
-    <Link href="https://yarnpkg.com/">yarn</Link> over npm and the command to
+    <Link href="https://yarnpkg.com/">yarn</Link> over npm, and the command to
     install Prettier with it would be:
     <SyntaxHighlighter showCopy>
       yarn add --dev --exact prettier
     </SyntaxHighlighter>
   </Paragraph>
   <Paragraph>
-    The <Text code>.prettierrc</Text> file is not the only one possible place
-    for your configuration. Check out{' '}
+    The <Text code>.prettierrc</Text> file is not the only possible place for
+    your configuration. Check out{' '}
     <Link href="https://prettier.io/docs/en/configuration.html">
       the documentation
     </Link>{' '}
@@ -179,14 +179,14 @@ export const resourcesListData = [
   </Paragraph>
   <Paragraph>
     The <Text code>.prettierignore</Text> file works similar to the{' '}
-    <Text code>.gitignore</Text> file but in the context of which files Prettier
-    should format. It's helpful for the Prettier CLI and your Editor to omit
-    formatting of the files and/or directories (e.g. node_modules,
+    <Text code>.gitignore</Text> file but in the context of which files,
+    Prettier should format. It's helpful for the Prettier CLI and your Editor to
+    omit the formatting of the files and/or directories (e.g. node_modules,
     package.json).
   </Paragraph>
   <Paragraph>
-    You could have a keyboard shortcut in your Editor to auto format code and
-    execute it manually whenever you need. You could, but I'll try to explain
+    You could have a keyboard shortcut in your Editor to auto-format code and
+    execute it manually whenever you need it. You could, but I'll try to explain
     why you shouldn't 😅. I use Prettier a lot and autoformatting became almost
     invisible to me. It feels so good to write code and don't bother with
     formatting at all, I often save my file with <Text code>Command + S</Text>{' '}
@@ -197,7 +197,7 @@ export const resourcesListData = [
     </Link>{' '}
     ( in <Link href="https://webpack.js.org/">Webpack</Link>,{' '}
     <Link href="https://parceljs.org/">Parcel</Link>, etc.) and yes,
-    automatically formats my code very often. I reccomend that approach, in no
+    automatically formats my code very often. I recommend that approach, in no
     time you will love it.
   </Paragraph>
   <Paragraph lastParagraph>
@@ -211,9 +211,9 @@ export const resourcesListData = [
     <Link href="https://prettier.io/docs/en/integrating-with-linters.html">
       the documentation
     </Link>
-    . In other words, Prettier should add a semicolon at the end of line, break long
-    line into multiple ones, and linter should catch potential bugs, e.g. highlight
-    using a variable that is not declared.
+    . In other words, Prettier should add a semicolon at the end of the line, break
+    a long line into multiple ones, and linter should catch potential bugs, e.g.
+    highlight using a variable that is not declared.
   </Paragraph>
   <Title level={4} transform="capitalize">
     ESLint
@@ -224,7 +224,7 @@ export const resourcesListData = [
     <Link href="https://github.com/prettier/eslint-config-prettier">
       eslint-config-prettier
     </Link>{' '}
-    comes to the rescue and turns all off the conflicting/unnecessary rules.
+    comes to the rescue, and turns all off the conflicting/unnecessary rules.
     Let's install it first by executing the following command:
     <SyntaxHighlighter showCopy>
       npm install --save-dev eslint-config-prettier
@@ -246,12 +246,12 @@ export const resourcesListData = [
   </Title>
   <Paragraph>
     Woof! It's an amazing tool to control git commands through the hooks, e.g.
-    listen for
-    <Text code>git commit</Text> or <Text code>git push</Text>. You already guessed
-    it, we can add a hook to automatically run Prettier in order to have our code
-    properly formatted, always. Just in case some developers will have their own
-    opinion on Auto-format code locally, but in the end, code should always have
-    unified formatting rules before pushing to the remote repository.
+    listen for <Text code>git commit</Text> or <Text code>git push</Text>. You
+    already guessed it, we can add a hook to automatically run Prettier in order
+    to have our code properly formatted, always. Just in case some developers
+    will have their own opinion on Auto-format code locally, but in the end,
+    code should always have unified formatting rules before pushing to the
+    remote repository.
   </Paragraph>
   <Paragraph>
     There is a mention about{' '}
@@ -270,9 +270,12 @@ export const resourcesListData = [
     <SyntaxHighlighter showCopy>
       npm install --save-dev husky pretty-quick
     </SyntaxHighlighter>
-    There is a lot to consider when properly configuring automation of tools,
-    but I wouldn't force too much on <Text code>pre-commit</Text> hook and
-    instead focus on <Text code>pre-push</Text> hook to allow more flexibility.
+    There is a lot to consider when properly configuring the automation of
+    tools, but I wouldn't force too much on the <Text code>
+      pre-commit
+    </Text>{' '}
+    hook and instead focus on the<Text code>pre-push</Text> hook to allow more
+    flexibility.
     <Box mt={2}>
       <Alert
         message={
@@ -295,7 +298,7 @@ export const resourcesListData = [
   }
 }`}
     </SyntaxHighlighter>
-    And that's it! Everytime someone will push to the remote repository, husky
+    And that's it! Every time someone will push to the remote repository, husky
     will run a <Text code>pre-push</Text> command which executes pretty-quick on
     changed files.
   </Paragraph>
@@ -307,14 +310,14 @@ export const resourcesListData = [
     great addition.
   </Paragraph>
   <Paragraph>
-    I prepared the list of thoughts based on my experience. Hopefully it will be
+    I prepared the list of thoughts based on my experience. I hope it'll be
     useful!
   </Paragraph>
   <PostCard title="Final Thoughts" data={finalThoughtsListData} />
   <Title level={3}>Resources</Title>
   <Paragraph>
     When learning, you can never get enough. The following resources will help
-    you to expand the knowledge.
+    to expand your knowledge.
   </Paragraph>
   <PostList data={resourcesListData} />
 </Post>

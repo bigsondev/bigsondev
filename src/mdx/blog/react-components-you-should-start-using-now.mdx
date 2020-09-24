@@ -61,8 +61,8 @@ export const cheatSheetData = [
       Antd Grid
     </Link>
     , great for composing entire layouts, creating views for different breakpoints,
-    managing spacings, offsets, different directions. Lots of reusability and avoiding
-    CSS headache.
+    managing spacings, offsets, different directions. Lots of reusabilities and avoiding
+    CSS headaches.
   </Text>,
   <Text size="preNormal">
     <Link href="https://material-ui.com/components/box/#box" size="preNormal">
@@ -76,13 +76,13 @@ export const cheatSheetData = [
       Usage
     </Link>
     , it's this missing component that you're looking for when using various Grid
-    systems, e.g. for applying additional spacing or just any css property when you
+    systems, e.g. for applying additional spacing or just any CSS property when you
     want to avoid additional boilerplate by creating a <Link
       size="preNormal"
       href="https://styled-components.com/"
     >
       styled-components
-    </Link> (or similar) wrapper just for one style. Didn't find a verion of this
+    </Link> (or similar) wrapper just for one style. Didn't find a version of this
     one in Antd.
   </Text>,
   <Text size="preNormal">
@@ -113,7 +113,7 @@ export const cheatSheetData = [
     </Link>
     , I miss it a lot in Antd, had to implement my own components for hiding content
     on different breakpoints. MUI does a great job there by exposing a straightforward
-    API that allows to manipulate content easily for different devices.
+    API that allows manipulating content easily for different devices.
   </Text>,
   <Text size="preNormal">
     <Link size="preNormal" href="https://ant.design/components/descriptions/">
@@ -131,21 +131,19 @@ export const cheatSheetData = [
     and{' '}
     <Link size="preNormal" href="https://ant.design/components/icon/">
       Antd Icons
-    </Link>{' '}
-    , at some point, I got bored of finding perfect icons for my websites,
-    built-in packages came to the rescue. It's an additional bundle size, but
-    most of the time it's worth as icons will be unified across the entire
-    system and it's better for designers to create only brand, unique icons.
-    There are optimization methods for decreasing bundle size, e.g.{' '}
-    <Link
+    </Link>
+    , at some point, I got bored of finding perfect icons for my websites, built-in
+    packages came to the rescue. It's an additional bundle size, but most of the
+    time it's worth as icons will be unified across the entire system and it's better
+    for designers to create an only brand, unique icons. There are optimization methods
+    for decreasing bundle size, e.g. <Link
       size="preNormal"
       href="https://material-ui.com/guides/minimizing-bundle-size/#option-2"
     >
       this one
-    </Link>{' '}
-    written in MUI documentation.
+    </Link> written in MUI documentation.
   </Text>,
-  'For more in-depth explanation of the components, please read the full article',
+  'For a more in-depth explanation of the components, please read the full article',
 ];
 
 export const resourcesListData = [
@@ -168,168 +166,6 @@ export const resourcesListData = [
   <Title level={3}>Prerequisites</Title>
   <PostList data={postListData} />
   <PostCard title="Cheat Sheet" data={cheatSheetData} />
-  <Title level={3}>Installation</Title>
-  <Paragraph>
-    Looking at the Cheat Sheet, <Text code>--save-dev</Text> flag will add
-    Prettier to <Text code>devDependencies</Text> in the{' '}
-    <Text code>package.json</Text> file. <Text code>--save-exact</Text> flag
-    will install an exact version rather than using npm's default semver range
-    operator.
-  </Paragraph>
-  <Paragraph>
-    For the purpose of this article, npm is used, but personally I prefer{' '}
-    <Link href="https://yarnpkg.com/">yarn</Link> over npm and the command to
-    install Prettier with it would be:
-    <SyntaxHighlighter showCopy>
-      yarn add --dev --exact prettier
-    </SyntaxHighlighter>
-  </Paragraph>
-  <Paragraph>
-    The <Text code>.prettierrc</Text> file is not the only one possible place
-    for your configuration. Check out{' '}
-    <Link href="https://prettier.io/docs/en/configuration.html">
-      the documentation
-    </Link>{' '}
-    for different options. Default settings are well thought, thus I only added
-    one custom override.
-  </Paragraph>
-  <Paragraph>
-    The <Text code>.prettierignore</Text> file works similar to the{' '}
-    <Text code>.gitignore</Text> file but in the context of which files Prettier
-    should format. It's helpful for the Prettier CLI and your Editor to omit
-    formatting of the files and/or directories (e.g. node_modules,
-    package.json).
-  </Paragraph>
-  <Paragraph>
-    You could have a keyboard shortcut in your Editor to auto format code and
-    execute it manually whenever you need. You could, but I'll try to explain
-    why you shouldn't 😅. I use Prettier a lot and autoformatting became almost
-    invisible to me. It feels so good to write code and don't bother with
-    formatting at all, I often save my file with <Text code>Command + S</Text>{' '}
-    (it's for Mac, on Windows it would be <Text code>Ctrl + S</Text>) shortcut
-    which refreshes the latest changes thanks to{' '}
-    <Link href="https://webpack.js.org/concepts/hot-module-replacement/">
-      Hot Reloading
-    </Link>{' '}
-    ( in <Link href="https://webpack.js.org/">Webpack</Link>,{' '}
-    <Link href="https://parceljs.org/">Parcel</Link>, etc.) and yes,
-    automatically formats my code very often. I reccomend that approach, in no
-    time you will love it.
-  </Paragraph>
-  <Paragraph lastParagraph>
-    Let's learn how you could use Prettier for more exciting things and what to
-    avoid when integrating with other tools.
-  </Paragraph>
-  <Title level={3}>Integrations</Title>
-  <Paragraph breakParagraph>
-    Use Prettier for code formatting concerns, and linters for code-quality
-    concerns as stated in{' '}
-    <Link href="https://prettier.io/docs/en/integrating-with-linters.html">
-      the documentation
-    </Link>
-    . In other words, Prettier should add a semicolon at the end of line, break long
-    line into multiple ones, and linter should catch potential bugs, e.g. highlight
-    using a variable that is not declared.
-  </Paragraph>
-  <Title level={4} transform="capitalize">
-    ESLint
-  </Title>
-  <Paragraph lastParagraph>
-    When using both ESLint and Prettier, <Text strong>they might clash</Text>,
-    luckily{' '}
-    <Link href="https://github.com/prettier/eslint-config-prettier">
-      eslint-config-prettier
-    </Link>{' '}
-    comes to the rescue and turns all off the conflicting/unnecessary rules.
-    Let's install it first by executing the following command:
-    <SyntaxHighlighter showCopy>
-      npm install --save-dev eslint-config-prettier
-    </SyntaxHighlighter>
-    Then, in the <Text code>.eslintrc</Text> file add{' '}
-    <Text code>"prettier"</Text> to the <Text code>"extends"</Text> array.
-    Remember to put it last, so it gets the chance to override other configs.
-    <SyntaxHighlighter language="json" showCopy>
-      {`{
-  "extends": [
-    "...",
-    "prettier"
-  ]
-}`}
-    </SyntaxHighlighter>
-  </Paragraph>
-  <Title level={4} transform="capitalize">
-    Husky
-  </Title>
-  <Paragraph>
-    Woof! It's an amazing tool to control git commands through the hooks, e.g.
-    listen for
-    <Text code>git commit</Text> or <Text code>git push</Text>. You already guessed
-    it, we can add a hook to automatically run Prettier in order to have our code
-    properly formatted, always. Just in case some developers will have their own
-    opinion on Auto-format code locally, but in the end, code should always have
-    unified formatting rules before pushing to the remote repository.
-  </Paragraph>
-  <Paragraph>
-    There is a mention about{' '}
-    <Link href="https://github.com/okonet/lint-staged">lint-staged</Link> in{' '}
-    <Link href="https://prettier.io/docs/en/install.html#git-hooks">
-      the official documentation
-    </Link>
-    , but this tool might be a bit of overkill for starting, I'll do it a bit differently.
-    It's used to optimize the hook speed by affecting only changed files, the ones
-    that are staged in git, but it can also cause unwanted behavior. I'll use <Link href="https://github.com/azz/pretty-quick">
-      pretty-quick
-    </Link> to run Prettier on changed files instead.
-  </Paragraph>
-  <Paragraph>
-    Let's start by installing the following libraries:
-    <SyntaxHighlighter showCopy>
-      npm install --save-dev husky pretty-quick
-    </SyntaxHighlighter>
-    There is a lot to consider when properly configuring automation of tools,
-    but I wouldn't force too much on <Text code>pre-commit</Text> hook and
-    instead focus on <Text code>pre-push</Text> hook to allow more flexibility.
-    <Box mt={2}>
-      <Alert
-        message={
-          <Text size="small">
-            it should require an extensive brainstorming with all the developers
-            what the flow should be and when to run tests, linters, formatters,
-            etc.
-          </Text>
-        }
-        type="warning"
-      />
-    </Box>
-  </Paragraph>
-  <Paragraph lastParagraph>
-    Next, add a new property to the <Text code>package.json</Text> file:
-    <SyntaxHighlighter language="json" showCopy>
-      {`"husky": {
-  "hooks": {
-    "pre-push": "pretty-quick --staged"
-  }
-}`}
-    </SyntaxHighlighter>
-    And that's it! Everytime someone will push to the remote repository, husky
-    will run a <Text code>pre-push</Text> command which executes pretty-quick on
-    changed files.
-  </Paragraph>
-  <Title level={3}>Closing Notes</Title>
-  <Paragraph>
-    In my honest opinion, automating manual work is exciting, but also
-    challenging. The entire process needs to be well thought and discussed with
-    all developers in the team. If you're working alone, Prettier will be a
-    great addition.
-  </Paragraph>
-  <Paragraph lastParagraph>
-    I prepared the list of thoughts based on my experience. Hopefully it will be
-    useful!
-  </Paragraph>
-  <Title level={3}>Resources</Title>
-  <Paragraph>
-    When learning, you can never get enough. The following resources will help
-    you to expand the knowledge.
-  </Paragraph>
+  <Title level={3}>Introduction</Title>
   <PostList data={resourcesListData} />
 </Post>

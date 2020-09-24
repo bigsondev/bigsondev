@@ -84,7 +84,7 @@ export const SkyrocketYourCareer = () => {
               </Col>
               <Col span={20}>
                 <Text align="center" display="block" size="preNormal">
-                  Have you ever talked to a ghost? Stress-free conversation,
+                  Have you ever talked to a ghost? Stress-free conversation, a
                   warm-up for your next technical interview. I'll adjust
                   questions and coding challenges to your skill level.
                 </Text>

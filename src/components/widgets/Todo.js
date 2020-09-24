@@ -33,7 +33,7 @@ const TodoItem = () => {
   return (
     <TodoItemHolder align="middle" justify="center" gutter={40}>
       <Col>
-        <Text size="preNormal">Read the article</Text>
+        <Text size="preNormal">Read this article</Text>
       </Col>
       <Col>
         <BorderOutlined style={{ fontSize: 20 }} />

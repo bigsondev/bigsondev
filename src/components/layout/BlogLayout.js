@@ -73,7 +73,7 @@ const BlogLayout = ({
               <Box mt={7}>
                 <PromoBanner
                   title="spread the word"
-                  desc="Did you like the article? Share it with someone!"
+                  desc="Do you like this article? Share it with someone!"
                   content={
                     <Space size="middle">
                       <IconHolder href={shareOnReddit()}>

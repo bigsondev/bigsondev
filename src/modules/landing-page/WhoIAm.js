@@ -39,7 +39,7 @@ export const WhoIAm = () => {
             I was a League of Legends Coach for 5 years, inspired others, and
             had fun while they climbed the ranks. At some point, I decided to
             dive into IT for another 5 years. From a Java Tester to Lead
-            Front-end Developer mentoring folks around me and recruiting
+            Frontend Developer mentoring folks around me and recruiting
             candidates. And now, with my superpowers, let me move your Frontend
             career to the next level.
           </Paragraph>
@@ -54,12 +54,12 @@ export const WhoIAm = () => {
               </Col>
               <Col span={24}>
                 <Title level={5} align="center" transform="none">
-                  Front-end Developer
+                  Frontend Developer
                 </Title>
               </Col>
               <Col span={20}>
                 <Paragraph align="center" size="preNormal">
-                  I love being up-to date in Frontend. I value modern, clean,
+                  I love being up-to-date in Frontend. I value modern, clean,
                   declarative code.
                 </Paragraph>
               </Col>
@@ -80,8 +80,7 @@ export const WhoIAm = () => {
                   Testing.
                 </Paragraph>
                 <Paragraph align="center" size="preNormal">
-                  Enthusiast of Data-driven: HotJar, Google Analytics, A/B
-                  Tests, LaunchDarkly, Sentry.
+                  2D Game Developer, coding games in Phaser.
                 </Paragraph>
                 <Paragraph align="center" size="preNormal">
                   UX/UI Evangelist, Material Design, Ant Design user, Atomic
@@ -130,11 +129,11 @@ export const WhoIAm = () => {
                   Frontend Junior, Regular, Senior. All levels included.
                 </Paragraph>
                 <Paragraph align="center" size="preNormal">
-                  JS, HTML, CSS, React and other Frameworks on demand, e.g.
+                  JS, HTML, CSS, React, and other Frameworks on demand, e.g.
                   Angular.
                 </Paragraph>
                 <Paragraph align="center" size="preNormal">
-                  Recruited 50+ candidates.
+                  50+ interviews.
                 </Paragraph>
                 <Paragraph align="center" size="preNormal">
                   Individual approach, robust feedback.
@@ -160,7 +159,7 @@ export const WhoIAm = () => {
               <Col span={20}>
                 <Box margin="-0.5rem 0 0 0">
                   <Paragraph align="center" size="preNormal">
-                    I create individual plans and have empathic approach.
+                    I create individual plans and have an empathic approach.
                   </Paragraph>
                 </Box>
               </Col>
@@ -177,7 +176,7 @@ export const WhoIAm = () => {
                   Skills
                 </Title>
                 <Paragraph align="center" size="preNormal">
-                  In the past, League of Legends Challenger rank in Europe,
+                  In the past, the League of Legends Challenger rank in Europe,
                   in-depth game knowledge.
                 </Paragraph>
                 <Paragraph align="center" size="preNormal">

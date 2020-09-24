@@ -42,7 +42,7 @@ const MobileScreenPromo = () => (
         </Text>
       </Title>
       <Paragraph size={'small'} marginBottom="2.5rem" fontStyle="italic">
-        I'm Adrian, Front-end Developer, Recruiter, Mentor.
+        I'm Adrian, Frontend Developer, Recruiter, Mentor.
         <br />
         And your friend. I love sharing my knowledge with others.
       </Paragraph>
@@ -87,7 +87,7 @@ const MediumScreenPromo = () => (
           </Text>
         </Title>
         <Paragraph size="preNormal" align="center" fontStyle="italic">
-          I'm Adrian, Front-end Developer, Recruiter, Mentor.
+          I'm Adrian, Frontend Developer, Recruiter, Mentor.
           <br />
           And your friend. I love sharing my knowledge with others.
         </Paragraph>
@@ -133,7 +133,7 @@ const BigScreenPromo = () => (
             </Text>
           </Title>
           <Paragraph size={'preNormal'} marginBottom="2rem" fontStyle="italic">
-            I'm Adrian, Front-end Developer, Recruiter, Mentor.
+            I'm Adrian, Frontend Developer, Recruiter, Mentor.
             <br />
             And your friend. I love sharing my knowledge with others.
           </Paragraph>

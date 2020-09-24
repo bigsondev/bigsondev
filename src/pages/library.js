@@ -153,7 +153,7 @@ const Library = ({
       <SEO title="Library" />
       <Title level={2}>skyrocket your career</Title>
       <Paragraph type="secondary" size="preNormal">
-        I've prepared some fun activities to help in your learning journey.
+        I've prepared some fun activities to help with your learning journey.
       </Paragraph>
       <Divider />
       <Box mb={8}>
