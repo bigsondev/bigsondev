@@ -1,0 +1,63 @@
+---
+title: Simple Object Factory
+path: /library/regular-simple-object-factory
+desc: Create a function that produces objects.
+date: 2020-09-24
+type: regular
+tags: js
+order: 2
+difficulty: 2
+---
+
+import { Post, Text, CodeEditor, Link } from '~components';
+import { getJs } from '~utils';
+
+export const tasksListData = [
+  <Text size="small" color="#FAFAFA">
+    humanFactory function exists
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    The humanFactory function accepts two parameters
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    The humanFactory returns an object with name and age properties
+  </Text>,
+];
+
+export const helpListData = [
+  <Link
+    size="small"
+    href="https://medium.com/javascript-scene/javascript-factory-functions-with-es6-4d224591a8b1"
+  >
+    Object Factory
+  </Link>,
+];
+
+export const tabs = ['js'];
+export const tests = [
+  () => getJs().humanFactory,
+  () => getJs().humanFactory?.length === 2,
+  () => {
+    const newHuman = getJs().humanFactory?.('Adrian', '27');
+    return newHuman?.name === 'Adrian' && newHuman?.age === '27';
+  },
+];
+
+<Post>
+  <CodeEditor
+    tasks={tasksListData}
+    help={helpListData}
+    tabs={tabs}
+    tests={tests}
+    result={
+      <>
+        <Text size="preNormal" code>
+          humanFactory
+        </Text>{' '}
+        function accepts two parameters and returns an object with name and age
+        properties
+      </>
+    }
+    next="regular-add-function"
+  />
+</Post>

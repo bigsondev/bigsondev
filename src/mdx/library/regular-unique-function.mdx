@@ -1,0 +1,74 @@
+---
+title: Unique Function
+path: /library/regular-unique-function
+desc: Create a function that removes duplicates from an array.
+date: 2020-09-24
+type: regular
+tags: js
+order: 4
+difficulty: 3
+---
+
+import { Post, Text, CodeEditor, Link } from '~components';
+import { getJs } from '~utils';
+
+export const tasksListData = [
+  <Text size="small" color="#FAFAFA">
+    unique function exists
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    The unique function accepts an array as a parameter
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    The unique function returns an array without duplicates
+  </Text>,
+];
+
+export const helpListData = [
+  <Link
+    size="small"
+    href="https://stackoverflow.com/questions/9229645/remove-duplicate-values-from-js-array"
+  >
+    Removing Duplicates
+  </Link>,
+];
+
+export const tabs = ['js'];
+export const tests = [
+  () => getJs().unique,
+  () => getJs().unique?.length === 1,
+  () => {
+    const unique = getJs().unique?.([1, 2, 3, 4, 5, 1, 2, 3]);
+    const expectedResult = [1, 2, 3, 4, 5];
+    return (
+      unique?.length === 5 &&
+      unique.every((value, index) => value === expectedResult[index])
+    );
+  },
+  () => {
+    const unique = getJs().unique?.(['bronze', 'silver', 'gold', 'bronze']);
+    const expectedResult = ['bronze', 'silver', 'gold'];
+    return (
+      unique?.length === 3 &&
+      unique.every((value, index) => value === expectedResult[index])
+    );
+  },
+];
+
+<Post>
+  <CodeEditor
+    tasks={tasksListData}
+    help={helpListData}
+    tabs={tabs}
+    tests={tests}
+    result={
+      <>
+        <Text size="preNormal" code>
+          unique
+        </Text>{' '}
+        function accepts an array as a parameter and returns array without
+        duplicates.
+      </>
+    }
+  />
+</Post>

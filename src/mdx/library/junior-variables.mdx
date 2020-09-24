@@ -10,23 +10,26 @@ difficulty: 1
 ---
 
 import { Post, Text, CodeEditor, Link } from '~components';
-import { getJs, getJsRaw } from '~utils';
+import { getJs } from '~utils';
 
 export const tasksListData = [
   <Text size="small" color="#FAFAFA">
-    Create a var firstBlood variable and assign to it a value of 42
+    var firstBlood variable exists and has a value of 42
   </Text>,
   <Text size="small" color="#FAFAFA">
-    Create a let secondBlood variable and assign to it a value of 42
+    let secondBlood variable exists and has a value of 42
   </Text>,
   <Text size="small" color="#FAFAFA">
-    Create a const thirdBlood variable and assign to it a value of 42
+    const thirdBlood variable exists and has a value of 42
   </Text>,
 ];
 
 export const helpListData = [
   <Link size="small" href="https://www.w3schools.com/js/js_variables.asp">
     Variables
+  </Link>,
+  <Link size="small" href="https://www.w3schools.com/js/js_numbers.asp">
+    Numbers
   </Link>,
 ];
 
@@ -43,7 +46,19 @@ export const tests = [
     help={helpListData}
     tabs={tabs}
     tests={tests}
-    result={`All three variables (firstBlood, secondBlood, thirdBlood) are declared and have a value of 42.`}
-    next="junior-multiply-function"
+    result={
+      <>
+        All three variables{' '}
+        <Text size="preNormal" code>
+          firstBlood
+        </Text>
+        , <Text size="preNormal" code>
+          secondBlood
+        </Text>, <Text size="preNormal" code>
+          thirdBlood
+        </Text> are declared and have a value of 42.
+      </>
+    }
+    next="junior-hello-world"
   />
 </Post>

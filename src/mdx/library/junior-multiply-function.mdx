@@ -5,7 +5,7 @@ desc: Create a function to multiply two numbers.
 date: 2020-09-24
 type: junior
 tags: js
-order: 3
+order: 6
 difficulty: 2
 ---
 
@@ -14,7 +14,7 @@ import { getJs } from '~utils';
 
 export const tasksListData = [
   <Text size="small" color="#FAFAFA">
-    Create a multiply function
+    multiply function exists
   </Text>,
   <Text size="small" color="#FAFAFA">
     The multiply function accepts two numbers as parameters
@@ -25,9 +25,6 @@ export const tasksListData = [
 ];
 
 export const helpListData = [
-  <Link size="small" href="https://www.w3schools.com/js/js_functions.asp">
-    Functions
-  </Link>,
   <Link
     size="small"
     href="https://www.w3schools.com/js/js_function_parameters.asp"
@@ -57,10 +54,13 @@ export const tests = [
     tests={tests}
     result={
       <>
-        <Text code>multiply</Text> function accepts two numbers as parameters
-        and properly multiplies numbers.
+        <Text size="preNormal" code>
+          multiply
+        </Text>{' '}
+        function accepts two numbers as parameters and properly multiplies
+        numbers.
       </>
     }
-    next="beginner-inline-elements"
+    next="junior-button-event"
   />
 </Post>

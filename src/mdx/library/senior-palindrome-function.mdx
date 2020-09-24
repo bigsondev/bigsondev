@@ -14,7 +14,7 @@ import { getJs } from '~utils';
 
 export const tasksListData = [
   <Text size="small" color="#FAFAFA">
-    Create a palindrome function
+    palindrome function exists
   </Text>,
   <Text size="small" color="#FAFAFA">
     The palindrome function accepts one string as a parameter
@@ -53,10 +53,12 @@ export const tests = [
     tests={tests}
     result={
       <>
-        <Text code>palindrome</Text> function accepts one string as a parameter
-        and returns true when the provided string is a palindrome.
+        <Text size="preNormal" code>
+          palindrome
+        </Text>{' '}
+        function accepts one string as a parameter and returns true when the
+        provided string is a palindrome.
       </>
     }
-    next="beginner-inline-elements"
   />
 </Post>
