@@ -112,7 +112,7 @@ const Article = ({
         {title}
       </Title>
       <Paragraph type="secondary" size="preNormal">
-        {truncate(desc)}
+        {truncate(desc, 200)}
       </Paragraph>
       {/* TODO add tags in the future? */}
       {false && (
