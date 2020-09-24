@@ -20,8 +20,17 @@ import {
   Icon,
   PromoBanner,
   CardButton,
+  Illustration,
+  XlOnly,
 } from '~components';
 import { truncate } from '~utils';
+
+const DuckSlackIllustration = styled(Illustration)({
+  position: 'absolute',
+  width: '20%',
+  left: '5%',
+  bottom: '25%',
+});
 
 export const query = graphql`
   query BlogQuery {
@@ -170,7 +179,14 @@ const Blog = ({
               Build a community with me that will help each other in Frontend.
             </>
           }
-          content={<SlackForm />}
+          content={
+            <>
+              <SlackForm />
+              <XlOnly>
+                <DuckSlackIllustration type="duckSlack" />
+              </XlOnly>
+            </>
+          }
         />
       </Box>
     </Layout>

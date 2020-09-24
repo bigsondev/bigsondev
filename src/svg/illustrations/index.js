@@ -11,5 +11,5 @@ export {
   MockInterview,
   DevelopmentPlan,
   Newsletter,
-  DuckSlack
+  DuckSlack,
 };

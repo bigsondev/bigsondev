@@ -34,3 +34,10 @@ export const DesktopOnly = styled.div`
   }
   display: none;
 `;
+
+export const XlOnly = styled.div`
+  @media (min-width: 1200px) {
+    display: block;
+  }
+  display: none;
+`;

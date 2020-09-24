@@ -14,6 +14,7 @@ const Holder = styled.div(({ color = 'normal' }) => ({
   alignItems: 'center',
   backgroundColor: colorMapper[color],
   padding: '5rem 1.5rem',
+  position: 'relative',
 }));
 
 export const PromoBanner = ({ title, desc, content, color }) => (

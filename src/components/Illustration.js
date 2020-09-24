@@ -7,7 +7,7 @@ import {
   MockInterview,
   DevelopmentPlan,
   Newsletter,
-  DuckSlack
+  DuckSlack,
 } from '~svg';
 
 const Holder = styled.div({
@@ -23,7 +23,7 @@ const ILLUSTRATION_MAPPER = {
   mockInterview: <MockInterview />,
   developmentPlan: <DevelopmentPlan />,
   newsletter: <Newsletter />,
-  duckSlack: <DuckSlack />
+  duckSlack: <DuckSlack />,
 };
 
 export const Illustration = ({ type, ...props }) => {
