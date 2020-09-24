@@ -13,7 +13,7 @@ import {
   PrimaryButton,
   SecondaryButton,
 } from '~components';
-import { copyToClipboard, setItem } from '~utils';
+import { copyToClipboard, getItem, setItem } from '~utils';
 
 import {
   Title,
@@ -122,7 +122,8 @@ export const CodeEditor = ({
   }, []);
 
   useEffect(() => {
-    const showJsNotification = tabs.includes('js');
+    const showJsNotification =
+      tabs.includes('js') && getItem('codeTutorialJs') === false;
 
     if (showJsNotification) {
       jsInTheConsoleNotification();

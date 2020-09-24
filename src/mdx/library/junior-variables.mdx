@@ -1,0 +1,49 @@
+---
+title: Variables
+path: /library/junior-variables
+desc: Practice creating variables.
+date: 2020-09-24
+type: junior
+tags: js
+order: 1
+difficulty: 1
+---
+
+import { Post, Text, CodeEditor, Link } from '~components';
+import { getJs, getJsRaw } from '~utils';
+
+export const tasksListData = [
+  <Text size="small" color="#FAFAFA">
+    Create a var firstBlood variable and assign to it a value of 42
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    Create a let secondBlood variable and assign to it a value of 42
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    Create a const thirdBlood variable and assign to it a value of 42
+  </Text>,
+];
+
+export const helpListData = [
+  <Link size="small" href="https://www.w3schools.com/js/js_variables.asp">
+    Variables
+  </Link>,
+];
+
+export const tabs = ['js'];
+export const tests = [
+  () => getJs().firstBlood === 42,
+  () => getJs().secondBlood === 42,
+  () => getJs().thirdBlood === 42,
+];
+
+<Post>
+  <CodeEditor
+    tasks={tasksListData}
+    help={helpListData}
+    tabs={tabs}
+    tests={tests}
+    result={`All three variables (firstBlood, secondBlood, thirdBlood) are declared and have a value of 42.`}
+    next="junior-multiply-function"
+  />
+</Post>

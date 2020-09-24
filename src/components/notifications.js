@@ -2,6 +2,8 @@ import React from 'react';
 import { notification, Button } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 
+import { setItem } from '~utils';
+
 const DID_YOU_KNOW_KEY_2 = 'DID_YOU_KNOW_KEY_2';
 
 export const jsInTheConsoleNotification = () =>
@@ -15,7 +17,10 @@ export const jsInTheConsoleNotification = () =>
     btn: (
       <Button
         type="primary"
-        onClick={() => notification.close(DID_YOU_KNOW_KEY_2)}
+        onClick={() => {
+          notification.close(DID_YOU_KNOW_KEY_2);
+          setItem('codeTutorialJs', true);
+        }}
       >
         Got it! (don't show again)
       </Button>

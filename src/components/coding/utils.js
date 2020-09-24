@@ -10,8 +10,8 @@ export const createIframeContent = ({ html, css, js }) => `
   </head>
   <body>
       ${html}
-  <script>
-    ${js}
+  <script type="text/javascript">
+    ${js.replaceAll('const', 'var').replaceAll('let', 'var')}
   </script>
   </body>
 </html>

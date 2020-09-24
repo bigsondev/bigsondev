@@ -1,0 +1,66 @@
+---
+title: Multiply Function
+path: /library/junior-multiply-function
+desc: Create a function to multiply two numbers.
+date: 2020-09-24
+type: junior
+tags: js
+order: 2
+difficulty: 2
+---
+
+import { Post, Text, CodeEditor, Link } from '~components';
+import { getJs } from '~utils';
+
+export const tasksListData = [
+  <Text size="small" color="#FAFAFA">
+    Create a multiply function
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    The multiply function should accept two numbers as parameters
+  </Text>,
+  <Text size="small" color="#FAFAFA">
+    The multiply function should return the result of two numbers multiplication
+  </Text>,
+];
+
+export const helpListData = [
+  <Link size="small" href="https://www.w3schools.com/js/js_functions.asp">
+    Functions
+  </Link>,
+  <Link
+    size="small"
+    href="https://www.w3schools.com/js/js_function_parameters.asp"
+  >
+    Function Parameters
+  </Link>,
+];
+
+export const tabs = ['js'];
+export const tests = [
+  () => getJs().multiply,
+  () => getJs().multiply?.length === 2,
+  () =>
+    getJs().multiply?.(5, 5) === 25 &&
+    getJs().multiply?.(1, 1) === 1 &&
+    getJs().multiply?.(0, 0) === 0 &&
+    getJs().multiply?.(1, 2) === 2 &&
+    getJs().multiply?.(2, 1) === 2 &&
+    getJs().multiply?.(7, 7) === 49,
+];
+
+<Post>
+  <CodeEditor
+    tasks={tasksListData}
+    help={helpListData}
+    tabs={tabs}
+    tests={tests}
+    result={
+      <>
+        <Text code>multiply</Text> function accepts two numbers as parameters
+        and properly multiplies numbers.
+      </>
+    }
+    next="beginner-inline-elements"
+  />
+</Post>
