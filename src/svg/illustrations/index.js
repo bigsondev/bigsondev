@@ -2,10 +2,14 @@ import PromoIllustration from './promo-illustration.svg';
 import MentorIllustration from './i-want-a-mentor.svg';
 import MockInterview from './i-want-a-mock-interview.svg';
 import DevelopmentPlan from './i-want-a-development-plan.svg';
+import Newsletter from './newsletter.svg';
+import DuckSlack from './duck-slack.svg';
 
 export {
   PromoIllustration,
   MentorIllustration,
   MockInterview,
   DevelopmentPlan,
+  Newsletter,
+  DuckSlack
 };

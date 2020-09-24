@@ -1,4 +1,4 @@
-export const createIframeContent = ({ html, css, js }) => `
+export const createIframeContent = ({ html = '', css = '', js = '' }) => `
 <html>
   <head>
     <style>

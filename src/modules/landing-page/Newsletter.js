@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import styled from 'styled-components';
 
-import { Title, Paragraph, Box } from '~components';
+import { Title, Paragraph, Illustration, Box } from '~components';
 import { NewsletterForm } from './NewsletterForm';
 
 const Holder = styled.div({
@@ -14,12 +14,19 @@ const Holder = styled.div({
 export const Newsletter = () => {
   return (
     <Holder>
-      <Row justify="center" gutter={[16, 16]}>
-        <Col xs={22} sm={10} md={11} lg={10} xl={8}>
-          <Paragraph>PLACEHOLDER FOR ILLUSTRATION</Paragraph>
+      <Row justify="center" align="top" gutter={[16, 16]}>
+        <Col xs={22} md={11} xl={8} xxl={6}>
+          <Illustration type="newsletter" />
         </Col>
-        <Col xs={22} sm={12} md={11} lg={10} xl={8}>
-          <Title level={4}>the guide to beat frontend interview</Title>
+        <Col
+          xs={22}
+          md={{ span: 11, offset: 2 }}
+          lg={{ span: 10, offset: 2 }}
+          xl={{ span: 8, offset: 2 }}
+        >
+          <Box margin="0.9rem 0 0 0">
+            <Title level={4}>the guide to beat frontend interview</Title>
+          </Box>
           <Paragraph size="preNormal">
             I've been recruiting Frontend candidates for almost 2 years. This
             guide is a cheat sheet based on my recruiter experience. And the
