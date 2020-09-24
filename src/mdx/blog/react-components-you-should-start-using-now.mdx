@@ -49,6 +49,11 @@ export const postListData = [
     I'll refer to Material UI as <Text strong>MUI</Text> and to Ant Design as{' '}
     <Text strong>Antd</Text> in this article.
   </Text>,
+  <Text>
+    I won't supply code examples for the described components, but instead,
+    links to the documentation in the cheat sheet as it's well-written and full
+    of use-cases.
+  </Text>,
 ];
 
 export const cheatSheetData = [
@@ -156,6 +161,14 @@ export const resourcesListData = [
   <Link href="https://github.com/typicode/husky">Husky Reference</Link>,
 ];
 
+export const implementationLinks = (mui, antd) => {
+  const muiLink = mui ? <Link href={mui}>MUI Implementation</Link> : undefined;
+  const antdLink = antd ? (
+    <Link href={antd}>Antd Implementation</Link>
+  ) : undefined;
+  return [muiLink, antdLink].filter((link) => link);
+};
+
 <Post
   title={props.pageContext.frontmatter.title}
   desc={props.pageContext.frontmatter.desc}
@@ -167,5 +180,243 @@ export const resourcesListData = [
   <PostList data={postListData} />
   <PostCard title="Cheat Sheet" data={cheatSheetData} />
   <Title level={3}>Introduction</Title>
-  <PostList data={resourcesListData} />
+  <Paragraph>
+    In the modern Frontend world, everything is built and composed of
+    components. They're building blocks of any UI. Both Developers and Designers
+    started using this term in their work. It might consist of different
+    definitions, but the idea is the same.
+  </Paragraph>
+  <Paragraph>
+    A Designer creates e.g. Button component in{' '}
+    <Link href="https://www.sketch.com/">Sketch</Link> which has concrete
+    properties such as width, height, color, font size, etc. It also has a
+    concrete behavior, hover effect on click, and could be presented in
+    different states. Given the Sketch file, a Developer can implement the
+    Button component now. To avoid duplication and follow the{' '}
+    <Link href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">
+      DRY principle
+    </Link>
+    , Button should be reusable and abstracted into e.g. React, Angular, Vue, or
+    Web component. This component should have proper HTML structure, predefined CSS
+    styles, JS behavior and can be controlled through properties, for example, it
+    could have a property <Text code>type</Text> that would allow changing Button
+    state to <Text code>promo</Text> or <Text code>secondary</Text>, by default it
+    would have a <Text code>primary</Text> type.
+  </Paragraph>
+  <Paragraph>
+    The Button example might sound trivial, but in practice, there is a lot to
+    cover. There needs to be a unified theme that includes different colors,
+    spacing rules, typography settings, and much more. Components need to work
+    in different browsers (god damn IE 😅) and be properly tested.{' '}
+    <Text strong>When creating an MVP, there is no time for that.</Text>
+  </Paragraph>
+  <Paragraph>
+    And that's why we reuse what others built for us. MUI or Antd are the most
+    popular Design Systems and have free to use{' '}
+    <Link href="https://en.wikipedia.org/wiki/MIT_License">MIT License</Link>,
+    and React Component Libraries based on these principles. It's fun to build
+    components from the scratch, but it's all about finding the right balance. I
+    highly recommend checking out all the components in their API, but in this
+    article, I will focus on some utility components that can save you time,
+    reduce boilerplate code, unify styling in your application, and simplify
+    workflow with designers.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    <Text strong>
+      A common misconception is that MUI or Antd are absolute, that's not true!
+    </Text>{' '}
+    They provide the fundamentals that you can base off and still have a unique,
+    brand look for the application. And all of that without spending a huge
+    amount of time on implementing components behavior or supporting different
+    tweaks in older browsers. It's basically a starter pack for your next MVP.
+  </Paragraph>
+  <Title level={3}>Components</Title>
+  <Paragraph>
+    I completely understand and respect Developers who code components from the
+    scratch, but I also feel sorry for them to maintain, test, make the code
+    compatible with all the possible browsers. And at the same time, deliver
+    features, meet deadlines and often, work under the pressure.{' '}
+    <Text strong>
+      I'm kind of a lazy Developer who loves to reuse what others have built and
+      expand on that to achieve the results
+    </Text>
+    .
+  </Paragraph>
+  <Paragraph>
+    I've been working on multiple Frontend projects, from small to large ones
+    and I can assure you that in 99%, picking up a pre-built Design System with
+    Component Library such as MUI or Antd was a perfect choice. There are
+    downsides of this approach like with any other you would go for, but let's
+    focus on the bright sides, rite?
+  </Paragraph>
+  <Paragraph>Let's dive in components you shall fall in love soon.</Paragraph>
+  <Title level={4} transform="capitalize">
+    Grid
+  </Title>
+  <PostList
+    data={implementationLinks(
+      'https://github.com/mui-org/material-ui/tree/next/packages/material-ui/src/Grid',
+      'https://github.com/ant-design/ant-design/tree/master/components/grid'
+    )}
+  />
+  <Paragraph>
+    Most of the Grid Systems are based around{' '}
+    <Link href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">
+      Flexbox
+    </Link>{' '}
+    and{' '}
+    <Link href="https://css-tricks.com/snippets/css/complete-guide-grid/">
+      CSS Grid
+    </Link>
+    . A layout should be the very first thing you are working on. Decide on either{' '}
+    <Link href="https://medium.com/@Vincentxia77/what-is-mobile-first-design-why-its-important-how-to-make-it-7d3cf2e29d00">
+      Mobile First
+    </Link> or <Link href="https://medium.com/@JuliSudi/mobile-first-design-vs-desktop-first-design-vs-element-first-design-5d1015632a61">
+      Desktop First
+    </Link> approach and apply <Link href="https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/">
+      RWD
+    </Link> rules. Otherwise, it will consume time to refactor the <Text code>
+      Layout
+    </Text> component and adjust it for different devices. Usually, there is a <Text
+      code
+    >
+      Row
+    </Text> and <Text code>Col</Text> component, or just one <Text code>
+      Grid
+    </Text> which is controlled through props to be either a container or item.
+  </Paragraph>
+  <Paragraph breakParagraph>
+    When you create a new view, page or want to have unified spacing and sizing
+    of elements, start from <Text code>Grid</Text>, it will save you time.
+  </Paragraph>
+  <Title level={4} transform="capitalize">
+    Box
+  </Title>
+  <PostList
+    data={implementationLinks(
+      'https://github.com/mui-org/material-ui/tree/next/packages/material-ui/src/Box'
+    )}
+  />
+  <Paragraph breakParagraph>
+    There is a lot of discussion around the styling approach, either to choose{' '}
+    <Link href="http://getbem.com/">BEM</Link>,{' '}
+    <Link href="http://smacss.com/">SMACSS</Link>, or{' '}
+    <Link href="https://cssinjs.org/">CSS-in-JS</Link>. I'm a fan of the last
+    one and heavily use that either with{' '}
+    <Link href="https://styled-components.com/">styled-components</Link> or JSS.
+    It bothers me when I have to create a wrapper component just for one CSS
+    property. On the other hand, <Text code>Box</Text> can simplify and unify
+    styling through props, e.g. instead of providing exact value for margin, it
+    could be multiplied by a base spacing value, which in MUI is 8 btw.
+  </Paragraph>
+  <Title level={4} transform="capitalize">
+    Typography
+  </Title>
+  <PostList
+    data={implementationLinks(
+      'https://github.com/mui-org/material-ui/tree/next/packages/material-ui/src/Typography',
+      'https://github.com/ant-design/ant-design/tree/master/components/typography'
+    )}
+  />
+  <Paragraph breakParagraph>
+    One of the fundamental concepts when creating a Design System. Line heights,
+    font sizes, colors, font weights, there is a lot to consider, and Designers
+    have a strong opinion on that one. Well-thought Typography can impact
+    immensely on the user. It's hard to come up with rules and standards alone.
+    The <Text code>Typography</Text> component should be used in almost every
+    text, it will be much easier to refactor later on or apply new, brand rules
+    from the designs.
+  </Paragraph>
+  <Title level={4} transform="capitalize">
+    Space
+  </Title>
+  <PostList
+    data={implementationLinks(
+      undefined,
+      'https://github.com/ant-design/ant-design/tree/master/components/space'
+    )}
+  />
+  <Paragraph breakParagraph>
+    There are use cases where you just want to apply the same padding or margin
+    between elements. The <Text code>Grid</Text> seems a bit too heavy for that
+    as it's not a complex layout concern. The <Text code>Box</Text> would also
+    result in a bit too much boilerplate if used multiple times in the render
+    method. <Text code>Space</Text> can help with that. It wraps all of the
+    children components and applies equal spacing between them and can also help
+    with alignment.
+  </Paragraph>
+  <Title level={4} transform="capitalize">
+    Hidden
+  </Title>
+  <PostList
+    data={implementationLinks(
+      'https://github.com/mui-org/material-ui/tree/next/packages/material-ui/src/Hidden'
+    )}
+  />
+  <Paragraph breakParagraph>
+    When you are using a Static Site Generator such as{' '}
+    <Link href="https://www.gatsbyjs.com/">Gatsby</Link>, using{' '}
+    <Link href="https://reactjs.org/docs/hooks-reference.html">hooks</Link> e.g.
+    from{' '}
+    <Link href="https://github.com/ReactTraining/react-media">react-media</Link>{' '}
+    might break the layout in your application. During static assets generation,
+    there is no information about the dimensions of the window. The solution to
+    this problem is using a standard{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">
+      CSS Media Queries
+    </Link>{' '}
+    or <Text code>Hidden</Text>. When your layout grows complex, it's better to
+    split it into smaller components for each device than fighting with all
+    conditions in the code.
+  </Paragraph>
+  <Title level={4} transform="capitalize">
+    Descriptions
+  </Title>
+  <PostList
+    data={implementationLinks(
+      undefined,
+      'https://github.com/ant-design/ant-design/tree/master/components/descriptions'
+    )}
+  />
+  <Paragraph breakParagraph>
+    There are <Text code>dl</Text>, <Text code>dt</Text>, <Text code>dd</Text>{' '}
+    tags in HTML which are used for building a{' '}
+    <Link href="https://www.w3schools.com/tags/tag_dl.asp">
+      Description List
+    </Link>
+    . It can be tough to center a list when content has dynamic, unknown content.
+    It's often the case that every description should be left centered. Also, with{' '}
+    <Text code>Descriptions</Text> you gain semantic structure and simplified creation
+    of details pages.
+  </Paragraph>
+  <Title level={4} transform="capitalize">
+    Icons
+  </Title>
+  <PostList
+    data={implementationLinks(
+      'https://github.com/mui-org/material-ui/tree/next/packages/material-ui/src/Icon',
+      'https://github.com/ant-design/ant-design/tree/master/components/icon'
+    )}
+  />
+  <Paragraph lastParagraph>
+    There is a separate package needed when using icons from MUI or Antd, but
+    it's up to you which ones you will use. I can tell that 90% of icons are
+    from these packages in my projects. Only 10% is reserved for unique icons,
+    illustrations that are specific to my brand. With the <Text code>Icon</Text>{' '}
+    it's easier to manipulate SVG, resize, and apply fill color, etc. And again,
+    you get bonus points on consistency.
+  </Paragraph>
+  <Title level={3}>Closing notes</Title>
+  <Paragraph>
+    Wow, we covered a lot in this article! I've linked resources between the
+    lines with the hope that you will learn something new. Remember to be a Mr.
+    Consistency when it comes to the balance between implementation and designs,
+    but don't push too hard, communicate, and work out it all together.
+  </Paragraph>
+  <Paragraph>
+    There are a lot more components than I've described in this article, please
+    hunt some and start using them in your application if you find they could be
+    useful.
+  </Paragraph>
+  <Paragraph>Happy Coding! ❤️</Paragraph>
 </Post>
