@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const colorMapper = {
   normal: '#2f4586e8',
-  promotion: '#795548',
+  promotion: '#FFC069',
 };
 
 export const PromoBannerButton = styled(Button)(({ color = 'normal' }) => ({
