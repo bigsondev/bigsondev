@@ -52,7 +52,7 @@ export const ArticleCard = styled.div({
   cursor: 'pointer',
   position: 'relative',
   padding: 24,
-  minHeight: 450,
+  minHeight: 400,
   border: '1px solid #d6e4ff',
   borderRadius: 8,
 
@@ -114,17 +114,20 @@ const Article = ({
       <Paragraph type="secondary" size="preNormal">
         {truncate(desc)}
       </Paragraph>
-      <Row>
-        <Col span={24}>
-          <Space size="middle">
-            {tags.split(',').map((tag) => (
-              <Text size="micro" transform="capitalize" key={tag} code>
-                {tag}
-              </Text>
-            ))}
-          </Space>
-        </Col>
-      </Row>
+      {/* TODO add tags in the future? */}
+      {false && (
+        <Row>
+          <Col span={24}>
+            <Space size="middle">
+              {tags.split(',').map((tag) => (
+                <Text size="micro" transform="capitalize" key={tag} code>
+                  {tag}
+                </Text>
+              ))}
+            </Space>
+          </Col>
+        </Row>
+      )}
       <CardButton>read more</CardButton>
     </ArticleCard>
   </Link>
