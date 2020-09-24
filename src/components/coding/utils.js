@@ -1,4 +1,4 @@
-export const createIframeContent = ({ html = '', css = '', js = '' }) => `
+export const createIframeContent = ({ html, css, js }) => `
 <html>
   <head>
     <style>
@@ -11,7 +11,11 @@ export const createIframeContent = ({ html = '', css = '', js = '' }) => `
   <body>
       ${html}
   <script type="text/javascript">
-    ${js.replaceAll('const', 'var').replaceAll('let', 'var')}
+    ${
+      typeof window !== 'undefined'
+        ? js.replaceAll('const', 'var').replaceAll('let', 'var')
+        : js
+    }
   </script>
   </body>
 </html>
