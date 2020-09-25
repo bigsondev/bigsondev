@@ -6,25 +6,15 @@
  */
 
 import React from 'react';
-import { Layout, Row, Col } from 'antd';
-
-import { Header } from './Header';
-import { ContentHolder } from './styled';
-import { GlobalStyles } from './GlobalStyles';
+import { Row, Col } from 'antd';
 
 const LibraryLayout = ({ children }) => {
   return (
-    <Layout>
-      <GlobalStyles />
-      <Header />
-      <ContentHolder>
-        <Row justify="center">
-          <Col xs={{ span: 22 }} md={{ span: 16 }} xl={{ span: 12 }}>
-            <main>{children}</main>
-          </Col>
-        </Row>
-      </ContentHolder>
-    </Layout>
+    <Row justify="center">
+      <Col xs={{ span: 22 }} md={{ span: 16 }} xl={{ span: 12 }}>
+        <main>{children}</main>
+      </Col>
+    </Row>
   );
 };
 

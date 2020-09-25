@@ -3,6 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
+import React from 'react';
+import { Layout } from 'antd';
 import 'highlight.js/styles/a11y-light.css';
 
 // The following two imports is for the theme.
@@ -24,6 +26,18 @@ import 'codemirror/addon/hint/html-hint.js';
 import 'codemirror/addon/hint/css-hint.js';
 import 'codemirror/addon/hint/anyword-hint.js';
 
-import { initializeStorageData } from '~utils';
+import { CookieBanner, Header, GlobalStyles, ContentHolder } from '~components';
+import { initializeStorageData, getItem } from '~utils';
 
 initializeStorageData();
+
+export const wrapPageElement = ({ element }) => (
+  <>
+    <GlobalStyles />
+    <Layout>
+      <Header />
+      <ContentHolder>{element}</ContentHolder>
+    </Layout>
+    {getItem('cookiesAcknowledged') === false && <CookieBanner />}
+  </>
+);

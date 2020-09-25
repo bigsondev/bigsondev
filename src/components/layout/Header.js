@@ -158,12 +158,22 @@ export const Header = () => {
             <SmallOnly>
               <Fade collapse duration={300} when={isExpanded}>
                 <MenuHolder theme="dark" mode="inline">
-                  <MenuItem key="1" isSelected={matchUrl('blog')} isMobile>
+                  <MenuItem
+                    key="1"
+                    isSelected={matchUrl('blog')}
+                    onClick={handleMobileMenuCloseClick}
+                    isMobile
+                  >
                     <Link to="/blog">
                       <Text>Blog</Text>
                     </Link>
                   </MenuItem>
-                  <MenuItem key="2" isSelected={matchUrl('library')} isMobile>
+                  <MenuItem
+                    key="2"
+                    isSelected={matchUrl('library')}
+                    onClick={handleMobileMenuCloseClick}
+                    isMobile
+                  >
                     <Link to="/library">
                       <Text>Library</Text>
                     </Link>
@@ -171,13 +181,19 @@ export const Header = () => {
                   <MenuItem
                     key="3"
                     isSelected={matchUrl('mentorship')}
+                    onClick={handleMobileMenuCloseClick}
                     isMobile
                   >
                     <Link to="/mentorship">
                       <Text>Mentorship</Text>
                     </Link>
                   </MenuItem>
-                  <MenuItem key="4" isSelected={matchUrl('reach-out')} isMobile>
+                  <MenuItem
+                    key="4"
+                    isSelected={matchUrl('reach-out')}
+                    onClick={handleMobileMenuCloseClick}
+                    isMobile
+                  >
                     <Link to="/reach-out">
                       <Text>Reach Out</Text>
                     </Link>
