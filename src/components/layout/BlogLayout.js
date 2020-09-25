@@ -8,7 +8,6 @@
 import React from 'react';
 import { Layout, Row, Col, Space } from 'antd';
 import styled from 'styled-components';
-import { useMedia } from 'react-media';
 import {
   TwitterSquareFilled,
   LinkedinFilled,
@@ -46,29 +45,34 @@ const IconHolder = styled(Link)({
   },
 });
 
+const ParagraphHolder = styled(Paragraph)({
+  '@media (min-width: 1200px)': {
+    textAlign: 'center',
+  },
+  '@media (max-width: 1199px)': {
+    textAlign: 'left',
+  },
+});
+
 const BlogLayout = ({
   children,
   pageContext: {
     frontmatter: { title },
   },
 }) => {
-  const hideOnSmallScreen = useMedia({ query: '(max-width: 1200px)' });
-
   return (
     <Layout>
       <GlobalStyles />
       <Header />
       <ContentHolder>
         <Box mt={5}>
-          <Row justify="center">
-            {!hideOnSmallScreen && (
-              <Col xl={{ span: 6 }}>
-                <Paragraph align="center" transform="capitalize">
-                  ABOUT ADRIAN
-                </Paragraph>
-              </Col>
-            )}
-            <Col xs={{ span: 22 }} md={{ span: 16 }} xl={{ span: 12 }}>
+          <Row justify="center" gutter={[0, 24]}>
+            <Col xs={22} xl={6}>
+              <ParagraphHolder transform="capitalize">
+                ABOUT ADRIAN
+              </ParagraphHolder>
+            </Col>
+            <Col xs={22} md={22} xl={12}>
               <main>{children}</main>
               <Box mt={7}>
                 <PromoBanner
@@ -93,10 +97,10 @@ const BlogLayout = ({
                 />
               </Box>
             </Col>
-            <Col xs={{ span: 24 }} md={{ span: 6 }}>
-              <Paragraph align="center" transform="capitalize">
+            <Col xs={22} xl={6}>
+              <ParagraphHolder transform="capitalize">
                 Newsletter
-              </Paragraph>
+              </ParagraphHolder>
             </Col>
           </Row>
         </Box>
