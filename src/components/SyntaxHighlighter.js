@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Popover } from 'antd';
-import Highlight from 'react-highlight';
+import Highlight from 'react-highlight/lib/optimized';
 import styled from 'styled-components';
 
 import { copyToClipboard } from '~utils';
@@ -42,7 +42,7 @@ export const SyntaxHighlighter = ({
 
   return (
     <Holder>
-      <Highlight className={language} {...props}>
+      <Highlight languages={[language]} {...props}>
         {children}
       </Highlight>
       {showCopy && (

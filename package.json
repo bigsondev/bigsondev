@@ -40,6 +40,7 @@
   "devDependencies": {
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-mdx": "^1.8.2",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.12",
     "prettier": "2.1.0"
   },
   "keywords": [

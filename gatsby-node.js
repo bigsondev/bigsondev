@@ -6,7 +6,17 @@
 
 // You can delete this file if you're not using it
 const path = require('path');
-exports.onCreateWebpackConfig = ({ stage, actions, loaders }) => {
+exports.onCreateWebpackConfig = ({ stage, actions, loaders, plugins }) => {
+  if (stage === 'build-javascript') {
+    actions.setWebpackConfig({
+      plugins: [
+        plugins.contextReplacement(
+          /highlight\.js\/lib\/languages$/,
+          new RegExp(`^./(javascript|json|markdown|xml|css|bash|typescript)$`)
+        ),
+      ],
+    });
+  }
   if (stage === 'develop-html' || stage === 'build-html') {
     actions.setWebpackConfig({
       module: {
