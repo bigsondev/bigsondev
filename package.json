@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "bigsondev",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "Bigsondev - Frontend Developer | Recruiter | Mentor & Your Friend.",
+  "version": "0.0.1",
+  "author": "Adrian Bigaj",
+  "sideEffects": false,
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
     "@mdx-js/mdx": "^1.6.16",
