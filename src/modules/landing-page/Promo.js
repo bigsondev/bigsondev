@@ -108,39 +108,37 @@ const BigScreenPromo = () => (
   <Box mt={1}>
     <Row align="middle" gutter={32}>
       <Col span={12}>
-        <Box mt={-10}>
-          <Title
-            transform="none"
-            marginBottom="0.1em"
-            fontWeight="300"
-            fontSize={'3rem'}
-          >
-            Hi,{' '}
-            <Text size="h1" fontSize={'3rem'} strong>
-              Frontend
-            </Text>{' '}
-            is tough.
-          </Title>
-          <Title
-            transform="none"
-            fontWeight="300"
-            fontSize={'3rem'}
-            marginBottom="2rem"
-          >
-            Let me help you with{' '}
-            <Text size="h1" fontSize={'3rem'} strong>
-              IT.
-            </Text>
-          </Title>
-          <Paragraph size={'preNormal'} marginBottom="2rem" fontStyle="italic">
-            I'm Adrian, Frontend Developer, Recruiter, Mentor.
-            <br />
-            And your friend. I love sharing my knowledge with others.
-          </Paragraph>
-          <Link to="/mentorship">
-            <PromoButton>I want to improve</PromoButton>
-          </Link>
-        </Box>
+        <Title
+          transform="none"
+          marginBottom="0.1em"
+          fontWeight="300"
+          fontSize={'3rem'}
+        >
+          Hi,{' '}
+          <Text size="h1" fontSize={'3rem'} strong>
+            Frontend
+          </Text>{' '}
+          is tough.
+        </Title>
+        <Title
+          transform="none"
+          fontWeight="300"
+          fontSize={'3rem'}
+          marginBottom="2rem"
+        >
+          Let me help you with{' '}
+          <Text size="h1" fontSize={'3rem'} strong>
+            IT.
+          </Text>
+        </Title>
+        <Paragraph size={'preNormal'} marginBottom="2rem" fontStyle="italic">
+          I'm Adrian, Frontend Developer, Recruiter, Mentor.
+          <br />
+          And your friend. I love sharing my knowledge with others.
+        </Paragraph>
+        <Link to="/mentorship">
+          <PromoButton>I want to improve</PromoButton>
+        </Link>
       </Col>
       <Col span={12}>
         <Illustration type="promo" />
