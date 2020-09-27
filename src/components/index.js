@@ -1,5 +1,4 @@
 export * from './layout';
-export { Image } from './Image';
 export { SEO } from './SEO';
 export { Quiz } from './quiz';
 export { BackButton } from './BackButton';
