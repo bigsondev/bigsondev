@@ -51,10 +51,11 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
+        name: `bigsondev-adrian-bigaj`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
@@ -65,6 +66,9 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-styled-components',
+      options: {
+        pure: true,
+      },
     },
     {
       resolve: 'gatsby-plugin-antd',

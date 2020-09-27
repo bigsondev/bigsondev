@@ -1,16 +1,21 @@
 /**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
+ * Implement Gatsby's Browser APIs in this file.
  *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
+ * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-
-// You can delete this file if you're not using it
-
 import React from 'react';
 import { Layout } from 'antd';
+import 'highlight.js/styles/a11y-light.css';
+
+// The following two imports is for the theme.
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/material.css';
+import 'codemirror/addon/hint/show-hint.css';
 
 import { CookieBanner, Header, GlobalStyles, ContentHolder } from '~components';
-import { getItem } from '~utils';
+import { initializeStorageData, getItem } from '~utils';
+
+initializeStorageData();
 
 export const wrapPageElement = ({ element }) => (
   <>
