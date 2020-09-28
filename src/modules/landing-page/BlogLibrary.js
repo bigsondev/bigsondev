@@ -28,10 +28,10 @@ export const BlogLibrary = () => {
       <Row justify="center">
         <Col xs={24} style={{ textAlign: 'center' }}>
           <Box margin="-2rem 0 0 0">
-            <Link to="/blog">
+            <Link to="/blog/">
               <SecondaryButton>Visit Blog</SecondaryButton>
             </Link>
-            <Link to="/library">
+            <Link to="/library/">
               <SecondaryButton>Visit Library</SecondaryButton>
             </Link>
           </Box>

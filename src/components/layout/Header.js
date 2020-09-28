@@ -98,22 +98,22 @@ const RightMenu = ({
     <ExceptSmall>
       <MenuHolder theme="dark" mode="horizontal">
         <MenuItem key="1" isSelected={matchUrl('blog')}>
-          <Link to="/blog">
+          <Link to="/blog/">
             <Text size="preNormal">Blog</Text>
           </Link>
         </MenuItem>
         <MenuItem key="2" isSelected={matchUrl('library')}>
-          <Link to="/library">
+          <Link to="/library/">
             <Text size="preNormal">Library</Text>
           </Link>
         </MenuItem>
         <MenuItem key="3" isSelected={matchUrl('mentorship')}>
-          <Link to="/mentorship">
+          <Link to="/mentorship/">
             <Text size="preNormal">Mentorship</Text>
           </Link>
         </MenuItem>
         <MenuItem key="4" isSelected={matchUrl('reach-out')}>
-          <Link to="/reach-out">
+          <Link to="/reach-out/">
             <Text size="preNormal">Reach Out</Text>
           </Link>
         </MenuItem>
@@ -164,7 +164,7 @@ export const Header = () => {
                     onClick={handleMobileMenuCloseClick}
                     isMobile
                   >
-                    <Link to="/blog">
+                    <Link to="/blog/">
                       <Text>Blog</Text>
                     </Link>
                   </MenuItem>
@@ -174,7 +174,7 @@ export const Header = () => {
                     onClick={handleMobileMenuCloseClick}
                     isMobile
                   >
-                    <Link to="/library">
+                    <Link to="/library/">
                       <Text>Library</Text>
                     </Link>
                   </MenuItem>
@@ -184,7 +184,7 @@ export const Header = () => {
                     onClick={handleMobileMenuCloseClick}
                     isMobile
                   >
-                    <Link to="/mentorship">
+                    <Link to="/mentorship/">
                       <Text>Mentorship</Text>
                     </Link>
                   </MenuItem>
@@ -194,7 +194,7 @@ export const Header = () => {
                     onClick={handleMobileMenuCloseClick}
                     isMobile
                   >
-                    <Link to="/reach-out">
+                    <Link to="/reach-out/">
                       <Text>Reach Out</Text>
                     </Link>
                   </MenuItem>

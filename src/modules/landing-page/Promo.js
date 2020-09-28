@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { DownCircleFilled } from '@ant-design/icons';
 import { Link } from 'gatsby';
+import Fade from 'react-reveal/Fade';
 
 import {
   Title,
@@ -51,7 +52,7 @@ const MobileScreenPromo = () => (
       <Illustration type="promo" />
     </Col>
     <Box mt={5} width="100%" display="flex" justify="center">
-      <Link to="/mentorship">
+      <Link to="/mentorship/">
         <PromoButton>I want to improve</PromoButton>
       </Link>
     </Box>
@@ -97,7 +98,7 @@ const MediumScreenPromo = () => (
       <Illustration type="promo" />
     </Col>
     <Box mt={5} width="100%" display="flex" justify="center">
-      <Link to="/mentorship">
+      <Link to="/mentorship/">
         <PromoButton>I want to improve</PromoButton>
       </Link>
     </Box>
@@ -136,7 +137,7 @@ const BigScreenPromo = () => (
           <br />
           And your friend. I love sharing my knowledge with others.
         </Paragraph>
-        <Link to="/mentorship">
+        <Link to="/mentorship/">
           <PromoButton>I want to improve</PromoButton>
         </Link>
       </Col>
@@ -168,7 +169,9 @@ export const Promo = () => (
       <MediumScreenPromo />
     </TabletOnly>
     <DesktopOnly>
-      <BigScreenPromo />
+      <Fade duration={1500}>
+        <BigScreenPromo />
+      </Fade>
     </DesktopOnly>
   </>
 );

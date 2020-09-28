@@ -73,11 +73,11 @@ export const Completed = ({
         <Box display="flex" justify="center">
           <Space>
             {next ? (
-              <Link to={`/library/${next}`}>
+              <Link to={`/library/${next}/`}>
                 <PrimaryButton>Start Next Quiz</PrimaryButton>
               </Link>
             ) : (
-              <Link to="/library">
+              <Link to="/library/">
                 <SecondaryButton onClick={() => onTryAgainClick()}>
                   Back to library
                 </SecondaryButton>

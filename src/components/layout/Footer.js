@@ -95,10 +95,10 @@ export const Footer = () => (
               <Paragraph strong marginBottom="0">
                 Menu
               </Paragraph>
-              <FooterLinkHolder to="/blog">Blog</FooterLinkHolder>
-              <FooterLinkHolder to="/library">Library</FooterLinkHolder>
-              <FooterLinkHolder to="/mentorship">Mentorship</FooterLinkHolder>
-              <FooterLinkHolder to="/reach-out">Reach Out</FooterLinkHolder>
+              <FooterLinkHolder to="/blog/">Blog</FooterLinkHolder>
+              <FooterLinkHolder to="/library/">Library</FooterLinkHolder>
+              <FooterLinkHolder to="/mentorship/">Mentorship</FooterLinkHolder>
+              <FooterLinkHolder to="/reach-out/">Reach Out</FooterLinkHolder>
             </Space>
           </Col>
           <Col>
@@ -121,7 +121,7 @@ export const Footer = () => (
             <Paragraph size="micro" type="secondary" marginBottom="0">
               © 2020 BigsonDev
             </Paragraph>
-            <HiddenLinkHolder to="/privacy-policy">
+            <HiddenLinkHolder to="/privacy-policy/">
               Privacy Policy
             </HiddenLinkHolder>
           </Box>

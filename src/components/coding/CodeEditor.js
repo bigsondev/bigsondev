@@ -232,7 +232,7 @@ export const CodeEditor = ({
                     >
                       Copy Link
                     </PrimaryButton>,
-                    <Link to={`/library/${next}`}>
+                    <Link to={`/library/${next}/`}>
                       <SecondaryButton key="next-challenge">
                         Start Next Challenge
                       </SecondaryButton>
@@ -246,7 +246,7 @@ export const CodeEditor = ({
                     >
                       Copy Link
                     </PrimaryButton>,
-                    <Link to="/library">
+                    <Link to="/library/">
                       <SecondaryButton key="back-to-library">
                         Back to Library
                       </SecondaryButton>

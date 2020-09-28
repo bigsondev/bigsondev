@@ -70,7 +70,7 @@ export const CookieBanner = () => {
       <ParagraphHolder size="micro">
         I use cookies for improving your experience when using the site. I hope
         it's ok for you.{' '}
-        <LinkHolder to="/privacy-policy" size="micro">
+        <LinkHolder to="/privacy-policy/" size="micro">
           Privacy Policy
         </LinkHolder>
       </ParagraphHolder>
