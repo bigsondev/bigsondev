@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { DownCircleFilled } from '@ant-design/icons';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
 
 import {
   Title,
@@ -14,6 +15,15 @@ import {
   DesktopOnly,
   PromoButton,
 } from '~components';
+
+const IllustrationHolder = styled.div({
+  '@media (min-width: 1200px)': {
+    height: 565,
+  },
+  '@media (min-width: 1600px)': {
+    height: 604,
+  },
+});
 
 const MobileScreenPromo = () => (
   <Row align="middle">
@@ -141,7 +151,9 @@ const BigScreenPromo = () => (
         </Link>
       </Col>
       <Col span={12}>
-        <Illustration type="promo" />
+        <IllustrationHolder>
+          <Illustration type="promo" />
+        </IllustrationHolder>
       </Col>
       <Col span={24}>
         <Box mt={2} display="flex" justify="center">
