@@ -10,6 +10,7 @@ import FacebookIcon from './facebook.svg';
 import LinkedinIcon from './linkedin.svg';
 import RedditIcon from './reddit.svg';
 import TwitterIcon from './twitter.svg';
+import QuoteIcon from './quote.svg';
 
 export {
   HomeworkIcon,
@@ -23,5 +24,6 @@ export {
   FacebookIcon,
   LinkedinIcon,
   RedditIcon,
-  TwitterIcon
+  TwitterIcon,
+  QuoteIcon,
 };

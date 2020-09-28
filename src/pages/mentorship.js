@@ -1,69 +1,23 @@
 import React from 'react';
-import { Divider, Card, Row, Col, Button } from 'antd';
-import { openPopupWidget } from 'react-calendly';
 
-import { Layout, SEO, Title } from '~components';
-
-const openMentorshipEvent = () => {
-  openPopupWidget({
-    url: 'https://calendly.com/bigson-dev/coaching',
-    pageSettings: {
-      hideEventTypeDetails: true,
-      hideLandingPageDetails: true,
-    },
-  });
-};
+import { Layout, SEO, Section, Box } from '~components';
+import { Quotes, Offer, AlternativeConversation } from '~modules/mentorship';
 
 const Mentorship = () => {
   return (
-    <Layout>
-      <SEO title="BigsonDev | Mentorship | Adrian Bigaj" />
-      <Title level={2}>COACHING PLACEHOLDER</Title>
-      <Divider />
-      <Row gutter={16}>
-        <Col span={8}>
-          <Card
-            title="Mentorship"
-            actions={[
-              <Button type="primary" size="large" onClick={openMentorshipEvent}>
-                I need a mentor
-              </Button>,
-            ]}
-          >
-            <Card.Meta title="100$" description={`Let's talk individually`} />
-          </Card>
-        </Col>
-        <Col span={8}>
-          <Card
-            title="Mock Interview"
-            actions={[
-              <Button type="primary" size="large">
-                I need a mock interview
-              </Button>,
-            ]}
-          >
-            <Card.Meta
-              title="150$"
-              description={`Interview with a ghost (me), good for warming up before the real one. Additionally, you will receive a robust feedback`}
-            />
-          </Card>
-        </Col>
-        <Col span={8}>
-          <Card
-            title="Development Plan"
-            actions={[
-              <Button type="primary" size="large">
-                I need a development plan
-              </Button>,
-            ]}
-          >
-            <Card.Meta
-              title="300$"
-              description={`Plan your future, get complete plan of your growth which includes coding challenges, real world applications and tons of materials to learn from`}
-            />
-          </Card>
-        </Col>
-      </Row>
+    <Layout fixedContent={false}>
+      <Box mt={-4}>
+        <SEO title="BigsonDev - Frontend Developer, Recruiter, Mentor & Your Friend" />
+        <Section fullWidth>
+          <Quotes />
+        </Section>
+        <Section fullWidth>
+          <Offer />
+        </Section>
+        <Section fullWidth>
+          <AlternativeConversation />
+        </Section>
+      </Box>
     </Layout>
   );
 };

@@ -10,6 +10,7 @@ const TEXT_SIZE = {
   preNormal: '1.125rem',
   normal: '1.27rem',
   h1: '2.5rem',
+  h3: '1.75rem',
   h4: '1.375rem',
 };
 

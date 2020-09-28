@@ -15,6 +15,7 @@ import {
   TwitterIcon,
   RedditIcon,
   LinkedinIcon,
+  QuoteIcon,
 } from '~svg';
 
 const Holder = styled(AntdIcon)(({ width = 32 }) => ({
@@ -37,6 +38,7 @@ const ICON_MAPPER = {
   twitter: TwitterIcon,
   reddit: RedditIcon,
   linkedin: LinkedinIcon,
+  quote: QuoteIcon,
 };
 
 export const Icon = ({ type, ...props }) => {

@@ -9,7 +9,7 @@ const SIZE_MAPPER = {
     margin: 0,
   },
   normal: {
-    width: 300,
+    width: 280,
     height: '3.5rem',
     fontSize: '1.375rem',
     margin: '1rem 0',
