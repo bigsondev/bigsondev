@@ -135,7 +135,7 @@ const Blog = ({
 }) => {
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title="Blog | Latest, Hot Topics In The Frontend World" />
       <Title level={2}>Latest Articles</Title>
       <Divider />
       <Row gutter={[24, 24]}>

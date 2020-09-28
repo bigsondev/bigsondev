@@ -6,7 +6,7 @@ import { Quotes, Offer, AlternativeConversation } from '~modules/mentorship';
 const Mentorship = () => (
   <Layout fixedContent={false}>
     <Box mt={-4}>
-      <SEO title="BigsonDev - Frontend Developer, Recruiter, Mentor & Your Friend" />
+      <SEO title="Mentorship | Get The Best Results In No Time" />
       <Section fullWidth>
         <Quotes />
       </Section>

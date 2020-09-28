@@ -6,7 +6,7 @@ import { Layout, SEO, Title, Paragraph, PostList, Text } from '~components';
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
+    <SEO title="404 Error | Not Found Page" />
     <Title level={2} align="center">
       The duck has failed - 404 Error
     </Title>

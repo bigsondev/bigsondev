@@ -7,7 +7,6 @@ import { Title, Paragraph, SecondaryButton, Box } from '~components';
 
 const Holder = styled.div({
   padding: '7rem 1rem',
-  width: '100vw',
   position: 'relative',
 });
 

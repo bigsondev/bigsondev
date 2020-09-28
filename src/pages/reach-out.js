@@ -6,7 +6,7 @@ import { ReachOutForm } from '~modules/reach-out';
 
 const ReachOut = () => (
   <Layout>
-    <SEO title="BigsonDev | Reach Out | Adrian Bigaj" />
+    <SEO title="Reach Out | Let's Talk About Your Frontend Career & Ask About Anything" />
     <Title level={2} id="it-never-hurts-to-ask">
       It never hurts to ask
     </Title>

@@ -6,7 +6,6 @@ import { Paragraph, Icon } from '~components';
 
 const Holder = styled.div({
   padding: '5rem 1rem 3rem 1rem',
-  width: '100vw',
   position: 'relative',
   background: '#FFC068',
 });

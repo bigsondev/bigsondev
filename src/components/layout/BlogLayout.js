@@ -27,6 +27,7 @@ import {
   XlOnly,
   SlackBanner,
   ExceptXl,
+  SEO,
 } from '..';
 import { NewsletterSmallForm } from './NewsletterSmallForm';
 import { Footer } from './Footer';
@@ -59,6 +60,7 @@ const BlogLayout = ({
 }) => {
   return (
     <>
+      <SEO title={`Blog | ${title}`} />
       <Box mt={5}>
         <Row justify="center" gutter={[0, 40]}>
           <Col xs={22} xl={6}>

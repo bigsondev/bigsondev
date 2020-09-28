@@ -14,7 +14,6 @@ import {
 
 const Holder = styled.div({
   padding: '7rem 1rem',
-  width: '100vw',
   position: 'relative',
   background: '#FAFAFA',
 });

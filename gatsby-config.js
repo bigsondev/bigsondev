@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `| Adrian Bigaj | bigsondev.com`,
+    description: `Do you want to read about Frontend, practice your coding skills, and get some mentorship? Everything in one place, available to you, now.`,
+    author: `@bigsondev`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -87,6 +87,6 @@ module.exports = {
     'gatsby-plugin-webpack-bundle-analyser-v2',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 };

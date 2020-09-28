@@ -1,7 +1,7 @@
 {
   "name": "bigsondev",
   "private": true,
-  "description": "Bigsondev - Frontend Developer | Recruiter | Mentor & Your Friend.",
+  "description": "Frontend Developer | Recruiter | Mentor & Your Friend | Adrian Bigaj | bigsondev.com",
   "version": "0.0.1",
   "author": "Adrian Bigaj",
   "sideEffects": false,
@@ -56,12 +56,5 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

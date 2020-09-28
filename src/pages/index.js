@@ -12,7 +12,7 @@ import {
 const Landing = () => {
   return (
     <Layout fixedContent={false}>
-      <SEO title="BigsonDev - Frontend Developer, Recruiter, Mentor & Your Friend" />
+      <SEO title="Frontend Developer, Recruiter, Mentor & Your Friend" />
       <Box mb={5}>
         <Section>
           <Promo />
