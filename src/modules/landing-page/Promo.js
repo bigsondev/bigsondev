@@ -2,7 +2,6 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { DownCircleFilled } from '@ant-design/icons';
 import { Link } from 'gatsby';
-import Fade from 'react-reveal/Fade';
 
 import {
   Title,
@@ -169,9 +168,7 @@ export const Promo = () => (
       <MediumScreenPromo />
     </TabletOnly>
     <DesktopOnly>
-      <Fade duration={1500}>
-        <BigScreenPromo />
-      </Fade>
+      <BigScreenPromo />
     </DesktopOnly>
   </>
 );

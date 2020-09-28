@@ -12,10 +12,7 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import 'codemirror/addon/hint/show-hint.css';
 
-import { CookieBanner, Header, GlobalStyles, ContentHolder } from '~components';
-import { initializeStorageData, getItem } from '~utils';
-
-initializeStorageData();
+import { Header, GlobalStyles, ContentHolder } from '~components';
 
 export const wrapPageElement = ({ element }) => (
   <>
@@ -24,6 +21,5 @@ export const wrapPageElement = ({ element }) => (
       <Header />
       <ContentHolder>{element}</ContentHolder>
     </Layout>
-    {getItem('cookiesAcknowledged') === false && <CookieBanner />}
   </>
 );

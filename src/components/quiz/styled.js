@@ -12,4 +12,5 @@ export const QuizCard = styled(Card)({
   '& .ant-card-body': {
     padding: 0,
   },
+  marginBottom: 80,
 });
