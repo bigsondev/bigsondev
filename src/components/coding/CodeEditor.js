@@ -87,14 +87,17 @@ export const CodeEditor = ({
   tests = [],
   help = [],
   next,
+  initialHtml = '',
+  initialCss = '',
+  initialJs = '',
 }) => {
-  const [html, setHtml] = useState('');
-  const [css, setCss] = useState('');
-  const [js, setJs] = useState('');
+  const [html, setHtml] = useState(initialHtml);
+  const [css, setCss] = useState(initialCss);
+  const [js, setJs] = useState(initialJs);
   const [timeoutId, setTimeoutId] = useState(undefined);
   const [codeTutorialCounter, setCodeTutorialCounter] = useState(0);
   const [iframeContent, setIframeContent] = useState(
-    createIframeContent({ html: '', css: '', js: '' })
+    createIframeContent({ html: initialHtml, css: initialCss, js: initialJs })
   );
   const [runTimes, setRunTimes] = useState(0);
   const [executedTests, setExecutedTests] = useState([]);

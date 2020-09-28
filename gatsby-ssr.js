@@ -12,14 +12,19 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import 'codemirror/addon/hint/show-hint.css';
 
-import { Header, GlobalStyles, ContentHolder } from '~components';
+import {
+  Header,
+  GlobalStyles,
+  ContentHolder,
+  ErrorBoundary,
+} from '~components';
 
 export const wrapPageElement = ({ element }) => (
-  <>
+  <ErrorBoundary>
     <GlobalStyles />
     <Layout>
       <Header />
       <ContentHolder>{element}</ContentHolder>
     </Layout>
-  </>
+  </ErrorBoundary>
 );

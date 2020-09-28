@@ -26,18 +26,24 @@ import 'codemirror/addon/hint/html-hint.js';
 import 'codemirror/addon/hint/css-hint.js';
 import 'codemirror/addon/hint/anyword-hint.js';
 
-import { CookieBanner, Header, GlobalStyles, ContentHolder } from '~components';
+import {
+  ErrorBoundary,
+  CookieBanner,
+  Header,
+  GlobalStyles,
+  ContentHolder,
+} from '~components';
 import { initializeStorageData, getItem } from '~utils';
 
 initializeStorageData();
 
 export const wrapPageElement = ({ element }) => (
-  <>
+  <ErrorBoundary>
     <GlobalStyles />
     <Layout>
       <Header />
       <ContentHolder>{element}</ContentHolder>
     </Layout>
     {getItem('cookiesAcknowledged') === false && <CookieBanner />}
-  </>
+  </ErrorBoundary>
 );
