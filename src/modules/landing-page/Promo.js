@@ -16,7 +16,7 @@ import {
   PromoButton,
 } from '~components';
 
-const IllustrationHolder = styled.div({
+const IllustrationHolder = styled(Col)({
   '@media (min-width: 1200px)': {
     height: 565,
   },
@@ -150,11 +150,9 @@ const BigScreenPromo = () => (
           <PromoButton>I want to improve</PromoButton>
         </Link>
       </Col>
-      <Col span={12}>
-        <IllustrationHolder>
-          <Illustration type="promo" />
-        </IllustrationHolder>
-      </Col>
+      <IllustrationHolder span={12}>
+        <Illustration type="promo" />
+      </IllustrationHolder>
       <Col span={24}>
         <Box mt={2} display="flex" justify="center">
           <DownCircleFilled
