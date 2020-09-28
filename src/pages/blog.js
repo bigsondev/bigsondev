@@ -2,14 +2,9 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import { Row, Col, Space, Divider, Tooltip } from 'antd';
 import styled from 'styled-components';
-import {
-  CalendarOutlined,
-  FieldTimeOutlined,
-  SlackOutlined,
-} from '@ant-design/icons';
+import { CalendarOutlined, FieldTimeOutlined } from '@ant-design/icons';
 import moment from 'moment';
 
-import { SlackForm } from '~modules/blog';
 import {
   Layout,
   SEO,
@@ -18,19 +13,10 @@ import {
   Text,
   Box,
   Icon,
-  PromoBanner,
+  SlackBanner,
   CardButton,
-  Illustration,
-  XlOnly,
 } from '~components';
 import { truncate } from '~utils';
-
-const DuckSlackIllustration = styled(Illustration)({
-  position: 'absolute',
-  width: '20%',
-  left: '5%',
-  bottom: '25%',
-});
 
 export const query = graphql`
   query BlogQuery {
@@ -164,30 +150,8 @@ const Blog = ({
           </Col>
         ))}
       </Row>
-      <Box mt={10}>
-        <PromoBanner
-          title={
-            <>
-              <Paragraph color="#FFF" strong size="h1">
-                <SlackOutlined /> slack
-              </Paragraph>
-            </>
-          }
-          desc={
-            <>
-              Let's chat, ask questions, share your project, review code. <br />
-              Build a community with me that will help each other in Frontend.
-            </>
-          }
-          content={
-            <>
-              <SlackForm />
-              <XlOnly>
-                <DuckSlackIllustration type="duckSlack" />
-              </XlOnly>
-            </>
-          }
-        />
+      <Box mt={10} mb={10}>
+        <SlackBanner />
       </Box>
     </Layout>
   );

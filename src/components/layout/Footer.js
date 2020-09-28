@@ -10,16 +10,10 @@ import { Row, Col, Space, Divider } from 'antd';
 import styled from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
 
-import {
-  TwitterSquareFilled,
-  LinkedinFilled,
-  FacebookFilled,
-} from '@ant-design/icons';
-
 import { LogoFooter } from '~assets';
 
 import { Link } from '../Typography';
-import { Paragraph, ExceptSmall, Box } from '..';
+import { Paragraph, Box, Icon } from '..';
 import { Logo } from './styled';
 
 const Holder = styled.footer({
@@ -56,19 +50,18 @@ const HiddenLinkHolder = styled(GatsbyLink)({
 });
 
 const IconHolder = styled(Link)({
-  fontSize: '3.125rem',
-  color: '#24B2DB !important',
+  color: '#40A9FF !important',
   '& a': {
-    color: '#24B2DB !important',
+    color: '#40A9FF !important',
   },
   '& a:hover': {
-    color: '#24B2DB !important',
+    color: '#40A9FF !important',
   },
   '& a:active': {
-    color: '#24B2DB !important',
+    color: '#40A9FF !important',
   },
   '& a:visited': {
-    color: '#24B2DB !important',
+    color: '#40A9FF !important',
   },
 });
 
@@ -102,15 +95,15 @@ export const Footer = () => (
             </Space>
           </Col>
           <Col>
-            <Space size="large">
+            <Space size="small">
               <IconHolder>
-                <TwitterSquareFilled />
+                <Icon type="twitter" width="3.125rem" />
               </IconHolder>
               <IconHolder>
-                <LinkedinFilled />
+                <Icon type="linkedin" width="3.125rem" />
               </IconHolder>
               <IconHolder>
-                <FacebookFilled />
+                <Icon type="facebook" width="3.125rem" />
               </IconHolder>
             </Space>
           </Col>

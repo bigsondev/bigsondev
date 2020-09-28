@@ -7,15 +7,16 @@ import {
   MockInterview,
   DevelopmentPlan,
   Newsletter,
+  NewsletterSmall,
   DuckSlack,
 } from '~svg';
 
-const Holder = styled.div({
+const Holder = styled.div(({ width = '100%' }) => ({
   '& svg': {
-    width: '100%',
+    width,
     height: 'auto',
   },
-});
+}));
 
 const ILLUSTRATION_MAPPER = {
   promo: <PromoIllustration />,
@@ -23,6 +24,7 @@ const ILLUSTRATION_MAPPER = {
   mockInterview: <MockInterview />,
   developmentPlan: <DevelopmentPlan />,
   newsletter: <Newsletter />,
+  newsletterSmall: <NewsletterSmall />,
   duckSlack: <DuckSlack />,
 };
 

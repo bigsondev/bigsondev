@@ -20,3 +20,4 @@ export { PromoButton } from './PromoButton';
 export { PrimaryButton } from './PrimaryButton';
 export { SecondaryButton } from './SecondaryButton';
 export { PromoBannerButton } from './PromoBannerButton';
+export { SlackBanner } from './slack-banner';

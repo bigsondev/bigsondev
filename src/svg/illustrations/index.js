@@ -3,6 +3,7 @@ import MentorIllustration from './i-want-a-mentor.svg';
 import MockInterview from './i-want-a-mock-interview.svg';
 import DevelopmentPlan from './i-want-a-development-plan.svg';
 import Newsletter from './newsletter.svg';
+import NewsletterSmall from './newsletter-small.svg';
 import DuckSlack from './duck-slack.svg';
 
 export {
@@ -11,5 +12,6 @@ export {
   MockInterview,
   DevelopmentPlan,
   Newsletter,
+  NewsletterSmall,
   DuckSlack,
 };

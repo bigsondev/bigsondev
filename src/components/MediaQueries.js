@@ -41,3 +41,10 @@ export const XlOnly = styled.div`
   }
   display: none;
 `;
+
+export const ExceptXl = styled.div`
+  @media (max-width: 1199px) {
+    display: block;
+  }
+  display: none;
+`;

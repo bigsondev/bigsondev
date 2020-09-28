@@ -2,12 +2,6 @@ import React from 'react';
 import { Row, Col, Space } from 'antd';
 import styled from 'styled-components';
 import moment from 'moment';
-import {
-  TwitterOutlined,
-  LinkedinOutlined,
-  FacebookOutlined,
-  RedditOutlined,
-} from '@ant-design/icons';
 
 import {
   shareOnReddit,
@@ -16,21 +10,21 @@ import {
   shareOnFacebook,
 } from '~utils';
 
-import { Title, Text, Link } from '..';
+import { Title, Text, Link, Icon } from '..';
 
 const IconHolder = styled(Link)({
-  color: '#000 !important',
+  color: '#595959 !important',
   '& a': {
-    color: '#000 !important',
+    color: '#595959 !important',
   },
   '& a:hover': {
-    color: '#000 !important',
+    color: '#595959 !important',
   },
   '& a:active': {
-    color: '#000 !important',
+    color: '#595959 !important',
   },
   '& a:visited': {
-    color: '#000 !important',
+    color: '#595959 !important',
   },
 });
 
@@ -49,18 +43,18 @@ export const PostTitle = ({ title, showSubtitle = false, date, readTime }) => (
           </Space>
         </Col>
         <Col>
-          <Space size="middle">
+          <Space size="small">
             <IconHolder href={shareOnReddit()}>
-              <RedditOutlined style={{ fontSize: 20 }} />
+              <Icon type="reddit" />
             </IconHolder>
             <IconHolder href={shareOnTwitter(title)}>
-              <TwitterOutlined style={{ fontSize: 20 }} />
+              <Icon type="twitter" />
             </IconHolder>
             <IconHolder href={shareOnLinkedin()}>
-              <LinkedinOutlined style={{ fontSize: 20 }} />
+              <Icon type="linkedin" />
             </IconHolder>
             <IconHolder href={shareOnFacebook()}>
-              <FacebookOutlined style={{ fontSize: 20 }} />
+              <Icon type="facebook" />
             </IconHolder>
           </Space>
         </Col>

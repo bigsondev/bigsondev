@@ -3,10 +3,10 @@ import { Form, Input as AntdInput, Result, Row, Col } from 'antd';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 
-import { Box, failMessage, PromoBannerButton } from '~components';
 import { encode } from '~utils';
 
 import { SLACK_FORM_NAME } from './constants';
+import { Box, failMessage, PromoBannerButton } from '..';
 
 const Input = styled(AntdInput)({
   height: 50,
