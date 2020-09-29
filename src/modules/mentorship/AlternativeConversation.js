@@ -19,8 +19,8 @@ export const AlternativeConversation = () => {
       <Row justify="center">
         <Col xs={20} sm={12}>
           <Paragraph align="center" breakParagraph>
-            Let's have an individual, free conversation to decide what will be
-            the best for you.
+            Let's have an individual, free conversation to see what will be the
+            best for you.
           </Paragraph>
         </Col>
       </Row>
