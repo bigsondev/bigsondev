@@ -93,7 +93,7 @@ export const Offer = () => {
       </Row>
       <Row justify="center" gutter={[24, 24]}>
         <Col xs={22} sm={16} xl={7} xxl={6}>
-          <OfferCard>
+          <OfferCard onClick={openMentoringEvent}>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
                 <Title level={4} align="center" transform="capitalize">
@@ -142,7 +142,7 @@ export const Offer = () => {
           </OfferCard>
         </Col>
         <Col xs={22} sm={16} xl={7} xxl={6}>
-          <OfferCard>
+          <OfferCard onClick={openMockInterviewEvent}>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
                 <Title level={4} align="center" transform="capitalize">
@@ -191,7 +191,7 @@ export const Offer = () => {
           </OfferCard>
         </Col>
         <Col xs={22} sm={16} xl={7} xxl={6}>
-          <OfferCard>
+          <OfferCard onClick={openDevelopmentPlanEvent}>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
                 <Title level={4} align="center" transform="capitalize">
