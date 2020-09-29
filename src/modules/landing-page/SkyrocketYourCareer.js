@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'antd';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import { Title, Paragraph, Text, Illustration, CardButton } from '~components';
@@ -50,70 +51,76 @@ export const SkyrocketYourCareer = () => {
       </Row>
       <Row justify="center" gutter={[24, 24]}>
         <Col xs={22} sm={16} xl={7} xxl={6}>
-          <OfferCard>
-            <Row justify="center" gutter={[0, 26]}>
-              <Col span={12}>
-                <Illustration type="mentor" />
-              </Col>
-              <Col span={24}>
-                <Title level={4} align="center">
-                  i want a mentor
-                </Title>
-              </Col>
-              <Col span={20}>
-                <Text align="center" display="block" size="preNormal">
-                  I'll treat you individually, listen to your story, fix weak
-                  points, empower strengths, and create a unique learning path
-                  to help you improve quickly.
-                </Text>
-              </Col>
-              <CardButton>learn more</CardButton>
-            </Row>
-          </OfferCard>
+          <Link to="/mentorship/">
+            <OfferCard>
+              <Row justify="center" gutter={[0, 26]}>
+                <Col span={12}>
+                  <Illustration type="mentor" />
+                </Col>
+                <Col span={24}>
+                  <Title level={4} align="center">
+                    i want a mentor
+                  </Title>
+                </Col>
+                <Col span={20}>
+                  <Text align="center" display="block" size="preNormal">
+                    I'll treat you individually, listen to your story, fix weak
+                    points, empower strengths, and create a unique learning path
+                    to help you improve quickly.
+                  </Text>
+                </Col>
+                <CardButton>learn more</CardButton>
+              </Row>
+            </OfferCard>
+          </Link>
         </Col>
         <Col xs={22} sm={16} xl={7} xxl={6}>
-          <OfferCard>
-            <Row justify="center" gutter={[0, 24]}>
-              <Col span={10}>
-                <Illustration type="mockInterview" />
-              </Col>
-              <Col span={24}>
-                <Title level={4} align="center">
-                  i want a mock interview
-                </Title>
-              </Col>
-              <Col span={20}>
-                <Text align="center" display="block" size="preNormal">
-                  Have you ever talked to a ghost? Stress-free conversation, a
-                  warm-up for your next technical interview. I'll adjust
-                  questions and coding challenges to your skill level.
-                </Text>
-              </Col>
-              <CardButton>LEARN MORE</CardButton>
-            </Row>
-          </OfferCard>
+          <Link to="/mentorship/">
+            <OfferCard>
+              <Row justify="center" gutter={[0, 24]}>
+                <Col span={10}>
+                  <Illustration type="mockInterview" />
+                </Col>
+                <Col span={24}>
+                  <Title level={4} align="center">
+                    i want a mock interview
+                  </Title>
+                </Col>
+                <Col span={20}>
+                  <Text align="center" display="block" size="preNormal">
+                    Have you ever talked to a ghost? Stress-free conversation, a
+                    warm-up for your next technical interview. I'll adjust
+                    questions and coding challenges to your skill level.
+                  </Text>
+                </Col>
+                <CardButton>LEARN MORE</CardButton>
+              </Row>
+            </OfferCard>
+          </Link>
         </Col>
         <Col xs={22} sm={16} xl={7} xxl={6}>
-          <OfferCard>
-            <Row justify="center" gutter={[0, 28]}>
-              <Col span={11}>
-                <Illustration type="developmentPlan" />
-              </Col>
-              <Col span={24}>
-                <Title level={4} align="center">
-                  i want a development plan
-                </Title>
-              </Col>
-              <Col span={20}>
-                <Text align="center" display="block" size="preNormal">
-                  Feeling stuck in your career? I felt the same and created one
-                  to push my own limits. Now, I would love to create one for
-                  you, let's skyrocket in Frontend together.
-                </Text>
-              </Col>
-              <CardButton>LEARN MORE</CardButton>
-            </Row>
-          </OfferCard>
+          <Link to="/mentorship/">
+            <OfferCard>
+              <Row justify="center" gutter={[0, 28]}>
+                <Col span={11}>
+                  <Illustration type="developmentPlan" />
+                </Col>
+                <Col span={24}>
+                  <Title level={4} align="center">
+                    i want a development plan
+                  </Title>
+                </Col>
+                <Col span={20}>
+                  <Text align="center" display="block" size="preNormal">
+                    Feeling stuck in your career? I felt the same and created
+                    one to push my own limits. Now, I would love to create one
+                    for you, let's skyrocket in Frontend together.
+                  </Text>
+                </Col>
+                <CardButton>LEARN MORE</CardButton>
+              </Row>
+            </OfferCard>
+          </Link>
         </Col>
       </Row>
     </Holder>
