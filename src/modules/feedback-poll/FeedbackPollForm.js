@@ -24,7 +24,6 @@ export const FeedbackPollForm = () => {
   const [triedToSubmit, setTriedToSubmit] = useState(false);
 
   const handleSubmit = (values) => {
-    console.log(values);
     if (values[`bot-field`] === undefined) {
       delete values[`bot-field`];
     }
