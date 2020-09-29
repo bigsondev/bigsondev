@@ -55,13 +55,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `bigsondev-adrian-bigaj`,
-        short_name: `starter`,
+        name: `BigsonDev`,
+        short_name: `BigsonDev`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#5BAAE7`,
+        theme_color: `#5BAAE7`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
