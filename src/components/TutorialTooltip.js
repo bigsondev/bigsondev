@@ -11,7 +11,7 @@ export const TutorialTooltip = ({
   ...props
 }) => {
   const [isVisible, setIsVisible] = useState(true);
-  const isTutorialCompleted = getItem(type);
+  const isTutorialCompleted = getItem(type) === 'true';
 
   if (isTutorialCompleted) {
     return props.children;

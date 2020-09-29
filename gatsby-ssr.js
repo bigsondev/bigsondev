@@ -19,11 +19,16 @@ import {
   ErrorBoundary,
 } from '~components';
 
-export const wrapPageElement = ({ element }) => (
+export const wrapPageElement = ({
+  element,
+  props: {
+    location: { pathname },
+  },
+}) => (
   <ErrorBoundary>
     <GlobalStyles />
     <Layout>
-      <Header />
+      <Header pathname={pathname} />
       <ContentHolder>{element}</ContentHolder>
     </Layout>
   </ErrorBoundary>

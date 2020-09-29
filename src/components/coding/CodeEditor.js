@@ -126,7 +126,7 @@ export const CodeEditor = ({
 
   useEffect(() => {
     const showJsNotification =
-      tabs.includes('js') && getItem('codeTutorialJs') === false;
+      tabs.includes('js') && getItem('codeTutorialJs') === 'false';
 
     if (showJsNotification) {
       jsInTheConsoleNotification();

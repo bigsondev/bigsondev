@@ -64,12 +64,8 @@ const LeftMenu = () => (
   </Link>
 );
 
-const matchUrl = (url) =>
-  typeof window !== 'undefined'
-    ? window.location.href.indexOf(url) !== -1
-    : undefined;
-
 const RightMenu = ({
+  pathname,
   isExpanded,
   isClicked,
   onFirstClick,
@@ -97,22 +93,22 @@ const RightMenu = ({
     </SmallOnly>
     <ExceptSmall>
       <MenuHolder theme="dark" mode="horizontal">
-        <MenuItem key="1" isSelected={matchUrl('blog')}>
+        <MenuItem key="1" isSelected={pathname.includes('blog')}>
           <Link to="/blog/">
             <Text size="preNormal">Blog</Text>
           </Link>
         </MenuItem>
-        <MenuItem key="2" isSelected={matchUrl('library')}>
+        <MenuItem key="2" isSelected={pathname.includes('library')}>
           <Link to="/library/">
             <Text size="preNormal">Library</Text>
           </Link>
         </MenuItem>
-        <MenuItem key="3" isSelected={matchUrl('mentorship')}>
+        <MenuItem key="3" isSelected={pathname.includes('mentorship')}>
           <Link to="/mentorship/">
             <Text size="preNormal">Mentorship</Text>
           </Link>
         </MenuItem>
-        <MenuItem key="4" isSelected={matchUrl('reach-out')}>
+        <MenuItem key="4" isSelected={pathname.includes('reach-out')}>
           <Link to="/reach-out/">
             <Text size="preNormal">Reach Out</Text>
           </Link>
@@ -122,7 +118,7 @@ const RightMenu = ({
   </>
 );
 
-export const Header = () => {
+export const Header = ({ pathname }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -147,6 +143,7 @@ export const Header = () => {
               </Col>
               <Col>
                 <RightMenu
+                  pathname={pathname}
                   isExpanded={isExpanded}
                   isClicked={isClicked}
                   onFirstClick={setFirstClick}
@@ -160,7 +157,7 @@ export const Header = () => {
                 <MenuHolder theme="dark" mode="inline">
                   <MenuItem
                     key="1"
-                    isSelected={matchUrl('blog')}
+                    isSelected={pathname.includes('blog')}
                     onClick={handleMobileMenuCloseClick}
                     isMobile
                   >
@@ -170,7 +167,7 @@ export const Header = () => {
                   </MenuItem>
                   <MenuItem
                     key="2"
-                    isSelected={matchUrl('library')}
+                    isSelected={pathname.includes('library')}
                     onClick={handleMobileMenuCloseClick}
                     isMobile
                   >
@@ -180,7 +177,7 @@ export const Header = () => {
                   </MenuItem>
                   <MenuItem
                     key="3"
-                    isSelected={matchUrl('mentorship')}
+                    isSelected={pathname.includes('mentorship')}
                     onClick={handleMobileMenuCloseClick}
                     isMobile
                   >
@@ -190,7 +187,7 @@ export const Header = () => {
                   </MenuItem>
                   <MenuItem
                     key="4"
-                    isSelected={matchUrl('reach-out')}
+                    isSelected={pathname.includes('reach-out')}
                     onClick={handleMobileMenuCloseClick}
                     isMobile
                   >
