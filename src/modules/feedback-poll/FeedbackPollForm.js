@@ -66,8 +66,8 @@ export const FeedbackPollForm = () => {
             hidden
           >
             <input type="text" name="name" />
-            <input type="email" name="email" />
-            <textarea name="message"></textarea>
+            <select name="service"></select>
+            <textarea name="feedback"></textarea>
           </form>
           <Form
             name="feedback-poll-ant-form"
