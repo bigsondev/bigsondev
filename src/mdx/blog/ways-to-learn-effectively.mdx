@@ -1,0 +1,291 @@
+---
+title: 5 Ways To Learn Effectively
+desc: Learning is a process of every human being. Starting from learning how to walk, ride a bike, how to study, pass exams, and prepare for the work. It’s an exercise we do everyday almost like a workout. However, it’s no longer enough to just learn, the modern world is all about optimizing time and being as productive as possible.
+path: /blog/ways-to-learn-effectively/
+hasCheatSheet: false
+hasTodoList: false
+readTime: 9
+tags: productivity
+date: 2020-09-27
+---
+
+import { Space, Alert } from 'antd';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  PostCard,
+  SyntaxHighlighter,
+  Link,
+  Box,
+} from '~components';
+
+export const songs = [
+  <Link href="https://www.youtube.com/watch?v=WPni755-Krg&t=4314s">
+    Concentration Music
+  </Link>,
+  <Link href="https://www.youtube.com/watch?v=8Z5EjAmZS1o">
+    Yiruma's Piano Music
+  </Link>,
+  <Link href="https://www.youtube.com/watch?v=WVP3fUzQHcg">
+    Some More Piano Music
+  </Link>,
+];
+
+export const resources = [
+  <Link href="https://www.ucf.edu/pegasus/your-brain-on-music/">
+    Your Brain On Music
+  </Link>,
+  <Link href="https://litemind.com/what-is-mind-mapping/">
+    What Is Mind Mapping?
+  </Link>,
+  <Link href="https://www.lifehack.org/articles/featured/8-steps-to-continuous-self-motivation.html">
+    Self-Motivation
+  </Link>,
+];
+
+export const mindmapSteps = [
+  'Take a piece of paper or scrapbook and try to write down all the keywords, dates, sentences, theses that you plan to learn. Try to give only the specifics, without too much fluff',
+  'Set a priority, from the most important to the least important information (maybe you know what questions will appear on the test, exam, etc.)',
+  'Prepare an A4 sheet of paper, best to place it horizontally, and start by writing the map title, some keywords, in capital letters in its center',
+  'Add a symbol, a picture to stimulate the right hemisphere of the brain',
+  'Next, add new "branches" and words, theses, dates, try to connect them if it makes sense. (e.g. with arrows)',
+  'Draw more symbols, use different colors, try to be creative',
+  'Get in shape and repeat the process several times',
+];
+
+<Post
+  title={props.pageContext.frontmatter.title}
+  desc={props.pageContext.frontmatter.desc}
+  date={props.pageContext.frontmatter.date}
+  readTime={props.pageContext.frontmatter.readTime}
+  showSubtitle
+>
+  <Title level={3}>Introduction</Title>
+  <Paragraph lastParagraph>
+    I love to learn new things and it became my hobby to find new ways for
+    boosting the effectiveness and capabilities of the mind. It has helped me
+    during all these years of being a League of Legends Player, Coach, Java
+    Tester, Frontend Developer, Recruiter, and now, a Mentor.
+  </Paragraph>
+  <Title level={3}>5 ways</Title>
+  <Paragraph>
+    I prepared 5 ways to learn more effectively, there is a chance you are using
+    some of them already,{' '}
+    <Text strong>
+      but understanding why can always help you learn even faster than now
+    </Text>
+    .
+  </Paragraph>
+  <Paragraph breakParagraph>Let's dive in.</Paragraph>
+  <Title level={4}>1. Music for your brain</Title>
+  <Paragraph>
+    Neurons in our brains use electricity to communicate with each other. This
+    in turn generates electrical activity and brain waves are created.{' '}
+    <Text strong>Alpha, beta, gamma, delta, and theta waves</Text>. Music on the
+    right frequency also creates these waves. We don’t even realize how music
+    can manipulate us, affect our focus, relaxing, creativity, and many other
+    traits. It all comes down to stimulating the brain.
+  </Paragraph>
+  <Paragraph>
+    Before we start listening to new songs, it's worth getting quality
+    headphones. I’m using{' '}
+    <Link href="https://www.apple.com/airpods-pro/">AirPods Pro</Link>. They
+    have great quality, are soundproof, and even waterproof (I checked it once,
+    can confirm 😅).
+  </Paragraph>
+  <Paragraph>
+    Getting back to the waves,{' '}
+    <Text strong>
+      I mostly listen to songs with alpha waves, if I need an influx of
+      creativity and a feeling of relaxation. Beta waves, in turn, help me when
+      I spend time on concentrating, acquiring new knowledge, and also when I
+      need to think logically or solve some algorithms
+    </Text>
+    .
+  </Paragraph>
+  <Paragraph>
+    I haven't tried songs with other waves yet, but gamma waves could be useful
+    for multitasking and remembering associations. Delta waves are best suited
+    for meditation and deep focus. Also, helpful if someone has trouble falling
+    asleep. Theta waves strengthen memory.
+  </Paragraph>
+  <Paragraph>
+    Below is a list of songs I recommend when starting with this learning
+    approach:
+  </Paragraph>
+  <PostList data={songs} />
+  <Paragraph breakParagraph>
+    Classical music is probably one of the best if it comes to deep focus while
+    learning. You can find some classical music songs on e.g.{' '}
+    <Link href="https://www.spotify.com/">Spotify</Link>, searching by keywords
+    such as <Text strong>study music</Text>,{' '}
+    <Text strong>concentration music</Text>, <Text strong>alpha waves</Text>,{' '}
+    <Text strong>beta waves</Text>, etc.
+  </Paragraph>
+  <Title level={4}>2. Mind mapping - use both hemispheres</Title>
+  <Paragraph>
+    While studying for the exam, I bet that many of you've used cheat sheets. It
+    takes time, accuracy, and a lot of consideration to make a good cheat sheet.
+    It's usually a summary of the most important information from the entire
+    semester, book, or presentation. Unfortunately, after passing the exam, it
+    is lost forever, and the knowledge most often evaporates with it.
+    <Text strong>
+      {' '}
+      During the whole process, we only use the left hemisphere of the brain,
+      responsible for numbers, words, and logical thinking
+    </Text>.
+  </Paragraph>
+  <Paragraph>
+    When making notes, not necessarily cheat sheets, we can add symbols, colors,
+    minimalistic drawings, connect everything with arrows, and in the center,
+    e.g. on the card of paper, place the keywords, sentences, statements, or
+    dates. And that's how we create a mind map which activates the right
+    hemisphere.
+    <Text strong>
+      {' '}
+      Then, both hemispheres work synergistically with each other, increasing
+      our efficiency while learning
+    </Text>.
+  </Paragraph>
+  <Paragraph>
+    Before I got to know this method, I kept writing the most important
+    information in the form of traditional notes, often they were several pages
+    long and it was difficult to get a hang of it. This way of learning quickly
+    becomes boring and imitative. Using a mind map, we can stimulate our mind to
+    <Text fontStyle="italic">"play"</Text>, making it, but also us, enjoying the
+    learning. A very crucial element of correct mind mapping is legibility, try to
+    write neatly. Additionally, you will get a free practice of handwriting.
+  </Paragraph>
+  <Paragraph>
+    <Text strong>
+      Below is a list of some basic steps for creating a mind map
+    </Text>
+    :
+  </Paragraph>
+  <PostList data={mindmapSteps} />
+  <Paragraph breakParagraph>
+    Mind mapping is especially useful when I'm trying to explore a new topic and
+    don't know where to start. A mind map allows me to get a clear structure and
+    makes a plan of what I really need to learn. It’s also super helpful for
+    creating and solving algorithms with concrete business logic to represent
+    all steps, edge cases. In general, it feels good to brainstorm and draw
+    something, just in a geek, IT style, on an old-school board. (When you
+    become a master of mind mapping, it’s time to stop wasting paper and
+    visualize everything in the mind, just like a{' '}
+    <Link href="https://d3js.org/">D3</Link> 😃).
+  </Paragraph>
+  <Title level={4}>3. Stay hydrated and eat something</Title>
+  <Paragraph>
+    <Text strong>The human brain consists of 83% water</Text>. Poor hydration
+    leads to attention disorders and concentration. Water cleanses the body and
+    oxygenates the brain. I’ve heard different opinions on how much water we
+    should drink during the day. There're opinions of 7-8 glasses, and sometimes
+    it is mentioned to drink from 1.5 liters to 3 liters of liquids (including
+    those from food). I believe that this is an individual matter and it’s best
+    to consult it with a dietitian.
+  </Paragraph>
+  <Paragraph>
+    I personally drink about 2 liters of water a day, in small sips, quite
+    often. I always have a bottle of water next to my desk, even now. I buy
+    sparkling water for one week and still water for the second.{' '}
+    <Text strong>
+      Excess water can poison the body, and sparkling water flushes vitamins - I
+      have heard such opinions, but since I started drinking sparkling and still
+      water alternating weekly periods, I have the impression that my comfort
+      has improved
+    </Text>
+    . I rarely drink other beverages, but I would try to avoid energy drinks. It’s
+    definitely worth recharging yourself with vitamins from freshly squeezed fruit
+    or vegetables. Drink a cup of tea, coffee, or your favorite herbs. Just don't
+    overdo it.
+  </Paragraph>
+  <Paragraph breakParagraph>
+    <Text fontStyle="italic">„You are what you eat”</Text> – healthy eating is
+    certainly an efficient method of effective learning.{' '}
+    <Text strong>
+      Foods rich in iron (memory improvement), lecithin (also better
+      remembering), vitamin B12, C, A, and E (concentration), vitamin D (memory
+      again) are almost essential while learning
+    </Text>
+    . First of all, when we are hungry, we cannot focus and we get nervous quickly.
+    Snacks can help with that - let's keep them healthy. They will support the work
+    of our brain, and not everything will go to the sides! I usually prepare a few
+    pieces of dark chocolate, almonds, and e.g. peanuts in a small bowl. Usually
+    this is enough for a few hours of study and fills the gap between main meals.
+  </Paragraph>
+  <Title level={4}>4. Take a break</Title>
+  <Paragraph>
+    We all work in front of the computer. The Polish health and safety at work
+    state that I am entitled to a 5-minute break after each hour worked in front
+    of the screen monitor. Sometimes it is difficult to break away from a task,
+    chapter in a book, or from writing, for example, a guide you are reading
+    now. I have a problem with it (I'm working on it 😀), usually, I try to
+    finish something at all costs, skipping the hellishly important breaks in
+    between.{' '}
+    <Text strong>
+      For some time now, I started using the 5-minute break rule and noticed a
+      significant increase in productivity
+    </Text>
+    .
+  </Paragraph>
+  <Paragraph breakParagraph>
+    We remember best what we learn at the beginning and end of a given time
+    period, in this case - an hour. Use these 5 minutes to stretch your bones,
+    get out in the fresh air, or even exercise for a while, and oxygenate your
+    brain. Sometimes I was lingering far too long in front of the computer, 3 or
+    more hours without contact with reality, trying to solve a problem.{' '}
+    <Text strong>
+      Most often, when I was forced to take a break due to fatigue, I came up
+      with a solution
+    </Text>
+    . Then, I realized 5 minutes could be more valuable than a few hours, and time
+    is indeed relative.
+  </Paragraph>
+  <Title level={4}>5. Imagine you already know it</Title>
+  <Paragraph>
+    While browsing the internet to explore various methods of effective
+    learning, I came across something which intrigued me. There is such a
+    concept as{' '}
+    <Link href="https://www.skillsyouneed.com/ps/self-motivation.html">
+      Self-Motivation
+    </Link>
+    , and each of you will probably agree that feeling better helps us in everything.
+    Nothing in life is more enjoyable than being appreciated and rewarded. <Text fontStyle="italic">
+      "Well done"
+    </Text>, <Text fontStyle="italic">"You've done well"</Text> - such sentences,
+    especially when spoken by loved ones, make us more valuable and motivate us to
+    continue our actions.
+  </Paragraph>
+  <Paragraph strong>
+    There is also the possibility of cheating our brain.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    We can imagine ourselves, e.g. standing somewhere in the room, and
+    convincing our mind what we have to learn - we already learned. Let's agree
+    that is the{' '}
+    <Link href="https://en.wikipedia.org/wiki/Placebo">Placebo</Link> effect
+    supposed to affect our psyche. Whenever I sit down at my desk to learn
+    something new, my thoughts drift away to the world of dreams for a while and
+    I tell myself,{' '}
+    <Text fontStyle="italic">
+      "What would it be like if I were already an expert in this field"
+    </Text>
+    . After a while, I come back to reality and my confidence is on a completely
+    different level. With a light spirit, I start learning in an ideal state of mind.
+  </Paragraph>
+  <Title level={3}>Closing Notes</Title>
+  <Paragraph>
+    And that's it! I've shared with you my 5 methods of effective learning I
+    developed over the past 12 years. Please, let me know (e.g. on Slack -
+    scroll down for an invite), whether after using them, science is no longer
+    such a nightmare, or maybe you've already used one of these or similar
+    methods. If you know someone who is studying for the exam, share him with
+    this article. I'll be grateful for spreading the word.
+  </Paragraph>
+  <Paragraph lastParagraph>Happy Learning! ❤️</Paragraph>
+  <Title level={3}>Resources</Title>
+  <PostList data={resources} />
+</Post>

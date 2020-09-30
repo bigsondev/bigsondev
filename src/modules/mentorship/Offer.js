@@ -24,15 +24,15 @@ const OfferCard = styled.div({
   position: 'relative',
   padding: 24,
   paddingBottom: 0,
-  minHeight: 520,
+  minHeight: 580,
   borderRadius: 16,
   background: '#FFF',
-
   '@media (max-width: 480px)': {
-    minHeight: 460,
+    minHeight: 520,
   },
+
   '@media (min-width: 481px) and (max-width: 768px)': {
-    minHeight: 480,
+    minHeight: 450,
   },
 
   '&:hover': {
@@ -126,6 +126,9 @@ export const Offer = () => {
                     </Text>,
                     <Text size="preNormal" type="primary">
                       Live coding, practice & theory.
+                    </Text>,
+                    <Text size="preNormal" type="primary">
+                      Brainstorming together.
                     </Text>,
                     <Text size="preNormal" type="primary">
                       Additional free resources, feedback & tips to improve.
