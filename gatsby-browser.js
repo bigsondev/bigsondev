@@ -32,6 +32,7 @@ import {
   Header,
   GlobalStyles,
   ContentHolder,
+  PromoSticker,
 } from '~components';
 import { initializeStorageData, getItem } from '~utils';
 
@@ -46,6 +47,7 @@ export const wrapPageElement = ({
   <ErrorBoundary>
     <GlobalStyles />
     <Layout>
+      {getItem('firstPromoSticker') === 'false' && <PromoSticker />}
       <Header pathname={pathname} />
       <ContentHolder>{element}</ContentHolder>
     </Layout>

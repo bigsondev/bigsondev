@@ -22,3 +22,4 @@ export { SecondaryButton } from './SecondaryButton';
 export { PromoBannerButton } from './PromoBannerButton';
 export { SlackBanner } from './slack-banner';
 export { ErrorBoundary } from './ErrorBoundary';
+export { PromoSticker } from './PromoSticker';
