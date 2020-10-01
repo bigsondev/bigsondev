@@ -48,7 +48,7 @@ const ButtonHolder = styled.div({
 
 const openMentoringEvent = () => {
   openPopupWidget({
-    url: 'https://calendly.com/bigson-dev/mentoring',
+    url: 'https://calendly.com/bigsondev/mentoring',
     pageSettings: {
       hideEventTypeDetails: true,
       hideLandingPageDetails: true,
@@ -58,7 +58,7 @@ const openMentoringEvent = () => {
 
 const openMockInterviewEvent = () => {
   openPopupWidget({
-    url: 'https://calendly.com/bigson-dev/mock-interview',
+    url: 'https://calendly.com/bigsondev/mock-interview',
     pageSettings: {
       hideEventTypeDetails: true,
       hideLandingPageDetails: true,
@@ -68,7 +68,7 @@ const openMockInterviewEvent = () => {
 
 const openDevelopmentPlanEvent = () => {
   openPopupWidget({
-    url: 'https://calendly.com/bigson-dev/development-plan',
+    url: 'https://calendly.com/bigsondev/development-plan',
     pageSettings: {
       hideEventTypeDetails: true,
       hideLandingPageDetails: true,
