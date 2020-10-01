@@ -5,6 +5,7 @@
  */
 import React from 'react';
 import { Layout } from 'antd';
+import Drift from 'react-driftjs';
 import 'highlight.js/styles/a11y-light.css';
 
 // The following two imports is for the theme.
@@ -50,6 +51,7 @@ export const wrapPageElement = ({
       {getItem('firstPromoSticker') === 'false' && <PromoSticker />}
       <Header pathname={pathname} />
       <ContentHolder>{element}</ContentHolder>
+      <Drift appId="vwxb94u6dzmc" />;
     </Layout>
     {getItem('cookiesAcknowledged') === 'false' && <CookieBanner />}
   </ErrorBoundary>

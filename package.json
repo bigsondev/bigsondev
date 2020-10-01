@@ -33,6 +33,7 @@
     "react-calendly": "^1.1.0",
     "react-codemirror2": "^7.2.1",
     "react-dom": "^16.12.0",
+    "react-driftjs": "^1.1.11",
     "react-helmet": "^6.1.0",
     "react-highlight": "^0.12.0",
     "react-reveal": "^1.2.2",
