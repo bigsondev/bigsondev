@@ -8,7 +8,6 @@ import { Layout } from 'antd';
 
 import {
   Header,
-  GlobalSpinner,
   GlobalStyles,
   Content,
   ErrorBoundary,
@@ -21,7 +20,6 @@ export const wrapPageElement = ({
   },
 }) => (
   <ErrorBoundary>
-    <GlobalSpinner />
     <GlobalStyles />
     <Layout>
       <Header pathname={pathname} />
