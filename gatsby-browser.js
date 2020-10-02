@@ -60,12 +60,12 @@ export const wrapPageElement = ({
   },
 }) => (
   <ErrorBoundary>
-    <GlobalSpinner />
     <GlobalStyles />
     <Layout>
       {getItem('firstPromoSticker') === 'false' && <PromoSticker />}
       <Header pathname={pathname} />
       <PageTransition>
+        <GlobalSpinner />
         <ContentHolder>{element}</ContentHolder>
       </PageTransition>
     </Layout>

@@ -9,8 +9,14 @@ const Holder = styled.div({
   transform: 'translate(-50%, -50%)',
 });
 
-export const GlobalSpinner = () => (
-  <Holder id="bigsondev-loader">
-    <Spin size="large" delay={250} />
-  </Holder>
-);
+// export const GlobalSpinner = () => (
+//   <Holder id="bigsondev-loader">
+//     <Spin size="large" delay={250} />
+//   </Holder>
+// );
+
+export const GlobalSpinner = () => {
+  console.log('Hi Content');
+
+  return null;
+};
