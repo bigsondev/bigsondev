@@ -1,4 +1,5 @@
 import React from 'react';
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 import { Layout, Section, SEO, Box } from '~components';
 import {
@@ -11,26 +12,28 @@ import {
 
 const Landing = () => {
   return (
-    <Layout fixedContent={false}>
-      <SEO title="Frontend Developer, Recruiter, Mentor & Your Friend" />
-      <Box mb={5}>
-        <Section>
-          <Promo />
+    <PageTransition>
+      <Layout fixedContent={false}>
+        <SEO title="Frontend Developer, Recruiter, Mentor & Your Friend" />
+        <Box mb={5}>
+          <Section>
+            <Promo />
+          </Section>
+        </Box>
+        <Section fullWidth>
+          <SkyrocketYourCareer />
         </Section>
-      </Box>
-      <Section fullWidth>
-        <SkyrocketYourCareer />
-      </Section>
-      <Section fullWidth>
-        <BlogLibrary />
-      </Section>
-      <Section fullWidth>
-        <WhoIAm />
-      </Section>
-      <Section fullWidth>
-        <Newsletter />
-      </Section>
-    </Layout>
+        <Section fullWidth>
+          <BlogLibrary />
+        </Section>
+        <Section fullWidth>
+          <WhoIAm />
+        </Section>
+        <Section fullWidth>
+          <Newsletter />
+        </Section>
+      </Layout>
+    </PageTransition>
   );
 };
 

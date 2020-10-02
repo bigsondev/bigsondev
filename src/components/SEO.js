@@ -68,7 +68,9 @@ export function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="canonical" href="https://bigsondev.com/" />
+    </Helmet>
   );
 }
 

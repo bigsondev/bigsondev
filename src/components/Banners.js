@@ -9,8 +9,8 @@ export const Banners = ({ pathname }) => {
   const areCookiesAcknowledged = getItem('cookiesAcknowledged') === 'true';
   const shouldShowChat = [
     '/',
-    '/blog/',
-    'blog/',
+    '/mentorship/',
+    '/mentorship',
     '/reach-out',
     '/reach-out/',
   ].includes(pathname);

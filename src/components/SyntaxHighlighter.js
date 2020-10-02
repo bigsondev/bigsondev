@@ -3,8 +3,6 @@ import { Button, Popover } from 'antd';
 import Highlight from 'react-highlight/lib/optimized';
 import styled from 'styled-components';
 
-import 'highlight.js/styles/a11y-light.css';
-
 import { copyToClipboard } from '~utils';
 
 import { Text } from '.';

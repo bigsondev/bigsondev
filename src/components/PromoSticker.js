@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Alert } from 'antd';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
@@ -21,7 +21,15 @@ const LinkHolder = styled(Link)({
 });
 
 export const PromoSticker = () => {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShow(true);
+    }, 10000);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   if (!show) {
     return null;

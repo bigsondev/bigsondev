@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: 'https://bigsondev.com/',
     title: `| Adrian Bigaj | bigsondev.com`,
     description: `Do you want to read about Frontend, practice your coding skills, and get some mentorship? Everything in one place, available to you, now.`,
-    author: `@bigsondev`,
+    author: `@BigsonDev`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -84,6 +85,9 @@ module.exports = {
         },
       },
     },
+    'gatsby-plugin-page-transitions',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt',
     'gatsby-plugin-webpack-bundle-analyser-v2',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
