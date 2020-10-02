@@ -12,6 +12,18 @@ const Input = styled(AntdInput)({
   height: 50,
 });
 
+const ResultHolder = styled(Result)({
+  '& .ant-result-title': {
+    color: '#FFF',
+  },
+  '& .ant-result-subtitle': {
+    color: '#FFF',
+  },
+  '& .anticon-check-circle': {
+    color: '#FFF !important',
+  },
+});
+
 export const SlackForm = () => {
   const [messageSent, setMessageSent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -46,7 +58,7 @@ export const SlackForm = () => {
     <>
       {messageSent ? (
         <Fade duration={1500}>
-          <Result
+          <ResultHolder
             status="success"
             title="All Went Good, Thanks!"
             subTitle="Please check the email to accept your invite."

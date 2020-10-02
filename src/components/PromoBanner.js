@@ -5,7 +5,7 @@ import { Paragraph } from './Typography';
 
 const colorMapper = {
   normal: '#2f4586e8',
-  promotion: '#FFC069',
+  promotion: '#F9B060',
 };
 
 const Holder = styled.div(({ color = 'normal' }) => ({

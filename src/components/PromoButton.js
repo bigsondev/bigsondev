@@ -24,15 +24,15 @@ export const PromoButton = styled(Button)(({ size = 'normal' }) => ({
   fontWeight: 500,
   borderRadius: 24,
   color: '#FFF !important',
-  backgroundColor: '#ffc069 !important',
+  backgroundColor: '#F9B060 !important',
   border: 'none',
   transition: 'box-shadow 0.3s',
   position: 'relative',
   bottom: 4,
 
   '&:hover': {
-    boxShadow: `0px 0px 5px 0px #ffc069`,
-    backgroundColor: '#ffc069 !important',
+    boxShadow: `0px 0px 5px 0px #F9B060`,
+    backgroundColor: '#F9B060 !important',
     color: '#FFF !important',
   },
 }));
