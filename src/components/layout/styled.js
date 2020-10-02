@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Layout } from 'antd';
 
@@ -7,7 +8,15 @@ export const Logo = styled.img({
   marginLeft: -16,
 });
 
-export const ContentHolder = styled(Layout.Content)({
+export const ContentWrapper = styled(Layout.Content)({
   background: '#FFF',
   paddingTop: 32,
 });
+
+export const ContentHolder = ({ children }) => {
+  useEffect(() => {
+    console.log('Hi Content');
+  }, []);
+
+  return <ContentWrapper>{children}</ContentWrapper>;
+};
