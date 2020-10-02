@@ -96,15 +96,29 @@ export const Footer = () => (
           </Col>
           <Col>
             <Space size="small">
-              <IconHolder>
-                <Icon type="twitter" width="3.125rem" />
-              </IconHolder>
-              <IconHolder>
-                <Icon type="linkedin" width="3.125rem" />
-              </IconHolder>
+              <Link href="https://twitter.com/BigsonDev">
+                <IconHolder>
+                  <Icon type="twitter" width="3.125rem" />
+                </IconHolder>
+              </Link>
+              <Link href="https://www.linkedin.com/in/adrian-bigaj-282277130/">
+                <IconHolder>
+                  <Icon type="linkedin" width="3.125rem" />
+                </IconHolder>
+              </Link>
               <IconHolder>
                 <Icon type="facebook" width="3.125rem" />
               </IconHolder>
+              <Link href="https://www.behance.net/milenaulman">
+                <IconHolder>
+                  <Icon type="behance" width="3.125rem" />
+                </IconHolder>
+              </Link>
+              <Link href="https://dribbble.com/milenadev">
+                <IconHolder>
+                  <Icon type="dribble" width="3.125rem" />
+                </IconHolder>
+              </Link>
             </Space>
           </Col>
         </Row>

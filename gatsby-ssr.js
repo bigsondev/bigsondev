@@ -9,6 +9,7 @@ import PageTransition from 'gatsby-plugin-page-transitions';
 
 import {
   Header,
+  GlobalSpinner,
   GlobalStyles,
   ContentHolder,
   ErrorBoundary,
@@ -21,6 +22,7 @@ export const wrapPageElement = ({
   },
 }) => (
   <ErrorBoundary>
+    <GlobalSpinner />
     <GlobalStyles />
     <Layout>
       <Header pathname={pathname} />

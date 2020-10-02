@@ -11,6 +11,8 @@ import LinkedinIcon from './linkedin.svg';
 import RedditIcon from './reddit.svg';
 import TwitterIcon from './twitter.svg';
 import QuoteIcon from './quote.svg';
+import BehanceIcon from './behance.svg';
+import DribbleIcon from './dribble.svg';
 
 export {
   HomeworkIcon,
@@ -26,4 +28,6 @@ export {
   RedditIcon,
   TwitterIcon,
   QuoteIcon,
+  BehanceIcon,
+  DribbleIcon,
 };
