@@ -25,4 +25,3 @@ export { ErrorBoundary } from './ErrorBoundary';
 export { PromoSticker } from './PromoSticker';
 export { Banners } from './Banners';
 export * from './keyframes';
-export { GlobalSpinner } from './GlobalSpinner';

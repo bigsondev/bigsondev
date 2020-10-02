@@ -3,4 +3,4 @@ export { Section } from './Section';
 export { CookieBanner } from './CookieBanner';
 export { Header } from './Header';
 export { GlobalStyles } from './GlobalStyles';
-export { ContentHolder } from './styled';
+export { Content } from './Content';
