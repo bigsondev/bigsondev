@@ -33,12 +33,25 @@ import {
   Banners,
   Header,
   GlobalStyles,
+  GlobalSpinner,
   ContentHolder,
   PromoSticker,
 } from '~components';
 import { initializeStorageData, getItem } from '~utils';
 
 initializeStorageData();
+
+export const onClientEntry = () => {
+  document.getElementById('bigsondev-loader').style.display = 'block';
+};
+
+export const onRouteUpdateDelayed = () => {
+  document.getElementById('bigsondev-loader').style.display = 'block';
+};
+
+export const onRouteUpdate = () => {
+  document.getElementById('bigsondev-loader').style.display = 'none';
+};
 
 export const wrapPageElement = ({
   element,
@@ -47,6 +60,7 @@ export const wrapPageElement = ({
   },
 }) => (
   <ErrorBoundary>
+    <GlobalSpinner />
     <GlobalStyles />
     <Layout>
       {getItem('firstPromoSticker') === 'false' && <PromoSticker />}

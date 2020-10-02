@@ -10,7 +10,7 @@ const Holder = styled.div({
 });
 
 export const GlobalSpinner = () => (
-  <Holder>
+  <Holder id="bigsondev-loader">
     <Spin size="large" delay={250} />
   </Holder>
 );
