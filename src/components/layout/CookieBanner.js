@@ -6,6 +6,11 @@ import { Link } from 'gatsby';
 import { setItem } from '~utils';
 
 import { Paragraph } from '../Typography';
+import { fadeIn } from '../keyframes';
+
+const AnimationHolder = styled.div`
+  animation: ${fadeIn} 0.3s ease-in;
+`;
 
 const Holder = styled.div({
   background: 'rgba(0, 0, 0, 0.85)',
@@ -58,30 +63,33 @@ const CookieButton = styled(Button)({
   },
 });
 
-export const CookieBanner = () => {
+export const CookieBanner = ({ hasScrolled, onClick }) => {
   const [show, setShow] = useState(true);
 
-  if (!show) {
+  if (!show || !hasScrolled) {
     return null;
   }
 
   return (
-    <Holder>
-      <ParagraphHolder size="micro">
-        I use cookies for improving your experience when using the site. I hope
-        it's ok for you.{' '}
-        <LinkHolder to="/privacy-policy/" size="micro">
-          Privacy Policy
-        </LinkHolder>
-      </ParagraphHolder>
-      <CookieButton
-        onClick={() => {
-          setShow(false);
-          setItem('cookiesAcknowledged', true);
-        }}
-      >
-        I accept cookies
-      </CookieButton>
-    </Holder>
+    <AnimationHolder>
+      <Holder>
+        <ParagraphHolder size="micro">
+          I use cookies for improving your experience when using the site. I
+          hope it's ok for you.{' '}
+          <LinkHolder to="/privacy-policy/" size="micro">
+            Privacy Policy
+          </LinkHolder>
+        </ParagraphHolder>
+        <CookieButton
+          onClick={() => {
+            setShow(false);
+            setItem('cookiesAcknowledged', true);
+            onClick();
+          }}
+        >
+          I accept cookies
+        </CookieButton>
+      </Holder>
+    </AnimationHolder>
   );
 };

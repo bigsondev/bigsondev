@@ -4,7 +4,13 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import { setItem } from '~utils';
+
 import { Paragraph } from '.';
+import { fadeIn } from './keyframes';
+
+const AlertHolder = styled(Alert)`
+  animation: ${fadeIn} 0.3s ease-in;
+`;
 
 const ParagraphHolder = styled(Paragraph)({
   marginBottom: '0 !important',
@@ -22,11 +28,19 @@ export const PromoSticker = () => {
   }
 
   return (
-    <Alert
+    <AlertHolder
       message={
         <ParagraphHolder size="micro" align="center">
           -30% on all Mentorship Services for the first 10 mentees.{' '}
-          <LinkHolder to="/mentorship/">Check it out</LinkHolder>
+          <LinkHolder
+            to="/mentorship/"
+            onClick={() => {
+              setShow(false);
+              setItem('firstPromoSticker', true);
+            }}
+          >
+            Check it out
+          </LinkHolder>
         </ParagraphHolder>
       }
       type="info"
