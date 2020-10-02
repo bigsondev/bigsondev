@@ -5,6 +5,7 @@
  */
 import React from 'react';
 import { Layout } from 'antd';
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 import 'highlight.js/styles/a11y-light.css';
 
@@ -50,7 +51,9 @@ export const wrapPageElement = ({
     <Layout>
       {getItem('firstPromoSticker') === 'false' && <PromoSticker />}
       <Header pathname={pathname} />
-      <ContentHolder>{element}</ContentHolder>
+      <PageTransition>
+        <ContentHolder>{element}</ContentHolder>
+      </PageTransition>
     </Layout>
     <Banners pathname={pathname} />
   </ErrorBoundary>

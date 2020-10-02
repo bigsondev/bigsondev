@@ -9,7 +9,7 @@ import { Paragraph } from '.';
 import { fadeIn } from './keyframes';
 
 const AlertHolder = styled(Alert)`
-  animation: ${fadeIn} 0.3s ease-in;
+  animation: ${fadeIn} 0.3s ease-in-out;
 `;
 
 const ParagraphHolder = styled(Paragraph)({

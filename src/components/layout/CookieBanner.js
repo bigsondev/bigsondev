@@ -9,7 +9,7 @@ import { Paragraph } from '../Typography';
 import { fadeIn } from '../keyframes';
 
 const AnimationHolder = styled.div`
-  animation: ${fadeIn} 0.3s ease-in;
+  animation: ${fadeIn} 0.3s ease-in-out;
 `;
 
 const Holder = styled.div({

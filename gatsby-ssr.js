@@ -5,6 +5,7 @@
  */
 import React from 'react';
 import { Layout } from 'antd';
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 import {
   Header,
@@ -23,7 +24,9 @@ export const wrapPageElement = ({
     <GlobalStyles />
     <Layout>
       <Header pathname={pathname} />
-      <ContentHolder>{element}</ContentHolder>
+      <PageTransition>
+        <ContentHolder>{element}</ContentHolder>
+      </PageTransition>
     </Layout>
   </ErrorBoundary>
 );
