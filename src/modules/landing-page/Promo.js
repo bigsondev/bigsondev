@@ -150,7 +150,7 @@ const BigScreenPromo = () => (
             style={{ fontSize: 60, color: '#bae7ff', cursor: 'pointer' }}
             onClick={() =>
               document
-                .getElementById('skyrocket-your-career')
+                .getElementById('bigsondev-skyrocket-your-career')
                 .scrollIntoView({ behavior: 'smooth', block: 'center' })
             }
           />

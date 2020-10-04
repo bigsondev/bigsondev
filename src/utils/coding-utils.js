@@ -1,7 +1,7 @@
 import $ from 'cash-dom';
 
-const IFRAME_ID_CASH = '#BigsonDev__ResultIframe';
-const IFRAME_ID_DOM = 'BigsonDev__ResultIframe';
+const IFRAME_ID_CASH = '#bigsondev-result-iframe';
+const IFRAME_ID_DOM = 'bigsondev-result-iframe';
 
 export const getIframeContent = () => $(IFRAME_ID_CASH).contents();
 

@@ -37,7 +37,7 @@ const OfferCard = styled.div({
 
 export const SkyrocketYourCareer = () => {
   return (
-    <Holder id="skyrocket-your-career">
+    <Holder id="bigsondev-skyrocket-your-career">
       <Title level={2} align="center">
         Skyrocket your career
       </Title>

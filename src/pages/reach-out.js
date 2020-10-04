@@ -7,9 +7,7 @@ import { ReachOutForm } from '~modules/reach-out';
 const ReachOut = () => (
   <Layout>
     <SEO title="Reach Out | Let's Talk About Your Frontend Career & Ask About Anything" />
-    <Title level={2} id="it-never-hurts-to-ask">
-      It never hurts to ask
-    </Title>
+    <Title level={2}>It never hurts to ask</Title>
     <Divider />
     <Title level={3} align="center">
       And it never hurts to help.

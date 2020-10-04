@@ -368,7 +368,7 @@ export const CodeEditor = ({
             frameBorder="0"
             border="0"
             cellSpacing="0"
-            id="BigsonDev__ResultIframe"
+            id="bigsondev-result-iframe"
             srcDoc={iframeContent}
           />
         </TutorialTooltip>
