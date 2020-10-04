@@ -24,15 +24,15 @@ const OfferCard = styled.div({
   position: 'relative',
   padding: 24,
   paddingBottom: 0,
-  minHeight: 620,
+  minHeight: 650,
   borderRadius: 16,
   background: '#FFF',
   '@media (max-width: 480px)': {
-    minHeight: 560,
+    minHeight: 590,
   },
 
   '@media (min-width: 481px) and (max-width: 768px)': {
-    minHeight: 560,
+    minHeight: 590,
   },
 
   '&:hover': {
@@ -47,15 +47,18 @@ const ButtonHolder = styled.div({
 });
 
 const PostListHolder = styled(PostList)({
-  marginTop: '1.5rem',
   marginBottom: '1.5rem',
+  textAlign: 'center',
+  marginLeft: '-1.5rem',
 
-  marginLeft: '2vw',
+  '& .ant-list-item-meta-avatar': {
+    display: 'none',
+  },
 });
 
 const openMentoringEvent = () => {
   openPopupWidget({
-    url: 'https://calendly.com/bigsondev/mentoring',
+    url: 'https://calendly.com/bigsondev/frontend-mentoring',
     pageSettings: {
       hideEventTypeDetails: true,
       hideLandingPageDetails: true,
@@ -104,7 +107,7 @@ export const Offer = () => {
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
                 <Title level={4} align="center" transform="capitalize">
-                  Mentoring
+                  Frontend Mentoring
                 </Title>
               </Col>
               <Col span={24}>
@@ -126,6 +129,14 @@ export const Offer = () => {
                 </Box>
               </Col>
               <Col xs={22} md={16}>
+                <Title
+                  level={5}
+                  align="center"
+                  transform="none"
+                  style={{ marginTop: '1rem' }}
+                >
+                  What's Included
+                </Title>
                 <PostListHolder
                   data={[
                     <Text size="preNormal" type="primary">
@@ -141,7 +152,7 @@ export const Offer = () => {
                       Feedback with tips.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Homework.
+                      Homework & Support.
                     </Text>,
                   ]}
                 />
@@ -189,6 +200,14 @@ export const Offer = () => {
                 </Box>
               </Col>
               <Col xs={22} md={16}>
+                <Title
+                  level={5}
+                  align="center"
+                  transform="none"
+                  style={{ marginTop: '1rem' }}
+                >
+                  What's Included
+                </Title>
                 <PostListHolder
                   data={[
                     <Text size="preNormal" type="primary">
@@ -198,7 +217,7 @@ export const Offer = () => {
                       Code challenges.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Theory questions.
+                      Full-range questions.
                     </Text>,
                     <Text size="preNormal" type="primary">
                       Robust feedback.
@@ -252,6 +271,14 @@ export const Offer = () => {
                 </Box>
               </Col>
               <Col xs={22} md={16}>
+                <Title
+                  level={5}
+                  align="center"
+                  transform="none"
+                  style={{ marginTop: '1rem' }}
+                >
+                  What's Included
+                </Title>
                 <PostListHolder
                   data={[
                     <Text size="preNormal" type="primary">
@@ -261,7 +288,7 @@ export const Offer = () => {
                       Covers 100+ days.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Job in 3-6 months.
+                      Find Job in 3-6 months.
                     </Text>,
                     <Text size="preNormal" type="primary">
                       Best for newcomers.
