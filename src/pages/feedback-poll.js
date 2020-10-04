@@ -5,7 +5,7 @@ import { FeedbackPollForm } from '~modules/feedback-poll';
 
 const FeedbackPoll = () => (
   <Layout>
-    <SEO title="Feedback Poll | Thanks For Your Time, I Hope The Lesson Went Well" />
+    <SEO title="Feedback Poll | Thanks For Your Time" />
     <Title level={3} align="center">
       Feedback Poll
     </Title>

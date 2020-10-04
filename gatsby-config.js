@@ -85,7 +85,6 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-page-transitions',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-webpack-bundle-analyser-v2',

@@ -150,7 +150,7 @@ const Library = ({
 
   return (
     <Layout>
-      <SEO title="Library | Coding Challenges & Frontend Quiz For All Levels" />
+      <SEO title="Library | Practice With Coding Challenges & Try Frontend Quiz" />
       <Title level={2}>skyrocket your career</Title>
       <Paragraph type="secondary" size="preNormal">
         I've prepared some fun activities to help with your learning journey.
