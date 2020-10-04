@@ -50,9 +50,7 @@ const PostListHolder = styled(PostList)({
   marginTop: '1.5rem',
   marginBottom: '1.5rem',
 
-  '@media (min-width: 1300px) and (max-width: 1599px)': {
-    marginLeft: '7%',
-  },
+  marginLeft: '2vw',
 });
 
 const openMentoringEvent = () => {
@@ -101,7 +99,7 @@ export const Offer = () => {
         </Col>
       </Row>
       <Row justify="center" gutter={[24, 24]}>
-        <Col xs={22} sm={16} xl={8} xxl={6}>
+        <Col xs={22} sm={16} xl={8} xxl={7}>
           <OfferCard onClick={openMentoringEvent}>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
@@ -164,7 +162,7 @@ export const Offer = () => {
             </Row>
           </OfferCard>
         </Col>
-        <Col xs={22} sm={16} xl={8} xxl={6}>
+        <Col xs={22} sm={16} xl={8} xxl={7}>
           <OfferCard onClick={openMockInterviewEvent}>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
@@ -227,7 +225,7 @@ export const Offer = () => {
             </Row>
           </OfferCard>
         </Col>
-        <Col xs={22} sm={16} xl={8} xxl={6}>
+        <Col xs={22} sm={16} xl={8} xxl={7}>
           <OfferCard onClick={openDevelopmentPlanEvent}>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
