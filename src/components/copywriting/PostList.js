@@ -22,8 +22,9 @@ export const PostList = ({
   data,
   size = 'preNormal',
   type = 'primary',
+  ...props
 }) => (
-  <Paragraph>
+  <Paragraph {...props}>
     <List
       itemLayout={direction}
       split={false}

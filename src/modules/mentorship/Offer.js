@@ -24,15 +24,15 @@ const OfferCard = styled.div({
   position: 'relative',
   padding: 24,
   paddingBottom: 0,
-  minHeight: 580,
+  minHeight: 620,
   borderRadius: 16,
   background: '#FFF',
   '@media (max-width: 480px)': {
-    minHeight: 520,
+    minHeight: 560,
   },
 
   '@media (min-width: 481px) and (max-width: 768px)': {
-    minHeight: 450,
+    minHeight: 560,
   },
 
   '&:hover': {
@@ -44,6 +44,15 @@ const OfferCard = styled.div({
 const ButtonHolder = styled.div({
   position: 'absolute',
   bottom: 4,
+});
+
+const PostListHolder = styled(PostList)({
+  marginTop: '1.5rem',
+  marginBottom: '1.5rem',
+
+  '@media (min-width: 1300px) and (max-width: 1599px)': {
+    marginLeft: '7%',
+  },
 });
 
 const openMentoringEvent = () => {
@@ -92,7 +101,7 @@ export const Offer = () => {
         </Col>
       </Row>
       <Row justify="center" gutter={[24, 24]}>
-        <Col xs={22} sm={16} xl={7} xxl={6}>
+        <Col xs={22} sm={16} xl={8} xxl={6}>
           <OfferCard onClick={openMentoringEvent}>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
@@ -119,22 +128,33 @@ export const Offer = () => {
                 </Box>
               </Col>
               <Col xs={22} md={16}>
-                <PostList
+                <PostListHolder
                   data={[
                     <Text size="preNormal" type="primary">
-                      1 hour of knowledge pill.
+                      Practice & theory.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Live coding, practice & theory.
+                      Project(s) review.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Brainstorming together.
+                      Help with CV.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Additional free resources, feedback & tips to improve.
+                      Feedback with tips.
+                    </Text>,
+                    <Text size="preNormal" type="primary">
+                      Homework.
                     </Text>,
                   ]}
                 />
+              </Col>
+              <Col span={20}>
+                <Title level={5} align="center" transform="none">
+                  Estimated Call Time
+                </Title>
+                <Paragraph align="center" size="preNormal">
+                  60 minutes
+                </Paragraph>
               </Col>
               <ButtonHolder>
                 <PromoButton onClick={openMentoringEvent}>
@@ -144,7 +164,7 @@ export const Offer = () => {
             </Row>
           </OfferCard>
         </Col>
-        <Col xs={22} sm={16} xl={7} xxl={6}>
+        <Col xs={22} sm={16} xl={8} xxl={6}>
           <OfferCard onClick={openMockInterviewEvent}>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
@@ -171,19 +191,33 @@ export const Offer = () => {
                 </Box>
               </Col>
               <Col xs={22} md={16}>
-                <PostList
+                <PostListHolder
                   data={[
                     <Text size="preNormal" type="primary">
-                      HTML, CSS, JS adjusted to your skills & experience.
+                      Adjusted to your skill.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      React and other frameworks on demand.
+                      Code challenges.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Robust feedback with proposed answers & solutions.
+                      Theory questions.
+                    </Text>,
+                    <Text size="preNormal" type="primary">
+                      Robust feedback.
+                    </Text>,
+                    <Text size="preNormal" type="primary">
+                      Solutions & answers.
                     </Text>,
                   ]}
                 />
+              </Col>
+              <Col span={20}>
+                <Title level={5} align="center" transform="none">
+                  Estimated Call Time
+                </Title>
+                <Paragraph align="center" size="preNormal">
+                  90 minutes
+                </Paragraph>
               </Col>
               <ButtonHolder>
                 <PromoButton onClick={openMockInterviewEvent}>
@@ -193,7 +227,7 @@ export const Offer = () => {
             </Row>
           </OfferCard>
         </Col>
-        <Col xs={22} sm={16} xl={7} xxl={6}>
+        <Col xs={22} sm={16} xl={8} xxl={6}>
           <OfferCard onClick={openDevelopmentPlanEvent}>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
@@ -220,22 +254,33 @@ export const Offer = () => {
                 </Box>
               </Col>
               <Col xs={22} md={16}>
-                <PostList
+                <PostListHolder
                   data={[
                     <Text size="preNormal" type="primary">
                       Real-world projects.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Proposed plan covers 100+ days of coding.
+                      Covers 100+ days.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      30 minutes of conversation.
+                      Job in 3-6 months.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Best for newcomers in Frontend.
+                      Best for newcomers.
+                    </Text>,
+                    <Text size="preNormal" type="primary">
+                      Help & Support.
                     </Text>,
                   ]}
                 />
+              </Col>
+              <Col span={20}>
+                <Title level={5} align="center" transform="none">
+                  Estimated Call Time
+                </Title>
+                <Paragraph align="center" size="preNormal">
+                  30 minutes
+                </Paragraph>
               </Col>
               <ButtonHolder>
                 <PromoButton onClick={openDevelopmentPlanEvent}>
