@@ -1,8 +1,8 @@
-import React from 'react';
-import { Row, Col } from 'antd';
+import React, { useState, useEffect } from 'react';
+import { Row, Col, Space } from 'antd';
 import styled from 'styled-components';
 
-import { Title, Paragraph, Box, Icon } from '~components';
+import { Title, Paragraph, Box, Icon, DesktopOnly, Link } from '~components';
 
 const Holder = styled.div({
   padding: '7rem 1rem',
@@ -27,175 +27,238 @@ const OfferCard = styled.div({
   },
 });
 
+const SocialLinkHolder = styled(Link)({
+  color: '#40A9FF !important',
+  '& a': {
+    color: '#40A9FF !important',
+  },
+  '& a:hover': {
+    color: '#40A9FF !important',
+  },
+  '& a:active': {
+    color: '#40A9FF !important',
+  },
+  '& a:visited': {
+    color: '#40A9FF !important',
+  },
+});
+
+const SocialsHolder = styled.div({
+  position: 'fixed',
+  zIndex: 9999,
+  top: '40%',
+  left: '1.5rem',
+});
+
 export const WhoIAm = () => {
+  const [showSocials, setShowSocials] = useState(false);
+
+  const handleScroll = () => {
+    const { top } = document
+      .querySelector('#bigsondev-who-i-am')
+      .getBoundingClientRect();
+
+    if (top <= 0) {
+      setShowSocials(true);
+    } else {
+      setShowSocials(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll);
+
+    return () => document.removeEventListener('scroll', handleScroll);
+  });
+
   return (
-    <Holder>
-      <Title level={2} align="center">
-        Who I Am
-      </Title>
-      <Row justify="center">
-        <Col xs={20} sm={12}>
-          <Paragraph align="center" breakParagraph>
-            I was a League of Legends Coach for 5 years, inspired others, and
-            had fun while they climbed the ranks. At some point, I decided to
-            dive into IT for another 5 years. From a Java Tester to Lead
-            Frontend Developer mentoring folks around me and recruiting
-            candidates. And now, with my superpowers, let me move your Frontend
-            career to the next level.
-          </Paragraph>
-        </Col>
-      </Row>
-      <Row justify="center" gutter={[24, 24]}>
-        <Col xs={22} sm={16} xl={7} xxl={6}>
-          <OfferCard>
-            <Row justify="center" gutter={[0, 26]}>
-              <Col span={12} style={{ textAlign: 'center' }}>
-                <Icon type="developer" width={64} />
-              </Col>
-              <Col span={24}>
-                <Title level={5} align="center" transform="none">
-                  Frontend Developer
-                </Title>
-              </Col>
-              <Col span={20}>
-                <Paragraph align="center" size="preNormal">
-                  I love being up-to-date in Frontend. I value modern, clean,
-                  declarative code.
-                </Paragraph>
-              </Col>
-              <Col span={20}>
-                <Title level={5} align="center" transform="none">
-                  Experience
-                </Title>
-                <Paragraph align="center" size="preNormal">
-                  5 years
-                </Paragraph>
-              </Col>
-              <Col span={20}>
-                <Title level={5} align="center" transform="none">
-                  Skills
-                </Title>
-                <Paragraph align="center" size="preNormal">
-                  Fan of React ecosystem, TypeScript, CI/CD, Automation,
-                  Testing.
-                </Paragraph>
-                <Paragraph align="center" size="preNormal">
-                  2D Game Developer, coding games in Phaser.
-                </Paragraph>
-                <Paragraph align="center" size="preNormal">
-                  UX/UI Evangelist, Material Design, Ant Design user, Atomic
-                  Design follower.
-                </Paragraph>
-                <Paragraph align="center" size="preNormal">
-                  Leader of multiple teams, managing through Atlassian Kit.
-                </Paragraph>
-                <Paragraph align="center" size="preNormal">
-                  Builder and Creator of scaling projects with Micro Frontends &
-                  Monorepo.
-                </Paragraph>
-              </Col>
-            </Row>
-          </OfferCard>
-        </Col>
-        <Col xs={22} sm={16} xl={7} xxl={6}>
-          <OfferCard>
-            <Row justify="center" gutter={[0, 24]}>
-              <Col span={12} style={{ textAlign: 'center' }}>
-                <Icon type="recruiter" width={64} />
-              </Col>
-              <Col span={24}>
-                <Title level={5} align="center" transform="none">
-                  Recruiter
-                </Title>
-              </Col>
-              <Col span={20}>
-                <Paragraph align="center" size="preNormal">
-                  I do Mock Interviews, from theory to coding challenges.
-                </Paragraph>
-              </Col>
-              <Col span={20}>
-                <Title level={5} align="center" transform="none">
-                  Experience
-                </Title>
-                <Paragraph align="center" size="preNormal">
-                  2 years
-                </Paragraph>
-              </Col>
-              <Col span={20}>
-                <Title level={5} align="center" transform="none">
-                  Skills
-                </Title>
-                <Paragraph align="center" size="preNormal">
-                  Frontend Junior, Regular, Senior. All levels included.
-                </Paragraph>
-                <Paragraph align="center" size="preNormal">
-                  JS, HTML, CSS, React, and other Frameworks on demand, e.g.
-                  Angular.
-                </Paragraph>
-                <Paragraph align="center" size="preNormal">
-                  50+ interviews.
-                </Paragraph>
-                <Paragraph align="center" size="preNormal">
-                  Individual approach, robust feedback.
-                </Paragraph>
-                <Paragraph align="center" size="preNormal">
-                  Both technical and soft skills checks.
-                </Paragraph>
-              </Col>
-            </Row>
-          </OfferCard>
-        </Col>
-        <Col xs={22} sm={16} xl={7} xxl={6}>
-          <OfferCard>
-            <Row justify="center" gutter={[0, 28]}>
-              <Col span={12} style={{ textAlign: 'center' }}>
-                <Icon type="mentor" width={64} />
-              </Col>
-              <Col span={24}>
-                <Title level={5} align="center" transform="none">
-                  Mentor
-                </Title>
-              </Col>
-              <Col span={20}>
-                <Box margin="-0.5rem 0 0 0">
+    <>
+      <Holder id="bigsondev-who-i-am">
+        <Title level={2} align="center">
+          Who I Am
+        </Title>
+        <Row justify="center">
+          <Col xs={20} sm={12}>
+            <Paragraph align="center" breakParagraph>
+              I was a League of Legends Coach for 5 years, inspired others, and
+              had fun while they climbed the ranks. At some point, I decided to
+              dive into IT for another 5 years. From a Java Tester to Lead
+              Frontend Developer mentoring folks around me and recruiting
+              candidates. And now, with my superpowers, let me move your
+              Frontend career to the next level.
+            </Paragraph>
+          </Col>
+        </Row>
+        <Row justify="center" gutter={[24, 24]}>
+          <Col xs={22} sm={16} xl={7} xxl={6}>
+            <OfferCard>
+              <Row justify="center" gutter={[0, 26]}>
+                <Col span={12} style={{ textAlign: 'center' }}>
+                  <Icon type="developer" width={64} />
+                </Col>
+                <Col span={24}>
+                  <Title level={5} align="center" transform="none">
+                    Frontend Developer
+                  </Title>
+                </Col>
+                <Col span={20}>
                   <Paragraph align="center" size="preNormal">
-                    I create individual plans and have an empathic approach.
+                    I love being up-to-date in Frontend. I value modern, clean,
+                    declarative code.
                   </Paragraph>
-                </Box>
-              </Col>
-              <Col span={20}>
-                <Title level={5} align="center" transform="none">
-                  Experience
-                </Title>
-                <Paragraph align="center" size="preNormal">
-                  5 years
-                </Paragraph>
-              </Col>
-              <Col span={20}>
-                <Title level={5} align="center" transform="none">
-                  Skills
-                </Title>
-                <Paragraph align="center" size="preNormal">
-                  In the past, the League of Legends Challenger rank in Europe,
-                  in-depth game knowledge.
-                </Paragraph>
-                <Paragraph align="center" size="preNormal">
-                  Now, doing my best to be a Challenger in Frontend & Mentoring.
-                </Paragraph>
-                <Paragraph align="center" size="preNormal">
-                  300+ students.
-                </Paragraph>
-                <Paragraph align="center" size="preNormal">
-                  1000+ sessions.
-                </Paragraph>
-                <Paragraph align="center" size="preNormal">
-                  A lot of fun and new friends.
-                </Paragraph>
-              </Col>
-            </Row>
-          </OfferCard>
-        </Col>
-      </Row>
-    </Holder>
+                </Col>
+                <Col span={20}>
+                  <Title level={5} align="center" transform="none">
+                    Experience
+                  </Title>
+                  <Paragraph align="center" size="preNormal">
+                    5 years
+                  </Paragraph>
+                </Col>
+                <Col span={20}>
+                  <Title level={5} align="center" transform="none">
+                    Skills
+                  </Title>
+                  <Paragraph align="center" size="preNormal">
+                    Fan of React ecosystem, TypeScript, CI/CD, Automation,
+                    Testing.
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    2D Game Developer, coding games in Phaser.
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    UX/UI Evangelist, Material Design, Ant Design user, Atomic
+                    Design follower.
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    Leader of multiple teams, managing through Atlassian Kit.
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    Builder and Creator of scaling projects with Micro Frontends
+                    & Monorepo.
+                  </Paragraph>
+                </Col>
+              </Row>
+            </OfferCard>
+          </Col>
+          <Col xs={22} sm={16} xl={7} xxl={6}>
+            <OfferCard>
+              <Row justify="center" gutter={[0, 24]}>
+                <Col span={12} style={{ textAlign: 'center' }}>
+                  <Icon type="recruiter" width={64} />
+                </Col>
+                <Col span={24}>
+                  <Title level={5} align="center" transform="none">
+                    Recruiter
+                  </Title>
+                </Col>
+                <Col span={20}>
+                  <Paragraph align="center" size="preNormal">
+                    I do Mock Interviews, from theory to coding challenges.
+                  </Paragraph>
+                </Col>
+                <Col span={20}>
+                  <Title level={5} align="center" transform="none">
+                    Experience
+                  </Title>
+                  <Paragraph align="center" size="preNormal">
+                    2 years
+                  </Paragraph>
+                </Col>
+                <Col span={20}>
+                  <Title level={5} align="center" transform="none">
+                    Skills
+                  </Title>
+                  <Paragraph align="center" size="preNormal">
+                    Frontend Junior, Regular, Senior. All levels included.
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    JS, HTML, CSS, React, and other Frameworks on demand, e.g.
+                    Angular.
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    50+ interviews.
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    Individual approach, robust feedback.
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    Both technical and soft skills checks.
+                  </Paragraph>
+                </Col>
+              </Row>
+            </OfferCard>
+          </Col>
+          <Col xs={22} sm={16} xl={7} xxl={6}>
+            <OfferCard>
+              <Row justify="center" gutter={[0, 28]}>
+                <Col span={12} style={{ textAlign: 'center' }}>
+                  <Icon type="mentor" width={64} />
+                </Col>
+                <Col span={24}>
+                  <Title level={5} align="center" transform="none">
+                    Mentor
+                  </Title>
+                </Col>
+                <Col span={20}>
+                  <Box margin="-0.5rem 0 0 0">
+                    <Paragraph align="center" size="preNormal">
+                      I create individual plans and have an empathic approach.
+                    </Paragraph>
+                  </Box>
+                </Col>
+                <Col span={20}>
+                  <Title level={5} align="center" transform="none">
+                    Experience
+                  </Title>
+                  <Paragraph align="center" size="preNormal">
+                    5 years
+                  </Paragraph>
+                </Col>
+                <Col span={20}>
+                  <Title level={5} align="center" transform="none">
+                    Skills
+                  </Title>
+                  <Paragraph align="center" size="preNormal">
+                    In the past, the League of Legends Challenger rank in
+                    Europe, in-depth game knowledge.
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    Now, doing my best to be a Challenger in Frontend &
+                    Mentoring.
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    300+ students.
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    1000+ sessions.
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    A lot of fun and new friends.
+                  </Paragraph>
+                </Col>
+              </Row>
+            </OfferCard>
+          </Col>
+        </Row>
+      </Holder>
+      <DesktopOnly>
+        {showSocials && (
+          <SocialsHolder>
+            <Space direction="vertical" size="small">
+              <SocialLinkHolder href="https://twitter.com/BigsonDev">
+                <Icon type="twitter" width="2.5rem" />
+              </SocialLinkHolder>
+              <SocialLinkHolder href="https://www.linkedin.com/in/adrian-bigaj-282277130/">
+                <Icon type="linkedin" width="2.5rem" />
+              </SocialLinkHolder>
+              <SocialLinkHolder href="#">
+                <Icon type="facebook" width="2.5rem" />
+              </SocialLinkHolder>
+            </Space>
+          </SocialsHolder>
+        )}
+      </DesktopOnly>
+    </>
   );
 };
