@@ -140,7 +140,7 @@ export const Offer = () => {
                 <PostListHolder
                   data={[
                     <Text size="preNormal" type="primary">
-                      Practice & theory.
+                      Theory & practice.
                     </Text>,
                     <Text size="preNormal" type="primary">
                       Project(s) review.
@@ -152,7 +152,7 @@ export const Offer = () => {
                       Feedback with tips.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Homework & Support.
+                      Homework & support.
                     </Text>,
                   ]}
                 />
@@ -288,13 +288,13 @@ export const Offer = () => {
                       Covers 100+ days.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Find Job in 3-6 months.
+                      Find job in 3-6 months.
                     </Text>,
                     <Text size="preNormal" type="primary">
                       Best for newcomers.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Help & Support.
+                      Help & support.
                     </Text>,
                   ]}
                 />
