@@ -107,8 +107,8 @@ const MediumScreenPromo = () => (
 
 const BigScreenPromo = () => (
   <Box mt={1}>
-    <Row align="middle" gutter={32}>
-      <Col span={12}>
+    <Row gutter={32}>
+      <Col span={12} style={{ marginTop: '5rem' }}>
         <Title
           transform="none"
           marginBottom="0.1em"
