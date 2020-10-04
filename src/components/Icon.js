@@ -22,7 +22,7 @@ import {
 
 const Holder = styled(AntdIcon)(({ width = 32 }) => ({
   '& svg': {
-    width,
+    maxWidth: width,
     height: 'auto',
   },
 }));
