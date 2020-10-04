@@ -15,7 +15,7 @@ import {
 const Holder = styled.div(({ width = '100%' }) => ({
   position: 'relative',
   height: 0,
-  paddingTop: 'calc(360 / 360 * 100%)',
+  paddingTop: 'calc(985.4 / 1018.2 * 100%)',
   '& svg': {
     position: 'absolute',
     top: 0,
