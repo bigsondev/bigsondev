@@ -6,12 +6,14 @@
 import React from 'react';
 import { Layout } from 'antd';
 
-import {
-  Header,
-  GlobalStyles,
-  Content,
-  ErrorBoundary,
-} from '~components';
+import 'highlight.js/styles/a11y-light.css';
+
+// The following two imports is for the theme.
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/material.css';
+import 'codemirror/addon/hint/show-hint.css';
+
+import { Header, GlobalStyles, Content, ErrorBoundary } from '~components';
 
 export const wrapPageElement = ({
   element,

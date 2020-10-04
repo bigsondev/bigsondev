@@ -8,6 +8,7 @@
 import React from 'react';
 import { Row, Col, Space } from 'antd';
 import styled from 'styled-components';
+import { useStaticQuery, graphql, Link as GatsbyLink } from 'gatsby';
 
 import { AdrianImage } from '~assets';
 import {
@@ -15,10 +16,13 @@ import {
   shareOnTwitter,
   shareOnLinkedin,
   shareOnFacebook,
+  shuffle,
 } from '~utils';
 
 import {
+  Title,
   Paragraph,
+  PostList,
   Box,
   PromoBanner,
   Link,
@@ -52,12 +56,43 @@ const AuthorImage = styled.img({
   width: '8rem',
 });
 
+const GatsbyLinkHolder = styled(GatsbyLink)({
+  textDecoration: 'underline !important',
+  fontSize: '1.27rem',
+});
+
 const BlogLayout = ({
   children,
   pageContext: {
     frontmatter: { title },
   },
 }) => {
+  const {
+    allMdx: { edges },
+  } = useStaticQuery(graphql`
+    query NextArticlesQuery {
+      allMdx(filter: { fileAbsolutePath: { regex: "/mdx/blog/" } }) {
+        edges {
+          node {
+            frontmatter {
+              title
+              path
+            }
+          }
+        }
+      }
+    }
+  `);
+  const randomArticles = shuffle(edges);
+  const proposedNextArticles = randomArticles
+    .filter(({ node: { frontmatter } }) => frontmatter.title !== title)
+    .slice(0, 3)
+    .map(({ node: { frontmatter } }) => (
+      <GatsbyLinkHolder to={frontmatter.path} key={frontmatter.title}>
+        {frontmatter.title}
+      </GatsbyLinkHolder>
+    ));
+
   return (
     <>
       <SEO title={`Blog | ${title}`} />
@@ -132,6 +167,10 @@ const BlogLayout = ({
                 </Box>
               </Paragraph>
             </Box>
+          </Col>
+          <Col xs={22} xl={12}>
+            <Title level={3}>Proposed Next Articles</Title>
+            <PostList data={proposedNextArticles} />
           </Col>
           <Col xs={22} xl={20} xxl={16}>
             <SlackBanner />
