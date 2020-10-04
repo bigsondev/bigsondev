@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { Row, Col, Space } from 'antd';
+import { Row, Col, Space, Divider } from 'antd';
 import styled from 'styled-components';
 import { useStaticQuery, graphql, Link as GatsbyLink } from 'gatsby';
 
@@ -169,6 +169,7 @@ const BlogLayout = ({
             </Box>
           </Col>
           <Col xs={22} xl={12}>
+            <Divider />
             <Title level={3}>Proposed Next Articles</Title>
             <PostList data={proposedNextArticles} />
           </Col>
