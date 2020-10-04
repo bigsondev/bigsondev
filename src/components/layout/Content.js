@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Layout } from 'antd';
-import Fade from 'react-reveal/Fade';
 
 import { GlobalSpinner } from './GlobalSpinner';
 
@@ -28,11 +27,9 @@ export const Content = ({ children }) => {
   return (
     <>
       {showSpinner && <GlobalSpinner />}
-      <Fade duration={300}>
-        <ContentHolder onContentShow={handleContentShow}>
-          {children}
-        </ContentHolder>
-      </Fade>
+      <ContentHolder onContentShow={handleContentShow}>
+        {children}
+      </ContentHolder>
     </>
   );
 };
