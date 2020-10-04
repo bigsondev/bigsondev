@@ -20,6 +20,7 @@ const Holder = styled.div(({ width = '100%' }) => ({
     position: 'absolute',
     top: 0,
     left: 0,
+    width,
     maxWidth: width,
     height: 'auto',
   },

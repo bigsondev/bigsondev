@@ -13,6 +13,7 @@ import {
 
 const Holder = styled.div(({ width = '100%' }) => ({
   '& svg': {
+    width,
     maxWidth: width,
     height: 'auto',
   },
