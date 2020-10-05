@@ -11,7 +11,10 @@ import {
   PostList,
   Link,
 } from '~components';
-import { TechnicalInterviewTips } from '~assets';
+import {
+  TechnicalInterviewTips,
+  QaForYourNextFrontendInterview,
+} from '~assets';
 
 const NewsletterThankYou = () => (
   <Layout>
@@ -37,7 +40,7 @@ const NewsletterThankYou = () => (
       >
         <PostList
           data={[
-            <Link href={TechnicalInterviewTips}>
+            <Link href={QaForYourNextFrontendInterview}>
               30 Q&A For Your Next Frontend Interview
             </Link>,
             <Link href={TechnicalInterviewTips}>
