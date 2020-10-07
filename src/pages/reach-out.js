@@ -17,7 +17,9 @@ const ReachOut = () => (
         Ask about anything and sincere thank you for taking the time.
       </Paragraph>
     </Box>
-    <ReachOutForm />
+    <Box padding="0 0 5rem 0">
+      <ReachOutForm />
+    </Box>
   </Layout>
 );
 

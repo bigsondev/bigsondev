@@ -25,7 +25,9 @@ export const Newsletter = () => {
           xl={{ span: 8, offset: 2 }}
         >
           <Box margin="0.9rem 0 0 0">
-            <Title level={4}>the guide to beat frontend interview</Title>
+            <Title level={4} id="bigsondev-newsletter-landing">
+              the guide to beat frontend interview
+            </Title>
           </Box>
           <Paragraph size="preNormal">
             I've been recruiting Frontend candidates for almost 2 years. This

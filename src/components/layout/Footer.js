@@ -88,6 +88,7 @@ export const Footer = () => (
               <Paragraph strong marginBottom="0">
                 Menu
               </Paragraph>
+              <FooterLinkHolder to="/start-here/">Start Here</FooterLinkHolder>
               <FooterLinkHolder to="/blog/">Blog</FooterLinkHolder>
               <FooterLinkHolder to="/library/">Library</FooterLinkHolder>
               <FooterLinkHolder to="/mentorship/">Mentorship</FooterLinkHolder>
@@ -106,9 +107,16 @@ export const Footer = () => (
                   <Icon type="linkedin" width="3.125rem" />
                 </IconHolder>
               </Link>
-              <IconHolder>
-                <Icon type="facebook" width="3.125rem" />
-              </IconHolder>
+              <Link href="https://www.facebook.com/BigsonDev-109789784229011">
+                <IconHolder>
+                  <Icon type="facebook" width="3.125rem" />
+                </IconHolder>
+              </Link>
+              <Link href="https://www.instagram.com/bigsondev/">
+                <IconHolder>
+                  <Icon type="instagram" width="3.125rem" />
+                </IconHolder>
+              </Link>
               <Link href="https://www.behance.net/milenaulman">
                 <IconHolder>
                   <Icon type="behance" width="3.125rem" />

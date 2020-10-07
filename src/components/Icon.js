@@ -18,6 +18,7 @@ import {
   QuoteIcon,
   BehanceIcon,
   DribbleIcon,
+  InstagramIcon,
 } from '~svg';
 
 const Holder = styled(AntdIcon)(({ width = 32 }) => ({
@@ -44,6 +45,7 @@ const ICON_MAPPER = {
   quote: QuoteIcon,
   behance: BehanceIcon,
   dribble: DribbleIcon,
+  instagram: InstagramIcon,
 };
 
 export const Icon = ({ type, ...props }) => {

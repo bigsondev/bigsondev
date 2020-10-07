@@ -93,22 +93,27 @@ const RightMenu = ({
     </SmallOnly>
     <ExceptSmall>
       <MenuHolder theme="dark" mode="horizontal">
-        <MenuItem key="1" isSelected={pathname.includes('blog')}>
+        <MenuItem key="1" isSelected={pathname.includes('start-here')}>
+          <Link to="/start-here/">
+            <Text size="preNormal">Start Here</Text>
+          </Link>
+        </MenuItem>
+        <MenuItem key="2" isSelected={pathname.includes('blog')}>
           <Link to="/blog/">
             <Text size="preNormal">Blog</Text>
           </Link>
         </MenuItem>
-        <MenuItem key="2" isSelected={pathname.includes('library')}>
+        <MenuItem key="3" isSelected={pathname.includes('library')}>
           <Link to="/library/">
             <Text size="preNormal">Library</Text>
           </Link>
         </MenuItem>
-        <MenuItem key="3" isSelected={pathname.includes('mentorship')}>
+        <MenuItem key="4" isSelected={pathname.includes('mentorship')}>
           <Link to="/mentorship/">
             <Text size="preNormal">Mentorship</Text>
           </Link>
         </MenuItem>
-        <MenuItem key="4" isSelected={pathname.includes('reach-out')}>
+        <MenuItem key="5" isSelected={pathname.includes('reach-out')}>
           <Link to="/reach-out/">
             <Text size="preNormal">Reach Out</Text>
           </Link>
@@ -157,6 +162,16 @@ export const Header = ({ pathname }) => {
                 <MenuHolder theme="dark" mode="inline">
                   <MenuItem
                     key="1"
+                    isSelected={pathname.includes('start-here')}
+                    onClick={handleMobileMenuCloseClick}
+                    isMobile
+                  >
+                    <Link to="/start-here/">
+                      <Text>Start Here</Text>
+                    </Link>
+                  </MenuItem>
+                  <MenuItem
+                    key="2"
                     isSelected={pathname.includes('blog')}
                     onClick={handleMobileMenuCloseClick}
                     isMobile
@@ -166,7 +181,7 @@ export const Header = ({ pathname }) => {
                     </Link>
                   </MenuItem>
                   <MenuItem
-                    key="2"
+                    key="3"
                     isSelected={pathname.includes('library')}
                     onClick={handleMobileMenuCloseClick}
                     isMobile
@@ -176,7 +191,7 @@ export const Header = ({ pathname }) => {
                     </Link>
                   </MenuItem>
                   <MenuItem
-                    key="3"
+                    key="4"
                     isSelected={pathname.includes('mentorship')}
                     onClick={handleMobileMenuCloseClick}
                     isMobile
@@ -186,7 +201,7 @@ export const Header = ({ pathname }) => {
                     </Link>
                   </MenuItem>
                   <MenuItem
-                    key="4"
+                    key="5"
                     isSelected={pathname.includes('reach-out')}
                     onClick={handleMobileMenuCloseClick}
                     isMobile

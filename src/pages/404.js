@@ -2,7 +2,15 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { Link } from 'gatsby';
 
-import { Layout, SEO, Title, Paragraph, PostList, Text } from '~components';
+import {
+  Layout,
+  SEO,
+  Title,
+  Paragraph,
+  PostList,
+  Text,
+  Box,
+} from '~components';
 
 const NotFoundPage = () => (
   <Layout>
@@ -21,22 +29,24 @@ const NotFoundPage = () => (
         <Title level={4}>OR</Title>
       </Col>
       <Col xs={20} sm={16}>
-        <PostList
-          data={[
-            <Text size="preNormal" type="primary">
-              Read an article on the <Link to="/blog/">Blog</Link>.
-            </Text>,
-            <Text size="preNormal" type="primary">
-              Do coding challenge in the <Link to="/library/">Library</Link>.
-            </Text>,
-            <Text size="preNormal" type="primary">
-              Grab some <Link to="/mentorship/">Mentorship</Link> from me.
-            </Text>,
-            <Text size="preNormal" type="primary">
-              <Link to="/reach-out/">Reach Out</Link> to me.
-            </Text>,
-          ]}
-        />
+        <Box margin="0 0 7rem 0">
+          <PostList
+            data={[
+              <Text size="preNormal" type="primary">
+                Read an article on the <Link to="/blog/">Blog</Link>.
+              </Text>,
+              <Text size="preNormal" type="primary">
+                Do coding challenge in the <Link to="/library/">Library</Link>.
+              </Text>,
+              <Text size="preNormal" type="primary">
+                Grab some <Link to="/mentorship/">Mentorship</Link> from me.
+              </Text>,
+              <Text size="preNormal" type="primary">
+                <Link to="/reach-out/">Reach Out</Link> to me.
+              </Text>,
+            ]}
+          />
+        </Box>
       </Col>
     </Row>
   </Layout>

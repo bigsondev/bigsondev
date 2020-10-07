@@ -208,7 +208,7 @@ const Library = ({
           </Col>
         ))}
       </Row>
-      <Box mt={10} mb={10}>
+      <Box margin="5rem 0 10rem 0">
         <PromoBanner
           color="promotion"
           title="Feeling a bit lost?"
