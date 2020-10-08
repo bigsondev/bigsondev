@@ -51,7 +51,7 @@ export const SkyrocketYourCareer = () => {
       </Row>
       <Row justify="center" gutter={[24, 24]}>
         <Col xs={22} sm={16} xl={7} xxl={6}>
-          <Link to="/mentorship/">
+          <Link to="/mentorship/#bigsondev-offer">
             <OfferCard>
               <Row justify="center" gutter={[0, 26]}>
                 <Col span={12}>
@@ -75,7 +75,7 @@ export const SkyrocketYourCareer = () => {
           </Link>
         </Col>
         <Col xs={22} sm={16} xl={7} xxl={6}>
-          <Link to="/mentorship/">
+          <Link to="/mentorship/#bigsondev-offer">
             <OfferCard>
               <Row justify="center" gutter={[0, 24]}>
                 <Col span={10}>
@@ -99,7 +99,7 @@ export const SkyrocketYourCareer = () => {
           </Link>
         </Col>
         <Col xs={22} sm={16} xl={7} xxl={6}>
-          <Link to="/mentorship/">
+          <Link to="/mentorship/#bigsondev-offer">
             <OfferCard>
               <Row justify="center" gutter={[0, 28]}>
                 <Col span={11}>

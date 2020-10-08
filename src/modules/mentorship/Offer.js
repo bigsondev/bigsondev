@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Space } from 'antd';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { openPopupWidget } from 'react-calendly';
 
@@ -10,7 +11,6 @@ import {
   PostList,
   PromoButton,
   Box,
-  Link,
 } from '~components';
 
 const Holder = styled.div({
@@ -90,8 +90,8 @@ const openDevelopmentPlanEvent = () => {
 export const Offer = () => {
   return (
     <Holder>
-      <Title level={2} align="center">
-        Sounds familiar?
+      <Title level={2} align="center" id="bigsondev-offer">
+        Learning Frontend is tough
       </Title>
       <Row justify="center">
         <Col xs={20} sm={12}>
@@ -101,15 +101,8 @@ export const Offer = () => {
             But, worry no more, I'm here to help you.
           </Paragraph>
           <Paragraph align="center" strong breakParagraph>
-            Start from{' '}
-            <Link
-              onClick={() => {
-                window.location.href = '/start-here/#bigsondev-faq';
-              }}
-            >
-              FAQ
-            </Link>{' '}
-            to lighten up the below services.
+            Start from <Link to="/start-here/#bigsondev-faq">FAQ</Link> to
+            lighten up the below services.
           </Paragraph>
         </Col>
       </Row>

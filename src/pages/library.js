@@ -214,7 +214,7 @@ const Library = ({
           title="Feeling a bit lost?"
           desc="I'll be more than happy to help you learn Frontend the right way."
           content={
-            <Link to="/mentorship">
+            <Link to="/mentorship/#bigsondev-offer">
               <PromoBannerButton color="promotion">
                 I WANT MENTORSHIP
               </PromoBannerButton>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import { DownCircleFilled } from '@ant-design/icons';
 import { Link } from 'gatsby';
+import { DownCircleFilled } from '@ant-design/icons';
 
 import {
   Title,
@@ -52,7 +52,7 @@ const MobileScreenPromo = () => (
       <Illustration type="promo" />
     </Col>
     <Box mt={5} width="100%" display="flex" justify="center">
-      <Link to="/mentorship/">
+      <Link to="/mentorship/#bigsondev-offer">
         <PromoButton>I want to improve</PromoButton>
       </Link>
     </Box>
@@ -98,7 +98,7 @@ const MediumScreenPromo = () => (
       <Illustration type="promo" />
     </Col>
     <Box mt={5} width="100%" display="flex" justify="center">
-      <Link to="/mentorship/">
+      <Link to="/mentorship/#bigsondev-offer">
         <PromoButton>I want to improve</PromoButton>
       </Link>
     </Box>
@@ -137,7 +137,7 @@ const BigScreenPromo = () => (
           <br />
           And your friend. I love sharing my knowledge with others.
         </Paragraph>
-        <Link to="/mentorship/">
+        <Link to="/mentorship/#bigsondev-offer">
           <PromoButton>I want to improve</PromoButton>
         </Link>
       </Col>
