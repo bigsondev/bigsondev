@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Collapse } from 'antd';
-import { Link } from 'gatsby';
+import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
 
 import {
@@ -13,9 +13,10 @@ import {
   Text,
   SecondaryButton,
   Box,
+  Link,
 } from '~components';
 
-const LinkHolder = styled(Link)({
+const GatsbyLinkHolder = styled(GatsbyLink)({
   textDecoration: 'underline !important',
 });
 
@@ -64,9 +65,11 @@ const cheatSheetData = [
   </Text>,
   <Text size="preNormal">
     If you decide on my{' '}
-    <LinkHolder to="/mentorship/#bigsondev-offer">mentorship</LinkHolder>, I'm
-    not just doing it, I will help & support you during your journey. We can
-    stay in touch on Slack, through email, social, or just anywhere.
+    <GatsbyLinkHolder to="/mentorship/#bigsondev-offer">
+      mentorship
+    </GatsbyLinkHolder>
+    , I'm not just doing it, I will help & support you during your journey. We
+    can stay in touch on Slack, through email, social, or just anywhere.
   </Text>,
   <Text size="preNormal">
     I've been a leader of multiple teams, working for many different companies.
@@ -79,14 +82,15 @@ const cheatSheetData = [
   </Text>,
   <Text size="preNormal">
     If mentorship feels a bit intimidating, start by subscribing to a{' '}
-    <LinkHolder size="preNormal" to="/#bigsondev-newsletter-landing">
+    <GatsbyLinkHolder size="preNormal" to="/#bigsondev-newsletter-landing">
       newsletter
-    </LinkHolder>
+    </GatsbyLinkHolder>
     . You will get 2 free PDFs (19 pages) about Frontend Technical Interviewing.
-    Read a <LinkHolder to="/blog/">blog</LinkHolder>, do some coding challenges
-    in the <LinkHolder to="/library/">library</LinkHolder>, or just{' '}
-    <LinkHolder to="/reach-out">reach out</LinkHolder> to me for a free
-    conversation.
+    Read a <GatsbyLinkHolder to="/blog/">blog</GatsbyLinkHolder>, do some coding
+    challenges in the{' '}
+    <GatsbyLinkHolder to="/library/">library</GatsbyLinkHolder>, or just{' '}
+    <GatsbyLinkHolder to="/reach-out">reach out</GatsbyLinkHolder> to me for a
+    free conversation.
   </Text>,
 ];
 
@@ -175,8 +179,7 @@ const StartHere = () => {
                 <Row justify="center">
                   <Col xs={22} lg={16} xxl={14}>
                     <Text>
-                      We'll meet on{' '}
-                      <LinkHolder href="https://zoom.us/">Zoom</LinkHolder>.{' '}
+                      We'll meet on <Link href="https://zoom.us/">Zoom</Link>.{' '}
                       <Text strong>
                         Best if you prepare a stable internet connection and
                         check your microphone upfront
