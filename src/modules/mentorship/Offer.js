@@ -61,7 +61,6 @@ const openMentoringEvent = () => {
   openPopupWidget({
     url: 'https://calendly.com/bigsondev/frontend-mentoring',
     pageSettings: {
-      hideEventTypeDetails: true,
       hideLandingPageDetails: true,
     },
   });
@@ -71,7 +70,6 @@ const openMockInterviewEvent = () => {
   openPopupWidget({
     url: 'https://calendly.com/bigsondev/mock-interview',
     pageSettings: {
-      hideEventTypeDetails: true,
       hideLandingPageDetails: true,
     },
   });
@@ -81,7 +79,6 @@ const openDevelopmentPlanEvent = () => {
   openPopupWidget({
     url: 'https://calendly.com/bigsondev/development-plan',
     pageSettings: {
-      hideEventTypeDetails: true,
       hideLandingPageDetails: true,
     },
   });
