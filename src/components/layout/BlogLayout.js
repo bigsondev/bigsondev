@@ -75,6 +75,7 @@ const BlogLayout = ({
         edges {
           node {
             frontmatter {
+              series
               title
               path
             }
@@ -85,7 +86,10 @@ const BlogLayout = ({
   `);
   const randomArticles = shuffle(edges);
   const proposedNextArticles = randomArticles
-    .filter(({ node: { frontmatter } }) => frontmatter.title !== title)
+    .filter(
+      ({ node: { frontmatter } }) =>
+        frontmatter.title !== title && !frontmatter.series
+    )
     .slice(0, 3)
     .map(({ node: { frontmatter } }) => (
       <GatsbyLinkHolder to={frontmatter.path} key={frontmatter.title}>
@@ -117,9 +121,9 @@ const BlogLayout = ({
                   style={{ width: '50%' }}
                 >
                   Frontend Developer, Recruiter & Mentor. With 12 years of
-                  experience in all these areas, my goal is to share knowledge
-                  effectively and prepare you for the Frontend world in the best
-                  possible way.
+                  combined experience in all these areas, my goal is to share
+                  knowledge effectively and prepare you for the Frontend world
+                  in the best possible way.
                 </Paragraph>
               </Box>
             </XlOnly>
@@ -134,9 +138,9 @@ const BlogLayout = ({
                 <Box margin="0 0 0 2rem">
                   <Paragraph size="small" fontStyle="italic">
                     Frontend Developer, Recruiter & Mentor. With 12 years of
-                    experience in all these areas, my goal is to share knowledge
-                    effectively and prepare you for the Frontend world in the
-                    best possible way.
+                    combined experience in all these areas, my goal is to share
+                    knowledge effectively and prepare you for the Frontend world
+                    in the best possible way.
                   </Paragraph>
                 </Box>
               </Box>

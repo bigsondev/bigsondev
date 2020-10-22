@@ -24,7 +24,7 @@ const Holder = styled.footer({
 });
 
 const BottomHolder = styled.footer({
-  padding: '1rem 0',
+  padding: '0.5rem 0',
   position: 'relative',
   background: '#FAFAFA',
 });
@@ -42,7 +42,7 @@ const FooterLinkHolder = styled(GatsbyLink)({
 const HiddenLinkHolder = styled(GatsbyLink)({
   color: 'rgba(0, 0, 0, 0.45)',
   fontWeight: 200,
-  fontSize: '0.9375rem',
+  fontSize: '0.875rem',
 
   '&:hover': {
     color: 'rgba(0, 0, 0, 0.45)',
@@ -63,6 +63,13 @@ const IconHolder = styled(Link)({
   '& a:visited': {
     color: '#40A9FF !important',
   },
+});
+
+const TermsLinksCol = styled(Col)({
+  '@media (max-width: 576px)': {
+    textAlign: 'left',
+  },
+  textAlign: 'right',
 });
 
 export const Footer = () => (
@@ -132,14 +139,26 @@ export const Footer = () => (
         </Row>
         <Divider />
         <BottomHolder>
-          <Box display="flex" justify="space-between">
-            <Paragraph size="micro" type="secondary" marginBottom="0">
-              © 2020 BigsonDev
-            </Paragraph>
-            <HiddenLinkHolder to="/privacy-policy/">
-              Privacy Policy
-            </HiddenLinkHolder>
-          </Box>
+          <Row justify="space-between">
+            <Col xs={24} sm={8}>
+              <Paragraph size="micro" type="secondary" marginBottom="0">
+                © 2020 BigsonDev
+              </Paragraph>
+            </Col>
+            <TermsLinksCol xs={24} sm={16}>
+              <Space size="large">
+                <HiddenLinkHolder to="/terms-of-service/">
+                  Terms of Service
+                </HiddenLinkHolder>
+                <HiddenLinkHolder to="/privacy-policy/">
+                  Privacy Policy
+                </HiddenLinkHolder>
+                <HiddenLinkHolder to="/cookies-policy/">
+                  Cookies Policy
+                </HiddenLinkHolder>
+              </Space>
+            </TermsLinksCol>
+          </Row>
         </BottomHolder>
       </Col>
     </Row>

@@ -1,0 +1,142 @@
+---
+title: Collaboration Between Developers And Designers - Part 1
+desc: Finding a common language is not a simple task. Developers think in a more abstract way, focusing on functionalities, trying to reuse components, avoid duplications in the first place. On the other side, designers treat things more visually, need to present them to clients, and argument value behind their designs. But, designers also have common properties, components, and sometimes, even patterns to avoid duplication and repeating themselves. Developers and designers have more similarities than they think. They just don’t speak the same language, hence the confusion and miscommunication happen from time to time.
+path: /blog/collaboration-between-developers-and-designers-part-1/
+hasCheatSheet: false
+hasTodoList: false
+series: true
+readTime: 3
+tags: productivity, teamwork, agile
+date: 2020-10-18
+---
+
+import { Space, Alert } from 'antd';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  PostCard,
+  SyntaxHighlighter,
+  Link,
+  Box,
+} from '~components';
+
+<Post
+  title={props.pageContext.frontmatter.title}
+  desc={props.pageContext.frontmatter.desc}
+  date={props.pageContext.frontmatter.date}
+  readTime={props.pageContext.frontmatter.readTime}
+  showSubtitle
+>
+  <Title level={3}>Introduction</Title>
+  <Paragraph>
+    I worked in an{' '}
+    <Link href="https://en.wikipedia.org/wiki/Agile_software_development">
+      Agile
+    </Link>{' '}
+    environment, including{' '}
+    <Link href="https://en.wikipedia.org/wiki/Scrum_(software_development)">
+      Scrum
+    </Link>{' '}
+    and{' '}
+    <Link href="https://en.wikipedia.org/wiki/Kanban_(development)">
+      Kanban
+    </Link>
+    . Iterations, sprints, demos are all part of that. There is a lot of communication
+    and collaboration needed to succeed.
+  </Paragraph>
+  <Paragraph>
+    In this series I’ll try to share my experiences working as a Frontend
+    Developer and Tech Leader, describing collaboration with designers on
+    different aspects of the project, from product development, features
+    creation to building a design system.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    The formula will be a problem description and its possible solutions.
+  </Paragraph>
+  <Title level={3}>Problem - Lack Of Understanding</Title>
+  <Paragraph>
+    Not all designers are developers and not all developers are designers. It’s
+    great if developers can understand{' '}
+    <Link href="https://bradfrost.com/blog/post/atomic-web-design/">
+      Atomic Design
+    </Link>
+    , usability, accessibility, the importance of spacing between elements, typography,
+    color rules, but usually, the main focus is to implement functionality without
+    considering all of it, just following a design.
+  </Paragraph>
+  <Paragraph>
+    It can lead to more code duplication, lack of UI, UX patterns consistency,
+    as it all won’t be caught during the design review or implementation.{' '}
+    <Text strong>And the end result will be confusion for users</Text>.
+  </Paragraph>
+  <Paragraph>
+    On the other side, It’s fantastic if the designer understands the concepts
+    of{' '}
+    <Link href="https://material.io/design/layout/responsive-layout-grid.html#columns-gutters-and-margins">
+      Grid System
+    </Link>
+    , had some hands-on HTML, CSS, maybe even basics of JS, and is familiar with
+    browser limitations. Additionally, understands what are props in <Link href="https://en.reactjs.org/">
+      React
+    </Link> or other popular frameworks, knows a bit about components composition,
+    etc. Unfortunately, sometimes this knowledge is ignored and the final design
+    increases implementation time due to skipping some of the mentioned concepts.
+  </Paragraph>
+  <Paragraph strong lastParagraph>
+    We tend to focus on delivering tasks in a manner that is convenient for us
+    under the time pressure and without realizing, making the work more complex
+    for others. The reason for this is usually a lack of knowledge or not
+    understanding each other workflows.
+  </Paragraph>
+  <Title level={3}>Solutions</Title>
+  <Paragraph breakParagraph>
+    Happily, there are ways to solve this problem. Apart from daily standups,
+    sync. meetings, you can proactively try to aim for more in-depth activities
+    to improve the understanding and work on finding a common language.
+  </Paragraph>
+  <Title level={4}>Workshops</Title>
+  <Paragraph>
+    When starting a new project, getting to know each other, ask for a workshop
+    to go through the design and implementation processes. On-site with a client
+    or remotely, brainstorm about some MVP, internal application consisting of 2
+    to 3 views.
+  </Paragraph>
+  <Paragraph>
+    Create a design together with developers, ask common questions, pay
+    attention to the details, and try to explain all the important concepts to
+    them.
+  </Paragraph>
+  <Paragraph>
+    Then, let developers take a lead and look at how they build an application,
+    drawing on the board all of the components, relations between them, possible
+    ways to avoid duplication to final implementation.
+  </Paragraph>
+  <Paragraph breakParagraph>
+    This should give all of you a fair knowledge about the workflows, tighten up
+    the collaboration, and bonus points for integrating with a 🍕+ 🍺.
+  </Paragraph>
+  <Title level={4}>Processes</Title>
+  <Paragraph>
+    During the workshop time you can additionally brainstorm about the combined
+    flow between product (clients), designers, and developers for the future.{' '}
+  </Paragraph>
+  <Paragraph>
+    It could consist of a list of steps when creating a new feature, who, when,
+    and why should be involved. Furthermore, you can sketch some initial FAQ or
+    documentation. But, as always, prepare for the next increments, nothing is
+    final in IT. 😅
+  </Paragraph>
+  <Paragraph lastParagraph>
+    <Text strong>Note</Text>: This also works for existing projects when having
+    troubles in collaboration between developers and designers.
+  </Paragraph>
+  <Title level={3}>Closing Notes</Title>
+  <Paragraph>
+    And that's it for Part 1 - Collaboration Between Developers And Designers
+    series. The next part will be about <Text strong>Chaos In Planning</Text>{' '}
+    which should be released this Sunday. Stay tuned!
+  </Paragraph>
+</Post>

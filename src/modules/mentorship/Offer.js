@@ -100,6 +100,9 @@ export const Offer = () => {
             Frontend evolves at a lightning fast pace and it can be frightening.
             But, worry no more, I'm here to help you.
           </Paragraph>
+          <Paragraph align="center">
+            <Text strong>I mentor in these languages</Text>: English & Polish.
+          </Paragraph>
           <Paragraph align="center" strong breakParagraph>
             Start from <Link to="/start-here/#bigsondev-faq">FAQ</Link> to
             lighten up the below services.
