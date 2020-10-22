@@ -284,7 +284,7 @@ const StartHere = () => {
               </Row>
             </Box>
             <Row justify="center">
-              <Col xs={22} sm={20}>
+              <Col xs={22} sm={20} xxl={16}>
                 <Box mt={5} mb={10}>
                   <SlackBanner id="bigsondev-slack" />
                 </Box>
