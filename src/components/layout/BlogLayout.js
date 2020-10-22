@@ -181,7 +181,7 @@ const BlogLayout = ({
             <SlackBanner />
           </Col>
           <Col xs={22} xl={20} xxl={16}>
-            <Box margin="0 0 3rem 0">
+            <Box margin="0 0 8rem 0">
               <PromoBanner
                 title="spread the word"
                 desc="Do you like this article? Share it with someone!"
