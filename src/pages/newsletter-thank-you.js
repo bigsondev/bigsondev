@@ -10,6 +10,7 @@ import {
   Illustration,
   PostList,
   Link,
+  SlackBanner,
 } from '~components';
 import {
   TechnicalInterviewTips,
@@ -51,6 +52,9 @@ const NewsletterThankYou = () => (
           />
         </Col>
       </Row>
+    </Box>
+    <Box mt={10} mb={20}>
+      <SlackBanner />
     </Box>
   </Layout>
 );

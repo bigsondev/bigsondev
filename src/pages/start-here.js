@@ -14,6 +14,7 @@ import {
   SecondaryButton,
   Box,
   Link,
+  SlackBanner,
 } from '~components';
 
 const GatsbyLinkHolder = styled(GatsbyLink)({
@@ -69,7 +70,9 @@ const cheatSheetData = [
       mentorship
     </GatsbyLinkHolder>
     , I'm not just doing it, I will help & support you during your journey. We
-    can stay in touch on Slack, through email, social, or just anywhere.
+    can stay in touch on{' '}
+    <GatsbyLinkHolder to="/start-here/#bigsondev-slack">Slack</GatsbyLinkHolder>
+    , through email, social, or just anywhere.
   </Text>,
   <Text size="preNormal">
     I've been a leader of multiple teams, working for many different companies.
@@ -280,6 +283,13 @@ const StartHere = () => {
                 </Col>
               </Row>
             </Box>
+            <Row justify="center">
+              <Col xs={22} sm={20}>
+                <Box mt={5} mb={10}>
+                  <SlackBanner id="bigsondev-slack" />
+                </Box>
+              </Col>
+            </Row>
           </div>
         </Section>
       </Box>

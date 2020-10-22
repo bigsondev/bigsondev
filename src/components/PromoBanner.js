@@ -17,8 +17,8 @@ const Holder = styled.div(({ color = 'normal' }) => ({
   position: 'relative',
 }));
 
-export const PromoBanner = ({ title, desc, content, color }) => (
-  <Holder color={color}>
+export const PromoBanner = ({ title, desc, content, color, ...props }) => (
+  <Holder color={color} {...props}>
     {typeof title === 'string' ? (
       <Paragraph
         transform="uppercase"

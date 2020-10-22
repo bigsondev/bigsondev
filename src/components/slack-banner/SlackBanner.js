@@ -12,7 +12,7 @@ const DuckSlackIllustration = styled(Illustration)({
   bottom: '25%',
 });
 
-export const SlackBanner = () => (
+export const SlackBanner = ({ ...props }) => (
   <PromoBanner
     title={
       <>
@@ -35,5 +35,6 @@ export const SlackBanner = () => (
         </XlOnly>
       </>
     }
+    {...props}
   />
 );
