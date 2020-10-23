@@ -5,6 +5,7 @@ import DevelopmentPlan from './i-want-a-development-plan.svg';
 import Newsletter from './newsletter.svg';
 import NewsletterSmall from './newsletter-small.svg';
 import DuckSlack from './duck-slack.svg';
+import WaysToLearnEffectively from './ways-to-learn-effectively.svg';
 
 export {
   PromoIllustration,
@@ -14,4 +15,5 @@ export {
   Newsletter,
   NewsletterSmall,
   DuckSlack,
+  WaysToLearnEffectively,
 };

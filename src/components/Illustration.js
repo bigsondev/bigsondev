@@ -9,6 +9,7 @@ import {
   Newsletter,
   NewsletterSmall,
   DuckSlack,
+  WaysToLearnEffectively,
 } from '~svg';
 
 const Holder = styled.div(({ width = '100%' }) => ({
@@ -27,6 +28,7 @@ const ILLUSTRATION_MAPPER = {
   newsletter: <Newsletter />,
   newsletterSmall: <NewsletterSmall />,
   duckSlack: <DuckSlack />,
+  waysToLearnEffectively: <WaysToLearnEffectively />,
 };
 
 export const Illustration = ({ type, ...props }) => {

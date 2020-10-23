@@ -15,6 +15,7 @@ import {
   Icon,
   SlackBanner,
   CardButton,
+  Illustration,
 } from '~components';
 import { truncate } from '~utils';
 
@@ -34,6 +35,7 @@ export const query = graphql`
             hasTodoList
             readTime
             tags
+            illustration
             date(formatString: "MMM D, YYYY")
           }
         }
@@ -42,12 +44,12 @@ export const query = graphql`
   }
 `;
 
-export const ArticleCard = styled.div({
+export const ArticleCard = styled.div(({ illustration }) => ({
   transition: 'box-shadow 0.3s',
   cursor: 'pointer',
   position: 'relative',
   padding: 24,
-  minHeight: 400,
+  minHeight: illustration === 'none' ? 400 : 600,
   border: '1px solid #d6e4ff',
   borderRadius: 8,
 
@@ -55,7 +57,9 @@ export const ArticleCard = styled.div({
     boxShadow: `0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
   0 9px 28px 8px rgba(0, 0, 0, 0.05)`,
   },
-});
+}));
+
+const ArticleIllustration = styled(Illustration)({});
 
 const Article = ({
   title,
@@ -64,11 +68,17 @@ const Article = ({
   hasCheatSheet,
   hasTodoList,
   readTime,
+  illustration,
   tags,
   date,
 }) => (
   <Link to={path}>
-    <ArticleCard>
+    <ArticleCard illustration={illustration}>
+      {illustration !== 'none' && (
+        <Box mb={1}>
+          <ArticleIllustration type={illustration} />
+        </Box>
+      )}
       <Box mb={1}>
         <Row justify="space-between">
           <Col>
