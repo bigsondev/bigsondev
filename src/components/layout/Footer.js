@@ -153,9 +153,6 @@ export const Footer = () => (
                 <HiddenLinkHolder to="/privacy-policy/">
                   Privacy Policy
                 </HiddenLinkHolder>
-                <HiddenLinkHolder to="/cookies-policy/">
-                  Cookies Policy
-                </HiddenLinkHolder>
               </Space>
             </TermsLinksCol>
           </Row>

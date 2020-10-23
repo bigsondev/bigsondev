@@ -92,7 +92,7 @@ const cheatSheetData = [
     Read a <GatsbyLinkHolder to="/blog/">blog</GatsbyLinkHolder>, do some coding
     challenges in the{' '}
     <GatsbyLinkHolder to="/library/">library</GatsbyLinkHolder>, or just{' '}
-    <GatsbyLinkHolder to="/reach-out">reach out</GatsbyLinkHolder> to me for a
+    <GatsbyLinkHolder to="/reach-out/">reach out</GatsbyLinkHolder> to me for a
     free conversation.
   </Text>,
 ];
