@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Input as AntdInput, Result, Row, Col } from 'antd';
+import { Form, Input as AntdInput, Result, Row, Col, Checkbox } from 'antd';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 
@@ -73,6 +73,7 @@ export const SlackForm = () => {
             hidden
           >
             <input type="email" name="email" />
+            <input type="checkbox" name="consent" />
           </form>
           <Form
             name="slack-ant-form"
@@ -93,6 +94,26 @@ export const SlackForm = () => {
             <Row justify="center">
               <Col xs={22} sm={16} md={12}>
                 <Form.Item
+                  name="consent"
+                  valuePropName="checked"
+                  rules={[
+                    () => ({
+                      validator(rule, value) {
+                        return Boolean(value)
+                          ? Promise.resolve()
+                          : Promise.reject(
+                              `I'll need your consent to send the invite.`
+                            );
+                      },
+                    }),
+                  ]}
+                >
+                  <Checkbox style={{ color: '#FFF' }}>
+                    I would like to subscribe to the Slack Group held by
+                    BigsonDev to be the part of the BigsonDev Community.
+                  </Checkbox>
+                </Form.Item>
+                <Form.Item
                   name="email"
                   rules={[
                     {
@@ -109,7 +130,6 @@ export const SlackForm = () => {
                 </Form.Item>
               </Col>
             </Row>
-
             <Form.Item>
               <Box display="flex" justify="center">
                 <PromoBannerButton

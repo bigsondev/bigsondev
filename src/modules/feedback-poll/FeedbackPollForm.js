@@ -2,8 +2,15 @@ import React, { useState } from 'react';
 import { Form, Input as AntdInput, Result, Row, Col, Select } from 'antd';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import { Link as GatsbyLink } from 'gatsby';
 
-import { Box, failMessage, SecondaryButton, SlackBanner } from '~components';
+import {
+  Box,
+  failMessage,
+  SecondaryButton,
+  SlackBanner,
+  Paragraph,
+} from '~components';
 import { encode } from '~utils';
 
 import { FEEDBACK_POLL_FORM_NAME } from './constants';
@@ -143,11 +150,30 @@ export const FeedbackPollForm = () => {
                     rows={7}
                     placeholder="My feedback about BigsonDev is..."
                   />
+                  <Box mt={2}>
+                    <Paragraph
+                      size="micro"
+                      type="secondary"
+                      fontWeight="200"
+                      fontStyle="italic"
+                      align="center"
+                    >
+                      As you can see, you need to fill in some personal data in
+                      the form, which means BigsonDev is your personal data
+                      controller. To learn more about your rights due to
+                      personal data safety or get any additional information
+                      please visit{' '}
+                      <GatsbyLink to="/privacy-policy/">
+                        Privacy Policy
+                      </GatsbyLink>
+                      .
+                    </Paragraph>
+                  </Box>
                 </FormItem>
               </Col>
             </Row>
             <Form.Item>
-              <Box display="flex" justify="center" mt={-3}>
+              <Box display="flex" justify="center" mt={-10}>
                 <SecondaryButton
                   htmlType="submit"
                   loading={isSubmitting}

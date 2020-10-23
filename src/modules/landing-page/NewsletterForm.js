@@ -93,7 +93,11 @@ export const NewsletterForm = () => {
                 }),
               ]}
             >
-              <Checkbox>I'm ok with receiving emails from BigsonDev</Checkbox>
+              <Checkbox>
+                I would like to receive the newsletter from BigsonDev about
+                news, services and information related to the BigsonDev website
+                content.
+              </Checkbox>
             </Form.Item>
             <Paragraph
               size="micro"
