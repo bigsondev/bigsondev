@@ -144,30 +144,29 @@ export const ReachOutForm = () => {
                     rows={7}
                     placeholder="Hi, I want to ask about..."
                   />
-                  <Box mt={2}>
-                    <Paragraph
-                      size="micro"
-                      type="secondary"
-                      fontWeight="200"
-                      fontStyle="italic"
-                      align="center"
-                    >
-                      As you can see, you need to fill in some personal data in
-                      the form, which means BigsonDev is your personal data
-                      controller. To learn more about your rights due to
-                      personal data safety or get any additional information
-                      please visit{' '}
-                      <GatsbyLink to="/privacy-policy/">
-                        Privacy Policy
-                      </GatsbyLink>
-                      .
-                    </Paragraph>
-                  </Box>
                 </FormItem>
+                <Box mt={2}>
+                  <Paragraph
+                    size="micro"
+                    type="secondary"
+                    fontWeight="200"
+                    fontStyle="italic"
+                    align="center"
+                  >
+                    As you can see, you need to fill in some personal data in
+                    the form, which means BigsonDev is your personal data
+                    controller. To learn more about your rights due to personal
+                    data safety or get any additional information please visit{' '}
+                    <GatsbyLink to="/privacy-policy/">
+                      Privacy Policy
+                    </GatsbyLink>
+                    .
+                  </Paragraph>
+                </Box>
               </Col>
             </Row>
             <Form.Item>
-              <Box display="flex" justify="center" mt={-10}>
+              <Box display="flex" justify="center" mt={-8}>
                 <SecondaryButton
                   htmlType="submit"
                   loading={isSubmitting}

@@ -91,7 +91,7 @@ export const FeedbackPollForm = () => {
               <Input type="hidden" />
             </Form.Item>
             <Row justify="center" gutter={[24, 24]}>
-              <Col xs={22} md={14}>
+              <Col xs={22} md={16}>
                 <FormItem
                   label="Name"
                   name="name"
@@ -103,7 +103,7 @@ export const FeedbackPollForm = () => {
                   <Input placeholder="John Doe" />
                 </FormItem>
               </Col>
-              <Col xs={22} md={14}>
+              <Col xs={22} md={16}>
                 <FormItem
                   label="Service"
                   name="service"
@@ -126,7 +126,7 @@ export const FeedbackPollForm = () => {
                   </Select>
                 </FormItem>
               </Col>
-              <Col xs={22} md={14}>
+              <Col xs={22} md={16}>
                 <FormItem
                   label="Feedback"
                   name="feedback"
@@ -150,30 +150,29 @@ export const FeedbackPollForm = () => {
                     rows={7}
                     placeholder="My feedback about BigsonDev is..."
                   />
-                  <Box mt={2}>
-                    <Paragraph
-                      size="micro"
-                      type="secondary"
-                      fontWeight="200"
-                      fontStyle="italic"
-                      align="center"
-                    >
-                      As you can see, you need to fill in some personal data in
-                      the form, which means BigsonDev is your personal data
-                      controller. To learn more about your rights due to
-                      personal data safety or get any additional information
-                      please visit{' '}
-                      <GatsbyLink to="/privacy-policy/">
-                        Privacy Policy
-                      </GatsbyLink>
-                      .
-                    </Paragraph>
-                  </Box>
                 </FormItem>
+                <Box mt={2}>
+                  <Paragraph
+                    size="micro"
+                    type="secondary"
+                    fontWeight="200"
+                    fontStyle="italic"
+                    align="center"
+                  >
+                    As you can see, you need to fill in some personal data in
+                    the form, which means BigsonDev is your personal data
+                    controller. To learn more about your rights due to personal
+                    data safety or get any additional information please visit{' '}
+                    <GatsbyLink to="/privacy-policy/">
+                      Privacy Policy
+                    </GatsbyLink>
+                    .
+                  </Paragraph>
+                </Box>
               </Col>
             </Row>
             <Form.Item>
-              <Box display="flex" justify="center" mt={-10}>
+              <Box display="flex" justify="center" mt={-8}>
                 <SecondaryButton
                   htmlType="submit"
                   loading={isSubmitting}
