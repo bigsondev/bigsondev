@@ -1,10 +1,17 @@
 import React from 'react';
 import { Divider } from 'antd';
 
-import { Box, Illustration } from '..';
+import { Box, Illustration, Text } from '..';
 
 import { PostTitle } from './PostTitle';
 import { QuickSummary } from './QuickSummary';
+
+const PrevNext = ({ prev, next }) => (
+  <Box display="flex" justify="space-between" mb={5}>
+    <Text>{prev}</Text>
+    <Text>{next}</Text>
+  </Box>
+);
 
 export const Post = ({
   title,
@@ -13,6 +20,8 @@ export const Post = ({
   date,
   readTime,
   illustration,
+  prev,
+  next,
   children,
 }) => (
   <>
@@ -33,10 +42,12 @@ export const Post = ({
     )}
     {desc && (
       <Box mb={6}>
+        <PrevNext prev={prev} next={next} />
         <QuickSummary desc={desc} />
         <Divider />
       </Box>
     )}
     {children}
+    <PrevNext prev={prev} next={next} />
   </>
 );

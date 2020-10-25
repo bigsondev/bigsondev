@@ -11,6 +11,7 @@ tags: productivity, teamwork, agile
 date: 2020-10-18
 ---
 
+import { Link as GatsbyLink } from 'gatsby';
 import { Space, Alert } from 'antd';
 import {
   Title,
@@ -30,7 +31,14 @@ import {
   date={props.pageContext.frontmatter.date}
   readTime={props.pageContext.frontmatter.readTime}
   showSubtitle
+  next={
+    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-2/">
+      Next
+    </GatsbyLink>
+  }
 >
+
+
   <Title level={3}>Introduction</Title>
   <Paragraph>
     I worked in an{' '}
@@ -102,7 +110,10 @@ import {
   <Paragraph>
     When starting a new project, getting to know each other, ask for a workshop
     to go through the design and implementation processes. On-site with a client
-    or remotely, brainstorm about some MVP, internal application consisting of 2
+    or remotely, brainstorm about some{' '}
+    <Link href="https://en.wikipedia.org/wiki/Minimum_viable_product">
+      MVP
+    </Link>, internal application consisting of 2
     to 3 views.
   </Paragraph>
   <Paragraph>
@@ -140,4 +151,8 @@ import {
     series. The next part will be about <Text strong>Chaos In Planning</Text>{' '}
     which should be released this Sunday. Stay tuned!
   </Paragraph>
+  <Paragraph>
+   <Text strong>Update</Text>: New part is released, click "Next" link to read it.
+  </Paragraph>
 </Post>
+

@@ -178,13 +178,14 @@ const BlogLayout = ({
             <PostList data={proposedNextArticles} />
           </Col>
           <Col xs={22} xl={20} xxl={16}>
-            <SlackBanner />
+            <SlackBanner id="bigsondev-slack" />
           </Col>
           <Col xs={22} xl={20} xxl={16}>
             <Box margin="0 0 8rem 0">
               <PromoBanner
                 title="spread the word"
                 desc="Do you like this article? Share it with someone!"
+                id="bigsondev-spread-the-word"
                 content={
                   <Space size="small">
                     <IconHolder href={shareOnReddit()}>

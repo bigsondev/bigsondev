@@ -1,0 +1,173 @@
+---
+title: Collaboration Between Developers And Designers - Part 2
+desc: Communication is key when planning new features, projects, products. But who should be involved in a conversation with clients, should there be any review of designs, how to find a balance between designs and implementation? All of these concerns can lead to chaos, let’s learn how to avoid it during product creation.
+path: /blog/collaboration-between-developers-and-designers-part-2/
+hasCheatSheet: false
+hasTodoList: false
+series: true
+readTime: 4
+illustration: none
+tags: productivity, teamwork, agile
+date: 2020-10-25
+---
+
+import { Space, Alert } from 'antd';
+import { Link as GatsbyLink } from 'gatsby';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  PostCard,
+  SyntaxHighlighter,
+  Link,
+  Box,
+} from '~components';
+
+<Post
+  title={props.pageContext.frontmatter.title}
+  desc={props.pageContext.frontmatter.desc}
+  date={props.pageContext.frontmatter.date}
+  readTime={props.pageContext.frontmatter.readTime}
+  showSubtitle
+  prev={
+    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-1/">
+      Previous
+    </GatsbyLink>
+  }
+>
+  <Title level={3}>Problem - Chaos in planning</Title>
+  <Paragraph>
+    You can be at different stages in your project.{' '}
+    <Link href="https://en.wikipedia.org/wiki/Minimum_viable_product">
+      MVPs
+    </Link>{' '}
+    usually have tight deadlines and overloaded sprints as it’s all about
+    gaining traction and impressing clients with how quickly features can be
+    delivered. Later in the project, there could be more maintenance and the
+    atmosphere will stabilize. Commonly, there is more room for reflections by
+    then.
+  </Paragraph>
+  <Paragraph strong>But, chaos can happen at any time.</Paragraph>
+  <Paragraph>
+    Sometimes, when there is a lot of time pressure, the Product Owner might try
+    to do multitasking between designers and developers, forcing them to work at
+    the same time on the same feature. Ambitious developers can push designers
+    off and stay closer to the client. Designers will be confused and will
+    question themselves if their work has any value if it’s all about delivering
+    functionalities. This breaks the order of things and that’s when…
+  </Paragraph>
+  <Paragraph strong lastParagraph>
+    Chaos takes over.
+  </Paragraph>
+  <Title level={3}>Solutions</Title>
+  <Title level={4}>DESIGNERS - STAY CLOSE TO THE CLIENT</Title>
+  <Paragraph>
+    These folks are not only responsible for UI aesthetics, great UX, and making
+    sure the application is consistent, but they also know how people are using
+    websites, their behavior and possess some knowledge about the psychology
+    behind their decisions. I haven’t met a single developer in my career who
+    would elaborate on these topics, at least on daily basis, but they do 😀.
+  </Paragraph>
+  <Paragraph>
+    The above "stay close to the client” is all about early mockups, first
+    interactive flows and shaping the fundaments of a prototype application
+    based on the early client’s criteria,{' '}
+    <Text strong>this is not a final design by any means</Text>.
+  </Paragraph>
+  <Paragraph>
+    Developers are important, as they need to evaluate the designs against
+    technical limitations, potential pitfalls, edge cases and understand the
+    business logic behind.
+  </Paragraph>
+  <Paragraph>But that’s happening a bit later (at least it should).</Paragraph>
+  <Paragraph breakParagraph>
+    <Text strong>Note</Text>: Usually, an Engineering Architect should be
+    involved as well, just don’t invite all developers for these early
+    discussions with the client.
+  </Paragraph>
+  <Title level={4}>DEVELOPERS - PARTICIPATE IN EARLY DESIGN REVIEW</Title>
+  <Paragraph>
+    When the application prototype is created after endless hours of
+    conversation with clients and rapid change of requirements, designers can
+    finally rest…
+  </Paragraph>
+  <Paragraph>
+    Well, not really. That’s when the worst starts and they need to confront
+    mockups with developers 😱 . This phase is crucial, as I’ve had countless
+    moments when proactive action, comment on early mockup could save dozens of
+    time in later implementation, or just spot the gaps in edge cases, business
+    criteria.
+  </Paragraph>
+  <Paragraph>
+    We are just humans, it’s good to take a look at things from a different
+    perspective and have more people involved (at different stages) to shape up
+    the final product. IT is all about communication, filling the gaps in
+    expertise and co-operation between people.
+  </Paragraph>
+  <Paragraph breakParagraph>
+    <Text strong>Note</Text>: Under time pressure, the Product Owner, or other
+    personas might try to push developers to start implementation without asking
+    them for any review - this is a big no no, and someone needs to act at this
+    point to prevent loss of time and costs - forcing an early prototype can be
+    a huge mistake, the balance and at least minimum time for developers to
+    review an early design is crucial there. Also, allowing developers to
+    participate in design review will build their motivation.
+  </Paragraph>
+  <Title level={4}>DON’T DO BOTH AT THE SAME TIME</Title>
+  <Paragraph>
+    This one is my favorite. Developers are implementing a new feature based on
+    early prototypes and deploy it to a staging/QA/prod environment. The Product
+    Owner is super happy and shows it to the client. Designer comes in and
+    points out 10+ differences between implementation and the final design
+    (which was not available by the time developers coded the feature). Then,
+    the next increments start, improve this, improve that, but also deliver the
+    next features, and technical debt grows like crazy.
+  </Paragraph>
+  <Paragraph strong>
+    The above leads to a lot of confusion, panic, and chaos which is not easy to
+    fix.
+  </Paragraph>
+  <Paragraph>
+    When designers are adjusting prototype based on the review they received,
+    e.g. from Architect, Product Owner, or developers to shape final design,
+    developers should be working on different features. It’s a golden rule that
+    designers finish their work before developers do the implementation, but
+    it’s a perfect world scenario.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    When starting a new project, there is a lot of work needed to boilerplate
+    the application, setup CI/CD, and think about overall architecture - this
+    can be done without waiting for designers to finish the final design. On the
+    other hand, sometimes it’s impossible to wait as the deadline is way too
+    tight. This is where the Design System comes in handy and can unblock
+    developers to deliver features, and save a lot of work for Designers.
+  </Paragraph>
+  <Title level={3}>Closing Notes</Title>
+  <Paragraph>
+    Are you having a hard time communicating your design to developers?
+  </Paragraph>
+  <Paragraph>
+    Are you having a hard time explaining the technical limitations to
+    designers?
+  </Paragraph>
+  <Paragraph>
+    Join me on{' '}
+    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-2/#bigsondev-slack">
+      Slack
+    </GatsbyLink>{' '}
+    or post/share on some{' '}
+    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-2/#bigsondev-spread-the-word">
+      socials
+    </GatsbyLink>{' '}
+    , I’ll be happy to help and give some tips & tricks I learned during my
+    journey.
+  </Paragraph>
+  <Paragraph>
+    The next part will be about <Text strong>Lack of a Design System</Text> 🔥
+    which will be a complementary example to the „Don’t do both at the same
+    time” solution.
+  </Paragraph>
+  <Paragraph>Take care and stay healthy in these difficult times! ❤️</Paragraph>
+</Post>
