@@ -323,10 +323,18 @@ const PrivacyPolicy = () => (
             or via the <GatsbyLink to="/reach-out/">Reach Out</GatsbyLink> form.
           </Paragraph>
           <Title level={3}>Do I profile your data?</Title>
-          <Paragraph lastParagraph>
+          <Paragraph>
             From time to time I might use tools to track users’ behavior. I
             implement those solutions for marketing purposes and to improve the
             services.
+          </Paragraph>
+          <Paragraph lastParagraph>
+            Those tools are used to better understand your needs and to optimize
+            our website in terms of your experience related to using it, which
+            is our legitimate interest. The tools registers every visitor to the
+            website and allows me to record the traffic on the website, as well
+            as generate the so-called heat maps. Be informed, that tools I use
+            do not have access to information that allows to identify you.
           </Paragraph>
           <Title level={3}>How To Contact BigsonDev?</Title>
           <Paragraph>
