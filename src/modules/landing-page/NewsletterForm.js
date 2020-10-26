@@ -79,6 +79,21 @@ export const NewsletterForm = () => {
               <Input type="hidden" />
             </Form.Item>
             <Form.Item
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: `I'll need your email to send the newsletter.`,
+                },
+                {
+                  type: 'email',
+                  message: `Please provide a valid email address.`,
+                },
+              ]}
+            >
+              <Input placeholder="john.doe@example.com" />
+            </Form.Item>
+            <Form.Item
               name="consent"
               valuePropName="checked"
               rules={[
@@ -109,21 +124,6 @@ export const NewsletterForm = () => {
               coding challenges, and mentoring promotions. Only valuable
               knowledge, no spam included. You can unsubscribe at any time.
             </Paragraph>
-            <Form.Item
-              name="email"
-              rules={[
-                {
-                  required: true,
-                  message: `I'll need your email to send the newsletter.`,
-                },
-                {
-                  type: 'email',
-                  message: `Please provide a valid email address.`,
-                },
-              ]}
-            >
-              <Input placeholder="john.doe@example.com" />
-            </Form.Item>
             <Form.Item>
               <Box>
                 <PromoButton

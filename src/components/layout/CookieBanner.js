@@ -21,7 +21,7 @@ const Holder = styled.div({
   bottom: 0,
 
   '@media (max-width: 768px)': {
-    padding: '2rem 0.25rem 5.5rem 0.25rem',
+    padding: '2.25rem 0.25rem 5.5rem 0.25rem',
   },
 });
 
@@ -74,11 +74,12 @@ export const CookieBanner = ({ hasScrolled, onClick }) => {
     <AnimationHolder>
       <Holder>
         <ParagraphHolder size="micro">
-          I use cookies for improving your experience when using the site. I
-          hope it's ok for you.{' '}
+          I use cookies for improving your experience when using the site. If
+          you want to know more check{' '}
           <LinkHolder to="/privacy-policy/" size="micro">
             Privacy Policy
           </LinkHolder>
+          .
         </ParagraphHolder>
         <CookieButton
           onClick={() => {

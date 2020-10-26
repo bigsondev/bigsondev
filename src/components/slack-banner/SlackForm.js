@@ -94,6 +94,21 @@ export const SlackForm = () => {
             <Row justify="center">
               <Col xs={22} sm={16} md={12}>
                 <Form.Item
+                  name="email"
+                  rules={[
+                    {
+                      required: true,
+                      message: `I'll need your email to send the invite.`,
+                    },
+                    {
+                      type: 'email',
+                      message: `Please provide a valid email address.`,
+                    },
+                  ]}
+                >
+                  <Input placeholder="john.doe@example.com" />
+                </Form.Item>
+                <Form.Item
                   name="consent"
                   valuePropName="checked"
                   rules={[
@@ -112,21 +127,6 @@ export const SlackForm = () => {
                     I would like to subscribe to the Slack Group held by
                     BigsonDev to be the part of the BigsonDev Community.
                   </Checkbox>
-                </Form.Item>
-                <Form.Item
-                  name="email"
-                  rules={[
-                    {
-                      required: true,
-                      message: `I'll need your email to send the invite.`,
-                    },
-                    {
-                      type: 'email',
-                      message: `Please provide a valid email address.`,
-                    },
-                  ]}
-                >
-                  <Input placeholder="john.doe@example.com" />
                 </Form.Item>
               </Col>
             </Row>
