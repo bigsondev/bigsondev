@@ -104,14 +104,14 @@ export const Footer = () => (
           </Col>
           <Col>
             <Space size="small">
+              <Link href="https://github.com/bigsondev">
+                <IconHolder>
+                  <Icon type="github" width="3.125rem" />
+                </IconHolder>
+              </Link>
               <Link href="https://twitter.com/BigsonDev">
                 <IconHolder>
                   <Icon type="twitter" width="3.125rem" />
-                </IconHolder>
-              </Link>
-              <Link href="https://www.linkedin.com/in/adrian-bigaj-282277130/">
-                <IconHolder>
-                  <Icon type="linkedin" width="3.125rem" />
                 </IconHolder>
               </Link>
               <Link href="https://www.facebook.com/BigsonDev-109789784229011">
@@ -124,9 +124,9 @@ export const Footer = () => (
                   <Icon type="instagram" width="3.125rem" />
                 </IconHolder>
               </Link>
-              <Link href="https://www.behance.net/milenaulman">
+              <Link href="https://www.linkedin.com/in/adrian-bigaj-282277130/">
                 <IconHolder>
-                  <Icon type="behance" width="3.125rem" />
+                  <Icon type="linkedin" width="3.125rem" />
                 </IconHolder>
               </Link>
               <Link href="https://dribbble.com/milenadev">

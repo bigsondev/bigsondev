@@ -14,6 +14,7 @@ import QuoteIcon from './quote.svg';
 import BehanceIcon from './behance.svg';
 import DribbleIcon from './dribble.svg';
 import InstagramIcon from './instagram.svg';
+import GitHubIcon from './github.svg';
 
 export {
   HomeworkIcon,
@@ -32,4 +33,5 @@ export {
   BehanceIcon,
   DribbleIcon,
   InstagramIcon,
+  GitHubIcon,
 };

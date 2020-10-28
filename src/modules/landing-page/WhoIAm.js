@@ -246,17 +246,20 @@ export const WhoIAm = () => {
         {showSocials && (
           <SocialsHolder>
             <Space direction="vertical" size="small">
+              <SocialLinkHolder href="https://github.com/bigsondev">
+                <Icon type="github" width="2.5rem" />
+              </SocialLinkHolder>
               <SocialLinkHolder href="https://twitter.com/BigsonDev">
                 <Icon type="twitter" width="2.5rem" />
-              </SocialLinkHolder>
-              <SocialLinkHolder href="https://www.linkedin.com/in/adrian-bigaj-282277130/">
-                <Icon type="linkedin" width="2.5rem" />
               </SocialLinkHolder>
               <SocialLinkHolder href="https://www.facebook.com/BigsonDev-109789784229011">
                 <Icon type="facebook" width="2.5rem" />
               </SocialLinkHolder>
               <SocialLinkHolder href="https://www.instagram.com/bigsondev/">
                 <Icon type="instagram" width="2.5rem" />
+              </SocialLinkHolder>
+              <SocialLinkHolder href="https://www.linkedin.com/in/adrian-bigaj-282277130/">
+                <Icon type="linkedin" width="2.5rem" />
               </SocialLinkHolder>
             </Space>
           </SocialsHolder>
