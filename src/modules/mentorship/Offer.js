@@ -131,7 +131,7 @@ export const Offer = () => {
                       100$
                     </Text>
                     <Text align="center" size="h3" strong>
-                      70$
+                      50$
                     </Text>
                   </Space>
                 </Box>
@@ -202,7 +202,7 @@ export const Offer = () => {
                       150$
                     </Text>
                     <Text align="center" size="h3" strong>
-                      105$
+                      75$
                     </Text>
                   </Space>
                 </Box>
@@ -273,7 +273,7 @@ export const Offer = () => {
                       300$
                     </Text>
                     <Text align="center" size="h3" strong>
-                      210$
+                      150$
                     </Text>
                   </Space>
                 </Box>

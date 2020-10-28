@@ -39,7 +39,7 @@ export const PromoSticker = () => {
     <AlertHolder
       message={
         <ParagraphHolder size="micro" align="center">
-          -30% on all Mentorship Services for the first 10 mentees.{' '}
+          -50% on all Mentorship Services for the first 10 mentees.{' '}
           <LinkHolder
             to="/mentorship/#bigsondev-offer"
             onClick={() => {
