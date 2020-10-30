@@ -13,7 +13,7 @@ const Holder = styled.div({
     backgroundColor: '#ecd9c26e',
     padding: 24,
     borderRadius: 8,
-    marginTop: 8,
+    marginTop: 0,
   },
 });
 
