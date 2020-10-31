@@ -258,12 +258,11 @@ const StartHere = () => {
                         zero Frontend knowledge.
                       </Text>{' '}
                       Unique, the individual development plan for any skill
-                      level. Includes real-world projects, building things from
-                      the scratch, daily plan on how to practice code with the
-                      best resources, optimized for you. 100+ days covered.
-                      Additionally, you can always write to me through an email,
-                      slack, ask questions, get some feedback, support when you
-                      are stuck. I'll be happy to share my expertise with you.
+                      level. Includes a real-world project, building things from
+                      the scratch, optimized for you. Additionally, you can
+                      always write to me through an email, slack, ask questions,
+                      get some feedback, support when you are stuck. I'll be
+                      happy to share my expertise with you.
                     </Text>
                   </Col>
                 </Row>

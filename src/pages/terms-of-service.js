@@ -53,7 +53,7 @@ const TermsOfService = () => (
             data={[
               'Mentoring - 1 (one) hour tutoring in programming via Zoom meeting followed by e-mail feedback on Client’s knowledge, proposed development path and possible progress',
               'Mock Interview - 1,5 (one and a half) hour simulation of recruitment interview via Zoom meeting aiming to verify Client’s knowledge, technical competencies and prepare for regular recruitment interview, followed by e-mail feedback on Client’s knowledge, proposed development path and possible progress',
-              'Development Plan - 0,5 (half) hour meeting via Zoom aiming to set up a step plan for Client’s development path followed by e-mail feedback with the final development plan, learning path, exemplary assignments',
+              'Development Plan - 1 (one) hour meeting via Zoom aiming to set up a step plan for Client’s development path followed by e-mail feedback with the final development plan, learning path, exemplary assignments, and next sessions',
               'Other service - individually agreed with Client Service plan containing above matters in taylored offer',
               'Blog - regularly posted, free of charge, articles and guidelines considering services provided by BigsonDev available on BigsonDev web page',
               'Library - set of free of charge coding exercises prepared for the users of BigsonDev web page',

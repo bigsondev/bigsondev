@@ -114,7 +114,7 @@ export const Offer = () => {
           <OfferCard onClick={openMentoringEvent}>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
-                <Title level={4} align="center" transform="capitalize">
+                <Title level={4} align="center" transform="none">
                   Frontend Mentoring
                 </Title>
               </Col>
@@ -134,6 +134,11 @@ export const Offer = () => {
                       50$
                     </Text>
                   </Space>
+                </Box>
+              </Col>
+              <Col span={24}>
+                <Box display="flex" justify="center">
+                  <Text align="center">1 hour of conversation.</Text>
                 </Box>
               </Col>
               <Col xs={22} md={16}>
@@ -165,14 +170,6 @@ export const Offer = () => {
                   ]}
                 />
               </Col>
-              <Col span={20}>
-                <Title level={5} align="center" transform="none">
-                  Estimated Call Time
-                </Title>
-                <Paragraph align="center" size="preNormal">
-                  60 minutes
-                </Paragraph>
-              </Col>
               <ButtonHolder>
                 <PromoButton onClick={openMentoringEvent}>
                   Book a session
@@ -185,7 +182,7 @@ export const Offer = () => {
           <OfferCard onClick={openMockInterviewEvent}>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
-                <Title level={4} align="center" transform="capitalize">
+                <Title level={4} align="center" transform="none">
                   Mock Interview
                 </Title>
               </Col>
@@ -205,6 +202,11 @@ export const Offer = () => {
                       75$
                     </Text>
                   </Space>
+                </Box>
+              </Col>
+              <Col span={24}>
+                <Box display="flex" justify="center">
+                  <Text align="center">1.5 hours of conversation.</Text>
                 </Box>
               </Col>
               <Col xs={22} md={16}>
@@ -236,14 +238,6 @@ export const Offer = () => {
                   ]}
                 />
               </Col>
-              <Col span={20}>
-                <Title level={5} align="center" transform="none">
-                  Estimated Call Time
-                </Title>
-                <Paragraph align="center" size="preNormal">
-                  90 minutes
-                </Paragraph>
-              </Col>
               <ButtonHolder>
                 <PromoButton onClick={openMockInterviewEvent}>
                   Test your skills
@@ -256,7 +250,7 @@ export const Offer = () => {
           <OfferCard onClick={openDevelopmentPlanEvent}>
             <Row justify="center" gutter={[0, 24]}>
               <Col span={24}>
-                <Title level={4} align="center" transform="capitalize">
+                <Title level={4} align="center" transform="none">
                   Development Plan
                 </Title>
               </Col>
@@ -278,6 +272,11 @@ export const Offer = () => {
                   </Space>
                 </Box>
               </Col>
+              <Col span={24}>
+                <Box display="flex" justify="center">
+                  <Text align="center">4x - 1 hour of conversation.</Text>
+                </Box>
+              </Col>
               <Col xs={22} md={16}>
                 <Title
                   level={5}
@@ -290,30 +289,22 @@ export const Offer = () => {
                 <PostListHolder
                   data={[
                     <Text size="preNormal" type="primary">
-                      Real-world projects.
+                      Real-world project.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Covers 100+ days.
+                      Coding with a Mentor.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Find job in 3-6 months.
+                      Perfect for newcomers.
                     </Text>,
                     <Text size="preNormal" type="primary">
-                      Best for newcomers.
+                      Get the best results.
                     </Text>,
                     <Text size="preNormal" type="primary">
                       Help & support.
                     </Text>,
                   ]}
                 />
-              </Col>
-              <Col span={20}>
-                <Title level={5} align="center" transform="none">
-                  Estimated Call Time
-                </Title>
-                <Paragraph align="center" size="preNormal">
-                  30 minutes
-                </Paragraph>
               </Col>
               <ButtonHolder>
                 <PromoButton onClick={openDevelopmentPlanEvent}>
