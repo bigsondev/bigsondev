@@ -1,0 +1,167 @@
+---
+title: Collaboration Between Developers And Designers - Part 3
+desc: A Design System is a place where everything makes sense. It consists of components, patterns, principles, best practices, and is the ultimate source of truth. It’s documentation everyone needs in IT - Developers, Designers, Product Owners, and sometimes even clients.
+path: /blog/collaboration-between-developers-and-designers-part-3/
+hasCheatSheet: false
+hasTodoList: false
+series: true
+readTime: 4
+illustration: none
+tags: productivity, teamwork, agile
+date: 2020-11-01
+---
+
+import { Space, Alert } from 'antd';
+import { Link as GatsbyLink } from 'gatsby';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  PostCard,
+  SyntaxHighlighter,
+  Link,
+  Box,
+} from '~components';
+
+export const questions = [
+  <Text size="normal">
+    Are we creating an MVP which needs to cover functionalities and the unique
+    look & feel is not top priority?
+  </Text>,
+  <Text size="normal">
+    Do we have time and resources to create a Design System + explain it to
+    Developers and make sure they have time to code it all?
+  </Text>,
+  <Text size="normal">
+    How much uniqueness do we need? Only icons and illustrations? Maybe decide
+    on Material or <Link href="https://ant.design/">Ant Design</Link> as
+    fundamentals to cover base building blocks, cross-browser support, and
+    built-in implementation for generic components.
+  </Text>,
+];
+
+<Post
+  title={props.pageContext.frontmatter.title}
+  desc={props.pageContext.frontmatter.desc}
+  date={props.pageContext.frontmatter.date}
+  readTime={props.pageContext.frontmatter.readTime}
+  showSubtitle
+  prev={
+    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-2/">
+      Previous
+    </GatsbyLink>
+  }
+>
+  <Title level={3}>Problem - Lack of a Design System 🧐</Title>
+  <Paragraph>
+    Let’s take{' '}
+    <Link href="https://ux.mailchimp.com/patterns/color">
+      MailChimp Design System
+    </Link>{' '}
+    as an example. They made it publicly available as they are probably proud of
+    it and not scared of showing to others.
+  </Paragraph>
+  <Paragraph>
+    A well-thought Design System is a fantastic way to promote the company -
+    both for clients and potential candidates - everyone wants to work where
+    processes are well settled.
+  </Paragraph>
+  <Paragraph>
+    <Text strong>But it’s a lot of work.</Text> Choosing the right color
+    palette, typography, spacing, layout rules, thinking through the whole{' '}
+    <Link href="https://bradfrost.com/blog/post/atomic-web-design/">
+      Atomic Design
+    </Link>{' '}
+    approach and applying it to particular client needs is a Sisyphean task - it
+    never ends.
+  </Paragraph>
+  <Paragraph>
+    Modern UI is all about complex state management, smooth transitions between
+    views, data visualization - it’s really hard to code all of that from zero.
+    As always, it’s about the right balance between design complexity and
+    implementation.
+  </Paragraph>
+  <Paragraph>
+    It takes a tremendous amount of work to brainstorm, collaborate, and shape
+    the unique company’s solution for composing UI and Designs. And, usually,
+    it’s done in a wrong way due to lack of time or competencies.
+  </Paragraph>
+  <Paragraph>
+    When the product grows to multiple applications, things can easily get out
+    of control. Components will be duplicated, designs might differ and the
+    consistency won’t be kept. It’s a problem that a lot of companies are
+    facing.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    Let’s learn how we could possibly solve it or make it less painful.
+  </Paragraph>
+  <Title level={3}>Solution 😎</Title>
+  <Paragraph>
+    In the company I work, we switched from{' '}
+    <Link href="https://getbootstrap.com/">Bootstrap</Link> to{' '}
+    <Link href="https://material.io/design/">Material</Link> - it was one of the
+    best decisions ever and I don’t mean leaving Bootstrap behind, but rather
+    not deciding on creating a Design System from the scratch instead of
+    choosing Material Design.
+  </Paragraph>
+  <Paragraph>
+    We also cheated a little bit, as there is a{' '}
+    <Link href="https://material-ui.com/">Material UI</Link> for{' '}
+    <Link href="https://reactjs.org/">React</Link> which implements all of the
+    Material Design concepts - that helped us a lot. We not only gained the
+    fundamentals of a Design System which can be extended but also received an
+    open-source library full of components = saved time both for Developers and
+    Designers = mission accomplished 🚀.
+  </Paragraph>
+  <Paragraph>
+    I’m not against creating things from the scratch and making a Design System
+    unique to your brand - it just needs to be well covered and worth it. Ask
+    the below questions to decide if you could reuse something that already
+    exists or you really need to do it from ground zero:
+  </Paragraph>
+  <PostList data={questions} />
+  <Paragraph>
+    When choosing a predefined Design System and the Library (e.g. for React) it
+    adds some learning curve, but it also saves a lot of time as already
+    mentioned.
+  </Paragraph>
+  <Paragraph>
+    If I would make this decision one more time - I would still vote for
+    Material, it has this specific look & feel, and maybe Ant Design is more
+    flexible and less intrusive, but I will leave the decision for you.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    It’s also quite easy to create uniqueness with icons, illustrations,
+    branding colors, and the font - the rest of the concepts is usually the
+    same.
+  </Paragraph>
+  <Title level={3}>Closing Notes 📋</Title>
+  <Paragraph>
+    If you see repeating patterns in your products, when it starts to grow -
+    it’s the best time to react and start brainstorming about a need for a
+    Design System - whether it will be something from the scratch (huge need for
+    uniqueness of the brand) or predefined (functionalities takes overlook &
+    feel).
+  </Paragraph>
+  <Paragraph>
+    The next part will be about <Text strong>Happy Path Designs</Text> - in
+    real-life scenarios, there is a lot of error handling, complex data
+    problems, server limitations to consider and to include in designs (which
+    often is skipped) 😱 .
+  </Paragraph>
+  <Paragraph>
+    Join me on{' '}
+    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-3/#bigsondev-slack">
+      Slack
+    </GatsbyLink>{' '}
+    or post/share on some{' '}
+    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-3/#bigsondev-spread-the-word">
+      socials
+    </GatsbyLink>{' '}
+    , I’ll be happy to help and give some tips & tricks I learned during my
+    journey.
+  </Paragraph>
+  <Paragraph>Take care and stay healthy in these difficult times! ❤️</Paragraph>
+</Post>
