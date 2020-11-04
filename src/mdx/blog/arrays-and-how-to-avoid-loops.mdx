@@ -1,0 +1,339 @@
+---
+title: Arrays And How To Avoid Loops
+desc: Arrays exist in every programming language. It's a data structure best suited for storing multiple values. And, for doing various operations on these values, often called as a collection.
+path: /blog/arrays-and-how-to-avoid-loops/
+hasCheatSheet: false
+hasTodoList: false
+series: false
+readTime: 6
+illustration: none
+tags: javascript
+date: 2020-11-04
+---
+
+import { Space, Alert } from 'antd';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  SyntaxHighlighter,
+  Link,
+  Box,
+} from '~components';
+
+export const arraysExample = `
+// Create an array of 3 items using [ ] brackets
+const friends = ["John", "Joe", "Jane"];\n
+// Here we have a "collection" of friends declared as an array
+console.log(friends); // ["John", "Joe", "Jane"]\n
+// Array is indexed from 0 and not from 1
+// 0 -> "John", 1 -> "Joe", 2 -> "Jane"\n
+// Access particular friend from an array
+console.log(friends[0]); // "John"
+console.log(friends[1]); // "Joe"
+console.log(friends[2]); // "Jane"
+console.log(friends[3]); // undefined (we don't have 4th item)\n
+// Get length of the array
+console.log(friends.length); // 3 (as we have 3 items in the friends array)\n
+// Safe way to get the last item of an array 
+console.log(friends[friends.length - 1]) // "Jane"\n
+// ❌ BAD PRACTICE - Directly change an array item
+friends[0] = 'Pedro';
+console.log(friends); // ["Pedro", "Joe", "Jane"]\n
+// ❌ BAD PRACTICE - Directly push to an array
+friends.push('Max');
+console.log(friends); // ["Pedro", "Joe", "Jane", "Max"]\n
+// ❌ BAD PRACTICE - Directly remove the item from an array
+friends.pop();
+console.log(friends); // ["Pedro", "Joe", "Jane"]
+`;
+
+export const mapBadExample = `const numbers = [5, 10, 15, 20];\n
+for (let i = 0; i < numbers.length; i++) {
+  // BAD PRACTICE - directly changing items of original array
+  numbers[i] = numbers[i] * 2;
+}\n
+console.log(numbers); // [10, 20, 30, 40]`;
+
+export const mapGoodExample = `const numbers = [5, 10, 15, 20];
+const multipliedNumbers = numbers.map((number) => number * 2);\n
+// GOOD PRACTICE - original array remains unchanged
+console.log(numbers); // [5, 10, 15, 20];
+console.log(multipliedNumbers); // [10, 20, 30, 40]`;
+
+export const filterBadExample = `const numbers = [5, 10, 15, 20];
+const filteredNumbers = [];\n
+for (let i = 0; i < numbers.length; i++) {
+  const currentNumber = numbers[i];\n   
+  if (currentNumber > 10) {
+    // BAD PRACTICE - Directly pushing to an array
+    filteredNumbers.push(currentNumber);
+  } 
+}\n
+console.log(numbers); // [5, 10, 15, 20]
+console.log(filteredNumbers); // [15, 20]`;
+
+export const filterGoodExample = `const numbers = [5, 10, 15, 20];
+const filteredNumbers = numbers.filter((number) => number > 10);\n
+// GOOD PRACTICE - no direct push to an array
+console.log(numbers); // [5, 10, 15, 20]
+console.log(filteredNumbers); // [15, 20]`;
+
+export const reduceBadExample = `const numbers = [5, 10, 15, 20];
+let sum = 0;\n
+for (let i = 0; i < numbers.length; i++) {
+  // BAD PRACTICE - mutating a variable
+  sum += numbers[i];
+}\n
+console.log(sum); // 50`;
+
+export const reduceGoodExample = `const numbers = [5, 10, 15, 20];
+// GOOD PRACTICE - no direct mutation = clean code
+const sum = numbers.reduce((accumulator, number) => accumulator += number, 0);\n
+console.log(sum); // 50
+`;
+
+export const indexOfBadExample = `const numbers = [5, 10, 15, 20];
+const numberToFind = 15;
+let numberToFindIndex = undefined;\n
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] === numberToFind) {
+    // BAD PRACTICE - mutating a variable and using a break statement
+    numberToFindIndex = i;
+    break;
+  }
+}\n
+console.log(numberToFindIndex); // 2, remember that array is indexed from 0
+`;
+
+export const indexOfGoodExample = `const numbers = [5, 10, 15, 20];
+const numberToFind = 15;
+// GOOD PRACTICE - no direct mutation = clean code
+const numberToFindIndex = numbers.indexOf(numberToFind);\n
+console.log(numberToFindIndex); // 2, remember that array is indexed from 0
+`;
+
+export const everyBadExample = `const numbers = [5, 10, 15, 20];
+const minimumValue = 10;
+let isBigEnough = true;\n
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] < minimumValue) {
+    // BAD PRACTICE - mutating a variable and using a break statement
+    isBigEnough = false;
+    break;
+  }
+}\n
+console.log(isBigEnough); // false`;
+
+export const everyGoodExample = `const numbers = [5, 10, 15, 20];
+const minimumValue = 10;
+// GOOD PRACTICE - no direct mutation = clean code
+const isBigEnough = numbers.every((number) => number >= minimumValue);\n
+console.log(isBigEnough); // false
+`;
+
+export const someBadExample = `const numbers = [5, 10, 15, 20];
+const minimumValue = 10;
+let isBigEnough = false;\n
+for (let i = 0; i < numbers.length; i++) {
+  // BAD PRACTICE - mutating a variable and using a break statement
+  if (numbers[i] >= minimumValue) {
+    isBigEnough = true;
+    break;
+  }
+}\n
+console.log(isBigEnough); // true`;
+
+export const someGoodExample = `const numbers = [5, 10, 15, 20];
+const minimumValue = 10;
+// GOOD PRACTICE - no direct mutation = clean code
+const isBigEnough = numbers.some((number) => number >= minimumValue);\n
+console.log(isBigEnough); // true
+`;
+
+export const includesBadExample = `const numbers = [5, 10, 15, 20];
+const numberToFind = 15;
+let isNumberIncluded = false;\n
+for (let i = 0; i < numbers.length; i++) {
+if (numbers[i] === numberToFind) {
+  // BAD PRACTICE - mutating a variable and using a break statement
+  isNumberIncluded = true;
+  break;
+  }
+}\n
+console.log(isNumberIncluded); // true
+`;
+
+export const includesGoodExample = `const numbers = [5, 10, 15, 20];
+const numberToFind = 15;
+const isNumberIncluded = numbers.includes(numberToFind);\n
+console.log(isNumberIncluded); // true`;
+
+export const bonusExample = `const myAnimals = ['dog', 'cat'];
+const myFriendAnimals = ['bird', 'python', 'elephant'];
+// Cool way to join arrays together using spread operator
+const ourAnimals = [...myAnimals, ...myFriendAnimals];\n
+console.log(ourAnimals); // ["dog", "cat", "bird", "python", "elephant"]\n
+// Cool way to fill in array from something using .from method
+const numbers = Array.from({ length: 10 }, (\_, key) => key);\n
+console.log(numbers); // [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n
+const nestedArray = [[1, 2], [3, 4], [5, 6]];
+// Cool way to flatten an array using .flat method
+const flatArray = nestedArray.flat();\n
+console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
+
+<Post
+  title={props.pageContext.frontmatter.title}
+  desc={props.pageContext.frontmatter.desc}
+  date={props.pageContext.frontmatter.date}
+  readTime={props.pageContext.frontmatter.readTime}
+  showSubtitle
+>
+  <Title level={3}>Introduction</Title>
+  <Paragraph>
+    It's always best to learn by doing. Take a look at the below code example,
+    study and execute it step by step. Mentioned bad practices will be more
+    explained and solved in the following examples.
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{arraysExample}</SyntaxHighlighter>
+  <Paragraph lastParagraph>
+    Let's learn how to utilize array methods to avoid bad, mutation patterns and
+    do useful operations on the entire collection.
+  </Paragraph>
+  <Title level={3}>Useful array methods & avoiding loops</Title>
+  <Paragraph breakParagraph>
+    Changing original array items, pushing to it results in mutating which can
+    introduce unwanted, side effects and makes code much more difficult to
+    maintain. Let's aim for a declarative, functional approach with immutability
+    in mind. Go through the below examples to see how we can easily achieve that
+    with less code and more semantics.
+  </Paragraph>
+  <Title level={4} transform="none">
+    1.{' '}
+    <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/map">
+      .map()
+    </Link>{' '}
+  </Title>
+  <Paragraph>
+    <Text strong>Assignment:</Text> Multiply all numbers by 2.
+  </Paragraph>
+  <Paragraph>❌ Loop way with mutating:</Paragraph>
+  <SyntaxHighlighter showCopy>{mapBadExample}</SyntaxHighlighter>
+  <Paragraph>✅ Map numbers in an array without mutating:</Paragraph>
+  <SyntaxHighlighter showCopy>{mapGoodExample}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    2.{' '}
+    <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/filter">
+      .filter()
+    </Link>{' '}
+  </Title>
+  <Paragraph>
+    <Text strong>Assignment:</Text> Remove all numbers less or equal to 10.
+  </Paragraph>
+  <Paragraph>❌ Loop way with mutating:</Paragraph>
+  <SyntaxHighlighter showCopy>{filterBadExample}</SyntaxHighlighter>
+  <Paragraph>✅ Filter numbers in an array without mutating:</Paragraph>
+  <SyntaxHighlighter showCopy>{filterGoodExample}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    3.{' '}
+    <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/reduce">
+      .reduce()
+    </Link>{' '}
+  </Title>
+  <Paragraph>
+    <Text strong>Assignment:</Text> Sum all numbers.
+  </Paragraph>
+  <Paragraph>❌ Loop way with mutating:</Paragraph>
+  <SyntaxHighlighter showCopy>{reduceBadExample}</SyntaxHighlighter>
+  <Paragraph>✅ Reduce numbers to create a sum without mutating:</Paragraph>
+  <SyntaxHighlighter showCopy>{reduceGoodExample}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    4.{' '}
+    <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/indexOf">
+      .indexOf()
+    </Link>{' '}
+  </Title>
+  <Paragraph>
+    <Text strong>Assignment:</Text> Find index of number 15.
+  </Paragraph>
+  <Paragraph>❌ Loop way with mutating:</Paragraph>
+  <SyntaxHighlighter showCopy>{indexOfBadExample}</SyntaxHighlighter>
+  <Paragraph>
+    ✅ Find index by using an <Text code>indexOf</Text> method:
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{indexOfGoodExample}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    5.{' '}
+    <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/every">
+      .every()
+    </Link>{' '}
+  </Title>
+  <Paragraph>
+    <Text strong>Assignment:</Text> Check if all numbers are greater or equal to
+    10.
+  </Paragraph>
+  <Paragraph>❌ Loop way with mutating:</Paragraph>
+  <SyntaxHighlighter showCopy>{everyBadExample}</SyntaxHighlighter>
+  <Paragraph>
+    ✅ Check if condition is true to all numbers without mutating:
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{everyGoodExample}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    6.{' '}
+    <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/some">
+      .some()
+    </Link>{' '}
+  </Title>
+  <Paragraph>
+    <Text strong>Assignment:</Text> Check if any number is greater or equal to
+    10.
+  </Paragraph>
+  <Paragraph>❌ Loop way with mutating:</Paragraph>
+  <SyntaxHighlighter showCopy>{someBadExample}</SyntaxHighlighter>
+  <Paragraph>
+    ✅ Check if condition is true to any number without mutating:
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{someGoodExample}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    7.{' '}
+    <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/includes">
+      .includes()
+    </Link>{' '}
+  </Title>
+  <Paragraph>
+    <Text strong>Assignment:</Text> Check if number 15 is included in the
+    numbers array.
+  </Paragraph>
+  <Paragraph>❌ Loop way with mutating:</Paragraph>
+  <SyntaxHighlighter showCopy>{includesBadExample}</SyntaxHighlighter>
+  <Paragraph>✅ Check if number is included without mutating:</Paragraph>
+  <SyntaxHighlighter showCopy>{includesGoodExample}</SyntaxHighlighter>
+  <Paragraph lastParagraph />
+  <Title level={3}>Bonus</Title>
+  <Paragraph>
+    I described couple of more methods, techniques to work with arrays, example
+    below:
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{bonusExample}</SyntaxHighlighter>
+  <Paragraph lastParagraph />
+  <Title level={3}>Closing Notes</Title>
+  <Paragraph>
+    There are{' '}
+    <Link href="https://www.w3schools.com/js/js_arrays.asp">
+      more array methods
+    </Link>{' '}
+    in JavaScript, but I mostly focused on the ones which avoid mutations - as I
+    value declarative, clean approach to the code. I hope examples of bad and
+    good lighten up the code a little bit.
+  </Paragraph>
+  <Paragraph>
+    If you liked it and want me to create more articles like this one, please,
+    follow me on socials. I usually post visual knowledge pills on{' '}
+    <Link href="https://www.instagram.com/bigsondev/">Instagram</Link> and code
+    examples on{' '}
+    <Link href="https://github.com/bigsondev/knowledge-pills">GitHub</Link>.
+  </Paragraph>
+  <Paragraph>Thanks for reading. ❤️</Paragraph>
+</Post>
