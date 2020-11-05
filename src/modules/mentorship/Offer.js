@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col, Space } from 'antd';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { openPopupWidget } from 'react-calendly';
 
@@ -14,7 +13,7 @@ import {
 } from '~components';
 
 const Holder = styled.div({
-  padding: '7rem 1rem',
+  padding: '2rem 1rem 5rem 1rem',
   position: 'relative',
   background: '#FAFAFA',
 });
@@ -99,13 +98,6 @@ export const Offer = () => {
             I've been there, and honestly, it's a lot to carry on your own.
             Frontend evolves at a lightning fast pace and it can be frightening.
             But, worry no more, I'm here to help you.
-          </Paragraph>
-          <Paragraph align="center">
-            <Text strong>I mentor in these languages</Text>: English & Polish.
-          </Paragraph>
-          <Paragraph align="center" strong breakParagraph>
-            Start from <Link to="/start-here/#bigsondev-faq">FAQ</Link> to
-            lighten up the below services.
           </Paragraph>
         </Col>
       </Row>

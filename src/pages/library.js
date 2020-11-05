@@ -75,6 +75,7 @@ const TAG_COLOR_MAPPER = {
   html: '#ffc069',
   css: '#91d5ff',
   js: '#ffec3d',
+  react: '#61DAFB',
 };
 
 const Resource = ({ title, desc, path, tags, difficulty }) => (
@@ -135,6 +136,19 @@ const Library = ({
     setFilter(value);
   };
 
+  const projects = edges
+    .filter(
+      ({
+        node: {
+          frontmatter: { type },
+        },
+      }) => type === 'project'
+    )
+    .map(({ node: { frontmatter } }) => frontmatter)
+    .sort(
+      ({ order: prevOrder }, { order: nextOrder }) => prevOrder - nextOrder
+    );
+
   const [quiz, ...challenges] = edges
     .filter(
       ({
@@ -156,43 +170,67 @@ const Library = ({
         I've prepared some fun activities to help with your learning journey.
       </Paragraph>
       <Divider />
-      <Box mb={8}>
-        <Space>
-          <Button
-            type={filter === FILTERS.beginner ? 'primary' : 'secondary'}
-            onClick={() => handleFilterChangeClick(FILTERS.beginner)}
-          >
-            Beginner
-          </Button>
-          <Button
-            type={filter === FILTERS.junior ? 'primary' : 'secondary'}
-            onClick={() => handleFilterChangeClick(FILTERS.junior)}
-          >
-            Junior
-          </Button>
-          <Button
-            type={filter === FILTERS.regular ? 'primary' : 'secondary'}
-            onClick={() => handleFilterChangeClick(FILTERS.regular)}
-          >
-            Regular
-          </Button>
-          <Button
-            type={filter === FILTERS.senior ? 'primary' : 'secondary'}
-            onClick={() => handleFilterChangeClick(FILTERS.senior)}
-          >
-            Senior
-          </Button>
-        </Space>
+      <Box mb={2}>
+        <Title level={3} transform="capitalize">
+          Projects
+        </Title>
+        <Paragraph type="secondary" size="preNormal">
+          Code real projects based on assignment, example solution always
+          included.
+        </Paragraph>
       </Box>
+      <Row gutter={[24, 24]}>
+        {projects.map((project) => (
+          <Col
+            xs={{ span: 24 }}
+            sm={{ span: 12 }}
+            xl={{ span: 8 }}
+            key={project.title}
+          >
+            <Box>
+              <Resource {...project} />
+            </Box>
+          </Col>
+        ))}
+      </Row>
+      <Divider />
       <Box mb={2}>
         <Space size="large" align="baseline">
           <Title level={3} transform="capitalize">
-            {filter} path
+            Code Challenges
           </Title>
           <PromoButton size="small">
             <Link to={quiz.path}>Start Quiz</Link>
           </PromoButton>
         </Space>
+        <Box mb={2}>
+          <Space>
+            <Button
+              type={filter === FILTERS.beginner ? 'primary' : 'secondary'}
+              onClick={() => handleFilterChangeClick(FILTERS.beginner)}
+            >
+              Beginner
+            </Button>
+            <Button
+              type={filter === FILTERS.junior ? 'primary' : 'secondary'}
+              onClick={() => handleFilterChangeClick(FILTERS.junior)}
+            >
+              Junior
+            </Button>
+            <Button
+              type={filter === FILTERS.regular ? 'primary' : 'secondary'}
+              onClick={() => handleFilterChangeClick(FILTERS.regular)}
+            >
+              Regular
+            </Button>
+            <Button
+              type={filter === FILTERS.senior ? 'primary' : 'secondary'}
+              onClick={() => handleFilterChangeClick(FILTERS.senior)}
+            >
+              Senior
+            </Button>
+          </Space>
+        </Box>
       </Box>
       <Row gutter={[24, 24]}>
         {challenges.map((challenge) => (

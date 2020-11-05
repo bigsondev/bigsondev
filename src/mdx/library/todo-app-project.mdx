@@ -1,0 +1,141 @@
+---
+title: Todo App
+path: /library/todo-app-project/
+desc: Create, edit, delete todos. Learn state management in React and use Material UI for composing the look & feel.
+date: 2020-11-05
+type: project
+tags: react
+order: 1
+difficulty: 3
+---
+
+import { Link as GatsbyLink } from 'gatsby';
+
+import {
+  Post,
+  PostList,
+  Paragraph,
+  Text,
+  Title,
+  CodeEditor,
+  Link,
+} from '~components';
+import { getIframeContent } from '~utils';
+
+export const projectRequirements = [
+  <Text>
+    Create a new git repository, e.g. on{' '}
+    <Link href="http://github.com/">GitHub</Link>.
+  </Text>,
+  <Text>
+    Initialize the repository with{' '}
+    <Link href="https://create-react-app.dev/">CRA</Link>.
+  </Text>,
+  <Text>
+    It's fine to compose UI on your own but to speed up your work and learn how
+    to use 3rd party tools, I recommend using{' '}
+    <Link href="https://material-ui.com/">Material UI</Link>.
+  </Text>,
+  <Text>
+    As it's not a complex application, for state management use{' '}
+    <Link href="https://reactjs.org/docs/hooks-reference.html">
+      React hooks
+    </Link>
+    , <Link href="https://reactjs.org/docs/hooks-reference.html#usereducer">
+      useReducer
+    </Link> will be the best option.
+  </Text>,
+];
+
+export const mustHaveFeatures = [
+  <Text>Add the ability to add a todo.</Text>,
+  <Text>Add the ability to mark a todo as completed.</Text>,
+  <Text>Add the ability to edit a todo text.</Text>,
+  <Text>Add the ability to delete a todo.</Text>,
+];
+
+export const additionalFeatures = [
+  <Text>
+    Make the application responsive according to the rules of{' '}
+    <Link href="https://web.dev/responsive-web-design-basics/">RWD</Link> and{' '}
+    <Link href="https://www.interaction-design.org/literature/topics/ux-design">
+      UX
+    </Link>{' '}
+    friendly.
+  </Text>,
+  <Text>
+    Show how many todos are completed (some nice UI progress bar or just a text,
+    be creative).
+  </Text>,
+  <Text>
+    When todo is completed, strikethrough its text and move to the bottom.
+  </Text>,
+  <Text>
+    Add validation - don't allow adding an empty todo and check for duplicates
+    by comparing existing todos text.
+  </Text>,
+  <Text>
+    Add the ability to load and save todos by using e.g.{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">
+      localStorage
+    </Link>
+    .
+  </Text>,
+  <Text>
+    Add unit tests for state management, e.g. by using{' '}
+    <Link href="https://github.com/facebook/jest">Jest</Link>.
+  </Text>,
+];
+
+<Post>
+  <Title level={3}>About this project</Title>
+  <Paragraph>
+    The goal is to code a classic Todo App in React. I've prepared an example
+    solution that can be found here:{' '}
+    <Link href="https://fervent-wozniak-24508f.netlify.app/">
+      Todo App by BigsonDev
+    </Link>
+    .
+  </Paragraph>
+  <Paragraph>
+    Code is available on{' '}
+    <Link href="https://github.com/bigsondev/todo-app">
+      the public repository
+    </Link>{' '}
+    I created in GitHub.
+  </Paragraph>
+  <Title level={3}>Project Requirements</Title>
+  <PostList data={projectRequirements} />
+  <Title level={3}>Fundamental Features</Title>
+  <PostList data={mustHaveFeatures} />
+  <Title level={3}>Additional Features</Title>
+  <PostList data={additionalFeatures} />
+  <Title level={3}>Stuck, can't progress?</Title>
+  <Paragraph>
+    Take a break, try to think about all the pieces you need to build for this
+    application. Think of state management, plan data structure, and/or draw
+    some sketches/mock-ups to present the initial UI. I'll be happy to assist
+    you with this project, you can try out my{' '}
+    <GatsbyLink to="/mentorship/#bigsondev-offer">Mentorship</GatsbyLink> or
+    connect through{' '}
+    <GatsbyLink to="/start-here/#bigsondev-slack">Slack</GatsbyLink> (free of
+    charge).
+  </Paragraph>
+  <Title level={3}>Building & Deploying</Title>
+  <Paragraph>
+    If you created an application with CRA, there is a{' '}
+    <Text code>yarn build</Text> command shipped in. For a super simple
+    deployment, try either <Link href="https://www.netlify.com/">Netlify</Link>{' '}
+    or <Link href="https://vercel.com/">Vercel</Link>. I recommend Netlify
+    personally.
+  </Paragraph>
+  <Title level={3}>Share your solution</Title>
+  <Paragraph>
+    You can join{' '}
+    <GatsbyLink to="/start-here/#bigsondev-slack">Slack</GatsbyLink> and add a
+    link to your solution in the <Text strong>#review</Text> channel. I'll
+    definitely pick it up and come back to you with feedback. Additionally, you
+    can tweet <Link href="https://twitter.com/BigsonDev">@BigsonDev</Link> with
+    repo and deployed application links. It will mean a ton to me.
+  </Paragraph>
+</Post>

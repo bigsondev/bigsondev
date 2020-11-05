@@ -10,9 +10,9 @@ import { Row, Col } from 'antd';
 
 export const Section = ({ children, fullWidth = false }) => {
   return fullWidth ? (
-    <section>{children}</section>
+    <section style={{ overflowX: 'hidden' }}>{children}</section>
   ) : (
-    <Row>
+    <Row style={{ overflowX: 'hidden' }}>
       <Col
         xs={{ offset: 1, span: 22 }}
         xl={{ offset: 2, span: 20 }}

@@ -1,12 +1,22 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import { openPopupWidget } from 'react-calendly';
 
 import { Title, Paragraph, SecondaryButton, Box } from '~components';
 
+const openFreeConsultationEvent = () => {
+  openPopupWidget({
+    url: 'https://calendly.com/bigsondev/free-consultation',
+    pageSettings: {
+      hideEventTypeDetails: true,
+      hideLandingPageDetails: true,
+    },
+  });
+};
+
 const Holder = styled.div({
-  padding: '7rem 1rem',
+  padding: '5rem 1rem',
   position: 'relative',
 });
 
@@ -19,17 +29,19 @@ export const AlternativeConversation = () => {
       <Row justify="center">
         <Col xs={20} sm={12}>
           <Paragraph align="center" breakParagraph>
-            Let's have an individual, free conversation to see what will be the
-            best for you.
+            Let's have an individual, 15 minutes free of charge conversation to
+            see what will be the best for you.
+            <br />
+            Reserve a meeting via Calendly by clicking on the below button.
           </Paragraph>
         </Col>
       </Row>
       <Row justify="center">
         <Col xs={24} style={{ textAlign: 'center' }}>
           <Box margin="-2rem 0 0 0">
-            <Link to="/reach-out/">
-              <SecondaryButton>Reach Out</SecondaryButton>
-            </Link>
+            <SecondaryButton onClick={openFreeConsultationEvent}>
+              Reach Out
+            </SecondaryButton>
           </Box>
         </Col>
       </Row>
