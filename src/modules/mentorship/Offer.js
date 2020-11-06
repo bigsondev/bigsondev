@@ -92,15 +92,19 @@ export const Offer = () => {
       <Title level={2} align="center" id="bigsondev-offer">
         Learning Frontend is tough
       </Title>
-      <Row justify="center">
-        <Col xs={20} sm={12}>
-          <Paragraph align="center">
-            I've been there, and honestly, it's a lot to carry on your own.
-            Frontend evolves at a lightning fast pace and it can be frightening.
-            But, worry no more, I'm here to help you.
-          </Paragraph>
-        </Col>
-      </Row>
+      <Box mb={5}>
+        <Row justify="center">
+          <Col xs={20} sm={12}>
+            <Paragraph align="center">
+              <div style={{ maxWidth: 420, margin: '0 auto' }}>
+                I've been there, and honestly, it's a lot to carry on your own.
+                Frontend evolves at a lightning fast pace and it can be
+                frightening.
+              </div>
+            </Paragraph>
+          </Col>
+        </Row>
+      </Box>
       <Row justify="center" gutter={[24, 24]}>
         <Col xs={22} sm={16} xl={8} xxl={7}>
           <OfferCard onClick={openMentoringEvent}>

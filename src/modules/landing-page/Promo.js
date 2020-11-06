@@ -24,9 +24,10 @@ const MobileScreenPromo = () => (
         marginBottom="0.1em"
         fontWeight="300"
         fontSize={'2.2rem'}
+        align="center"
       >
         Hi,{' '}
-        <Text size="h1" fontSize={'2.2rem'} strong>
+        <Text size="h1" fontSize={'2.2rem'} strong textOpacity={1}>
           Frontend
         </Text>{' '}
         is tough.
@@ -36,13 +37,19 @@ const MobileScreenPromo = () => (
         fontWeight="300"
         fontSize={'2.2rem'}
         marginBottom="1.5rem"
+        align="center"
       >
         Let me help you with{' '}
-        <Text size="h1" fontSize={'2.2rem'} strong>
+        <Text size="h1" fontSize={'2.2rem'} strong textOpacity={1}>
           IT.
         </Text>
       </Title>
-      <Paragraph size={'small'} marginBottom="2.5rem" fontStyle="italic">
+      <Paragraph
+        size={'small'}
+        marginBottom="2.5rem"
+        fontStyle="italic"
+        align="center"
+      >
         I'm Adrian - Frontend Mentor.
         <br />I love sharing my knowledge with others.
       </Paragraph>
@@ -70,7 +77,7 @@ const MediumScreenPromo = () => (
           align="center"
         >
           Hi,{' '}
-          <Text size="h1" fontSize="2.5rem" strong>
+          <Text size="h1" fontSize="2.5rem" strong textOpacity={1}>
             Frontend
           </Text>{' '}
           is tough.
@@ -82,7 +89,7 @@ const MediumScreenPromo = () => (
           align="center"
         >
           Let me help you with{' '}
-          <Text size="h1" fontSize="2.5rem" strong>
+          <Text size="h1" fontSize="2.5rem" strong textOpacity={1}>
             IT.
           </Text>
         </Title>
@@ -114,7 +121,7 @@ const BigScreenPromo = () => (
           fontSize={'3rem'}
         >
           Hi,{' '}
-          <Text size="h1" fontSize={'3rem'} strong>
+          <Text size="h1" fontSize={'3rem'} strong textOpacity={1}>
             Frontend
           </Text>{' '}
           is tough.
@@ -126,7 +133,7 @@ const BigScreenPromo = () => (
           marginBottom="2rem"
         >
           Let me help you with{' '}
-          <Text size="h1" fontSize={'3rem'} strong>
+          <Text size="h1" fontSize={'3rem'} strong textOpacity={1}>
             IT.
           </Text>
         </Title>

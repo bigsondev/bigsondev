@@ -8,7 +8,7 @@ export * from './notifications';
 export * from './messages';
 export { Todo } from './widgets';
 export { SyntaxHighlighter } from './SyntaxHighlighter';
-export { Post, PostCard, PostList } from './copywriting';
+export { Post, Card, PostCard, PostList } from './copywriting';
 export { CodeEditor } from './coding';
 export { Illustration } from './Illustration';
 export { NotJumpingIllustration } from './NotJumpingIllustration';

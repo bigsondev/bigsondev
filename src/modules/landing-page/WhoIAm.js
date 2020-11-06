@@ -80,12 +80,7 @@ export const WhoIAm = () => {
         <Row justify="center">
           <Col xs={20} sm={12}>
             <Paragraph align="center" breakParagraph>
-              I was a League of Legends Coach for 5 years, inspired others, and
-              had fun while they climbed the ranks. At some point, I decided to
-              dive into IT for another 5 years. From a Java Tester to Lead
-              Frontend Developer mentoring folks around me and recruiting
-              candidates. And now, with my superpowers, let me move your
-              Frontend career to the next level.
+              I'm a Frontend Mentor who can move your career to the next level.
             </Paragraph>
           </Col>
         </Row>

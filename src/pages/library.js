@@ -78,7 +78,14 @@ const TAG_COLOR_MAPPER = {
   react: '#61DAFB',
 };
 
-const Resource = ({ title, desc, path, tags, difficulty }) => (
+const Resource = ({
+  title,
+  desc,
+  path,
+  tags,
+  difficulty,
+  buttonText = 'Start Coding',
+}) => (
   <Link to={path}>
     <ResourceCard>
       <Paragraph marginBottom="1rem">
@@ -113,7 +120,7 @@ const Resource = ({ title, desc, path, tags, difficulty }) => (
           </Col>
         </Row>
       </BottomHolder>
-      <CardButton>Start Coding</CardButton>
+      <CardButton>{buttonText}</CardButton>
     </ResourceCard>
   </Link>
 );
@@ -164,75 +171,79 @@ const Library = ({
 
   return (
     <Layout>
-      <SEO title="Library | Practice With Coding Challenges & Try Frontend Quiz" />
-      <Title level={2}>skyrocket your career</Title>
-      <Paragraph type="secondary" size="preNormal">
-        I've prepared some fun activities to help with your learning journey.
-      </Paragraph>
-      <Divider />
-      <Box mb={2}>
-        <Title level={3} transform="capitalize">
+      <SEO title="Library | Practice With Projects, Coding Challenges, And Try Frontend Quiz" />
+      <Title level={2} align="center">
+        skyrocket your career
+      </Title>
+      <Box mb={10}>
+        <Paragraph align="center">
+          I've prepared some fun activities to help with your learning journey.
+        </Paragraph>
+      </Box>
+      <Box mb={3}>
+        <Title level={3} transform="capitalize" align="center">
           Projects
         </Title>
-        <Paragraph type="secondary" size="preNormal">
+        <Paragraph size="preNormal" align="center">
           Code real projects based on assignment, example solution always
           included.
         </Paragraph>
       </Box>
-      <Row gutter={[24, 24]}>
-        {projects.map((project) => (
-          <Col
-            xs={{ span: 24 }}
-            sm={{ span: 12 }}
-            xl={{ span: 8 }}
-            key={project.title}
-          >
-            <Box>
-              <Resource {...project} />
-            </Box>
-          </Col>
-        ))}
-      </Row>
-      <Divider />
-      <Box mb={2}>
+      <Box mb={10}>
+        <Row gutter={[24, 24]} justify="center">
+          {projects.map((project) => (
+            <Col
+              xs={{ span: 24 }}
+              sm={{ span: 12 }}
+              xl={{ span: 8 }}
+              key={project.title}
+            >
+              <Box>
+                <Resource buttonText="Start Project" {...project} />
+              </Box>
+            </Col>
+          ))}
+        </Row>
+      </Box>
+      <Box mb={1} display="flex" justify="center">
         <Space size="large" align="baseline">
-          <Title level={3} transform="capitalize">
+          <Title level={3} transform="capitalize" align="center">
             Code Challenges
           </Title>
           <PromoButton size="small">
             <Link to={quiz.path}>Start Quiz</Link>
           </PromoButton>
         </Space>
-        <Box mb={2}>
-          <Space>
-            <Button
-              type={filter === FILTERS.beginner ? 'primary' : 'secondary'}
-              onClick={() => handleFilterChangeClick(FILTERS.beginner)}
-            >
-              Beginner
-            </Button>
-            <Button
-              type={filter === FILTERS.junior ? 'primary' : 'secondary'}
-              onClick={() => handleFilterChangeClick(FILTERS.junior)}
-            >
-              Junior
-            </Button>
-            <Button
-              type={filter === FILTERS.regular ? 'primary' : 'secondary'}
-              onClick={() => handleFilterChangeClick(FILTERS.regular)}
-            >
-              Regular
-            </Button>
-            <Button
-              type={filter === FILTERS.senior ? 'primary' : 'secondary'}
-              onClick={() => handleFilterChangeClick(FILTERS.senior)}
-            >
-              Senior
-            </Button>
-          </Space>
-        </Box>
       </Box>
-      <Row gutter={[24, 24]}>
+      <Box mb={3} display="flex" justify="center">
+        <Space>
+          <Button
+            type={filter === FILTERS.beginner ? 'primary' : 'secondary'}
+            onClick={() => handleFilterChangeClick(FILTERS.beginner)}
+          >
+            Beginner
+          </Button>
+          <Button
+            type={filter === FILTERS.junior ? 'primary' : 'secondary'}
+            onClick={() => handleFilterChangeClick(FILTERS.junior)}
+          >
+            Junior
+          </Button>
+          <Button
+            type={filter === FILTERS.regular ? 'primary' : 'secondary'}
+            onClick={() => handleFilterChangeClick(FILTERS.regular)}
+          >
+            Regular
+          </Button>
+          <Button
+            type={filter === FILTERS.senior ? 'primary' : 'secondary'}
+            onClick={() => handleFilterChangeClick(FILTERS.senior)}
+          >
+            Senior
+          </Button>
+        </Space>
+      </Box>
+      <Row gutter={[24, 24]} justify="center">
         {challenges.map((challenge) => (
           <Col
             xs={{ span: 24 }}

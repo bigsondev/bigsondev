@@ -205,7 +205,7 @@ export const CodeEditor = ({
 
   return (
     <>
-      <Title level={4} transform="capitalize">
+      <Title level={4} transform="capitalize" align="center">
         Expected Result
       </Title>
       <TutorialTooltip
@@ -214,7 +214,9 @@ export const CodeEditor = ({
         onClick={handleOkClick}
         visible={codeTutorialCounter === 0}
       >
-        <Paragraph size="preNormal">{result}</Paragraph>
+        <Paragraph size="preNormal" align="center">
+          {result}
+        </Paragraph>
       </TutorialTooltip>
       {challengeCompleted && (
         <Fade duration={1500}>

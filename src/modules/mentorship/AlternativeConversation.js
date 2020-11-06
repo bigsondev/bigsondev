@@ -29,10 +29,10 @@ export const AlternativeConversation = () => {
       <Row justify="center">
         <Col xs={20} sm={12}>
           <Paragraph align="center" breakParagraph>
-            Let's have an individual, 15 minutes free of charge conversation to
-            see what will be the best for you.
-            <br />
-            Reserve a meeting via Calendly by clicking on the below button.
+            <div style={{ maxWidth: 420, margin: '0 auto' }}>
+              Let's have an individual, 15 minutes free of charge conversation.
+              Reserve a meeting via Calendly by clicking on the below button.
+            </div>
           </Paragraph>
         </Col>
       </Row>

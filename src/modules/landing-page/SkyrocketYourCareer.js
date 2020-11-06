@@ -44,8 +44,10 @@ export const SkyrocketYourCareer = () => {
       <Row justify="center">
         <Col xs={20} sm={12}>
           <Paragraph align="center" breakParagraph>
-            Looking for code review, real-world projects, or ready to test your
-            skills? Let me React to this.
+            <div style={{ maxWidth: 420, margin: '0 auto' }}>
+              Looking for code review, real-world projects, or ready to test
+              your skills? Let me React to this.
+            </div>
           </Paragraph>
         </Col>
       </Row>

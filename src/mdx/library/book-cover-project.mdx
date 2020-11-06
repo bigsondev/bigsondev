@@ -1,11 +1,11 @@
 ---
-title: Todo App
-path: /library/todo-app-project/
-desc: Create, edit, delete todos. Learn state management in React and use Material UI for composing the look & feel.
-date: 2020-11-05
+title: Book Cover
+path: /library/book-cover-project/
+desc: Create a book cover that can be updated in real time. Perfect for beginners in React.
+date: 2020-11-06
 type: project
 tags: react
-order: 2
+order: 1
 difficulty: 2
 ---
 
@@ -47,17 +47,17 @@ export const projectRequirements = [
     <Link href="https://reactjs.org/docs/hooks-reference.html">
       React hooks
     </Link>
-    , <Link href="https://reactjs.org/docs/hooks-reference.html#usereducer">
-      useReducer
+    , <Link href="https://reactjs.org/docs/hooks-reference.html#usestate">
+      useState
     </Link> will be the best option.
   </Text>,
 ];
 
 export const mustHaveFeatures = [
-  <Text>Add the ability to add a todo.</Text>,
-  <Text>Add the ability to mark a todo as completed.</Text>,
-  <Text>Add the ability to edit a todo text.</Text>,
-  <Text>Add the ability to delete a todo.</Text>,
+  <Text>Add a Book Cover preview on the right.</Text>,
+  <Text>Add a form on the left.</Text>,
+  <Text>Connect form with a Book Cover.</Text>,
+  <Text>Changes should occur in real-time (as user types in).</Text>,
 ];
 
 export const additionalFeatures = [
@@ -70,49 +70,29 @@ export const additionalFeatures = [
     </Link>{' '}
     friendly.
   </Text>,
-  <Text>
-    Show how many todos are completed (some nice UI progress bar or just a text,
-    be creative).
-  </Text>,
-  <Text>
-    When todo is completed, strikethrough its text and move to the bottom.
-  </Text>,
-  <Text>
-    Add validation - don't allow adding an empty todo and check for duplicates
-    by comparing existing todos text.
-  </Text>,
-  <Text>
-    Add the ability to load and save todos by using e.g.{' '}
-    <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">
-      localStorage
-    </Link>
-    .
-  </Text>,
-  <Text>
-    Add unit tests for state management, e.g. by using{' '}
-    <Link href="https://github.com/facebook/jest">Jest</Link>.
-  </Text>,
+  <Text>Add more editable fields and extend Book Cover (be creative).</Text>,
 ];
 
 <Post>
   <Card title="About this project">
     <Paragraph align="center">
       <Box mb={5}>
-        <Text strong>Assignment:</Text> Code a classic Todo App in React.
+        <Text strong>Assignment:</Text> Code an edtiable Book Cover App in
+        React.
       </Box>
       <Row gutter={[16, 16]} justify="center">
         <Col>
-          <Link href="https://www.figma.com/file/wcTJcE0Foi1u3cTkV347Xx/Wireframes?node-id=264171%3A448">
+          <Link href="https://www.figma.com/file/wcTJcE0Foi1u3cTkV347Xx/Wireframes?node-id=264176%3A1851">
             <SecondaryButton size="small">Wireframe</SecondaryButton>
           </Link>
         </Col>
         <Col>
-          <Link href="https://fervent-wozniak-24508f.netlify.app">
+          <Link href="https://relaxed-wing-eb4d99.netlify.app/">
             <SecondaryButton size="small">Example</SecondaryButton>
           </Link>
         </Col>
         <Col>
-          <Link href="https://github.com/bigsondev/todo-app">
+          <Link href="https://github.com/bigsondev/book-cover">
             <SecondaryButton size="small">Solution</SecondaryButton>
           </Link>
         </Col>

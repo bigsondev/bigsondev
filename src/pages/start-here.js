@@ -85,7 +85,7 @@ const StartHere = () => {
           <Row justify="center">
             <Col xs={22} sm={12}>
               <Paragraph align="center">
-                I prepared a Cheat Sheet to help you get around the website.
+                I've created a Cheat Sheet to help you get around the website.
               </Paragraph>
             </Col>
             <Col xs={22} lg={16} xxl={14}>

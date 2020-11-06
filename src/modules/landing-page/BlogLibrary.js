@@ -20,8 +20,10 @@ export const BlogLibrary = () => {
       <Row justify="center">
         <Col xs={20} sm={12}>
           <Paragraph align="center" breakParagraph>
-            Feel free to read an article or two, practice your coding skills,
-            and maybe do a Quiz.
+            <div style={{ maxWidth: 420, margin: '0 auto' }}>
+              Feel free to read an article or two, practice your coding skills,
+              and maybe do a Quiz.
+            </div>
           </Paragraph>
         </Col>
       </Row>

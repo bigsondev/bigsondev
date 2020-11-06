@@ -17,36 +17,38 @@ const TEXT_SIZE = {
 export const Text = styled(Typography.Text)(
   ({
     align = 'left',
-    fontWeight = 300,
+    fontWeight = 400,
     display = 'inline',
     fontStyle = 'normal',
     size = 'normal',
     transform = 'none',
     color,
     fontSize,
+    textOpacity = 0.65,
   }) => ({
+    color: color || `rgba(0, 0, 0, ${textOpacity})`,
     textAlign: align,
     display,
     fontSize: fontSize || TEXT_SIZE[size],
     fontWeight,
     fontStyle,
     textTransform: transform,
-    color,
   })
 );
 
 export const ParagraphHolder = styled(Typography.Paragraph)(
   ({
     align = 'left',
-    fontWeight = 300,
+    fontWeight = 400,
     size = 'normal',
     display = 'block',
     fontStyle = 'normal',
     color,
     transform,
     spacing,
+    textOpacity = 0.65,
   }) => ({
-    color,
+    color: color || `rgba(0, 0, 0, ${textOpacity})`,
     textAlign: align,
     textTransform: transform,
     letterSpacing: spacing,
@@ -60,7 +62,7 @@ export const ParagraphHolder = styled(Typography.Paragraph)(
 export const LinkHolder = styled.span(
   ({
     align = 'left',
-    fontWeight = 300,
+    fontWeight = 400,
     size = 'normal',
     display = 'inline',
     fontSize,

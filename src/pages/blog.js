@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Row, Col, Space, Divider, Tooltip } from 'antd';
+import { Row, Col, Space, Tooltip } from 'antd';
 import styled from 'styled-components';
 import { CalendarOutlined, FieldTimeOutlined } from '@ant-design/icons';
 import moment from 'moment';
@@ -146,9 +146,12 @@ const Blog = ({
   return (
     <Layout>
       <SEO title="Blog | Frontend, React Tutorials, Sharing Knowledge, Tips & Tricks" />
-      <Title level={2}>Latest Articles</Title>
-      <Divider />
-      <Row gutter={[24, 24]}>
+      <Box mb={7}>
+        <Title level={2} align="center">
+          Latest Articles
+        </Title>
+      </Box>
+      <Row gutter={[24, 24]} justify="center">
         {edges.map(({ node: { frontmatter } }) => (
           <Col
             xs={{ span: 24 }}
