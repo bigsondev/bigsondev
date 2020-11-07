@@ -80,12 +80,13 @@ const StartHere = () => {
       <Box margin="0 0 7rem 0">
         <Section fullWidth>
           <Title level={2} align="center">
-            Getting Started
+            Getting Started 
           </Title>
           <Row justify="center">
             <Col xs={22} sm={12}>
               <Paragraph align="center">
-                I've created a Cheat Sheet to help you get around the website.
+                You can find a Cheat Sheet below to help you get around the
+                website.
               </Paragraph>
             </Col>
             <Col xs={22} lg={16} xxl={14}>

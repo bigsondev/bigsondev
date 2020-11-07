@@ -7,18 +7,21 @@ import Roll from 'react-reveal/Roll';
 import Fade from 'react-reveal/Fade';
 
 import { Box, Text, SmallOnly, ExceptSmall } from '~components';
-import { LogoBase } from '~assets';
+import { LogoFooter } from '~assets';
 
 import { Logo } from './styled';
 
 const Holder = styled(Layout.Header)({
   padding: 0,
+  paddingTop: 10,
   height: 'initial',
-  minHeight: 80,
+  minHeight: 100,
+  background: '#FFF',
 });
 
 const MenuHolder = styled(Menu)({
   borderBottom: 'none',
+  background: '#FFF !important',
 });
 
 const MobileMenuSpace = styled.div({
@@ -30,17 +33,17 @@ const MenuItem = styled(Menu.Item)(({ isSelected, isMobile }) => ({
     padding: isMobile && '0 !important',
   },
   '& > a > span': {
-    transition: 'color 0.1s',
-    color: isSelected ? '#FFF !important' : '#AAA !important',
+    transition: 'color 0.1s ease-in',
+    color: isSelected ? '#000 !important' : 'rgba(80,80,80,0.7) !important',
   },
   '&:hover': {
     backgroundColor: 'inherit !important',
     '& > a > span': {
-      color: '#FFF !important',
+      color: '#000 !important',
     },
   },
   '&.ant-menu-item-selected': {
-    backgroundColor: '#001529 !important',
+    backgroundColor: '#FFF !important',
   },
 }));
 
@@ -48,19 +51,19 @@ const HamburgerIcon = styled(MenuOutlined)({
   fontSize: 28,
   paddingTop: 18,
   paddingRight: 8,
-  color: '#FAFAFA',
+  color: '#000',
 });
 
 const CloseIcon = styled(CloseOutlined)({
   fontSize: 28,
   paddingTop: 18,
   paddingRight: 8,
-  color: '#FAFAFA',
+  color: '#000',
 });
 
 const LeftMenu = () => (
   <Link to="/">
-    <Logo src={LogoBase} alt="BigsonDev Logo" loading="eager" />
+    <Logo src={LogoFooter} alt="BigsonDev Logo" loading="eager" />
   </Link>
 );
 
@@ -95,27 +98,27 @@ const RightMenu = ({
       <MenuHolder theme="dark" mode="horizontal">
         <MenuItem key="1" isSelected={pathname.includes('start-here')}>
           <Link to="/start-here/">
-            <Text size="preNormal">Start Here</Text>
+            <Text strong>Start Here</Text>
           </Link>
         </MenuItem>
         <MenuItem key="2" isSelected={pathname.includes('blog')}>
           <Link to="/blog/">
-            <Text size="preNormal">Blog</Text>
+            <Text strong>Blog</Text>
           </Link>
         </MenuItem>
         <MenuItem key="3" isSelected={pathname.includes('library')}>
           <Link to="/library/">
-            <Text size="preNormal">Library</Text>
+            <Text strong>Library</Text>
           </Link>
         </MenuItem>
         <MenuItem key="4" isSelected={pathname.includes('mentorship')}>
           <Link to="/mentorship/">
-            <Text size="preNormal">Mentorship</Text>
+            <Text strong>Mentorship</Text>
           </Link>
         </MenuItem>
         <MenuItem key="5" isSelected={pathname.includes('reach-out')}>
           <Link to="/reach-out/">
-            <Text size="preNormal">Reach Out</Text>
+            <Text strong>Reach Out</Text>
           </Link>
         </MenuItem>
       </MenuHolder>
@@ -167,7 +170,7 @@ export const Header = ({ pathname }) => {
                     isMobile
                   >
                     <Link to="/start-here/">
-                      <Text>Start Here</Text>
+                      <Text strong>Start Here</Text>
                     </Link>
                   </MenuItem>
                   <MenuItem
@@ -177,7 +180,7 @@ export const Header = ({ pathname }) => {
                     isMobile
                   >
                     <Link to="/blog/">
-                      <Text>Blog</Text>
+                      <Text strong>Blog</Text>
                     </Link>
                   </MenuItem>
                   <MenuItem
@@ -187,7 +190,7 @@ export const Header = ({ pathname }) => {
                     isMobile
                   >
                     <Link to="/library/">
-                      <Text>Library</Text>
+                      <Text strong>Library</Text>
                     </Link>
                   </MenuItem>
                   <MenuItem
@@ -197,7 +200,7 @@ export const Header = ({ pathname }) => {
                     isMobile
                   >
                     <Link to="/mentorship/">
-                      <Text>Mentorship</Text>
+                      <Text strong>Mentorship</Text>
                     </Link>
                   </MenuItem>
                   <MenuItem
@@ -207,7 +210,7 @@ export const Header = ({ pathname }) => {
                     isMobile
                   >
                     <Link to="/reach-out/">
-                      <Text>Reach Out</Text>
+                      <Text strong>Reach Out</Text>
                     </Link>
                   </MenuItem>
                 </MenuHolder>

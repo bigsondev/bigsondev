@@ -13,7 +13,7 @@ import { Link as GatsbyLink } from 'gatsby';
 import { LogoFooter } from '~assets';
 
 import { Link } from '../Typography';
-import { Paragraph, Box, Icon } from '..';
+import { Paragraph, Icon } from '..';
 import { Logo } from './styled';
 
 const Holder = styled.footer({

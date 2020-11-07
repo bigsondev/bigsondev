@@ -56,6 +56,7 @@ export const ParagraphHolder = styled(Typography.Paragraph)(
     fontSize: TEXT_SIZE[size],
     fontWeight,
     fontStyle,
+    lineHeight: 'calc(1.5em + .2vw)',
   })
 );
 

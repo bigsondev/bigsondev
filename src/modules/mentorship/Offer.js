@@ -24,15 +24,15 @@ const OfferCard = styled.div({
   position: 'relative',
   padding: 24,
   paddingBottom: 0,
-  minHeight: 650,
+  minHeight: 520,
   borderRadius: 16,
   background: '#FFF',
   '@media (max-width: 480px)': {
-    minHeight: 590,
+    minHeight: 480,
   },
 
   '@media (min-width: 481px) and (max-width: 768px)': {
-    minHeight: 590,
+    minHeight: 450,
   },
 
   '&:hover': {
@@ -90,16 +90,17 @@ export const Offer = () => {
   return (
     <Holder>
       <Title level={2} align="center" id="bigsondev-offer">
-        Learning Frontend is tough
+        Skyrocket Your Career 🚀
       </Title>
       <Box mb={5}>
         <Row justify="center">
           <Col xs={20} sm={12}>
             <Paragraph align="center">
-              <div style={{ maxWidth: 420, margin: '0 auto' }}>
-                I've been there, and honestly, it's a lot to carry on your own.
-                Frontend evolves at a lightning fast pace and it can be
-                frightening.
+              <div style={{ maxWidth: 650, margin: '0 auto' }}>
+                <Text strong>It's easy to get stuck in tutorials hell</Text>.
+                There is a lot to learn. I've been there and I don't want you to
+                go through this alone. If you are a newcomer or just looking to
+                improve as a Developer, I'll be happy to guide and support.
               </div>
             </Paragraph>
           </Col>
@@ -127,44 +128,17 @@ export const Offer = () => {
                       100$
                     </Text>
                     <Text align="center" size="h3" strong>
-                      50$
+                      50$ / 1h
                     </Text>
                   </Space>
                 </Box>
               </Col>
-              <Col span={24}>
-                <Box display="flex" justify="center">
-                  <Text align="center">1 hour of conversation.</Text>
-                </Box>
-              </Col>
               <Col xs={22} md={16}>
-                <Title
-                  level={5}
-                  align="center"
-                  transform="none"
-                  style={{ marginTop: '1rem' }}
-                >
-                  What's Included
-                </Title>
-                <PostListHolder
-                  data={[
-                    <Text size="preNormal" type="primary">
-                      Theory & practice.
-                    </Text>,
-                    <Text size="preNormal" type="primary">
-                      Project(s) review.
-                    </Text>,
-                    <Text size="preNormal" type="primary">
-                      Help with CV.
-                    </Text>,
-                    <Text size="preNormal" type="primary">
-                      Feedback with tips.
-                    </Text>,
-                    <Text size="preNormal" type="primary">
-                      Homework & support.
-                    </Text>,
-                  ]}
-                />
+                <Paragraph align="center" style={{ marginTop: '1rem' }}>
+                  1 hour of conversation, best for looking at the code,
+                  discussing portfolio, helping out with best practices, and
+                  proposing the next steps to improve as a Developer.
+                </Paragraph>
               </Col>
               <ButtonHolder>
                 <PromoButton onClick={openMentoringEvent}>
@@ -195,44 +169,17 @@ export const Offer = () => {
                       150$
                     </Text>
                     <Text align="center" size="h3" strong>
-                      75$
+                      75$ / 1.5h
                     </Text>
                   </Space>
                 </Box>
               </Col>
-              <Col span={24}>
-                <Box display="flex" justify="center">
-                  <Text align="center">1.5 hours of conversation.</Text>
-                </Box>
-              </Col>
               <Col xs={22} md={16}>
-                <Title
-                  level={5}
-                  align="center"
-                  transform="none"
-                  style={{ marginTop: '1rem' }}
-                >
-                  What's Included
-                </Title>
-                <PostListHolder
-                  data={[
-                    <Text size="preNormal" type="primary">
-                      Adjusted to your skill.
-                    </Text>,
-                    <Text size="preNormal" type="primary">
-                      Code challenges.
-                    </Text>,
-                    <Text size="preNormal" type="primary">
-                      Full-range questions.
-                    </Text>,
-                    <Text size="preNormal" type="primary">
-                      Robust feedback.
-                    </Text>,
-                    <Text size="preNormal" type="primary">
-                      Solutions & answers.
-                    </Text>,
-                  ]}
-                />
+                <Paragraph align="center" style={{ marginTop: '1rem' }}>
+                  1.5 hours of conversation, have a job interview soon? Best to
+                  try yourself on a mock call. Theory, practice with proposed
+                  solutions, and robust feedback included.
+                </Paragraph>
               </Col>
               <ButtonHolder>
                 <PromoButton onClick={openMockInterviewEvent}>
@@ -263,44 +210,17 @@ export const Offer = () => {
                       300$
                     </Text>
                     <Text align="center" size="h3" strong>
-                      150$
+                      150$ / 4h
                     </Text>
                   </Space>
                 </Box>
               </Col>
-              <Col span={24}>
-                <Box display="flex" justify="center">
-                  <Text align="center">4x - 1 hour of conversation.</Text>
-                </Box>
-              </Col>
               <Col xs={22} md={16}>
-                <Title
-                  level={5}
-                  align="center"
-                  transform="none"
-                  style={{ marginTop: '1rem' }}
-                >
-                  What's Included
-                </Title>
-                <PostListHolder
-                  data={[
-                    <Text size="preNormal" type="primary">
-                      Real-world project.
-                    </Text>,
-                    <Text size="preNormal" type="primary">
-                      Coding with a Mentor.
-                    </Text>,
-                    <Text size="preNormal" type="primary">
-                      Perfect for newcomers.
-                    </Text>,
-                    <Text size="preNormal" type="primary">
-                      Get the best results.
-                    </Text>,
-                    <Text size="preNormal" type="primary">
-                      Help & support.
-                    </Text>,
-                  ]}
-                />
+                <Paragraph align="center" style={{ marginTop: '1rem' }}>
+                  4 hours of conversation, spread over the month, 1 hour per
+                  week. Build a real-world project, code with a Mentor, and
+                  learn the most by building things from the scratch.
+                </Paragraph>
               </Col>
               <ButtonHolder>
                 <PromoButton onClick={openDevelopmentPlanEvent}>

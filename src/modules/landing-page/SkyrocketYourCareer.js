@@ -39,14 +39,14 @@ export const SkyrocketYourCareer = () => {
   return (
     <Holder id="bigsondev-skyrocket-your-career">
       <Title level={2} align="center">
-        Skyrocket your career
+        Mentorship
       </Title>
       <Row justify="center">
         <Col xs={20} sm={12}>
           <Paragraph align="center" breakParagraph>
             <div style={{ maxWidth: 420, margin: '0 auto' }}>
               Looking for code review, real-world projects, or ready to test
-              your skills? Let me React to this.
+              your skills? Let me react to this.
             </div>
           </Paragraph>
         </Col>
