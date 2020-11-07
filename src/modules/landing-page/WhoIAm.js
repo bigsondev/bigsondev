@@ -75,12 +75,17 @@ export const WhoIAm = () => {
     <>
       <Holder id="bigsondev-who-i-am">
         <Title level={2} align="center">
-          Who I Am
+          About Me
         </Title>
         <Row justify="center">
           <Col xs={20} sm={12}>
             <Paragraph align="center" breakParagraph>
-              I'm a Frontend Mentor who can move your career to the next level.
+              Hi, I'm Adrian - Frontend Mentor. I love sharing my knowledge with
+              others. I was a League of Legends Coach for nearly 5 years. After
+              that, switched my career into IT field. From a Java Tester to Lead
+              Frontend Developer - recruiting candidates and mentoring folks
+              around me. I collaborated with big companies, startups and always
+              had lots of fun building things from the scratch.
             </Paragraph>
           </Col>
         </Row>
@@ -93,12 +98,12 @@ export const WhoIAm = () => {
                 </Col>
                 <Col span={24}>
                   <Title level={5} align="center" transform="none">
-                    Frontend Developer
+                    Developer
                   </Title>
                 </Col>
                 <Col span={20}>
                   <Paragraph align="center" size="preNormal">
-                    I love being up-to-date in Frontend. I value modern, clean,
+                    I love being up-to-date in Frontend. I value modern and
                     declarative code.
                   </Paragraph>
                 </Col>
@@ -115,22 +120,25 @@ export const WhoIAm = () => {
                     Skills
                   </Title>
                   <Paragraph align="center" size="preNormal">
-                    Fan of React ecosystem, TypeScript, CI/CD, Automation,
-                    Testing.
+                    HTML, CSS, JS, TS, React, Gatsby
                   </Paragraph>
                   <Paragraph align="center" size="preNormal">
-                    2D Game Developer, coding games in Phaser.
+                    Node.js, REST, GraphQL
                   </Paragraph>
                   <Paragraph align="center" size="preNormal">
-                    UX/UI Evangelist, Material Design, Ant Design user, Atomic
-                    Design follower.
+                    2D Games in Phaser, Unity
                   </Paragraph>
                   <Paragraph align="center" size="preNormal">
-                    Leader of multiple teams, managing through Atlassian Kit.
+                    Automation, CI/CD, Git
                   </Paragraph>
                   <Paragraph align="center" size="preNormal">
-                    Builder and Creator of scaling projects with Micro Frontends
-                    & Monorepo.
+                    Testing (units, e2e, A/B)
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    Leadership, Agile, Scrum, Kanban
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    UX/UI, Design Systems
                   </Paragraph>
                 </Col>
               </Row>
@@ -148,9 +156,12 @@ export const WhoIAm = () => {
                   </Title>
                 </Col>
                 <Col span={20}>
-                  <Paragraph align="center" size="preNormal">
-                    I do Mock Interviews, from theory to coding challenges.
-                  </Paragraph>
+                  <Box mb={4}>
+                    <Paragraph align="center" size="preNormal">
+                      I enjoy having a mock interview with mentees to help them
+                      prepare.
+                    </Paragraph>
+                  </Box>
                 </Col>
                 <Col span={20}>
                   <Title level={5} align="center" transform="none">
@@ -162,23 +173,28 @@ export const WhoIAm = () => {
                 </Col>
                 <Col span={20}>
                   <Title level={5} align="center" transform="none">
-                    Skills
+                    Interview Methods
                   </Title>
                   <Paragraph align="center" size="preNormal">
-                    Frontend Junior, Regular, Senior. All levels included.
+                    1:1 Junior, Regular, Senior levels
                   </Paragraph>
                   <Paragraph align="center" size="preNormal">
-                    JS, HTML, CSS, React, and other Frameworks on demand, e.g.
-                    Angular.
+                    Theory & Practice
                   </Paragraph>
                   <Paragraph align="center" size="preNormal">
-                    50+ interviews.
+                    Pair Programming
                   </Paragraph>
                   <Paragraph align="center" size="preNormal">
-                    Individual approach, robust feedback.
+                    Brainstorming & Conversation
                   </Paragraph>
                   <Paragraph align="center" size="preNormal">
-                    Both technical and soft skills checks.
+                    Soft skills check
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    Proposing solutions
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    Adjusting to your skill
                   </Paragraph>
                 </Col>
               </Row>
@@ -197,9 +213,12 @@ export const WhoIAm = () => {
                 </Col>
                 <Col span={20}>
                   <Box margin="-0.5rem 0 0 0">
-                    <Paragraph align="center" size="preNormal">
-                      I create individual plans and have an empathic approach.
-                    </Paragraph>
+                    <Box mb={4}>
+                      <Paragraph align="center" size="preNormal">
+                        I feel like I was borned to teach others, it's a destiny
+                        - what can I say.
+                      </Paragraph>
+                    </Box>
                   </Box>
                 </Col>
                 <Col span={20}>
@@ -212,24 +231,28 @@ export const WhoIAm = () => {
                 </Col>
                 <Col span={20}>
                   <Title level={5} align="center" transform="none">
-                    Skills
+                    Stats & Methods
                   </Title>
                   <Paragraph align="center" size="preNormal">
-                    In the past, the League of Legends Challenger rank in
-                    Europe, in-depth game knowledge.
+                    League of Legends Coach for 5 years
                   </Paragraph>
                   <Paragraph align="center" size="preNormal">
-                    Now, doing my best to be a Challenger in Frontend &
-                    Mentoring.
+                    300+ students
                   </Paragraph>
                   <Paragraph align="center" size="preNormal">
-                    300+ students.
+                    1000+ sessions
                   </Paragraph>
                   <Paragraph align="center" size="preNormal">
-                    1000+ sessions.
+                    Individual approach
                   </Paragraph>
                   <Paragraph align="center" size="preNormal">
-                    A lot of fun and new friends.
+                    Real-world projects
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    Homework & Support
+                  </Paragraph>
+                  <Paragraph align="center" size="preNormal">
+                    Staying in touch
                   </Paragraph>
                 </Col>
               </Row>

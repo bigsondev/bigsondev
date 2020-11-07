@@ -12,7 +12,7 @@ import {
 const Landing = () => {
   return (
     <Layout fixedContent={false}>
-      <SEO title="Frontend Developer, Recruiter, Mentor & Your Friend" />
+      <SEO title="Frontend Mentor" />
       <Box mb={5}>
         <Section>
           <Promo />

@@ -22,7 +22,7 @@ const Holder = styled.div({
 
 export const AlternativeConversation = () => {
   return (
-    <Holder>
+    <Holder id="bigsondev-free-consultation">
       <Title level={2} align="center">
         Can't decide?
       </Title>
@@ -40,7 +40,7 @@ export const AlternativeConversation = () => {
         <Col xs={24} style={{ textAlign: 'center' }}>
           <Box margin="-2rem 0 0 0">
             <SecondaryButton onClick={openFreeConsultationEvent}>
-              Reach Out
+              Reserve meeting
             </SecondaryButton>
           </Box>
         </Col>

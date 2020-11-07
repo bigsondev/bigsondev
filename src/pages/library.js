@@ -173,11 +173,12 @@ const Library = ({
     <Layout>
       <SEO title="Library | Practice With Projects, Coding Challenges, And Try Frontend Quiz" />
       <Title level={2} align="center">
-        Learn by building 👨‍💻
+        Practice by building 👨‍💻
       </Title>
       <Box mb={10}>
         <Paragraph align="center">
-          To become a great Developer - you have to code.
+          To become a great Developer, <br />
+          you have to code.
         </Paragraph>
       </Box>
       <Box mb={3}>
@@ -185,7 +186,7 @@ const Library = ({
           Projects
         </Title>
         <Paragraph size="preNormal" align="center">
-          Code real projects based on assignment.
+          Code real-world projects based on assignment.
         </Paragraph>
       </Box>
       <Box mb={10}>
@@ -204,15 +205,15 @@ const Library = ({
           ))}
         </Row>
       </Box>
-      <Box mb={1} display="flex" justify="center">
-        <Space size="large" align="baseline">
-          <Title level={3} transform="capitalize" align="center">
-            Code Challenges
-          </Title>
+      <Box mb={1}>
+        <Title level={3} transform="capitalize" align="center">
+          Code Challenges
+        </Title>
+        <Paragraph align="center">
           <PromoButton size="small">
             <Link to={quiz.path}>Start Quiz</Link>
           </PromoButton>
-        </Space>
+        </Paragraph>
       </Box>
       <Box mb={3} display="flex" justify="center">
         <Space>

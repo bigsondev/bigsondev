@@ -146,8 +146,17 @@ const Blog = ({
   return (
     <Layout>
       <SEO title="Blog | Frontend, React Tutorials, Sharing Knowledge, Tips & Tricks" />
-      <Box mb={7}>
-        <Title level={2} align="center">
+      <Title level={2} align="center">
+        Knowledge is power 📖
+      </Title>
+      <Box mb={10}>
+        <Paragraph align="center">
+          To become a great Developer, <br />
+          you have to learn.
+        </Paragraph>
+      </Box>
+      <Box mb={3}>
+        <Title level={3} transform="capitalize" align="center">
           Latest Articles
         </Title>
       </Box>

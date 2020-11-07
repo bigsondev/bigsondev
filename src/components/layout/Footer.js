@@ -12,7 +12,7 @@ import { Link as GatsbyLink } from 'gatsby';
 
 import { LogoFooter } from '~assets';
 
-import { Link } from '../Typography';
+import { Link, Text } from '../Typography';
 import { Paragraph, Icon } from '..';
 import { Logo } from './styled';
 
@@ -30,11 +30,10 @@ const BottomHolder = styled.footer({
 });
 
 const FooterLinkHolder = styled(GatsbyLink)({
-  textDecoration: 'underline',
-  color: '#000',
-  fontSize: '1rem',
+  color: 'rgba(80,80,80,0.7)',
 
-  '&:hover': {
+  '& > span:hover': {
+    transition: 'color 0.1s ease-in',
     color: '#000',
   },
 });
@@ -92,14 +91,21 @@ export const Footer = () => (
             style={{ marginTop: '0.9rem' }}
           >
             <Space size="large" direction="vertical">
-              <Paragraph strong marginBottom="0">
-                Menu
-              </Paragraph>
-              <FooterLinkHolder to="/start-here/">Start Here</FooterLinkHolder>
-              <FooterLinkHolder to="/blog/">Blog</FooterLinkHolder>
-              <FooterLinkHolder to="/library/">Library</FooterLinkHolder>
-              <FooterLinkHolder to="/mentorship/">Mentorship</FooterLinkHolder>
-              <FooterLinkHolder to="/reach-out/">Reach Out</FooterLinkHolder>
+              <FooterLinkHolder to="/start-here/">
+                <Text strong>Start Here</Text>
+              </FooterLinkHolder>
+              <FooterLinkHolder to="/blog/">
+                <Text strong>Blog</Text>
+              </FooterLinkHolder>
+              <FooterLinkHolder to="/library/">
+                <Text strong>Library</Text>
+              </FooterLinkHolder>
+              <FooterLinkHolder to="/mentorship/">
+                <Text strong>Mentorship</Text>
+              </FooterLinkHolder>
+              <FooterLinkHolder to="/reach-out/">
+                <Text strong>Reach Out</Text>
+              </FooterLinkHolder>
             </Space>
           </Col>
           <Col>

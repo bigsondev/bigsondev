@@ -15,14 +15,14 @@ export const BlogLibrary = () => {
   return (
     <Holder>
       <Title level={2} align="center">
-        I focus on you
+        Theory & Practice
       </Title>
       <Row justify="center">
         <Col xs={20} sm={12}>
           <Paragraph align="center" breakParagraph>
             <div style={{ maxWidth: 420, margin: '0 auto' }}>
-              Feel free to read an article or two, practice your coding skills,
-              and maybe do a Quiz.
+              Expertise knowledge and real-world projects, code challenges,
+              quizes. I've put my heart into it to make learning easier for you.
             </div>
           </Paragraph>
         </Col>
@@ -31,10 +31,10 @@ export const BlogLibrary = () => {
         <Col xs={24} style={{ textAlign: 'center' }}>
           <Box margin="-2rem 0 0 0">
             <Link to="/blog/">
-              <SecondaryButton>Visit Blog</SecondaryButton>
+              <SecondaryButton>Blog</SecondaryButton>
             </Link>
             <Link to="/library/">
-              <SecondaryButton>Visit Library</SecondaryButton>
+              <SecondaryButton>Library</SecondaryButton>
             </Link>
           </Box>
         </Col>

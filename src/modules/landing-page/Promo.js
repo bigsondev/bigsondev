@@ -27,7 +27,7 @@ const MobileScreenPromo = () => (
         align="center"
       >
         Hi,{' '}
-        <Text size="h1" fontSize={'2.2rem'} strong textOpacity={1}>
+        <Text size="h1" fontSize={'2.2rem'} strong textOpacity={0.85}>
           Frontend
         </Text>{' '}
         is tough.
@@ -40,26 +40,26 @@ const MobileScreenPromo = () => (
         align="center"
       >
         Let me help you with{' '}
-        <Text size="h1" fontSize={'2.2rem'} strong textOpacity={1}>
+        <Text size="h1" fontSize={'2.2rem'} strong textOpacity={0.85}>
           IT.
         </Text>
       </Title>
       <Paragraph
-        size={'small'}
-        marginBottom="2.5rem"
+        size={'preNormal'}
+        marginBottom="2rem"
         fontStyle="italic"
         align="center"
       >
-        I'm Adrian - Frontend Mentor.
-        <br />I love sharing my knowledge with others.
+        Modern Frontend evolves at a lightning fast pace. It's difficult to keep
+        up.
       </Paragraph>
     </Col>
     <Col span={24}>
       <Illustration type="promo" />
     </Col>
     <Box mt={5} width="100%" display="flex" justify="center">
-      <Link to="/mentorship/#bigsondev-offer">
-        <PromoButton>I want to improve</PromoButton>
+      <Link to="/start-here/">
+        <PromoButton>Get Started</PromoButton>
       </Link>
     </Box>
   </Row>
@@ -77,7 +77,7 @@ const MediumScreenPromo = () => (
           align="center"
         >
           Hi,{' '}
-          <Text size="h1" fontSize="2.5rem" strong textOpacity={1}>
+          <Text size="h1" fontSize="2.5rem" strong textOpacity={0.85}>
             Frontend
           </Text>{' '}
           is tough.
@@ -89,13 +89,18 @@ const MediumScreenPromo = () => (
           align="center"
         >
           Let me help you with{' '}
-          <Text size="h1" fontSize="2.5rem" strong textOpacity={1}>
+          <Text size="h1" fontSize="2.5rem" strong textOpacity={0.85}>
             IT.
           </Text>
         </Title>
-        <Paragraph size="preNormal" align="center" fontStyle="italic">
-          I'm Adrian - Frontend Mentor.
-          <br />I love sharing my knowledge with others.
+        <Paragraph
+          size={'preNormal'}
+          marginBottom="2rem"
+          fontStyle="italic"
+          align="center"
+        >
+          Modern Frontend evolves at a lightning fast pace. <br />
+          It's difficult to keep up.
         </Paragraph>
       </Box>
     </Col>
@@ -103,8 +108,8 @@ const MediumScreenPromo = () => (
       <Illustration type="promo" />
     </Col>
     <Box mt={5} width="100%" display="flex" justify="center">
-      <Link to="/mentorship/#bigsondev-offer">
-        <PromoButton>I want to improve</PromoButton>
+      <Link to="/start-here/">
+        <PromoButton>Get Started</PromoButton>
       </Link>
     </Box>
   </Row>
@@ -121,7 +126,7 @@ const BigScreenPromo = () => (
           fontSize={'3rem'}
         >
           Hi,{' '}
-          <Text size="h1" fontSize={'3rem'} strong textOpacity={1}>
+          <Text size="h1" fontSize={'3rem'} strong textOpacity={0.85}>
             Frontend
           </Text>{' '}
           is tough.
@@ -133,16 +138,16 @@ const BigScreenPromo = () => (
           marginBottom="2rem"
         >
           Let me help you with{' '}
-          <Text size="h1" fontSize={'3rem'} strong textOpacity={1}>
+          <Text size="h1" fontSize={'3rem'} strong textOpacity={0.85}>
             IT.
           </Text>
         </Title>
         <Paragraph size={'preNormal'} marginBottom="2rem" fontStyle="italic">
-          I'm Adrian - Frontend Mentor.
-          <br />I love sharing my knowledge with others.
+          Modern Frontend evolves at a lightning fast pace. <br />
+          It's difficult to keep up.
         </Paragraph>
-        <Link to="/mentorship/#bigsondev-offer">
-          <PromoButton>I want to improve</PromoButton>
+        <Link to="/start-here/">
+          <PromoButton>Get Started</PromoButton>
         </Link>
       </Col>
       <Col span={12}>

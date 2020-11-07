@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import { Link as GatsbyLink } from 'gatsby';
-import styled from 'styled-components';
+import { openPopupWidget } from 'react-calendly';
 
 import {
   Layout,
@@ -15,77 +15,70 @@ import {
   SlackBanner,
 } from '~components';
 
-const GatsbyLinkHolder = styled(GatsbyLink)({
-  textDecoration: 'underline !important',
-});
+const openFreeConsultationEvent = () => {
+  openPopupWidget({
+    url: 'https://calendly.com/bigsondev/free-consultation',
+    pageSettings: {
+      hideEventTypeDetails: true,
+      hideLandingPageDetails: true,
+    },
+  });
+};
 
 const cheatSheetData = [
-  <Text size="preNormal">
-    My ultimate goal is to{' '}
-    <Text size="preNormal" strong>
-      share knowledge with you
-    </Text>
-    .
+  <Text>
+    I recommend to start from reading articles on{' '}
+    <GatsbyLink to="/blog/">Blog</GatsbyLink>, I'm focusing on sharing expertise
+    knowledge there.
   </Text>,
-  <Text size="preNormal">
-    My combined experience of being a Frontend Developer, Recruiter & Mentor is{' '}
-    <Text size="preNormal" strong>
-      12 years
-    </Text>
-    .
+  <Text>
+    If you don't like too much theory,{' '}
+    <GatsbyLink to="/library/">Library</GatsbyLink> will be a good place to
+    learn by building. There is a selection of real-world projects, coding
+    challenges and quizes.
   </Text>,
-  <Text size="preNormal">
-    I know JS, HTML, CSS, React, React Native, Phaser, Node.js, a bit of Angular
-    and Vue. I specialize in Web/Frontend Development, but also have some fair
-    knowledge about Architecture, Design, UX/UI, Backend (REST/GraphQL), but I'm
-    not a Backend Developer by any means.
+  <Text>
+    If you are seeking for more knowledge,{' '}
+    <GatsbyLink to="/mentorship/#bigsondev-offer">Mentorship</GatsbyLink> might
+    be a good idea to boost your skills.{' '}
   </Text>,
-  <Text size="preNormal">
-    If you decide on my{' '}
-    <GatsbyLinkHolder to="/mentorship/#bigsondev-offer">
-      mentorship
-    </GatsbyLinkHolder>
-    , I'm not just doing it, I will help & support you during your journey. We
-    can stay in touch on{' '}
-    <GatsbyLinkHolder to="/start-here/#bigsondev-slack">Slack</GatsbyLinkHolder>
-    , through email, social, or just anywhere.
+  <Text>
+    Looking for a chat, code review, getting some tips & tricks related to your
+    career or Frontend in general? Join{' '}
+    <GatsbyLink to="/start-here/#bigsondev-slack">Slack</GatsbyLink>, it's free
+    of charge.
   </Text>,
-  <Text size="preNormal">
-    I've been a leader of multiple teams, working for many different companies.
-    I'll be happy to prepare a plan aimed just for you, with real-world
-    projects, building things from the scratch, and{' '}
-    <Text size="preNormal" strong>
-      finding a job in 3-6 months
-    </Text>{' '}
-    (no joke).
+  <Text>
+    Still unsure of what to do?{' '}
+    <GatsbyLink to="/start-here/" onClick={openFreeConsultationEvent}>
+      Reserve
+    </GatsbyLink>{' '}
+    a free 15 minutes consultation with me. We can get to know each other and
+    decide on what to do next. You can also{' '}
+    <GatsbyLink to="/reach-out/">Reach Out</GatsbyLink> to me via email.
   </Text>,
-  <Text size="preNormal">
-    If mentorship feels a bit intimidating, start by subscribing to a{' '}
-    <GatsbyLinkHolder size="preNormal" to="/#bigsondev-newsletter-landing">
-      newsletter
-    </GatsbyLinkHolder>
-    . You will get 2 free PDFs (19 pages) about Frontend Technical Interviewing.
-    Read a <GatsbyLinkHolder to="/blog/">blog</GatsbyLinkHolder>, do some coding
-    challenges in the{' '}
-    <GatsbyLinkHolder to="/library/">library</GatsbyLinkHolder>, or just{' '}
-    <GatsbyLinkHolder to="/reach-out/">reach out</GatsbyLinkHolder> to me for a
-    free conversation.
+  <Text>
+    To stay up-to-date with updates on this website you can of course follow me
+    on various socials (scroll down to footer). Additionally, I have a{' '}
+    <GatsbyLink to="/#bigsondev-newsletter-landing">Newsletter</GatsbyLink> to
+    which you can subscribe.
   </Text>,
+  <Text>Have fun along the way. ❤️</Text>,
 ];
 
 const StartHere = () => {
   return (
     <Layout fixedContent={false}>
-      <SEO title="Start Here | Cheat Sheet To Save Your Time & A Warm Welcome" />
+      <SEO title="Start Here | Cheat Sheet To Save Your Time" />
       <Box margin="0 0 7rem 0">
         <Section fullWidth>
           <Title level={2} align="center">
-            Getting Started 
+            Get Started
           </Title>
           <Row justify="center">
             <Col xs={22} sm={12}>
               <Paragraph align="center">
-                You can find a Cheat Sheet below to help you get around the
+                Please, read a Cheat Sheet below to easier get around the
                 website.
               </Paragraph>
             </Col>

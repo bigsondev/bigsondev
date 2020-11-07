@@ -11,7 +11,7 @@ import {
 const Mentorship = () => (
   <Layout fixedContent={false}>
     <Box mt={-4}>
-      <SEO title="Mentorship | Get Into Frontend & Find Your First IT Job In No Time" />
+      <SEO title="Mentorship | Get Into Frontend & Find Your First IT Job" />
       <Section fullWidth>
         <Offer />
       </Section>

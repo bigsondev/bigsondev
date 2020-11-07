@@ -45,8 +45,8 @@ export const SkyrocketYourCareer = () => {
         <Col xs={20} sm={12}>
           <Paragraph align="center" breakParagraph>
             <div style={{ maxWidth: 420, margin: '0 auto' }}>
-              Looking for code review, real-world projects, or ready to test
-              your skills? Let me react to this.
+              Need to improve your Frontend skills? Nobody gives you valuable
+              feedback? I'll be happy to guide you on the right track.
             </div>
           </Paragraph>
         </Col>
@@ -61,7 +61,7 @@ export const SkyrocketYourCareer = () => {
                 </Col>
                 <Col span={24}>
                   <Title level={4} align="center">
-                    i want a mentor
+                    i need a mentor
                   </Title>
                 </Col>
                 <Col span={20}>
@@ -85,7 +85,7 @@ export const SkyrocketYourCareer = () => {
                 </Col>
                 <Col span={24}>
                   <Title level={4} align="center">
-                    i want a mock interview
+                    i need a mock interview
                   </Title>
                 </Col>
                 <Col span={20}>
@@ -109,7 +109,7 @@ export const SkyrocketYourCareer = () => {
                 </Col>
                 <Col span={24}>
                   <Title level={4} align="center">
-                    i want a development plan
+                    i need a development plan
                   </Title>
                 </Col>
                 <Col span={20}>

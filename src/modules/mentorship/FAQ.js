@@ -138,16 +138,16 @@ export const FAQ = () => (
             <Col xs={22} lg={16} xxl={14}>
               <Text>
                 <Text strong>I've been a Technical Recruiter for 2 years</Text>.
-                I interviewed many candidates and also was reviewed many times.
-                Let's do a warm-up, pre-interview call where I'll simulate a
-                real Technical Interview, with questions, code challenges
-                adjusted to your skill level. After the call, you'll get robust
-                feedback with proposed solutions and answers to the questions.
-                I'll measure your experience in relation to the skill level and
-                share some tips on how to improve even further. After all, you
-                should have a fair understanding of where you are in the career,
-                what are the next steps, and bottlenecks, including how to work
-                them out.
+                I interviewed many candidates and also was interviewed many
+                times. Let's do a warm-up, pre-interview call where I'll
+                simulate a real Technical Interview, with questions, code
+                challenges adjusted to your skill level. After the call, you'll
+                get robust feedback with proposed solutions and answers to the
+                questions. I'll measure your experience in relation to the skill
+                level and share some tips on how to improve even further. After
+                all, you should have a fair understanding of where you are in
+                the career, what are the next steps, and bottlenecks, including
+                how to work them out.
               </Text>
             </Col>
           </Row>

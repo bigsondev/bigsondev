@@ -112,7 +112,7 @@ const BlogLayout = ({
                   />
                 </Paragraph>
                 <Paragraph transform="uppercase" size="preNormal" strong>
-                  about me
+                  about Adrian
                 </Paragraph>
                 <Paragraph
                   size="small"
@@ -120,10 +120,8 @@ const BlogLayout = ({
                   align="center"
                   style={{ width: '50%' }}
                 >
-                  Frontend Developer, Recruiter & Mentor. With 12 years of
-                  combined experience in all these areas, my goal is to share
-                  knowledge effectively and prepare you for the Frontend world
-                  in the best possible way.
+                  Frontend Mentor. My goal is to share knowledge effectively and
+                  prepare you for the Frontend world in the best possible way.
                 </Paragraph>
               </Box>
             </XlOnly>

@@ -84,10 +84,11 @@ const LevelOneHolder = styled.div(
     fontSize = '2.5rem',
     marginBottom = '0.5em',
     color,
+    textOpacity = 0.85,
   }) => ({
     textAlign: align,
     '& h1': {
-      color,
+      color: color || `rgba(0, 0, 0, ${textOpacity})`,
       fontWeight,
       textTransform: transform,
       fontSize,

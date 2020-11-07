@@ -46,16 +46,6 @@ const ButtonHolder = styled.div({
   bottom: 4,
 });
 
-const PostListHolder = styled(PostList)({
-  marginBottom: '1.5rem',
-  textAlign: 'center',
-  marginLeft: '-1.5rem',
-
-  '& .ant-list-item-meta-avatar': {
-    display: 'none',
-  },
-});
-
 const openMentoringEvent = () => {
   openPopupWidget({
     url: 'https://calendly.com/bigsondev/frontend-mentoring',
@@ -176,9 +166,9 @@ export const Offer = () => {
               </Col>
               <Col xs={22} md={16}>
                 <Paragraph align="center" style={{ marginTop: '1rem' }}>
-                  1.5 hours of conversation, have a job interview soon? Best to
-                  try yourself on a mock call. Theory, practice with proposed
-                  solutions, and robust feedback included.
+                  1.5 hours of conversation, have a job interview soon? Test
+                  yourself on a mock interview first. Theory, practice with
+                  proposed solutions, and robust feedback included.
                 </Paragraph>
               </Col>
               <ButtonHolder>
