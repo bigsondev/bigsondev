@@ -12,7 +12,7 @@ const Holder = styled.div({
 });
 
 const OfferCard = styled.div({
-  minHeight: 900,
+  minHeight: 930,
   position: 'relative',
   padding: 24,
   paddingBottom: 0,
@@ -20,10 +20,10 @@ const OfferCard = styled.div({
   background: '#FFF',
 
   '@media (max-width: 480px)': {
-    minHeight: 520,
+    minHeight: 550,
   },
   '@media (min-width: 481px) and (max-width: 768px)': {
-    minHeight: 450,
+    minHeight: 480,
   },
 });
 
