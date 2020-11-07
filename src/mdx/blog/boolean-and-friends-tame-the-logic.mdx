@@ -1,0 +1,337 @@
+---
+title: Boolean And Friends - Tame The Logic
+desc: Conditions, typecasting, logical operators, comparison operators, ternary operator, optional chaining, null-coalescing operator - they are all part of JavaScript. As Developers, we need to tame the logic.
+path: /blog/boolean-and-friends-tame-the-logic/
+hasCheatSheet: false
+hasTodoList: false
+series: false
+readTime: 7
+illustration: none
+tags: javascript
+date: 2020-11-05
+---
+
+import { Space, Alert } from 'antd';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  SyntaxHighlighter,
+  Link,
+  Box,
+} from '~components';
+
+export const booleanPrimitiveExample = `const iAmTruthy = true;
+const iAmFalsy = false;\n
+console.log(iAmTruthy); // true
+console.log(iAmFalsy); // false\n
+console.log(typeof iAmTruthy); // "boolean"
+console.log(typeof iAmFalsy); // "bolean"\n
+console.log(iAmTruthy.toString()); // "true"
+`;
+
+export const booleanWrappingObjectExample = `// ✅ GOOD PRACTICE 
+const iAmTruthy = Boolean(true);
+// ❌ BAD PRACTICE - don't use the "new" keyword on Boolean as it introduces unwanted effects and slows down the execution
+const iAmFalsy = new Boolean(false);\n
+console.log(iAmTruthy); // true
+// as you can see, it returned true which is not an expected result
+console.log(iAmFalsy); // true - as it's an object and not a boolean type anymore\n
+console.log(typeof iAmTruthy); // "boolean"
+console.log(typeof iAmFalsy); // "object"`;
+
+export const andOperatorExample = `const exampleTruthyAndOperator = true && true && true;
+const exampleFalsyAndOperator = true && true && false;
+const exampleAndOperator = true && true && 5;\n
+console.log(exampleTruthyAndOperator); // true
+console.log(exampleFalsyAndOperator); // false
+console.log(exampleAndOperator); // 5`;
+
+export const orOperatorExample = `
+const exampleOrOperatorFirstValue = true || false || 5;
+const exampleOrOperatorMiddleValue = false || 5 || true;
+const exampleOrOperatorLastValue = false || false || true;\n
+console.log(exampleOrOperatorFirstValue); // true
+console.log(exampleOrOperatorMiddleValue); // 5
+console.log(exampleOrOperatorLastValue); // true
+`;
+
+export const notOperatorExample = `const iAmOppositeOfTrue = !true;\n
+console.log(iAmOppositeOfTrue); // false`;
+
+export const falsyValuesExample = `
+const revealTheLie = (falsyValue) => console.log(Boolean(falsyValue));\n
+// empty/non-existing values
+revealTheLie(null); // false
+revealTheLie(undefined); // false\n
+// falsy numbers
+revealTheLie(0); // false
+revealTheLie(0n); // false\n
+// falsy strings
+revealTheLie(''); // false\n
+// falsy false?
+revealTheLie(false); // false`;
+
+export const falsyValuesConditionsExample = `const falsyValue = null || undefined || false || 0 || 0n || '';\n
+console.log(falsyValue); // "" -> empty string\n
+// "Hello else" string will be logged to the console
+if (falsyValue) {
+  console.log('Hello falsyValue')
+} else {
+  console.log('Hello else')
+}`;
+
+export const truthyValuesConditionsExample = `const truthyObject = {};
+const truthyArray = [];\n
+// "I am really truthy object!" will be logged to the console
+if (truthyObject) {
+  console.log('I am really truthy object!');
+}\n
+// "I am really truthy array!" will be logged to the console
+if (truthyArray) {
+  console.log('I am really truthy array!');
+}\n
+// It's often needed to compare the size/length instead
+const isObjectEmpty = Object.keys(truthyObject).length === 0;
+const isArrayEmpty = [].length === 0;\n
+console.log(isObjectEmpty); // true
+console.log(isArrayEmpty); // true`;
+
+export const conversionExample = `
+// ❌ BAD PRACTICE - Automatic type conversion
+console.log(false == ''); // true
+console.log(null == undefined); // true
+console.log(0 == '0'); // true
+console.log(false == '0') // true\n
+// ✅ GOOD PRACTICE - No type conversion is done
+console.log(false === ''); // false
+console.log(null === undefined); // false
+console.log(0 === '0'); // false
+console.log(false === '0') // false
+`;
+
+export const examplesExample = `const myAge = 27;
+// greather than operator - is "myAge" greater than 30?
+const isAfterThirty = myAge > 30;
+// less than operator - is "myAge" less than 30?
+const isBeforeThirty = myAge < 30;\n
+// Both conitions are true, "I am truthy!" will be logged to the console
+if (myAge === 27 && isBeforeThirty) {
+  console.log('I am truthy!');
+}\n
+// We need one condition to be true, "I am truthy!" will be logged to the console
+if (myAge === 27 || isAfterThirty) {
+  console.log('I am truthy!');
+}\n
+// Using greater than or equal to and less than or equal to
+// Both conditions are true, "I am truthy!" will be logged to the console
+if (myAge >= 20 && myAge <= 30) {
+ console.log('I am truthy!');
+}\n
+// Using not equal value or not equal type to check if my age is different from 30
+// "I am truthy!" will be logged to the console
+if (myAge !== 30) {
+  console.log('I am truthy!');
+}`;
+
+export const bonusExample = `const age = 27;
+const minimumAge = 18;
+const isAdult = age > minimumAge;
+// Ternary operator is a shorten if/else statement
+const welcomeMessage = isAdult ? 'You seem to be an adult!' : 'We cannot let you in, sorry!';\n
+console.log(welcomeMessage); // "You seem to be an adult!"\n
+const human = {name: 'Adrian'};\n
+console.log(human.name); // "Adrian"
+console.log(human.name.age.toString()) // Uncaught TypeError: Cannot read property 'toString' of undefined"
+// Optional chaining allows us to avoid an error
+console.log(human?.name?.age?.toString()); // undefined\n
+const zero = 0 || 5;\n
+// 5 is logged to the console as 0 was treated as a falsy value
+console.log(zero); // 5\n
+const properZero = 0 ?? 5;\n
+// Using nullish coalescing operator, we get a 0 as it's only looking for null or undefined, 
+// not all possible falsy values
+console.log(properZero); // 0`;
+
+<Post
+  title={props.pageContext.frontmatter.title}
+  desc={props.pageContext.frontmatter.desc}
+  date={props.pageContext.frontmatter.date}
+  readTime={props.pageContext.frontmatter.readTime}
+  showSubtitle
+>
+  <Title level={3}>Introduction</Title>
+  <Paragraph>
+    We all know <Link href="https://wtfjs.com/">wtfjs</Link>. There is a lot of
+    "interesting" things in JavaScript 😱. Instead,{' '}
+    <Text strong>
+      let's focus on the ones developers need and use in their day-to-day work
+    </Text>
+    . As always - it's best to learn by doing.
+  </Paragraph>
+  <Paragraph lastParagraph>Shall we dive in? I'm in 🔥.</Paragraph>
+  <Title level={3}>Boolean</Title>
+  <Paragraph>
+    First, we'll start from a primitive <Text code>boolean</Text> type example.
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{booleanPrimitiveExample}</SyntaxHighlighter>
+  <Paragraph>
+    As we can observe in the above code snippet, <Text code>boolean</Text> has
+    two possible values, <Text code>true</Text> and <Text code>false</Text>.
+    It's a primitive type as it doesn't have any properties and methods,
+    however, we can still call the <Text code>.toString()</Text> method on it.
+    Why?
+  </Paragraph>
+  <Paragraph>
+    <Text strong>
+      It turns out that JavaScript silently uses coercion on primitives
+    </Text>
+    . When we called a <Text code>.toString()</Text> method it converted the primitive
+    to <Text code>Boolean</Text> wrapping object and accessed the <Text code>
+      .toString()
+    </Text> method on its prototype (we'll learn what that means in the future 😅).
+  </Paragraph>
+  <Paragraph>
+    Now, we can take a closer look at the wrapping <Text code>Boolean</Text>{' '}
+    object.
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{booleanWrappingObjectExample}</SyntaxHighlighter>
+  <Paragraph lastParagraph>
+    Things starting to get interesting. The important outcome of the above
+    example is to avoid <Text code>new</Text> keyword when working with booleans
+    in JavaScript. It's perfectly fine to use <Text code>Boolean</Text>, but
+    it's redundant when working with <Text code>true</Text> or{' '}
+    <Text code>false</Text> values, you can directly declare a variable without
+    using the <Text code>Boolean</Text>. It'll get useful for typecasting -
+    we'll get to that soon.
+  </Paragraph>
+  <Title level={3}>Logical Operators</Title>
+  <Paragraph>
+    Let's see how we can use the following logical operators in JavaScript:{' '}
+    <Text code>&& (AND)</Text>, <Text code>|| (OR)</Text>,{' '}
+    <Text code>! (NOT)</Text>.
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{andOperatorExample}</SyntaxHighlighter>
+  <Paragraph>
+    We can explain <Text code>&&</Text> operator by the following sentence: "If
+    this thing is truthy and that thing is truthy, and the last thing is truthy
+    - everything is <Text code>true</Text>". For the second example, it returned{' '}
+    <Text code>false</Text> as the last thing wasn't truthy. It's also useful
+    for assigning a value to a variable if all previous conditions are truthy.
+    That's why <Text code>exampleAndOperator</Text> variable has a value of 5.
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{orOperatorExample}</SyntaxHighlighter>
+  <Paragraph>
+    <Text code>||</Text> operator looks for the first thing that is not{' '}
+    <Text code>false</Text>. In the first example <Text code>true</Text> was set
+    instantly, in the second example, it chose <Text code>5</Text> and in the
+    last example, it chose <Text code>true</Text>.
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{notOperatorExample}</SyntaxHighlighter>
+  <Paragraph lastParagraph>
+    <Text code>!</Text> operator returns the inverse value. If used on{' '}
+    <Text code>true</Text>, it returns <Text code>false</Text> and vice-versa.
+  </Paragraph>
+  <Title level={3}>Falsy Values</Title>
+  <Paragraph>
+    A falsy value is a value that returns <Text code>false</Text>. We can easily
+    see that by using <Text code>Boolean</Text> object wrapper. Please, skip the{' '}
+    <Text code>revealTheLie</Text> function, focus on the output of falsy values
+    (functions will be explained in the separate blog article).
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{falsyValuesExample}</SyntaxHighlighter>
+  <Paragraph>
+    The above example presents all the falsy values JavaScript has. As we can
+    see, after wrapping them with a <Text code>Boolean</Text> object, they all
+    return <Text code>false</Text>.
+  </Paragraph>
+  <Paragraph>But why it's important to know them?</Paragraph>
+  <SyntaxHighlighter showCopy>{falsyValuesConditionsExample}</SyntaxHighlighter>
+  <Paragraph>
+    In the above example, we used <Text code>||</Text> operator (or) which kept
+    choosing the right falsy value until it jumped to the end.{' '}
+    <Text code>falsyValue</Text> variable was set to an empty string{' '}
+    <Text code>''</Text>. <Text code>"Hello else"</Text> string was logged to
+    the console.
+  </Paragraph>
+  <Paragraph>
+    You can think of <Text code>if (...)</Text> statement as of{' '}
+    <Text code>if (Boolean(...))</Text> which is also known as typecasting.
+    <Text strong>
+      {' '}
+      Every value used in the if statement needs to be cast to the <Text code>
+        boolean
+      </Text> type
+    </Text>. Empty string <Text code>''</Text> was cast to <Text code>
+      false
+    </Text> as it's one of the falsy values and that's why else statement was executed.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    Knowing falsy values will help you understand typecasting and the logical
+    operators in JavaScript.
+  </Paragraph>
+  <Title level={3}>Truthy Values</Title>
+  <Paragraph>
+    Truthy values are all values that are returning <Text code>true</Text> after
+    being cast to a <Text code>boolean</Text> type. Empty object <Text code>{`{}`}</Text>{' '}
+    and empty array
+    <Text code>[]</Text> are also truthy.
+  </Paragraph>
+  <SyntaxHighlighter showCopy>
+    {truthyValuesConditionsExample}
+  </SyntaxHighlighter>
+  <Paragraph lastParagraph></Paragraph>
+  <Title level={3}>== vs ===</Title>
+  <Paragraph>
+    <Text code>==</Text> is an "abstract equality operator" when used,{' '}
+    <Text strong>automatic type conversion happens</Text>, on the other hand,{' '}
+    <Text code>===</Text> is a "strict equality operator" and{' '}
+    <Text strong>
+      no automatic conversion is done when comparing two values
+    </Text>
+    .
+  </Paragraph>
+  <Paragraph>Let's see it in action.</Paragraph>
+  <SyntaxHighlighter showCopy>{conversionExample}</SyntaxHighlighter>
+  <Paragraph lastParagraph>
+    I never rely on <Text code>==</Text> as it's unpredictable, always try to
+    use <Text code>===</Text> to avoid unwanted bugs, and make sure you are
+    comparing proper types.
+  </Paragraph>
+  <Title level={3}>Examples 📖</Title>
+  <Paragraph>
+    Ok, I think we learned a lot about logic in JavaScript, let's take a look at
+    the below examples to do some practice. I'll use more comparison operators
+    and some simple if statements, but I'm pretty sure you can figure them out.
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{examplesExample}</SyntaxHighlighter>
+  <Paragraph lastParagraph></Paragraph>
+  <Title level={3}>Bonus 🎁</Title>
+  <Paragraph>
+    There are also different ways to work with logic, such as{' '}
+    <Text code>condition ? resultA : resultB</Text> ternary operator,{' '}
+    <Text code>object?.propertyA?.nestedPropertyB</Text> optional chaining and{' '}
+    <Text code>??</Text> nullish coalescing operator. They sound terrifying 😱,
+    but let's see them in action to tame them a little. 🧐
+  </Paragraph>
+  <SyntaxHighlighter showCopy>{bonusExample}</SyntaxHighlighter>
+  <Title level={3}>Closing Notes</Title>
+  <Paragraph>
+    Try to write some simple logic instructions to practice the knowledge from
+    this article. Logic is a crucial, fundamental aspect to understand when
+    working in any programming language.
+  </Paragraph>
+  <Paragraph>
+    If you liked it and want me to create more articles like this one, please,
+    follow me on socials. I post new blog articles, changes to the website on{' '}
+    <Link href="https://twitter.com/BigsonDev">Twitter</Link>, visual knowledge
+    pills on <Link href="https://www.instagram.com/bigsondev/">Instagram</Link>{' '}
+    and code examples on{' '}
+    <Link href="https://github.com/bigsondev/knowledge-pills">GitHub</Link>. I
+    also have a newly introduced projects that you can work on, check them out
+    in the <Link href="https://bigsondev.com/library/">Library</Link>.
+  </Paragraph>
+  <Paragraph>Thanks for reading. ❤️</Paragraph>
+</Post>

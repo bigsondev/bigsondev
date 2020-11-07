@@ -31,7 +31,7 @@ export const AlternativeConversation = () => {
           <Paragraph align="center" breakParagraph>
             <div style={{ maxWidth: 420, margin: '0 auto' }}>
               Let's have an individual, 15 minutes free of charge conversation.
-              Reserve a meeting via Calendly by clicking on the below button.
+              Reserve a meeting via Calendly by clicking on the button below.
             </div>
           </Paragraph>
         </Col>
