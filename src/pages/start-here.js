@@ -34,7 +34,7 @@ const cheatSheetData = [
   <Text>
     If you don't like too much theory,{' '}
     <GatsbyLink to="/library/">Library</GatsbyLink> will be a good place to
-    learn by building. There is a selection of real-world projects, coding
+    practice by building. There is a selection of real-world projects, coding
     challenges and quizes.
   </Text>,
   <Text>

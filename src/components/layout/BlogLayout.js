@@ -135,9 +135,9 @@ const BlogLayout = ({
                 </Paragraph>
                 <Box margin="0 0 0 2rem">
                   <Paragraph size="small" fontStyle="italic">
-                    Frontend Mentor. My goal is to share knowledge effectively
-                    and prepare you for the Frontend world in the best possible
-                    way.
+                    Adrian - Frontend Mentor. My goal is to share knowledge
+                    effectively and prepare you for the Frontend world in the
+                    best possible way.
                   </Paragraph>
                 </Box>
               </Box>
