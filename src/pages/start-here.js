@@ -63,7 +63,7 @@ const cheatSheetData = [
     <GatsbyLink to="/#bigsondev-newsletter-landing">Newsletter</GatsbyLink> to
     which you can subscribe.
   </Text>,
-  <Text>Have fun along the way. ❤️</Text>,
+  <Text>Have fun along the way.</Text>,
 ];
 
 const StartHere = () => {

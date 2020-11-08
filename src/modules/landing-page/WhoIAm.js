@@ -215,8 +215,8 @@ export const WhoIAm = () => {
                   <Box margin="-0.5rem 0 0 0">
                     <Box mb={4}>
                       <Paragraph align="center" size="preNormal">
-                        I feel like I was borned to teach others, it's a destiny
-                        - what can I say.
+                        I feel like I was borned to mentor, it's a destiny -
+                        what can I say.
                       </Paragraph>
                     </Box>
                   </Box>
