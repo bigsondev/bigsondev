@@ -76,6 +76,8 @@ const TAG_COLOR_MAPPER = {
   css: '#91d5ff',
   js: '#ffec3d',
   react: '#61DAFB',
+  express: '#43853D',
+  ['socket.io']: '#000',
 };
 
 const Resource = ({

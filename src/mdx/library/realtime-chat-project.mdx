@@ -1,0 +1,160 @@
+---
+title: Realtime Chat
+path: /library/realtime-chat-project/
+desc: Want to have your own version of WhatsApp? Create a Realtime Chat App with React, Express & Socket.IO.
+date: 2020-11-09
+type: project
+tags: react, express, socket.io
+order: 3
+difficulty: 4
+---
+
+import { Space, Row, Col } from 'antd';
+import { Link as GatsbyLink } from 'gatsby';
+
+import {
+  Post,
+  PostList,
+  Paragraph,
+  Text,
+  Title,
+  CodeEditor,
+  Card,
+  Link,
+  Box,
+  PrimaryButton,
+  SecondaryButton,
+  PromoButton,
+} from '~components';
+import { getIframeContent } from '~utils';
+
+export const projectRequirements = [
+  <Text>
+    Create a new git repository, e.g. on{' '}
+    <Link href="http://github.com/">GitHub</Link>.
+  </Text>,
+  <Text>
+    Initialize the repository with{' '}
+    <Link href="https://nextjs.org/">Next.js</Link>.
+  </Text>,
+  <Text>
+    It's fine to compose UI on your own but to speed up your work and learn how
+    to use 3rd party tools, I recommend using{' '}
+    <Link href="https://material-ui.com/">Material UI</Link>.
+  </Text>,
+  <Text>
+    For state management use{' '}
+    <Link href="https://reactjs.org/docs/hooks-reference.html">
+      React hooks
+    </Link>
+    , <Link href="https://reactjs.org/docs/hooks-reference.html#usestate">
+      useState
+    </Link> will be the best option.
+  </Text>,
+  <Text>
+    For Backend, use Next.js{' '}
+    <Link href="https://nextjs.org/docs/advanced-features/custom-server">
+      Custom Server
+    </Link>
+    , <Link href="https://expressjs.com/">Express</Link> & <Link href="https://socket.io/">
+      Socket.IO
+    </Link> combination.
+  </Text>,
+];
+
+export const mustHaveFeatures = [
+  <Text>Add ability to send messages.</Text>,
+  <Text>Broadcast messages to other users.</Text>,
+  <Text>
+    Display your messages on the right, someone else messages on the left.
+  </Text>,
+  <Text>Add counter of people online in the chat.</Text>,
+];
+
+export const additionalFeatures = [
+  <Text>
+    Make the application responsive according to the rules of{' '}
+    <Link href="https://web.dev/responsive-web-design-basics/">RWD</Link>.
+    Additionally, make it{' '}
+    <Link href="https://www.interaction-design.org/literature/topics/ux-design">
+      UX
+    </Link>{' '}
+    friendly.
+  </Text>,
+  <Text>Show when someone is typing.</Text>,
+  <Text>Add ability to choose a nickname.</Text>,
+  <Text>Implement private messages.</Text>,
+  <Text>
+    Add the ability to save messages, e.g. by using{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">
+      localStorage
+    </Link>
+    .
+  </Text>,
+];
+
+<Post>
+  <Card title="About this project">
+    <Paragraph align="center">
+      <Box mb={5}>
+        <Text strong>Assignment:</Text> Code a Realtime Chat App in React &
+        Express (Socket.IO).
+      </Box>
+      <Row gutter={[16, 16]} justify="center">
+        <Col>
+          <Link href="https://www.figma.com/file/wcTJcE0Foi1u3cTkV347Xx/Wireframes?node-id=264242%3A0">
+            <SecondaryButton size="small">Wireframe</SecondaryButton>
+          </Link>
+        </Col>
+        <Col>
+          <Link href="https://morning-meadow-64994.herokuapp.com/">
+            <SecondaryButton size="small">Example</SecondaryButton>
+          </Link>
+        </Col>
+        <Col>
+          <Link href="https://github.com/bigsondev/realtime-chat">
+            <SecondaryButton size="small">Solution</SecondaryButton>
+          </Link>
+        </Col>
+      </Row>
+    </Paragraph>
+  </Card>
+  <Title level={3}>Project Requirements</Title>
+  <PostList data={projectRequirements} />
+  <Title level={3}>Fundamental Features</Title>
+  <PostList data={mustHaveFeatures} />
+  <Title level={3}>Additional Features</Title>
+  <PostList data={additionalFeatures} />
+  <Title level={3}>Stuck, can't progress?</Title>
+  <Paragraph>
+    Take a break, try to think about all the pieces you need to build for this
+    application. Think of state management, plan data structure, and/or draw
+    some sketches/mock-ups to present the initial UI. I'll be happy to assist
+    you with this project, you can try out my{' '}
+    <GatsbyLink to="/mentorship/#bigsondev-offer">Mentorship</GatsbyLink> or
+    connect through{' '}
+    <GatsbyLink to="/start-here/#bigsondev-slack">Slack</GatsbyLink> (free of
+    charge).
+  </Paragraph>
+  <Title level={3}>Building & Deploying</Title>
+  <Paragraph>
+    If you created the application with Next.js, there is a{' '}
+    <Text code>yarn build</Text> command shipped in, but it needs to be modified
+    a bit, you can look for reference in the{' '}
+    <Link href="https://github.com/bigsondev/realtime-chat/blob/main/package.json">
+      provided solution
+    </Link>
+    . For deployment, as it's Frontend + Backend, you need to deploy on e.g. <Link href="https://www.heroku.com/">
+      Heroku
+    </Link>.
+  </Paragraph>
+  <Title level={3}>Share your solution</Title>
+  <Paragraph>
+    You can join{' '}
+    <GatsbyLink to="/start-here/#bigsondev-slack">Slack</GatsbyLink> and add a
+    link to your solution in the <Text strong>#review</Text> channel. I'll
+    definitely pick it up and come back to you with feedback. Additionally, you
+    can tweet <Link href="https://twitter.com/BigsonDev">@BigsonDev</Link> with
+    repo and deployed application links. It will mean a ton to me.
+  </Paragraph>
+</Post>
