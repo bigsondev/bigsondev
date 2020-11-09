@@ -145,7 +145,7 @@ const Blog = ({
 }) => {
   return (
     <Layout>
-      <SEO title="Blog | Frontend, React Tutorials, Sharing Knowledge, Tips & Tricks" />
+      <SEO title="Blog | Frontend, HTML, CSS, JS, React Tutorials, Sharing Knowledge, Tips & Tricks" />
       <Title level={2} align="center">
         Knowledge is power 📖
       </Title>

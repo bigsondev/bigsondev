@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://bigsondev.com/',
     title: `| Adrian Bigaj | bigsondev.com`,
-    description: `Frontend explained in a simple way through blog articles, practice by building real-world projects, and get some mentoring to improve your skills. Everything in one place, available to you, now.`,
+    description: `Learn Frontend by reading articles on the blog, practice your skills by building real-world projects in the library, and skyrocket your career by deciding on individual Mentorship.`,
     keywords:
       'frontend, mentor, coaching, coding, javascript, html, css, coding challenges, coding practice, tutorials, tutoring, blog, library, skyrocket career, carrer change, improve, learn',
     author: `@BigsonDev`,
