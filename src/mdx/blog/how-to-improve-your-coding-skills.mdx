@@ -1,0 +1,217 @@
+---
+title: How To Improve Your Coding Skills
+desc: It's easy to get stuck in tutorials hell. We tend to overuse one learning source and burn out quickly. I described more ways to improve as a Developer, let's go through them and sum up an example plan to make sure you have fun while learning.
+path: /blog/how-to-improve-your-coding-skills/
+hasCheatSheet: false
+hasTodoList: false
+series: false
+readTime: 5
+illustration: none
+tags: improve,learn
+date: 2020-11-11
+---
+
+import { Space, Alert } from 'antd';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  PostCard,
+  SyntaxHighlighter,
+  Link,
+  Box,
+} from '~components';
+
+export const codingChallengesWebsites = [
+  <Link href="https://www.codewars.com/">Codewars</Link>,
+  <Link href="https://www.codingame.com/">CodinGame</Link>,
+  <Link href="https://projecteuler.net/">Project Euler</Link>,
+  <Link href="https://www.codecademy.com/">Codeacademy</Link>,
+  <Link href="https://www.hackerrank.com/">HackerRank</Link>,
+  <Link href="https://leetcode.com/">LeetCode</Link>,
+  <Text>
+    <Link href="https://bigsondev.com/library/">My library</Link>{' '}
+    (self-promotion had to be included 😀, take a look at Code Challenges
+    section)
+  </Text>,
+];
+
+export const codingReadingWebsites = [
+  <Link href="https://www.smashingmagazine.com/">Smashing Magazine</Link>,
+  <Link href="https://codeburst.io/">Codeburst</Link>,
+  <Link href="https://medium.com/topic/javascript">Medium</Link>,
+  <Link href="https://www.reddit.com/r/Frontend/">Reddit</Link>,
+  <Link href="https://news.ycombinator.com/">Hacker News</Link>,
+  <Link href="https://css-tricks.com/">CSS-Tricks</Link>,
+  <Text>
+    <Link href="https://bigsondev.com/blog/">My blog</Link> (self-promotion
+    included again 🙈)
+  </Text>,
+];
+
+export const codingProjectsWebsites = [
+  <Link href="https://www.freecodecamp.org/">freeCodeCamp</Link>,
+  <Link href="https://www.frontendmentor.io/">Frontend Mentor</Link>,
+  <Link href="https://www.theodinproject.com/">The Odin Project</Link>,
+  <Text>
+    <Link href="https://bigsondev.com/library/ ">My library</Link> (last
+    self-promotion, do I have all of that? 🧐, take a look at Projects section)
+  </Text>,
+];
+
+export const codingCoursesBooksWebistes = [
+  <Link href="https://frontendmasters.com/">Frontend Masters</Link>,
+  <Link href="https://egghead.io/">Egghead</Link>,
+  <Link href="https://www.pluralsight.com/">Pluralsight</Link>,
+  <Link href="https://www.udemy.com/">Udemy</Link>,
+  <Text>
+    <Link href="https://www.oreilly.com/">Safari Books Online</Link> (a lot of
+    books after a paid subscription)
+  </Text>,
+];
+
+<Post
+  title={props.pageContext.frontmatter.title}
+  desc={props.pageContext.frontmatter.desc}
+  date={props.pageContext.frontmatter.date}
+  readTime={props.pageContext.frontmatter.readTime}
+  showSubtitle
+>
+  <Title level={3}>Introduction</Title>
+  <Paragraph lastParagraph>
+    We all want to learn coding fast, get our dream jobs and earn money quickly
+    🤑. Firstly, we have to be systematic. Secondly, our brain can't receive the
+    same learning method over and over again. Let's find out what different
+    approaches we can take to improve as developers.
+  </Paragraph>
+  <Title level={3}>Practice Coding Challenges</Title>
+  <Paragraph>
+    It’s good to practice algorithms, solve problems as a Developer. Logical
+    thinking is a crucial ability to succeed and grow in the IT field. Focusing
+    on only one project can lead to quicker burnout, hence switching context can
+    help to keep the right balance.
+  </Paragraph>
+  <Paragraph strong>
+    Don’t overload yourself with coding challenges, try to do at least one per
+    day.
+  </Paragraph>
+  <Paragraph>
+    Please, find the recommended websites to practice coding below.
+  </Paragraph>
+  <PostList data={codingChallengesWebsites} />
+  <Paragraph lastParagraph>
+    <Text strong>Note:</Text> I would totally aim for Codewars first as it’s
+    free and you start from fairly basic coding challenges. Don’t spend more
+    than 1 hour per day on this, otherwise, your brain might 🤯.
+  </Paragraph>
+  <Title level={3}>Stay up-to-date by reading</Title>
+  <Paragraph>
+    Frontend evolves at a lightning-fast pace. You have to keep that tempo. One
+    article per day, per week, just make sure to be systematic.
+  </Paragraph>
+  <Paragraph>
+    There is this amazing browser extension to help you read only what’s loved
+    by other developers.
+  </Paragraph>
+  <Paragraph>
+    <Link href="https://daily.dev/">daily.dev</Link> - It will fulfill your
+    browser landing page with articles.{' '}
+  </Paragraph>
+  <Paragraph>
+    If you still have time to read a bit more, I recommend the following
+    websites.
+  </Paragraph>
+  <PostList data={codingReadingWebsites} />
+  <Paragraph lastParagraph>
+    <Text strong>Note:</Text> I highly recommend implementing what you’ve
+    learned, as just reading won’t keep the knowledge with you. Decrease the
+    number of articles you read, don’t aim for super complex things such as
+    Machine Learning, AI for starting. Read about React, Flexbox, Grid System,
+    topics you are already working on, and want to expand your skills even
+    further there.
+  </Paragraph>
+  <Title level={3}>Projects to build</Title>
+  <Paragraph>
+    <Text strong>Note:</Text> It’s best to build what drives you the most, or
+    even better if you can build for a friend, family. That will boost your
+    motivation even further 🚀. Try to think about something you really want to
+    have, a portfolio, website related to your hobbies, application you always
+    thought of. If it’s a complex idea, try to simplify, make sure there is at
+    least a piece of it you will be capable of building and seeing your dream
+    project live running on a deployed website.
+  </Paragraph>
+  <Paragraph>
+    If there is nothing from the above you can think of, that's ok. I’ll share
+    some links for references below.
+  </Paragraph>
+  <Paragraph strong>
+    Just remember to focus on one project at a time. If it grows and you feel
+    that you won’t make it - decrease the scope, break on smaller pieces, don't
+    be too ambitious, don't overdo.
+  </Paragraph>
+  <Paragraph>
+    Below you can find the list of websites with project ideas.
+  </Paragraph>
+  <PostList data={codingProjectsWebsites} />
+  <Paragraph lastParagraph />
+  <Title level={3}>Courses, Videos, Books</Title>
+  <Paragraph>
+    Previously described approaches for improving as a Frontend Developer cover
+    a lot already. If you don’t have too much time to learn, adding courses,
+    videos or books might overwhelm you.
+  </Paragraph>
+  <Paragraph>
+    I’m a fan of practicing by building, courses, videos, books approach only
+    makes sense if you are completely stuck. Take a break from the project you
+    are working on and watch a related course, video, or read a book. It might
+    be a waste of time to go through all parts, try to look for the ones that
+    cover your exact problem.
+  </Paragraph>
+  <Paragraph>
+    Don’t watch or read too much at once as you will quickly forget it, go step
+    by step and try to implement what you’ve learned along the way, maybe it
+    will even unblock you with the project.
+  </Paragraph>
+  <Paragraph>
+    The below list includes some of the platforms I’ve been learning on.
+  </Paragraph>
+  <PostList data={codingCoursesBooksWebistes} />
+  <Paragraph lastParagraph>
+    <Text strong>Note:</Text> Another downside is that you have to pay for the
+    above, I highly recommend sticking to the first three approaches first as it
+    will save some of your budget. I don’t think I’ve learned a lot from books
+    or courses. The most progress I noticed was with a dedicated Mentor and by
+    building things from the scratch.
+  </Paragraph>
+  <Title level={3}>Sum Up</Title>
+  <Paragraph>
+    1 hour of coding challenge per day, if it's too hard, just try a simpler
+    one, or move it to the next day. Read, but not all the time, try to stick to
+    the topics you are learning and implement freshly absorbed knowledge. It
+    will click faster. Practice by building projects and spend most of the time
+    on it. Read, watch only if you are completely stuck. Mix often, your brain
+    won't be bored.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    Try different approaches, connect them together and shape up your unique
+    learning process to skyrocket in Frontend 🚀.
+  </Paragraph>
+  <Title level={3}>Closing Notes</Title>
+  <Paragraph>
+    I have faith in you, shall you not give up and continue this tough, Frontend
+    journey to improve coding skills. 🙇‍♂️
+  </Paragraph>
+  <Paragraph>
+    If you liked it and want me to create more articles like this one, please,
+    follow me on socials. I post new blog articles, changes to the website on{' '}
+    <Link href="https://twitter.com/BigsonDev">Twitter</Link>, visual knowledge
+    pills on <Link href="https://www.instagram.com/bigsondev/">Instagram</Link>{' '}
+    and code examples on{' '}
+    <Link href="https://github.com/bigsondev/knowledge-pills">GitHub</Link>. I
+    also have a newly introduced projects that you can work on, check them out
+    in the <Link href="https://bigsondev.com/library/">Library</Link>.
+  </Paragraph>
+  <Paragraph>Thanks for reading. ❤️</Paragraph>
+</Post>
