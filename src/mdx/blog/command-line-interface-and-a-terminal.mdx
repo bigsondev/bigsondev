@@ -1,0 +1,330 @@
+---
+title: Command Line Interface And A Terminal
+desc: Introduction to the fundamental tool for all developers. In this article, you'll learn why learning terminal commands is crucial and how does that correlate with other tools such as git or npm. We'll also go through best practices and recommendations.
+path: /blog/command-line-interface-and-a-terminal/
+hasCheatSheet: false
+hasTodoList: false
+series: false
+readTime: 7
+illustration: none
+tags: tools,basics, terminal
+date: 2020-11-22
+---
+
+import { Space, Alert } from 'antd';
+import {
+  TerminalImage,
+  GuiVsTerminalImage,
+  PwdImage,
+  LsImage,
+  CdImage,
+  MkdirImage,
+  OtherCommandsImage,
+} from '~assets';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  PostCard,
+  SyntaxHighlighter,
+  Link,
+  Box,
+  Image,
+} from '~components';
+
+export const whatYouWillLearnPoints = [
+  `What is a Terminal`,
+  `Why you should use Terminal`,
+  `GUI vs CLI`,
+  `Best Software to make working with a Terminal a breeze`,
+  `Essential commands to operate on the file system like a Professional Developer`,
+  `Bonus commands to really feel like a Pro`,
+  `How does Terminal correlate with git, npm`,
+  `Best practices and recommendations`,
+];
+
+<Post
+  title={props.pageContext.frontmatter.title}
+  desc={props.pageContext.frontmatter.desc}
+  date={props.pageContext.frontmatter.date}
+  readTime={props.pageContext.frontmatter.readTime}
+  showSubtitle
+>
+  <Title level={3}>What You'll Learn</Title>
+  <PostList data={whatYouWillLearnPoints} />
+  <Paragraph lastParagraph />
+  <Title level={3}>What is a Terminal</Title>
+  <Paragraph>
+    I will skip an in-depth explanation of the terminology. Let's just explain
+    the basics.
+  </Paragraph>
+  <Paragraph>
+    Terminal is a program you use to interact with Command Line Interface (CLI).
+    CLI is sometimes called a Shell, it allows you to execute commands instead
+    of clicking. For example, you can type a command that will output a text
+    string in the Terminal, thanks to Shell. Additionally, you might read about
+    bash, it's out of the scope of this article.
+  </Paragraph>
+  <Image
+    src={TerminalImage}
+    alt="Example of a terminal iTerm on Mac"
+    desc={`Example of echo "Hello Terminal" command`}
+  />
+  <Paragraph lastParagraph />
+  <Title level={3}>Why You Should Use Terminal</Title>
+  <Paragraph>
+    As a non-programmer, you probably communicate with your file system through
+    Finder (Mac) or just any other File Browser software using a different OS.
+    It might be difficult to notice at first that clicking with a mouse,
+    navigating between directories <Text strong>is slow.</Text>
+  </Paragraph>
+  <Paragraph>
+    When working as a Developer, you should aim to increase efficiency and
+    decrease any extra time you need to spend on manual work.
+  </Paragraph>
+  <Paragraph>
+    It can be done through automating things or using appropriate tools that
+    speed-up your work. That's exactly what Terminal is created for, you will
+    work faster, and additionally, it's a great introduction to more complex
+    commands and tools you have to learn as a Developer. 🙈
+  </Paragraph>
+  <Paragraph lastParagraph>
+    Fear not, I'm here to explain everything step by step, let's dive in. ✌️
+  </Paragraph>
+  <Title level={3}>GUI vs CLI</Title>
+  <Paragraph>
+    GUI is a Graphical User Interface that allows you to interact with the
+    device (e.g. Mac) through graphical icons, usually by clicking. It's a
+    visual representation of the interface.
+  </Paragraph>
+  <Paragraph>
+    Terminal only has input for commands, it doesn't have any fancy icons or
+    visual representation, it's a pure CLI.
+  </Paragraph>
+  <Image
+    src={GuiVsTerminalImage}
+    alt="VSCode example as a Graphical User Interface"
+    desc="Left - VSCode as a GUI, Right - iTerm Mac Terminal"
+  />
+  <Paragraph>
+    VSCode is a great IDE btw., but we'll get to that in the next articles. As
+    you can see above, there are some icons, visual representation, I can
+    navigate through files and do all of that by clicking, without executing any
+    commands.
+  </Paragraph>
+  <Paragraph>
+    It appears we need both, I can't imagine writing code only through a
+    Terminal and commands, sometimes visual representation is a win-win. On the
+    other hand, VSCode has an integrated Terminal where you can type commands.
+    It's clever to combine both worlds and find the best balance.
+  </Paragraph>
+  <Paragraph>
+    There is a lot of tools that act as a GUI for commands, but you lose
+    flexibility, as they usually don't cover everything. Commands can have
+    multiple combinations and coding User Interface for all of them{' '}
+    <Text strong>is just impossible.</Text>
+  </Paragraph>
+  <Paragraph lastParagraph>
+    It's ok to use tools that "abstract" commands into icons and visual
+    representation, but you will miss this amazing feeling of being a true
+    hacker 👨‍💻. Typing commands is fancy, ain't it? Do both.
+  </Paragraph>
+  <Title level={3}>Which Terminal Do I Use?</Title>
+  <Paragraph>
+    On Mac, if you enter this keys combination: <Text code>CMD + Space</Text>,
+    Spotlight will open. Type <Text code>terminal</Text> and it will open up the
+    built-in one. On other OS'es, there are similar solutions, you can try
+    googling "How do I open Terminal on my OS?".
+  </Paragraph>
+  <Paragraph>
+    Built-in one is a good solution to practice for a beginner, once you fell in
+    love with Terminal, it's time to add some steroids into it.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    I'm a huge fan of <Link href="https://iterm2.com/">iTerm</Link> and{' '}
+    <Link href="https://ohmyz.sh/">Oh My Zsh</Link> extension. On Windows,{' '}
+    <Link href="https://cmder.net/">CMDer</Link> could be a viable option. These
+    tools add more, fantastic features (you'll learn/need them as you go). Check{' '}
+    <Link href="https://iterm2.com/features.html">features list</Link> of iTerm
+    for example, they are life-changers.
+  </Paragraph>
+  <Title level={3}>Essential Commands</Title>
+  <Paragraph>
+    Nice! We are all set to dive into the commands. At this point, you should
+    have at least a built-in Terminal open and be ready to type some new,
+    exciting commands.
+  </Paragraph>
+  <Paragraph breakParagraph>
+    <Text strong>Note:</Text> I'll interchangeably use folder (Finder) and
+    directory (Terminal) phrashing.
+  </Paragraph>
+  <Title level={4} transform="none">
+    <Text code>pwd</Text> - print working directory
+  </Title>
+  <Paragraph>
+    It's a first command you should learn to know where you are in directories.
+    When using Finder, it shows you the directory you are in, but command output
+    shows entire directory hirerarchy starting from{' '}
+    <Text code>/Users/[name]/...</Text>.
+  </Paragraph>
+  <Image
+    src={PwdImage}
+    alt="pwd command example, comparison of Terminal and Finder"
+  />
+  <Title level={4} transform="none">
+    <Text code>ls</Text> - list
+  </Title>
+  <Paragraph>
+    Once you are in a particular directory it's good to know what are the
+    contents of it. In Finder, you just look at the icons of files and folders,
+    but in Terminal <Text code>ls</Text> command will do the trick.
+  </Paragraph>
+  <Image
+    src={LsImage}
+    alt="ls command example, comparison of Terminal and Finder"
+  />
+  <Title level={4} transform="none">
+    <Text code>cd</Text> - change directory
+  </Title>
+  <Paragraph>
+    We know how to check where we are and what are the contents of a directory,
+    but we need ability to move through directories. In Finder it's e.g. a
+    double-click on folder, but in Terminal we need to use <Text code>cd</Text>{' '}
+    command.
+  </Paragraph>
+  <Paragraph>
+    <Text code>cd</Text> is robust. To move one directory up, type{' '}
+    <Text code>cd ..</Text>, two directories up, type{' '}
+    <Text code>cd ../../</Text> and so on. You can also navigate to more nested
+    directories by doing eg.
+    <br />
+    <Text code>cd directory/nested-directory/even-more-nested-directory/</Text>.
+  </Paragraph>
+  <Image
+    src={CdImage}
+    alt="cd command example, comparison of Terminal and Finder"
+  />
+  <Title level={4} transform="none">
+    <Text code>mkdir</Text> - make directory
+  </Title>
+  <Paragraph>
+    It's time to create. With <Text code>mkdir directory-name</Text> you can
+    create a directory. In Finder it's a right-click followed by click on "New
+    Folder".
+  </Paragraph>
+  <Paragraph>
+    To remove directories you can use <Text code>rmdir directory-name</Text>.
+    We'll talk about flags in the later sections, but if directory is not empty,
+    you can remove it by typing <Text code>rm -r directory-name</Text>.
+  </Paragraph>
+  <Image
+    src={MkdirImage}
+    alt="mkdir command example, comparison of Terminal and Finder"
+  />
+  <Title level={4} transform="none">
+    <Text code>touch, cp, mv</Text> - other commands
+  </Title>
+  <Paragraph>
+    It appears there is no simple way to create a file in Finder 🤯. From now
+    on, we'll stick to Terminal only.
+  </Paragraph>
+  <Paragraph>
+    <Text code>touch</Text> is a command used for creating files and works in a
+    similar way to <Text code>mkdir</Text>.
+  </Paragraph>
+  <Paragraph>
+    <Text code>rm</Text> is a command used for removing files and works in a
+    similar way to <Text code>rmdir</Text>. We mentioned it with the{' '}
+    <Text code>-r</Text> flag to remove a non-empty directory.
+  </Paragraph>
+  <Paragraph>
+    <Text code>mv</Text> is a command used for moving files to other
+    directories, or moving entire directories.
+  </Paragraph>
+  <Paragraph>
+    <Text code>cp</Text> is a command used for copying files, if you want to
+    copy an entire directory instead, use <Text code>cp -r</Text>.
+  </Paragraph>
+  <Paragraph>
+    Let's see some example in action by looking at the below image.
+  </Paragraph>
+  <Image
+    src={OtherCommandsImage}
+    alt="touch, rmdir, rmfile commands example, comparison of Terminal and Finder"
+  />
+  <Paragraph lastParagraph />
+  <Title level={3}>Bonus Commands</Title>
+  <Paragraph>
+    <Text code>clear</Text> will remove all text from the Terminal and make it
+    clean again.
+  </Paragraph>
+  <Paragraph>
+    <Text code>cat file</Text> is a lookup of the file, it'll print contents of
+    the file in the Terminal.
+  </Paragraph>
+  <Paragraph>
+    <Text code>man command</Text> is a documentation of a particular command. It
+    appears that commands have flags which boost their power. I suggest trying
+    out e.g. <Text code>man ls</Text> and experimenting with some of it's flags
+    (you can try that with other commands as well). Ultimate fun. 😎
+  </Paragraph>
+  <Paragraph lastParagraph>
+    There is definitely more commands to use, research for them and become a
+    true hacker.
+  </Paragraph>
+  <Title level={3} transform="none">
+    Why Do You Need Terminal For git or npm?
+  </Title>
+  <Paragraph>
+    It appears the functionality exposed by git or npm is obtained through
+    commands. There are some GUIs as mentioned in the previous chapters which
+    make it more visual and easier, but it's good to understand what happens
+    under the hood.
+  </Paragraph>
+  <Paragraph>
+    E.g. <Text code>git status</Text>, <Text code>git add</Text>, etc. are all
+    commands you type in the Terminal (if you have git installed - will cover
+    that in the next article). Same goes for npm, e.g.{' '}
+    <Text code>npm install package-name</Text>, <Text code>npm start</Text>{' '}
+    (from package.json, will also cover in the future articles 😅). It's no
+    magic, behind every user interface is a code implementation and to gain more
+    flexibility, it can usually be controlled through commands - if that's how
+    creators of a particular tool expose it.
+  </Paragraph>
+  <Title level={3}>Best Practices And Recommendations</Title>
+  <Paragraph>
+    Let's take a look at{' '}
+    <Link href="https://iterm2.com/features.html">features list</Link> one more
+    time from iTerm creators.
+  </Paragraph>
+  <Paragraph>
+    Autocomplete is a godsend, press <Text code>Tab</Text> to autocomplete
+    directory, file, etc.
+  </Paragraph>
+  <Paragraph>
+    Multiple panes are also amazing, once you grow as a Developer, you'll need
+    more and more of these, trust me.
+  </Paragraph>
+  <Paragraph>
+    Feel free to take a look at more features, apply custom colors, theme and
+    create a unique Terminal that will fit you the best.
+  </Paragraph>
+  <Title level={3}>Closing Notes</Title>
+  <Paragraph>
+    I have faith in you, shall you not give up and continue this tough, Frontend
+    journey to improve coding skills. 🙇‍♂️
+  </Paragraph>
+  <Paragraph>
+    If you liked it and want me to create more articles like this one, please,
+    follow me on socials. I post new blog articles, changes to the website on{' '}
+    <Link href="https://twitter.com/BigsonDev">Twitter</Link>, visual knowledge
+    pills on <Link href="https://www.instagram.com/bigsondev/">Instagram</Link>{' '}
+    and code examples on{' '}
+    <Link href="https://github.com/bigsondev/knowledge-pills">GitHub</Link>. I
+    also have a newly introduced projects that you can work on, check them out
+    in the <Link href="https://bigsondev.com/library/">Library</Link>.
+  </Paragraph>
+  <Paragraph>Thanks for reading. ❤️</Paragraph>
+</Post>

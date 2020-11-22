@@ -17,7 +17,7 @@ const TEXT_SIZE = {
 export const Text = styled(Typography.Text)(
   ({
     align = 'left',
-    fontWeight = 400,
+    fontWeight = 300,
     display = 'inline',
     fontStyle = 'normal',
     size = 'normal',
@@ -39,7 +39,7 @@ export const Text = styled(Typography.Text)(
 export const ParagraphHolder = styled(Typography.Paragraph)(
   ({
     align = 'left',
-    fontWeight = 400,
+    fontWeight = 300,
     size = 'normal',
     display = 'block',
     fontStyle = 'normal',
@@ -63,7 +63,7 @@ export const ParagraphHolder = styled(Typography.Paragraph)(
 export const LinkHolder = styled.span(
   ({
     align = 'left',
-    fontWeight = 400,
+    fontWeight = 300,
     size = 'normal',
     display = 'inline',
     fontSize,
