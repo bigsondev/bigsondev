@@ -55,7 +55,7 @@ const ResourceCard = styled.div({
   position: 'relative',
   padding: 24,
   minHeight: 350,
-  border: '1px solid #d6e4ff',
+  background: '#FFF',
   borderRadius: 8,
 
   '&:hover': {
