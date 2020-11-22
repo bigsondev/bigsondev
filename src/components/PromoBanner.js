@@ -22,7 +22,7 @@ export const PromoBanner = ({ title, desc, content, color, ...props }) => (
     {typeof title === 'string' ? (
       <Paragraph
         transform="uppercase"
-        color="#FFF"
+        color="#FAFAFA"
         size="preNormal"
         spacing={2}
         strong
@@ -33,7 +33,7 @@ export const PromoBanner = ({ title, desc, content, color, ...props }) => (
       title
     )}
     <Paragraph
-      color="#FFF"
+      color="#FAFAFA"
       fontWeight="400"
       marginBottom="2rem"
       align="center"

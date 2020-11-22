@@ -13,24 +13,41 @@ import { Logo } from './styled';
 
 const Holder = styled(Layout.Header)({
   padding: 0,
-  paddingTop: 10,
   height: 'initial',
+  minHeight: 120,
+  background: '#FAFAFA',
+});
+
+const RowShadow = styled(Row)({
   minHeight: 100,
-  background: '#FFF',
+  paddingTop: 10,
+  boxShadow: '0 10px 10px -10px rgba(0, 0, 0, 0.15)',
 });
 
 const MenuHolder = styled(Menu)({
   borderBottom: 'none',
-  background: '#FFF !important',
+  background: '#FAFAFA !important',
 });
 
 const MobileMenuSpace = styled.div({
   height: 20,
 });
 
-const MenuItem = styled(Menu.Item)(({ isSelected, isMobile }) => ({
-  '&.ant-menu-item': {
-    padding: isMobile && '0 !important',
+const MenuItem = styled(Menu.Item)(({ isSelected }) => ({
+  '& > a:after': {
+    content: "''",
+    position: 'relative',
+    top: -10,
+    left: '50%',
+    display: 'block',
+    height: 2,
+    width: 0,
+    background: '#137099',
+    transition: 'width 0.3s ease 0s, left 0.3s ease 0s',
+  },
+  '& > a:hover:after': {
+    width: '100%',
+    left: 0,
   },
   '& > a > span': {
     transition: 'color 0.1s ease-in',
@@ -43,7 +60,26 @@ const MenuItem = styled(Menu.Item)(({ isSelected, isMobile }) => ({
     },
   },
   '&.ant-menu-item-selected': {
-    backgroundColor: '#FFF !important',
+    backgroundColor: '#FAFAFA !important',
+  },
+}));
+
+const MobileMenuItem = styled(Menu.Item)(({ isSelected }) => ({
+  '&.ant-menu-item': {
+    padding: '0 !important',
+  },
+  '& > a > span': {
+    transition: 'color 0.1s ease-in',
+    color: isSelected ? '#000 !important' : 'rgba(80,80,80,0.8) !important',
+  },
+  '&:hover': {
+    backgroundColor: 'inherit !important',
+    '& > a > span': {
+      color: '#000 !important',
+    },
+  },
+  '&.ant-menu-item-selected': {
+    backgroundColor: '#FAFAFA !important',
   },
 }));
 
@@ -98,27 +134,27 @@ const RightMenu = ({
       <MenuHolder theme="dark" mode="horizontal">
         <MenuItem key="1" isSelected={pathname.includes('start-here')}>
           <Link to="/start-here/">
-            <Text strong>Start Here</Text>
+            <Text size="preNormal">Start Here</Text>
           </Link>
         </MenuItem>
         <MenuItem key="2" isSelected={pathname.includes('blog')}>
           <Link to="/blog/">
-            <Text strong>Blog</Text>
+            <Text size="preNormal">Blog</Text>
           </Link>
         </MenuItem>
         <MenuItem key="3" isSelected={pathname.includes('library')}>
           <Link to="/library/">
-            <Text strong>Library</Text>
+            <Text size="preNormal">Library</Text>
           </Link>
         </MenuItem>
         <MenuItem key="4" isSelected={pathname.includes('mentorship')}>
           <Link to="/mentorship/">
-            <Text strong>Mentorship</Text>
+            <Text size="preNormal">Mentorship</Text>
           </Link>
         </MenuItem>
         <MenuItem key="5" isSelected={pathname.includes('reach-out')}>
           <Link to="/reach-out/">
-            <Text strong>Reach Out</Text>
+            <Text size="preNormal">Reach Out</Text>
           </Link>
         </MenuItem>
       </MenuHolder>
@@ -142,7 +178,7 @@ export const Header = ({ pathname }) => {
 
   return (
     <Holder>
-      <Row align="center">
+      <RowShadow align="center">
         <Col xs={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 16 }}>
           <Box mt={1}>
             <Row justify="space-between" align="center">
@@ -163,63 +199,58 @@ export const Header = ({ pathname }) => {
             <SmallOnly>
               <Fade collapse duration={300} when={isExpanded}>
                 <MenuHolder theme="dark" mode="inline">
-                  <MenuItem
+                  <MobileMenuItem
                     key="1"
                     isSelected={pathname.includes('start-here')}
                     onClick={handleMobileMenuCloseClick}
-                    isMobile
                   >
                     <Link to="/start-here/">
-                      <Text strong>Start Here</Text>
+                      <Text size="preNormal">Start Here</Text>
                     </Link>
-                  </MenuItem>
-                  <MenuItem
+                  </MobileMenuItem>
+                  <MobileMenuItem
                     key="2"
                     isSelected={pathname.includes('blog')}
                     onClick={handleMobileMenuCloseClick}
-                    isMobile
                   >
                     <Link to="/blog/">
-                      <Text strong>Blog</Text>
+                      <Text size="preNormal">Blog</Text>
                     </Link>
-                  </MenuItem>
-                  <MenuItem
+                  </MobileMenuItem>
+                  <MobileMenuItem
                     key="3"
                     isSelected={pathname.includes('library')}
                     onClick={handleMobileMenuCloseClick}
-                    isMobile
                   >
                     <Link to="/library/">
-                      <Text strong>Library</Text>
+                      <Text size="preNormal">Library</Text>
                     </Link>
-                  </MenuItem>
-                  <MenuItem
+                  </MobileMenuItem>
+                  <MobileMenuItem
                     key="4"
                     isSelected={pathname.includes('mentorship')}
                     onClick={handleMobileMenuCloseClick}
-                    isMobile
                   >
                     <Link to="/mentorship/">
-                      <Text strong>Mentorship</Text>
+                      <Text size="preNormal">Mentorship</Text>
                     </Link>
-                  </MenuItem>
-                  <MenuItem
+                  </MobileMenuItem>
+                  <MobileMenuItem
                     key="5"
                     isSelected={pathname.includes('reach-out')}
                     onClick={handleMobileMenuCloseClick}
-                    isMobile
                   >
                     <Link to="/reach-out/">
-                      <Text strong>Reach Out</Text>
+                      <Text size="preNormal">Reach Out</Text>
                     </Link>
-                  </MenuItem>
+                  </MobileMenuItem>
                 </MenuHolder>
                 <MobileMenuSpace />
               </Fade>
             </SmallOnly>
           </Box>
         </Col>
-      </Row>
+      </RowShadow>
     </Holder>
   );
 };

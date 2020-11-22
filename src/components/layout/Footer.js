@@ -20,13 +20,13 @@ const Holder = styled.footer({
   padding: '5rem 1rem 0 1rem',
   position: 'relative',
   width: '100vw',
-  background: '#FAFAFA',
+  background: '#F5F5F5',
 });
 
 const BottomHolder = styled.footer({
   padding: '0.5rem 0',
   position: 'relative',
-  background: '#FAFAFA',
+  background: '#F5F5F5',
 });
 
 const FooterLinkHolder = styled(GatsbyLink)({
@@ -92,19 +92,19 @@ export const Footer = () => (
           >
             <Space size="large" direction="vertical">
               <FooterLinkHolder to="/start-here/">
-                <Text strong>Start Here</Text>
+                <Text size="preNormal">Start Here</Text>
               </FooterLinkHolder>
               <FooterLinkHolder to="/blog/">
-                <Text strong>Blog</Text>
+                <Text size="preNormal">Blog</Text>
               </FooterLinkHolder>
               <FooterLinkHolder to="/library/">
-                <Text strong>Library</Text>
+                <Text size="preNormal">Library</Text>
               </FooterLinkHolder>
               <FooterLinkHolder to="/mentorship/">
-                <Text strong>Mentorship</Text>
+                <Text size="preNormal">Mentorship</Text>
               </FooterLinkHolder>
               <FooterLinkHolder to="/reach-out/">
-                <Text strong>Reach Out</Text>
+                <Text size="preNormal">Reach Out</Text>
               </FooterLinkHolder>
             </Space>
           </Col>

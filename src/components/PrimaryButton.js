@@ -2,7 +2,7 @@ import { Button } from 'antd';
 import styled from 'styled-components';
 
 export const PrimaryButton = styled(Button)({
-  color: '#FFF !important',
+  color: '#FAFAFA !important',
   width: 250,
   height: '3.25rem',
   fontSize: '1.125rem',
@@ -19,7 +19,7 @@ export const PrimaryButton = styled(Button)({
   '&:hover': {
     boxShadow: `0px 0px 5px 0px #137099`,
     backgroundColor: '#137099 !important',
-    color: '#FFF !important',
+    color: '#FAFAFA !important',
     border: '1px solid #137099 !important',
   },
 });

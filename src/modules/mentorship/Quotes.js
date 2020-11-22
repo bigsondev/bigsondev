@@ -15,7 +15,7 @@ const QuoteHolder = styled.div({
 });
 
 const IconHolder = styled.div({
-  color: '#FFF',
+  color: '#FAFAFA',
 });
 
 const Quote = ({ who, children }) => {
@@ -28,7 +28,7 @@ const Quote = ({ who, children }) => {
         size="h4"
         align="left"
         strong
-        color="#FFF"
+        color="#FAFAFA"
         marginBottom="0.5rem"
       >
         {children}

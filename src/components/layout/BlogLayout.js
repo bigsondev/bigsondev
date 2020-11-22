@@ -37,18 +37,18 @@ import { NewsletterSmallForm } from './NewsletterSmallForm';
 import { Footer } from './Footer';
 
 const IconHolder = styled(Link)({
-  color: '#FFF !important',
+  color: '#FAFAFA !important',
   '& a': {
-    color: '#FFF !important',
+    color: '#FAFAFA !important',
   },
   '& a:hover': {
-    color: '#FFF !important',
+    color: '#FAFAFA !important',
   },
   '& a:active': {
-    color: '#FFF !important',
+    color: '#FAFAFA !important',
   },
   '& a:visited': {
-    color: '#FFF !important',
+    color: '#FAFAFA !important',
   },
 });
 

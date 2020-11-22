@@ -5,7 +5,7 @@ import { Layout } from 'antd';
 import { GlobalSpinner } from './GlobalSpinner';
 
 const Holder = styled(Layout.Content)({
-  background: '#FFF',
+  background: '#FAFAFA',
   paddingTop: 32,
 });
 

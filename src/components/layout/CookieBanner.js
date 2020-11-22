@@ -58,7 +58,7 @@ const CookieButton = styled(Button)({
   '&:hover': {
     boxShadow: `0px 0px 5px 0px #24B2DB`,
     backgroundColor: '#24B2DB !important',
-    color: '#FFF !important',
+    color: '#FAFAFA !important',
     border: '1px solid #24B2DB !important',
   },
 });

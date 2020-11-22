@@ -16,7 +16,7 @@ export const SlackBanner = ({ ...props }) => (
   <PromoBanner
     title={
       <>
-        <Paragraph color="#FFF" strong size="h1">
+        <Paragraph color="#FAFAFA" strong size="h1">
           <SlackOutlined /> slack
         </Paragraph>
       </>

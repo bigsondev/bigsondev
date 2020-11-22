@@ -20,7 +20,7 @@ const IconHolder = styled.span({
 export const PostList = ({
   direction = 'vertical',
   data,
-  size = 'preNormal',
+  size = 'normal',
   type = 'primary',
   ...props
 }) => (

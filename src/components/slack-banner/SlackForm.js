@@ -14,13 +14,13 @@ const Input = styled(AntdInput)({
 
 const ResultHolder = styled(Result)({
   '& .ant-result-title': {
-    color: '#FFF',
+    color: '#FAFAFA',
   },
   '& .ant-result-subtitle': {
-    color: '#FFF',
+    color: '#FAFAFA',
   },
   '& .anticon-check-circle': {
-    color: '#FFF !important',
+    color: '#FAFAFA !important',
   },
 });
 
@@ -123,7 +123,7 @@ export const SlackForm = () => {
                     }),
                   ]}
                 >
-                  <Checkbox style={{ color: '#FFF' }}>
+                  <Checkbox style={{ color: '#FAFAFA' }}>
                     I would like to subscribe to the Slack Group held by
                     BigsonDev to be the part of the BigsonDev Community.
                   </Checkbox>

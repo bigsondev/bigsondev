@@ -8,7 +8,7 @@ const Holder = styled.div({
   padding: '7rem 1rem',
   width: '100vw',
   position: 'relative',
-  background: '#FAFAFA',
+  background: '#F5F5F5',
 });
 
 const OfferCard = styled.div({
@@ -17,7 +17,7 @@ const OfferCard = styled.div({
   padding: 24,
   paddingBottom: 0,
   borderRadius: 16,
-  background: '#FFF',
+  background: '#FAFAFA',
 
   '@media (max-width: 480px)': {
     minHeight: 550,

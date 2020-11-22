@@ -9,7 +9,7 @@ const CorrectAnswer = styled(List.Item)({
   padding: '12px 4px',
 
   '& .ant-typography': {
-    color: '#FFF',
+    color: '#FAFAFA',
   },
 });
 
@@ -18,7 +18,7 @@ const IncorrectAnswer = styled(List.Item)({
   padding: '12px 4px',
 
   '& .ant-typography': {
-    color: '#FFF',
+    color: '#FAFAFA',
   },
 });
 

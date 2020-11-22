@@ -18,7 +18,7 @@ const Answer = styled(Card)({
       backgroundColor: '#000',
     },
     '& .ant-avatar-string': {
-      color: '#FFF',
+      color: '#FAFAFA',
     },
   },
 });

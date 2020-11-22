@@ -18,6 +18,7 @@ const openFreeConsultationEvent = () => {
 const Holder = styled.div({
   padding: '5rem 1rem',
   position: 'relative',
+  background: '#F5F5F5',
 });
 
 export const AlternativeConversation = () => {

@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     max-width: 100%;
     overflow-x: hidden;
+    background-color: #FAFAFA;
   }
   
   @media (max-width: 480px) {
