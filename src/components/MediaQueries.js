@@ -22,14 +22,14 @@ export const ExceptSmall = styled.div`
 `;
 
 export const TabletOnly = styled.div`
-  @media (min-width: 481px) and (max-width: 999px) {
+  @media (min-width: 481px) and (max-width: 1199px) {
     display: block;
   }
   display: none;
 `;
 
 export const DesktopOnly = styled.div`
-  @media (min-width: 1000px) {
+  @media (min-width: 1200px) {
     display: block;
   }
   display: none;

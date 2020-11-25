@@ -13,11 +13,9 @@ const Landing = () => {
   return (
     <Layout fixedContent={false}>
       <SEO title="Frontend Mentor" />
-      <Box mb={5}>
-        <Section>
-          <Promo />
-        </Section>
-      </Box>
+      <Section>
+        <Promo />
+      </Section>
       <Section fullWidth>
         <SkyrocketYourCareer />
       </Section>

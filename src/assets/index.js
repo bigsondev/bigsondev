@@ -8,6 +8,9 @@ import LsImage from './ls.png';
 import CdImage from './cd.png';
 import MkdirImage from './mkdir.png';
 import OtherCommandsImage from './other-commands.png';
+import BookCoverProject from './book-cover-project.png';
+import TodoAppProject from './todo-app-project.png';
+import RealtimeChatProject from './realtime-chat-project.png';
 
 export * from './logo';
 export {
@@ -21,4 +24,7 @@ export {
   CdImage,
   MkdirImage,
   OtherCommandsImage,
+  BookCoverProject,
+  TodoAppProject,
+  RealtimeChatProject,
 };

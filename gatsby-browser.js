@@ -28,6 +28,7 @@ import 'codemirror/addon/hint/css-hint.js';
 import 'codemirror/addon/hint/anyword-hint.js';
 
 import {
+  ThemeProvider,
   ErrorBoundary,
   Banners,
   Header,
@@ -47,11 +48,13 @@ export const wrapPageElement = ({
 }) => (
   <ErrorBoundary>
     <GlobalStyles />
-    <Layout>
-      {getItem('firstPromoSticker') === 'false' && <PromoSticker />}
-      <Header pathname={pathname} />
-      <Content>{element}</Content>
-    </Layout>
-    <Banners pathname={pathname} />
+    <ThemeProvider>
+      <Layout>
+        {getItem('firstPromoSticker') === 'false' && <PromoSticker />}
+        <Header pathname={pathname} />
+        <Content>{element}</Content>
+      </Layout>
+      <Banners pathname={pathname} />
+    </ThemeProvider>
   </ErrorBoundary>
 );

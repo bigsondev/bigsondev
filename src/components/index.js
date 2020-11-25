@@ -1,3 +1,4 @@
+export { theme, ThemeProvider } from './theme';
 export * from './layout';
 export { SEO } from './SEO';
 export { Quiz } from './quiz';
@@ -27,3 +28,5 @@ export { PromoSticker } from './PromoSticker';
 export { Banners } from './Banners';
 export * from './keyframes';
 export { Image } from './Image';
+export { Button } from './Button';
+export { MainCard } from './MainCard';

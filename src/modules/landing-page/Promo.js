@@ -1,9 +1,10 @@
 import React from 'react';
-import { Row, Col } from 'antd';
+import { Row, Col, Space } from 'antd';
 import { Link } from 'gatsby';
-import { DownCircleFilled } from '@ant-design/icons';
+import styled from 'styled-components';
 
 import {
+  theme,
   Title,
   Text,
   Paragraph,
@@ -13,164 +14,174 @@ import {
   MobileOnly,
   TabletOnly,
   DesktopOnly,
-  PromoButton,
+  Button,
 } from '~components';
+
+const { colors, fontSize, fontWeight, spacing, opacity } = theme;
+
+const PromoLinkHolder = styled(Link)(({ theme }) => ({
+  fontWeight: theme.fontWeight.strong,
+  fontSize: theme.fontSize.base,
+  display: 'block',
+  color: theme.colors.black,
+  textDecoration: 'underline',
+
+  '&:hover': {
+    color: theme.colors.black,
+  },
+}));
 
 const MobileScreenPromo = () => (
   <Row align="middle">
     <Col span={24}>
       <Title
         transform="none"
-        marginBottom="0.1em"
-        fontWeight="300"
-        fontSize={'2.2rem'}
-        align="center"
+        marginBottom="0"
+        fontSize={fontSize.large}
+        fontWeight={fontWeight.stronger}
+        color={colors.primary}
       >
-        Hi,{' '}
-        <Text size="h1" fontSize={'2.2rem'} strong textOpacity={0.85}>
-          Frontend
-        </Text>{' '}
-        is tough.
+        Learn Frontend
       </Title>
       <Title
         transform="none"
-        fontWeight="300"
-        fontSize={'2.2rem'}
-        marginBottom="1.5rem"
-        align="center"
+        marginBottom="0"
+        fontSize={fontSize.large}
+        fontWeight={fontWeight.stronger}
+        color={colors.primary}
       >
-        Let me help you with{' '}
-        <Text size="h1" fontSize={'2.2rem'} strong textOpacity={0.85}>
-          IT.
-        </Text>
+        faster with a
       </Title>
-      <Paragraph
-        size={'preNormal'}
-        marginBottom="2rem"
-        fontStyle="italic"
-        align="center"
+      <Title
+        transform="none"
+        marginBottom="0"
+        fontSize={fontSize.large}
+        fontWeight={fontWeight.stronger}
+        color={colors.primary}
       >
-        Modern Frontend evolves at a lightning fast pace. It's difficult to keep
-        up.
+        seasoned
+      </Title>
+      <Title
+        transform="none"
+        marginBottom={spacing.large}
+        fontSize={fontSize.large}
+        fontWeight={fontWeight.stronger}
+        color={colors.primary}
+      >
+        mentor.
+      </Title>
+      <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
+        <Text strong textOpacity={opacity.title}>
+          Get out of tutorials hell.
+        </Text>{' '}
+        Reach long-term goals, find your first IT job, and feel the real
+        progress. Invest in yourself and leave frustration behind.
       </Paragraph>
     </Col>
+    <Box margin={`0 auto ${spacing.large} auto`}>
+      <Space align="center" size="large" direction="vertical">
+        <Link to="/mentorship/">
+          <Button type="promo">Get mentorship now</Button>
+        </Link>
+        <PromoLinkHolder to="/start-here/">
+          Not sure? Start here
+        </PromoLinkHolder>
+      </Space>
+    </Box>
     <Col span={24}>
       <Illustration type="promo" />
     </Col>
-    <Box mt={5} width="100%" display="flex" justify="center">
-      <Link to="/start-here/">
-        <PromoButton>Get Started</PromoButton>
-      </Link>
-    </Box>
   </Row>
 );
 
 const MediumScreenPromo = () => (
-  <Row align="middle" justify="center">
-    <Col span={24}>
-      <Box mt={3}>
-        <Title
-          transform="none"
-          marginBottom="0.1em"
-          fontWeight="300"
-          fontSize="2.5rem"
-          align="center"
-        >
-          Hi,{' '}
-          <Text size="h1" fontSize="2.5rem" strong textOpacity={0.85}>
-            Frontend
-          </Text>{' '}
-          is tough.
-        </Title>
-        <Title
-          transform="none"
-          fontWeight="300"
-          fontSize="2.5rem"
-          align="center"
-        >
-          Let me help you with{' '}
-          <Text size="h1" fontSize="2.5rem" strong textOpacity={0.85}>
-            IT.
-          </Text>
-        </Title>
-        <Paragraph
-          size={'preNormal'}
-          marginBottom="2rem"
-          fontStyle="italic"
-          align="center"
-        >
-          Modern Frontend evolves at a lightning fast pace. <br />
-          It's difficult to keep up.
-        </Paragraph>
-      </Box>
+  <Row gutter={32}>
+    <Col span={16}>
+      <Title
+        transform="none"
+        marginBottom="0"
+        fontSize={fontSize.extraLarge}
+        fontWeight={fontWeight.stronger}
+        color={colors.primary}
+      >
+        Learn Frontend faster
+      </Title>
+      <Title
+        transform="none"
+        marginBottom={spacing.large}
+        fontSize={fontSize.extraLarge}
+        fontWeight={fontWeight.stronger}
+        color={colors.primary}
+      >
+        with a seasoned mentor.
+      </Title>
+      <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
+        <Text strong textOpacity={opacity.title}>
+          Get out of tutorials hell.
+        </Text>{' '}
+        Reach long-term goals, find your first IT job, and feel the real
+        progress. Invest in yourself and leave frustration behind.
+      </Paragraph>
+      <Space align="center" size="large">
+        <Link to="/mentorship/">
+          <Button type="promo">Get mentorship now</Button>
+        </Link>
+        <PromoLinkHolder to="/start-here/">
+          Not sure? Start here
+        </PromoLinkHolder>
+      </Space>
     </Col>
-    <Col span={12}>
-      <Illustration type="promo" />
+    <Col span={12} style={{ marginTop: '3rem', marginBottom: '5rem' }}>
+      <NotJumpingIllustration type="promo" />
     </Col>
-    <Box mt={5} width="100%" display="flex" justify="center">
-      <Link to="/start-here/">
-        <PromoButton>Get Started</PromoButton>
-      </Link>
-    </Box>
   </Row>
 );
 
 const BigScreenPromo = () => (
-  <Box mt={1}>
-    <Row gutter={32}>
-      <Col span={12} style={{ marginTop: '5rem' }}>
-        <Title
-          transform="none"
-          marginBottom="0.1em"
-          fontWeight="300"
-          fontSize={'3rem'}
-        >
-          Hi,{' '}
-          <Text size="h1" fontSize={'3rem'} strong textOpacity={0.85}>
-            Frontend
-          </Text>{' '}
-          is tough.
-        </Title>
-        <Title
-          transform="none"
-          fontWeight="300"
-          fontSize={'3rem'}
-          marginBottom="2rem"
-        >
-          Let me help you with{' '}
-          <Text size="h1" fontSize={'3rem'} strong textOpacity={0.85}>
-            IT.
-          </Text>
-        </Title>
-        <Paragraph size={'preNormal'} marginBottom="2rem" fontStyle="italic">
-          Modern Frontend evolves at a lightning fast pace. <br />
-          It's difficult to keep up.
-        </Paragraph>
-        <Link to="/start-here/">
-          <PromoButton>Get Started</PromoButton>
+  <Row gutter={64}>
+    <Col span={15}>
+      <Title
+        transform="none"
+        marginBottom="0"
+        fontSize={fontSize.extraLarge}
+        fontWeight={fontWeight.stronger}
+        color={colors.primary}
+      >
+        Learn Frontend faster
+      </Title>
+      <Title
+        transform="none"
+        marginBottom={spacing.large}
+        fontSize={fontSize.extraLarge}
+        fontWeight={fontWeight.stronger}
+        color={colors.primary}
+      >
+        with a seasoned mentor.
+      </Title>
+      <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
+        <Text strong textOpacity={opacity.title}>
+          Get out of tutorials hell.
+        </Text>{' '}
+        Reach long-term goals, find your first IT job, and feel the real
+        progress. Invest in yourself and leave frustration behind.
+      </Paragraph>
+      <Space align="center" size="large">
+        <Link to="/mentorship/">
+          <Button type="promo">Get mentorship now</Button>
         </Link>
-      </Col>
-      <Col span={12}>
-        <NotJumpingIllustration type="promo" />
-      </Col>
-      <Col span={24}>
-        <Box mt={2} display="flex" justify="center">
-          <DownCircleFilled
-            style={{ fontSize: 60, color: '#bae7ff', cursor: 'pointer' }}
-            onClick={() =>
-              document
-                .getElementById('bigsondev-skyrocket-your-career')
-                .scrollIntoView({ behavior: 'smooth', block: 'center' })
-            }
-          />
-        </Box>
-      </Col>
-    </Row>
-  </Box>
+        <PromoLinkHolder to="/start-here/">
+          Not sure? Start here
+        </PromoLinkHolder>
+      </Space>
+    </Col>
+    <Col span={9}>
+      <NotJumpingIllustration type="promo" />
+    </Col>
+  </Row>
 );
 
 export const Promo = () => (
-  <>
+  <Box margin={`${spacing.large} 0 ${spacing.extraLarge} 0`}>
     <MobileOnly>
       <MobileScreenPromo />
     </MobileOnly>
@@ -180,5 +191,5 @@ export const Promo = () => (
     <DesktopOnly>
       <BigScreenPromo />
     </DesktopOnly>
-  </>
+  </Box>
 );

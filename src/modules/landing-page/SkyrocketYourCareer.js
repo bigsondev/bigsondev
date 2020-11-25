@@ -1,130 +1,130 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { Title, Paragraph, Text, Illustration, CardButton } from '~components';
+import { theme, Title, Text, Illustration, MainCard, Box } from '~components';
+
+const { colors, fontSize, fontWeight, spacing, opacity } = theme;
 
 const Holder = styled.div({
-  padding: '7rem 1rem',
   width: '100vw',
   position: 'relative',
   background: '#F5F5F5',
 });
 
-const OfferCard = styled.div({
-  transition: 'box-shadow 0.3s',
-  cursor: 'pointer',
-  position: 'relative',
-  padding: 24,
-  paddingBottom: 0,
-  minHeight: 540,
-  borderRadius: 16,
-  background: '#FAFAFA',
-
-  '@media (max-width: 480px)': {
-    minHeight: 520,
-  },
-  '@media (min-width: 481px) and (max-width: 768px)': {
-    minHeight: 450,
-  },
-
-  '&:hover': {
-    boxShadow: `0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
-    0 9px 28px 8px rgba(0, 0, 0, 0.05)`,
-  },
-});
-
 export const SkyrocketYourCareer = () => {
   return (
     <Holder id="bigsondev-skyrocket-your-career">
-      <Title level={2} align="center">
-        Mentorship
-      </Title>
-      <Row justify="center">
-        <Col xs={20} sm={12}>
-          <Paragraph align="center" breakParagraph>
-            <div style={{ maxWidth: 420, margin: '0 auto' }}>
-              Need to improve your Frontend skills? Nobody gives you valuable
-              feedback? I'll be happy to guide you on the right track.
-            </div>
-          </Paragraph>
-        </Col>
-      </Row>
-      <Row justify="center" gutter={[24, 24]}>
-        <Col xs={22} sm={16} xl={7} xxl={6}>
-          <Link to="/mentorship/#bigsondev-offer">
-            <OfferCard>
-              <Row justify="center" gutter={[0, 26]}>
-                <Col span={12}>
+      <Box padding={`${spacing.extraLarge} ${spacing.medium}`}>
+        <Title
+          align="center"
+          transform="none"
+          marginBottom={spacing.large}
+          color={colors.primary}
+          fontSize={fontSize.superLarge}
+          fontWeight={fontWeight.stronger}
+        >
+          Mentorship services
+        </Title>
+        <Row justify="center" gutter={[24, 24]}>
+          <Col xs={22} sm={16} xl={7} xxl={6}>
+            <MainCard>
+              <Row justify="center" gutter={[0, 25]}>
+                <Col span={17}>
                   <Illustration type="mentor" />
                 </Col>
                 <Col span={24}>
-                  <Title level={4} align="center">
-                    i need a mentor
+                  <Title
+                    level={4}
+                    transform="none"
+                    align="center"
+                    marginBottom="0"
+                    fontSize={fontSize.large}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    Spot mentoring
                   </Title>
                 </Col>
-                <Col span={20}>
-                  <Text align="center" display="block" size="preNormal">
-                    I'll treat you individually, listen to your story, fix weak
-                    points, empower strengths, and create a unique learning path
-                    to help you improve quickly.
+                <Col span={22}>
+                  <Text
+                    align="center"
+                    display="block"
+                    size="small"
+                    textOpacity={opacity.title}
+                  >
+                    Code review, debugging, learning, and problem solving
+                    together.
                   </Text>
                 </Col>
-                <CardButton>learn more</CardButton>
               </Row>
-            </OfferCard>
-          </Link>
-        </Col>
-        <Col xs={22} sm={16} xl={7} xxl={6}>
-          <Link to="/mentorship/#bigsondev-offer">
-            <OfferCard>
-              <Row justify="center" gutter={[0, 24]}>
-                <Col span={10}>
-                  <Illustration type="mockInterview" />
+            </MainCard>
+          </Col>
+          <Col xs={22} sm={16} xl={7} xxl={6}>
+            <MainCard>
+              <Row justify="center" gutter={[0, 22]}>
+                <Col span={18}>
+                  <Illustration type="buildProject" />
+                </Col>
+                <Col span={22}>
+                  <Title
+                    level={4}
+                    transform="none"
+                    align="center"
+                    marginBottom="0"
+                    fontSize={fontSize.large}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    Project mentoring
+                  </Title>
                 </Col>
                 <Col span={24}>
-                  <Title level={4} align="center">
-                    i need a mock interview
-                  </Title>
-                </Col>
-                <Col span={20}>
-                  <Text align="center" display="block" size="preNormal">
-                    Have you ever talked to a ghost? Stress-free conversation, a
-                    warm-up for your next technical interview. I'll adjust
-                    questions and coding challenges to your skill level.
+                  <Text
+                    align="center"
+                    display="block"
+                    size="small"
+                    textOpacity={opacity.title}
+                  >
+                    Plan, design and build a real-world project with the help of
+                    a mentor.
                   </Text>
                 </Col>
-                <CardButton>LEARN MORE</CardButton>
               </Row>
-            </OfferCard>
-          </Link>
-        </Col>
-        <Col xs={22} sm={16} xl={7} xxl={6}>
-          <Link to="/mentorship/#bigsondev-offer">
-            <OfferCard>
-              <Row justify="center" gutter={[0, 28]}>
-                <Col span={11}>
+            </MainCard>
+          </Col>
+          <Col xs={22} sm={16} xl={7} xxl={6}>
+            <MainCard>
+              <Row justify="center" gutter={[0, 24]}>
+                <Col span={16}>
                   <Illustration type="developmentPlan" />
                 </Col>
                 <Col span={24}>
-                  <Title level={4} align="center">
-                    i need a development plan
+                  <Title
+                    level={4}
+                    transform="none"
+                    align="center"
+                    marginBottom="0"
+                    fontSize={fontSize.large}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    Long-term mentoring
                   </Title>
                 </Col>
-                <Col span={20}>
-                  <Text align="center" display="block" size="preNormal">
-                    Feeling stuck in your career? I felt the same and created
-                    one to push my own limits. Now, I would love to create one
-                    for you, let's skyrocket in Frontend together.
+                <Col span={22}>
+                  <Text
+                    align="center"
+                    display="block"
+                    size="small"
+                    textOpacity={opacity.title}
+                  >
+                    Fully-packed support and collaboration to get the bests
+                    results.
                   </Text>
                 </Col>
-                <CardButton>LEARN MORE</CardButton>
               </Row>
-            </OfferCard>
-          </Link>
-        </Col>
-      </Row>
+            </MainCard>
+          </Col>
+        </Row>
+      </Box>
     </Holder>
   );
 };

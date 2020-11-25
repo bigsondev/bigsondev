@@ -13,20 +13,29 @@ import { Logo } from './styled';
 
 const Holder = styled(Layout.Header)({
   padding: 0,
-  height: 'initial',
-  minHeight: 120,
+  height: 65,
+  lineHeight: '50px',
   background: '#FAFAFA',
+
+  '@media (max-width: 576px)': {
+    height: 'initial',
+    minHeight: 80,
+  },
 });
 
 const RowShadow = styled(Row)({
-  minHeight: 100,
-  paddingTop: 10,
-  boxShadow: '0 10px 10px -10px rgba(0, 0, 0, 0.15)',
+  height: 60,
+  boxShadow: '0 5px 5px -5px rgba(0, 0, 0, 0.15)',
+  marginTop: -2,
+
+  '@media (max-width: 576px)': {
+    height: 'auto',
+  },
 });
 
 const MenuHolder = styled(Menu)({
   borderBottom: 'none',
-  background: '#FAFAFA !important',
+  background: 'transparent !important',
 });
 
 const MobileMenuSpace = styled.div({
@@ -51,7 +60,7 @@ const MenuItem = styled(Menu.Item)(({ isSelected }) => ({
   },
   '& > a > span': {
     transition: 'color 0.1s ease-in',
-    color: isSelected ? '#000 !important' : 'rgba(80,80,80,0.7) !important',
+    color: '#000 !important',
   },
   '&:hover': {
     backgroundColor: 'inherit !important',
@@ -60,7 +69,7 @@ const MenuItem = styled(Menu.Item)(({ isSelected }) => ({
     },
   },
   '&.ant-menu-item-selected': {
-    backgroundColor: '#FAFAFA !important',
+    backgroundColor: 'transparent !important',
   },
 }));
 
