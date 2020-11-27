@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, graphql } from 'gatsby';
-import { Row, Col, Space, Rate } from 'antd';
+import { Row, Col, Space, Rate, Divider } from 'antd';
 
 import styled from 'styled-components';
 
@@ -180,34 +180,29 @@ const Library = ({
       <Title level={2} align="center">
         Practice by building 👨‍💻
       </Title>
-      <Box mb={10}>
-        <Paragraph align="center">
-          To become a great Developer, <br />
-          you have to code.
-        </Paragraph>
-      </Box>
+      <Paragraph align="center">
+        To become a great Developer, <br />
+        you have to code.
+      </Paragraph>
+      <Divider />
       <Box mb={3}>
         <Title level={3} transform="capitalize" align="center">
           Projects
         </Title>
-        <Paragraph size="preNormal" align="center">
-          Code real-world projects based on assignment.
-        </Paragraph>
       </Box>
-      <Box mb={10}>
-        <Row gutter={[24, 24]} justify="center">
-          {projects.map((project) => (
-            <Col
-              xs={{ span: 24 }}
-              sm={{ span: 12 }}
-              xl={{ span: 8 }}
-              key={project.title}
-            >
-              <Resource buttonText="Start Project" {...project} />
-            </Col>
-          ))}
-        </Row>
-      </Box>
+      <Row gutter={[24, 24]} justify="center">
+        {projects.map((project) => (
+          <Col
+            xs={{ span: 24 }}
+            sm={{ span: 12 }}
+            xl={{ span: 8 }}
+            key={project.title}
+          >
+            <Resource buttonText="Start Project" {...project} />
+          </Col>
+        ))}
+      </Row>
+      <Divider />
       <Box mb={1}>
         <Title level={3} transform="capitalize" align="center">
           Code Challenges

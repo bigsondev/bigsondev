@@ -91,8 +91,8 @@ export const SkyrocketYourCareer = () => {
                     size="small"
                     textOpacity={opacity.title}
                   >
-                    Plan, design and build a real-world project with the help of
-                    a mentor.
+                    Plan, design and build your own project with the help of a
+                    mentor.
                   </Text>
                 </Col>
               </Row>

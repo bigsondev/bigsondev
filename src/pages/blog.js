@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Row, Col, Space } from 'antd';
+import { Row, Col, Space, Divider } from 'antd';
 import styled from 'styled-components';
 import { CalendarOutlined, FieldTimeOutlined } from '@ant-design/icons';
 import moment from 'moment';
@@ -137,15 +137,14 @@ const Blog = ({
       <Title level={2} align="center">
         Knowledge is power 📖
       </Title>
-      <Box mb={10}>
-        <Paragraph align="center">
-          To become a great Developer, <br />
-          you have to learn.
-        </Paragraph>
-      </Box>
+      <Paragraph align="center">
+        To become a great Developer, <br />
+        you have to learn.
+      </Paragraph>
+      <Divider />
       <Box mb={3}>
         <Title level={3} transform="capitalize" align="center">
-          Latest Articles
+          Articles
         </Title>
       </Box>
       <Row gutter={[24, 24]} justify="center">

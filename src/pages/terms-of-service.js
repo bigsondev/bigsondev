@@ -15,7 +15,9 @@ import {
 const TermsOfService = () => (
   <Layout>
     <SEO title="Terms Of Service" />
-    <Title level={2}>Terms of Service</Title>
+    <Title level={2} align="center">
+      Terms of Service
+    </Title>
     <Divider />
     <Box mb={10}>
       <Row justify="center">
@@ -51,9 +53,9 @@ const TermsOfService = () => (
           </Paragraph>
           <PostList
             data={[
-              'Mentoring - 1 (one) hour tutoring in programming via Zoom meeting followed by e-mail feedback on Client’s knowledge, proposed development path and possible progress',
-              'Mock Interview - 1,5 (one and a half) hour simulation of recruitment interview via Zoom meeting aiming to verify Client’s knowledge, technical competencies and prepare for regular recruitment interview, followed by e-mail feedback on Client’s knowledge, proposed development path and possible progress',
-              'Development Plan - 1 (one) hour meeting via Zoom aiming to set up a step plan for Client’s development path followed by e-mail feedback with the final development plan, learning path, exemplary assignments, and next sessions',
+              'Spot mentoring - 1 (one) hour tutoring in programming via Zoom meeting followed by e-mail or Slack chat feedback on Client’s knowledge, proposed development path, exemplary assignments, and possible progress',
+              'Project mentoring - 4 (four) sessions, 1 (one) per week, 1 (one) hour each, 4 (four) hours in total over course of a month. Tutoring based on building a project via Zoom meeting followed by e-mail or Slack feedback on Client’s knowledge, exemplary assignments related to the project, next steps, and possible progress',
+              'Long-term mentoring - 12 (twelve) sessions, 1 (one) per week, 1 (one) hour each, 12 (twelve) hours in total over course of a 3 (three) months. Tutoring based on creating a portfolio with projects via Zoom meeting followed by e-mail or Slack feedback on Client’s knowledge, exemplary assignments related to the portfolio or/and projects, next steps, and possible progress',
               'Other service - individually agreed with Client Service plan containing above matters in taylored offer',
               'Blog - regularly posted, free of charge, articles and guidelines considering services provided by BigsonDev available on BigsonDev web page',
               'Library - set of free of charge coding exercises prepared for the users of BigsonDev web page',

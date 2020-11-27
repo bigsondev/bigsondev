@@ -16,7 +16,9 @@ import {
 const PrivacyPolicy = () => (
   <Layout>
     <SEO title="Privacy Policy" />
-    <Title level={2}>Privacy Policy</Title>
+    <Title level={2} align="center">
+      Privacy Policy
+    </Title>
     <Divider />
     <Box mb={10}>
       <Row justify="center">
