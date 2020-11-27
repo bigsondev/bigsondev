@@ -9,6 +9,7 @@ const TEXT_SIZE = {
   small: '1rem',
   preNormal: '1.125rem',
   normal: '1.27rem',
+  medium: '1.5rem',
   h1: '2.5rem',
   h3: '1.75rem',
   h4: '1.375rem',

@@ -60,6 +60,16 @@ const GhostButton = styled(BaseButton)(({ theme }) => ({
   },
 }));
 
+const AdditionalButton = styled(BaseButton)(({ theme }) => ({
+  backgroundColor: `${theme.colors.additional} !important`,
+
+  '&:hover': {
+    boxShadow: `0px 0px 5px 0px ${theme.colors.additional}`,
+    backgroundColor: `${theme.colors.additional} !important`,
+    color: `${theme.colors.white} !important`,
+  },
+}));
+
 const LinkButton = styled(Link)(({ theme }) => ({
   fontWeight: theme.fontWeight.strong,
   fontSize: theme.fontSize.base,
@@ -81,6 +91,7 @@ const BUTTON_MAPPER = {
   primary: PrimaryButton,
   secondary: SecondaryButton,
   ghost: GhostButton,
+  additional: AdditionalButton,
   link: LinkButton,
 };
 

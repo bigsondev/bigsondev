@@ -113,7 +113,7 @@ export const SkyrocketYourCareer = () => {
                     fontSize={fontSize.large}
                     fontWeight={fontWeight.stronger}
                   >
-                    Long-term mentoring
+                    Tailored mentoring
                   </Title>
                 </Col>
                 <Col span={22}>

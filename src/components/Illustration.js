@@ -17,6 +17,9 @@ import {
   JLabsLogo,
   SinchLogo,
   KojiLogo,
+  SmallRocket,
+  MediumRocket,
+  LargeRocket,
 } from '~svg';
 
 const Holder = styled.div(({ width = '100%' }) => ({
@@ -43,6 +46,9 @@ const ILLUSTRATION_MAPPER = {
   jlabs: <JLabsLogo />,
   sinch: <SinchLogo />,
   koji: <KojiLogo />,
+  smallRocket: <SmallRocket />,
+  mediumRocket: <MediumRocket />,
+  largeRocket: <LargeRocket />,
 };
 
 export const Illustration = ({ type, ...props }) => {

@@ -11,6 +11,7 @@ import OtherCommandsImage from './other-commands.png';
 import BookCoverProject from './book-cover-project.png';
 import TodoAppProject from './todo-app-project.png';
 import RealtimeChatProject from './realtime-chat-project.png';
+import MesfinTestimonial from './mesfin-testimonial.jpeg';
 
 export * from './logo';
 export {
@@ -27,4 +28,5 @@ export {
   BookCoverProject,
   TodoAppProject,
   RealtimeChatProject,
+  MesfinTestimonial,
 };

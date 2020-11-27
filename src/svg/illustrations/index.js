@@ -13,6 +13,9 @@ import BalfourLogo from './balfour-logo.svg';
 import JLabsLogo from './j-labs-logo.svg';
 import SinchLogo from './sinch-logo.svg';
 import KojiLogo from './koji-logo.svg';
+import SmallRocket from './rocket-blue-1.svg';
+import MediumRocket from './rocket-green-2.svg';
+import LargeRocket from './rocket-orange-3.svg';
 
 export {
   PromoIllustration,
@@ -30,4 +33,7 @@ export {
   JLabsLogo,
   SinchLogo,
   KojiLogo,
+  SmallRocket,
+  MediumRocket,
+  LargeRocket,
 };

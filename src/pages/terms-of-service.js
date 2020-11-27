@@ -55,7 +55,7 @@ const TermsOfService = () => (
             data={[
               'Spot mentoring - 1 (one) hour tutoring in programming via Zoom meeting followed by e-mail or Slack chat feedback on Client’s knowledge, proposed development path, exemplary assignments, and possible progress',
               'Project mentoring - 4 (four) sessions, 1 (one) per week, 1 (one) hour each, 4 (four) hours in total over course of a month. Tutoring based on building a project via Zoom meeting followed by e-mail or Slack feedback on Client’s knowledge, exemplary assignments related to the project, next steps, and possible progress',
-              'Long-term mentoring - 12 (twelve) sessions, 1 (one) per week, 1 (one) hour each, 12 (twelve) hours in total over course of a 3 (three) months. Tutoring based on creating a portfolio with projects via Zoom meeting followed by e-mail or Slack feedback on Client’s knowledge, exemplary assignments related to the portfolio or/and projects, next steps, and possible progress',
+              'Tailored mentoring - 12 (twelve) sessions, 1 (one) per week, 1 (one) hour each, 12 (twelve) hours in total over course of 3 (three) months. Tutoring based on creating a portfolio with projects via Zoom meeting followed by e-mail or Slack feedback on Client’s knowledge, exemplary assignments related to the portfolio or/and projects, next steps, and possible progress',
               'Other service - individually agreed with Client Service plan containing above matters in taylored offer',
               'Blog - regularly posted, free of charge, articles and guidelines considering services provided by BigsonDev available on BigsonDev web page',
               'Library - set of free of charge coding exercises prepared for the users of BigsonDev web page',

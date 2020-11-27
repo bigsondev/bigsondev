@@ -1,49 +1,42 @@
 import React from 'react';
 import { Row, Col, Space } from 'antd';
+import { CheckOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import { openPopupWidget } from 'react-calendly';
 
 import {
+  theme,
   Title,
   Paragraph,
   Text,
+  Illustration,
   Button,
   Box,
+  MainCard,
+  SmallOnly,
+  ExceptSmall,
 } from '~components';
 
+const { colors, fontSize, fontWeight, spacing, opacity } = theme;
+
 const Holder = styled.div({
-  padding: '2rem 1rem 5rem 1rem',
   position: 'relative',
-  background: '#FAFAFA',
 });
 
-const OfferCard = styled.div({
-  transition: 'box-shadow 0.3s',
-  cursor: 'pointer',
-  position: 'relative',
-  padding: 24,
-  paddingBottom: 0,
-  minHeight: 520,
-  borderRadius: 16,
-  background: '#FFF',
-  '@media (max-width: 480px)': {
-    minHeight: 480,
-  },
+const SuperOfferCard = styled(MainCard)(({ theme }) => ({
+  border: `3px solid ${theme.colors.promo}`,
+}));
 
-  '@media (min-width: 481px) and (max-width: 768px)': {
-    minHeight: 450,
-  },
-
-  '&:hover': {
-    boxShadow: `0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
-    0 9px 28px 8px rgba(0, 0, 0, 0.05)`,
-  },
+const BuyButton = styled(Button)({
+  marginTop: 'auto',
 });
 
-const ButtonHolder = styled.div({
-  position: 'absolute',
-  bottom: 4,
-});
+const CheckIcon = styled(CheckOutlined)(({ theme, color }) => ({
+  fontSize: theme.fontSize.base,
+  '& > svg': {
+    fill: color,
+  },
+}));
 
 const openMentoringEvent = () => {
   openPopupWidget({
@@ -75,151 +68,425 @@ const openDevelopmentPlanEvent = () => {
   });
 };
 
+const openFreeConsultationEvent = () => {
+  openPopupWidget({
+    url: 'https://calendly.com/bigsondev/free-consultation',
+    pageSettings: {
+      hideEventTypeDetails: true,
+      hideLandingPageDetails: true,
+    },
+  });
+};
+
 export const Offer = () => {
   return (
     <Holder>
-      <Title level={2} align="center" id="bigsondev-offer">
-        Skyrocket Your Career 🚀
-      </Title>
-      <Box mb={5}>
+      <Box padding={`${spacing.small} 0 ${spacing.extraLarge} 0`}>
+        <Title
+          align="center"
+          transform="none"
+          color={colors.promo}
+          fontSize={fontSize.extraLarge}
+          fontWeight={fontWeight.stronger}
+        >
+          Skyrocket your career
+        </Title>
         <Row justify="center">
-          <Col xs={20} sm={12}>
-            <Paragraph align="center">
-              <div style={{ maxWidth: 650, margin: '0 auto' }}>
-                <Text strong>It's easy to get stuck in tutorials hell</Text>.
-                There is a lot to learn. I've been there and I don't want you to
-                go through this alone. If you are a newcomer or just looking to
-                improve as a Developer, I'll be happy to guide and support.
-              </div>
+          <Col xs={22} md={16}>
+            <Paragraph
+              align="center"
+              marginBottom={spacing.large}
+              fontWeight={fontWeight.stronger}
+              size="medium"
+            >
+              It's easy to get stuck in tutorials hell. I've been there and I
+              don't want you to go through this alone. If you are a newcomer or
+              just looking to improve as a Developer, I'll be happy to guide and
+              support.
             </Paragraph>
           </Col>
         </Row>
+        <Row justify="center" gutter={[24, 24]}>
+          <Col xs={22} sm={16} md={13} xl={8}>
+            <MainCard>
+              <Row justify="center" gutter={[0, 24]}>
+                <Col span={10}>
+                  <Illustration type="smallRocket" />
+                </Col>
+                <Col span={24}>
+                  <Title
+                    level={3}
+                    align="center"
+                    transform="none"
+                    color={colors.primary}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    Spot mentoring
+                  </Title>
+                  <Paragraph
+                    size="small"
+                    textOpacity={opacity.title}
+                    align="center"
+                  >
+                    1 hour of conversation with targeted feedback, proposed
+                    development path, and exemplary assignments.
+                  </Paragraph>
+                </Col>
+                <Col span={24}>
+                  <Box display="flex" justify="center">
+                    <Space>
+                      <Title
+                        level={1}
+                        align="center"
+                        color={colors.grayLevelNine}
+                      >
+                        $40
+                      </Title>
+                    </Space>
+                  </Box>
+                </Col>
+                <Col span={22}>
+                  <Space size="small" direction="vertical">
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
+                        Mock interview
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
+                        Robust feedback
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
+                        Career path
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
+                        Development plan
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
+                        Additional assignments
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
+                        Support through Slack
+                      </Text>
+                    </Space>
+                  </Space>
+                </Col>
+              </Row>
+              <Box margin={`${spacing.small} 0 0 0`} />
+              <BuyButton type="primary" onClick={openMentoringEvent}>
+                Book a session
+              </BuyButton>
+            </MainCard>
+          </Col>
+          <Col xs={22} sm={16} md={13} xl={8}>
+            <MainCard>
+              <Row justify="center" gutter={[0, 24]}>
+                <Col span={10}>
+                  <Illustration type="mediumRocket" />
+                </Col>
+                <Col span={24}>
+                  <Title
+                    level={3}
+                    align="center"
+                    transform="none"
+                    color={colors.additional}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    Project mentoring
+                  </Title>
+                  <Paragraph
+                    size="small"
+                    textOpacity={opacity.title}
+                    align="center"
+                  >
+                    4 hours in total over course of a month. Build a project
+                    with modern technology stack and best practices.
+                  </Paragraph>
+                </Col>
+                <Col span={24}>
+                  <Box display="flex" justify="center">
+                    <Space>
+                      <Title
+                        level={1}
+                        align="center"
+                        color={colors.grayLevelNine}
+                      >
+                        $120
+                      </Title>
+                    </Space>
+                  </Box>
+                </Col>
+                <Col span={22}>
+                  <Space size="small" direction="vertical">
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small" strong>
+                        Spot mentoring, and:
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small" strong>
+                        Work in Agile methodology
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small" strong>
+                        Build & deploy your project
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small" strong>
+                        Real-world experience
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small">
+                        Learn in-demand technologies
+                      </Text>
+                    </Space>
+
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small">
+                        Best practices
+                      </Text>
+                    </Space>
+
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small">
+                        Coding with an expert
+                      </Text>
+                    </Space>
+                  </Space>
+                </Col>
+              </Row>
+              <Box margin={`${spacing.small} 0 0 0`} />
+              <BuyButton type="additional" onClick={openMockInterviewEvent}>
+                Build a project
+              </BuyButton>
+            </MainCard>
+          </Col>
+          <Col xs={22} sm={16} md={13} xl={8}>
+            <SuperOfferCard>
+              <Row justify="center" gutter={[0, 24]}>
+                <Col span={10}>
+                  <Illustration type="largeRocket" />
+                </Col>
+                <Col span={24}>
+                  <Title
+                    level={3}
+                    align="center"
+                    transform="none"
+                    color={colors.promo}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    Tailored mentoring
+                  </Title>
+                  <Paragraph
+                    size="small"
+                    textOpacity={opacity.title}
+                    align="center"
+                  >
+                    12 hours in total over course of 3 months. Create a
+                    portfolio with projects and get your dream Frontend job.
+                  </Paragraph>
+                </Col>
+                <Col span={24}>
+                  <Box display="flex" justify="center">
+                    <Space>
+                      <Title
+                        level={1}
+                        align="center"
+                        color={colors.grayLevelNine}
+                      >
+                        $350
+                      </Title>
+                    </Space>
+                  </Box>
+                </Col>
+                <Col span={22}>
+                  <Space size="small" direction="vertical">
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small" strong>
+                        Project mentoring, and:
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small" strong>
+                        Linkedin referral
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small" strong>
+                        Create a portfolio
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small" strong>
+                        3 unique projects
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small" strong>
+                        User behaviour tools
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small">
+                        Help with a CV
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small">
+                        Build confidence
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small">
+                        My personal insights
+                      </Text>
+                    </Space>
+                  </Space>
+                </Col>
+              </Row>
+              <Box margin={`${spacing.small} 0 0 0`} />
+              <BuyButton type="promo" onClick={openDevelopmentPlanEvent}>
+                Change your career
+              </BuyButton>
+            </SuperOfferCard>
+          </Col>
+        </Row>
+        <Box margin={`${spacing.large} 0`}>
+          <Title
+            transform="none"
+            align="center"
+            color={colors.primary}
+            fontSize={fontSize.superLarge}
+            fontWeight={fontWeight.stronger}
+          >
+            How it works
+          </Title>
+        </Box>
+        <Row justify="center" gutter={24}>
+          <Col xs={18} lg={8}>
+            <Title
+              level={4}
+              transform="none"
+              align="center"
+              fontSize={fontSize.large}
+              fontWeight={fontWeight.stronger}
+              color={colors.primary}
+            >
+              1. Hop on a call
+            </Title>
+            <Paragraph
+              display="block"
+              size="small"
+              textOpacity={opacity.title}
+              align="center"
+            >
+              We'll build your profile and adjust individual, effective learning
+              path, you'll receive compact resources and assignments.
+            </Paragraph>
+          </Col>
+          <Col xs={18} lg={8}>
+            <Title
+              level={4}
+              transform="none"
+              align="center"
+              fontSize={fontSize.large}
+              fontWeight={fontWeight.stronger}
+              color={colors.primary}
+            >
+              2. Unlimited support
+            </Title>
+            <Paragraph size="small" textOpacity={opacity.title} align="center">
+              I invite all of my mentees to Slack, where we collaborate in
+              real-time through chat and you can ask any burning questions.
+            </Paragraph>
+          </Col>
+          <Col xs={18} lg={8}>
+            <Title
+              level={4}
+              transform="none"
+              align="center"
+              fontSize={fontSize.large}
+              fontWeight={fontWeight.stronger}
+              color={colors.primary}
+            >
+              3. Build, build, build
+            </Title>
+            <Paragraph size="small" textOpacity={opacity.title} align="center">
+              To learn code, you have to build things. Iterate, improve and
+              reward yourself often, I'll happily support you during this
+              fantastic journey.
+            </Paragraph>
+          </Col>
+        </Row>
+        <Box margin={`${spacing.large} 0 0 0`}>
+          <Title level={4} transform="none" align="center">
+            Missing more explanation? Let's hop on a call to to discuss the
+            details of Mentorship
+          </Title>
+          <Box
+            display="flex"
+            justify="center"
+            margin={`${spacing.large} 0 0 0`}
+          >
+            <SmallOnly>
+              <Space size="large" direction="vertical">
+                <Button type="secondary" onClick={openFreeConsultationEvent}>
+                  Reserve meeting via Calendly
+                </Button>
+                <Button
+                  type="link"
+                  to="/reach-out/"
+                  style={{ textAlign: 'center' }}
+                >
+                  or email me
+                </Button>
+              </Space>
+            </SmallOnly>
+            <ExceptSmall>
+              <Space size="large">
+                <Button type="secondary" onClick={openFreeConsultationEvent}>
+                  Reserve meeting via Calendly
+                </Button>
+                <Button type="link" to="/reach-out/">
+                  or email me
+                </Button>
+              </Space>
+            </ExceptSmall>
+          </Box>
+        </Box>
       </Box>
-      <Row justify="center" gutter={[24, 24]}>
-        <Col xs={22} sm={16} xl={8} xxl={7}>
-          <OfferCard onClick={openMentoringEvent}>
-            <Row justify="center" gutter={[0, 24]}>
-              <Col span={24}>
-                <Title level={4} align="center" transform="none">
-                  Frontend Mentoring
-                </Title>
-              </Col>
-              <Col span={24}>
-                <Box display="flex" justify="center">
-                  <Space>
-                    <Text
-                      align="center"
-                      size="h4"
-                      type="secondary"
-                      strong
-                      delete
-                    >
-                      100$
-                    </Text>
-                    <Text align="center" size="h3" strong>
-                      50$ / 1h
-                    </Text>
-                  </Space>
-                </Box>
-              </Col>
-              <Col xs={22} md={16}>
-                <Paragraph align="center" style={{ marginTop: '1rem' }}>
-                  1 hour of conversation, best for looking at the code,
-                  discussing portfolio, helping out with best practices, and
-                  proposing the next steps to improve as a Developer.
-                </Paragraph>
-              </Col>
-              <ButtonHolder>
-                <Button type="promo" onClick={openMentoringEvent}>
-                  Book a session
-                </Button>
-              </ButtonHolder>
-            </Row>
-          </OfferCard>
-        </Col>
-        <Col xs={22} sm={16} xl={8} xxl={7}>
-          <OfferCard onClick={openMockInterviewEvent}>
-            <Row justify="center" gutter={[0, 24]}>
-              <Col span={24}>
-                <Title level={4} align="center" transform="none">
-                  Mock Interview
-                </Title>
-              </Col>
-              <Col span={24}>
-                <Box display="flex" justify="center">
-                  <Space>
-                    <Text
-                      align="center"
-                      size="h4"
-                      type="secondary"
-                      strong
-                      delete
-                    >
-                      150$
-                    </Text>
-                    <Text align="center" size="h3" strong>
-                      75$ / 1.5h
-                    </Text>
-                  </Space>
-                </Box>
-              </Col>
-              <Col xs={22} md={16}>
-                <Paragraph align="center" style={{ marginTop: '1rem' }}>
-                  1.5 hours of conversation, have a job interview soon? Test
-                  yourself on a mock interview first. Theory, practice with
-                  proposed solutions, and robust feedback included.
-                </Paragraph>
-              </Col>
-              <ButtonHolder>
-                <Button type="promo" onClick={openMockInterviewEvent}>
-                  Test your skills
-                </Button>
-              </ButtonHolder>
-            </Row>
-          </OfferCard>
-        </Col>
-        <Col xs={22} sm={16} xl={8} xxl={7}>
-          <OfferCard onClick={openDevelopmentPlanEvent}>
-            <Row justify="center" gutter={[0, 24]}>
-              <Col span={24}>
-                <Title level={4} align="center" transform="none">
-                  Development Plan
-                </Title>
-              </Col>
-              <Col span={24}>
-                <Box display="flex" justify="center">
-                  <Space>
-                    <Text
-                      align="center"
-                      size="h4"
-                      type="secondary"
-                      strong
-                      delete
-                    >
-                      300$
-                    </Text>
-                    <Text align="center" size="h3" strong>
-                      150$ / 4h
-                    </Text>
-                  </Space>
-                </Box>
-              </Col>
-              <Col xs={22} md={16}>
-                <Paragraph align="center" style={{ marginTop: '1rem' }}>
-                  4 hours of conversation, spread over the month, 1 hour per
-                  week. Build a real-world project, code with a Mentor, and
-                  learn the most by building things from the scratch.
-                </Paragraph>
-              </Col>
-              <ButtonHolder>
-                <Button type="promo" onClick={openDevelopmentPlanEvent}>
-                  Change your career
-                </Button>
-              </ButtonHolder>
-            </Row>
-          </OfferCard>
-        </Col>
-      </Row>
     </Holder>
   );
 };
