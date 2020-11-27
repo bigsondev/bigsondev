@@ -1,31 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Space } from 'antd';
 import styled from 'styled-components';
+import { openPopupWidget } from 'react-calendly';
 
-import { Title, Paragraph, Box, Icon, DesktopOnly, Link } from '~components';
+import { AdrianImage } from '~assets';
+import {
+  theme,
+  Title,
+  Paragraph,
+  Text,
+  Box,
+  Icon,
+  DesktopOnly,
+  Link,
+  Image,
+  MainCard,
+  Button,
+  Illustration,
+} from '~components';
 
-const Holder = styled.div({
-  padding: '7rem 1rem',
-  width: '100vw',
+const { colors, fontSize, fontWeight, spacing } = theme;
+
+const Holder = styled.div(({ theme }) => ({
   position: 'relative',
-  background: '#F5F5F5',
-});
-
-const OfferCard = styled.div({
-  minHeight: 930,
-  position: 'relative',
-  padding: 24,
-  paddingBottom: 0,
-  borderRadius: 16,
-  background: '#FAFAFA',
-
-  '@media (max-width: 480px)': {
-    minHeight: 550,
-  },
-  '@media (min-width: 481px) and (max-width: 768px)': {
-    minHeight: 480,
-  },
-});
+}));
 
 const SocialLinkHolder = styled(Link)({
   color: '#40A9FF !important',
@@ -49,6 +47,31 @@ const SocialsHolder = styled.div({
   top: '40%',
   left: '1.5rem',
 });
+
+const SkillButton = styled(Button)({
+  fontSize: '1rem',
+  fontWeight: 500,
+  padding: '1.25rem 1.75rem',
+  borderRadius: 0,
+  cursor: 'inherit',
+  margin: '0.5rem',
+
+  '&:hover': {
+    boxShadow: `0px 0px 5px 0px ${theme.colors.primary}`,
+    backgroundColor: `${theme.colors.primary} !important`,
+    color: `${theme.colors.white} !important`,
+  },
+});
+
+const openFreeConsultationEvent = () => {
+  openPopupWidget({
+    url: 'https://calendly.com/bigsondev/free-consultation',
+    pageSettings: {
+      hideEventTypeDetails: true,
+      hideLandingPageDetails: true,
+    },
+  });
+};
 
 export const WhoIAm = () => {
   const [showSocials, setShowSocials] = useState(false);
@@ -74,191 +97,317 @@ export const WhoIAm = () => {
   return (
     <>
       <Holder id="bigsondev-who-i-am">
-        <Title level={2} align="center">
-          About Me
-        </Title>
-        <Row justify="center">
-          <Col xs={20} sm={12}>
-            <Paragraph align="center" breakParagraph>
-              Hi, I'm Adrian - Frontend Mentor. I love sharing my knowledge with
-              others. I was a League of Legends Coach for nearly 5 years. After
-              that, switched my career into IT field. From a Java Tester to Lead
-              Frontend Developer - recruiting candidates and mentoring folks
-              around me. I collaborated with big companies, startups and always
-              had lots of fun building things from the scratch.
-            </Paragraph>
-          </Col>
-        </Row>
-        <Row justify="center" gutter={[24, 24]}>
-          <Col xs={22} sm={16} xl={7} xxl={6}>
-            <OfferCard>
-              <Row justify="center" gutter={[0, 26]}>
-                <Col span={12} style={{ textAlign: 'center' }}>
-                  <Icon type="developer" width={64} />
+        <Box padding={`${spacing.extraLarge} 0`}>
+          <Title
+            transform="none"
+            align="center"
+            marginBottom="0"
+            color={colors.primary}
+            fontSize={fontSize.superLarge}
+            fontWeight={fontWeight.stronger}
+          >
+            About
+          </Title>
+          <Row justify="center" align="center" gutter={[24, 24]}>
+            <Col xs={16} sm={8} md={6} lg={5}>
+              <Image src={AdrianImage} />
+            </Col>
+            <Col xs={22} lg={16} offset={1} style={{ alignSelf: 'center' }}>
+              <Paragraph align="center" marginBottom="0">
+                <Text strong>Hi, I'm Adrian - Frontend Mentor.</Text> I love
+                sharing my knowledge with others. I was a League of Legends
+                Coach for nearly 5 years. After that, switched my career into IT
+                field. From a Java Tester to Lead Frontend Developer -
+                recruiting candidates and mentoring folks around me. I
+                collaborated with big companies, startups and always had lots of
+                fun building things from the scratch.
+              </Paragraph>
+            </Col>
+          </Row>
+          <Row justify="center" gutter={[24, 24]}>
+            <Col span={24}>
+              <Row align="center" gutter={[32, 32]}>
+                <Col xs={22} lg={9}>
+                  <MainCard>
+                    <Row justify="center" gutter={[0, 24]}>
+                      <Col span={12} style={{ textAlign: 'center' }}>
+                        <Icon type="developer" width={64} />
+                      </Col>
+                      <Col span={24}>
+                        <Title
+                          level={4}
+                          transform="none"
+                          align="center"
+                          marginBottom="0"
+                          fontSize={fontSize.large}
+                          fontWeight={fontWeight.stronger}
+                        >
+                          Lead Frontend Developer
+                        </Title>
+                      </Col>
+                      <Col span={22}>
+                        <Paragraph align="center" size="preNormal">
+                          I love challenges and learning new technologies.
+                        </Paragraph>
+                      </Col>
+                      <Col span={20}>
+                        <Title level={5} align="center" transform="none">
+                          Experience
+                        </Title>
+                        <Paragraph
+                          align="center"
+                          size="preNormal"
+                          marginBottom="0"
+                        >
+                          5 years
+                        </Paragraph>
+                      </Col>
+                    </Row>
+                  </MainCard>
                 </Col>
-                <Col span={24}>
-                  <Title level={5} align="center" transform="none">
-                    Developer
-                  </Title>
-                </Col>
-                <Col span={20}>
-                  <Paragraph align="center" size="preNormal">
-                    I love being up-to-date in Frontend. I value modern and
-                    declarative code.
-                  </Paragraph>
-                </Col>
-                <Col span={20}>
-                  <Title level={5} align="center" transform="none">
-                    Experience
-                  </Title>
-                  <Paragraph align="center" size="preNormal">
-                    5 years
-                  </Paragraph>
-                </Col>
-                <Col span={20}>
-                  <Title level={5} align="center" transform="none">
+                <Col
+                  xs={22}
+                  lg={15}
+                  style={{ alignSelf: 'center', textAlign: 'center' }}
+                >
+                  <Title
+                    level={4}
+                    transform="none"
+                    align="center"
+                    fontSize={fontSize.large}
+                    fontWeight={fontWeight.stronger}
+                  >
                     Skills
                   </Title>
-                  <Paragraph align="center" size="preNormal">
-                    HTML, CSS, JS, TS, React, Gatsby
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Node.js, REST, GraphQL
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    2D Games in Phaser, Unity
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Automation, CI/CD, Git
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Testing (units, e2e, A/B)
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Leadership, Agile, Scrum, Kanban
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    UX/UI, Design Systems
-                  </Paragraph>
+                  <SkillButton>JavaScript</SkillButton>
+                  <SkillButton>TypeScript</SkillButton>
+                  <SkillButton>Ajax</SkillButton>
+                  <SkillButton>HTML5</SkillButton>
+                  <SkillButton>CSS3</SkillButton>
+                  <SkillButton>React</SkillButton>
+                  <SkillButton>Redux</SkillButton>
+                  <SkillButton>Gatsby.js</SkillButton>
+                  <SkillButton>Node.js</SkillButton>
+                  <SkillButton>Express.js</SkillButton>
+                  <SkillButton>REST</SkillButton>
+                  <SkillButton>GraphQL</SkillButton>
+                  <SkillButton>Webpack</SkillButton>
+                  <SkillButton>Git</SkillButton>
+                  <SkillButton>VSCode</SkillButton>
+                  <SkillButton>Figma</SkillButton>
+                  <SkillButton>Terminal</SkillButton>
+                  <SkillButton>CI/CD</SkillButton>
+                  <SkillButton>Testing</SkillButton>
+                  <SkillButton>Cypress</SkillButton>
+                  <SkillButton>Yarn</SkillButton>
+                  <SkillButton>Npm</SkillButton>
+                  <SkillButton>Phaser</SkillButton>
+                  <SkillButton>Leadership</SkillButton>
+                  <SkillButton>UX/UI</SkillButton>
                 </Col>
               </Row>
-            </OfferCard>
-          </Col>
-          <Col xs={22} sm={16} xl={7} xxl={6}>
-            <OfferCard>
-              <Row justify="center" gutter={[0, 24]}>
-                <Col span={12} style={{ textAlign: 'center' }}>
-                  <Icon type="recruiter" width={64} />
+            </Col>
+            <Col span={24}>
+              <Row align="center" gutter={[32, 32]}>
+                <Col xs={22} lg={9}>
+                  <MainCard>
+                    <Row justify="center" gutter={[0, 24]}>
+                      <Col span={12} style={{ textAlign: 'center' }}>
+                        <Icon type="recruiter" width={64} />
+                      </Col>
+                      <Col span={24}>
+                        <Title
+                          level={4}
+                          transform="none"
+                          align="center"
+                          marginBottom="0"
+                          fontSize={fontSize.large}
+                          fontWeight={fontWeight.stronger}
+                        >
+                          Technical Recruiter
+                        </Title>
+                      </Col>
+                      <Col span={22}>
+                        <Paragraph align="center" size="preNormal">
+                          I enjoy brainstorming with candidates and sharing
+                          insights.
+                        </Paragraph>
+                      </Col>
+                      <Col span={20}>
+                        <Title level={5} align="center" transform="none">
+                          Experience
+                        </Title>
+                        <Paragraph
+                          align="center"
+                          size="preNormal"
+                          marginBottom="0"
+                        >
+                          2 years
+                        </Paragraph>
+                      </Col>
+                    </Row>
+                  </MainCard>
                 </Col>
-                <Col span={24}>
-                  <Title level={5} align="center" transform="none">
-                    Recruiter
+                <Col
+                  xs={22}
+                  lg={15}
+                  style={{ alignSelf: 'center', textAlign: 'center' }}
+                >
+                  <Title
+                    level={4}
+                    transform="none"
+                    align="center"
+                    fontSize={fontSize.large}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    Keywords
                   </Title>
-                </Col>
-                <Col span={20}>
-                  <Box mb={4}>
-                    <Paragraph align="center" size="preNormal">
-                      I enjoy having a mock interview with mentees to help them
-                      prepare.
-                    </Paragraph>
-                  </Box>
-                </Col>
-                <Col span={20}>
-                  <Title level={5} align="center" transform="none">
-                    Experience
-                  </Title>
-                  <Paragraph align="center" size="preNormal">
-                    2 years
-                  </Paragraph>
-                </Col>
-                <Col span={20}>
-                  <Title level={5} align="center" transform="none">
-                    Interview Methods
-                  </Title>
-                  <Paragraph align="center" size="preNormal">
-                    1:1 Junior, Regular, Senior levels
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Theory & Practice
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Pair Programming
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Brainstorming & Conversation
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Soft skills check
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Proposing solutions
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Adjusting to your skill
-                  </Paragraph>
+                  <SkillButton>Theory</SkillButton>
+                  <SkillButton>Practice</SkillButton>
+                  <SkillButton>Junior</SkillButton>
+                  <SkillButton>Regular</SkillButton>
+                  <SkillButton>Senior</SkillButton>
+                  <SkillButton>Code challenges</SkillButton>
+                  <SkillButton>Algorithms</SkillButton>
+                  <SkillButton>Pair programming</SkillButton>
+                  <SkillButton>Brainstorming</SkillButton>
+                  <SkillButton>Sharing insights</SkillButton>
+                  <SkillButton>Soft-skills check</SkillButton>
+                  <SkillButton>Proposed solutions</SkillButton>
+                  <SkillButton>Robust feedback</SkillButton>
                 </Col>
               </Row>
-            </OfferCard>
-          </Col>
-          <Col xs={22} sm={16} xl={7} xxl={6}>
-            <OfferCard>
-              <Row justify="center" gutter={[0, 28]}>
-                <Col span={12} style={{ textAlign: 'center' }}>
-                  <Icon type="mentor" width={64} />
+            </Col>
+            <Col span={24}>
+              <Row align="center" gutter={[32, 32]}>
+                <Col xs={22} lg={9}>
+                  <MainCard>
+                    <Row justify="center" gutter={[0, 24]}>
+                      <Col span={12} style={{ textAlign: 'center' }}>
+                        <Icon type="mentor" width={64} />
+                      </Col>
+                      <Col span={24}>
+                        <Title
+                          level={4}
+                          transform="none"
+                          align="center"
+                          marginBottom="0"
+                          fontSize={fontSize.large}
+                          fontWeight={fontWeight.stronger}
+                        >
+                          Frontend Mentor
+                        </Title>
+                      </Col>
+                      <Col span={22}>
+                        <Paragraph align="center" size="preNormal">
+                          I care about mentees and watching them succeed drives
+                          me.
+                        </Paragraph>
+                      </Col>
+                      <Col span={20}>
+                        <Title level={5} align="center" transform="none">
+                          Experience
+                        </Title>
+                        <Paragraph
+                          align="center"
+                          size="preNormal"
+                          marginBottom="0"
+                        >
+                          5 years (as a LoL Coach)
+                        </Paragraph>
+                      </Col>
+                    </Row>
+                  </MainCard>
                 </Col>
-                <Col span={24}>
-                  <Title level={5} align="center" transform="none">
-                    Mentor
+                <Col
+                  xxs={22}
+                  lg={15}
+                  style={{ alignSelf: 'center', textAlign: 'center' }}
+                >
+                  <Title
+                    level={4}
+                    transform="none"
+                    align="center"
+                    fontSize={fontSize.large}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    Values
                   </Title>
-                </Col>
-                <Col span={20}>
-                  <Box margin="-0.5rem 0 0 0">
-                    <Box mb={4}>
-                      <Paragraph align="center" size="preNormal">
-                        I feel like I was borned to mentor, it's a destiny -
-                        what can I say.
-                      </Paragraph>
-                    </Box>
-                  </Box>
-                </Col>
-                <Col span={20}>
-                  <Title level={5} align="center" transform="none">
-                    Experience
-                  </Title>
-                  <Paragraph align="center" size="preNormal">
-                    5 years
-                  </Paragraph>
-                </Col>
-                <Col span={20}>
-                  <Title level={5} align="center" transform="none">
-                    Stats & Methods
-                  </Title>
-                  <Paragraph align="center" size="preNormal">
-                    League of Legends Coach for 5 years
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    300+ students
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    1000+ sessions
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Individual approach
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Real-world projects
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Homework & Support
-                  </Paragraph>
-                  <Paragraph align="center" size="preNormal">
-                    Staying in touch
-                  </Paragraph>
+                  <SkillButton>Empathy</SkillButton>
+                  <SkillButton>Patience</SkillButton>
+                  <SkillButton>Individual approach</SkillButton>
+                  <SkillButton>Real-world projects</SkillButton>
+                  <SkillButton>Long-term relations</SkillButton>
+                  <SkillButton>Homework assignments</SkillButton>
+                  <SkillButton>Unlimited support</SkillButton>
+                  <SkillButton>New friend ❤️</SkillButton>
                 </Col>
               </Row>
-            </OfferCard>
-          </Col>
-        </Row>
+            </Col>
+          </Row>
+          <Box margin={`${spacing.large} 0 0 0`}>
+            <Row justify="center">
+              <Col xs={22} lg={12}>
+                <Box margin={`0 0 ${spacing.large} 0`}>
+                  <Title
+                    level={3}
+                    transform="none"
+                    align="center"
+                    fontSize={fontSize.large}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    I wouldn't be where I am today if I wasn't working for some
+                    amazing companies
+                  </Title>
+                </Box>
+              </Col>
+            </Row>
+            <Row justify="center">
+              <Col xs={22} xl={21} xxl={18}>
+                <Row justify="center" gutter={[32, 32]}>
+                  <Col xs={12} sm={8} lg={4}>
+                    <Illustration type="ericsson" />
+                  </Col>
+                  <Col xs={12} sm={8} lg={4}>
+                    <Illustration type="grapeUp" />
+                  </Col>
+                  <Col xs={12} sm={8} lg={4}>
+                    <Illustration type="balfour" />
+                  </Col>
+                  <Col xs={12} sm={8} lg={4}>
+                    <Illustration type="jlabs" />
+                  </Col>
+                  <Col xs={12} sm={8} lg={4}>
+                    <Illustration type="sinch" />
+                  </Col>
+                  <Col xs={12} sm={8} lg={4}>
+                    <Illustration type="koji" />
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Box>
+          <Box margin={`${spacing.large} 0 0 0`}>
+            <Title
+              level={4}
+              transform="none"
+              align="center"
+              fontSize={fontSize.large}
+              fontWeight={fontWeight.stronger}
+            >
+              Let's hop on a call to discuss the details of Mentorship
+            </Title>
+            <Box
+              display="flex"
+              justify="center"
+              margin={`${spacing.large} 0 0 0`}
+            >
+              <Button type="secondary" onClick={openFreeConsultationEvent}>
+                Reserve meeting via Calendly
+              </Button>
+            </Box>
+          </Box>
+        </Box>
       </Holder>
       <DesktopOnly>
         {showSocials && (

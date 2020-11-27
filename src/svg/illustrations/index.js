@@ -7,6 +7,12 @@ import NewsletterSmall from './newsletter-small.svg';
 import DuckSlack from './duck-slack.svg';
 import WaysToLearnEffectively from './ways-to-learn-effectively.svg';
 import BuildProject from './build-project.svg';
+import EricssonLogo from './ericsson-logo.svg';
+import GrapeUpLogo from './grapeup-logo.svg';
+import BalfourLogo from './balfour-logo.svg';
+import JLabsLogo from './j-labs-logo.svg';
+import SinchLogo from './sinch-logo.svg';
+import KojiLogo from './koji-logo.svg';
 
 export {
   PromoIllustration,
@@ -18,4 +24,10 @@ export {
   DuckSlack,
   WaysToLearnEffectively,
   BuildProject,
+  EricssonLogo,
+  GrapeUpLogo,
+  BalfourLogo,
+  JLabsLogo,
+  SinchLogo,
+  KojiLogo,
 };

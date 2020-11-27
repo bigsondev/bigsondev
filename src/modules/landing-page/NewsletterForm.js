@@ -3,7 +3,7 @@ import { Form, Input as AntdInput, Result, Checkbox } from 'antd';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 
-import { Box, failMessage, PromoButton, Paragraph } from '~components';
+import { Box, failMessage, Button, Paragraph } from '~components';
 import { encode } from '~utils';
 
 import { NEWSLETTER_FORM_NAME } from './constants';
@@ -126,13 +126,14 @@ export const NewsletterForm = () => {
             </Paragraph>
             <Form.Item>
               <Box>
-                <PromoButton
+                <Button
                   htmlType="submit"
                   loading={isSubmitting}
                   onClick={() => setTriedToSubmit(true)}
+                  type="promo"
                 >
                   Subscribe & Get Guide
-                </PromoButton>
+                </Button>
               </Box>
             </Form.Item>
           </Form>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Layout, Section, SEO, Box, SlackBanner } from '~components';
+import { theme, Layout, Section, SEO } from '~components';
 import {
   Promo,
   SkyrocketYourCareer,
@@ -9,6 +9,8 @@ import {
   Newsletter,
 } from '~modules/landing-page';
 
+const { colors } = theme;
+
 const Landing = () => {
   return (
     <Layout fixedContent={false}>
@@ -16,22 +18,17 @@ const Landing = () => {
       <Section>
         <Promo />
       </Section>
-      <Section fullWidth>
+      <Section backgroundColor={colors.grayLevelTwo}>
         <SkyrocketYourCareer />
       </Section>
-      <Section fullWidth>
+      <Section>
         <BlogLibrary />
       </Section>
-      <Section fullWidth>
+      <Section backgroundColor={colors.grayLevelTwo}>
         <WhoIAm />
       </Section>
-      <Section fullWidth>
-        <Newsletter />
-      </Section>
       <Section>
-        <Box mb={20}>
-          <SlackBanner />
-        </Box>
+        <Newsletter />
       </Section>
     </Layout>
   );

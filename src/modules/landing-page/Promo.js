@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col, Space } from 'antd';
 import { Link } from 'gatsby';
-import styled from 'styled-components';
 
 import {
   theme,
@@ -18,18 +17,6 @@ import {
 } from '~components';
 
 const { colors, fontSize, fontWeight, spacing, opacity } = theme;
-
-const PromoLinkHolder = styled(Link)(({ theme }) => ({
-  fontWeight: theme.fontWeight.strong,
-  fontSize: theme.fontSize.base,
-  display: 'block',
-  color: theme.colors.black,
-  textDecoration: 'underline',
-
-  '&:hover': {
-    color: theme.colors.black,
-  },
-}));
 
 const MobileScreenPromo = () => (
   <Row align="middle">
@@ -83,9 +70,9 @@ const MobileScreenPromo = () => (
         <Link to="/mentorship/">
           <Button type="promo">Get mentorship now</Button>
         </Link>
-        <PromoLinkHolder to="/start-here/">
+        <Button type="link" to="/start-here/">
           Not sure? Start here
-        </PromoLinkHolder>
+        </Button>
       </Space>
     </Box>
     <Col span={24}>
@@ -126,9 +113,9 @@ const MediumScreenPromo = () => (
         <Link to="/mentorship/">
           <Button type="promo">Get mentorship now</Button>
         </Link>
-        <PromoLinkHolder to="/start-here/">
+        <Button type="link" to="/start-here/">
           Not sure? Start here
-        </PromoLinkHolder>
+        </Button>
       </Space>
     </Col>
     <Col span={12} style={{ marginTop: '3rem', marginBottom: '5rem' }}>
@@ -169,9 +156,9 @@ const BigScreenPromo = () => (
         <Link to="/mentorship/">
           <Button type="promo">Get mentorship now</Button>
         </Link>
-        <PromoLinkHolder to="/start-here/">
+        <Button type="link" to="/start-here/">
           Not sure? Start here
-        </PromoLinkHolder>
+        </Button>
       </Space>
     </Col>
     <Col span={9}>

@@ -30,11 +30,8 @@ const BottomHolder = styled.footer({
 });
 
 const FooterLinkHolder = styled(GatsbyLink)({
-  color: 'rgba(80,80,80,0.7)',
-
-  '& > span:hover': {
-    transition: 'color 0.1s ease-in',
-    color: '#000',
+  '& > span': {
+    color: '#000 !important',
   },
 });
 
@@ -133,11 +130,6 @@ export const Footer = () => (
               <Link href="https://www.linkedin.com/in/adrian-bigaj-282277130/">
                 <IconHolder>
                   <Icon type="linkedin" width="3.125rem" />
-                </IconHolder>
-              </Link>
-              <Link href="https://dribbble.com/milenadev">
-                <IconHolder>
-                  <Icon type="dribble" width="3.125rem" />
                 </IconHolder>
               </Link>
             </Space>

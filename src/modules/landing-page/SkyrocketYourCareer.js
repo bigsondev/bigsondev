@@ -1,21 +1,28 @@
 import React from 'react';
 import { Row, Col } from 'antd';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { theme, Title, Text, Illustration, MainCard, Box } from '~components';
+import {
+  theme,
+  Title,
+  Text,
+  Illustration,
+  MainCard,
+  Box,
+  Button,
+} from '~components';
 
 const { colors, fontSize, fontWeight, spacing, opacity } = theme;
 
-const Holder = styled.div({
-  width: '100vw',
+const Holder = styled.div(({ theme }) => ({
   position: 'relative',
-  background: '#F5F5F5',
-});
+}));
 
 export const SkyrocketYourCareer = () => {
   return (
     <Holder id="bigsondev-skyrocket-your-career">
-      <Box padding={`${spacing.extraLarge} ${spacing.medium}`}>
+      <Box padding={`${spacing.extraLarge} 0`}>
         <Title
           align="center"
           transform="none"
@@ -27,7 +34,7 @@ export const SkyrocketYourCareer = () => {
           Mentorship services
         </Title>
         <Row justify="center" gutter={[24, 24]}>
-          <Col xs={22} sm={16} xl={7} xxl={6}>
+          <Col xs={22} sm={16} md={13} lg={8}>
             <MainCard>
               <Row justify="center" gutter={[0, 25]}>
                 <Col span={17}>
@@ -59,7 +66,7 @@ export const SkyrocketYourCareer = () => {
               </Row>
             </MainCard>
           </Col>
-          <Col xs={22} sm={16} xl={7} xxl={6}>
+          <Col xs={22} sm={16} md={13} lg={8}>
             <MainCard>
               <Row justify="center" gutter={[0, 22]}>
                 <Col span={18}>
@@ -91,7 +98,7 @@ export const SkyrocketYourCareer = () => {
               </Row>
             </MainCard>
           </Col>
-          <Col xs={22} sm={16} xl={7} xxl={6}>
+          <Col xs={22} sm={16} md={13} lg={8}>
             <MainCard>
               <Row justify="center" gutter={[0, 24]}>
                 <Col span={16}>
@@ -124,6 +131,13 @@ export const SkyrocketYourCareer = () => {
             </MainCard>
           </Col>
         </Row>
+        <Box margin={`${spacing.large} 0 0 0`}>
+          <Row justify="center">
+            <Link to="/mentorship/">
+              <Button type="promo">Try it now</Button>
+            </Link>
+          </Row>
+        </Box>
       </Box>
     </Holder>
   );

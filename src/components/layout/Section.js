@@ -7,12 +7,16 @@
 
 import React from 'react';
 import { Row, Col } from 'antd';
+import { theme } from '..';
 
-export const Section = ({ children, fullWidth = false }) => {
-  return fullWidth ? (
-    <section style={{ overflowX: 'hidden' }}>{children}</section>
-  ) : (
-    <Row style={{ overflowX: 'hidden' }}>
+const { colors } = theme;
+
+export const Section = ({
+  children,
+  backgroundColor = colors.grayLevelOne,
+}) => {
+  return (
+    <Row style={{ overflowX: 'hidden', backgroundColor }}>
       <Col
         xs={{ offset: 1, span: 22 }}
         xl={{ offset: 2, span: 20 }}

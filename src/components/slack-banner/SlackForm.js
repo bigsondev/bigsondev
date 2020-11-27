@@ -6,7 +6,7 @@ import Fade from 'react-reveal/Fade';
 import { encode } from '~utils';
 
 import { SLACK_FORM_NAME } from './constants';
-import { Box, failMessage, PromoBannerButton } from '..';
+import { Box, failMessage, Button } from '..';
 
 const Input = styled(AntdInput)({
   height: 50,
@@ -132,13 +132,14 @@ export const SlackForm = () => {
             </Row>
             <Form.Item>
               <Box display="flex" justify="center">
-                <PromoBannerButton
+                <Button
                   htmlType="submit"
                   loading={isSubmitting}
                   onClick={() => setTriedToSubmit(true)}
+                  type="ghost"
                 >
                   Request Invite
-                </PromoBannerButton>
+                </Button>
               </Box>
             </Form.Item>
           </Form>

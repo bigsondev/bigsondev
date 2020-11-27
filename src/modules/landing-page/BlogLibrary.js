@@ -15,7 +15,6 @@ import {
 } from '~components';
 
 const Holder = styled.div({
-  width: '100vw',
   position: 'relative',
 });
 
@@ -79,7 +78,7 @@ const { colors, fontSize, fontWeight, spacing } = theme;
 export const BlogLibrary = () => {
   return (
     <Holder>
-      <Box padding={`${spacing.extraLarge} ${spacing.medium}`}>
+      <Box padding={`${spacing.extraLarge} 0`}>
         <Title
           transform="none"
           align="center"
@@ -90,7 +89,7 @@ export const BlogLibrary = () => {
           Resources to improve your coding skills
         </Title>
         <Title
-          level={4}
+          level={3}
           transform="none"
           align="center"
           marginBottom={spacing.large}
@@ -100,7 +99,7 @@ export const BlogLibrary = () => {
           Projects
         </Title>
         <Row justify="center" gutter={[24, 24]}>
-          <Col xs={22} sm={16} xl={7} xxl={6}>
+          <Col xs={22} sm={16} md={13} lg={8}>
             <Card>
               <ProjectImage src={BookCoverProject} />
               <ProjectTitle
@@ -121,7 +120,7 @@ export const BlogLibrary = () => {
               </ProjectLink>
             </Card>
           </Col>
-          <Col xs={22} sm={16} xl={7} xxl={6}>
+          <Col xs={22} sm={16} md={13} lg={8}>
             <Card>
               <ProjectImage src={TodoAppProject} />
               <ProjectTitle
@@ -142,7 +141,7 @@ export const BlogLibrary = () => {
               </ProjectLink>
             </Card>
           </Col>
-          <Col xs={22} sm={16} xl={7} xxl={6}>
+          <Col xs={22} sm={16} md={13} lg={8}>
             <Card>
               <ProjectImage src={RealtimeChatProject} />
               <ProjectTitle
@@ -166,7 +165,7 @@ export const BlogLibrary = () => {
           <ExceptSmall>
             <Box margin={`${spacing.large} 0 0 0`}>
               <Title
-                level={4}
+                level={3}
                 transform="none"
                 align="center"
                 fontSize={fontSize.large}

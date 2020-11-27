@@ -11,6 +11,12 @@ import {
   DuckSlack,
   WaysToLearnEffectively,
   BuildProject,
+  EricssonLogo,
+  GrapeUpLogo,
+  BalfourLogo,
+  JLabsLogo,
+  SinchLogo,
+  KojiLogo,
 } from '~svg';
 
 const Holder = styled.div(({ width = '100%' }) => ({
@@ -31,6 +37,12 @@ const ILLUSTRATION_MAPPER = {
   duckSlack: <DuckSlack />,
   waysToLearnEffectively: <WaysToLearnEffectively />,
   buildProject: <BuildProject />,
+  ericsson: <EricssonLogo />,
+  grapeUp: <GrapeUpLogo />,
+  balfour: <BalfourLogo />,
+  jlabs: <JLabsLogo />,
+  sinch: <SinchLogo />,
+  koji: <KojiLogo />,
 };
 
 export const Illustration = ({ type, ...props }) => {
