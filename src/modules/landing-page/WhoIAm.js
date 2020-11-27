@@ -17,6 +17,8 @@ import {
   MainCard,
   Button,
   Illustration,
+  SmallOnly,
+  ExceptSmall,
 } from '~components';
 
 const { colors, fontSize, fontWeight, spacing } = theme;
@@ -26,18 +28,18 @@ const Holder = styled.div(({ theme }) => ({
 }));
 
 const SocialLinkHolder = styled(Link)({
-  color: '#40A9FF !important',
+  color: '#137099 !important',
   '& a': {
-    color: '#40A9FF !important',
+    color: '#137099 !important',
   },
   '& a:hover': {
-    color: '#40A9FF !important',
+    color: '#137099 !important',
   },
   '& a:active': {
-    color: '#40A9FF !important',
+    color: '#137099 !important',
   },
   '& a:visited': {
-    color: '#40A9FF !important',
+    color: '#137099 !important',
   },
 });
 
@@ -171,7 +173,7 @@ export const WhoIAm = () => {
                   style={{ alignSelf: 'center', textAlign: 'center' }}
                 >
                   <Title
-                    level={4}
+                    level={3}
                     transform="none"
                     align="center"
                     fontSize={fontSize.large}
@@ -254,7 +256,7 @@ export const WhoIAm = () => {
                   style={{ alignSelf: 'center', textAlign: 'center' }}
                 >
                   <Title
-                    level={4}
+                    level={3}
                     transform="none"
                     align="center"
                     fontSize={fontSize.large}
@@ -325,7 +327,7 @@ export const WhoIAm = () => {
                   style={{ alignSelf: 'center', textAlign: 'center' }}
                 >
                   <Title
-                    level={4}
+                    level={3}
                     transform="none"
                     align="center"
                     fontSize={fontSize.large}
@@ -349,21 +351,15 @@ export const WhoIAm = () => {
             <Row justify="center">
               <Col xs={22} lg={12}>
                 <Box margin={`0 0 ${spacing.large} 0`}>
-                  <Title
-                    level={3}
-                    transform="none"
-                    align="center"
-                    fontSize={fontSize.large}
-                    fontWeight={fontWeight.stronger}
-                  >
-                    I wouldn't be where I am today if I wasn't working for some
+                  <Title level={3} transform="none" align="center">
+                    I wouldn't be where I am today if I wasn't working with some
                     amazing companies
                   </Title>
                 </Box>
               </Col>
             </Row>
             <Row justify="center">
-              <Col xs={22} xl={21} xxl={18}>
+              <Col xs={22}>
                 <Row justify="center" gutter={[32, 32]}>
                   <Col xs={12} sm={8} lg={4}>
                     <Illustration type="ericsson" />
@@ -388,23 +384,39 @@ export const WhoIAm = () => {
             </Row>
           </Box>
           <Box margin={`${spacing.large} 0 0 0`}>
-            <Title
-              level={4}
-              transform="none"
-              align="center"
-              fontSize={fontSize.large}
-              fontWeight={fontWeight.stronger}
-            >
-              Let's hop on a call to discuss the details of Mentorship
+            <Title level={4} transform="none" align="center">
+              Interested? Let's hop on a call to discuss the details of
+              Mentorship
             </Title>
             <Box
               display="flex"
               justify="center"
               margin={`${spacing.large} 0 0 0`}
             >
-              <Button type="secondary" onClick={openFreeConsultationEvent}>
-                Reserve meeting via Calendly
-              </Button>
+              <SmallOnly>
+                <Space size="large" direction="vertical">
+                  <Button type="secondary" onClick={openFreeConsultationEvent}>
+                    Reserve meeting via Calendly
+                  </Button>
+                  <Button
+                    type="link"
+                    to="/reach-out/"
+                    style={{ textAlign: 'center' }}
+                  >
+                    or email me
+                  </Button>
+                </Space>
+              </SmallOnly>
+              <ExceptSmall>
+                <Space size="large">
+                  <Button type="secondary" onClick={openFreeConsultationEvent}>
+                    Reserve meeting via Calendly
+                  </Button>
+                  <Button type="link" to="/reach-out/">
+                    or email me
+                  </Button>
+                </Space>
+              </ExceptSmall>
             </Box>
           </Box>
         </Box>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, graphql } from 'gatsby';
-import { Row, Col, Space, Divider, Button, Rate } from 'antd';
+import { Row, Col, Space, Rate } from 'antd';
 
 import styled from 'styled-components';
 
@@ -12,10 +12,9 @@ import {
   Text,
   Box,
   Icon,
-  PromoBanner,
-  CardButton,
-  PromoButton,
-  PromoBannerButton,
+  SlackBanner,
+  Button,
+  MainCard,
 } from '~components';
 import { truncate } from '~utils';
 
@@ -49,14 +48,9 @@ export const query = graphql`
   }
 `;
 
-const ResourceCard = styled.div({
+const ResourceCard = styled(MainCard)({
   transition: 'box-shadow 0.3s',
   cursor: 'pointer',
-  position: 'relative',
-  padding: 24,
-  minHeight: 350,
-  background: '#FFF',
-  borderRadius: 8,
 
   '&:hover': {
     boxShadow: `0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
@@ -64,10 +58,11 @@ const ResourceCard = styled.div({
   },
 });
 
-const BottomHolder = styled.div({
-  position: 'absolute',
-  left: 0,
-  bottom: 80,
+const MarginTopAuto = styled.div({
+  marginTop: 'auto',
+});
+
+const ResourceButton = styled(Button)({
   width: '100%',
 });
 
@@ -90,39 +85,47 @@ const Resource = ({
 }) => (
   <Link to={path}>
     <ResourceCard>
-      <Paragraph marginBottom="1rem">
-        <Space size="middle">
-          {tags.split(',').map((tag) => (
-            <Text
-              key={tag}
-              transform="uppercase"
-              strong
-              size="small"
-              color={TAG_COLOR_MAPPER[tag.trim()]}
-            >
-              {tag}
-            </Text>
-          ))}
-        </Space>
-      </Paragraph>
-      <Title level={4} transform="capitalize">
-        {title}
-      </Title>
-      <Paragraph type="secondary" size="preNormal">
-        {truncate(desc)}
-      </Paragraph>
-      <BottomHolder>
-        <Row justify="center" gutter={[0, 16]}>
-          <Col>
-            <RateHolder
-              character={<Icon type="duck" />}
-              value={difficulty}
-              disabled
-            />
-          </Col>
-        </Row>
-      </BottomHolder>
-      <CardButton>{buttonText}</CardButton>
+      <Row gutter={[0, 8]}>
+        <Col span={24}>
+          <Space size="middle">
+            {tags.split(',').map((tag) => (
+              <Text
+                key={tag}
+                transform="uppercase"
+                strong
+                size="small"
+                color={TAG_COLOR_MAPPER[tag.trim()]}
+              >
+                {tag}
+              </Text>
+            ))}
+          </Space>
+        </Col>
+        <Col span={24}>
+          <Title level={4} transform="capitalize">
+            {title}
+          </Title>
+        </Col>
+        <Col span={24}>
+          <Paragraph type="secondary" size="preNormal">
+            {truncate(desc, 180)}
+          </Paragraph>
+        </Col>
+      </Row>
+      <MarginTopAuto>
+        <Col span={24}>
+          <Row justify="center" gutter={[0, 16]}>
+            <Col>
+              <RateHolder
+                character={<Icon type="duck" />}
+                value={difficulty}
+                disabled
+              />
+            </Col>
+          </Row>
+        </Col>
+        <ResourceButton type="primary">{buttonText}</ResourceButton>
+      </MarginTopAuto>
     </ResourceCard>
   </Link>
 );
@@ -200,9 +203,7 @@ const Library = ({
               xl={{ span: 8 }}
               key={project.title}
             >
-              <Box>
-                <Resource buttonText="Start Project" {...project} />
-              </Box>
+              <Resource buttonText="Start Project" {...project} />
             </Col>
           ))}
         </Row>
@@ -212,38 +213,46 @@ const Library = ({
           Code Challenges
         </Title>
         <Paragraph align="center">
-          <PromoButton size="small">
-            <Link to={quiz.path}>Start Quiz</Link>
-          </PromoButton>
+          <Link to={quiz.path}>
+            <Button type="promo">Start Quiz</Button>
+          </Link>
         </Paragraph>
       </Box>
-      <Box mb={3} display="flex" justify="center">
-        <Space>
-          <Button
-            type={filter === FILTERS.beginner ? 'primary' : 'secondary'}
-            onClick={() => handleFilterChangeClick(FILTERS.beginner)}
-          >
-            Beginner
-          </Button>
-          <Button
-            type={filter === FILTERS.junior ? 'primary' : 'secondary'}
-            onClick={() => handleFilterChangeClick(FILTERS.junior)}
-          >
-            Junior
-          </Button>
-          <Button
-            type={filter === FILTERS.regular ? 'primary' : 'secondary'}
-            onClick={() => handleFilterChangeClick(FILTERS.regular)}
-          >
-            Regular
-          </Button>
-          <Button
-            type={filter === FILTERS.senior ? 'primary' : 'secondary'}
-            onClick={() => handleFilterChangeClick(FILTERS.senior)}
-          >
-            Senior
-          </Button>
-        </Space>
+      <Box mb={3}>
+        <Row gutter={[8, 16]} justify="center">
+          <Col>
+            <Button
+              type={filter === FILTERS.beginner ? 'primary' : 'secondary'}
+              onClick={() => handleFilterChangeClick(FILTERS.beginner)}
+            >
+              Beginner
+            </Button>
+          </Col>
+          <Col>
+            <Button
+              type={filter === FILTERS.junior ? 'primary' : 'secondary'}
+              onClick={() => handleFilterChangeClick(FILTERS.junior)}
+            >
+              Junior
+            </Button>
+          </Col>
+          <Col>
+            <Button
+              type={filter === FILTERS.regular ? 'primary' : 'secondary'}
+              onClick={() => handleFilterChangeClick(FILTERS.regular)}
+            >
+              Regular
+            </Button>
+          </Col>
+          <Col>
+            <Button
+              type={filter === FILTERS.senior ? 'primary' : 'secondary'}
+              onClick={() => handleFilterChangeClick(FILTERS.senior)}
+            >
+              Senior
+            </Button>
+          </Col>
+        </Row>
       </Box>
       <Row gutter={[24, 24]} justify="center">
         {challenges.map((challenge) => (
@@ -253,25 +262,12 @@ const Library = ({
             xl={{ span: 8 }}
             key={challenge.title}
           >
-            <Box>
-              <Resource {...challenge} />
-            </Box>
+            <Resource {...challenge} />
           </Col>
         ))}
       </Row>
-      <Box margin="5rem 0 10rem 0">
-        <PromoBanner
-          color="promotion"
-          title="Feeling a bit lost?"
-          desc="I'll be more than happy to help you learn Frontend the right way."
-          content={
-            <Link to="/mentorship/#bigsondev-offer">
-              <PromoBannerButton color="promotion">
-                I WANT MENTORSHIP
-              </PromoBannerButton>
-            </Link>
-          }
-        />
+      <Box margin="5rem 0">
+        <SlackBanner />
       </Box>
     </Layout>
   );

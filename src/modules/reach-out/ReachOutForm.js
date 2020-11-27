@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import { Link as GatsbyLink } from 'gatsby';
 
-import { Box, failMessage, SecondaryButton, Paragraph } from '~components';
+import { Box, failMessage, Button, Paragraph } from '~components';
 import { encode } from '~utils';
 
 import { REACH_OUT_FORM_NAME } from './constants';
@@ -166,14 +166,15 @@ export const ReachOutForm = () => {
               </Col>
             </Row>
             <Form.Item>
-              <Box display="flex" justify="center" mt={-8}>
-                <SecondaryButton
+              <Box display="flex" justify="center" mt={-6}>
+                <Button
                   htmlType="submit"
                   loading={isSubmitting}
                   onClick={() => setTriedToSubmit(true)}
+                  type="secondary"
                 >
                   Send message
-                </SecondaryButton>
+                </Button>
               </Box>
             </Form.Item>
           </Form>

@@ -9,7 +9,7 @@ import {
 import Fade from 'react-reveal/Fade';
 import moment from 'moment';
 
-import { Box, TutorialTooltip, PrimaryButton, SecondaryButton } from '..';
+import { Box, TutorialTooltip, Button } from '..';
 
 import { QuizCard, QuizProgress } from './styled';
 import { QuestionsLookup } from './QuestionsLookup';
@@ -74,13 +74,13 @@ export const Completed = ({
           <Space>
             {next ? (
               <Link to={`/library/${next}/`}>
-                <PrimaryButton>Start Next Quiz</PrimaryButton>
+                <Button type="primary">Start Next Quiz</Button>
               </Link>
             ) : (
               <Link to="/library/">
-                <SecondaryButton onClick={() => onTryAgainClick()}>
+                <Button type="secondary" onClick={() => onTryAgainClick()}>
                   Back to library
-                </SecondaryButton>
+                </Button>
               </Link>
             )}
           </Space>

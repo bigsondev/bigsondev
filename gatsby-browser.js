@@ -34,9 +34,8 @@ import {
   Header,
   GlobalStyles,
   Content,
-  PromoSticker,
 } from '~components';
-import { initializeStorageData, getItem } from '~utils';
+import { initializeStorageData } from '~utils';
 
 initializeStorageData();
 
@@ -50,7 +49,6 @@ export const wrapPageElement = ({
     <GlobalStyles />
     <ThemeProvider>
       <Layout>
-        {getItem('firstPromoSticker') === 'false' && <PromoSticker />}
         <Header pathname={pathname} />
         <Content>{element}</Content>
       </Layout>

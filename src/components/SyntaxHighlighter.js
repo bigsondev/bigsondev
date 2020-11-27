@@ -12,14 +12,14 @@ const Holder = styled.div({
   '& code': {
     backgroundColor: '#ecd9c26e',
     padding: 24,
-    borderRadius: 8,
+    borderRadius: 6,
     marginTop: 0,
   },
 });
 
 const CopyButton = styled(Button)({
   position: 'absolute',
-  borderRadius: 8,
+  borderRadius: 6,
   top: 16,
   right: 8,
 });

@@ -62,18 +62,13 @@ const MobileScreenPromo = () => (
           Get out of tutorials hell.
         </Text>{' '}
         Reach long-term goals, find your first IT job, and feel the real
-        progress. Invest in yourself and leave frustration behind.
+        progress. Invest in yourself and make learning a breeze.
       </Paragraph>
     </Col>
     <Box margin={`0 auto ${spacing.large} auto`}>
-      <Space align="center" size="large" direction="vertical">
-        <Link to="/mentorship/">
-          <Button type="promo">Get mentorship now</Button>
-        </Link>
-        <Button type="link" to="/start-here/">
-          Not sure? Start here
-        </Button>
-      </Space>
+      <Link to="/mentorship/">
+        <Button type="promo">Get mentorship now</Button>
+      </Link>
     </Box>
     <Col span={24}>
       <Illustration type="promo" />
@@ -107,16 +102,13 @@ const MediumScreenPromo = () => (
           Get out of tutorials hell.
         </Text>{' '}
         Reach long-term goals, find your first IT job, and feel the real
-        progress. Invest in yourself and leave frustration behind.
+        progress. Invest in yourself and make learning a breeze.
       </Paragraph>
-      <Space align="center" size="large">
+      <Box margin={`0 auto ${spacing.large} auto`}>
         <Link to="/mentorship/">
           <Button type="promo">Get mentorship now</Button>
         </Link>
-        <Button type="link" to="/start-here/">
-          Not sure? Start here
-        </Button>
-      </Space>
+      </Box>
     </Col>
     <Col span={12} style={{ marginTop: '3rem', marginBottom: '5rem' }}>
       <NotJumpingIllustration type="promo" />
@@ -150,16 +142,13 @@ const BigScreenPromo = () => (
           Get out of tutorials hell.
         </Text>{' '}
         Reach long-term goals, find your first IT job, and feel the real
-        progress. Invest in yourself and leave frustration behind.
+        progress. Invest in yourself and make learning a breeze.
       </Paragraph>
-      <Space align="center" size="large">
+      <Box margin={`0 auto ${spacing.large} auto`}>
         <Link to="/mentorship/">
           <Button type="promo">Get mentorship now</Button>
         </Link>
-        <Button type="link" to="/start-here/">
-          Not sure? Start here
-        </Button>
-      </Space>
+      </Box>
     </Col>
     <Col span={9}>
       <NotJumpingIllustration type="promo" />
@@ -168,7 +157,7 @@ const BigScreenPromo = () => (
 );
 
 export const Promo = () => (
-  <Box margin={`${spacing.large} 0 ${spacing.extraLarge} 0`}>
+  <Box margin={`0 0 ${spacing.extraLarge} 0`}>
     <MobileOnly>
       <MobileScreenPromo />
     </MobileOnly>

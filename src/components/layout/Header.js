@@ -141,11 +141,6 @@ const RightMenu = ({
     </SmallOnly>
     <ExceptSmall>
       <MenuHolder theme="dark" mode="horizontal">
-        <MenuItem key="1" isSelected={pathname.includes('start-here')}>
-          <Link to="/start-here/">
-            <Text size="preNormal">Start Here</Text>
-          </Link>
-        </MenuItem>
         <MenuItem key="2" isSelected={pathname.includes('blog')}>
           <Link to="/blog/">
             <Text size="preNormal">Blog</Text>
@@ -208,15 +203,6 @@ export const Header = ({ pathname }) => {
             <SmallOnly>
               <Fade collapse duration={300} when={isExpanded}>
                 <MenuHolder theme="dark" mode="inline">
-                  <MobileMenuItem
-                    key="1"
-                    isSelected={pathname.includes('start-here')}
-                    onClick={handleMobileMenuCloseClick}
-                  >
-                    <Link to="/start-here/">
-                      <Text size="preNormal">Start Here</Text>
-                    </Link>
-                  </MobileMenuItem>
                   <MobileMenuItem
                     key="2"
                     isSelected={pathname.includes('blog')}

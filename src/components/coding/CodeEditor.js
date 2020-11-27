@@ -1,18 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
-import { Tabs, Button, Result, Row, Col, Space } from 'antd';
+import { Tabs, Result, Button as AntdButton, Row, Col, Space } from 'antd';
 import { PlayCircleOutlined } from '@ant-design/icons';
 import { Controlled } from 'react-codemirror2';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import queryString from 'query-string';
 
-import {
-  Text,
-  TutorialTooltip,
-  PrimaryButton,
-  SecondaryButton,
-} from '~components';
+import { Text, TutorialTooltip, Button } from '~components';
 import { copyToClipboard, getItem, setItem } from '~utils';
 
 import {
@@ -29,7 +24,7 @@ import { createIframeContent } from './utils';
 
 const Holder = styled.div({
   backgroundColor: '#434B52',
-  borderRadius: 12,
+  borderRadius: 6,
 });
 
 const CodeMirror = styled(Controlled)({
@@ -38,11 +33,11 @@ const CodeMirror = styled(Controlled)({
   },
 });
 
-const RunTestsButton = styled(Button)({
+const RunTestsButton = styled(AntdButton)({
   position: 'absolute',
   top: '-22%',
   right: 16,
-  borderRadius: 8,
+  borderRadius: 6,
 });
 
 const TabsHolder = styled(Tabs)({
@@ -231,31 +226,33 @@ export const CodeEditor = ({
             extra={
               hasNextChallenge
                 ? [
-                    <PrimaryButton
+                    <Link to={`/library/${next}/`}>
+                      <Button key="next-challenge" type="primary">
+                        Start Next Challenge
+                      </Button>
+                    </Link>,
+                    <Button
                       key="copy-link"
                       onClick={handleCopyLinkClick}
+                      type="secondary"
                     >
                       Copy Link
-                    </PrimaryButton>,
-                    <Link to={`/library/${next}/`}>
-                      <SecondaryButton key="next-challenge">
-                        Start Next Challenge
-                      </SecondaryButton>
-                    </Link>,
+                    </Button>,
                   ]
                 : [
-                    <PrimaryButton
+                    <Link to="/library/">
+                      <Button key="back-to-library" type="primary">
+                        Back to Library
+                      </Button>
+                    </Link>,
+                    <Button
                       type="primary"
                       key="copy-link"
                       onClick={handleCopyLinkClick}
+                      type="secondary"
                     >
                       Copy Link
-                    </PrimaryButton>,
-                    <Link to="/library/">
-                      <SecondaryButton key="back-to-library">
-                        Back to Library
-                      </SecondaryButton>
-                    </Link>,
+                    </Button>,
                   ]
             }
           />

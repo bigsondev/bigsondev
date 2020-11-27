@@ -13,18 +13,16 @@ import { Space, Row, Col } from 'antd';
 import { Link as GatsbyLink } from 'gatsby';
 
 import {
+  theme,
   Post,
   PostList,
   Paragraph,
   Text,
   Title,
   CodeEditor,
-  Card,
+  MainCard,
   Link,
-  Box,
-  PrimaryButton,
-  SecondaryButton,
-  PromoButton,
+  Button,
 } from '~components';
 import { getIframeContent } from '~utils';
 
@@ -95,62 +93,86 @@ export const additionalFeatures = [
 ];
 
 <Post>
-  <Card title="About this project">
-    <Paragraph align="center">
-      <Box mb={5}>
+  <Space size="large" direction="vertical">
+    <MainCard>
+      <Title
+        align="center"
+        transform="none"
+        marginBottom={theme.spacing.large}
+        color={theme.colors.primary}
+        fontSize={theme.fontSize.large}
+        fontWeight={theme.fontWeight.stronger}
+      >
+        Todo App
+      </Title>
+      <Paragraph align="center">
         <Text strong>Assignment:</Text> Code a classic Todo App in React.
-      </Box>
+      </Paragraph>
       <Row gutter={[16, 16]} justify="center">
         <Col>
           <Link href="https://www.figma.com/file/wcTJcE0Foi1u3cTkV347Xx/Wireframes?node-id=264171%3A448">
-            <SecondaryButton size="small">Wireframe</SecondaryButton>
+            <Button type="secondary">Wireframe</Button>
           </Link>
         </Col>
         <Col>
           <Link href="https://fervent-wozniak-24508f.netlify.app">
-            <SecondaryButton size="small">Example</SecondaryButton>
+            <Button type="secondary">Example</Button>
           </Link>
         </Col>
         <Col>
           <Link href="https://github.com/bigsondev/todo-app">
-            <SecondaryButton size="small">Solution</SecondaryButton>
+            <Button type="secondary">Solution</Button>
           </Link>
         </Col>
       </Row>
-    </Paragraph>
-  </Card>
-  <Title level={3}>Project Requirements</Title>
-  <PostList data={projectRequirements} />
-  <Title level={3}>Fundamental Features</Title>
-  <PostList data={mustHaveFeatures} />
-  <Title level={3}>Additional Features</Title>
-  <PostList data={additionalFeatures} />
-  <Title level={3}>Stuck, can't progress?</Title>
-  <Paragraph>
-    Take a break, try to think about all the pieces you need to build for this
-    application. Think of state management, plan data structure, and/or draw
-    some sketches/mock-ups to present the initial UI. I'll be happy to assist
-    you with this project, you can try out my{' '}
-    <GatsbyLink to="/mentorship/#bigsondev-offer">Mentorship</GatsbyLink> or
-    connect through{' '}
-    <GatsbyLink to="/start-here/#bigsondev-slack">Slack</GatsbyLink> (free of
-    charge).
-  </Paragraph>
-  <Title level={3}>Building & Deploying</Title>
-  <Paragraph>
-    If you created an application with CRA, there is a{' '}
-    <Text code>yarn build</Text> command shipped in. For a super simple
-    deployment, try either <Link href="https://www.netlify.com/">Netlify</Link>{' '}
-    or <Link href="https://vercel.com/">Vercel</Link>. I recommend Netlify
-    personally.
-  </Paragraph>
-  <Title level={3}>Share your solution</Title>
-  <Paragraph>
-    You can join{' '}
-    <GatsbyLink to="/start-here/#bigsondev-slack">Slack</GatsbyLink> and add a
-    link to your solution in the <Text strong>#review</Text> channel. I'll
-    definitely pick it up and come back to you with feedback. Additionally, you
-    can tweet <Link href="https://twitter.com/BigsonDev">@BigsonDev</Link> with
-    repo and deployed application links. It will mean a ton to me.
-  </Paragraph>
+    </MainCard>
+    <MainCard>
+      <Title level={3}>Project Requirements</Title>
+      <PostList data={projectRequirements} />
+    </MainCard>
+    <MainCard>
+      <Title level={3}>Fundamental Features</Title>
+      <PostList data={mustHaveFeatures} />
+    </MainCard>
+    <MainCard>
+      <Title level={3}>Additional Features</Title>
+      <PostList data={additionalFeatures} />
+    </MainCard>
+    <MainCard>
+      <Title level={3}>Stuck, can't progress?</Title>
+      <Paragraph>
+        Take a break, try to think about all the pieces you need to build for
+        this application. Think of state management, plan data structure, and/or
+        draw some sketches/mock-ups to present the initial UI. I'll be happy to
+        assist you with this project, you can try out my{' '}
+        <GatsbyLink to="/mentorship/#bigsondev-offer">Mentorship</GatsbyLink> or
+        connect through{' '}
+        <GatsbyLink to="/start-here/#bigsondev-slack">Slack</GatsbyLink> (free
+        of charge).
+      </Paragraph>
+    </MainCard>
+    <MainCard>
+      <Title level={3}>Building & Deploying</Title>
+      <Paragraph>
+        If you created an application with CRA, there is a{' '}
+        <Text code>yarn build</Text> command shipped in. For a super simple
+        deployment, try either{' '}
+        <Link href="https://www.netlify.com/">Netlify</Link> or{' '}
+        <Link href="https://vercel.com/">Vercel</Link>. I recommend Netlify
+        personally.
+      </Paragraph>
+    </MainCard>
+    <MainCard>
+      <Title level={3}>Share your solution</Title>
+      <Paragraph>
+        You can join{' '}
+        <GatsbyLink to="/start-here/#bigsondev-slack">Slack</GatsbyLink> and add
+        a link to your solution in the <Text strong>#review</Text> channel. I'll
+        definitely pick it up and come back to you with feedback. Additionally,
+        you can tweet{' '}
+        <Link href="https://twitter.com/BigsonDev">@BigsonDev</Link> with repo
+        and deployed application links. It will mean a ton to me.
+      </Paragraph>
+    </MainCard>
+  </Space>
 </Post>

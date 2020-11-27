@@ -4,10 +4,10 @@ import { Layout } from 'antd';
 
 import { GlobalSpinner } from './GlobalSpinner';
 
-const Holder = styled(Layout.Content)({
+const Holder = styled(Layout.Content)(({ theme }) => ({
   background: '#FAFAFA',
-  paddingTop: 32,
-});
+  paddingTop: theme.spacing.large,
+}));
 
 const ContentHolder = ({ onContentShow, children }) => {
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Row, Col, Space, Tooltip } from 'antd';
+import { Row, Col, Space } from 'antd';
 import styled from 'styled-components';
 import { CalendarOutlined, FieldTimeOutlined } from '@ant-design/icons';
 import moment from 'moment';
@@ -12,10 +12,10 @@ import {
   Paragraph,
   Text,
   Box,
-  Icon,
   SlackBanner,
-  CardButton,
+  Button,
   Illustration,
+  MainCard,
 } from '~components';
 import { truncate } from '~utils';
 
@@ -44,14 +44,9 @@ export const query = graphql`
   }
 `;
 
-export const ArticleCard = styled.div(({ illustration }) => ({
+export const ArticleCard = styled(MainCard)(() => ({
   transition: 'box-shadow 0.3s',
   cursor: 'pointer',
-  position: 'relative',
-  padding: 24,
-  minHeight: illustration === 'none' ? 400 : 600,
-  borderRadius: 8,
-  background: '#FFF',
 
   '&:hover': {
     boxShadow: `0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
@@ -60,6 +55,10 @@ export const ArticleCard = styled.div(({ illustration }) => ({
 }));
 
 const ArticleIllustration = styled(Illustration)({});
+
+const ArticleButton = styled(Button)({
+  marginTop: 'auto',
+});
 
 const Article = ({
   title,
@@ -79,46 +78,36 @@ const Article = ({
           <ArticleIllustration type={illustration} />
         </Box>
       )}
-      <Box mb={1}>
-        <Row justify="space-between">
-          <Col>
-            <Space size="middle">
-              <Text size="micro" type="secondary">
-                <Space>
-                  <CalendarOutlined />
-                  <span>{moment(date).format('MMM D')}</span>
-                </Space>
-              </Text>
-              <Text size="micro" type="secondary">
-                <Space>
-                  <FieldTimeOutlined />
-                  <span>{readTime} min</span>
-                </Space>
-              </Text>
-            </Space>
-          </Col>
-          <Col>
-            <Space size="large">
-              {hasCheatSheet && (
-                <Tooltip title="Article contains Cheat Sheet to help you find information quicker. For a complete knowledge, please read the full article">
-                  <Icon type="cheatSheet" width={24} />
-                </Tooltip>
-              )}
-              {hasTodoList && (
-                <Tooltip title="Article contains Homework to let you practice the theory">
-                  <Icon type="homework" width={24} />
-                </Tooltip>
-              )}
-            </Space>
-          </Col>
-        </Row>
-      </Box>
-      <Title level={4} transform="capitalize">
-        {title}
-      </Title>
-      <Paragraph type="secondary" size="preNormal">
-        {truncate(desc, 200)}
-      </Paragraph>
+      <Row gutter={[0, 8]}>
+        <Col span={24}>
+          <Space size="middle">
+            <Text size="micro" type="secondary">
+              <Space>
+                <CalendarOutlined />
+                <span>{moment(date).format('MMM D')}</span>
+              </Space>
+            </Text>
+            <Text size="micro" type="secondary">
+              <Space>
+                <FieldTimeOutlined />
+                <span>{readTime} min</span>
+              </Space>
+            </Text>
+          </Space>
+        </Col>
+        <Col span={24}>
+          <Title level={4} transform="capitalize">
+            {title}
+          </Title>
+        </Col>
+        <Col span={24}>
+          <Paragraph type="secondary" size="preNormal">
+            {truncate(desc, 180)}
+          </Paragraph>
+        </Col>
+      </Row>
+      <ArticleButton type="primary">Read more</ArticleButton>
+
       {/* TODO add tags in the future? */}
       {false && (
         <Row>
@@ -133,7 +122,6 @@ const Article = ({
           </Col>
         </Row>
       )}
-      <CardButton>read more</CardButton>
     </ArticleCard>
   </Link>
 );
@@ -172,7 +160,7 @@ const Blog = ({
           </Col>
         ))}
       </Row>
-      <Box margin="5rem 0 10rem 0">
+      <Box margin="5rem 0">
         <SlackBanner />
       </Box>
     </Layout>

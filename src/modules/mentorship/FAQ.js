@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Collapse, Col } from 'antd';
 import styled from 'styled-components';
 
-import { Link, SecondaryButton, Title, Text } from '~components';
+import { Link, Button, Title, Text } from '~components';
 
 const Holder = styled.div({
   padding: '0 1rem 5rem 1rem',
@@ -40,7 +40,7 @@ export const FAQ = () => (
     <div style={{ textAlign: 'center' }}>
       <CollapseHolder>
         <PanelHolder
-          header={<SecondaryButton>Do I need a Mentor?</SecondaryButton>}
+          header={<Button type="secondary">Do I need a Mentor?</Button>}
         >
           <Row justify="center">
             <Col xs={22} lg={16} xxl={14}>
@@ -56,7 +56,7 @@ export const FAQ = () => (
           </Row>
         </PanelHolder>
         <PanelHolder
-          header={<SecondaryButton>Is Frontend for me?</SecondaryButton>}
+          header={<Button type="secondary">Is Frontend for me?</Button>}
         >
           <Row justify="center">
             <Col xs={22} lg={16} xxl={14}>
@@ -72,7 +72,7 @@ export const FAQ = () => (
             </Col>
           </Row>
         </PanelHolder>
-        <PanelHolder header={<SecondaryButton>Why you?</SecondaryButton>}>
+        <PanelHolder header={<Button type="secondary">Why you?</Button>}>
           <Row justify="center">
             <Col xs={22} lg={16} xxl={14}>
               <Text>
@@ -89,7 +89,7 @@ export const FAQ = () => (
           </Row>
         </PanelHolder>
         <PanelHolder
-          header={<SecondaryButton>How do you mentor?</SecondaryButton>}
+          header={<Button type="secondary">How do you mentor?</Button>}
         >
           <Row justify="center">
             <Col xs={22} lg={16} xxl={14}>
@@ -114,7 +114,7 @@ export const FAQ = () => (
           </Row>
         </PanelHolder>
         <PanelHolder
-          header={<SecondaryButton>Frontend Mentoring</SecondaryButton>}
+          header={<Button type="secondary">Frontend Mentoring</Button>}
         >
           <Row justify="center">
             <Col xs={22} lg={16} xxl={14}>
@@ -133,7 +133,7 @@ export const FAQ = () => (
             </Col>
           </Row>
         </PanelHolder>
-        <PanelHolder header={<SecondaryButton>Mock Interview</SecondaryButton>}>
+        <PanelHolder header={<Button type="secondary">Mock Interview</Button>}>
           <Row justify="center">
             <Col xs={22} lg={16} xxl={14}>
               <Text>
@@ -153,7 +153,7 @@ export const FAQ = () => (
           </Row>
         </PanelHolder>
         <PanelHolder
-          header={<SecondaryButton>Development Plan</SecondaryButton>}
+          header={<Button type="secondary">Development Plan</Button>}
         >
           <Row justify="center">
             <Col xs={22} lg={16} xxl={14}>

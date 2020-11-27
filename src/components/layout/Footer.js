@@ -46,18 +46,18 @@ const HiddenLinkHolder = styled(GatsbyLink)({
 });
 
 const IconHolder = styled(Link)({
-  color: '#40A9FF !important',
+  color: '#137099 !important',
   '& a': {
-    color: '#40A9FF !important',
+    color: '#137099 !important',
   },
   '& a:hover': {
-    color: '#40A9FF !important',
+    color: '#137099 !important',
   },
   '& a:active': {
-    color: '#40A9FF !important',
+    color: '#137099 !important',
   },
   '& a:visited': {
-    color: '#40A9FF !important',
+    color: '#137099 !important',
   },
 });
 
@@ -88,9 +88,6 @@ export const Footer = () => (
             style={{ marginTop: '0.9rem' }}
           >
             <Space size="large" direction="vertical">
-              <FooterLinkHolder to="/start-here/">
-                <Text size="preNormal">Start Here</Text>
-              </FooterLinkHolder>
               <FooterLinkHolder to="/blog/">
                 <Text size="preNormal">Blog</Text>
               </FooterLinkHolder>

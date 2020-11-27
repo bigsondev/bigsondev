@@ -3,20 +3,13 @@ import { Form, Input as AntdInput, Result, Checkbox } from 'antd';
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 
-import { failMessage, PromoButton, Paragraph } from '~components';
+import { failMessage, Button, Paragraph } from '~components';
 import { encode } from '~utils';
 
 import { NEWSLETTER_FORM_NAME } from './constants';
 
 const Input = styled(AntdInput)({
   height: 40,
-});
-
-const PromoButtonHolder = styled(PromoButton)({
-  width: 200,
-  height: '3rem',
-  fontSize: '1.125rem',
-  margin: 0,
 });
 
 export const NewsletterSmallForm = () => {
@@ -133,13 +126,14 @@ export const NewsletterSmallForm = () => {
               knowledge, no spam included. You can unsubscribe at any time.
             </Paragraph>
             <Form.Item>
-              <PromoButtonHolder
+              <Button
                 htmlType="submit"
                 loading={isSubmitting}
                 onClick={() => setTriedToSubmit(true)}
+                type="promo"
               >
                 Subscribe & Get Guide
-              </PromoButtonHolder>
+              </Button>
             </Form.Item>
           </Form>
         </>

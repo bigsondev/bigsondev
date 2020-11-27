@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Space, Divider } from 'antd';
 
-import { Title, Text, Box, Link, PostList, PromoButton } from '..';
+import { Title, Text, Box, Link, PostList, Button } from '..';
 
 export const NotStarted = ({ questionsCount, onStartClick }) => (
   <>
@@ -22,9 +22,9 @@ export const NotStarted = ({ questionsCount, onStartClick }) => (
     <Row>
       <Col span={24}>
         <Box mt={4}>
-          <PromoButton size="small" onClick={onStartClick}>
+          <Button type="promo" onClick={onStartClick}>
             Start
-          </PromoButton>
+          </Button>
         </Box>
       </Col>
       {/* Add Learning Resources if there are any */}

@@ -7,8 +7,7 @@ import {
   Title,
   Paragraph,
   Text,
-  PostList,
-  PromoButton,
+  Button,
   Box,
 } from '~components';
 
@@ -131,9 +130,9 @@ export const Offer = () => {
                 </Paragraph>
               </Col>
               <ButtonHolder>
-                <PromoButton onClick={openMentoringEvent}>
+                <Button type="promo" onClick={openMentoringEvent}>
                   Book a session
-                </PromoButton>
+                </Button>
               </ButtonHolder>
             </Row>
           </OfferCard>
@@ -172,9 +171,9 @@ export const Offer = () => {
                 </Paragraph>
               </Col>
               <ButtonHolder>
-                <PromoButton onClick={openMockInterviewEvent}>
+                <Button type="promo" onClick={openMockInterviewEvent}>
                   Test your skills
-                </PromoButton>
+                </Button>
               </ButtonHolder>
             </Row>
           </OfferCard>
@@ -213,9 +212,9 @@ export const Offer = () => {
                 </Paragraph>
               </Col>
               <ButtonHolder>
-                <PromoButton onClick={openDevelopmentPlanEvent}>
+                <Button type="promo" onClick={openDevelopmentPlanEvent}>
                   Change your career
-                </PromoButton>
+                </Button>
               </ButtonHolder>
             </Row>
           </OfferCard>

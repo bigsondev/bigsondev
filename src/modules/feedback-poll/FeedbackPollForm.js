@@ -4,13 +4,7 @@ import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import { Link as GatsbyLink } from 'gatsby';
 
-import {
-  Box,
-  failMessage,
-  SecondaryButton,
-  SlackBanner,
-  Paragraph,
-} from '~components';
+import { Box, failMessage, Button, SlackBanner, Paragraph } from '~components';
 import { encode } from '~utils';
 
 import { FEEDBACK_POLL_FORM_NAME } from './constants';
@@ -172,14 +166,15 @@ export const FeedbackPollForm = () => {
               </Col>
             </Row>
             <Form.Item>
-              <Box display="flex" justify="center" mt={-8}>
-                <SecondaryButton
+              <Box display="flex" justify="center" mt={-6}>
+                <Button
                   htmlType="submit"
                   loading={isSubmitting}
                   onClick={() => setTriedToSubmit(true)}
+                  type="secondary"
                 >
                   Send feedback
-                </SecondaryButton>
+                </Button>
               </Box>
             </Form.Item>
           </Form>

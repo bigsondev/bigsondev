@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const MainCard = styled.div(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
   height: '100%',
   borderRadius: theme.borders.radius,
   background: theme.colors.white,

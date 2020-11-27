@@ -3,7 +3,7 @@ import { Row, Col } from 'antd';
 import styled from 'styled-components';
 import { openPopupWidget } from 'react-calendly';
 
-import { Title, Paragraph, SecondaryButton, Box } from '~components';
+import { Title, Paragraph, Button, Box } from '~components';
 
 const openFreeConsultationEvent = () => {
   openPopupWidget({
@@ -32,7 +32,7 @@ export const AlternativeConversation = () => {
           <Paragraph align="center" breakParagraph>
             <div style={{ maxWidth: 420, margin: '0 auto' }}>
               Let's have an individual, 15 minutes free of charge conversation.
-              Reserve a meeting via Calendly by clicking on the button below.
+              Reserve a meeting by clicking on the button below.
             </div>
           </Paragraph>
         </Col>
@@ -40,9 +40,9 @@ export const AlternativeConversation = () => {
       <Row justify="center">
         <Col xs={24} style={{ textAlign: 'center' }}>
           <Box margin="-2rem 0 0 0">
-            <SecondaryButton onClick={openFreeConsultationEvent}>
-              Reserve meeting
-            </SecondaryButton>
+            <Button onClick={openFreeConsultationEvent} type="secondary">
+              Reserve meeting via Calendly
+            </Button>
           </Box>
         </Col>
       </Row>

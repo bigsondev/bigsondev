@@ -134,7 +134,7 @@ export const SkyrocketYourCareer = () => {
         <Box margin={`${spacing.large} 0 0 0`}>
           <Row justify="center">
             <Link to="/mentorship/">
-              <Button type="promo">Try it now</Button>
+              <Button type="promo">Skyrocket your career</Button>
             </Link>
           </Row>
         </Box>

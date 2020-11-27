@@ -20,7 +20,7 @@ export const Section = ({
       <Col
         xs={{ offset: 1, span: 22 }}
         xl={{ offset: 2, span: 20 }}
-        xxl={{ offset: 4, span: 16 }}
+        xxl={{ offset: 3, span: 18 }}
       >
         <main>{children}</main>
       </Col>
