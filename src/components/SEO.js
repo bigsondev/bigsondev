@@ -10,6 +10,8 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import { MainImage } from '~assets';
+
 export function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
@@ -57,20 +59,32 @@ export function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          property: `og:image`,
+          content: MainImage,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          name: `twitter:card`,
+          content: `summary`,
         },
         {
           name: `twitter:title`,
           content: title,
         },
         {
+          name: `twitter:site`,
+          content: site.siteMetadata.domain,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
+        },
+        {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: MainImage,
         },
       ].concat(meta)}
     >

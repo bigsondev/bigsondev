@@ -12,6 +12,7 @@ import BookCoverProject from './book-cover-project.png';
 import TodoAppProject from './todo-app-project.png';
 import RealtimeChatProject from './realtime-chat-project.png';
 import MesfinTestimonial from './mesfin-testimonial.jpeg';
+import MainImage from './main-image.png';
 
 export * from './logo';
 export {
@@ -29,4 +30,5 @@ export {
   TodoAppProject,
   RealtimeChatProject,
   MesfinTestimonial,
+  MainImage,
 };
