@@ -40,7 +40,7 @@ const CheckIcon = styled(CheckOutlined)(({ theme, color }) => ({
 
 const openMentoringEvent = () => {
   openPopupWidget({
-    url: 'https://calendly.com/bigsondev/frontend-mentoring',
+    url: 'https://calendly.com/bigsondev/spot-mentoring',
     pageSettings: {
       hideEventTypeDetails: true,
       hideLandingPageDetails: true,
@@ -48,9 +48,9 @@ const openMentoringEvent = () => {
   });
 };
 
-const openMockInterviewEvent = () => {
+const openProjectMentoringEvent = () => {
   openPopupWidget({
-    url: 'https://calendly.com/bigsondev/mock-interview',
+    url: 'https://calendly.com/bigsondev/project-mentoring',
     pageSettings: {
       hideEventTypeDetails: true,
       hideLandingPageDetails: true,
@@ -58,9 +58,9 @@ const openMockInterviewEvent = () => {
   });
 };
 
-const openDevelopmentPlanEvent = () => {
+const openTailoredMentoringEvent = () => {
   openPopupWidget({
-    url: 'https://calendly.com/bigsondev/development-plan',
+    url: 'https://calendly.com/bigsondev/tailored-mentoring',
     pageSettings: {
       hideEventTypeDetails: true,
       hideLandingPageDetails: true,
@@ -280,7 +280,7 @@ export const Offer = () => {
                 </Col>
               </Row>
               <Box margin={`${spacing.small} 0 0 0`} />
-              <BuyButton type="additional" onClick={openMockInterviewEvent}>
+              <BuyButton type="additional" onClick={openProjectMentoringEvent}>
                 Build a project
               </BuyButton>
             </MainCard>
@@ -377,7 +377,7 @@ export const Offer = () => {
                 </Col>
               </Row>
               <Box margin={`${spacing.small} 0 0 0`} />
-              <BuyButton type="promo" onClick={openDevelopmentPlanEvent}>
+              <BuyButton type="promo" onClick={openTailoredMentoringEvent}>
                 Change your career
               </BuyButton>
             </SuperOfferCard>
