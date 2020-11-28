@@ -60,7 +60,7 @@ export function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: MainImage,
+          content: `https://bigsondev.com${MainImage}`,
         },
         {
           name: `twitter:card`,
@@ -84,7 +84,7 @@ export function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:image`,
-          content: MainImage,
+          content: `https://bigsondev.com${MainImage}`,
         },
       ].concat(meta)}
     >
