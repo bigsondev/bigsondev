@@ -43,7 +43,7 @@ export const Newsletter = () => {
         <Box padding={`${spacing.large} 0 0 0`}>
           <Row justify="center">
             <Col span={24}>
-              <SlackBanner />
+              <SlackBanner id="bigsondev-slack" />
             </Col>
           </Row>
         </Box>
