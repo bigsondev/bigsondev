@@ -6,7 +6,7 @@ import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import Roll from 'react-reveal/Roll';
 import Fade from 'react-reveal/Fade';
 
-import { Box, Text, SmallOnly, ExceptSmall } from '~components';
+import { Text, SmallOnly, ExceptSmall } from '~components';
 import { LogoFooter } from '~assets';
 
 import { Logo } from './styled';
@@ -25,8 +25,8 @@ const Holder = styled(Layout.Header)({
 
 const RowShadow = styled(Row)({
   height: 60,
+  paddingTop: 6,
   boxShadow: '0 5px 5px -5px rgba(0, 0, 0, 0.15)',
-  marginTop: -2,
 
   '@media (max-width: 576px)': {
     height: 'auto',
@@ -36,6 +36,10 @@ const RowShadow = styled(Row)({
 const MenuHolder = styled(Menu)({
   borderBottom: 'none',
   background: 'transparent !important',
+
+  '@media (max-width: 576px)': {
+    marginLeft: 12,
+  },
 });
 
 const MobileMenuSpace = styled.div({
@@ -156,7 +160,12 @@ const RightMenu = ({
             <Text size="preNormal">Mentorship</Text>
           </Link>
         </MenuItem>
-        <MenuItem key="5" isSelected={pathname.includes('reach-out')}>
+        <MenuItem key="5" isSelected={pathname.includes('mentorship')}>
+          <Link to="/mentorship/">
+            <Text size="preNormal">Pills</Text>
+          </Link>
+        </MenuItem>
+        <MenuItem key="6" isSelected={pathname.includes('reach-out')}>
           <Link to="/reach-out/">
             <Text size="preNormal">Reach Out</Text>
           </Link>
@@ -183,67 +192,74 @@ export const Header = ({ pathname }) => {
   return (
     <Holder>
       <RowShadow align="center">
-        <Col xs={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 16 }}>
-          <Box mt={1}>
-            <Row justify="space-between" align="center">
-              <Col>
-                <LeftMenu />
-              </Col>
-              <Col>
-                <RightMenu
-                  pathname={pathname}
-                  isExpanded={isExpanded}
-                  isClicked={isClicked}
-                  onFirstClick={setFirstClick}
-                  onMobileMenuOpenClick={handleMobileMenuOpenClick}
-                  onMobileMenuCloseClick={handleMobileMenuCloseClick}
-                />
-              </Col>
-            </Row>
-            <SmallOnly>
-              <Fade collapse duration={300} when={isExpanded}>
-                <MenuHolder theme="dark" mode="inline">
-                  <MobileMenuItem
-                    key="2"
-                    isSelected={pathname.includes('blog')}
-                    onClick={handleMobileMenuCloseClick}
-                  >
-                    <Link to="/blog/">
-                      <Text size="preNormal">Blog</Text>
-                    </Link>
-                  </MobileMenuItem>
-                  <MobileMenuItem
-                    key="3"
-                    isSelected={pathname.includes('library')}
-                    onClick={handleMobileMenuCloseClick}
-                  >
-                    <Link to="/library/">
-                      <Text size="preNormal">Library</Text>
-                    </Link>
-                  </MobileMenuItem>
-                  <MobileMenuItem
-                    key="4"
-                    isSelected={pathname.includes('mentorship')}
-                    onClick={handleMobileMenuCloseClick}
-                  >
-                    <Link to="/mentorship/">
-                      <Text size="preNormal">Mentorship</Text>
-                    </Link>
-                  </MobileMenuItem>
-                  <MobileMenuItem
-                    key="5"
-                    isSelected={pathname.includes('reach-out')}
-                    onClick={handleMobileMenuCloseClick}
-                  >
-                    <Link to="/reach-out/">
-                      <Text size="preNormal">Reach Out</Text>
-                    </Link>
-                  </MobileMenuItem>
-                </MenuHolder>
-                <MobileMenuSpace />
-              </Fade>
-            </SmallOnly>
-          </Box>
+        <Col xs={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 18 }}>
+          <Row justify="space-between" align="center">
+            <Col>
+              <LeftMenu />
+            </Col>
+            <Col>
+              <RightMenu
+                pathname={pathname}
+                isExpanded={isExpanded}
+                isClicked={isClicked}
+                onFirstClick={setFirstClick}
+                onMobileMenuOpenClick={handleMobileMenuOpenClick}
+                onMobileMenuCloseClick={handleMobileMenuCloseClick}
+              />
+            </Col>
+          </Row>
+          <SmallOnly>
+            <Fade collapse duration={300} when={isExpanded}>
+              <MenuHolder theme="dark" mode="inline">
+                <MobileMenuItem
+                  key="2"
+                  isSelected={pathname.includes('blog')}
+                  onClick={handleMobileMenuCloseClick}
+                >
+                  <Link to="/blog/">
+                    <Text size="preNormal">Blog</Text>
+                  </Link>
+                </MobileMenuItem>
+                <MobileMenuItem
+                  key="3"
+                  isSelected={pathname.includes('library')}
+                  onClick={handleMobileMenuCloseClick}
+                >
+                  <Link to="/library/">
+                    <Text size="preNormal">Library</Text>
+                  </Link>
+                </MobileMenuItem>
+                <MobileMenuItem
+                  key="4"
+                  isSelected={pathname.includes('mentorship')}
+                  onClick={handleMobileMenuCloseClick}
+                >
+                  <Link to="/mentorship/">
+                    <Text size="preNormal">Mentorship</Text>
+                  </Link>
+                </MobileMenuItem>
+                <MobileMenuItem
+                  key="5"
+                  isSelected={pathname.includes('mentorship')}
+                  onClick={handleMobileMenuCloseClick}
+                >
+                  <Link to="/pills/">
+                    <Text size="preNormal">Pills</Text>
+                  </Link>
+                </MobileMenuItem>
+                <MobileMenuItem
+                  key="6"
+                  isSelected={pathname.includes('reach-out')}
+                  onClick={handleMobileMenuCloseClick}
+                >
+                  <Link to="/reach-out/">
+                    <Text size="preNormal">Reach Out</Text>
+                  </Link>
+                </MobileMenuItem>
+              </MenuHolder>
+              <MobileMenuSpace />
+            </Fade>
+          </SmallOnly>
         </Col>
       </RowShadow>
     </Holder>

@@ -14,7 +14,7 @@ import { LogoFooter } from '~assets';
 
 import { Link, Text } from '../Typography';
 import { Paragraph, Icon } from '..';
-import { Logo } from './styled';
+import { FooterLogo } from './styled';
 
 const Holder = styled.footer({
   padding: '5rem 1rem 0 1rem',
@@ -74,12 +74,12 @@ export const Footer = () => (
       <Col
         xs={{ offset: 1, span: 22 }}
         xl={{ offset: 2, span: 20 }}
-        xxl={{ offset: 4, span: 16 }}
+        xxl={{ offset: 3, span: 18 }}
       >
         <Row align="top" justify="space-between" gutter={[0, 32]}>
           <Col xs={24} sm={3}>
             <GatsbyLink to="/">
-              <Logo src={LogoFooter} alt="BigsonDev Logo" />
+              <FooterLogo src={LogoFooter} alt="BigsonDev Logo" />
             </GatsbyLink>
           </Col>
           <Col

@@ -452,7 +452,7 @@ export const Offer = () => {
         </Row>
         <Box margin={`${spacing.large} 0 0 0`}>
           <Title level={4} transform="none" align="center">
-            Missing more explanation? Let's hop on a call to to discuss the
+            Missing more explanation? Let's hop on a free call to discuss the
             details of Mentorship
           </Title>
           <Box

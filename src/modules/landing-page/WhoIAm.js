@@ -351,7 +351,14 @@ export const WhoIAm = () => {
             <Row justify="center">
               <Col xs={22} lg={12}>
                 <Box margin={`0 0 ${spacing.large} 0`}>
-                  <Title level={3} transform="none" align="center">
+                  <Title
+                    level={3}
+                    transform="none"
+                    align="center"
+                    color={colors.primary}
+                    fontSize={fontSize.superLarge}
+                    fontWeight={fontWeight.stronger}
+                  >
                     I wouldn't be where I am today if I wasn't working with some
                     amazing companies
                   </Title>
@@ -385,7 +392,7 @@ export const WhoIAm = () => {
           </Box>
           <Box margin={`${spacing.large} 0 0 0`}>
             <Title level={4} transform="none" align="center">
-              Interested? Let's hop on a call to discuss the details of
+              Interested? Let's hop on a free call to discuss the details of
               Mentorship
             </Title>
             <Box

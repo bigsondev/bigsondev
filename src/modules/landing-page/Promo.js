@@ -19,8 +19,8 @@ import {
 const { colors, fontSize, fontWeight, spacing, opacity } = theme;
 
 const MobileScreenPromo = () => (
-  <Row align="middle">
-    <Col span={24}>
+  <Row align="middle" justify="center">
+    <Col span={22}>
       <Title
         transform="none"
         marginBottom="0"

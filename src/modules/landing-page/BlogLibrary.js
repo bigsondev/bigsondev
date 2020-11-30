@@ -10,6 +10,7 @@ import {
   Paragraph,
   Button,
   Box,
+  SmallOnly,
   ExceptSmall,
   MainCard,
 } from '~components';
@@ -162,18 +163,28 @@ export const BlogLibrary = () => {
               </ProjectLink>
             </Card>
           </Col>
-          <ExceptSmall>
-            <Box margin={`${spacing.large} 0 0 0`}>
-              <Title
-                level={3}
-                transform="none"
-                align="center"
-                fontSize={fontSize.large}
-                strong
-              >
-                And even more learning
-              </Title>
-              <Col xs={22} sm={16} xl={7} xxl={6}>
+          <Box margin={`${spacing.large} 0 0 0`}>
+            <Title
+              level={3}
+              transform="none"
+              align="center"
+              fontSize={fontSize.large}
+              strong
+            >
+              And even more learning
+            </Title>
+            <Col xs={22} sm={16} xl={7} xxl={6} style={{ textAlign: 'center' }}>
+              <SmallOnly>
+                <Space size="large" direction="vertical">
+                  <Link to="/blog/">
+                    <Button type="primary">Read articles on Blog</Button>
+                  </Link>
+                  <Link to="/library/">
+                    <Button type="primary">Practice code in Library</Button>
+                  </Link>
+                </Space>
+              </SmallOnly>
+              <ExceptSmall>
                 <Space size="large">
                   <Link to="/blog/">
                     <Button type="primary">Read articles on Blog</Button>
@@ -182,9 +193,9 @@ export const BlogLibrary = () => {
                     <Button type="primary">Practice code in Library</Button>
                   </Link>
                 </Space>
-              </Col>
-            </Box>
-          </ExceptSmall>
+              </ExceptSmall>
+            </Col>
+          </Box>
         </Row>
       </Box>
     </Holder>
