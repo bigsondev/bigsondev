@@ -45,13 +45,13 @@ const PillsLayout = ({
     <>
       <SEO title={`Pills | ${desc}`} />
       <Row justify="center" gutter={[0, 40]}>
-        <Col xs={{ span: 22 }} md={{ span: 20 }} xl={{ span: 18 }}>
+        <Col xs={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 18 }}>
           <main>{children}</main>
         </Col>
-        <Col xs={22} xl={20} xxl={16}>
+        <Col xs={22} xl={20} xxl={18}>
           <SlackBanner id="bigsondev-slack" />
         </Col>
-        <Col xs={22} xl={20} xxl={16}>
+        <Col xs={22} xl={20} xxl={18}>
           <Box margin="0 0 5rem 0">
             <PromoBanner
               title="spread the word"

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import { copyToClipboard } from '~utils';
 
-import { Text } from '.';
+import { Text, Paragraph } from '.';
 
 const Holder = styled.div({
   position: 'relative',
@@ -24,9 +24,17 @@ const CopyButton = styled(Button)({
   right: 8,
 });
 
+const CodeTitle = styled(Paragraph)({
+  position: 'absolute',
+  bottom: -24,
+  left: '50%',
+  transform: 'translate(-50%)',
+});
+
 export const SyntaxHighlighter = ({
   language = 'javascript',
   showCopy = false,
+  title = '',
   children,
   ...props
 }) => {
@@ -45,6 +53,11 @@ export const SyntaxHighlighter = ({
       <Highlight languages={[language]} {...props}>
         {children}
       </Highlight>
+      {title && (
+        <CodeTitle type="secondary" fontStyle="italic" size="small">
+          {title}
+        </CodeTitle>
+      )}
       {showCopy && (
         <Popover trigger="click" content="Copied!" visible={visible}>
           <CopyButton onClick={handleCopyClick}>

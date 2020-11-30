@@ -10,7 +10,7 @@ export * from './messages';
 export { Todo } from './widgets';
 export { SyntaxHighlighter } from './SyntaxHighlighter';
 export { Post, Card, PostCard, PostList } from './copywriting';
-export { CodeEditor } from './coding';
+export { CodeEditor, CodeEditorRaw } from './coding';
 export { Illustration } from './Illustration';
 export { NotJumpingIllustration } from './NotJumpingIllustration';
 export { Icon } from './Icon';

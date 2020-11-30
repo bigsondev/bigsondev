@@ -1,0 +1,25 @@
+---
+path: /interactive-examples/outline-html-css/
+desc: Outline all your HTML elements with a single line of CSS. Helps with understanding layout by visualizing all elements outlines on the screen.
+date: 2020-11-30
+tags: html, css
+type: girl
+image: pillOne
+---
+
+import { Post, CodeEditorRaw } from '~components';
+
+export const tabs = ['html', 'css'];
+export const initialHtml = `<div>Hello there, I'm a block element.</div>
+<span>Hello div, I'm inline.</span>`;
+export const initialCss = `* {
+  outline: 1px solid red;
+}\n
+body {
+  height: 100vh;
+}\n
+div {
+  margin-bottom: 1rem;
+}`;
+
+<CodeEditorRaw tabs={tabs} initialHtml={initialHtml} initialCss={initialCss} />

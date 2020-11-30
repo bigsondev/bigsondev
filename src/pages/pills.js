@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { Link as GatsbyLink, graphql } from 'gatsby';
 import { Row, Col, Space, Divider } from 'antd';
 import styled from 'styled-components';
 
@@ -17,7 +17,7 @@ import {
   Image,
 } from '~components';
 import { truncate } from '~utils';
-import { PillOne } from '~assets';
+import { PillOne, PillTwo } from '~assets';
 
 const PillCard = styled(MainCard)({
   transition: 'box-shadow 0.3s',
@@ -53,6 +53,7 @@ export const query = graphql`
           frontmatter {
             desc
             path
+            interactivePath
             tags
             type
             image
@@ -66,10 +67,11 @@ export const query = graphql`
 
 const PILLS_MAPPER = {
   pillOne: PillOne,
+  pillTwo: PillTwo,
 };
 
-const Pill = ({ desc, path, tags, image, type }) => (
-  <Link to={path}>
+const Pill = ({ desc, path, interactivePath, tags, image, type }) => (
+  <GatsbyLink to={path}>
     <PillCard>
       <Row gutter={[0, 8]}>
         <Col span={24}>
@@ -106,9 +108,16 @@ const Pill = ({ desc, path, tags, image, type }) => (
           </Paragraph>
         </Col>
       </Row>
-      <PillButton type="primary">Eat pill</PillButton>
+      <PillButton type="primary" style={{ marginBottom: '0.5rem' }}>
+        Eat pill
+      </PillButton>
+      <GatsbyLink to={interactivePath}>
+        <PillButton type="secondary" style={{ width: '100%' }}>
+          Open interactive example
+        </PillButton>
+      </GatsbyLink>
     </PillCard>
-  </Link>
+  </GatsbyLink>
 );
 
 const Pills = ({

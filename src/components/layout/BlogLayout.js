@@ -174,10 +174,10 @@ const BlogLayout = ({
             <Title level={3}>Proposed Next Articles</Title>
             <PostList data={proposedNextArticles} />
           </Col>
-          <Col xs={22} xl={20} xxl={16}>
+          <Col xs={22} xl={20} xxl={18}>
             <SlackBanner id="bigsondev-slack" />
           </Col>
-          <Col xs={22} xl={20} xxl={16}>
+          <Col xs={22} xl={20} xxl={18}>
             <Box margin="0 0 5rem 0">
               <PromoBanner
                 title="spread the word"

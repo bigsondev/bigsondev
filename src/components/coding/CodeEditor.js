@@ -29,7 +29,7 @@ const Holder = styled.div({
 
 const CodeMirror = styled(Controlled)({
   '& .CodeMirror': {
-    height: 200,
+    height: '25vh',
   },
 });
 
@@ -70,8 +70,8 @@ const TabPaneHolder = styled(Tabs.TabPane)({
 
 const IframeResult = styled.iframe({
   width: '100%',
-  minHeight: 200,
-  background: '#FAFAFA',
+  minHeight: '25vh',
+  background: '#F5F5F5',
   resize: 'vertical',
 });
 

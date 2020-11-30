@@ -1,0 +1,58 @@
+---
+path: /pills/equal-height-cards/
+interactivePath: /interactive-examples/equal-height-cards/
+desc: Make all cards equal height with flexbox. Especially helpful when content is dynamic and can't set fixed height.
+date: 2020-12-01
+tags: html, css
+type: boy
+image: pillTwo
+---
+
+import { Post, CodeEditorRaw } from '~components';
+
+export const tabs = ['html', 'css'];
+export const initialHtml = `<div class="cardContainer">
+  <div class="card">
+    <p class="cardContent">
+      Card 1 with little text.
+    </p>
+    <button>
+      I'm at the bottom
+    </button>
+  </div>
+  <div class="card">
+    <p class="cardContent">
+      Card 2 with a bit more than little text.
+    </p>
+    <button>
+      I'm at the bottom
+    </button>
+  </div>
+  <div class="card">
+    <p class=cardContent>
+    Card 3 with a lot of text. By a lot I mean at least couple of lines of text. Just a bit more text to make sure.      
+    </p>
+    <button>
+      I'm at the bottom
+    </button>
+  </div>
+</div>`;
+export const initialCss = `.cardContainer {
+  display: flex;
+  width: 100vw;
+}\n
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+  margin-right: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #096dd9;
+  color: #FFF;
+}\n
+.cardContent {
+  flex: 1;
+}`;
+
+<CodeEditorRaw tabs={tabs} initialHtml={initialHtml} initialCss={initialCss} />

@@ -1,0 +1,122 @@
+---
+path: /pills/equal-height-cards/
+interactivePath: /interactive-examples/equal-height-cards/
+desc: Make all cards equal height with flexbox. Especially helpful when content is dynamic and can't set fixed height.
+date: 2020-12-01
+tags: html, css
+type: boy
+image: pillTwo
+---
+
+import { Row, Col } from 'antd';
+import { Link } from 'gatsby';
+
+import { PillTwo } from '~assets';
+import {
+  theme,
+  Title,
+  Paragraph,
+  Illustration,
+  SyntaxHighlighter,
+  MainCard,
+  Image,
+  Button,
+} from '~components';
+
+export const htmlCode = `<div class="cardContainer">
+  <div class="card">
+    <p class="cardContent">
+      Card 1 with little text.
+    </p>
+    <button>
+      I'm at the bottom
+    </button>
+  </div>
+  <div class="card">
+    <p class="cardContent">
+      Card 2 with a bit more than little text.
+    </p>
+    <button>
+      I'm at the bottom
+    </button>
+  </div>
+  <div class="card">
+    <p class=cardContent>
+    Card 3 with a lot of text. By a lot I mean at least couple of lines of text. Just a bit more text to make sure.      
+    </p>
+    <button>
+      I'm at the bottom
+    </button>
+  </div>
+</div>`;
+
+export const cssCode = `.cardContainer {
+  display: flex;
+  width: 100vw;
+}\n
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+  margin-right: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #096dd9;
+  color: #FFF;
+}\n
+.cardContent {
+  flex: 1;
+}`;
+
+<MainCard>
+  <Row justify="center">
+    <Col span={24}>
+      <Title
+        level={3}
+        transform="none"
+        align="center"
+        marginBottom="0"
+        fontSize={theme.fontSize.superLarge}
+        fontWeight={theme.fontWeight.stronger}
+      >
+        <Row justify="center" align="center" gutter={16}>
+          <Col>Knowledge Pill</Col>
+          <Col>
+            <Illustration
+              type={
+                props.pageContext.frontmatter.type === 'girl'
+                  ? 'girlPill'
+                  : 'boyPill'
+              }
+              width={48}
+              style={{ marginTop: -6 }}
+            />
+          </Col>
+        </Row>
+      </Title>
+    </Col>
+    <Col xs={24} sm={12}>
+      <Paragraph align="center">{props.pageContext.frontmatter.desc}</Paragraph>
+    </Col>
+    {props.pageContext.frontmatter.interactivePath && (
+      <Col xs={24} style={{ textAlign: 'center', marginBottom: 16 }}>
+        <Link to={props.pageContext.frontmatter.interactivePath}>
+          <Button type="primary">Open interactive example</Button>
+        </Link>
+      </Col>
+    )}
+    <Col xs={24} sm={16}>
+      <SyntaxHighlighter language="xml" title="HTML code" showCopy>
+        {htmlCode}
+      </SyntaxHighlighter>
+    </Col>
+    <Col xs={24} sm={16}>
+      <SyntaxHighlighter language="css" title="CSS code" showCopy>
+        {cssCode}
+      </SyntaxHighlighter>
+    </Col>
+    <Col xs={24} sm={16}>
+      <Image src={PillTwo} alt={props.pageContext.frontmatter.desc} />
+    </Col>
+  </Row>
+</MainCard>

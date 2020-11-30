@@ -54,6 +54,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `interactiveExamples`,
+        path: `${__dirname}/src/mdx/interactive-examples/`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-page-creator',
       options: {
         path: `${__dirname}/src/mdx`,
@@ -66,6 +73,9 @@ module.exports = {
           library: require.resolve('./src/components/layout/LibraryLayout.js'),
           blog: require.resolve('./src/components/layout/BlogLayout.js'),
           pills: require.resolve('./src/components/layout/PillsLayout.js'),
+          interactiveExamples: require.resolve(
+            './src/components/layout/PillsLayout.js'
+          ),
         },
       },
     },

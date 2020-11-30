@@ -1,5 +1,6 @@
 ---
-path: /pills/outline-html-css-pill/
+path: /pills/outline-html-css/
+interactivePath: /interactive-examples/outline-html-css/
 desc: Outline all your HTML elements with a single line of CSS. Helps with understanding layout by visualizing all elements outlines on the screen.
 date: 2020-11-30
 tags: html, css
@@ -7,6 +8,7 @@ type: girl
 image: pillOne
 ---
 
+import { Link } from 'gatsby';
 import { Row, Col } from 'antd';
 
 import { PillOne } from '~assets';
@@ -18,6 +20,7 @@ import {
   SyntaxHighlighter,
   MainCard,
   Image,
+  Button,
 } from '~components';
 
 export const outlineCode = `* {
@@ -25,7 +28,7 @@ export const outlineCode = `* {
 }`;
 
 <MainCard>
-  <Row justify="center" gutter={[0, 16]}>
+  <Row justify="center">
     <Col span={24}>
       <Title
         level={3}
@@ -36,7 +39,7 @@ export const outlineCode = `* {
         fontWeight={theme.fontWeight.stronger}
       >
         <Row justify="center" align="center" gutter={16}>
-          <Col>Knowledge Pill </Col>
+          <Col>Knowledge Pill</Col>
           <Col>
             <Illustration
               type={
@@ -54,6 +57,13 @@ export const outlineCode = `* {
     <Col xs={24} sm={12}>
       <Paragraph align="center">{props.pageContext.frontmatter.desc}</Paragraph>
     </Col>
+    {props.pageContext.frontmatter.interactivePath && (
+      <Col xs={24} style={{ textAlign: 'center', marginBottom: 16 }}>
+        <Link to={props.pageContext.frontmatter.interactivePath}>
+          <Button type="primary">Open interactive example</Button>
+        </Link>
+      </Col>
+    )}
     <Col xs={24} sm={16}>
       <SyntaxHighlighter language="css" showCopy>
         {outlineCode}
