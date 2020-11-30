@@ -59,6 +59,7 @@ const TermsOfService = () => (
               'Other service - individually agreed with Client Service plan containing above matters in taylored offer',
               'Blog - regularly posted, free of charge, articles and guidelines considering services provided by BigsonDev available on BigsonDev web page',
               'Library - set of free of charge coding exercises prepared for the users of BigsonDev web page',
+              'Pills - set of free of charge knowledge pills prepared for the users of BigsonDev web page',
               'Newsletter - a free of charge bulletin issued periodically via e-mail to Clients who subscribed on BigsonDev web page',
               'Discussion  - free of charge brainstorming developers group organized via Slack which Client subscribed on BigsonDev web page may take part in',
             ]}

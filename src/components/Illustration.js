@@ -20,6 +20,8 @@ import {
   SmallRocket,
   MediumRocket,
   LargeRocket,
+  GirlPill,
+  BoyPill,
 } from '~svg';
 
 const Holder = styled.div(({ width = '100%' }) => ({
@@ -49,6 +51,8 @@ const ILLUSTRATION_MAPPER = {
   smallRocket: <SmallRocket />,
   mediumRocket: <MediumRocket />,
   largeRocket: <LargeRocket />,
+  girlPill: <GirlPill />,
+  boyPill: <BoyPill />,
 };
 
 export const Illustration = ({ type, ...props }) => {

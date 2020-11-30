@@ -1,0 +1,66 @@
+---
+path: /pills/outline-html-css-pill/
+desc: Outline all your HTML elements with a single line of CSS. Helps with understanding layout by visualizing all elements outlines on the screen.
+date: 2020-11-30
+tags: html, css
+type: girl
+image: pillOne
+---
+
+import { Row, Col } from 'antd';
+
+import { PillOne } from '~assets';
+import {
+  theme,
+  Title,
+  Paragraph,
+  Illustration,
+  SyntaxHighlighter,
+  MainCard,
+  Image,
+} from '~components';
+
+export const outlineCode = `* {
+  outline: 1px solid red;  
+}`;
+
+<MainCard>
+  <Row justify="center" gutter={[0, 16]}>
+    <Col span={24}>
+      <Title
+        level={3}
+        transform="none"
+        align="center"
+        marginBottom="0"
+        fontSize={theme.fontSize.superLarge}
+        fontWeight={theme.fontWeight.stronger}
+      >
+        <Row justify="center" align="center" gutter={16}>
+          <Col>Knowledge Pill </Col>
+          <Col>
+            <Illustration
+              type={
+                props.pageContext.frontmatter.type === 'girl'
+                  ? 'girlPill'
+                  : 'boyPill'
+              }
+              width={48}
+              style={{ marginTop: -6 }}
+            />
+          </Col>
+        </Row>
+      </Title>
+    </Col>
+    <Col xs={24} sm={12}>
+      <Paragraph align="center">{props.pageContext.frontmatter.desc}</Paragraph>
+    </Col>
+    <Col xs={24} sm={16}>
+      <SyntaxHighlighter language="css" showCopy>
+        {outlineCode}
+      </SyntaxHighlighter>
+    </Col>
+    <Col xs={24} sm={16}>
+      <Image src={PillOne} alt={props.pageContext.frontmatter.desc} />
+    </Col>
+  </Row>
+</MainCard>

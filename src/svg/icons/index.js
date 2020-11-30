@@ -15,6 +15,8 @@ import BehanceIcon from './behance.svg';
 import DribbleIcon from './dribble.svg';
 import InstagramIcon from './instagram.svg';
 import GitHubIcon from './github.svg';
+import GirlPillIcon from './knowledge-pill-red.svg';
+import BoyPillIcon from './knowledge-pill-blue.svg';
 
 export {
   HomeworkIcon,
@@ -34,4 +36,6 @@ export {
   DribbleIcon,
   InstagramIcon,
   GitHubIcon,
+  GirlPillIcon,
+  BoyPillIcon,
 };

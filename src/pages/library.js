@@ -81,7 +81,7 @@ const Resource = ({
   path,
   tags,
   difficulty,
-  buttonText = 'Start Coding',
+  buttonText = 'View challenge',
 }) => (
   <Link to={path}>
     <ResourceCard>
@@ -198,18 +198,18 @@ const Library = ({
             xl={{ span: 8 }}
             key={project.title}
           >
-            <Resource buttonText="Start Project" {...project} />
+            <Resource buttonText="View project" {...project} />
           </Col>
         ))}
       </Row>
       <Divider />
       <Box mb={1}>
-        <Title level={3} transform="capitalize" align="center">
-          Code Challenges
+        <Title level={3} transform="none" align="center">
+          Code challenges
         </Title>
         <Paragraph align="center">
           <Link to={quiz.path}>
-            <Button type="promo">Start Quiz</Button>
+            <Button type="promo">View Quiz</Button>
           </Link>
         </Paragraph>
       </Box>

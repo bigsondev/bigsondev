@@ -20,6 +20,8 @@ import {
   DribbleIcon,
   InstagramIcon,
   GitHubIcon,
+  GirlPillIcon,
+  BoyPillIcon,
 } from '~svg';
 
 const Holder = styled(AntdIcon)(({ width = 32 }) => ({
@@ -48,6 +50,8 @@ const ICON_MAPPER = {
   dribble: DribbleIcon,
   instagram: InstagramIcon,
   github: GitHubIcon,
+  girlPill: GirlPillIcon,
+  boyPill: BoyPillIcon,
 };
 
 export const Icon = ({ type, ...props }) => {

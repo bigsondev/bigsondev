@@ -13,6 +13,7 @@ import TodoAppProject from './todo-app-project.png';
 import RealtimeChatProject from './realtime-chat-project.png';
 import MesfinTestimonial from './mesfin-testimonial.jpeg';
 import MainImage from './main-image.png';
+import PillOne from './pill-1.png';
 
 export * from './logo';
 export {
@@ -31,4 +32,5 @@ export {
   RealtimeChatProject,
   MesfinTestimonial,
   MainImage,
+  PillOne,
 };

@@ -156,13 +156,13 @@ const RightMenu = ({
           </Link>
         </MenuItem>
         <MenuItem key="4" isSelected={pathname.includes('mentorship')}>
-          <Link to="/mentorship/">
-            <Text size="preNormal">Mentorship</Text>
+          <Link to="/pills/">
+            <Text size="preNormal">Pills</Text>
           </Link>
         </MenuItem>
         <MenuItem key="5" isSelected={pathname.includes('mentorship')}>
           <Link to="/mentorship/">
-            <Text size="preNormal">Pills</Text>
+            <Text size="preNormal">Mentorship</Text>
           </Link>
         </MenuItem>
         <MenuItem key="6" isSelected={pathname.includes('reach-out')}>
@@ -234,8 +234,8 @@ export const Header = ({ pathname }) => {
                   isSelected={pathname.includes('mentorship')}
                   onClick={handleMobileMenuCloseClick}
                 >
-                  <Link to="/mentorship/">
-                    <Text size="preNormal">Mentorship</Text>
+                  <Link to="/pills/">
+                    <Text size="preNormal">Pills</Text>
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem
@@ -243,8 +243,8 @@ export const Header = ({ pathname }) => {
                   isSelected={pathname.includes('mentorship')}
                   onClick={handleMobileMenuCloseClick}
                 >
-                  <Link to="/pills/">
-                    <Text size="preNormal">Pills</Text>
+                  <Link to="/mentorship/">
+                    <Text size="preNormal">Mentorship</Text>
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem

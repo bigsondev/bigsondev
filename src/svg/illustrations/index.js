@@ -16,6 +16,8 @@ import KojiLogo from './koji-logo.svg';
 import SmallRocket from './rocket-blue-1.svg';
 import MediumRocket from './rocket-green-2.svg';
 import LargeRocket from './rocket-orange-3.svg';
+import GirlPill from './knowledge-pill-girl.svg';
+import BoyPill from './knowledge-pill-boy.svg';
 
 export {
   PromoIllustration,
@@ -36,4 +38,6 @@ export {
   SmallRocket,
   MediumRocket,
   LargeRocket,
+  GirlPill,
+  BoyPill,
 };

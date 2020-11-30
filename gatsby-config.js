@@ -47,6 +47,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pills`,
+        path: `${__dirname}/src/mdx/pills/`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-page-creator',
       options: {
         path: `${__dirname}/src/mdx`,
@@ -58,6 +65,7 @@ module.exports = {
         defaultLayouts: {
           library: require.resolve('./src/components/layout/LibraryLayout.js'),
           blog: require.resolve('./src/components/layout/BlogLayout.js'),
+          pills: require.resolve('./src/components/layout/PillsLayout.js'),
         },
       },
     },
