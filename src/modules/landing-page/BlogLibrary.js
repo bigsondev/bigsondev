@@ -173,8 +173,14 @@ export const BlogLibrary = () => {
             >
               And even more learning
             </Title>
-            <Col xs={22} sm={16} xl={7} xxl={6} style={{ textAlign: 'center' }}>
-              <SmallOnly>
+            <SmallOnly>
+              <Col
+                xs={22}
+                sm={16}
+                xl={7}
+                xxl={6}
+                style={{ textAlign: 'center', paddingRight: 0 }}
+              >
                 <Space size="large" direction="vertical">
                   <Link to="/blog/">
                     <Button type="primary">Read articles on Blog</Button>
@@ -183,8 +189,16 @@ export const BlogLibrary = () => {
                     <Button type="secondary">Practice code in Library</Button>
                   </Link>
                 </Space>
-              </SmallOnly>
-              <ExceptSmall>
+              </Col>
+            </SmallOnly>
+            <ExceptSmall>
+              <Col
+                xs={22}
+                sm={16}
+                xl={7}
+                xxl={6}
+                style={{ textAlign: 'center' }}
+              >
                 <Space size="large">
                   <Link to="/blog/">
                     <Button type="primary">Read articles on Blog</Button>
@@ -193,8 +207,8 @@ export const BlogLibrary = () => {
                     <Button type="secondary">Practice code in Library</Button>
                   </Link>
                 </Space>
-              </ExceptSmall>
-            </Col>
+              </Col>
+            </ExceptSmall>
           </Box>
         </Row>
       </Box>
