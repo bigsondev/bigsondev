@@ -51,7 +51,7 @@ const SecondaryButton = styled(BaseButton)(({ theme }) => ({
 const GhostButton = styled(BaseButton)(({ theme }) => ({
   backgroundColor: `${theme.colors.white} !important`,
   color: `${theme.colors.primary} !important`,
-  border: `1px solid ${theme.colors.primary} !important`,
+  border: `none !important`,
 
   '&:hover': {
     boxShadow: `0px 0px 5px 0px ${theme.colors.white}`,

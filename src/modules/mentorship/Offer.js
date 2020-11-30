@@ -81,7 +81,7 @@ const openFreeConsultationEvent = () => {
 export const Offer = () => {
   return (
     <Holder>
-      <Box padding={`${spacing.small} 0 ${spacing.extraLarge} 0`}>
+      <Box padding={`0 0 ${spacing.extraLarge} 0`}>
         <Title
           align="center"
           transform="none"

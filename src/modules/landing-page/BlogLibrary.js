@@ -180,7 +180,7 @@ export const BlogLibrary = () => {
                     <Button type="primary">Read articles on Blog</Button>
                   </Link>
                   <Link to="/library/">
-                    <Button type="primary">Practice code in Library</Button>
+                    <Button type="secondary">Practice code in Library</Button>
                   </Link>
                 </Space>
               </SmallOnly>
@@ -190,7 +190,7 @@ export const BlogLibrary = () => {
                     <Button type="primary">Read articles on Blog</Button>
                   </Link>
                   <Link to="/library/">
-                    <Button type="primary">Practice code in Library</Button>
+                    <Button type="secondary">Practice code in Library</Button>
                   </Link>
                 </Space>
               </ExceptSmall>

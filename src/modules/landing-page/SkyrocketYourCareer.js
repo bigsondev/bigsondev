@@ -22,7 +22,7 @@ const Holder = styled.div(({ theme }) => ({
 export const SkyrocketYourCareer = () => {
   return (
     <Holder id="bigsondev-skyrocket-your-career">
-      <Box padding={`0 0 ${spacing.extraLarge} 0`}>
+      <Box padding={`${spacing.extraLarge} 0`}>
         <Title
           align="center"
           transform="none"
