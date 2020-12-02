@@ -1,0 +1,128 @@
+---
+path: /pills/reset-normalize-css/
+interactivePath: /interactive-examples/reset-normalize-css/
+desc: Avoid CSS reset and normalize your styles through different browsers, preserve useful defaults, correct bugs and common browser issues.
+date: 2020-12-02
+tags: html, css
+type: boy
+image: pillThree
+---
+
+import { Link as GatsbyLink } from 'gatsby';
+import { Row, Col } from 'antd';
+
+import { PillThree } from '~assets';
+import {
+  theme,
+  Title,
+  Paragraph,
+  Illustration,
+  SyntaxHighlighter,
+  MainCard,
+  Image,
+  Button,
+  Link,
+  Box,
+} from '~components';
+
+export const outlineCode = `* {
+  outline: 1px solid red;  
+}`;
+
+export const npmInstallCode = `// First intall normalize.css through npm
+npm install --save normalize.css\n
+// Then import it in your index.js file to take effect
+import 'normalize.css';`;
+
+<MainCard>
+  <Row justify="center">
+    <Col span={24}>
+      <Title
+        level={3}
+        transform="none"
+        align="center"
+        marginBottom="0"
+        fontSize={theme.fontSize.superLarge}
+        fontWeight={theme.fontWeight.stronger}
+      >
+        <Row justify="center" align="center" gutter={16}>
+          <Col>Knowledge Pill</Col>
+          <Col>
+            <Illustration
+              type={
+                props.pageContext.frontmatter.type === 'girl'
+                  ? 'girlPill'
+                  : 'boyPill'
+              }
+              width={48}
+              style={{ marginTop: -6 }}
+            />
+          </Col>
+        </Row>
+      </Title>
+    </Col>
+    <Col xs={24} sm={12}>
+      <Paragraph align="center">{props.pageContext.frontmatter.desc}</Paragraph>
+    </Col>
+    {props.pageContext.frontmatter.interactivePath && (
+      <Col xs={24} style={{ textAlign: 'center', marginBottom: 24 }}>
+        <GatsbyLink to={props.pageContext.frontmatter.interactivePath}>
+          <Button type="primary">Open interactive example</Button>
+        </GatsbyLink>
+      </Col>
+    )}
+    <Col xs={24} sm={16}>
+      <Paragraph size="preNormal" align="center">
+        There is a{' '}
+        <Link
+          href="https://meyerweb.com/eric/tools/css/reset/"
+          size="preNormal"
+        >
+          CSS reset
+        </Link>{' '}
+        available out there{' '}
+        <Text size="preNormal" strong>
+          but I highly recommend using{' '}
+          <Link
+            href="https://github.com/necolas/normalize.css/"
+            size="preNormal"
+          >
+            normalize.css
+          </Link>{' '}
+          instead.
+        </Text>{' '}
+        It's less intruisive, corrects bugs, is more modular and has better
+        documentation.
+      </Paragraph>
+    </Col>
+    <Col xs={24} sm={16}>
+      <Paragraph align="center" type="secondary" size="preNormal" strong>
+        Installation
+      </Paragraph>
+    </Col>
+    <Col xs={24} sm={16}>
+      <SyntaxHighlighter showCopy>{npmInstallCode}</SyntaxHighlighter>
+    </Col>
+    <Col xs={24} sm={16} style={{ marginTop: '1rem' }}>
+      <Paragraph
+        align="center"
+        type="secondary"
+        size="preNormal"
+        strong
+        marginBottom="0"
+      >
+        Or add the{' '}
+        <Link
+          href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css"
+          size="preNormal"
+        >
+          CSS code
+        </Link>{' '}
+        from normalize.css to your project directly.
+      </Paragraph>
+    </Col>
+    <Col xs={24} sm={16}>
+      <Image src={PillThree} alt={props.pageContext.frontmatter.desc} />
+    </Col>
+  </Row>
+</MainCard>

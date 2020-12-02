@@ -17,7 +17,7 @@ import {
   Image,
 } from '~components';
 import { truncate } from '~utils';
-import { PillOne, PillTwo } from '~assets';
+import { PillOne, PillTwo, PillThree } from '~assets';
 
 const PillCard = styled(MainCard)({
   transition: 'box-shadow 0.3s',
@@ -68,6 +68,7 @@ export const query = graphql`
 const PILLS_MAPPER = {
   pillOne: PillOne,
   pillTwo: PillTwo,
+  pillThree: PillThree,
 };
 
 const Pill = ({ desc, path, interactivePath, tags, image, type }) => (
@@ -111,11 +112,13 @@ const Pill = ({ desc, path, interactivePath, tags, image, type }) => (
       <PillButton type="primary" style={{ marginBottom: '0.5rem' }}>
         Eat pill
       </PillButton>
-      <GatsbyLink to={interactivePath}>
-        <PillButton type="secondary" style={{ width: '100%' }}>
-          Open interactive example
-        </PillButton>
-      </GatsbyLink>
+      {Boolean(interactivePath) && (
+        <GatsbyLink to={interactivePath}>
+          <PillButton type="secondary" style={{ width: '100%' }}>
+            Open interactive example
+          </PillButton>
+        </GatsbyLink>
+      )}
     </PillCard>
   </GatsbyLink>
 );

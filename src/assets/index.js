@@ -15,6 +15,7 @@ import MesfinTestimonial from './mesfin-testimonial.jpeg';
 import MainImage from './main-image.png';
 import PillOne from './pill-1.png';
 import PillTwo from './pill-2.png';
+import PillThree from './pill-3.png';
 
 export * from './logo';
 export {
@@ -34,5 +35,6 @@ export {
   MesfinTestimonial,
   MainImage,
   PillOne,
-  PillTwo
+  PillTwo,
+  PillThree,
 };
