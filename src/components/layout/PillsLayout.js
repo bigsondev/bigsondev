@@ -45,7 +45,7 @@ const PillsLayout = ({
     <>
       <SEO title={`Pills | ${desc}`} />
       <Row justify="center" gutter={[0, 40]}>
-        <Col xs={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 18 }}>
+        <Col xs={{ span: 22 }} md={{ span: 16 }} xl={{ span: 12 }}>
           <main>{children}</main>
         </Col>
         <Col xs={22} xl={20} xxl={18}>

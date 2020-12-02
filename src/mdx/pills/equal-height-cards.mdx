@@ -9,7 +9,7 @@ image: pillTwo
 ---
 
 import { Row, Col } from 'antd';
-import { Link } from 'gatsby';
+import { Link as GatsbyLink } from 'gatsby';
 
 import { PillTwo } from '~assets';
 import {
@@ -21,6 +21,8 @@ import {
   MainCard,
   Image,
   Button,
+  Link,
+  Text,
 } from '~components';
 
 export const htmlCode = `<div class="cardContainer">
@@ -68,55 +70,116 @@ export const cssCode = `.cardContainer {
   flex: 1;
 }`;
 
-<MainCard>
-  <Row justify="center">
-    <Col span={24}>
-      <Title
-        level={3}
-        transform="none"
-        align="center"
-        marginBottom="0"
-        fontSize={theme.fontSize.superLarge}
-        fontWeight={theme.fontWeight.stronger}
-      >
-        <Row justify="center" align="center" gutter={16}>
-          <Col>Knowledge Pill</Col>
-          <Col>
-            <Illustration
-              type={
-                props.pageContext.frontmatter.type === 'girl'
-                  ? 'girlPill'
-                  : 'boyPill'
-              }
-              width={48}
-              style={{ marginTop: -6 }}
-            />
+<Row gutter={[0, 24]}>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            <Row justify="center" align="center" gutter={16}>
+              <Col>Knowledge Pill</Col>
+              <Col>
+                <Illustration
+                  type={
+                    props.pageContext.frontmatter.type === 'girl'
+                      ? 'girlPill'
+                      : 'boyPill'
+                  }
+                  width={48}
+                  style={{ marginTop: -6 }}
+                />
+              </Col>
+            </Row>
+          </Title>
+        </Col>
+        <Col xs={24} sm={22}>
+          <Paragraph align="center">
+            {props.pageContext.frontmatter.desc}
+          </Paragraph>
+        </Col>
+        {props.pageContext.frontmatter.interactivePath && (
+          <Col span={24} style={{ textAlign: 'center' }}>
+            <GatsbyLink to={props.pageContext.frontmatter.interactivePath}>
+              <Button type="primary">Open interactive example</Button>
+            </GatsbyLink>
           </Col>
-        </Row>
-      </Title>
-    </Col>
-    <Col xs={24} sm={12}>
-      <Paragraph align="center">{props.pageContext.frontmatter.desc}</Paragraph>
-    </Col>
-    {props.pageContext.frontmatter.interactivePath && (
-      <Col xs={24} style={{ textAlign: 'center', marginBottom: 16 }}>
-        <Link to={props.pageContext.frontmatter.interactivePath}>
-          <Button type="primary">Open interactive example</Button>
-        </Link>
-      </Col>
-    )}
-    <Col xs={24} sm={16}>
-      <SyntaxHighlighter language="xml" title="HTML code" showCopy>
-        {htmlCode}
-      </SyntaxHighlighter>
-    </Col>
-    <Col xs={24} sm={16}>
-      <SyntaxHighlighter language="css" title="CSS code" showCopy>
-        {cssCode}
-      </SyntaxHighlighter>
-    </Col>
-    <Col xs={24} sm={16}>
-      <Image src={PillTwo} alt={props.pageContext.frontmatter.desc} />
-    </Col>
-  </Row>
-</MainCard>
+        )}
+      </Row>
+    </MainCard>
+  </Col>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            Code
+          </Title>
+        </Col>
+        <Col span={24}>
+          <SyntaxHighlighter language="xml" title="HTML code" showCopy>
+            {htmlCode}
+          </SyntaxHighlighter>
+        </Col>
+        <Col span={24}>
+          <SyntaxHighlighter language="css" title="CSS code" showCopy>
+            {cssCode}
+          </SyntaxHighlighter>
+        </Col>
+        <Col span={24}>
+          <Title level={4} transform="none" align="center">
+            Explanation
+          </Title>
+        </Col>
+        <Col xs={24} sm={22}>
+          <Paragraph align="center" size="preNormal" fontStyle="italic">
+            <Link
+              href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+              size="preNormal"
+            >
+              Flexbox
+            </Link>{' '}
+            was used on the container div to make all child cards equal height.
+            A card itself is also constructed with flexbox for column layout.{' '}
+            <Text code size="preNormal">
+              flex: 1
+            </Text>{' '}
+            property expands height of the card content to keep button at the
+            bottom for all cards.
+          </Paragraph>
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            Visual reference
+          </Title>
+        </Col>
+        <Col span={24}>
+          <Image src={PillTwo} alt={props.pageContext.frontmatter.desc} />
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+</Row>
