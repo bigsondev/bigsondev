@@ -31,6 +31,7 @@ const PillCard = styled(MainCard)({
 
 const PillButton = styled(Button)({
   marginTop: 'auto',
+  width: '100%',
 });
 
 const TAG_COLOR_MAPPER = {
