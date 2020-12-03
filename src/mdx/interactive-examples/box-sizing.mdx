@@ -1,0 +1,48 @@
+---
+path: /pills/box-sizing/
+interactivePath: /interactive-examples/box-sizing/
+desc: Adjust box-sizing property to include padding and border to actual width or height. Simplifies overhead of the box model.
+date: 2020-12-03
+tags: html, css
+type: boy
+image: pillFour
+---
+
+import { Post, CodeEditorRaw } from '~components';
+
+export const tabs = ['html', 'css'];
+export const initialHtml = `<div class="container">
+	<div class="firstBlock">120px:120px</div>
+	<div class="secondBlock">120px:120px</div>
+</div>`;
+export const initialCss = `*, *:before, *:after {
+  box-sizing: border-box;
+}\n
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+}\n
+.firstBlock {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: blue;
+  color: rgba(255, 255, 255, 0.85);
+}\n
+.secondBlock {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  padding: 20px;
+  background: blue;
+  color: rgba(255, 255, 255, 0.85);
+}`;
+
+<CodeEditorRaw tabs={tabs} initialHtml={initialHtml} initialCss={initialCss} />

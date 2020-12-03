@@ -1,0 +1,149 @@
+---
+path: /pills/box-sizing/
+interactivePath: /interactive-examples/box-sizing/
+desc: Adjust box-sizing property to include padding and border to actual width or height. Simplifies overhead of the box model.
+date: 2020-12-03
+tags: html, css
+type: boy
+image: pillFour
+---
+
+import { Link as GatsbyLink } from 'gatsby';
+import { Row, Col } from 'antd';
+
+import { PillFour } from '~assets';
+import {
+  theme,
+  Title,
+  Paragraph,
+  Illustration,
+  SyntaxHighlighter,
+  MainCard,
+  Image,
+  Button,
+  Link,
+  Text,
+} from '~components';
+
+export const boxSizingCode = `*, *:before, *:after {
+  box-sizing: border-box;
+}`;
+
+<Row gutter={[0, 24]}>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            marginBottom="0"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            <Row justify="center" align="center" gutter={16}>
+              <Col>Knowledge Pill</Col>
+              <Col>
+                <Illustration
+                  type={
+                    props.pageContext.frontmatter.type === 'girl'
+                      ? 'girlPill'
+                      : 'boyPill'
+                  }
+                  width={48}
+                  style={{ marginTop: -6 }}
+                />
+              </Col>
+            </Row>
+          </Title>
+        </Col>
+        <Col span={24} sm={22}>
+          <Paragraph align="center">
+            {props.pageContext.frontmatter.desc}
+          </Paragraph>
+        </Col>
+        {props.pageContext.frontmatter.interactivePath && (
+          <Col span={24} style={{ textAlign: 'center' }}>
+            <GatsbyLink to={props.pageContext.frontmatter.interactivePath}>
+              <Button type="primary">Open interactive example</Button>
+            </GatsbyLink>
+          </Col>
+        )}
+      </Row>
+    </MainCard>
+  </Col>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            Code
+          </Title>
+        </Col>
+        <Col span={24}>
+          <SyntaxHighlighter language="css" showCopy>
+            {boxSizingCode}
+          </SyntaxHighlighter>
+        </Col>
+        <Col span={24}>
+          <Title level={4} transform="none" align="center">
+            Explanation
+          </Title>
+        </Col>
+        <Col xs={24} sm={22}>
+          <Paragraph align="center" size="preNormal" fontStyle="italic">
+            <Link
+              href="https://www.w3schools.com/cssref/sel_all.asp"
+              size="preNormal"
+            >
+              Select all selector
+            </Link>{' '}
+            targets all HTML elements, including all pseudo elements to override{' '}
+            <Link
+              href="https://www.w3schools.com/css/css3_box-sizing.asp"
+              size="preNormal"
+            >
+              box-sizing
+            </Link>{' '}
+            property to be{' '}
+            <Text size="preNormal" code>
+              border-box
+            </Text>{' '}
+            instead of default{' '}
+            <Text size="preNormal" code>
+              content-box
+            </Text>
+            .
+          </Paragraph>
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            Visual reference
+          </Title>
+        </Col>
+        <Col span={24}>
+          <Image src={PillFour} alt={props.pageContext.frontmatter.desc} />
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+</Row>
