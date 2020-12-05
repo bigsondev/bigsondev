@@ -54,7 +54,6 @@ export const query = graphql`
           frontmatter {
             desc
             path
-            interactivePath
             tags
             type
             image
@@ -73,7 +72,7 @@ const PILLS_MAPPER = {
   pillFour: PillFour,
 };
 
-const Pill = ({ desc, path, interactivePath, tags, image, type }) => (
+const Pill = ({ desc, path, tags, image, type }) => (
   <GatsbyLink to={path}>
     <PillCard>
       <Row gutter={[0, 8]}>
@@ -114,13 +113,11 @@ const Pill = ({ desc, path, interactivePath, tags, image, type }) => (
       <PillButton type="primary" style={{ marginBottom: '0.5rem' }}>
         Eat pill
       </PillButton>
-      {Boolean(interactivePath) && (
-        <GatsbyLink to={interactivePath}>
-          <PillButton type="secondary" style={{ width: '100%' }}>
-            Open interactive example
-          </PillButton>
-        </GatsbyLink>
-      )}
+      <GatsbyLink to={`${path}#bigsondev-code-editor-raw`}>
+        <PillButton type="secondary" style={{ width: '100%' }}>
+          Open interactive example
+        </PillButton>
+      </GatsbyLink>
     </PillCard>
   </GatsbyLink>
 );

@@ -111,7 +111,7 @@ export const CodeEditorRaw = ({
 
   return (
     <>
-      <Holder>
+      <Holder id="bigsondev-code-editor-raw">
         <TabsHolder type="card">
           {tabs.map((name, index) => {
             const { mode, tab, value, setter } = TAB_MAPPER[name];
