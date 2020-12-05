@@ -1,0 +1,218 @@
+---
+path: /pills/add-edit-delete-array-of-objects/
+desc: Learn how to add, edit and delete array of objects in semantic, declarative approach using rest spread operator and array methods.
+date: 2020-12-05
+tags: js
+type: boy
+image: pillFive
+---
+
+import { Link as GatsbyLink } from 'gatsby';
+import { Row, Col } from 'antd';
+
+import {
+  theme,
+  Title,
+  Paragraph,
+  Illustration,
+  SyntaxHighlighter,
+  MainCard,
+  Image,
+  Button,
+  Link,
+  CodeEditorRaw,
+} from '~components';
+
+export const jsCode = `let items = [];\n
+// Add item to the beginning of items array using rest operator
+const addItemToStart = (newItem) => {
+  items = [newItem, ...items];
+}\n
+// Add item to the end of items array using rest operator
+const addItemToEnd = (newItem) => {
+  items = [...items, newItem];
+}\n
+// Edit item using .map method, if id matches, use rest operator to override
+// item properties with updatedItem, otherwise return item as is
+const editItem = (updatedItem) => {
+  items = items.map((item) => {
+    if (updatedItem.id === item.id) {
+      return {
+        ...item,
+        ...updatedItem
+      }
+    }\n
+    return item;
+  })
+}\n
+// Delete item using .filter method, if id matches, delete it from items array
+const deleteItem = (idToRemove) => {
+  items = items.filter((item) => item.id !== idToRemove);
+}
+`;
+
+export const tabs = ['js'];
+export const initialJs = `// OPEN CONSOLE IN YOUR BROWSER TO SEE LOGS
+/* Let's assume we have the below note structure
+   const note = {
+     id: 1,
+     text: 'Note text',
+     color: '#FAFAFA'
+   }
+   It's an object with 3 properties, id, text and a color.
+*/\n
+let notes = [];\n
+// Add note to the beginning of notes array using rest operator
+const addNoteToStart = (newNote) => {
+  notes = [newNote, ...notes];
+}\n
+// Add note to the end of notes array using rest operaotr
+const addNoteToEnd = (newNote) => {
+  notes = [...notes, newNote];
+}\n
+// Edit note using .map method, if id matches, use rest operator to override
+// note properties with updatedNote, otherwise return note as is
+const editNote = (updatedNote) => {
+  notes = notes.map((note) => {
+    if (updatedNote.id === note.id) {
+      return {
+        ...note,
+        ...updatedNote
+      }
+    }\n
+    return note;
+  })
+}\n
+// Delete note using .filter method, if id matches, delete it from notes array
+const deleteNote = (idToRemove) => {
+  notes = notes.filter((note) => note.id !== idToRemove);
+}\n
+const firstNote = {
+  id: 1,
+  text: 'Note text 1',
+  color: '#FAFAFA'
+}\n
+const secondNote = {
+  id: 2,
+  text: 'Note text 2',
+  color: '#F5F5F5'
+}\n
+const thirdNote = {
+  id: 3,
+  text: 'Note text 3',
+  color: '#F0F0F0'
+}\n
+const updatedSecondNote = {
+  id: 2,
+  text: 'Updated note text 2',
+  color: '#F5F5F5'
+};\n
+const idToRemove = 1;\n
+addNoteToStart(firstNote);
+console.log(notes); // 1 note\n
+addNoteToEnd(secondNote);
+console.log(notes); // 2 notes\n
+addNoteToEnd(thirdNote);
+console.log(notes); // 3 notes\n
+editNote(updatedSecondNote);
+console.log(notes) // 3 notes, 2nd updated\n
+deleteNote(1);
+console.log(notes) // 2 notes, first deleted\n
+`;
+
+<Row gutter={[0, 24]}>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            marginBottom="0"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            <Row justify="center" align="center" gutter={16}>
+              <Col>Knowledge Pill</Col>
+              <Col>
+                <Illustration
+                  type={
+                    props.pageContext.frontmatter.type === 'girl'
+                      ? 'girlPill'
+                      : 'boyPill'
+                  }
+                  width={48}
+                  style={{ marginTop: -6 }}
+                />
+              </Col>
+            </Row>
+          </Title>
+        </Col>
+        <Col span={24} sm={22}>
+          <Paragraph align="center">
+            {props.pageContext.frontmatter.desc}
+          </Paragraph>
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            Code
+          </Title>
+        </Col>
+        <Col span={24}>
+          <SyntaxHighlighter showCopy>{jsCode}</SyntaxHighlighter>
+        </Col>
+        <Col span={24}>
+          <Title level={4} transform="none" align="center">
+            Explanation
+          </Title>
+        </Col>
+        <Col xs={24} sm={22}>
+          <Paragraph align="center" size="preNormal" fontStyle="italic">
+            <Link
+              href="https://javascript.info/rest-parameters-spread"
+              size="preNormal"
+            >
+              Rest spread operator
+            </Link>{' '}
+            is helpful when it comes to working with arrays. Add, edit, delete
+            functions can be used on any object structure and should work well
+            with array of these objects.
+          </Paragraph>
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            Interactive example
+          </Title>
+        </Col>
+        <Col span={24}>
+          <CodeEditorRaw tabs={tabs} initialJs={initialJs} />
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+</Row>

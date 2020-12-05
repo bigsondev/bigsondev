@@ -17,7 +17,7 @@ import {
   Image,
 } from '~components';
 import { truncate } from '~utils';
-import { PillOne, PillTwo, PillThree, PillFour } from '~assets';
+import { PillOne, PillTwo, PillThree, PillFour, PillFive } from '~assets';
 
 const PillCard = styled(MainCard)({
   transition: 'box-shadow 0.3s',
@@ -70,6 +70,7 @@ const PILLS_MAPPER = {
   pillTwo: PillTwo,
   pillThree: PillThree,
   pillFour: PillFour,
+  pillFive: PillFive,
 };
 
 const Pill = ({ desc, path, tags, image, type }) => (
