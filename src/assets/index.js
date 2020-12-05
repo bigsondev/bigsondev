@@ -12,6 +12,8 @@ import BookCoverProject from './book-cover-project.png';
 import TodoAppProject from './todo-app-project.png';
 import RealtimeChatProject from './realtime-chat-project.png';
 import MesfinTestimonial from './mesfin-testimonial.jpeg';
+import BenjaminTestimonial from './benjamin-testimonial.jpeg';
+import MiguelTestimonial from './miguel-testimonial.jpg';
 import MainImage from './main-image.png';
 import PillOne from './pill-1.png';
 import PillTwo from './pill-2.png';
@@ -35,6 +37,8 @@ export {
   TodoAppProject,
   RealtimeChatProject,
   MesfinTestimonial,
+  BenjaminTestimonial,
+  MiguelTestimonial,
   MainImage,
   PillOne,
   PillTwo,

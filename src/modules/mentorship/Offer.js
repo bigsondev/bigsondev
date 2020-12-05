@@ -150,6 +150,24 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
+                        Individual approach
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
+                        Coding life hacks
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
+                        Help with a CV
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
                         Mock interview
                       </Text>
                     </Space>
@@ -169,6 +187,12 @@ export const Offer = () => {
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
                         Development plan
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
+                        Code review
                       </Text>
                     </Space>
                     <Space size="small">
@@ -262,18 +286,16 @@ export const Offer = () => {
                         Learn in-demand technologies
                       </Text>
                     </Space>
-
-                    <Space size="small">
-                      <CheckIcon color={colors.additional} />
-                      <Text textOpacity={1} size="small">
-                        Best practices
-                      </Text>
-                    </Space>
-
                     <Space size="small">
                       <CheckIcon color={colors.additional} />
                       <Text textOpacity={1} size="small">
                         Coding with an expert
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small">
+                        3 + 1 package (1 hour is free)
                       </Text>
                     </Space>
                   </Space>
@@ -358,12 +380,6 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small">
-                        Help with a CV
-                      </Text>
-                    </Space>
-                    <Space size="small">
-                      <CheckIcon color={colors.promo} />
-                      <Text textOpacity={1} size="small">
                         Build confidence
                       </Text>
                     </Space>
@@ -371,6 +387,18 @@ export const Offer = () => {
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small">
                         My personal insights
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small">
+                        Help with starting as a Freelancer
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small">
+                        9 + 3 package (3 hours are free)
                       </Text>
                     </Space>
                   </Space>
