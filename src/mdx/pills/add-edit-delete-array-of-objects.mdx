@@ -51,9 +51,9 @@ const deleteItem = (idToRemove) => {
 }
 `;
 
-export const tabs = ['js'];
-export const initialJs = `// OPEN CONSOLE IN YOUR BROWSER TO SEE LOGS
-/* Let's assume we have the below note structure
+export const tabs = ['js', 'html'];
+export const initialHtml = '<h1>Open console in your browser to see logs</h1>';
+export const initialJs = `/* Let's assume we have the below note structure
    const note = {
      id: 1,
      text: 'Note text',
@@ -210,7 +210,11 @@ console.log(notes) // 2 notes, first deleted\n
           </Title>
         </Col>
         <Col span={24}>
-          <CodeEditorRaw tabs={tabs} initialJs={initialJs} />
+          <CodeEditorRaw
+            tabs={tabs}
+            initialHtml={initialHtml}
+            initialJs={initialJs}
+          />
         </Col>
       </Row>
     </MainCard>

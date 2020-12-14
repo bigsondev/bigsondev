@@ -1,0 +1,133 @@
+---
+path: /pills/sum-reduce/
+desc: Use the versatile .reduce method to sum an array of numbers.
+date: 2020-12-14
+tags: js
+type: boy
+image: pillSix
+---
+
+import { Link as GatsbyLink } from 'gatsby';
+import { Row, Col } from 'antd';
+
+import {
+  theme,
+  Title,
+  Paragraph,
+  Illustration,
+  SyntaxHighlighter,
+  MainCard,
+  Image,
+  Button,
+  Link,
+  CodeEditorRaw,
+} from '~components';
+
+export const initialHtml = '<h1>Open console in your browser to see logs</h1>';
+export const reduceCode = `const numbers = [5, 10, 15, 20];
+const sum = numbers.reduce((acc, value) => acc += value, 0);\n
+console.log(sum); // 50`;
+
+export const tabs = ['js', 'html'];
+
+<Row gutter={[0, 24]}>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            marginBottom="0"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            <Row justify="center" align="center" gutter={16}>
+              <Col>Knowledge Pill</Col>
+              <Col>
+                <Illustration
+                  type={
+                    props.pageContext.frontmatter.type === 'girl'
+                      ? 'girlPill'
+                      : 'boyPill'
+                  }
+                  width={48}
+                  style={{ marginTop: -6 }}
+                />
+              </Col>
+            </Row>
+          </Title>
+        </Col>
+        <Col span={24} sm={22}>
+          <Paragraph align="center">
+            {props.pageContext.frontmatter.desc}
+          </Paragraph>
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            Code
+          </Title>
+        </Col>
+        <Col span={24}>
+          <SyntaxHighlighter showCopy>{reduceCode}</SyntaxHighlighter>
+        </Col>
+        <Col span={24}>
+          <Title level={4} transform="none" align="center">
+            Explanation
+          </Title>
+        </Col>
+        <Col xs={24} sm={22}>
+          <Paragraph align="center" size="preNormal" fontStyle="italic">
+            <Link
+              href="https://www.w3schools.com/jsref/jsref_reduce.asp"
+              size="preNormal"
+            >
+              Reduce method
+            </Link>{' '}
+            is very flexible and can help in all kinds of arrays
+            transformations. It can reduce numbers to sum them up or calculate
+            the average number for example. It also works great with other data
+            structures such as arrays of strings or arrays of objects.
+          </Paragraph>
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            Interactive example
+          </Title>
+        </Col>
+        <Col span={24}>
+          <CodeEditorRaw
+            tabs={tabs}
+            initialHtml={initialHtml}
+            initialJs={reduceCode}
+          />
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+</Row>
