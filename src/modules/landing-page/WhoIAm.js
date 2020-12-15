@@ -432,6 +432,11 @@ export const WhoIAm = () => {
         {showSocials && (
           <SocialsHolder>
             <Space direction="vertical" size="small">
+              <Link href="https://www.codementor.io/@bigsondev">
+                <SocialLinkHolder>
+                  <Icon type="codementor" width="2.5rem" />
+                </SocialLinkHolder>
+              </Link>
               <SocialLinkHolder href="https://github.com/bigsondev">
                 <Icon type="github" width="2.5rem" />
               </SocialLinkHolder>

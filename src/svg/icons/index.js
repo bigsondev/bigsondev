@@ -17,6 +17,7 @@ import InstagramIcon from './instagram.svg';
 import GitHubIcon from './github.svg';
 import GirlPillIcon from './knowledge-pill-red.svg';
 import BoyPillIcon from './knowledge-pill-blue.svg';
+import CodementorIcon from './codementor.svg';
 
 export {
   HomeworkIcon,
@@ -38,4 +39,5 @@ export {
   GitHubIcon,
   GirlPillIcon,
   BoyPillIcon,
+  CodementorIcon,
 };

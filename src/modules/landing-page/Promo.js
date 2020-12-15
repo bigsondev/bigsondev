@@ -55,7 +55,7 @@ const MobileScreenPromo = () => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        mentor.
+        Mentor.
       </Title>
       <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
@@ -95,7 +95,7 @@ const MediumScreenPromo = () => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        with a seasoned mentor.
+        with a seasoned Mentor.
       </Title>
       <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
@@ -135,7 +135,7 @@ const BigScreenPromo = () => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        with a seasoned mentor.
+        with a seasoned Mentor.
       </Title>
       <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>

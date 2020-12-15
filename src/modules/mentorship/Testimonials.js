@@ -7,7 +7,7 @@ import {
   BenjaminTestimonial,
   MiguelTestimonial,
 } from '~assets';
-import { theme, Title, Paragraph, Box } from '~components';
+import { theme, Title, Paragraph, Box, Link } from '~components';
 
 const { fontWeight, spacing, colors } = theme;
 
@@ -82,7 +82,7 @@ export const Testimonials = () => {
           </Col>
           <Col xs={24} lg={12} xl={8}>
             <Testimonial
-              desc={`"Adrian is an amazing mentor, giving you a clear path for success in web development that is designed around YOU. My skills as a web developer are skyrocketing because now I know what I need to be doing and where I should be going. I can't recommend him enough!."`}
+              desc={`"Adrian is an amazing mentor, giving you a clear path for success in web development that is designed around YOU. My skills as a web developer are skyrocketing because now I know what I need to be doing and where I should be going. I can't recommend him enough!"`}
               src={BenjaminTestimonial}
               alt="Benjamin - Mentee testimonial"
               name="Benjamin"
@@ -97,6 +97,24 @@ export const Testimonials = () => {
               name="Miguel"
               title="Fullstack Developer soon"
             />
+          </Col>
+          <Col span={24}>
+            <Paragraph
+              align="center"
+              strong
+              size="preNormal"
+              type="secondary"
+              marginBottom="0"
+            >
+              More testimonials about my services can be found on{' '}
+              <Link
+                size="preNormal"
+                href="https://www.reddit.com/r/testimonials/search?q=BigsonDev&restrict_sr=on&include_over_18=on&sort=relevance&t=all"
+              >
+                reddit
+              </Link>
+              .
+            </Paragraph>
           </Col>
         </Row>
       </Box>

@@ -69,11 +69,11 @@ const PillsLayout = ({
                   >
                     <Icon type="twitter" width="3.125rem" />
                   </IconHolder>
-                  <IconHolder href={shareOnLinkedin()}>
-                    <Icon type="linkedin" width="3.125rem" />
-                  </IconHolder>
                   <IconHolder href={shareOnFacebook()}>
                     <Icon type="facebook" width="3.125rem" />
+                  </IconHolder>
+                  <IconHolder href={shareOnLinkedin()}>
+                    <Icon type="linkedin" width="3.125rem" />
                   </IconHolder>
                 </Space>
               }

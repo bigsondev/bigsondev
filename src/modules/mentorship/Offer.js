@@ -15,6 +15,7 @@ import {
   MainCard,
   SmallOnly,
   ExceptSmall,
+  Link,
 } from '~components';
 
 const { colors, fontSize, fontWeight, spacing, opacity } = theme;
@@ -409,6 +410,24 @@ export const Offer = () => {
                 Change your career
               </BuyButton>
             </SuperOfferCard>
+          </Col>
+          <Col span={24}>
+            <Paragraph
+              align="center"
+              strong
+              size="preNormal"
+              type="secondary"
+              marginBottom="0"
+            >
+              I'm a verified Mentor on{' '}
+              <Link
+                size="preNormal"
+                href="https://www.codementor.io/@bigsondev"
+              >
+                codementor
+              </Link>
+              .
+            </Paragraph>
           </Col>
         </Row>
         <Box margin={`${spacing.large} 0`}>

@@ -3,7 +3,7 @@ module.exports = {
     siteUrl: 'https://bigsondev.com/',
     domain: 'bigsondev.com',
     title: `| Adrian Bigaj | bigsondev.com`,
-    description: `Learn Frontend faster with a seasoned mentor. Get out of tutorials hell. Reach long-term goals, find your first IT job, and feel the real progress. Invest in yourself and make learning a breeze.`,
+    description: `Learn Frontend faster with a seasoned Mentor. Get out of tutorials hell. Reach long-term goals, find your first IT job, and feel the real progress. Invest in yourself and make learning a breeze.`,
     keywords:
       'frontend, mentor, coaching, coding, javascript, html, css, coding challenges, coding practice, tutorials, tutoring, blog, library, skyrocket career, carrer change, improve, learn',
     author: `@BigsonDev`,

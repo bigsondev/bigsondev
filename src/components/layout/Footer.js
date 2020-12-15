@@ -107,6 +107,11 @@ export const Footer = () => (
           </Col>
           <Col>
             <Space size="small">
+              <Link href="https://www.codementor.io/@bigsondev">
+                <IconHolder>
+                  <Icon type="codementor" width="3.125rem" />
+                </IconHolder>
+              </Link>
               <Link href="https://github.com/bigsondev">
                 <IconHolder>
                   <Icon type="github" width="3.125rem" />

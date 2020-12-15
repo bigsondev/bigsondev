@@ -50,11 +50,11 @@ export const PostTitle = ({ title, showSubtitle = false, date, readTime }) => (
             <IconHolder href={shareOnTwitter(title)}>
               <Icon type="twitter" />
             </IconHolder>
-            <IconHolder href={shareOnLinkedin()}>
-              <Icon type="linkedin" />
-            </IconHolder>
             <IconHolder href={shareOnFacebook()}>
               <Icon type="facebook" />
+            </IconHolder>
+            <IconHolder href={shareOnLinkedin()}>
+              <Icon type="linkedin" />
             </IconHolder>
           </Space>
         </Col>

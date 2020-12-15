@@ -22,6 +22,7 @@ import {
   GitHubIcon,
   GirlPillIcon,
   BoyPillIcon,
+  CodementorIcon,
 } from '~svg';
 
 const Holder = styled(AntdIcon)(({ width = 32 }) => ({
@@ -52,6 +53,7 @@ const ICON_MAPPER = {
   github: GitHubIcon,
   girlPill: GirlPillIcon,
   boyPill: BoyPillIcon,
+  codementor: CodementorIcon,
 };
 
 export const Icon = ({ type, ...props }) => {
