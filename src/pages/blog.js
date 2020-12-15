@@ -80,20 +80,24 @@ const Article = ({
       )}
       <Row gutter={[0, 8]}>
         <Col span={24}>
-          <Space size="middle">
-            <Text size="micro" type="secondary">
-              <Space>
-                <CalendarOutlined />
-                <span>{moment(date).format('MMM D')}</span>
-              </Space>
-            </Text>
-            <Text size="micro" type="secondary">
-              <Space>
-                <FieldTimeOutlined />
-                <span>{readTime} min</span>
-              </Space>
-            </Text>
-          </Space>
+          <Row justify="space-between" align="middle">
+            <Col>
+              <Text size="micro" type="secondary">
+                <Space>
+                  <CalendarOutlined />
+                  <span>{moment(date).format('MMM D, YYYY')}</span>
+                </Space>
+              </Text>
+            </Col>
+            <Col>
+              <Text size="micro" type="secondary">
+                <Space>
+                  <FieldTimeOutlined />
+                  <span>{readTime} min</span>
+                </Space>
+              </Text>
+            </Col>
+          </Row>
         </Col>
         <Col span={24}>
           <Title level={4} transform="capitalize">

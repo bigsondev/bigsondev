@@ -1,10 +1,10 @@
 ---
-path: /pills/sum-reduce/
-desc: Use the versatile .reduce method to sum an array of numbers.
-date: 2020-12-14
+path: /pills/method-chaining/
+desc: Method chaining is a helpful pattern to learn in programming. It complies with the functional, declarative approach and reduces repetition.
+date: 2020-12-15
 tags: js
 type: boy
-image: pillSix
+image: pillSeven
 ---
 
 import { Link as GatsbyLink } from 'gatsby';
@@ -23,12 +23,32 @@ import {
   CodeEditorRaw,
 } from '~components';
 
-export const reduceCode = `const numbers = [5, 10, 15, 20];
-const sum = numbers.reduce((acc, value) => acc += value, 0);`;
+export const methodChainingCode = `// Let's count vowels in a string using the method chaining
+const VOWELS = ['a', 'e', 'i', 'o', 'u'];\n
+// Reduce an array of letters to get the sum of vowels
+// and pass a function to .reduce method to make it more readable
+const countVowels = (sum, letter) => (VOWELS.includes(letter) ? ++sum : sum);\n
+// 1. .replace returns a string without whitespaces
+// 2. .split returns an array of letters
+// 3. .reduce reduces an array of letters into a single number - the sum of vowels
+const getVowelsCount = (string) =>
+  string.replace(/ /g, '').split('').reduce(countVowels, 0);
+`;
 export const initialHtml = '<h1>Open console in your browser to see logs</h1>';
-export const initialJs = `const numbers = [5, 10, 15, 20];
-const sum = numbers.reduce((acc, value) => acc += value, 0);\n
-console.log(sum); // 50`;
+export const initialJs = `// Let's count vowels in a string using the method chaining
+const VOWELS = ['a', 'e', 'i', 'o', 'u'];\n
+// Reduce an array of letters to get the sum of vowels
+// and pass a function to .reduce method to make it more readable
+const countVowels = (sum, letter) => (VOWELS.includes(letter) ? ++sum : sum);\n
+// 1. .replace returns a string without whitespaces
+// 2. .split returns an array of letters
+// 3. .reduce reduces an array of letters into a single number - the sum of vowels
+const getVowelsCount = (string) =>
+  string.replace(/ /g, '').split('').reduce(countVowels, 0);\n
+console.log(getVowelsCount('Hello World!')); // 3
+console.log(getVowelsCount('bbb')); // 0
+console.log(getVowelsCount('a b c d e')); // 2  
+`;
 
 export const tabs = ['js', 'html'];
 
@@ -84,7 +104,7 @@ export const tabs = ['js', 'html'];
           </Title>
         </Col>
         <Col span={24}>
-          <SyntaxHighlighter showCopy>{reduceCode}</SyntaxHighlighter>
+          <SyntaxHighlighter showCopy>{methodChainingCode}</SyntaxHighlighter>
         </Col>
         <Col span={24}>
           <Title level={4} transform="none" align="center">
@@ -94,15 +114,16 @@ export const tabs = ['js', 'html'];
         <Col xs={24} sm={22}>
           <Paragraph align="center" size="preNormal" fontStyle="italic">
             <Link
-              href="https://www.w3schools.com/jsref/jsref_reduce.asp"
+              href="https://www.tutorialspoint.com/method-chaining-in-javascript"
               size="preNormal"
             >
-              Reduce method
+              Method chaining
             </Link>{' '}
-            is very flexible and can help in all kinds of arrays
-            transformations. It can reduce numbers to sum them up or calculate
-            the average number for example. It also works great with other data
-            structures such as arrays of strings or arrays of objects.
+            is a really good pattern for avoiding repetition and making your
+            code more readable. It plays well with functional programming and is
+            often used in JavaScript. Each of the methods needs to return
+            something in order to call another method on it. Hence the chaining
+            name.
           </Paragraph>
         </Col>
       </Row>

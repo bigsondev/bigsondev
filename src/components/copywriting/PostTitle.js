@@ -35,7 +35,7 @@ export const PostTitle = ({ title, showSubtitle = false, date, readTime }) => (
         <Col>
           <Space size="large">
             <Text type="secondary" size="small">
-              {moment(date).format('MMMM D, YYYY')}
+              {moment(date).format('MMM D, YYYY')}
             </Text>
             <Text type="secondary" size="small">
               {readTime} min read

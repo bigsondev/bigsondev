@@ -2,6 +2,8 @@ import React from 'react';
 import { Link as GatsbyLink, graphql } from 'gatsby';
 import { Row, Col, Space, Divider } from 'antd';
 import styled from 'styled-components';
+import moment from 'moment';
+import { CalendarOutlined } from '@ant-design/icons';
 
 import {
   Layout,
@@ -13,11 +15,18 @@ import {
   SlackBanner,
   Button,
   MainCard,
-  Icon,
   Image,
 } from '~components';
 import { truncate } from '~utils';
-import { PillOne, PillTwo, PillThree, PillFour, PillFive, PillSix } from '~assets';
+import {
+  PillOne,
+  PillTwo,
+  PillThree,
+  PillFour,
+  PillFive,
+  PillSix,
+  PillSeven,
+} from '~assets';
 
 const PillCard = styled(MainCard)({
   transition: 'box-shadow 0.3s',
@@ -57,7 +66,7 @@ export const query = graphql`
             tags
             type
             image
-            date(formatString: "MMM D")
+            date(formatString: "MMM D, YYYY")
           }
         }
       }
@@ -72,14 +81,23 @@ const PILLS_MAPPER = {
   pillFour: PillFour,
   pillFive: PillFive,
   pillSix: PillSix,
+  pillSeven: PillSeven,
 };
 
-const Pill = ({ desc, path, tags, image, type }) => (
+const Pill = ({ date, desc, path, tags, image, type }) => (
   <GatsbyLink to={path}>
     <PillCard>
       <Row gutter={[0, 8]}>
         <Col span={24}>
           <Row justify="space-between" align="middle">
+            <Col>
+              <Text size="micro" type="secondary">
+                <Space>
+                  <CalendarOutlined />
+                  <span>{moment(date).format('MMM D, YYYY')}</span>
+                </Space>
+              </Text>
+            </Col>
             <Col>
               <Space size="middle">
                 {tags.split(',').map((tag) => (
@@ -94,12 +112,6 @@ const Pill = ({ desc, path, tags, image, type }) => (
                   </Text>
                 ))}
               </Space>
-            </Col>
-            <Col>
-              <Icon
-                type={type === 'girl' ? 'girlPill' : 'boyPill'}
-                width={24}
-              />
             </Col>
           </Row>
         </Col>
