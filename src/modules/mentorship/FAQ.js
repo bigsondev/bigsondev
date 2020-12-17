@@ -21,7 +21,7 @@ export const FAQ = () => (
         fontSize={fontSize.superLarge}
         fontWeight={fontWeight.stronger}
       >
-        Frequently asked questions
+        FAQ
       </Title>
       <Row justify="center" gutter={[40, 24]}>
         <Col xs={22} lg={12}>

@@ -16,6 +16,7 @@ import {
   SmallOnly,
   ExceptSmall,
   Link,
+  Icon,
 } from '~components';
 
 const { colors, fontSize, fontWeight, spacing, opacity } = theme;
@@ -411,7 +412,7 @@ export const Offer = () => {
               </BuyButton>
             </SuperOfferCard>
           </Col>
-          <Col span={24}>
+          <Col span={22}>
             <Paragraph
               align="center"
               strong
@@ -441,8 +442,11 @@ export const Offer = () => {
             How it works
           </Title>
         </Box>
-        <Row justify="center" gutter={24}>
+        <Row justify="center" gutter={40}>
           <Col xs={18} lg={8}>
+            <Box display="flex" justify="center">
+              <Icon type="call" width={64} />
+            </Box>
             <Title
               level={4}
               transform="none"
@@ -464,6 +468,9 @@ export const Offer = () => {
             </Paragraph>
           </Col>
           <Col xs={18} lg={8}>
+            <Box display="flex" justify="center">
+              <Icon type="support" width={64} />
+            </Box>
             <Title
               level={4}
               transform="none"
@@ -480,6 +487,9 @@ export const Offer = () => {
             </Paragraph>
           </Col>
           <Col xs={18} lg={8}>
+            <Box display="flex" justify="center">
+              <Icon type="build" width={64} />
+            </Box>
             <Title
               level={4}
               transform="none"
@@ -498,9 +508,52 @@ export const Offer = () => {
           </Col>
         </Row>
         <Box margin={`${spacing.large} 0 0 0`}>
+          <Row justify="center">
+            <Col xs={22} lg={12}>
+              <Box margin={`0 0 ${spacing.large} 0`}>
+                <Title
+                  level={3}
+                  transform="none"
+                  align="center"
+                  color={colors.primary}
+                  fontSize={fontSize.superLarge}
+                  fontWeight={fontWeight.stronger}
+                >
+                  I've gained experience and became an expert thanks to these
+                  amazing companies
+                </Title>
+              </Box>
+            </Col>
+          </Row>
+          <Row justify="center">
+            <Col xs={22}>
+              <Row justify="center" gutter={[32, 32]}>
+                <Col xs={12} sm={8} lg={4}>
+                  <Illustration type="ericsson" />
+                </Col>
+                <Col xs={12} sm={8} lg={4}>
+                  <Illustration type="grapeUp" />
+                </Col>
+                <Col xs={12} sm={8} lg={4}>
+                  <Illustration type="balfour" />
+                </Col>
+                <Col xs={12} sm={8} lg={4}>
+                  <Illustration type="jlabs" />
+                </Col>
+                <Col xs={12} sm={8} lg={4}>
+                  <Illustration type="sinch" />
+                </Col>
+                <Col xs={12} sm={8} lg={4}>
+                  <Illustration type="koji" />
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Box>
+        <Box margin={`${spacing.large} 0 0 0`}>
           <Title level={4} transform="none" align="center">
-            Missing more explanation? Let's hop on a free call to discuss the
-            details of Mentorship
+            Unsure? Let's hop on a free call to discuss the details of
+            Mentorship
           </Title>
           <Box
             display="flex"

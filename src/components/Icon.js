@@ -23,6 +23,9 @@ import {
   GirlPillIcon,
   BoyPillIcon,
   CodementorIcon,
+  CallIcon,
+  SupportIcon,
+  BuildIcon,
 } from '~svg';
 
 const Holder = styled(AntdIcon)(({ width = 32 }) => ({
@@ -54,6 +57,9 @@ const ICON_MAPPER = {
   girlPill: GirlPillIcon,
   boyPill: BoyPillIcon,
   codementor: CodementorIcon,
+  call: CallIcon,
+  support: SupportIcon,
+  build: BuildIcon,
 };
 
 export const Icon = ({ type, ...props }) => {

@@ -7,9 +7,17 @@ import {
   BenjaminTestimonial,
   MiguelTestimonial,
 } from '~assets';
-import { theme, Title, Paragraph, Box, Link } from '~components';
+import {
+  theme,
+  Title,
+  Paragraph,
+  Box,
+  Link,
+  ExceptSmall,
+  SmallOnly,
+} from '~components';
 
-const { fontWeight, spacing, colors } = theme;
+const { fontSize, fontWeight, spacing, colors } = theme;
 
 const Holder = styled.div({
   position: 'relative',
@@ -25,20 +33,21 @@ const TestimonialImage = styled.img({
 
 const Testimonial = ({ desc, src, alt, name, title }) => (
   <Row justify="center" style={{ height: '100%' }}>
-    <Col span={20} style={{ marginBottom: '1.5rem' }}>
+    <Col span={24} style={{ textAlign: 'center', marginBottom: '1rem' }}>
+      <TestimonialImage src={src} alt={alt} />
+    </Col>
+    <Col span={20}>
       <Paragraph
         align="center"
         fontStyle="italic"
         size="preNormal"
         fontWeight={fontWeight.medium}
+        marginBottom="3rem"
       >
         {desc}
       </Paragraph>
     </Col>
     <Col span={24} style={{ marginTop: 'auto' }}>
-      <Col span={24} style={{ textAlign: 'center' }}>
-        <TestimonialImage src={src} alt={alt} />
-      </Col>
       <Col span={24}>
         <Title
           level={4}
@@ -66,6 +75,16 @@ export const Testimonials = () => {
   return (
     <Holder id="bigsondev-free-consultation">
       <Box padding={`${spacing.extraLarge} 0`}>
+        <Title
+          transform="none"
+          align="center"
+          marginBottom={spacing.large}
+          color={colors.primary}
+          fontSize={fontSize.superLarge}
+          fontWeight={fontWeight.stronger}
+        >
+          Happy Mentees
+        </Title>
         <Row justify="center" gutter={[24, 24]}>
           <Col xs={24} lg={12} xl={8}>
             <Testimonial
@@ -91,14 +110,37 @@ export const Testimonials = () => {
           </Col>
           <Col xs={24} lg={12} xl={8}>
             <Testimonial
-              desc={`"I am so grateful for Adrian's mentorship. Adrian develops an individualized plan for each mentee and you can tell that he really does care about his mentees and is willing to go above and beyond for them. He not only teaches industry standard technologies but also gives coding life hacks to take your programming to the next level - something University never gave me."`}
+              desc={
+                <>
+                  <ExceptSmall>
+                    <Box margin="2.5rem 0 0 0">
+                      "I am so grateful for Adrian's mentorship. Adrian develops
+                      an individualized plan for each mentee and you can tell
+                      that he really does care about his mentees and is willing
+                      to go above and beyond for them. He not only teaches
+                      industry standard technologies but also gives coding life
+                      hacks to take your programming to the next level -
+                      something University never gave me."
+                    </Box>
+                  </ExceptSmall>
+                  <SmallOnly>
+                    "I am so grateful for Adrian's mentorship. Adrian develops
+                    an individualized plan for each mentee and you can tell that
+                    he really does care about his mentees and is willing to go
+                    above and beyond for them. He not only teaches industry
+                    standard technologies but also gives coding life hacks to
+                    take your programming to the next level - something
+                    University never gave me."
+                  </SmallOnly>
+                </>
+              }
               src={MiguelTestimonial}
               alt="Miguel - Mentee testimonial"
               name="Miguel"
               title="Fullstack Developer soon"
             />
           </Col>
-          <Col span={24}>
+          <Col span={22}>
             <Paragraph
               align="center"
               strong
