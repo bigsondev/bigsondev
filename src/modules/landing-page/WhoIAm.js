@@ -359,7 +359,7 @@ export const WhoIAm = () => {
                     fontSize={fontSize.superLarge}
                     fontWeight={fontWeight.stronger}
                   >
-                    I wouldn't be where I am today if I wasn't working with some
+                    I wouldn't be where I am today if I wasn't working for those
                     amazing companies
                   </Title>
                 </Box>

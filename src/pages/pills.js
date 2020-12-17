@@ -26,6 +26,7 @@ import {
   PillFive,
   PillSix,
   PillSeven,
+  PillEight,
 } from '~assets';
 
 const PillCard = styled(MainCard)({
@@ -82,6 +83,7 @@ const PILLS_MAPPER = {
   pillFive: PillFive,
   pillSix: PillSix,
   pillSeven: PillSeven,
+  pillEight: PillEight,
 };
 
 const Pill = ({ date, desc, path, tags, image, type }) => (

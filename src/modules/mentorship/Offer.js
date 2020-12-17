@@ -519,7 +519,7 @@ export const Offer = () => {
                   fontSize={fontSize.superLarge}
                   fontWeight={fontWeight.stronger}
                 >
-                  I've gained experience and became an expert thanks to these
+                  I've gained confidence and became an expert thanks to those
                   amazing companies
                 </Title>
               </Box>
