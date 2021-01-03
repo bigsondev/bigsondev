@@ -142,7 +142,7 @@ export const Offer = () => {
                         align="center"
                         color={colors.grayLevelNine}
                       >
-                        $40
+                        $60
                       </Title>
                     </Space>
                   </Box>
@@ -164,18 +164,6 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Help with a CV
-                      </Text>
-                    </Space>
-                    <Space size="small">
-                      <CheckIcon color={colors.primary} />
-                      <Text textOpacity={1} size="small">
-                        Mock interview
-                      </Text>
-                    </Space>
-                    <Space size="small">
-                      <CheckIcon color={colors.primary} />
-                      <Text textOpacity={1} size="small">
                         Robust feedback
                       </Text>
                     </Space>
@@ -188,19 +176,13 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Development plan
-                      </Text>
-                    </Space>
-                    <Space size="small">
-                      <CheckIcon color={colors.primary} />
-                      <Text textOpacity={1} size="small">
                         Code review
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Additional assignments
+                        Assignments
                       </Text>
                     </Space>
                     <Space size="small">
@@ -251,7 +233,7 @@ export const Offer = () => {
                         align="center"
                         color={colors.grayLevelNine}
                       >
-                        $120
+                        $220
                       </Title>
                     </Space>
                   </Box>
@@ -289,15 +271,21 @@ export const Offer = () => {
                       </Text>
                     </Space>
                     <Space size="small">
-                      <CheckIcon color={colors.additional} />
+                      <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Coding with an expert
+                        Development plan
                       </Text>
                     </Space>
                     <Space size="small">
-                      <CheckIcon color={colors.additional} />
+                      <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        3 + 1 package (1 hour is free)
+                        Help with a CV
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
+                        Mock interview
                       </Text>
                     </Space>
                   </Space>
@@ -342,7 +330,7 @@ export const Offer = () => {
                         align="center"
                         color={colors.grayLevelNine}
                       >
-                        $350
+                        $600
                       </Title>
                     </Space>
                   </Box>
@@ -395,12 +383,6 @@ export const Offer = () => {
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small">
                         Help with starting as a Freelancer
-                      </Text>
-                    </Space>
-                    <Space size="small">
-                      <CheckIcon color={colors.promo} />
-                      <Text textOpacity={1} size="small">
-                        9 + 3 package (3 hours are free)
                       </Text>
                     </Space>
                   </Space>
