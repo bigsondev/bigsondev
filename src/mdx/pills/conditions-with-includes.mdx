@@ -1,0 +1,206 @@
+---
+path: /pills/conditions-with-includes/
+desc: Checking multiple values in JavaScript often leads to redundant, boilerplate code - let's use .includes method to fix that.
+date: 2021-01-03
+tags: js
+type: boy
+image: pillNine
+---
+
+import { Link as GatsbyLink } from 'gatsby';
+import { Row, Col } from 'antd';
+
+import {
+  theme,
+  Title,
+  Paragraph,
+  Text,
+  Illustration,
+  SyntaxHighlighter,
+  MainCard,
+  Image,
+  Button,
+  Link,
+  CodeEditorRaw,
+} from '~components';
+
+export const codeSnippet = `
+// It's common to check against multiple enums, strings, 
+// especially when the data comes from the server 
+// with all of them at once
+const TAGS = {
+  html: 'HTML',
+  css: 'CSS',
+  js: 'JS',
+  react: 'REACT',
+  vue: 'VUE',
+  angular: 'ANGULAR'
+}\n
+// For purposes of the example we set static tag,
+// would be dynamic in real scenario
+const currentTag = TAGS.react;\n
+// Let's leverage .includes method with custom function, 
+// to achieve the same result
+const checkForFrameworkTag = (tag) => {
+ const frameworkTags = [TAGS.react, TAGS.vue, TAGS.angular];\n
+ return frameworkTags.includes(tag);
+}\n
+const isFrameworkTag = checkForFrameworkTag(currentTag);\n
+if (isFrameworkTag) {
+ console.log('Current tag is a framework tag!');
+}`;
+export const initialHtml = '<h1>Open console in your browser to see logs</h1>';
+export const initialJs = `// It's common to check against multiple enums, strings, 
+// especially when the data comes from the server 
+// with all of them at once
+const TAGS = {
+  html: 'HTML',
+  css: 'CSS',
+  js: 'JS',
+  react: 'REACT',
+  vue: 'VUE',
+  angular: 'ANGULAR'
+}\n
+// For purposes of the example we set static tag,
+// would be dynamic in real scenario
+const currentTag = TAGS.react;\n
+// ❌ ❌ ❌ You can end up with if else statements
+if (currentTag === TAGS.react) {
+ console.log('❌ ❌ ❌ Current tag is a framework tag');
+} else if (currentTag === TAGS.vue) {
+ console.log('Current tag is a framework tag');
+} else if (currentTag === TAGS.angular) {
+ console.log('Current tag is a framework tag');
+} else {
+ console.log('Current tag is NOT a framework tag');
+}\n
+// ❌ ❌ You can end up with switch statements
+switch (currentTag) {
+ case TAGS.react:
+ case TAGS.vue:
+ case TAGS.angular:
+  console.log('❌ ❌ Current tag is a framework tag');
+  break;
+ default:
+  console.log('Current tag is NOT a framework tag');
+  break;
+}\n
+// ❌ You can end up with many conditions at once
+if (currentTag === TAGS.react || currentTag === TAGS.vue || currentTag === TAGS.angular) {
+  console.log('❌ Current tag is a framework tag');
+}\n
+// ✅ Instead, let's leverage .includes method with custom function, 
+// to achieve the same result
+const checkForFrameworkTag = (tag) => {
+ const frameworkTags = [TAGS.react, TAGS.vue, TAGS.angular];\n
+ return frameworkTags.includes(tag);
+}\n
+const isFrameworkTag = checkForFrameworkTag(currentTag);\n
+if (isFrameworkTag) {
+ console.log('✅ Current tag is a framework tag - shorter, cleaner, semantic!');
+}`;
+
+export const tabs = ['js', 'html'];
+
+<Row gutter={[0, 24]}>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            marginBottom="0"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            <Row justify="center" align="center" gutter={16}>
+              <Col>Knowledge Pill</Col>
+              <Col>
+                <Illustration
+                  type={
+                    props.pageContext.frontmatter.type === 'girl'
+                      ? 'girlPill'
+                      : 'boyPill'
+                  }
+                  width={48}
+                  style={{ marginTop: -6 }}
+                />
+              </Col>
+            </Row>
+          </Title>
+        </Col>
+        <Col span={24} sm={22}>
+          <Paragraph align="center">
+            {props.pageContext.frontmatter.desc}
+          </Paragraph>
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            Code
+          </Title>
+        </Col>
+        <Col span={24}>
+          <SyntaxHighlighter showCopy>{codeSnippet}</SyntaxHighlighter>
+        </Col>
+        <Col span={24}>
+          <Title level={4} transform="none" align="center">
+            Explanation
+          </Title>
+        </Col>
+        <Col xs={24} sm={22}>
+          <Paragraph align="center" size="preNormal" fontStyle="italic">
+            <Link
+              href="https://www.w3schools.com/jsref/jsref_includes_array.asp"
+              size="preNormal"
+            >
+              .includes
+            </Link>{' '}
+            <Text size="preNormal" code>
+              Array
+            </Text>{' '}
+            method is useful to minimize additional, boilerplate code when doing
+            multiple condition checks.
+          </Paragraph>
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+  <Col span={24}>
+    <MainCard>
+      <Row justify="center">
+        <Col span={24}>
+          <Title
+            level={3}
+            transform="none"
+            align="center"
+            fontSize={theme.fontSize.superLarge}
+            fontWeight={theme.fontWeight.stronger}
+          >
+            Interactive example
+          </Title>
+        </Col>
+        <Col span={24}>
+          <CodeEditorRaw
+            tabs={tabs}
+            initialHtml={initialHtml}
+            initialJs={initialJs}
+          />
+        </Col>
+      </Row>
+    </MainCard>
+  </Col>
+</Row>
