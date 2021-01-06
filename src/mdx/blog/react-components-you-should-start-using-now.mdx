@@ -1,10 +1,6 @@
 ---
 title: React Components You Should Start Using Now
 desc: There is a lot of pre-built, reusable, abstracted, encapsulated, and tested code available to use nowadays. In Frontend, we call this code a building block or shorter, a component. Good developers copy, great developers steal.
-path: /blog/react-components-you-should-start-using-now/
-hasCheatSheet: true
-hasTodoList: false
-series: false
 readTime: 8
 illustration: none
 tags: react, components
@@ -19,6 +15,7 @@ import {
   Post,
   PostList,
   PostCard,
+  PostFooter,
   SyntaxHighlighter,
   Link,
   Box,
@@ -172,10 +169,10 @@ export const implementationLinks = (mui, antd) => {
 };
 
 <Post
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
-  date={props.pageContext.frontmatter.date}
-  readTime={props.pageContext.frontmatter.readTime}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
+  date={props.frontmatter.date}
+  readTime={props.frontmatter.readTime}
   showSubtitle
 >
   <Title level={3}>Prerequisites</Title>
@@ -422,5 +419,5 @@ export const implementationLinks = (mui, antd) => {
     hunt some and start using them in your application if you find they could be
     useful.
   </Paragraph>
-  <Paragraph>Happy Coding! ❤️</Paragraph>
+  <PostFooter />
 </Post>

@@ -1,6 +1,5 @@
 ---
-path: /pills/reset-normalize-css/
-interactivePath: /interactive-examples/reset-normalize-css/
+title: Reset normalize CSS
 desc: Avoid CSS reset and normalize your styles through different browsers, preserve useful defaults, correct bugs and common browser issues.
 date: 2020-12-02
 tags: html, css
@@ -8,27 +7,14 @@ type: boy
 image: pillThree
 ---
 
-import { Link as GatsbyLink } from 'gatsby';
-import { Row, Col } from 'antd';
-
 import {
-  theme,
-  Title,
-  Paragraph,
-  Illustration,
   SyntaxHighlighter,
-  MainCard,
-  Image,
-  Button,
   Link,
-  Box,
-  Text,
   CodeEditorRaw,
+  KnowledgePill,
+  Text,
+  Paragraph,
 } from '~components';
-
-export const outlineCode = `* {
-  outline: 1px solid red;  
-}`;
 
 export const npmInstallCode = `// First intall normalize.css through npm
 npm install --save normalize.css`;
@@ -37,9 +23,11 @@ export const importCode = `// Then import it in your index.js file to take effec
 import 'normalize.css';`;
 
 export const tabs = ['html', 'css'];
+
 export const initialHtml = `<div class="container">
   I am normalized wooohooo!
 </div>`;
+
 export const initialCss = `/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */\n
 /* Document
    ========================================================================== */\n
@@ -330,131 +318,61 @@ body {
   color: #FFF;
 }`;
 
-<Row gutter={[0, 24]}>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
+<KnowledgePill
+  code={
+    <>
+      <SyntaxHighlighter title="npm script" showCopy>
+        {npmInstallCode}
+      </SyntaxHighlighter>
+      <SyntaxHighlighter title="JS code" showCopy>
+        {importCode}
+      </SyntaxHighlighter>
+    </>
+  }
+  explanation={
+    <>
+      <Paragraph align="center" size="preNormal">
+        There is a{' '}
+        <Link
+          href="https://meyerweb.com/eric/tools/css/reset/"
+          size="preNormal"
+        >
+          CSS reset
+        </Link>{' '}
+        available out there{' '}
+        <Text size="preNormal" strong>
+          but I highly recommend using{' '}
+          <Link
+            href="https://github.com/necolas/normalize.css/"
+            size="preNormal"
+            strong
           >
-            <Row justify="center" align="center" gutter={16}>
-              <Col>Knowledge Pill</Col>
-              <Col>
-                <Illustration
-                  type={
-                    props.pageContext.frontmatter.type === 'girl'
-                      ? 'girlPill'
-                      : 'boyPill'
-                  }
-                  width={48}
-                  style={{ marginTop: -6 }}
-                />
-              </Col>
-            </Row>
-          </Title>
-        </Col>
-        <Col xs={24} sm={22}>
-          <Paragraph align="center">
-            {props.pageContext.frontmatter.desc}
-          </Paragraph>
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            Code
-          </Title>
-        </Col>
-        <Col span={24}>
-          <SyntaxHighlighter title="npm script" showCopy>
-            {npmInstallCode}
-          </SyntaxHighlighter>
-        </Col>
-        <Col span={24}>
-          <SyntaxHighlighter title="JS code" showCopy>
-            {importCode}
-          </SyntaxHighlighter>
-        </Col>
-        <Col span={24}>
-          <Title level={4} transform="none" align="center">
-            Explanation
-          </Title>
-        </Col>
-        <Col xs={24} sm={22}>
-          <Paragraph align="center" size="preNormal">
-            There is a{' '}
-            <Link
-              href="https://meyerweb.com/eric/tools/css/reset/"
-              size="preNormal"
-            >
-              CSS reset
-            </Link>{' '}
-            available out there{' '}
-            <Text size="preNormal" strong>
-              but I highly recommend using{' '}
-              <Link
-                href="https://github.com/necolas/normalize.css/"
-                size="preNormal"
-                strong
-              >
-                normalize.css
-              </Link>{' '}
-              instead.
-            </Text>{' '}
-            It's less intruisive, corrects bugs, is more modular and has better
-            documentation.
-          </Paragraph>
-          <Paragraph align="center" size="preNormal">
-            You can alternatively copy{' '}
-            <Link
-              size="preNormal"
-              href="https://github.com/necolas/normalize.css/blob/master/normalize.css"
-            >
-              CSS code
-            </Link>{' '}
-            to your project if you don't use npm in it.
-          </Paragraph>
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            Interactive example
-          </Title>
-        </Col>
-        <Col span={24}>
-          <CodeEditorRaw
-            tabs={tabs}
-            initialHtml={initialHtml}
-            initialCss={initialCss}
-          />
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-</Row>
+            normalize.css
+          </Link>{' '}
+          instead.
+        </Text>{' '}
+        It's less intruisive, corrects bugs, is more modular and has better
+        documentation.
+      </Paragraph>
+      <Paragraph align="center" size="preNormal">
+        You can alternatively copy{' '}
+        <Link
+          size="preNormal"
+          href="https://github.com/necolas/normalize.css/blob/master/normalize.css"
+        >
+          CSS code
+        </Link>{' '}
+        to your project if you don't use npm in it.
+      </Paragraph>
+    </>
+  }
+  interactiveExample={
+    <CodeEditorRaw
+      tabs={tabs}
+      initialHtml={initialHtml}
+      initialCss={initialCss}
+    />
+  }
+  {...props}
+  {...props.frontmatter}
+/>

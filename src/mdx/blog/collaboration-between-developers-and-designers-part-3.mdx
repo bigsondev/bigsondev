@@ -1,10 +1,6 @@
 ---
 title: Collaboration Between Developers And Designers - Part 3
 desc: A Design System is a place where everything makes sense. It consists of components, patterns, principles, best practices, and is the ultimate source of truth. It’s documentation everyone needs in IT - Developers, Designers, Product Owners, and sometimes even clients.
-path: /blog/collaboration-between-developers-and-designers-part-3/
-hasCheatSheet: false
-hasTodoList: false
-series: true
 readTime: 4
 illustration: none
 tags: productivity, teamwork, agile
@@ -20,6 +16,7 @@ import {
   Post,
   PostList,
   PostCard,
+  PostFooter,
   SyntaxHighlighter,
   Link,
   Box,
@@ -43,16 +40,11 @@ export const questions = [
 ];
 
 <Post
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
-  date={props.pageContext.frontmatter.date}
-  readTime={props.pageContext.frontmatter.readTime}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
+  date={props.frontmatter.date}
+  readTime={props.frontmatter.readTime}
   showSubtitle
-  prev={
-    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-2/">
-      Previous
-    </GatsbyLink>
-  }
 >
   <Title level={3}>Problem - Lack of a Design System 🧐</Title>
   <Paragraph>
@@ -151,17 +143,5 @@ export const questions = [
     problems, server limitations to consider and to include in designs (which
     often is skipped) 😱 .
   </Paragraph>
-  <Paragraph>
-    Join me on{' '}
-    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-3/#bigsondev-slack">
-      Slack
-    </GatsbyLink>{' '}
-    or post/share on some{' '}
-    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-3/#bigsondev-spread-the-word">
-      socials
-    </GatsbyLink>{' '}
-    , I’ll be happy to help and give some tips & tricks I learned during my
-    journey.
-  </Paragraph>
-  <Paragraph>Take care and stay healthy in these difficult times! ❤️</Paragraph>
+  <PostFooter />
 </Post>

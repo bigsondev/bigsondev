@@ -158,6 +158,12 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
+                        Study group member
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
                         Coding life hacks
                       </Text>
                     </Space>

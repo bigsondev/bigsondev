@@ -81,6 +81,7 @@ export const Quiz = ({ data: initialData, title, desc, next }) => {
     [STAGE_MAPPER.completed]: (
       <Completed
         data={data}
+        title={title}
         selections={selections}
         timeElapsed={timeElapsed}
         next={next}

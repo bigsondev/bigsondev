@@ -1,10 +1,6 @@
 ---
 title: Var, Let, Const - Best Practices & Differences
 desc: Everyone needs variables in JavaScript. Let's learn the best ways to use them and how to avoid pitfalls which might cause unwanted side effects or introduce bugs in the code.
-path: /blog/var-let-const-best-practices-and-differences/
-hasCheatSheet: false
-hasTodoList: false
-series: false
 readTime: 4
 illustration: none
 tags: javascript
@@ -18,6 +14,7 @@ import {
   Text,
   Post,
   PostList,
+  PostFooter,
   SyntaxHighlighter,
   Link,
   Box,
@@ -41,10 +38,10 @@ export const summaryList = [
 ];
 
 <Post
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
-  date={props.pageContext.frontmatter.date}
-  readTime={props.pageContext.frontmatter.readTime}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
+  date={props.frontmatter.date}
+  readTime={props.frontmatter.readTime}
   showSubtitle
 >
   <Title level={3}>Introduction</Title>
@@ -171,12 +168,5 @@ export const summaryList = [
     skipped an in-depth explanation of hoisting, scopes, and focused on the
     variable keywords.
   </Paragraph>
-  <Paragraph>
-    If you liked it and want me to create more articles like this one, please,
-    follow me on socials. I usually post visual knowledge pills on{' '}
-    <Link href="https://www.instagram.com/bigsondev/">Instagram</Link> and code
-    examples on{' '}
-    <Link href="https://github.com/bigsondev/knowledge-pills">GitHub</Link>.
-  </Paragraph>
-  <Paragraph>Thanks for reading. ❤️</Paragraph>
+  <PostFooter />
 </Post>

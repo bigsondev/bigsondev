@@ -1,12 +1,10 @@
 ---
 title: Beginner Quiz
 desc: The following Quiz is best suited for newcomers with no prior experience in coding.
-path: /library/beginner-quiz/
 date: 2020-09-07
-type: beginner
-tags: quiz
-order: 1
-difficulty: 0
+type: test
+tags: html, css, js, git, cli
+difficulty: 1
 ---
 
 import { Quiz } from '~components';
@@ -108,7 +106,7 @@ export const data = [
 
 <Quiz
   data={data}
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
   next="junior-quiz"
 />

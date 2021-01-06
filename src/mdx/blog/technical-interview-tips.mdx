@@ -4,13 +4,9 @@ desc:
   Technical Interview can be a hard nut to crack. It's challenging, it's different, it's evolving.
   These days, you can't only show coding and problem-solving skills but also have a personality that plays well with the team.
   I prepared 10 universal tips to help you beat the next interview.
-path: /blog/technical-interview-tips/
-hasCheatSheet: false
-hasTodoList: true
-series: false
 readTime: 6
-illustration: none
 tags: performance
+illustration: none
 date: 2020-09-20
 ---
 
@@ -23,6 +19,7 @@ import {
   Todo,
   Post,
   PostCard,
+  PostFooter,
 } from '~components';
 
 export const homeworkData = [
@@ -35,10 +32,10 @@ export const homeworkData = [
 ];
 
 <Post
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
-  date={props.pageContext.frontmatter.date}
-  readTime={props.pageContext.frontmatter.readTime}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
+  date={props.frontmatter.date}
+  readTime={props.frontmatter.readTime}
   showSubtitle
 >
   <Title level={3}>Introduction</Title>
@@ -253,8 +250,6 @@ export const homeworkData = [
     from it. Sharing is caring and that's why I prepared homework to let you
     practice before the next interview.
   </Paragraph>
-  <Paragraph>
-    <Text strong>Thank you</Text> for reading and good luck. ❤️
-  </Paragraph>
   <PostCard title="Homework" data={homeworkData} />
+  <PostFooter />
 </Post>

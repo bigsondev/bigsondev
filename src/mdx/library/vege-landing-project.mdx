@@ -1,0 +1,110 @@
+---
+title: Vege Landing
+desc: Create a landing page for vege food truck using HTML and CSS.
+date: 2021-01-06
+type: project
+tags: html, css
+image: vege-landing
+difficulty: 1
+---
+
+import { Space } from 'antd';
+
+import { Text, Link, Button, Project } from '~components';
+
+export const projectRequirements = [
+  <Text>
+    Create a new git repository on <Link href="http://github.com/">GitHub</Link>
+    .
+  </Text>,
+  <Text>
+    Initialize the repository with index.html and index.css (connect them
+    together).
+  </Text>,
+  <Text>Use HTML and CSS without a framework or library.</Text>,
+  <Text>
+    Use{' '}
+    <Link href="https://www.w3schools.com/html/html5_semantic_elements.asp">
+      HTML5 semantic tags
+    </Link>
+    .
+  </Text>,
+  <Text>
+    Use <Link href="http://getbem.com/">BEM</Link> methodology for creating CSS
+    classes.
+  </Text>,
+  <Text>
+    Use{' '}
+    <Link href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">
+      Flexbox
+    </Link>{' '}
+    and{' '}
+    <Link href="https://css-tricks.com/snippets/css/complete-guide-grid/">
+      CSS Grid
+    </Link>{' '}
+    for layout and placement for the content.
+  </Text>,
+  <Text>
+    Use{' '}
+    <Link href="https://css-tricks.com/a-complete-guide-to-css-media-queries/">
+      Media Queries
+    </Link>{' '}
+    for supporting the landing page for desktop & mobile devices.
+  </Text>,
+  <Text>
+    You can inspire yourself by e.g.{' '}
+    <Link href="https://material.io/design">Material Design</Link> to help you
+    work easier around colors, typography, spacing and general UI concepts.
+  </Text>,
+];
+
+export const mustHaveFeatures = [
+  <Text>
+    All sections are implemented and they look similar to the design.
+  </Text>,
+  <Text>
+    Navigation items are clickable and move to the appropriate section.
+  </Text>,
+  <Text>Navigation is following the scroll (sticky).</Text>,
+  <Text>Green shapes are visible in the background (behind images).</Text>,
+];
+
+export const additionalFeatures = [
+  <Text>
+    Make the application responsive according to the rules of{' '}
+    <Link href="https://web.dev/responsive-web-design-basics/">RWD</Link>.
+    Additionally, make it{' '}
+    <Link href="https://www.interaction-design.org/literature/topics/ux-design">
+      UX
+    </Link>{' '}
+    friendly.
+  </Text>,
+  <Text>
+    Experiment with animations, e.g. show elements of sections as user scrolls.
+  </Text>,
+  <Text>
+    Implement additional pages in a similar way as landing page looks.
+  </Text>,
+];
+
+<Project
+  buttons={
+    <Link href="https://xd.adobe.com/view/8fb29093-a4b0-41e6-b0df-db75ed5c5852-dae1/">
+      <Button type="promo">Desktop & mobile design</Button>
+    </Link>
+  }
+  requirements={projectRequirements}
+  fundamentals={mustHaveFeatures}
+  additionals={additionalFeatures}
+  stuckText="Take a break, think about all the pieces you need to build for this
+      project. Draw some sketches/mock-ups to present the initial UI, split content in sections, containers."
+  buildText={
+    <>
+      For this project,{' '}
+      <Link href="https://pages.github.com/">GitHub Pages</Link> are
+      recommended. You can deploy your files there and host them on an external
+      URL, available to everyone.
+    </>
+  }
+  {...props.frontmatter}
+/>

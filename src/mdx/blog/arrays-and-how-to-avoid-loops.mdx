@@ -1,10 +1,6 @@
 ---
 title: Arrays And How To Avoid Loops
 desc: Arrays exist in every programming language. It's a data structure best suited for storing multiple values. And, for doing various operations on these values, often called as a collection.
-path: /blog/arrays-and-how-to-avoid-loops/
-hasCheatSheet: false
-hasTodoList: false
-series: false
 readTime: 6
 illustration: none
 tags: javascript
@@ -18,6 +14,7 @@ import {
   Text,
   Post,
   PostList,
+  PostFooter,
   SyntaxHighlighter,
   Link,
   Box,
@@ -185,10 +182,10 @@ const flatArray = nestedArray.flat();\n
 console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
 
 <Post
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
-  date={props.pageContext.frontmatter.date}
-  readTime={props.pageContext.frontmatter.readTime}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
+  date={props.frontmatter.date}
+  readTime={props.frontmatter.readTime}
   showSubtitle
 >
   <Title level={3}>Introduction</Title>
@@ -328,12 +325,5 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
     value declarative, clean approach to the code. I hope examples of bad and
     good lighten up the code a little bit.
   </Paragraph>
-  <Paragraph>
-    If you liked it and want me to create more articles like this one, please,
-    follow me on socials. I usually post visual knowledge pills on{' '}
-    <Link href="https://www.instagram.com/bigsondev/">Instagram</Link> and code
-    examples on{' '}
-    <Link href="https://github.com/bigsondev/knowledge-pills">GitHub</Link>.
-  </Paragraph>
-  <Paragraph>Thanks for reading. ❤️</Paragraph>
+  <PostFooter />
 </Post>

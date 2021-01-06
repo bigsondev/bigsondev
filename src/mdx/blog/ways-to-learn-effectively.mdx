@@ -1,10 +1,6 @@
 ---
 title: 5 Ways To Learn Effectively
 desc: Learning is a process of every human being. Starting from learning how to walk, ride a bike, how to study, pass exams, and prepare for the work. It’s an exercise we do everyday almost like a workout. However, it’s no longer enough to just learn, the modern world is all about optimizing time and being as productive as possible.
-path: /blog/ways-to-learn-effectively/
-hasCheatSheet: false
-hasTodoList: false
-series: false
 readTime: 9
 illustration: none
 tags: productivity
@@ -19,6 +15,7 @@ import {
   Post,
   PostList,
   PostCard,
+  PostFooter,
   SyntaxHighlighter,
   Link,
   Box,
@@ -59,10 +56,10 @@ export const mindmapSteps = [
 ];
 
 <Post
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
-  date={props.pageContext.frontmatter.date}
-  readTime={props.pageContext.frontmatter.readTime}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
+  date={props.frontmatter.date}
+  readTime={props.frontmatter.readTime}
   showSubtitle
 >
   <Title level={3}>Introduction</Title>
@@ -278,16 +275,13 @@ export const mindmapSteps = [
     . After a while, I come back to reality and my confidence is on a completely
     different level. With a light spirit, I start learning in an ideal state of mind.
   </Paragraph>
+  <Title level={3}>Resources</Title>
+  <PostList data={resources} />
+  <Paragraph lastParagraph />
   <Title level={3}>Closing Notes</Title>
   <Paragraph>
     And that's it! I've shared with you my 5 methods of effective learning I
-    developed over the past 12 years. Please, let me know (e.g. on Slack -
-    scroll down for an invite), whether after using them, science is no longer
-    such a nightmare, or maybe you've already used one of these or similar
-    methods. If you know someone who is studying for the exam, share him with
-    this article. I'll be grateful for spreading the word.
+    developed over the past 12 years.
   </Paragraph>
-  <Paragraph lastParagraph>Happy Learning! ❤️</Paragraph>
-  <Title level={3}>Resources</Title>
-  <PostList data={resources} />
+  <PostFooter />
 </Post>

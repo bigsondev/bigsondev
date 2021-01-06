@@ -125,6 +125,7 @@ const LevelThreeHolder = styled.div(
     fontWeight,
     fontSize = '1.75rem',
     color,
+    marginBottom = '1rem',
   }) => ({
     textAlign: align,
     '& h3': {
@@ -132,7 +133,7 @@ const LevelThreeHolder = styled.div(
       color,
       textTransform: transform,
       fontSize,
-      marginBottom: '1rem !important',
+      marginBottom,
     },
   })
 );
@@ -251,7 +252,11 @@ export const Title = ({
       </LevelTwoHolder>
     ),
     3: (
-      <LevelThreeHolder color={color} transform={transform}>
+      <LevelThreeHolder
+        color={color}
+        transform={transform}
+        marginBottom={marginBottom}
+      >
         <Typography.Title level={3} {...props} />
       </LevelThreeHolder>
     ),

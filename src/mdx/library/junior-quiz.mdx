@@ -1,12 +1,10 @@
 ---
 title: Junior Quiz
 desc: The following Quiz is best for Junior Frontend Developers with minimal experience of couple months.
-path: /library/junior-quiz/
 date: 2020-09-09
-type: junior
-tags: quiz
-order: 1
-difficulty: 0
+type: test
+tags: html, css, js, git
+difficulty: 2
 ---
 
 import { Title, Text, Quiz, SyntaxHighlighter } from '~components';
@@ -227,7 +225,7 @@ background-color: blue;
 
 <Quiz
   data={data}
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
   next="regular-quiz"
 />

@@ -1,12 +1,11 @@
 ---
 title: Regular Quiz
 desc: The following Quiz is best for Regular Frontend Developers with average experience of around 2 years.
-path: /library/regular-quiz/
 date: 2020-09-12
-type: regular
-tags: quiz
+type: test
+tags: html, css, js, react, graphQL, testing, tools, design patterns
 order: 1
-difficulty: 0
+difficulty: 3
 ---
 
 import { Title, Text, Quiz, SyntaxHighlighter } from '~components';
@@ -173,7 +172,7 @@ export const data = [
 
 <Quiz
   data={data}
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
   next="senior-quiz"
 />

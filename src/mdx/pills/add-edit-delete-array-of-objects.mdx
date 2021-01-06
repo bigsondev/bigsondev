@@ -1,5 +1,5 @@
 ---
-path: /pills/add-edit-delete-array-of-objects/
+title: Add, edit, delete operations
 desc: Learn how to add, edit and delete array of objects in semantic, declarative approach using rest spread operator and array methods.
 date: 2020-12-05
 tags: js
@@ -7,20 +7,12 @@ type: boy
 image: pillFive
 ---
 
-import { Link as GatsbyLink } from 'gatsby';
-import { Row, Col } from 'antd';
-
 import {
-  theme,
-  Title,
-  Paragraph,
-  Illustration,
   SyntaxHighlighter,
-  MainCard,
-  Image,
-  Button,
   Link,
   CodeEditorRaw,
+  KnowledgePill,
+  Text,
 } from '~components';
 
 export const jsCode = `let items = [];\n
@@ -120,103 +112,28 @@ deleteNote(1);
 console.log(notes) // 2 notes, first deleted\n
 `;
 
-<Row gutter={[0, 24]}>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            marginBottom="0"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            <Row justify="center" align="center" gutter={16}>
-              <Col>Knowledge Pill</Col>
-              <Col>
-                <Illustration
-                  type={
-                    props.pageContext.frontmatter.type === 'girl'
-                      ? 'girlPill'
-                      : 'boyPill'
-                  }
-                  width={48}
-                  style={{ marginTop: -6 }}
-                />
-              </Col>
-            </Row>
-          </Title>
-        </Col>
-        <Col span={24} sm={22}>
-          <Paragraph align="center">
-            {props.pageContext.frontmatter.desc}
-          </Paragraph>
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            Code
-          </Title>
-        </Col>
-        <Col span={24}>
-          <SyntaxHighlighter showCopy>{jsCode}</SyntaxHighlighter>
-        </Col>
-        <Col span={24}>
-          <Title level={4} transform="none" align="center">
-            Explanation
-          </Title>
-        </Col>
-        <Col xs={24} sm={22}>
-          <Paragraph align="center" size="preNormal" fontStyle="italic">
-            <Link
-              href="https://javascript.info/rest-parameters-spread"
-              size="preNormal"
-            >
-              Rest spread operator
-            </Link>{' '}
-            is helpful when it comes to working with arrays and objects. Add,
-            edit, delete functions can be used on any object structure and
-            should work well with array of these objects.
-          </Paragraph>
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            Interactive example
-          </Title>
-        </Col>
-        <Col span={24}>
-          <CodeEditorRaw
-            tabs={tabs}
-            initialHtml={initialHtml}
-            initialJs={initialJs}
-          />
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-</Row>
+<KnowledgePill
+  code={<SyntaxHighlighter showCopy>{jsCode}</SyntaxHighlighter>}
+  explanation={
+    <>
+      <Link
+        href="https://javascript.info/rest-parameters-spread"
+        size="preNormal"
+      >
+        Rest spread operator
+      </Link>{' '}
+      is helpful when it comes to working with arrays and objects. Add, edit,
+      delete functions can be used on any object structure and should work well
+      with array of these objects.
+    </>
+  }
+  interactiveExample={
+    <CodeEditorRaw
+      tabs={tabs}
+      initialHtml={initialHtml}
+      initialJs={initialJs}
+    />
+  }
+  {...props}
+  {...props.frontmatter}
+/>

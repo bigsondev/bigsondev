@@ -9,7 +9,7 @@ import {
 import Fade from 'react-reveal/Fade';
 import moment from 'moment';
 
-import { Box, TutorialTooltip, Button } from '..';
+import { Box, TutorialTooltip, Button, ShareIcons } from '..';
 
 import { QuizCard, QuizProgress } from './styled';
 import { QuestionsLookup } from './QuestionsLookup';
@@ -25,6 +25,7 @@ const countScore = (data, selections) =>
 
 export const Completed = ({
   data,
+  title,
   selections,
   timeElapsed,
   next,
@@ -74,7 +75,7 @@ export const Completed = ({
           <Space>
             {next ? (
               <Link to={`/library/${next}/`}>
-                <Button type="primary">Start Next Quiz</Button>
+                <Button type="primary">Start next quiz</Button>
               </Link>
             ) : (
               <Link to="/library/">
@@ -84,6 +85,9 @@ export const Completed = ({
               </Link>
             )}
           </Space>
+        </Box>
+        <Box mt={5} display="flex" justify="center">
+          <ShareIcons title={title} />
         </Box>
       </Result>
     </Fade>

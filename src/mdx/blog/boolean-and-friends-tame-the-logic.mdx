@@ -1,10 +1,6 @@
 ---
 title: Boolean And Friends - Tame The Logic
 desc: Conditions, typecasting, logical operators, comparison operators, ternary operator, optional chaining, null-coalescing operator - they are all part of JavaScript. As Developers, we need to tame the logic.
-path: /blog/boolean-and-friends-tame-the-logic/
-hasCheatSheet: false
-hasTodoList: false
-series: false
 readTime: 7
 illustration: none
 tags: javascript
@@ -18,6 +14,7 @@ import {
   Text,
   Post,
   PostList,
+  PostFooter,
   SyntaxHighlighter,
   Link,
   Box,
@@ -156,10 +153,10 @@ const properZero = 0 ?? 5;\n
 console.log(properZero); // 0`;
 
 <Post
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
-  date={props.pageContext.frontmatter.date}
-  readTime={props.pageContext.frontmatter.readTime}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
+  date={props.frontmatter.date}
+  readTime={props.frontmatter.readTime}
   showSubtitle
 >
   <Title level={3}>Introduction</Title>
@@ -324,15 +321,5 @@ console.log(properZero); // 0`;
     this article. Logic is a crucial, fundamental aspect to understand when
     working in any programming language.
   </Paragraph>
-  <Paragraph>
-    If you liked it and want me to create more articles like this one, please,
-    follow me on socials. I post new blog articles, changes to the website on{' '}
-    <Link href="https://twitter.com/BigsonDev">Twitter</Link>, visual knowledge
-    pills on <Link href="https://www.instagram.com/bigsondev/">Instagram</Link>{' '}
-    and code examples on{' '}
-    <Link href="https://github.com/bigsondev/knowledge-pills">GitHub</Link>. I
-    also have a newly introduced projects that you can work on, check them out
-    in the <Link href="https://bigsondev.com/library/">Library</Link>.
-  </Paragraph>
-  <Paragraph>Thanks for reading. ❤️</Paragraph>
+  <PostFooter />
 </Post>

@@ -1,5 +1,5 @@
 ---
-path: /pills/method-chaining/
+title: Method chaining
 desc: Method chaining is a helpful pattern to learn in programming. It complies with the functional, declarative approach and reduces repetition.
 date: 2020-12-15
 tags: js
@@ -7,20 +7,12 @@ type: boy
 image: pillSeven
 ---
 
-import { Link as GatsbyLink } from 'gatsby';
-import { Row, Col } from 'antd';
-
 import {
-  theme,
-  Title,
-  Paragraph,
-  Illustration,
   SyntaxHighlighter,
-  MainCard,
-  Image,
-  Button,
   Link,
   CodeEditorRaw,
+  KnowledgePill,
+  Text,
 } from '~components';
 
 export const methodChainingCode = `// Let's count vowels in a string using the method chaining
@@ -52,105 +44,29 @@ console.log(getVowelsCount('a b c d e')); // 2
 
 export const tabs = ['js', 'html'];
 
-<Row gutter={[0, 24]}>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            marginBottom="0"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            <Row justify="center" align="center" gutter={16}>
-              <Col>Knowledge Pill</Col>
-              <Col>
-                <Illustration
-                  type={
-                    props.pageContext.frontmatter.type === 'girl'
-                      ? 'girlPill'
-                      : 'boyPill'
-                  }
-                  width={48}
-                  style={{ marginTop: -6 }}
-                />
-              </Col>
-            </Row>
-          </Title>
-        </Col>
-        <Col span={24} sm={22}>
-          <Paragraph align="center">
-            {props.pageContext.frontmatter.desc}
-          </Paragraph>
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            Code
-          </Title>
-        </Col>
-        <Col span={24}>
-          <SyntaxHighlighter showCopy>{methodChainingCode}</SyntaxHighlighter>
-        </Col>
-        <Col span={24}>
-          <Title level={4} transform="none" align="center">
-            Explanation
-          </Title>
-        </Col>
-        <Col xs={24} sm={22}>
-          <Paragraph align="center" size="preNormal" fontStyle="italic">
-            <Link
-              href="https://www.tutorialspoint.com/method-chaining-in-javascript"
-              size="preNormal"
-            >
-              Method chaining
-            </Link>{' '}
-            is a really good pattern for avoiding repetition and making your
-            code more readable. It plays well with functional programming and is
-            often used in JavaScript. Each of the methods needs to return
-            something in order to call another method on it. Hence the chaining
-            name.
-          </Paragraph>
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            Interactive example
-          </Title>
-        </Col>
-        <Col span={24}>
-          <CodeEditorRaw
-            tabs={tabs}
-            initialHtml={initialHtml}
-            initialJs={initialJs}
-          />
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-</Row>
+<KnowledgePill
+  code={<SyntaxHighlighter showCopy>{methodChainingCode}</SyntaxHighlighter>}
+  explanation={
+    <>
+      <Link
+        href="https://www.tutorialspoint.com/method-chaining-in-javascript"
+        size="preNormal"
+      >
+        Method chaining
+      </Link>{' '}
+      is a really good pattern for avoiding repetition and making your code more
+      readable. It plays well with functional programming and is often used in
+      JavaScript. Each of the methods needs to return something in order to call
+      another method on it. Hence the chaining name.
+    </>
+  }
+  interactiveExample={
+    <CodeEditorRaw
+      tabs={tabs}
+      initialHtml={initialHtml}
+      initialJs={initialJs}
+    />
+  }
+  {...props}
+  {...props.frontmatter}
+/>

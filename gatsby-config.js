@@ -9,6 +9,7 @@ module.exports = {
     author: `@BigsonDev`,
   },
   plugins: [
+    'gatsby-plugin-mdx',
     `gatsby-plugin-react-helmet`,
     {
       resolve: 'gatsby-plugin-hotjar',
@@ -35,38 +36,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `library`,
-        path: `${__dirname}/src/mdx/library/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog`,
-        path: `${__dirname}/src/mdx/blog/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pills`,
-        path: `${__dirname}/src/mdx/pills/`,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-page-creator',
-      options: {
-        path: `${__dirname}/src/mdx`,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-mdx',
-      options: {
-        defaultLayouts: {
-          library: require.resolve('./src/components/layout/LibraryLayout.js'),
-          blog: require.resolve('./src/components/layout/BlogLayout.js'),
-          pills: require.resolve('./src/components/layout/PillsLayout.js'),
-        },
+        name: `mdx`,
+        path: `${__dirname}/src/mdx/`,
       },
     },
     `gatsby-transformer-sharp`,

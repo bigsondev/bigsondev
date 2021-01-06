@@ -1,10 +1,6 @@
 ---
 title: Autoformat Code With Prettier
 desc: Prettier saves a lot of time and automates code formatting. Learn how to integrate with it, ESLint, Husky integration, and recommended setup is also included.
-path: /blog/autoformat-code-with-prettier/
-hasCheatSheet: true
-hasTodoList: false
-series: false
 readTime: 5
 illustration: none
 tags: tools, quality, automation
@@ -19,6 +15,7 @@ import {
   Post,
   PostList,
   PostCard,
+  PostFooter,
   SyntaxHighlighter,
   Link,
   Box,
@@ -145,10 +142,10 @@ export const resourcesListData = [
 ];
 
 <Post
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
-  date={props.pageContext.frontmatter.date}
-  readTime={props.pageContext.frontmatter.readTime}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
+  date={props.frontmatter.date}
+  readTime={props.frontmatter.readTime}
   showSubtitle
 >
   <Title level={3}>Prerequisites</Title>
@@ -304,6 +301,12 @@ export const resourcesListData = [
     will run a <Text code>pre-push</Text> command which executes pretty-quick on
     changed files.
   </Paragraph>
+  <Title level={3}>Resources</Title>
+  <Paragraph>
+    When learning, you can never get enough. The following resources will help
+    to expand your knowledge.
+  </Paragraph>
+  <PostList data={resourcesListData} lastParagraph />
   <Title level={3}>Closing Notes</Title>
   <Paragraph>
     In my honest opinion, automating manual work is exciting, but also
@@ -316,10 +319,5 @@ export const resourcesListData = [
     useful!
   </Paragraph>
   <PostCard title="Final Thoughts" data={finalThoughtsListData} />
-  <Title level={3}>Resources</Title>
-  <Paragraph>
-    When learning, you can never get enough. The following resources will help
-    to expand your knowledge.
-  </Paragraph>
-  <PostList data={resourcesListData} />
+  <PostFooter />
 </Post>

@@ -269,14 +269,14 @@ export const WhoIAm = () => {
                   <SkillButton>Junior</SkillButton>
                   <SkillButton>Regular</SkillButton>
                   <SkillButton>Senior</SkillButton>
-                  <SkillButton>Code challenges</SkillButton>
+                  <SkillButton>Challenges</SkillButton>
                   <SkillButton>Algorithms</SkillButton>
-                  <SkillButton>Pair programming</SkillButton>
+                  <SkillButton>Coding</SkillButton>
                   <SkillButton>Brainstorming</SkillButton>
-                  <SkillButton>Sharing insights</SkillButton>
-                  <SkillButton>Soft-skills check</SkillButton>
-                  <SkillButton>Proposed solutions</SkillButton>
-                  <SkillButton>Robust feedback</SkillButton>
+                  <SkillButton>Insights</SkillButton>
+                  <SkillButton>Soft-skills</SkillButton>
+                  <SkillButton>Solutions</SkillButton>
+                  <SkillButton>Feedback</SkillButton>
                 </Col>
               </Row>
             </Col>
@@ -337,12 +337,13 @@ export const WhoIAm = () => {
                   </Title>
                   <SkillButton>Empathy</SkillButton>
                   <SkillButton>Patience</SkillButton>
-                  <SkillButton>Individual approach</SkillButton>
-                  <SkillButton>Real-world projects</SkillButton>
-                  <SkillButton>Long-term relations</SkillButton>
-                  <SkillButton>Homework assignments</SkillButton>
-                  <SkillButton>Unlimited support</SkillButton>
-                  <SkillButton>New friend ❤️</SkillButton>
+                  <SkillButton>Individual</SkillButton>
+                  <SkillButton>Projects</SkillButton>
+                  <SkillButton>Bounds</SkillButton>
+                  <SkillButton>Assignments</SkillButton>
+                  <SkillButton>Goals</SkillButton>
+                  <SkillButton>Support</SkillButton>
+                  <SkillButton>Team</SkillButton>
                 </Col>
               </Row>
             </Col>

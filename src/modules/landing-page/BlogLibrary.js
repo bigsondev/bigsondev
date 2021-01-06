@@ -3,7 +3,11 @@ import { Row, Col, Space } from 'antd';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-import { BookCoverProject, TodoAppProject, RealtimeChatProject } from '~assets';
+import {
+  VegeLandingProject,
+  TodoAppProject,
+  RealtimeChatProject,
+} from '~assets';
 import {
   theme,
   Title,
@@ -102,22 +106,22 @@ export const BlogLibrary = () => {
         <Row justify="center" gutter={[24, 24]}>
           <Col xs={22} sm={16} md={13} lg={8}>
             <Card>
-              <ProjectImage src={BookCoverProject} />
+              <ProjectImage src={VegeLandingProject} />
               <ProjectTitle
                 color={colors.white}
                 fontWeight={fontWeight.stronger}
               >
-                Book Cover
+                Vege Landing
               </ProjectTitle>
               <ProjectDescription
                 color={colors.white}
                 fontWeight={fontWeight.stronger}
                 size="small"
               >
-                Learn React state by building your dream book cover
+                Create beautiful landing page with HTML and CSS
               </ProjectDescription>
-              <ProjectLink to="/library/book-cover-project/">
-                <Button type="ghost">Build this project</Button>
+              <ProjectLink to="/library/vege-landing-project/">
+                <Button type="ghost">View project</Button>
               </ProjectLink>
             </Card>
           </Col>
@@ -138,7 +142,7 @@ export const BlogLibrary = () => {
                 A classic, must-have project for all beginners in Frontend
               </ProjectDescription>
               <ProjectLink to="/library/todo-app-project/">
-                <Button type="ghost">Build this project</Button>
+                <Button type="ghost">View project</Button>
               </ProjectLink>
             </Card>
           </Col>
@@ -159,7 +163,7 @@ export const BlogLibrary = () => {
                 Learn fullstack development with Next.js and Express
               </ProjectDescription>
               <ProjectLink to="/library/realtime-chat-project/">
-                <Button type="ghost">Build this project</Button>
+                <Button type="ghost">View project</Button>
               </ProjectLink>
             </Card>
           </Col>

@@ -22,21 +22,22 @@ import { truncate } from '~utils';
 export const query = graphql`
   query BlogQuery {
     allMdx(
-      filter: { fileAbsolutePath: { regex: "/mdx/blog/" } }
+      filter: { fileAbsolutePath: { regex: "/blog/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
+          id
           frontmatter {
             title
             desc
-            path
-            hasCheatSheet
-            hasTodoList
             readTime
             tags
             illustration
             date(formatString: "MMM D, YYYY")
+          }
+          fields {
+            slug
           }
         }
       }
@@ -60,17 +61,7 @@ const ArticleButton = styled(Button)({
   marginTop: 'auto',
 });
 
-const Article = ({
-  title,
-  desc,
-  path,
-  hasCheatSheet,
-  hasTodoList,
-  readTime,
-  illustration,
-  tags,
-  date,
-}) => (
+const Article = ({ title, desc, path, readTime, illustration, tags, date }) => (
   <Link to={path}>
     <ArticleCard illustration={illustration}>
       {illustration !== 'none' && (
@@ -152,14 +143,14 @@ const Blog = ({
         </Title>
       </Box>
       <Row gutter={[24, 24]} justify="center">
-        {edges.map(({ node: { frontmatter } }) => (
+        {edges.map(({ node: { id, frontmatter, fields: { slug: path } } }) => (
           <Col
             xs={{ span: 24 }}
             sm={{ span: 12 }}
             xl={{ span: 8 }}
-            key={frontmatter.title}
+            key={frontmatter.id}
           >
-            <Article {...frontmatter} />
+            <Article path={path} {...frontmatter} />
           </Col>
         ))}
       </Row>

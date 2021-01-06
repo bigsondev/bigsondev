@@ -1,10 +1,6 @@
 ---
 title: Collaboration Between Developers And Designers - Part 2
 desc: Communication is key when planning new features, projects, products. But who should be involved in a conversation with clients, should there be any review of designs, how to find a balance between designs and implementation? All of these concerns can lead to chaos, let’s learn how to avoid it during product creation.
-path: /blog/collaboration-between-developers-and-designers-part-2/
-hasCheatSheet: false
-hasTodoList: false
-series: true
 readTime: 4
 illustration: none
 tags: productivity, teamwork, agile
@@ -20,27 +16,18 @@ import {
   Post,
   PostList,
   PostCard,
+  PostFooter,
   SyntaxHighlighter,
   Link,
   Box,
 } from '~components';
 
 <Post
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
-  date={props.pageContext.frontmatter.date}
-  readTime={props.pageContext.frontmatter.readTime}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
+  date={props.frontmatter.date}
+  readTime={props.frontmatter.readTime}
   showSubtitle
-  prev={
-    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-1/">
-      Previous
-    </GatsbyLink>
-  }
-  next={
-    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-3/">
-      Next
-    </GatsbyLink>
-  }
 >
   <Title level={3}>Problem - Chaos in planning</Title>
   <Paragraph>
@@ -151,28 +138,9 @@ import {
   </Paragraph>
   <Title level={3}>Closing Notes</Title>
   <Paragraph>
-    Are you having a hard time communicating your design to developers?
-  </Paragraph>
-  <Paragraph>
-    Are you having a hard time explaining the technical limitations to
-    designers?
-  </Paragraph>
-  <Paragraph>
-    Join me on{' '}
-    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-2/#bigsondev-slack">
-      Slack
-    </GatsbyLink>{' '}
-    or post/share on some{' '}
-    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-2/#bigsondev-spread-the-word">
-      socials
-    </GatsbyLink>{' '}
-    , I’ll be happy to help and give some tips & tricks I learned during my
-    journey.
-  </Paragraph>
-  <Paragraph>
     The next part will be about <Text strong>Lack of a Design System</Text> 🔥
     which will be a complementary example to the „Don’t do both at the same
     time” solution.
   </Paragraph>
-  <Paragraph>Take care and stay healthy in these difficult times! ❤️</Paragraph>
+  <PostFooter />
 </Post>

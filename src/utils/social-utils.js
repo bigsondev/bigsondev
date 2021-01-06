@@ -1,8 +1,8 @@
-export const shareOnReddit = () =>
+export const shareOnReddit = (title) =>
   typeof window !== 'undefined'
     ? `http://www.reddit.com/submit?url=${encodeURIComponent(
         window.location.href
-      )}`
+      )}&title=${title}`
     : undefined;
 
 export const shareOnTwitter = (title) =>

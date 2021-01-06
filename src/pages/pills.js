@@ -2,8 +2,6 @@ import React from 'react';
 import { Link as GatsbyLink, graphql } from 'gatsby';
 import { Row, Col, Space, Divider } from 'antd';
 import styled from 'styled-components';
-import moment from 'moment';
-import { CalendarOutlined } from '@ant-design/icons';
 
 import {
   Layout,
@@ -52,24 +50,28 @@ const TAG_COLOR_MAPPER = {
   js: '#ffec3d',
   react: '#61DAFB',
   express: '#43853D',
-  ['socket.io']: '#000',
+  'socket.io': '#000',
 };
 
 export const query = graphql`
   query PillsQuery {
     allMdx(
-      filter: { fileAbsolutePath: { regex: "/mdx/pills/" } }
+      filter: { fileAbsolutePath: { regex: "/pills/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
+          id
           frontmatter {
+            title
             desc
-            path
             tags
             type
             image
             date(formatString: "MMM D, YYYY")
+          }
+          fields {
+            slug
           }
         }
       }
@@ -87,39 +89,32 @@ const PILLS_MAPPER = {
   pillSeven: PillSeven,
   pillEight: PillEight,
   pillNine: PillNine,
-  pillTen: PillTen
+  pillTen: PillTen,
 };
 
-const Pill = ({ date, desc, path, tags, image, type }) => (
+const Pill = ({ title, desc, path, tags, image }) => (
   <GatsbyLink to={path}>
     <PillCard>
       <Row gutter={[0, 8]}>
         <Col span={24}>
-          <Row justify="space-between" align="middle">
-            <Col>
-              <Text size="micro" type="secondary">
-                <Space>
-                  <CalendarOutlined />
-                  <span>{moment(date).format('MMM D, YYYY')}</span>
-                </Space>
+          <Space size="middle">
+            {tags.split(',').map((tag) => (
+              <Text
+                key={tag}
+                transform="uppercase"
+                strong
+                size="small"
+                color={TAG_COLOR_MAPPER[tag.trim()]}
+              >
+                {tag}
               </Text>
-            </Col>
-            <Col>
-              <Space size="middle">
-                {tags.split(',').map((tag) => (
-                  <Text
-                    key={tag}
-                    transform="uppercase"
-                    strong
-                    size="small"
-                    color={TAG_COLOR_MAPPER[tag.trim()]}
-                  >
-                    {tag}
-                  </Text>
-                ))}
-              </Space>
-            </Col>
-          </Row>
+            ))}
+          </Space>
+        </Col>
+        <Col span={24}>
+          <Title level={4} transform="capitalize">
+            {title}
+          </Title>
         </Col>
         <Col span={24}>
           <Image src={PILLS_MAPPER[image]} alt={desc} />
@@ -147,7 +142,6 @@ const Pills = ({
     allMdx: { edges },
   },
 }) => {
-  console.log(edges);
   return (
     <Layout>
       <SEO title="Pills | Knowledge Pills, Code Examples, Useful Tips & Tricks You Can Use On Daily Basis" />
@@ -165,14 +159,9 @@ const Pills = ({
         </Title>
       </Box>
       <Row gutter={[24, 24]} justify="center">
-        {edges.map(({ node: { frontmatter } }) => (
-          <Col
-            xs={{ span: 24 }}
-            sm={{ span: 12 }}
-            xl={{ span: 8 }}
-            key={frontmatter.desc}
-          >
-            <Pill {...frontmatter} />
+        {edges.map(({ node: { id, frontmatter, fields: { slug: path } } }) => (
+          <Col xs={{ span: 24 }} sm={{ span: 12 }} xl={{ span: 8 }} key={id}>
+            <Pill path={path} {...frontmatter} />
           </Col>
         ))}
       </Row>

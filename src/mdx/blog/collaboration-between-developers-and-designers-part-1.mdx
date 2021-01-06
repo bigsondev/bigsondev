@@ -1,10 +1,6 @@
 ---
 title: Collaboration Between Developers And Designers - Part 1
 desc: Finding a common language is not a simple task. Developers think in a more abstract way, focusing on functionalities, trying to reuse components, avoid duplications in the first place. On the other side, designers treat things more visually, need to present them to clients, and argument value behind their designs. But, designers also have common properties, components, and sometimes, even patterns to avoid duplication and repeating themselves. Developers and designers have more similarities than they think. They just don’t speak the same language, hence the confusion and miscommunication happen from time to time.
-path: /blog/collaboration-between-developers-and-designers-part-1/
-hasCheatSheet: false
-hasTodoList: false
-series: true
 readTime: 3
 illustration: none
 tags: productivity, teamwork, agile
@@ -20,25 +16,19 @@ import {
   Post,
   PostList,
   PostCard,
+  PostFooter,
   SyntaxHighlighter,
   Link,
   Box,
 } from '~components';
 
 <Post
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
-  date={props.pageContext.frontmatter.date}
-  readTime={props.pageContext.frontmatter.readTime}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
+  date={props.frontmatter.date}
+  readTime={props.frontmatter.readTime}
   showSubtitle
-  next={
-    <GatsbyLink to="/blog/collaboration-between-developers-and-designers-part-2/">
-      Next
-    </GatsbyLink>
-  }
 >
-
-
   <Title level={3}>Introduction</Title>
   <Paragraph>
     I worked in an{' '}
@@ -111,10 +101,8 @@ import {
     When starting a new project, getting to know each other, ask for a workshop
     to go through the design and implementation processes. On-site with a client
     or remotely, brainstorm about some{' '}
-    <Link href="https://en.wikipedia.org/wiki/Minimum_viable_product">
-      MVP
-    </Link>, internal application consisting of 2
-    to 3 views.
+    <Link href="https://en.wikipedia.org/wiki/Minimum_viable_product">MVP</Link>,
+    internal application consisting of 2 to 3 views.
   </Paragraph>
   <Paragraph>
     Create a design together with developers, ask common questions, pay
@@ -151,8 +139,5 @@ import {
     series. The next part will be about <Text strong>Chaos In Planning</Text>{' '}
     which should be released this Sunday. Stay tuned!
   </Paragraph>
-  <Paragraph>
-   <Text strong>Update</Text>: New part is released, click "Next" link to read it.
-  </Paragraph>
+  <PostFooter />
 </Post>
-

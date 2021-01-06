@@ -1,5 +1,5 @@
 ---
-path: /pills/equal-height-cards/
+title: Equal height cards
 desc: Make all cards equal height with flexbox. Especially helpful when content is dynamic and can't set fixed height.
 date: 2020-12-01
 tags: html, css
@@ -7,21 +7,12 @@ type: boy
 image: pillTwo
 ---
 
-import { Row, Col } from 'antd';
-import { Link as GatsbyLink } from 'gatsby';
-
 import {
-  theme,
-  Title,
-  Paragraph,
-  Illustration,
   SyntaxHighlighter,
-  MainCard,
-  Image,
-  Button,
   Link,
-  Text,
   CodeEditorRaw,
+  KnowledgePill,
+  Text,
 } from '~components';
 
 export const htmlCode = `<div class="cardContainer">
@@ -70,6 +61,7 @@ export const cssCode = `.cardContainer {
 }`;
 
 export const tabs = ['html', 'css'];
+
 export const initialHtml = `<div class="cardContainer">
   <div class="card">
     <p class="cardContent">
@@ -96,6 +88,7 @@ export const initialHtml = `<div class="cardContainer">
     </button>
   </div>
 </div>`;
+
 export const initialCss = `.cardContainer {
   display: flex;
   width: 100vw;
@@ -114,113 +107,41 @@ export const initialCss = `.cardContainer {
   flex: 1;
 }`;
 
-<Row gutter={[0, 24]}>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            <Row justify="center" align="center" gutter={16}>
-              <Col>Knowledge Pill</Col>
-              <Col>
-                <Illustration
-                  type={
-                    props.pageContext.frontmatter.type === 'girl'
-                      ? 'girlPill'
-                      : 'boyPill'
-                  }
-                  width={48}
-                  style={{ marginTop: -6 }}
-                />
-              </Col>
-            </Row>
-          </Title>
-        </Col>
-        <Col xs={24} sm={22}>
-          <Paragraph align="center">
-            {props.pageContext.frontmatter.desc}
-          </Paragraph>
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            Code
-          </Title>
-        </Col>
-        <Col span={24}>
-          <SyntaxHighlighter language="xml" title="HTML code" showCopy>
-            {htmlCode}
-          </SyntaxHighlighter>
-        </Col>
-        <Col span={24}>
-          <SyntaxHighlighter language="css" title="CSS code" showCopy>
-            {cssCode}
-          </SyntaxHighlighter>
-        </Col>
-        <Col span={24}>
-          <Title level={4} transform="none" align="center">
-            Explanation
-          </Title>
-        </Col>
-        <Col xs={24} sm={22}>
-          <Paragraph align="center" size="preNormal" fontStyle="italic">
-            <Link
-              href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
-              size="preNormal"
-            >
-              Flexbox
-            </Link>{' '}
-            was used on the container div to make all child cards equal height.
-            A card itself is also constructed with flexbox for column layout.{' '}
-            <Text code size="preNormal">
-              flex: 1
-            </Text>{' '}
-            property expands height of the card content to keep button at the
-            bottom for all cards.
-          </Paragraph>
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            Interactive example
-          </Title>
-        </Col>
-        <Col span={24}>
-          <CodeEditorRaw
-            tabs={tabs}
-            initialHtml={initialHtml}
-            initialCss={initialCss}
-          />
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-</Row>
+<KnowledgePill
+  code={
+    <>
+      <SyntaxHighlighter language="xml" title="HTML code" showCopy>
+        {htmlCode}
+      </SyntaxHighlighter>
+      <SyntaxHighlighter language="css" title="CSS code" showCopy>
+        {cssCode}
+      </SyntaxHighlighter>
+    </>
+  }
+  explanation={
+    <>
+      <Link
+        href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+        size="preNormal"
+      >
+        Flexbox
+      </Link>{' '}
+      was used on the container div to make all child cards equal height. A card
+      itself is also constructed with flexbox for column layout.{' '}
+      <Text code size="preNormal">
+        flex: 1
+      </Text>
+      property expands height of the card content to keep button at the bottom for
+      all cards.
+    </>
+  }
+  interactiveExample={
+    <CodeEditorRaw
+      tabs={tabs}
+      initialHtml={initialHtml}
+      initialCss={initialCss}
+    />
+  }
+  {...props}
+  {...props.frontmatter}
+/>

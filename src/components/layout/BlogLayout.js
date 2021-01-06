@@ -6,9 +6,10 @@
  */
 
 import React from 'react';
-import { Row, Col, Space, Divider } from 'antd';
+import { Row, Col, Space } from 'antd';
 import styled from 'styled-components';
-import { useStaticQuery, graphql, Link as GatsbyLink } from 'gatsby';
+import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import { AdrianImage } from '~assets';
 import {
@@ -16,13 +17,10 @@ import {
   shareOnTwitter,
   shareOnLinkedin,
   shareOnFacebook,
-  shuffle,
 } from '~utils';
 
 import {
-  Title,
   Paragraph,
-  PostList,
   Box,
   PromoBanner,
   Link,
@@ -32,6 +30,7 @@ import {
   SlackBanner,
   ExceptXl,
   SEO,
+  DirectionalLink,
 } from '..';
 import { NewsletterSmallForm } from './NewsletterSmallForm';
 import { Footer } from './Footer';
@@ -56,50 +55,31 @@ const AuthorImage = styled.img({
   width: '8rem',
 });
 
-const GatsbyLinkHolder = styled(GatsbyLink)({
-  textDecoration: 'underline !important',
-  fontSize: '1.27rem',
-});
-
-const BlogLayout = ({
-  children,
-  pageContext: {
-    frontmatter: { title },
-  },
-}) => {
-  const {
-    allMdx: { edges },
-  } = useStaticQuery(graphql`
-    query NextArticlesQuery {
-      allMdx(filter: { fileAbsolutePath: { regex: "/mdx/blog/" } }) {
-        edges {
-          node {
-            frontmatter {
-              series
-              title
-              path
-            }
-          }
-        }
+export const pageQuery = graphql`
+  query BlogLayoutQuery($id: String) {
+    mdx(id: { eq: $id }) {
+      body
+      frontmatter {
+        title
+        desc
+        readTime
+        tags
+        illustration
+        date(formatString: "MMM D, YYYY")
       }
     }
-  `);
-  const randomArticles = shuffle(edges);
-  const proposedNextArticles = randomArticles
-    .filter(
-      ({ node: { frontmatter } }) =>
-        frontmatter.title !== title && !frontmatter.series
-    )
-    .slice(0, 3)
-    .map(({ node: { frontmatter } }) => (
-      <GatsbyLinkHolder to={frontmatter.path} key={frontmatter.title}>
-        {frontmatter.title}
-      </GatsbyLinkHolder>
-    ));
+  }
+`;
 
+const BlogLayout = ({
+  data: {
+    mdx: { frontmatter, body },
+  },
+  pageContext: { previous, next },
+}) => {
   return (
     <>
-      <SEO title={`Blog | ${title}`} />
+      <SEO title={`Blog | ${frontmatter.title}`} />
       <Box mt={5}>
         <Row justify="center" gutter={[0, 40]}>
           <Col xs={22} xl={6}>
@@ -145,7 +125,33 @@ const BlogLayout = ({
           </Col>
           <Col xs={22} xl={12}>
             <Box mb={10}>
-              <main>{children}</main>
+              <main>
+                <MDXRenderer frontmatter={frontmatter}>{body}</MDXRenderer>
+                <Box mt={10}>
+                  <Row justify="space-between" gutter={[0, 16]}>
+                    <Col xs={24} sm={12}>
+                      {previous && (
+                        <DirectionalLink left to={previous.fields.slug}>
+                          Previous:{' '}
+                          <span style={{ textTransform: 'capitalize' }}>
+                            {previous.frontmatter.title}
+                          </span>
+                        </DirectionalLink>
+                      )}
+                    </Col>
+                    <Col xs={24} sm={12} style={{ textAlign: 'right' }}>
+                      {next && (
+                        <DirectionalLink right to={next.fields.slug}>
+                          Next:{' '}
+                          <span style={{ textTransform: 'capitalize' }}>
+                            {next.frontmatter.title}
+                          </span>
+                        </DirectionalLink>
+                      )}
+                    </Col>
+                  </Row>
+                </Box>
+              </main>
             </Box>
           </Col>
           <Col xs={22} xl={6}>
@@ -169,11 +175,6 @@ const BlogLayout = ({
               </Paragraph>
             </Box>
           </Col>
-          <Col xs={22} xl={12}>
-            <Divider />
-            <Title level={3}>Proposed Next Articles</Title>
-            <PostList data={proposedNextArticles} />
-          </Col>
           <Col xs={22} xl={20} xxl={18}>
             <SlackBanner id="bigsondev-slack" />
           </Col>
@@ -185,10 +186,10 @@ const BlogLayout = ({
                 id="bigsondev-spread-the-word"
                 content={
                   <Space size="small">
-                    <IconHolder href={shareOnReddit()}>
+                    <IconHolder href={shareOnReddit(frontmatter.title)}>
                       <Icon type="reddit" width="3.125rem" />
                     </IconHolder>
-                    <IconHolder href={shareOnTwitter(title)}>
+                    <IconHolder href={shareOnTwitter(frontmatter.title)}>
                       <Icon type="twitter" width="3.125rem" />
                     </IconHolder>
                     <IconHolder href={shareOnFacebook()}>

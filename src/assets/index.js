@@ -11,6 +11,7 @@ import OtherCommandsImage from './other-commands.png';
 import BookCoverProject from './book-cover-project.png';
 import TodoAppProject from './todo-app-project.png';
 import RealtimeChatProject from './realtime-chat-project.png';
+import VegeLandingProject from './vege-landing-project.jpg';
 import MesfinTestimonial from './mesfin-testimonial.jpeg';
 import BenjaminTestimonial from './benjamin-testimonial.jpeg';
 import MiguelTestimonial from './miguel-testimonial.jpg';
@@ -41,6 +42,7 @@ export {
   BookCoverProject,
   TodoAppProject,
   RealtimeChatProject,
+  VegeLandingProject,
   MesfinTestimonial,
   BenjaminTestimonial,
   MiguelTestimonial,
@@ -54,5 +56,5 @@ export {
   PillSeven,
   PillEight,
   PillNine,
-  PillTen
+  PillTen,
 };

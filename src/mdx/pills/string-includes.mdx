@@ -1,5 +1,5 @@
 ---
-path: /pills/string-includes/
+title: Search through string
 desc: Need to search for a character, word, or entire sentence? String .includes method to the rescue.
 date: 2021-01-04
 tags: js
@@ -7,21 +7,12 @@ type: boy
 image: pillTen
 ---
 
-import { Link as GatsbyLink } from 'gatsby';
-import { Row, Col } from 'antd';
-
 import {
-  theme,
-  Title,
-  Paragraph,
-  Text,
-  Illustration,
   SyntaxHighlighter,
-  MainCard,
-  Image,
-  Button,
   Link,
   CodeEditorRaw,
+  KnowledgePill,
+  Text,
 } from '~components';
 
 export const codeSnippet = `// .includes method is also available for String type
@@ -56,106 +47,31 @@ console.log(searchFromSecondWord); // false`;
 
 export const tabs = ['js', 'html'];
 
-<Row gutter={[0, 24]}>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            marginBottom="0"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            <Row justify="center" align="center" gutter={16}>
-              <Col>Knowledge Pill</Col>
-              <Col>
-                <Illustration
-                  type={
-                    props.pageContext.frontmatter.type === 'girl'
-                      ? 'girlPill'
-                      : 'boyPill'
-                  }
-                  width={48}
-                  style={{ marginTop: -6 }}
-                />
-              </Col>
-            </Row>
-          </Title>
-        </Col>
-        <Col span={24} sm={22}>
-          <Paragraph align="center">
-            {props.pageContext.frontmatter.desc}
-          </Paragraph>
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            Code
-          </Title>
-        </Col>
-        <Col span={24}>
-          <SyntaxHighlighter showCopy>{codeSnippet}</SyntaxHighlighter>
-        </Col>
-        <Col span={24}>
-          <Title level={4} transform="none" align="center">
-            Explanation
-          </Title>
-        </Col>
-        <Col xs={24} sm={22}>
-          <Paragraph align="center" size="preNormal" fontStyle="italic">
-            <Link
-              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes"
-              size="preNormal"
-            >
-              .includes
-            </Link>{' '}
-            <Text size="preNormal" code>
-              String
-            </Text>{' '}
-            method can be used for searching a character, word, or sentence in a
-            string. Additionally, you can drill down the search to start from a
-            particular position.
-          </Paragraph>
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-  <Col span={24}>
-    <MainCard>
-      <Row justify="center">
-        <Col span={24}>
-          <Title
-            level={3}
-            transform="none"
-            align="center"
-            fontSize={theme.fontSize.superLarge}
-            fontWeight={theme.fontWeight.stronger}
-          >
-            Interactive example
-          </Title>
-        </Col>
-        <Col span={24}>
-          <CodeEditorRaw
-            tabs={tabs}
-            initialHtml={initialHtml}
-            initialJs={initialJs}
-          />
-        </Col>
-      </Row>
-    </MainCard>
-  </Col>
-</Row>
+<KnowledgePill
+  code={<SyntaxHighlighter showCopy>{codeSnippet}</SyntaxHighlighter>}
+  explanation={
+    <>
+      <Link
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes"
+        size="preNormal"
+      >
+        .includes
+      </Link>{' '}
+      <Text size="preNormal" code>
+        String
+      </Text>{' '}
+      method can be used for searching a character, word, or sentence in a
+      string. Additionally, you can drill down the search to start from a
+      particular position.
+    </>
+  }
+  interactiveExample={
+    <CodeEditorRaw
+      tabs={tabs}
+      initialHtml={initialHtml}
+      initialJs={initialJs}
+    />
+  }
+  {...props}
+  {...props.frontmatter}
+/>

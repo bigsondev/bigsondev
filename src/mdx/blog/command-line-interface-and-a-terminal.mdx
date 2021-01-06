@@ -1,10 +1,6 @@
 ---
 title: Command Line Interface And A Terminal
 desc: Introduction to the fundamental tool for all developers. In this article, you'll learn why learning terminal commands is crucial and how does that correlate with other tools such as git or npm. We'll also go through best practices and recommendations.
-path: /blog/command-line-interface-and-a-terminal/
-hasCheatSheet: false
-hasTodoList: false
-series: false
 readTime: 7
 illustration: none
 tags: tools,basics, terminal
@@ -28,6 +24,7 @@ import {
   Post,
   PostList,
   PostCard,
+  PostFooter,
   SyntaxHighlighter,
   Link,
   Box,
@@ -46,10 +43,10 @@ export const whatYouWillLearnPoints = [
 ];
 
 <Post
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
-  date={props.pageContext.frontmatter.date}
-  readTime={props.pageContext.frontmatter.readTime}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
+  date={props.frontmatter.date}
+  readTime={props.frontmatter.readTime}
   showSubtitle
 >
   <Title level={3}>What You'll Learn</Title>
@@ -313,18 +310,8 @@ export const whatYouWillLearnPoints = [
   </Paragraph>
   <Title level={3}>Closing Notes</Title>
   <Paragraph>
-    I have faith in you, shall you not give up and continue this tough, Frontend
-    journey to improve coding skills. 🙇‍♂️
+    You've learned one of the most crucial tools Professional Developer uses in
+    his/her daily work. Nothing will stop you from becoming one now.
   </Paragraph>
-  <Paragraph>
-    If you liked it and want me to create more articles like this one, please,
-    follow me on socials. I post new blog articles, changes to the website on{' '}
-    <Link href="https://twitter.com/BigsonDev">Twitter</Link>, visual knowledge
-    pills on <Link href="https://www.instagram.com/bigsondev/">Instagram</Link>{' '}
-    and code examples on{' '}
-    <Link href="https://github.com/bigsondev/knowledge-pills">GitHub</Link>. I
-    also have a newly introduced projects that you can work on, check them out
-    in the <Link href="https://bigsondev.com/library/">Library</Link>.
-  </Paragraph>
-  <Paragraph>Thanks for reading. ❤️</Paragraph>
+  <PostFooter />
 </Post>

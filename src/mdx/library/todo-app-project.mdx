@@ -1,53 +1,40 @@
 ---
 title: Todo App
-path: /library/todo-app-project/
 desc: Create, edit, delete todos. Learn state management in React and use Material UI for composing the look & feel.
 date: 2020-11-05
 type: project
 tags: react
-order: 2
+image: todo-app
 difficulty: 3
 ---
 
-import { Space, Row, Col } from 'antd';
-import { Link as GatsbyLink } from 'gatsby';
+import { Space } from 'antd';
 
-import {
-  theme,
-  Post,
-  PostList,
-  Paragraph,
-  Text,
-  Title,
-  CodeEditor,
-  MainCard,
-  Link,
-  Button,
-} from '~components';
-import { getIframeContent } from '~utils';
+import { Text, Link, Button, Project } from '~components';
 
 export const projectRequirements = [
   <Text>
-    Create a new git repository, e.g. on{' '}
-    <Link href="http://github.com/">GitHub</Link>.
+    Create a new git repository on <Link href="http://github.com/">GitHub</Link>
+    .
   </Text>,
   <Text>
     Initialize the repository with{' '}
     <Link href="https://create-react-app.dev/">CRA</Link>.
   </Text>,
   <Text>
-    It's fine to compose UI on your own but to speed up your work and learn how
-    to use 3rd party tools, I recommend using{' '}
-    <Link href="https://material-ui.com/">Material UI</Link>.
+    Use <Link href="https://material-ui.com/">Material UI</Link> components for
+    composing the UI.
   </Text>,
   <Text>
-    As it's not a complex application, for state management use{' '}
+    Use{' '}
     <Link href="https://reactjs.org/docs/hooks-reference.html">
       React hooks
-    </Link>
-    , <Link href="https://reactjs.org/docs/hooks-reference.html#usereducer">
+    </Link>{' '}
+    for state management,{' '}
+    <Link href="https://reactjs.org/docs/hooks-reference.html#usereducer">
       useReducer
-    </Link> will be the best option.
+    </Link>{' '}
+    specifically.
   </Text>,
 ];
 
@@ -92,84 +79,33 @@ export const additionalFeatures = [
   </Text>,
 ];
 
-<Post>
-  <Space size="large" direction="vertical">
-    <MainCard>
-      <Title
-        align="center"
-        transform="none"
-        marginBottom={theme.spacing.large}
-        color={theme.colors.primary}
-        fontSize={theme.fontSize.large}
-        fontWeight={theme.fontWeight.stronger}
-      >
-        Todo App
-      </Title>
-      <Paragraph align="center">
-        <Text strong>Assignment:</Text> Code a classic Todo App in React.
-      </Paragraph>
-      <Row gutter={[16, 16]} justify="center">
-        <Col>
-          <Link href="https://www.figma.com/file/wcTJcE0Foi1u3cTkV347Xx/Wireframes?node-id=264171%3A448">
-            <Button type="secondary">Wireframe</Button>
-          </Link>
-        </Col>
-        <Col>
-          <Link href="https://fervent-wozniak-24508f.netlify.app">
-            <Button type="secondary">Example</Button>
-          </Link>
-        </Col>
-        <Col>
-          <Link href="https://github.com/bigsondev/todo-app">
-            <Button type="secondary">Solution</Button>
-          </Link>
-        </Col>
-      </Row>
-    </MainCard>
-    <MainCard>
-      <Title level={3}>Project Requirements</Title>
-      <PostList data={projectRequirements} />
-    </MainCard>
-    <MainCard>
-      <Title level={3}>Fundamental Features</Title>
-      <PostList data={mustHaveFeatures} />
-    </MainCard>
-    <MainCard>
-      <Title level={3}>Additional Features</Title>
-      <PostList data={additionalFeatures} />
-    </MainCard>
-    <MainCard>
-      <Title level={3}>Stuck, can't progress?</Title>
-      <Paragraph>
-        Take a break, try to think about all the pieces you need to build for
-        this application. Think of state management, plan data structure, and/or
-        draw some sketches/mock-ups to present the initial UI. I'll be happy to
-        assist you with this project, you can try out my{' '}
-        <GatsbyLink to="/mentorship/">Mentorship</GatsbyLink> or connect through{' '}
-        <GatsbyLink to="/#bigsondev-slack">Slack</GatsbyLink> (free of charge).
-      </Paragraph>
-    </MainCard>
-    <MainCard>
-      <Title level={3}>Building & Deploying</Title>
-      <Paragraph>
-        If you created an application with CRA, there is a{' '}
-        <Text code>yarn build</Text> command shipped in. For a super simple
-        deployment, try either{' '}
-        <Link href="https://www.netlify.com/">Netlify</Link> or{' '}
-        <Link href="https://vercel.com/">Vercel</Link>. I recommend Netlify
-        personally.
-      </Paragraph>
-    </MainCard>
-    <MainCard>
-      <Title level={3}>Share your solution</Title>
-      <Paragraph>
-        You can join <GatsbyLink to="/#bigsondev-slack">Slack</GatsbyLink> and
-        add a link to your solution in the <Text strong>#review</Text> channel.
-        I'll definitely pick it up and come back to you with feedback.
-        Additionally, you can tweet{' '}
-        <Link href="https://twitter.com/BigsonDev">@BigsonDev</Link> with repo
-        and deployed application links. It will mean a ton to me.
-      </Paragraph>
-    </MainCard>
-  </Space>
-</Post>
+<Project
+  buttons={
+    <Space>
+      <Link href="https://www.figma.com/file/wcTJcE0Foi1u3cTkV347Xx/Wireframes?node-id=264171%3A448">
+        <Button type="secondary">Design</Button>
+      </Link>
+      <Link href="https://fervent-wozniak-24508f.netlify.app">
+        <Button type="secondary">Solution</Button>
+      </Link>
+      <Link href="https://github.com/bigsondev/todo-app">
+        <Button type="secondary">GitHub</Button>
+      </Link>
+    </Space>
+  }
+  requirements={projectRequirements}
+  fundamentals={mustHaveFeatures}
+  additionals={additionalFeatures}
+  stuckText="Take a break, think about all the pieces you need to build for this
+      project. Think of state management, plan data structure, and/or draw
+      some sketches/mock-ups to present the initial UI."
+  buildText={
+    <>
+      With CRA, there is a <Text code>yarn build</Text> command shipped in. For
+      a straightforward deployment,{' '}
+      <Link href="https://www.netlify.com/">Netlify</Link> or{' '}
+      <Link href="https://vercel.com/">Vercel</Link> is recommended.
+    </>
+  }
+  {...props.frontmatter}
+/>

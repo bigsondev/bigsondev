@@ -1,12 +1,10 @@
 ---
 title: Senior Quiz
 desc: The following Quiz is best for Senior Frontend Developers with average experience of around 5+ years.
-path: /library/senior-quiz/
 date: 2020-09-13
-type: senior
+type: test
 tags: quiz
-order: 1
-difficulty: 0
+difficulty: 4
 ---
 
 import { Title, Text, Quiz, SyntaxHighlighter } from '~components';
@@ -184,6 +182,6 @@ export const data = [
 
 <Quiz
   data={data}
-  title={props.pageContext.frontmatter.title}
-  desc={props.pageContext.frontmatter.desc}
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
 />
