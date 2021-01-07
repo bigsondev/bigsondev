@@ -86,7 +86,7 @@ export const Completed = ({
             )}
           </Space>
         </Box>
-        <Box mt={5} display="flex" justify="center">
+        <Box mt={3} display="flex" justify="center">
           <ShareIcons title={title} />
         </Box>
       </Result>

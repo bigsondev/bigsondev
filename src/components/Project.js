@@ -45,7 +45,7 @@ export const Project = ({
       <Title
         align="center"
         transform="none"
-        marginBottom={theme.spacing.large}
+        marginBottom="0"
         color={theme.colors.primary}
         fontSize={theme.fontSize.large}
         fontWeight={theme.fontWeight.stronger}
@@ -54,7 +54,7 @@ export const Project = ({
       </Title>
       <Row justify="center">
         {image && (
-          <Col span={18}>
+          <Col span={22}>
             <Image src={PROJECTS_MAPPER[image]} alt={desc} />
           </Col>
         )}
@@ -65,7 +65,7 @@ export const Project = ({
         </Col>
         <Col>{buttons}</Col>
       </Row>
-      <Box mt={5}>
+      <Box mt={3}>
         <Paragraph align="center">
           <ShareIcons title={title} />
         </Paragraph>

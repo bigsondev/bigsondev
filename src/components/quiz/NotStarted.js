@@ -1,10 +1,10 @@
 import React from 'react';
 import { Row, Col, Space, Divider } from 'antd';
 
-import { Title, Text, Box, Link, PostList, Button } from '..';
+import { Title, Text, Box, Link, PostList, Button, MainCard } from '..';
 
 export const NotStarted = ({ questionsCount, onStartClick }) => (
-  <>
+  <MainCard>
     <Title level={3}>Before you Start</Title>
     <PostList
       data={[
@@ -19,8 +19,8 @@ export const NotStarted = ({ questionsCount, onStartClick }) => (
         <Text>You can take the Quiz at anytime.</Text>,
       ]}
     />
-    <Row>
-      <Col span={24}>
+    <Row justify="center">
+      <Col>
         <Box mt={4}>
           <Button type="promo" onClick={onStartClick}>
             Start
@@ -43,5 +43,5 @@ export const NotStarted = ({ questionsCount, onStartClick }) => (
         </Col>
       )}
     </Row>
-  </>
+  </MainCard>
 );

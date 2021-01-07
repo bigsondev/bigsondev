@@ -8,13 +8,14 @@ image: realtime-chat
 difficulty: 4
 ---
 
-import { Space } from 'antd';
+import { Row, Col } from 'antd';
 
 import { Text, Link, Button, Project } from '~components';
 
 export const projectRequirements = [
   <Text>
-    Create a new git repository on <Link href="http://github.com/">GitHub</Link>.
+    Create a new git repository on <Link href="http://github.com/">GitHub</Link>
+    .
   </Text>,
   <Text>
     Initialize the repository with{' '}
@@ -79,17 +80,23 @@ export const additionalFeatures = [
 
 <Project
   buttons={
-    <Space>
-      <Link href="https://www.figma.com/file/wcTJcE0Foi1u3cTkV347Xx/Wireframes?node-id=264242%3A0">
-        <Button type="secondary">Design</Button>
-      </Link>
-      <Link href="https://morning-meadow-64994.herokuapp.com/">
-        <Button type="secondary">Solution</Button>
-      </Link>
-      <Link href="https://github.com/bigsondev/realtime-chat">
-        <Button type="secondary">GitHub</Button>
-      </Link>
-    </Space>
+    <Row justify="center" gutter={[8, 8]}>
+      <Col>
+        <Link href="https://www.figma.com/file/wcTJcE0Foi1u3cTkV347Xx/Wireframes?node-id=264242%3A0">
+          <Button type="secondary">Design</Button>
+        </Link>
+      </Col>
+      <Col>
+        <Link href="https://morning-meadow-64994.herokuapp.com/">
+          <Button type="secondary">Solution</Button>
+        </Link>
+      </Col>
+      <Col>
+        <Link href="https://github.com/bigsondev/realtime-chat">
+          <Button type="secondary">GitHub</Button>
+        </Link>
+      </Col>
+    </Row>
   }
   requirements={projectRequirements}
   fundamentals={mustHaveFeatures}

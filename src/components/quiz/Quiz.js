@@ -91,7 +91,7 @@ export const Quiz = ({ data: initialData, title, desc, next }) => {
   };
 
   return (
-    <Post title={title} desc={stage === STAGE_MAPPER.notStarted ? desc : null}>
+    <Post title={title} desc={null}>
       {stages[stage]}
     </Post>
   );
