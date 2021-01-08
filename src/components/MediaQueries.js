@@ -42,6 +42,20 @@ export const XlOnly = styled.div`
   display: none;
 `;
 
+export const LgOnly = styled.div`
+  @media (min-width: 992px) {
+    display: block;
+  }
+  display: none;
+`;
+
+export const ExceptLg = styled.div`
+  @media (max-width: 991px) {
+    display: block;
+  }
+  display: none;
+`;
+
 export const ExceptXl = styled.div`
   @media (max-width: 1199px) {
     display: block;

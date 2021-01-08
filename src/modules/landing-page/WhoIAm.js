@@ -19,6 +19,8 @@ import {
   Illustration,
   SmallOnly,
   ExceptSmall,
+  LgOnly,
+  ExceptLg,
 } from '~components';
 
 const { colors, fontSize, fontWeight, spacing } = theme;
@@ -210,75 +212,148 @@ export const WhoIAm = () => {
               </Row>
             </Col>
             <Col span={24}>
-              <Row align="center" gutter={[32, 32]}>
-                <Col xs={22} lg={9}>
-                  <MainCard>
-                    <Row justify="center" gutter={[0, 24]}>
-                      <Col span={12} style={{ textAlign: 'center' }}>
-                        <Icon type="recruiter" width={64} />
-                      </Col>
-                      <Col span={24}>
-                        <Title
-                          level={4}
-                          transform="none"
-                          align="center"
-                          marginBottom="0"
-                          fontSize={fontSize.large}
-                          fontWeight={fontWeight.stronger}
-                        >
-                          Technical Recruiter
-                        </Title>
-                      </Col>
-                      <Col span={22}>
-                        <Paragraph align="center" size="preNormal">
-                          I enjoy brainstorming with candidates and sharing
-                          insights.
-                        </Paragraph>
-                      </Col>
-                      <Col span={20}>
-                        <Title level={5} align="center" transform="none">
-                          Experience
-                        </Title>
-                        <Paragraph
-                          align="center"
-                          size="preNormal"
-                          marginBottom="0"
-                        >
-                          2 years
-                        </Paragraph>
-                      </Col>
-                    </Row>
-                  </MainCard>
-                </Col>
-                <Col
-                  xs={22}
-                  lg={15}
-                  style={{ alignSelf: 'center', textAlign: 'center' }}
-                >
-                  <Title
-                    level={3}
-                    transform="none"
-                    align="center"
-                    fontSize={fontSize.large}
-                    fontWeight={fontWeight.stronger}
+              <ExceptLg>
+                <Row align="center" gutter={[32, 32]}>
+                  <Col xs={22} lg={9}>
+                    <MainCard>
+                      <Row justify="center" gutter={[0, 24]}>
+                        <Col span={12} style={{ textAlign: 'center' }}>
+                          <Icon type="recruiter" width={64} />
+                        </Col>
+                        <Col span={24}>
+                          <Title
+                            level={4}
+                            transform="none"
+                            align="center"
+                            marginBottom="0"
+                            fontSize={fontSize.large}
+                            fontWeight={fontWeight.stronger}
+                          >
+                            Technical Recruiter
+                          </Title>
+                        </Col>
+                        <Col span={22}>
+                          <Paragraph align="center" size="preNormal">
+                            I enjoy brainstorming with candidates and sharing
+                            insights.
+                          </Paragraph>
+                        </Col>
+                        <Col span={20}>
+                          <Title level={5} align="center" transform="none">
+                            Experience
+                          </Title>
+                          <Paragraph
+                            align="center"
+                            size="preNormal"
+                            marginBottom="0"
+                          >
+                            2 years
+                          </Paragraph>
+                        </Col>
+                      </Row>
+                    </MainCard>
+                  </Col>
+                  <Col
+                    xs={22}
+                    lg={15}
+                    style={{ alignSelf: 'center', textAlign: 'center' }}
                   >
-                    Keywords
-                  </Title>
-                  <SkillButton>Theory</SkillButton>
-                  <SkillButton>Practice</SkillButton>
-                  <SkillButton>Junior</SkillButton>
-                  <SkillButton>Regular</SkillButton>
-                  <SkillButton>Senior</SkillButton>
-                  <SkillButton>Challenges</SkillButton>
-                  <SkillButton>Algorithms</SkillButton>
-                  <SkillButton>Coding</SkillButton>
-                  <SkillButton>Brainstorming</SkillButton>
-                  <SkillButton>Insights</SkillButton>
-                  <SkillButton>Soft-skills</SkillButton>
-                  <SkillButton>Solutions</SkillButton>
-                  <SkillButton>Feedback</SkillButton>
-                </Col>
-              </Row>
+                    <Title
+                      level={3}
+                      transform="none"
+                      align="center"
+                      fontSize={fontSize.large}
+                      fontWeight={fontWeight.stronger}
+                    >
+                      Keywords
+                    </Title>
+                    <SkillButton>Theory</SkillButton>
+                    <SkillButton>Practice</SkillButton>
+                    <SkillButton>Junior</SkillButton>
+                    <SkillButton>Regular</SkillButton>
+                    <SkillButton>Senior</SkillButton>
+                    <SkillButton>Challenges</SkillButton>
+                    <SkillButton>Algorithms</SkillButton>
+                    <SkillButton>Coding</SkillButton>
+                    <SkillButton>Brainstorming</SkillButton>
+                    <SkillButton>Insights</SkillButton>
+                    <SkillButton>Soft-skills</SkillButton>
+                    <SkillButton>Solutions</SkillButton>
+                    <SkillButton>Feedback</SkillButton>
+                  </Col>
+                </Row>
+              </ExceptLg>
+              <LgOnly>
+                <Row align="center" gutter={[32, 32]}>
+                  <Col
+                    xs={22}
+                    lg={15}
+                    style={{ alignSelf: 'center', textAlign: 'center' }}
+                  >
+                    <Title
+                      level={3}
+                      transform="none"
+                      align="center"
+                      fontSize={fontSize.large}
+                      fontWeight={fontWeight.stronger}
+                    >
+                      Keywords
+                    </Title>
+                    <SkillButton>Theory</SkillButton>
+                    <SkillButton>Practice</SkillButton>
+                    <SkillButton>Junior</SkillButton>
+                    <SkillButton>Regular</SkillButton>
+                    <SkillButton>Senior</SkillButton>
+                    <SkillButton>Challenges</SkillButton>
+                    <SkillButton>Algorithms</SkillButton>
+                    <SkillButton>Coding</SkillButton>
+                    <SkillButton>Brainstorming</SkillButton>
+                    <SkillButton>Insights</SkillButton>
+                    <SkillButton>Soft-skills</SkillButton>
+                    <SkillButton>Solutions</SkillButton>
+                    <SkillButton>Feedback</SkillButton>
+                  </Col>
+                  <Col xs={22} lg={9}>
+                    <MainCard>
+                      <Row justify="center" gutter={[0, 24]}>
+                        <Col span={12} style={{ textAlign: 'center' }}>
+                          <Icon type="recruiter" width={64} />
+                        </Col>
+                        <Col span={24}>
+                          <Title
+                            level={4}
+                            transform="none"
+                            align="center"
+                            marginBottom="0"
+                            fontSize={fontSize.large}
+                            fontWeight={fontWeight.stronger}
+                          >
+                            Technical Recruiter
+                          </Title>
+                        </Col>
+                        <Col span={22}>
+                          <Paragraph align="center" size="preNormal">
+                            I enjoy brainstorming with candidates and sharing
+                            insights.
+                          </Paragraph>
+                        </Col>
+                        <Col span={20}>
+                          <Title level={5} align="center" transform="none">
+                            Experience
+                          </Title>
+                          <Paragraph
+                            align="center"
+                            size="preNormal"
+                            marginBottom="0"
+                          >
+                            2 years
+                          </Paragraph>
+                        </Col>
+                      </Row>
+                    </MainCard>
+                  </Col>
+                </Row>
+              </LgOnly>
             </Col>
             <Col span={24}>
               <Row align="center" gutter={[32, 32]}>
