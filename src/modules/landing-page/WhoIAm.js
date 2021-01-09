@@ -23,11 +23,15 @@ import {
   ExceptLg,
 } from '~components';
 
-const { colors, fontSize, fontWeight, spacing } = theme;
+const { colors, fontSize, fontWeight, spacing, opacity } = theme;
 
 const Holder = styled.div(({ theme }) => ({
   position: 'relative',
 }));
+
+const WhoIAmCard = styled(MainCard)({
+  boxShadow: 'none',
+});
 
 const SocialLinkHolder = styled(Link)({
   color: '#137099 !important',
@@ -132,7 +136,7 @@ export const WhoIAm = () => {
             <Col span={24}>
               <Row align="center" gutter={[32, 32]}>
                 <Col xs={22} lg={9}>
-                  <MainCard>
+                  <WhoIAmCard>
                     <Row justify="center" gutter={[0, 24]}>
                       <Col span={12} style={{ textAlign: 'center' }}>
                         <Icon type="developer" width={64} />
@@ -167,7 +171,7 @@ export const WhoIAm = () => {
                         </Paragraph>
                       </Col>
                     </Row>
-                  </MainCard>
+                  </WhoIAmCard>
                 </Col>
                 <Col
                   xs={22}
@@ -181,33 +185,23 @@ export const WhoIAm = () => {
                     fontSize={fontSize.large}
                     fontWeight={fontWeight.stronger}
                   >
-                    Skills
+                    Sure, but why should I care?
                   </Title>
-                  <SkillButton>JavaScript</SkillButton>
-                  <SkillButton>TypeScript</SkillButton>
-                  <SkillButton>Ajax</SkillButton>
-                  <SkillButton>HTML5</SkillButton>
-                  <SkillButton>CSS3</SkillButton>
-                  <SkillButton>React</SkillButton>
-                  <SkillButton>Redux</SkillButton>
-                  <SkillButton>Gatsby.js</SkillButton>
-                  <SkillButton>Node.js</SkillButton>
-                  <SkillButton>Express.js</SkillButton>
-                  <SkillButton>REST</SkillButton>
-                  <SkillButton>GraphQL</SkillButton>
-                  <SkillButton>Webpack</SkillButton>
-                  <SkillButton>Git</SkillButton>
-                  <SkillButton>VSCode</SkillButton>
-                  <SkillButton>Figma</SkillButton>
-                  <SkillButton>Terminal</SkillButton>
-                  <SkillButton>CI/CD</SkillButton>
-                  <SkillButton>Testing</SkillButton>
-                  <SkillButton>Cypress</SkillButton>
-                  <SkillButton>Yarn</SkillButton>
-                  <SkillButton>Npm</SkillButton>
-                  <SkillButton>Phaser</SkillButton>
-                  <SkillButton>Leadership</SkillButton>
-                  <SkillButton>UX/UI</SkillButton>
+                  <Paragraph
+                    size="normal"
+                    textOpacity={opacity.title}
+                    align="center"
+                  >
+                    From Java Tester To Lead Frontend Developer leading multiple
+                    teams around me in 5 years. All the insights I gathered over
+                    this time are just waiting to be shared with you. From
+                    planning, designing to the real implementation.{' '}
+                    <strong>
+                      I've faced many challenges and got stuck a lot of times
+                      without a mentor - let's make sure I'm here to support you
+                    </strong>
+                    .
+                  </Paragraph>
                 </Col>
               </Row>
             </Col>
@@ -215,7 +209,7 @@ export const WhoIAm = () => {
               <ExceptLg>
                 <Row align="center" gutter={[32, 32]}>
                   <Col xs={22} lg={9}>
-                    <MainCard>
+                    <WhoIAmCard>
                       <Row justify="center" gutter={[0, 24]}>
                         <Col span={12} style={{ textAlign: 'center' }}>
                           <Icon type="recruiter" width={64} />
@@ -251,7 +245,7 @@ export const WhoIAm = () => {
                           </Paragraph>
                         </Col>
                       </Row>
-                    </MainCard>
+                    </WhoIAmCard>
                   </Col>
                   <Col
                     xs={22}
@@ -265,21 +259,23 @@ export const WhoIAm = () => {
                       fontSize={fontSize.large}
                       fontWeight={fontWeight.stronger}
                     >
-                      Keywords
+                      Good for you, but why it matters?
                     </Title>
-                    <SkillButton>Theory</SkillButton>
-                    <SkillButton>Practice</SkillButton>
-                    <SkillButton>Junior</SkillButton>
-                    <SkillButton>Regular</SkillButton>
-                    <SkillButton>Senior</SkillButton>
-                    <SkillButton>Challenges</SkillButton>
-                    <SkillButton>Algorithms</SkillButton>
-                    <SkillButton>Coding</SkillButton>
-                    <SkillButton>Brainstorming</SkillButton>
-                    <SkillButton>Insights</SkillButton>
-                    <SkillButton>Soft-skills</SkillButton>
-                    <SkillButton>Solutions</SkillButton>
-                    <SkillButton>Feedback</SkillButton>
+                    <Paragraph
+                      size="normal"
+                      textOpacity={opacity.title}
+                      align="center"
+                    >
+                      I've seen dozens of resumes and collected my own "good &
+                      bad" parts. I did theory & practical interviews as well as
+                      worked on preliminary tasks which you often get when
+                      applying for a job.{' '}
+                      <strong>
+                        All that knowledge lays in my head and I can't wait to
+                        share it with you
+                      </strong>
+                      .
+                    </Paragraph>
                   </Col>
                 </Row>
               </ExceptLg>
@@ -297,24 +293,26 @@ export const WhoIAm = () => {
                       fontSize={fontSize.large}
                       fontWeight={fontWeight.stronger}
                     >
-                      Keywords
+                      Good for you, but why it matters?
                     </Title>
-                    <SkillButton>Theory</SkillButton>
-                    <SkillButton>Practice</SkillButton>
-                    <SkillButton>Junior</SkillButton>
-                    <SkillButton>Regular</SkillButton>
-                    <SkillButton>Senior</SkillButton>
-                    <SkillButton>Challenges</SkillButton>
-                    <SkillButton>Algorithms</SkillButton>
-                    <SkillButton>Coding</SkillButton>
-                    <SkillButton>Brainstorming</SkillButton>
-                    <SkillButton>Insights</SkillButton>
-                    <SkillButton>Soft-skills</SkillButton>
-                    <SkillButton>Solutions</SkillButton>
-                    <SkillButton>Feedback</SkillButton>
+                    <Paragraph
+                      size="normal"
+                      textOpacity={opacity.title}
+                      align="center"
+                    >
+                      I've seen dozens of resumes and collected my own "good &
+                      bad" parts. I did theory & practical interviews as well as
+                      worked on preliminary tasks which you often get when
+                      applying for a job.{' '}
+                      <strong>
+                        All that knowledge lays in my head and I can't wait to
+                        share it with you
+                      </strong>
+                      .
+                    </Paragraph>
                   </Col>
                   <Col xs={22} lg={9}>
-                    <MainCard>
+                    <WhoIAmCard>
                       <Row justify="center" gutter={[0, 24]}>
                         <Col span={12} style={{ textAlign: 'center' }}>
                           <Icon type="recruiter" width={64} />
@@ -350,7 +348,7 @@ export const WhoIAm = () => {
                           </Paragraph>
                         </Col>
                       </Row>
-                    </MainCard>
+                    </WhoIAmCard>
                   </Col>
                 </Row>
               </LgOnly>
@@ -358,7 +356,7 @@ export const WhoIAm = () => {
             <Col span={24}>
               <Row align="center" gutter={[32, 32]}>
                 <Col xs={22} lg={9}>
-                  <MainCard>
+                  <WhoIAmCard>
                     <Row justify="center" gutter={[0, 24]}>
                       <Col span={12} style={{ textAlign: 'center' }}>
                         <Icon type="mentor" width={64} />
@@ -394,7 +392,7 @@ export const WhoIAm = () => {
                         </Paragraph>
                       </Col>
                     </Row>
-                  </MainCard>
+                  </WhoIAmCard>
                 </Col>
                 <Col
                   xxs={22}
@@ -408,17 +406,22 @@ export const WhoIAm = () => {
                     fontSize={fontSize.large}
                     fontWeight={fontWeight.stronger}
                   >
-                    Values
+                    Ok, but why you?
                   </Title>
-                  <SkillButton>Empathy</SkillButton>
-                  <SkillButton>Patience</SkillButton>
-                  <SkillButton>Individual</SkillButton>
-                  <SkillButton>Projects</SkillButton>
-                  <SkillButton>Bounds</SkillButton>
-                  <SkillButton>Assignments</SkillButton>
-                  <SkillButton>Goals</SkillButton>
-                  <SkillButton>Support</SkillButton>
-                  <SkillButton>Team</SkillButton>
+                  <Paragraph
+                    size="normal"
+                    textOpacity={opacity.title}
+                    align="center"
+                  >
+                    I love Mentoring. It's not just about work, I observe your
+                    progress, adjust your learning path individually, and always
+                    make sure you can grasp knowledge in the most effective way.{' '}
+                    <strong>
+                      Additionally, I'm leading a study group of my most active
+                      mentees which can skyrocket your progress even more
+                    </strong>
+                    .
+                  </Paragraph>
                 </Col>
               </Row>
             </Col>

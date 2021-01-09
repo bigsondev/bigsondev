@@ -133,6 +133,14 @@ export const Offer = () => {
                     1 hour of conversation with targeted feedback, proposed
                     development path, and exemplary assignments.
                   </Paragraph>
+                  <Paragraph
+                    size="small"
+                    textOpacity={opacity.title}
+                    align="center"
+                    strong
+                  >
+                    Good for existing developers who seek to improve.
+                  </Paragraph>
                 </Col>
                 <Col span={24}>
                   <Box display="flex" justify="center">
@@ -152,49 +160,49 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Individual approach
+                        Do mock interview
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Study group member
+                        Get robust feedback
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Coding life hacks
+                        Receive development plan
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Robust feedback
+                        Learn coding life hacks
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Career path
+                        Acknowledge best practices
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Code review
+                        Set goals & assignments
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Assignments
+                        Work with other mentees
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Support through Slack
+                        Gain support through Slack
                       </Text>
                     </Space>
                   </Space>
@@ -230,6 +238,14 @@ export const Offer = () => {
                     4 hours in total over course of a month. Build a project
                     with modern technology stack and best practices.
                   </Paragraph>
+                  <Paragraph
+                    size="small"
+                    textOpacity={opacity.title}
+                    align="center"
+                    strong
+                  >
+                    Better for beginners who seek to dive into Frontend.
+                  </Paragraph>
                 </Col>
                 <Col span={24}>
                   <Box display="flex" justify="center">
@@ -261,37 +277,55 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.additional} />
                       <Text textOpacity={1} size="small" strong>
+                        Prepare wireframes & design
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small" strong>
                         Build & deploy your project
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.additional} />
                       <Text textOpacity={1} size="small" strong>
-                        Real-world experience
+                        Get real-world experience
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.additional} />
                       <Text textOpacity={1} size="small">
-                        Learn in-demand technologies
+                        Learn HTML, CSS, JS, React
                       </Text>
                     </Space>
                     <Space size="small">
-                      <CheckIcon color={colors.primary} />
+                      <CheckIcon color={colors.additional} />
                       <Text textOpacity={1} size="small">
-                        Development plan
+                        Discover Git, Terminal, IDE
                       </Text>
                     </Space>
                     <Space size="small">
-                      <CheckIcon color={colors.primary} />
+                      <CheckIcon color={colors.additional} />
                       <Text textOpacity={1} size="small">
-                        Help with a CV
+                        Obtain npm, Node.js, Webpack
                       </Text>
                     </Space>
                     <Space size="small">
-                      <CheckIcon color={colors.primary} />
+                      <CheckIcon color={colors.additional} />
                       <Text textOpacity={1} size="small">
-                        Mock interview
+                        Try TypeScript, Redux, GraphQL
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small">
+                        Connect to the server with API
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small">
+                        Code & brainstorm with Mentor
                       </Text>
                     </Space>
                   </Space>
@@ -325,7 +359,15 @@ export const Offer = () => {
                     align="center"
                   >
                     12 hours in total over course of 3 months. Create a
-                    portfolio with projects and get your dream Frontend job.
+                    portfolio with projects and find dream Frontend job.
+                  </Paragraph>
+                  <Paragraph
+                    size="small"
+                    textOpacity={opacity.title}
+                    align="center"
+                    strong
+                  >
+                    Best for career switchers who seek real progress.
                   </Paragraph>
                 </Col>
                 <Col span={24}>
@@ -352,7 +394,7 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small" strong>
-                        Linkedin referral
+                        Get the Linkedin referral
                       </Text>
                     </Space>
                     <Space size="small">
@@ -364,31 +406,55 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small" strong>
-                        3 unique projects
+                        Build 3 unique projects
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small" strong>
-                        User behaviour tools
+                        Use JAMStack
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small" strong>
+                        Learn user behaviour tools
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small" strong>
+                        Test with jest and Cypress
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small">
-                        Build confidence
+                        Practice algorithms and logic
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small">
-                        My personal insights
+                        Improve self-confidence
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small">
-                        Help with starting as a Freelancer
+                        Craft your resume
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small">
+                        Listen to my insights
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small">
+                        Find dream Frontend job
                       </Text>
                     </Space>
                   </Space>

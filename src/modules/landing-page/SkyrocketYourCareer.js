@@ -70,8 +70,9 @@ export const SkyrocketYourCareer = () => {
                       size="small"
                       textOpacity={opacity.title}
                     >
-                      Code review, debugging, learning, and problem solving
-                      together.
+                      Get yourself on the right track with{' '}
+                      <strong>development plan</strong> including in-demand
+                      technologies like <strong>React</strong>.
                     </Text>
                   </Col>
                 </Row>
@@ -104,8 +105,8 @@ export const SkyrocketYourCareer = () => {
                       size="small"
                       textOpacity={opacity.title}
                     >
-                      Plan, design and build your own project with the help of a
-                      mentor.
+                      Plan, design, code, build, and deploy your own project
+                      using <strong>HTML, CSS, JS with React</strong>.
                     </Text>
                   </Col>
                 </Row>
@@ -138,8 +139,8 @@ export const SkyrocketYourCareer = () => {
                       size="small"
                       textOpacity={opacity.title}
                     >
-                      Fully-packed support and collaboration to get the bests
-                      results.
+                      Become a Professional Frontend Developer by building{' '}
+                      <strong>3 unique projects</strong> for your portfolio.
                     </Text>
                   </Col>
                 </Row>
