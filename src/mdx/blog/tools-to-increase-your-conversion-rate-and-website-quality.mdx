@@ -1,0 +1,196 @@
+---
+title: 5 Tools To Increase Your Conversion Rate And Website Quality
+desc: Nothing hurts more than spending endless hours on coding a website, rolling it out to production, and having close to zero traffic. All our hopes are gone in no time.
+readTime: 3
+illustration: none
+tags: tools, quality, website
+date: 2021-01-11
+---
+
+import { Space, Alert } from 'antd';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  PostFooter,
+  Link,
+} from '~components';
+
+export const keyFeaturesOne = [
+  'Performance audit',
+  'Accessibility audit',
+  'Progressive Web App audit',
+  'SEO audit',
+  'Best Practices',
+];
+
+export const keyFeaturesTwo = [
+  'Heatmaps (see where users click, scroll to)',
+  'Recordings',
+  'Feedback poll',
+  'Surveys',
+];
+
+export const keyFeaturesThree = [
+  'Feature flags (show/hide features for end-users)',
+  'A/B Testing (serve different versions of one feature)',
+  'Percentage rollouts (release new version of the feature to % of users)',
+  'Different environments (e.g. local, staging, qa, production)',
+];
+
+export const keyFeaturesFour = [
+  'Robust information about errors',
+  'Breadcrumbs of user actions',
+  'Tags, filters, whitelisting, lots of customization',
+  'Different environments (e.g. local, staging, qa, production)',
+];
+
+export const keyFeaturesFive = [
+  'Headless testing for CI/CD',
+  'Recording videos and snapshots when the test fails',
+  'Simple API in pure JavaScript',
+  'Automatic waiting and network traffic control',
+  'Outstanding Electron Simulator App - fully-packed environment for writing tests locally',
+];
+
+<Post
+  title={props.frontmatter.title}
+  desc={props.frontmatter.desc}
+  date={props.frontmatter.date}
+  readTime={props.frontmatter.readTime}
+  showSubtitle
+>
+  <Title level={3}>Introduction</Title>
+  <Paragraph>
+    What if there was a way to track users on the website, serve them different
+    versions of one feature, test critical flows, have a reporting system to
+    quickly resolve bugs, or even watch videos when some functionality crashes?
+  </Paragraph>
+  <Paragraph>
+    Perhaps, the killer feature in your head is not used at all - time to learn
+    what users are actually doing on your website. Do they quit too early as
+    it’s way too slow or they’re overloaded with all the possibilities?
+  </Paragraph>
+  <Paragraph lastParagraph>
+    Let’s find out how you can possibly improve all of the above.
+  </Paragraph>
+  <Title level={4} transform="none">
+    1.{' '}
+    <Link href="https://developers.google.com/web/tools/lighthouse" strong>
+      Lighthouse Audit
+    </Link>
+  </Title>
+  <Paragraph>
+    These days, users won’t wait too long for loading a website, you have around{' '}
+    <Text strong>3-5 seconds</Text> to make sure initial content is displayed
+    and available for them. Lighthouse can help with that and thoroughly test
+    the website’s performance.
+  </Paragraph>
+  <Paragraph>
+    <Text strong>Pricing:</Text> Free
+  </Paragraph>
+  <Paragraph>
+    <Text strong>Key features:</Text>
+  </Paragraph>
+  <PostList data={keyFeaturesOne} />
+  <Paragraph breakParagraph />
+  <Title level={4} transform="none">
+    2.{' '}
+    <Link href="https://www.hotjar.com/" strong>
+      HotJar
+    </Link>
+  </Title>
+  <Paragraph>
+    The killer feature is to be able to record the user’s behavior while he or
+    she browses your website. All that knowledge will let you iterate, come up
+    with new ideas, better solutions, and take another look from a different
+    perspective.
+  </Paragraph>
+  <Paragraph>
+    The basic plan offers 300 recordings to keep in total and snapshot sessions
+    can cover 100 recordings. Additionally, you can manage up to 3 heatmaps for
+    free. It’s enough for small businesses.
+  </Paragraph>
+  <Paragraph>
+    <Text strong>Pricing:</Text> Free - $99+ / mo
+  </Paragraph>
+  <Paragraph>
+    <Text strong>Key features:</Text>
+  </Paragraph>
+  <PostList data={keyFeaturesTwo} />
+  <Paragraph breakParagraph />
+  <Title level={4} transform="none">
+    3.{' '}
+    <Link href="https://launchdarkly.com/" strong>
+      LaunchDarkly
+    </Link>
+  </Title>
+  <Paragraph>
+    It’s a convenient ability to be able to ship some hidden feature to
+    production, test it on selected users, and see how it works under different
+    circumstances - especially if there are inconsistencies between
+    environments. It’s one of the greatest things LaunchDarkly can offer, as a
+    bonus you could release different versions of the feature.
+  </Paragraph>
+  <Paragraph>
+    <Text strong>Pricing:</Text> $75 / mo - $325+ / mo
+  </Paragraph>
+  <Paragraph>
+    <Text strong>Key features:</Text>
+  </Paragraph>
+  <PostList data={keyFeaturesThree} />
+  <Paragraph breakParagraph />
+  <Title level={4} transform="none">
+    4.{' '}
+    <Link href="https://sentry.io/welcome/" strong>
+      Sentry
+    </Link>
+  </Title>
+  <Paragraph>
+    Sentry is a reporting system all the Frontend Developers need. Once the
+    error happens, you get robust information about the browser, OS, URL,
+    breadcrumbs - full history of the user actions. There is an option to add
+    source maps to see the direct line of code where the error occurred and much
+    more.
+  </Paragraph>
+  <Paragraph>
+    <Text strong>Pricing:</Text> Free - $80+ / mo
+  </Paragraph>
+  <Paragraph>
+    <Text strong>Key features:</Text>
+  </Paragraph>
+  <PostList data={keyFeaturesFour} />
+  <Paragraph breakParagraph />
+  <Title level={4} transform="none">
+    5.{' '}
+    <Link href="https://www.cypress.io/" strong>
+      Cypress
+    </Link>
+  </Title>
+  <Paragraph>
+    For such a long time there was a Selenium and all Java-based frameworks for
+    testing. Cypress has a full JavaScript API and it’s amazing. It works on
+    Chromium and already has support for multiple browsers. It’s straightforward
+    to setup CI/CD where it records videos and snapshots once tests are failing.
+    It’s a robust, mature e2e solution for the modern Frontend world.
+  </Paragraph>
+  <Paragraph>
+    <Text strong>Pricing:</Text> Free - $399 / mo
+  </Paragraph>
+  <Paragraph>
+    <Text strong>Key features:</Text>
+  </Paragraph>
+  <PostList data={keyFeaturesFive} />
+  <Paragraph lastParagraph />
+  <Title level={3}>Closing Notes</Title>
+  <Paragraph>
+    When I was working as a Lead Frontend Developer, I and the team loved those
+    tools. My recommendation is to add them earlier than later as you can really
+    see the boost in conversions. Who knows, you might catch a bug, rethink a
+    solution from another perspective or realize that something worked in your
+    head, but it didn't "click" for the users. Have fun along the way.
+  </Paragraph>
+  <PostFooter />
+</Post>
