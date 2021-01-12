@@ -26,6 +26,7 @@ import PillSeven from './pill-7.png';
 import PillEight from './pill-8.png';
 import PillNine from './pill-9.png';
 import PillTen from './pill-10.png';
+import PillEleven from './pill-11.png';
 
 export * from './logo';
 export {
@@ -57,4 +58,5 @@ export {
   PillEight,
   PillNine,
   PillTen,
+  PillEleven
 };

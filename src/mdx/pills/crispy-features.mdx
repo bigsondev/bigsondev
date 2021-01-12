@@ -1,0 +1,77 @@
+---
+title: Crispy features
+desc: Null coalescing operator, optional chaining, and Array.flat method are all amazing. It's worth to follow ESNext features to be up-to-date with new possibilities.
+date: 2021-01-12
+tags: js
+type: boy
+image: pillEleven
+---
+
+import {
+  SyntaxHighlighter,
+  Link,
+  CodeEditorRaw,
+  KnowledgePill,
+  Text,
+} from '~components';
+
+export const initialHtml = '<h1>Open console in your browser to see logs</h1>';
+export const initialJs = `const data = {};
+const person = {
+  name: 'Adrian',
+  age: 27
+};
+const animals = ['Dog', 'Cat'];
+const nestedAnimals = [['Dog'], ['Cat'], ['Horse']];\n
+// Thanks to the "Elvis operator" or more known as optional chaining,
+// we can safely access nested object properties even if they don't exist
+console.log(data?.a?.b?.c); // undefined instead of error\n
+// We can do the similar with arrays, since arrays are indexed from 0,
+// animals[2] is the 3rd element which doesn't exist
+console.log(animals[2]?.toString()); // undefined instead of error\n
+// We can also use optional chaining on functions, in this case
+// we are trying to call "myImaginaryFunction" - which again, doesn't exist
+console.log(data.myImaginaryFunction?.()); // undefined instead of error\n
+// We can still use optional chaining to access nested properties
+console.log(person?.name); // "Adrian"\n
+// Null coalescing operator is best suited for checking against null or undefined
+// It will accept other "falsy" values such as 0
+const zero = 0 ?? 5;
+const five = null ?? 5;
+const ten = undefined ?? 10;\n
+console.log(zero, five, ten); // 0, 5, 10\n
+// .flat creates a flatten array, it accepts depth as an optional
+// parameter of how many levels it should flatten the original array
+// by default it's 1 level
+const flattenAnimals = nestedAnimals.flat();\n
+console.log(flattenAnimals); // ["Dog", "Cat", "Horse"]`;
+
+export const tabs = ['js', 'html'];
+
+<KnowledgePill
+  code={<SyntaxHighlighter showCopy>{initialJs}</SyntaxHighlighter>}
+  explanation={
+    <>
+      <Link href="https://en.wikipedia.org/wiki/ECMAScript" size="preNormal">
+        ECMAScript
+      </Link>{' '}
+      brings up new features every year to the JavaScript world. It's
+      challenging to stay up-to-date but also rewarding. Optional chaining is a
+      true game-changer for writing code. If it comes to arrays, worth taking a
+      look at all the available methods e.g. on{' '}
+      <Link href="https://devdocs.io/javascript-array/" size="preNormal">
+        devdocs.io
+      </Link>
+      .
+    </>
+  }
+  interactiveExample={
+    <CodeEditorRaw
+      tabs={tabs}
+      initialHtml={initialHtml}
+      initialJs={initialJs}
+    />
+  }
+  {...props}
+  {...props.frontmatter}
+/>
