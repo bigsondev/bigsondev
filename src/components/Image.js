@@ -19,8 +19,8 @@ const Img = styled.img({
   height: 'auto',
 });
 
-export const Image = ({ src, alt, desc }) => (
-  <Figure>
+export const Image = ({ src, alt, desc, ...restProps }) => (
+  <Figure {...restProps}>
     <Img src={src} alt={alt} />
     {desc && (
       <FigureCaption>

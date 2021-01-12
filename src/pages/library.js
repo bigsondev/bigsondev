@@ -128,7 +128,11 @@ const Resource = ({
         </Col>
         {image && (
           <Col span={24}>
-            <Image src={PROJECTS_MAPPER[image]} alt={desc} />
+            <Image
+              src={PROJECTS_MAPPER[image]}
+              alt={desc}
+              style={{ margin: '0 auto 1rem auto' }}
+            />
           </Col>
         )}
         <Col span={24}>

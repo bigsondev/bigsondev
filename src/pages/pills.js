@@ -118,9 +118,9 @@ const Pill = ({ title, desc, path, tags, image }) => (
             {title}
           </Title>
         </Col>
-        <Col span={24}>
+        {/* <Col span={24}>
           <Image src={PILLS_MAPPER[image]} alt={desc} />
-        </Col>
+        </Col> */}
         <Col span={24}>
           <Paragraph type="secondary" size="preNormal">
             {truncate(desc, 180)}
