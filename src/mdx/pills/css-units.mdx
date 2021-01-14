@@ -1,0 +1,131 @@
+---
+title: CSS Units
+desc: Do you only use pixels or % in CSS? Open yourself to more possibilities and best practices with other available units.
+date: 2021-01-14
+tags: html, css
+type: boy
+image: pillOne
+---
+
+import {
+  SyntaxHighlighter,
+  Link,
+  CodeEditorRaw,
+  KnowledgePill,
+  Text,
+} from '~components';
+
+export const cssUnitsCode = `CSS Units\n
+- em: relative to the closest font-size
+- rem: relative to font size of html root element
+- vw: viewport width
+- vh: viewport height
+- vmin: take what is smaller, vw or vh
+- vmax: take what is bigger, vw or vh`;
+
+export const tabs = ['html', 'css'];
+
+export const initialHtml = `<div class="wrapper">
+   <!-- em unit - 2em * 8px = 16px -->
+   <div class="emUnit">
+      em: I'm relative to the closest font-size, in this case div "wrapper" parent element.
+   </div>
+   <!-- rem unit - 2em * 12px = 24px -->
+   <div class="remUnit">
+      rem: I'm relative to font size of html root element.
+   </div>
+   <div class="flexWrapper">
+      <div class="viewportUnit bordered">
+         <!-- vw, vh - viewport width & viewport height -->
+         vw/vh: My size is 20vw x 20vh
+      </div>
+      <!-- vmin - take what's smaller vw or vh -->
+      <div class="viewportMinUnit bordered">
+         vmin: My size is 50vmin x 20vmin
+      </div>
+      <!-- vmax - take what's bigger vw or vh -->
+      <div class="viewportMaxUnit bordered">
+         vmax: My size is 20vmax x 7vmax
+      </div>
+   </div>
+</div>`;
+
+export const initialCss = `html {
+  font-size: 12px;
+}\n
+.wrapper {
+  font-size: 8px;
+  text-align: center;
+}\n
+.emUnit {
+  font-size: 2em;
+}\n
+.remUnit {
+  font-size: 2rem;
+}\n
+.bordered {
+  border: 1px dashed black;
+}\n
+.flexWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}\n
+.flexWrapper > div { 
+  margin-right: 1rem;
+  padding-top: 1rem;
+}\n
+.viewportUnit {
+  width: 20vw;
+  height: 20vh;
+}\n
+.viewportMinUnit {
+  width: 50vmin;
+  height: 20vmin;
+}\n
+.viewportMaxUnit {
+  width: 20vmax;
+  height: 7vmax;
+}`;
+
+<KnowledgePill
+  code={<SyntaxHighlighter>{cssUnitsCode}</SyntaxHighlighter>}
+  explanation={
+    <>
+      Each unit has its own use cases and best practices. I love using{' '}
+      <Text code size="preNormal">
+        rem
+      </Text>{' '}
+      as it's a scalable unit and consistent across devices (if proper media
+      queries are set in root HTML element). Additionally, a lot of duplication
+      is removed as e.g. font is changed in one place.{' '}
+      <Text code size="preNormal">
+        viewport
+      </Text>{' '}
+      units can be a good solution for full-page screens and other scenarios
+      where you need to take viewport size into consideration. Check supported
+      browsers on{' '}
+      <Link href="https://caniuse.com/" size="preNormal">
+        caniuse
+      </Link>{' '}
+      for the unit you use. Read more{' '}
+      <Link
+        href="https://gist.github.com/basham/2175a16ab7c60ce8e001"
+        size="preNormal"
+      >
+        best practices about CSS units
+      </Link>
+      .
+    </>
+  }
+  interactiveExample={
+    <CodeEditorRaw
+      tabs={tabs}
+      initialHtml={initialHtml}
+      initialCss={initialCss}
+    />
+  }
+  {...props}
+  {...props.frontmatter}
+/>
