@@ -28,7 +28,7 @@ const MobileScreenPromo = () => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        Learn Frontend
+        Master coding
       </Title>
       <Title
         transform="none"
@@ -59,10 +59,10 @@ const MobileScreenPromo = () => (
       </Title>
       <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
-          Get out of tutorials hell.
+          Learn HTML, CSS, JS, React.
         </Text>{' '}
-        Reach long-term goals, find your first IT job, and feel the real
-        progress. Invest in yourself and make learning a breeze.
+        <br /> Become a Web Developer, find a well-paid job, and feel the real
+        progress.
       </Paragraph>
     </Col>
     <Box margin={`0 auto ${spacing.large} auto`}>
@@ -86,7 +86,7 @@ const MediumScreenPromo = () => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        Learn Frontend faster
+        Master coding faster
       </Title>
       <Title
         transform="none"
@@ -99,10 +99,10 @@ const MediumScreenPromo = () => (
       </Title>
       <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
-          Get out of tutorials hell.
+          Get out of tutorials hell - learn HTML, CSS, JS, React.
         </Text>{' '}
-        Reach long-term goals, find your first IT job, and feel the real
-        progress. Invest in yourself and make learning a breeze.
+        <br /> Become a Web Developer, find a well-paid job, and feel the real
+        progress.
       </Paragraph>
       <Box margin={`0 auto ${spacing.large} auto`}>
         <Link to="/mentorship/">
@@ -126,7 +126,7 @@ const BigScreenPromo = () => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        Learn Frontend faster
+        Master coding faster
       </Title>
       <Title
         transform="none"
@@ -139,10 +139,10 @@ const BigScreenPromo = () => (
       </Title>
       <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
-          Get out of tutorials hell.
+          Get out of tutorials hell - learn HTML, CSS, JS, React.
         </Text>{' '}
-        Reach long-term goals, find your first IT job, and feel the real
-        progress. Invest in yourself and make learning a breeze.
+        <br /> Become a Web Developer, find a well-paid job, and feel the real
+        progress.
       </Paragraph>
       <Box margin={`0 auto ${spacing.large} auto`}>
         <Link to="/mentorship/">
