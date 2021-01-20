@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70.6mm" height="70.6mm" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="Gradient_bez_nazwy_6" data-name="Gradient bez nazwy 6" x1="-5270.8" y1="1182.28" x2="-5273.42" y2="1184.9" gradientTransform="translate(58222.8 -12979.9) scale(11.03)" gradientUnits="userSpaceOnUse">
+      <stop offset="0.18" stop-color="#2b56a3"/>
+      <stop offset="1" stop-color="#4678bc"/>
+    </linearGradient>
+    <linearGradient id="Gradient_bez_nazwy_6-2" x1="-5270.11" y1="1189.81" x2="-5267.49" y2="1187.2" xlink:href="#Gradient_bez_nazwy_6"/>
+  </defs>
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_1-2" data-name="Warstwa 1">
+      <g>
+        <g>
+          <circle cx="100" cy="100" r="94" fill="#f5f4f5"/>
+          <path d="M100,12a88,88,0,1,1-88,88,88,88,0,0,1,88-88m0-12A100,100,0,1,0,200,100,100.2,100.2,0,0,0,100,0Z" fill="#2a2a2b"/>
+        </g>
+        <g>
+          <path d="M166.1,96.1,105.8,35.8,100,30,54.6,75.3,33.9,96.1a5.4,5.4,0,0,0,0,7.8l41.4,41.4L100,170l45.3-45.4.7-.7,20.1-20a5.5,5.5,0,0,0,0-7.8ZM100,120.7,79.3,100,100,79.3,120.7,100Z" fill="#4678bc"/>
+          <path d="M100,79.3a34.8,34.8,0,0,1-.2-49.1L54.5,75.4l24.7,24.7Z" fill="url(#Gradient_bez_nazwy_6)"/>
+          <path d="M120.7,99.9,100,120.7a34.9,34.9,0,0,1,0,49.3l45.4-45.4Z" fill="url(#Gradient_bez_nazwy_6-2)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

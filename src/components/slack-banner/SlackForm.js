@@ -138,7 +138,7 @@ export const SlackForm = () => {
                   onClick={() => setTriedToSubmit(true)}
                   type="ghost"
                 >
-                  Request Invite
+                  Request invite
                 </Button>
               </Box>
             </Form.Item>

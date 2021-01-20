@@ -1,8 +1,10 @@
 import React from 'react';
 import { Row, Col, Space } from 'antd';
+import { Link as GatsbyLink } from 'gatsby';
 import { CheckOutlined } from '@ant-design/icons';
 import styled from 'styled-components';
 import { openPopupWidget } from 'react-calendly';
+import Flip from 'react-reveal/Flip';
 
 import {
   theme,
@@ -102,9 +104,7 @@ export const Offer = () => {
               size="medium"
             >
               It's easy to get stuck in tutorials hell. I've been there and I
-              don't want you to go through this alone. If you are a newcomer or
-              just looking to improve as a Developer, I'll be happy to guide and
-              support.
+              don't want you to go through this alone.
             </Paragraph>
           </Col>
         </Row>
@@ -129,6 +129,7 @@ export const Offer = () => {
                     size="small"
                     textOpacity={opacity.title}
                     align="center"
+                    style={{ minHeight: '8rem' }}
                   >
                     1 hour of conversation with targeted feedback, proposed
                     development path, and exemplary assignments.
@@ -138,6 +139,7 @@ export const Offer = () => {
                     textOpacity={opacity.title}
                     align="center"
                     strong
+                    style={{ minHeight: '3.5rem' }}
                   >
                     Good for existing developers who seek to improve.
                   </Paragraph>
@@ -166,6 +168,13 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
+                        Learn{' '}
+                        <GatsbyLink to="/pills/">coding life hacks</GatsbyLink>
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.primary} />
+                      <Text textOpacity={1} size="small">
                         Get robust feedback
                       </Text>
                     </Space>
@@ -178,13 +187,7 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.primary} />
                       <Text textOpacity={1} size="small">
-                        Learn coding life hacks
-                      </Text>
-                    </Space>
-                    <Space size="small">
-                      <CheckIcon color={colors.primary} />
-                      <Text textOpacity={1} size="small">
-                        Acknowledge best practices
+                        Grasp best practices
                       </Text>
                     </Space>
                     <Space size="small">
@@ -234,15 +237,17 @@ export const Offer = () => {
                     size="small"
                     textOpacity={opacity.title}
                     align="center"
+                    style={{ minHeight: '8rem' }}
                   >
                     4 hours in total over course of a month. Build a project
-                    with modern technology stack and best practices.
+                    with modern technologies and best practices.
                   </Paragraph>
                   <Paragraph
                     size="small"
                     textOpacity={opacity.title}
                     align="center"
                     strong
+                    style={{ minHeight: '3.5rem' }}
                   >
                     Better for beginners who seek to dive into Frontend.
                   </Paragraph>
@@ -271,19 +276,34 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.additional} />
                       <Text textOpacity={1} size="small" strong>
-                        Work in Agile methodology
+                        Learn{' '}
+                        <GatsbyLink to="/#bigsondev-technologies">
+                          desired skills
+                        </GatsbyLink>
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.additional} />
                       <Text textOpacity={1} size="small" strong>
-                        Prepare wireframes & design
+                        Work in Agile
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.additional} />
                       <Text textOpacity={1} size="small" strong>
-                        Build & deploy your project
+                        Design an idea
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small" strong>
+                        Code a design
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.additional} />
+                      <Text textOpacity={1} size="small" strong>
+                        Build & deploy a project
                       </Text>
                     </Space>
                     <Space size="small">
@@ -295,37 +315,13 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.additional} />
                       <Text textOpacity={1} size="small">
-                        Learn HTML, CSS, JS, React
+                        Co-op with a Mentor
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.additional} />
                       <Text textOpacity={1} size="small">
-                        Discover Git, Terminal, IDE
-                      </Text>
-                    </Space>
-                    <Space size="small">
-                      <CheckIcon color={colors.additional} />
-                      <Text textOpacity={1} size="small">
-                        Obtain npm, Node.js, Webpack
-                      </Text>
-                    </Space>
-                    <Space size="small">
-                      <CheckIcon color={colors.additional} />
-                      <Text textOpacity={1} size="small">
-                        Try TypeScript, Redux, GraphQL
-                      </Text>
-                    </Space>
-                    <Space size="small">
-                      <CheckIcon color={colors.additional} />
-                      <Text textOpacity={1} size="small">
-                        Connect to the server with API
-                      </Text>
-                    </Space>
-                    <Space size="small">
-                      <CheckIcon color={colors.additional} />
-                      <Text textOpacity={1} size="small">
-                        Code & brainstorm with Mentor
+                        Join elite squad 😎
                       </Text>
                     </Space>
                   </Space>
@@ -341,7 +337,9 @@ export const Offer = () => {
             <SuperOfferCard>
               <Row justify="center" gutter={[0, 24]}>
                 <Col span={10}>
-                  <Illustration type="largeRocket" />
+                  <Flip>
+                    <Illustration type="largeRocket" />
+                  </Flip>
                 </Col>
                 <Col span={24}>
                   <Title
@@ -357,6 +355,7 @@ export const Offer = () => {
                     size="small"
                     textOpacity={opacity.title}
                     align="center"
+                    style={{ minHeight: '8rem' }}
                   >
                     12 hours in total over course of 3 months. Create a
                     portfolio with projects and find dream Frontend job.
@@ -366,6 +365,7 @@ export const Offer = () => {
                     textOpacity={opacity.title}
                     align="center"
                     strong
+                    style={{ minHeight: '3.5rem' }}
                   >
                     Best for career switchers who seek real progress.
                   </Paragraph>
@@ -394,13 +394,16 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small" strong>
-                        Get the Linkedin referral
+                        Learn{' '}
+                        <Link size="small" strong href="https://jamstack.org/">
+                          JAMStack
+                        </Link>
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small" strong>
-                        Create a portfolio
+                        Use behavior tools
                       </Text>
                     </Space>
                     <Space size="small">
@@ -412,25 +415,31 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small" strong>
-                        Use JAMStack
+                        Test with jest & Cypress
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small" strong>
-                        Learn user behaviour tools
+                        Create portfolio
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small" strong>
-                        Test with jest and Cypress
+                        Craft resume
+                      </Text>
+                    </Space>
+                    <Space size="small">
+                      <CheckIcon color={colors.promo} />
+                      <Text textOpacity={1} size="small" strong>
+                        Get Linkedin referral
                       </Text>
                     </Space>
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small">
-                        Practice algorithms and logic
+                        Practice for interview
                       </Text>
                     </Space>
                     <Space size="small">
@@ -442,19 +451,7 @@ export const Offer = () => {
                     <Space size="small">
                       <CheckIcon color={colors.promo} />
                       <Text textOpacity={1} size="small">
-                        Craft your resume
-                      </Text>
-                    </Space>
-                    <Space size="small">
-                      <CheckIcon color={colors.promo} />
-                      <Text textOpacity={1} size="small">
-                        Listen to my insights
-                      </Text>
-                    </Space>
-                    <Space size="small">
-                      <CheckIcon color={colors.promo} />
-                      <Text textOpacity={1} size="small">
-                        Find dream Frontend job
+                        Become awesome ❤️
                       </Text>
                     </Space>
                   </Space>
@@ -517,8 +514,8 @@ export const Offer = () => {
               textOpacity={opacity.title}
               align="center"
             >
-              We'll build your profile and adjust individual, effective learning
-              path, you'll receive compact resources and assignments.
+              We'll create your profile and adjust individual, effective
+              learning path, you'll receive compact resources and assignments.
             </Paragraph>
           </Col>
           <Col xs={18} lg={8}>
@@ -537,7 +534,8 @@ export const Offer = () => {
             </Title>
             <Paragraph size="small" textOpacity={opacity.title} align="center">
               I invite all of my mentees to Slack, where we collaborate in
-              real-time through chat and you can ask any burning questions.
+              real-time through chat and all the burning questions can be asked
+              there.
             </Paragraph>
           </Col>
           <Col xs={18} lg={8}>

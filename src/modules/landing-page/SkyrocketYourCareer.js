@@ -2,16 +2,9 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import Slide from 'react-reveal/Slide';
 
-import {
-  theme,
-  Title,
-  Text,
-  Illustration,
-  MainCard,
-  Box,
-  Button,
-} from '~components';
+import { theme, Title, Text, Illustration, MainCard, Box } from '~components';
 
 const { colors, fontSize, fontWeight, spacing, opacity } = theme;
 
@@ -41,120 +34,115 @@ export const SkyrocketYourCareer = () => {
           fontSize={fontSize.superLarge}
           fontWeight={fontWeight.stronger}
         >
-          Mentorship services
+          Mentorship types
         </Title>
-        <Row justify="center" gutter={[24, 24]}>
-          <Col xs={22} sm={16} md={13} lg={8}>
-            <Link to="/mentorship/">
-              <PromoCard>
-                <Row justify="center" gutter={[0, 25]}>
-                  <Col span={17}>
-                    <Illustration type="mentor" />
-                  </Col>
-                  <Col span={24}>
-                    <Title
-                      level={4}
-                      transform="none"
-                      align="center"
-                      marginBottom="0"
-                      fontSize={fontSize.large}
-                      fontWeight={fontWeight.stronger}
-                    >
-                      Spot mentoring
-                    </Title>
-                  </Col>
-                  <Col span={22}>
-                    <Text
-                      align="center"
-                      display="block"
-                      size="small"
-                      textOpacity={opacity.title}
-                    >
-                      Get yourself on the right track with{' '}
-                      <strong>development plan</strong> including in-demand
-                      technologies like <strong>React</strong>.
-                    </Text>
-                  </Col>
-                </Row>
-              </PromoCard>
-            </Link>
-          </Col>
-          <Col xs={22} sm={16} md={13} lg={8}>
-            <Link to="/mentorship/">
-              <PromoCard>
-                <Row justify="center" gutter={[0, 22]}>
-                  <Col span={18}>
-                    <Illustration type="buildProject" />
-                  </Col>
-                  <Col span={22}>
-                    <Title
-                      level={4}
-                      transform="none"
-                      align="center"
-                      marginBottom="0"
-                      fontSize={fontSize.large}
-                      fontWeight={fontWeight.stronger}
-                    >
-                      Project mentoring
-                    </Title>
-                  </Col>
-                  <Col span={24}>
-                    <Text
-                      align="center"
-                      display="block"
-                      size="small"
-                      textOpacity={opacity.title}
-                    >
-                      Plan, design, code, build, and deploy your own project
-                      using <strong>HTML, CSS, JS with React</strong>.
-                    </Text>
-                  </Col>
-                </Row>
-              </PromoCard>
-            </Link>
-          </Col>
-          <Col xs={22} sm={16} md={13} lg={8}>
-            <Link to="/mentorship/">
-              <PromoCard>
-                <Row justify="center" gutter={[0, 24]}>
-                  <Col span={16}>
-                    <Illustration type="developmentPlan" />
-                  </Col>
-                  <Col span={24}>
-                    <Title
-                      level={4}
-                      transform="none"
-                      align="center"
-                      marginBottom="0"
-                      fontSize={fontSize.large}
-                      fontWeight={fontWeight.stronger}
-                    >
-                      Tailored mentoring
-                    </Title>
-                  </Col>
-                  <Col span={22}>
-                    <Text
-                      align="center"
-                      display="block"
-                      size="small"
-                      textOpacity={opacity.title}
-                    >
-                      Become a Professional Frontend Developer by building{' '}
-                      <strong>3 unique projects</strong> for your portfolio.
-                    </Text>
-                  </Col>
-                </Row>
-              </PromoCard>
-            </Link>
-          </Col>
-        </Row>
-        <Box margin={`${spacing.large} 0 0 0`}>
-          <Row justify="center">
-            <Link to="/mentorship/">
-              <Button type="promo">Skyrocket your career</Button>
-            </Link>
+        <Slide bottom>
+          <Row justify="center" gutter={[24, 24]}>
+            <Col xs={22} sm={16} md={13} lg={8}>
+              <Link to="/mentorship/">
+                <PromoCard>
+                  <Row justify="center" gutter={[0, 25]}>
+                    <Col span={17}>
+                      <Illustration type="mentor" />
+                    </Col>
+                    <Col span={24}>
+                      <Title
+                        level={4}
+                        transform="none"
+                        align="center"
+                        marginBottom="0"
+                        fontSize={fontSize.large}
+                        fontWeight={fontWeight.stronger}
+                      >
+                        Spot mentoring
+                      </Title>
+                    </Col>
+                    <Col span={22}>
+                      <Text
+                        align="center"
+                        display="block"
+                        size="small"
+                        textOpacity={opacity.title}
+                      >
+                        Get on the right track with{' '}
+                        <strong>development plan</strong> including in-demand
+                        technologies like <strong>React</strong>.
+                      </Text>
+                    </Col>
+                  </Row>
+                </PromoCard>
+              </Link>
+            </Col>
+            <Col xs={22} sm={16} md={13} lg={8}>
+              <Link to="/mentorship/">
+                <PromoCard>
+                  <Row justify="center" gutter={[0, 22]}>
+                    <Col span={18}>
+                      <Illustration type="buildProject" />
+                    </Col>
+                    <Col span={22}>
+                      <Title
+                        level={4}
+                        transform="none"
+                        align="center"
+                        marginBottom="0"
+                        fontSize={fontSize.large}
+                        fontWeight={fontWeight.stronger}
+                      >
+                        Project mentoring
+                      </Title>
+                    </Col>
+                    <Col span={24}>
+                      <Text
+                        align="center"
+                        display="block"
+                        size="small"
+                        textOpacity={opacity.title}
+                      >
+                        Plan, design, code, build, and deploy your own project
+                        using <strong>HTML, CSS, JS with React</strong>.
+                      </Text>
+                    </Col>
+                  </Row>
+                </PromoCard>
+              </Link>
+            </Col>
+            <Col xs={22} sm={16} md={13} lg={8}>
+              <Link to="/mentorship/">
+                <PromoCard>
+                  <Row justify="center" gutter={[0, 24]}>
+                    <Col span={16}>
+                      <Illustration type="developmentPlan" />
+                    </Col>
+                    <Col span={24}>
+                      <Title
+                        level={4}
+                        transform="none"
+                        align="center"
+                        marginBottom="0"
+                        fontSize={fontSize.large}
+                        fontWeight={fontWeight.stronger}
+                      >
+                        Tailored mentoring
+                      </Title>
+                    </Col>
+                    <Col span={22}>
+                      <Text
+                        align="center"
+                        display="block"
+                        size="small"
+                        textOpacity={opacity.title}
+                      >
+                        Become a Web Developer by building{' '}
+                        <strong>3 unique projects</strong> for your portfolio.
+                      </Text>
+                    </Col>
+                  </Row>
+                </PromoCard>
+              </Link>
+            </Col>
           </Row>
-        </Box>
+        </Slide>
       </Box>
     </Holder>
   );

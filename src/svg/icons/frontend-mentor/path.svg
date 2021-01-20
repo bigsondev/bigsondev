@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70.6mm" height="70.6mm" viewBox="0 0 200 200">
+  <g style="isolation: isolate">
+    <g id="Warstwa_2" data-name="Warstwa 2">
+      <g id="Warstwa_1-2" data-name="Warstwa 1">
+        <g>
+          <g>
+            <circle cx="100" cy="100" r="88" fill="#f5f4f5"/>
+            <path d="M100,12a88,88,0,1,1-88,88,88,88,0,0,1,88-88m0-12A100,100,0,1,0,200,100,100.2,100.2,0,0,0,100,0Z" fill="#2a2a2b"/>
+          </g>
+          <g>
+            <g>
+              <rect x="90.1" y="34.2" width="25.8" height="131.6" fill="#a97259"/>
+              <path d="M120.1,170H85.9V30h34.2Zm-25.8-8.4h17.4V38.4H94.3Z" fill="#2a2a2b"/>
+            </g>
+            <rect x="94.3" y="55.8" width="17.5" height="39.68" fill="#1d1d1b" opacity="0.15" style="mix-blend-mode: darken"/>
+            <rect x="94.3" y="111.1" width="17.5" height="39.68" fill="#1d1d1b" opacity="0.15" style="mix-blend-mode: darken"/>
+            <g>
+              <polygon points="121.4 142.2 49.8 142.2 35.8 122.3 49.8 102.5 121.4 102.5 121.4 142.2" fill="#5cba9d"/>
+              <path d="M125.6,146.4H47.7L30.6,122.3l17.1-24h77.9ZM52,138h65.2V106.7H52L40.9,122.3Z" fill="#2a2a2b"/>
+            </g>
+            <g>
+              <polygon points="150.2 86.4 78.6 86.4 78.6 46.8 150.2 46.8 164.2 66.6 150.2 86.4" fill="#e4554c"/>
+              <path d="M152.3,90.6H74.4v-48h77.9l17.1,24ZM82.8,82.2H148l11.1-15.6L148,51H82.8Z" fill="#2a2a2b"/>
+            </g>
+            <polygon points="157 63.6 146.8 78.5 82.8 78.5 82.8 82.1 148 82.2 159.1 66.6 157 63.6" fill="#1d1d1b" opacity="0.15" style="mix-blend-mode: darken"/>
+            <polygon points="43 119.3 53.1 134.1 117.1 134.1 117.1 137.8 51.9 137.9 40.8 122.2 43 119.3" fill="#1d1d1b" opacity="0.15" style="mix-blend-mode: darken"/>
+            <polygon points="80.7 136.2 65.7 121.8 71.4 115.8 80 123.9 93 108.4 99.4 113.8 80.7 136.2" fill="#2a2a2b"/>
+            <g>
+              <rect x="112.5" y="51.1" width="8.4" height="30.95" transform="translate(-12.8 102.5) rotate(-45.2)" fill="#2a2a2b"/>
+              <rect x="101.2" y="62.4" width="31" height="8.4" transform="translate(-13 101.6) rotate(-44.8)" fill="#2a2a2b"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

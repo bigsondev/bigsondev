@@ -7,11 +7,10 @@ const LinkButton = styled(Link)(({ theme }) => ({
   fontWeight: theme.fontWeight.strong,
   fontSize: theme.fontSize.base,
   display: 'block',
-  color: theme.colors.black,
-  textDecoration: 'underline',
+  color: theme.colors.secondary,
 
   '&:hover': {
-    color: theme.colors.black,
+    color: theme.colors.primary,
   },
 }));
 
@@ -26,9 +25,17 @@ const ArrowRight = styled(ArrowRightOutlined)({
 export const DirectionalLink = ({ children, left, right, to }) => {
   return (
     <LinkButton to={to}>
-      {left && <ArrowLeft />}
+      {left && (
+        <>
+          <ArrowLeft /> Previous
+        </>
+      )}
+      {right && (
+        <>
+          Next <ArrowRight />
+        </>
+      )}
       {children}
-      {right && <ArrowRight />}
     </LinkButton>
   );
 };

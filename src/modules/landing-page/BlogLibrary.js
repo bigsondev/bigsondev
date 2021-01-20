@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Space } from 'antd';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import Zoom from 'react-reveal/Zoom';
 
 import {
   VegeLandingProject,
@@ -91,7 +92,7 @@ export const BlogLibrary = () => {
           fontSize={fontSize.superLarge}
           fontWeight={fontWeight.stronger}
         >
-          Resources to improve your coding skills
+          Boost your coding skills
         </Title>
         <Title
           level={3}
@@ -103,70 +104,74 @@ export const BlogLibrary = () => {
         >
           Projects
         </Title>
+        <Zoom right>
+          <Row justify="center" gutter={[24, 24]}>
+            <Col xs={22} sm={16} md={13} lg={8}>
+              <Card>
+                <ProjectImage src={VegeLandingProject} />
+                <ProjectTitle
+                  color={colors.white}
+                  fontWeight={fontWeight.stronger}
+                >
+                  Vege Landing
+                </ProjectTitle>
+                <ProjectDescription
+                  color={colors.white}
+                  fontWeight={fontWeight.stronger}
+                  size="small"
+                >
+                  Create beautiful landing page with HTML and CSS
+                </ProjectDescription>
+                <ProjectLink to="/library/vege-landing-project/">
+                  <Button type="ghost">View project</Button>
+                </ProjectLink>
+              </Card>
+            </Col>
+            <Col xs={22} sm={16} md={13} lg={8}>
+              <Card>
+                <ProjectImage src={TodoAppProject} />
+                <ProjectTitle
+                  color={colors.white}
+                  fontWeight={fontWeight.stronger}
+                >
+                  Todo App
+                </ProjectTitle>
+                <ProjectDescription
+                  color={colors.white}
+                  fontWeight={fontWeight.stronger}
+                  size="small"
+                >
+                  A classic, must-have project for all beginners in Frontend
+                </ProjectDescription>
+                <ProjectLink to="/library/todo-app-project/">
+                  <Button type="ghost">View project</Button>
+                </ProjectLink>
+              </Card>
+            </Col>
+            <Col xs={22} sm={16} md={13} lg={8}>
+              <Card>
+                <ProjectImage src={RealtimeChatProject} />
+                <ProjectTitle
+                  color={colors.white}
+                  fontWeight={fontWeight.stronger}
+                >
+                  Realtime Chat
+                </ProjectTitle>
+                <ProjectDescription
+                  color={colors.white}
+                  fontWeight={fontWeight.stronger}
+                  size="small"
+                >
+                  Learn fullstack development with Next.js and Express
+                </ProjectDescription>
+                <ProjectLink to="/library/realtime-chat-project/">
+                  <Button type="ghost">View project</Button>
+                </ProjectLink>
+              </Card>
+            </Col>
+          </Row>
+        </Zoom>
         <Row justify="center" gutter={[24, 24]}>
-          <Col xs={22} sm={16} md={13} lg={8}>
-            <Card>
-              <ProjectImage src={VegeLandingProject} />
-              <ProjectTitle
-                color={colors.white}
-                fontWeight={fontWeight.stronger}
-              >
-                Vege Landing
-              </ProjectTitle>
-              <ProjectDescription
-                color={colors.white}
-                fontWeight={fontWeight.stronger}
-                size="small"
-              >
-                Create beautiful landing page with HTML and CSS
-              </ProjectDescription>
-              <ProjectLink to="/library/vege-landing-project/">
-                <Button type="ghost">View project</Button>
-              </ProjectLink>
-            </Card>
-          </Col>
-          <Col xs={22} sm={16} md={13} lg={8}>
-            <Card>
-              <ProjectImage src={TodoAppProject} />
-              <ProjectTitle
-                color={colors.white}
-                fontWeight={fontWeight.stronger}
-              >
-                Todo App
-              </ProjectTitle>
-              <ProjectDescription
-                color={colors.white}
-                fontWeight={fontWeight.stronger}
-                size="small"
-              >
-                A classic, must-have project for all beginners in Frontend
-              </ProjectDescription>
-              <ProjectLink to="/library/todo-app-project/">
-                <Button type="ghost">View project</Button>
-              </ProjectLink>
-            </Card>
-          </Col>
-          <Col xs={22} sm={16} md={13} lg={8}>
-            <Card>
-              <ProjectImage src={RealtimeChatProject} />
-              <ProjectTitle
-                color={colors.white}
-                fontWeight={fontWeight.stronger}
-              >
-                Realtime Chat
-              </ProjectTitle>
-              <ProjectDescription
-                color={colors.white}
-                fontWeight={fontWeight.stronger}
-                size="small"
-              >
-                Learn fullstack development with Next.js and Express
-              </ProjectDescription>
-              <ProjectLink to="/library/realtime-chat-project/">
-                <Button type="ghost">View project</Button>
-              </ProjectLink>
-            </Card>
-          </Col>
           <Box margin={`${spacing.large} 0 0 0`}>
             <Title
               level={3}
@@ -189,8 +194,8 @@ export const BlogLibrary = () => {
                   <Link to="/blog/">
                     <Button type="primary">Read articles on Blog</Button>
                   </Link>
-                  <Link to="/library/">
-                    <Button type="secondary">Practice code in Library</Button>
+                  <Link to="/pills/">
+                    <Button type="secondary">Eat knowledge pills</Button>
                   </Link>
                 </Space>
               </Col>
@@ -207,8 +212,8 @@ export const BlogLibrary = () => {
                   <Link to="/blog/">
                     <Button type="primary">Read articles on Blog</Button>
                   </Link>
-                  <Link to="/library/">
-                    <Button type="secondary">Practice code in Library</Button>
+                  <Link to="/pills/">
+                    <Button type="secondary">Eat knowledge pills</Button>
                   </Link>
                 </Space>
               </Col>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70.6mm" height="70.6mm" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="Gradient_bez_nazwy_5" data-name="Gradient bez nazwy 5" x1="-5554.13" y1="1507.83" x2="-5553.88" y2="1507.63" gradientTransform="matrix(189.83, 0, 0, -255.34, 1054417.53, 385080.73)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#517dbf"/>
+      <stop offset="1" stop-color="#49c1f1"/>
+    </linearGradient>
+    <linearGradient id="Gradient_bez_nazwy_2" data-name="Gradient bez nazwy 2" x1="-5554.02" y1="1508" x2="-5554.1" y2="1507.4" gradientTransform="matrix(189.83, 0, 0, -255.34, 1054417.53, 385080.73)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4bc2f1"/>
+      <stop offset="0.38" stop-color="#4582c3"/>
+      <stop offset="1" stop-color="#365faa"/>
+    </linearGradient>
+    <linearGradient id="Gradient_bez_nazwy_3" data-name="Gradient bez nazwy 3" x1="-5496.13" y1="1510.85" x2="-5496.42" y2="1510.13" gradientTransform="matrix(63.23, 0, 0, -99.51, 347675.05, 150405.79)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f08070"/>
+      <stop offset="0.41" stop-color="#ea4c5e"/>
+      <stop offset="1" stop-color="#e62c33"/>
+    </linearGradient>
+    <linearGradient id="Gradient_bez_nazwy_4" data-name="Gradient bez nazwy 4" x1="-5491.7" y1="1513.9" x2="-5491.91" y2="1513.07" gradientTransform="matrix(60.65, 0, 0, -60.6, 333197.74, 91819.68)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f18d7e"/>
+      <stop offset="0.51" stop-color="#ea4c5e"/>
+      <stop offset="1" stop-color="#e62c33"/>
+    </linearGradient>
+  </defs>
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_1-2" data-name="Warstwa 1">
+      <g>
+        <g>
+          <circle cx="100" cy="100" r="94" fill="#f5f4f5"/>
+          <path d="M100,12a88,88,0,1,1-88,88,88,88,0,0,1,88-88m0-12A100,100,0,1,0,200,100,100.2,100.2,0,0,0,100,0Z" fill="#2a2a2b"/>
+        </g>
+        <g>
+          <path d="M94,32.5,32.4,94a8.5,8.5,0,0,0,0,12L94,167.5a8.5,8.5,0,0,0,12,0l25.8-25.8A7.6,7.6,0,0,0,121.1,131l-19.6,19.5a1.9,1.9,0,0,1-2.9,0L49.4,101.4a2.1,2.1,0,0,1,0-2.9L98.6,49.4a2.1,2.1,0,0,1,2.9,0l19.6,19.5a7.6,7.6,0,0,0,10.7-10.7L106,32.4A8.6,8.6,0,0,0,94,32.5Z" fill="url(#Gradient_bez_nazwy_5)"/>
+          <path d="M94,32.5,32.4,94a8.5,8.5,0,0,0,0,12L94,167.5a8.5,8.5,0,0,0,12,0l25.8-25.8A7.6,7.6,0,0,0,121.1,131l-19.6,19.5a1.9,1.9,0,0,1-2.9,0L49.4,101.4a2.1,2.1,0,0,1,0-2.9L98.6,49.4c2.1-1.8,5.4-5.4,10.3-6.2s7.7.7,12,4.1L106,32.4A8.6,8.6,0,0,0,94,32.5Z" fill="url(#Gradient_bez_nazwy_2)"/>
+          <path d="M137.8,125.3a7.7,7.7,0,0,0,10.7,0l19.1-19.1a8.4,8.4,0,0,0,0-11.9L148.3,75.1a7.6,7.6,0,0,0-10.7.1,7.5,7.5,0,0,0,0,10.7l13,13a1.9,1.9,0,0,1,0,2.8l-12.8,12.8A7.6,7.6,0,0,0,137.8,125.3Z" fill="url(#Gradient_bez_nazwy_3)"/>
+          <ellipse cx="100.3" cy="100.3" rx="16.6" ry="16.6" fill="url(#Gradient_bez_nazwy_4)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

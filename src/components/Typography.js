@@ -68,12 +68,13 @@ export const LinkHolder = styled.span(
     size = 'normal',
     display = 'inline',
     fontSize,
+    textDecoration = 'underline',
   }) => ({
     textAlign: align,
     fontSize: fontSize || TEXT_SIZE[size],
     fontWeight,
     display,
-    textDecoration: 'underline',
+    textDecoration,
   })
 );
 
@@ -208,12 +209,14 @@ export const Link = ({
   fontWeight,
   size,
   className,
+  textDecoration,
   ...props
 }) => (
   <LinkHolder
     align={align}
     fontWeight={fontWeight}
     size={size}
+    textDecoration={textDecoration}
     className={className}
   >
     <Typography.Link rel={rel} target={target} {...props} />

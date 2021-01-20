@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Space } from 'antd';
+import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
 import { openPopupWidget } from 'react-calendly';
+import Flip from 'react-reveal/Flip';
+import Slide from 'react-reveal/Slide';
 
 import { AdrianImage } from '~assets';
 import {
@@ -29,9 +32,7 @@ const Holder = styled.div(({ theme }) => ({
   position: 'relative',
 }));
 
-const WhoIAmCard = styled(MainCard)({
-  boxShadow: 'none',
-});
+const WhoIAmCard = styled(MainCard)({});
 
 const SocialLinkHolder = styled(Link)({
   color: '#137099 !important',
@@ -56,20 +57,131 @@ const SocialsHolder = styled.div({
   left: '1.5rem',
 });
 
-const SkillButton = styled(Button)({
-  fontSize: '1rem',
-  fontWeight: 500,
-  padding: '1.25rem 1.75rem',
-  borderRadius: 0,
-  cursor: 'inherit',
-  margin: '0.5rem',
+const LinkSkillHolder = styled(Link)({
+  textAlign: 'center',
+});
+
+const SkillHolder = styled(Row)({
+  cursor: 'pointer',
+  transition: 'all 0.3s',
 
   '&:hover': {
-    boxShadow: `0px 0px 5px 0px ${theme.colors.primary}`,
-    backgroundColor: `${theme.colors.primary} !important`,
-    color: `${theme.colors.white} !important`,
+    opacity: 0.5,
   },
 });
+
+const Skill = ({ type, name, link }) =>
+  link ? (
+    <LinkSkillHolder href={link} textDecoration="none">
+      <SkillHolder justify="center" align="middle">
+        <Col span={24}>
+          <Icon type={type} />
+        </Col>
+        <Col span={24}>
+          <Text size="small">{name}</Text>
+        </Col>
+      </SkillHolder>
+    </LinkSkillHolder>
+  ) : (
+    <Row justify="center" align="middle">
+      <Col span={24}>
+        <Icon type={type} />
+      </Col>
+      <Col span={24}>
+        <Text size="small">{name}</Text>
+      </Col>
+    </Row>
+  );
+
+const frontendSkills = [
+  {
+    type: 'html',
+    name: 'HTML',
+    link: 'https://www.w3schools.com/html/html_intro.asp',
+  },
+  {
+    type: 'css',
+    name: 'CSS',
+    link: 'https://www.w3schools.com/css/css_intro.asp',
+  },
+  {
+    type: 'javascript',
+    name: 'JavaScript',
+    link:
+      'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript',
+  },
+  {
+    type: 'typescript',
+    name: 'TypeScript',
+    link: 'https://www.typescriptlang.org/',
+  },
+  { type: 'react', name: 'React', link: 'https://reactjs.org/' },
+  { type: 'redux', name: 'Redux', link: 'https://redux.js.org/' },
+  { type: 'gatsby', name: 'Gatsby', link: 'https://www.gatsbyjs.com/' },
+  { type: 'next', name: 'Next', link: 'https://nextjs.org/' },
+  { type: 'jss', name: 'JSS', link: 'https://cssinjs.org/?v=v10.5.0' },
+  { type: 'materialui', name: 'MUI', link: 'https://material-ui.com/' },
+  { type: 'antdesign', name: 'Antd', link: 'https://ant.design/' },
+  { type: 'graphql', name: 'GraphQL', link: 'https://graphql.org/' },
+  { type: 'phaser', name: 'Phaser', link: 'https://phaser.io/' },
+];
+
+const backendSkills = [
+  { type: 'node', name: 'Node', link: 'https://nodejs.org/en/' },
+  { type: 'express', name: 'Express', link: 'https://expressjs.com/' },
+  { type: 'mongodb', name: 'MongoDB', link: 'https://www.mongodb.com/' },
+  { type: 'postgresql', name: 'Postgre', link: 'https://www.postgresql.org/' },
+  { type: 'firebase', name: 'Firebase', link: 'https://firebase.google.com/' },
+];
+
+const toolsSkills = [
+  { type: 'apple', name: 'Mac', link: 'https://www.apple.com/' },
+  { type: 'iterm', name: 'iTerm2', link: 'https://iterm2.com/' },
+  { type: 'yarn', name: 'Yarn', link: 'https://yarnpkg.com/' },
+  { type: 'git', name: 'Git', link: 'https://git-scm.com/' },
+  { type: 'vscode', name: 'VSCode', link: 'https://code.visualstudio.com/' },
+  { type: 'eslint', name: 'ESLint', link: 'https://eslint.org/' },
+  { type: 'prettier', name: 'Prettier', link: 'https://prettier.io/' },
+  { type: 'webpack', name: 'Webpack', link: 'https://webpack.js.org/' },
+  { type: 'cypress', name: 'Cypress', link: 'https://www.cypress.io/' },
+  { type: 'sentry', name: 'Sentry', link: 'https://sentry.io/welcome/' },
+  { type: 'hotjar', name: 'HotJar', link: 'https://www.hotjar.com/' },
+  { type: 'launchdarkly', name: 'LD', link: 'https://launchdarkly.com/' },
+  {
+    type: 'jira',
+    name: 'Jira',
+    link: 'https://www.atlassian.com/software/jira',
+  },
+  { type: 'nxdev', name: 'nx.dev', link: 'https://nx.dev/' },
+  { type: 'netlify', name: 'Netlify', link: 'https://www.netlify.com/' },
+];
+
+const uxuiSkills = [
+  { type: 'figma', name: 'Figma', link: 'https://www.figma.com/' },
+  { type: 'storybook', name: 'Storybook', link: 'https://storybook.js.org/' },
+  { type: 'zeplin', name: 'Zeplin', link: 'https://zeplin.io/' },
+];
+
+const recruiterSkills = [
+  { type: 'resume', name: 'Resume' },
+  { type: 'interview', name: 'Interview' },
+  { type: 'theory', name: 'Theory' },
+  { type: 'practice', name: 'Practice' },
+  { type: 'brainstorm', name: 'Mindful' },
+  { type: 'logic', name: 'Logic' },
+  { type: 'algorithms', name: 'Solving' },
+];
+
+const mentorSkills = [
+  { type: 'individual', name: 'Individual' },
+  { type: 'path', name: 'Path' },
+  { type: 'progress', name: 'Progress' },
+  { type: 'insights', name: 'Insights' },
+  { type: 'knowledge', name: 'Wisdom' },
+  { type: 'kindness', name: 'Kindness' },
+  { type: 'group', name: 'Team' },
+  { type: 'supportMentor', name: 'Support' },
+];
 
 const openFreeConsultationEvent = () => {
   openPopupWidget({
@@ -118,7 +230,12 @@ export const WhoIAm = () => {
           </Title>
           <Row justify="center" align="center" gutter={[24, 24]}>
             <Col xs={16} sm={8} md={6} lg={5}>
-              <Image src={AdrianImage} />
+              <Flip>
+                <Image
+                  src={AdrianImage}
+                  alt="Image represents Adrian - Frontend Mentor"
+                />
+              </Flip>
             </Col>
             <Col xs={22} lg={16} offset={1} style={{ alignSelf: 'center' }}>
               <Paragraph align="center" marginBottom="0">
@@ -134,47 +251,54 @@ export const WhoIAm = () => {
           </Row>
           <Row justify="center" gutter={[24, 24]}>
             <Col span={24}>
-              <Row align="center" gutter={[32, 32]}>
+              <Row align="middle" justify="center" gutter={[32, 32]}>
                 <Col xs={22} lg={9}>
-                  <WhoIAmCard>
-                    <Row justify="center" gutter={[0, 24]}>
-                      <Col span={12} style={{ textAlign: 'center' }}>
-                        <Icon type="developer" width={64} />
-                      </Col>
-                      <Col span={24}>
-                        <Title
-                          level={4}
-                          transform="none"
-                          align="center"
-                          marginBottom="0"
-                          fontSize={fontSize.large}
-                          fontWeight={fontWeight.stronger}
-                        >
-                          Lead Frontend Developer
-                        </Title>
-                      </Col>
-                      <Col span={22}>
-                        <Paragraph align="center" size="preNormal">
-                          I love challenges and learning new technologies.
-                        </Paragraph>
-                      </Col>
-                      <Col span={20}>
-                        <Title level={5} align="center" transform="none">
-                          Experience
-                        </Title>
-                        <Paragraph
-                          align="center"
-                          size="preNormal"
-                          marginBottom="0"
-                        >
-                          5 years
-                        </Paragraph>
-                      </Col>
-                    </Row>
-                  </WhoIAmCard>
+                  <Slide left>
+                    <Link
+                      href="https://www.linkedin.com/in/adrian-bigaj-282277130/"
+                      textDecoration="none"
+                    >
+                      <WhoIAmCard>
+                        <Row justify="center" gutter={[0, 24]}>
+                          <Col span={12} style={{ textAlign: 'center' }}>
+                            <Icon type="developer" width={64} />
+                          </Col>
+                          <Col span={24}>
+                            <Title
+                              level={4}
+                              transform="none"
+                              align="center"
+                              marginBottom="0"
+                              fontSize={fontSize.large}
+                              fontWeight={fontWeight.stronger}
+                            >
+                              Lead Frontend Developer
+                            </Title>
+                          </Col>
+                          <Col span={22}>
+                            <Paragraph align="center" size="preNormal">
+                              I love challenges and learning new technologies.
+                            </Paragraph>
+                          </Col>
+                          <Col span={20}>
+                            <Title level={5} align="center" transform="none">
+                              Experience
+                            </Title>
+                            <Paragraph
+                              align="center"
+                              size="preNormal"
+                              marginBottom="0"
+                            >
+                              5 years
+                            </Paragraph>
+                          </Col>
+                        </Row>
+                      </WhoIAmCard>
+                    </Link>
+                  </Slide>
                 </Col>
                 <Col
-                  xs={22}
+                  xs={24}
                   lg={15}
                   style={{ alignSelf: 'center', textAlign: 'center' }}
                 >
@@ -184,71 +308,137 @@ export const WhoIAm = () => {
                     align="center"
                     fontSize={fontSize.large}
                     fontWeight={fontWeight.stronger}
+                    id="bigsondev-technologies"
                   >
-                    Sure, but why should I care?
+                    Why should you care?
                   </Title>
                   <Paragraph
                     size="normal"
                     textOpacity={opacity.title}
                     align="center"
                   >
-                    From Java Tester To Lead Frontend Developer leading multiple
-                    teams around me in 5 years. All the insights I gathered over
-                    this time are just waiting to be shared with you. From
-                    planning, designing to the real implementation.{' '}
-                    <strong>
-                      I've faced many challenges and got stuck a lot of times
-                      without a mentor - let's make sure I'm here to support you
-                    </strong>
-                    .
+                    I've faced many challenges and got stuck a lot of times
+                    without a mentor - let's make sure I'm here to support you.
+                  </Paragraph>
+                  <Paragraph
+                    size="preNormal"
+                    strong
+                    align="center"
+                    textOpacity={opacity.title}
+                  >
+                    Frontend
+                  </Paragraph>
+                  <Paragraph align="center">
+                    <Row justify="center" gutter={[4, 24]}>
+                      {frontendSkills.map((skill) => (
+                        <Col xs={6} sm={4} key={skill.type}>
+                          <Skill {...skill} />
+                        </Col>
+                      ))}
+                    </Row>
+                  </Paragraph>
+                  <Paragraph
+                    size="preNormal"
+                    strong
+                    align="center"
+                    textOpacity={opacity.title}
+                  >
+                    Tools
+                  </Paragraph>
+                  <Paragraph align="center">
+                    <Row gutter={[4, 24]} justify="center">
+                      {toolsSkills.map((skill) => (
+                        <Col xs={6} sm={4} key={skill.type}>
+                          <Skill {...skill} />
+                        </Col>
+                      ))}
+                    </Row>
+                  </Paragraph>
+                  <Paragraph
+                    size="preNormal"
+                    strong
+                    align="center"
+                    textOpacity={opacity.title}
+                  >
+                    Backend
+                  </Paragraph>
+                  <Paragraph align="center">
+                    <Row gutter={[4, 24]} justify="center">
+                      {backendSkills.map((skill) => (
+                        <Col xs={6} sm={4} key={skill.type}>
+                          <Skill {...skill} />
+                        </Col>
+                      ))}
+                    </Row>
+                  </Paragraph>
+                  <Paragraph
+                    size="preNormal"
+                    strong
+                    align="center"
+                    textOpacity={opacity.title}
+                  >
+                    UX/UI
+                  </Paragraph>
+                  <Paragraph align="center">
+                    <Row gutter={[4, 24]} justify="center">
+                      {uxuiSkills.map((skill) => (
+                        <Col xs={6} sm={4} key={skill.type}>
+                          <Skill {...skill} />
+                        </Col>
+                      ))}
+                    </Row>
                   </Paragraph>
                 </Col>
               </Row>
             </Col>
             <Col span={24}>
               <ExceptLg>
-                <Row align="center" gutter={[32, 32]}>
+                <Row align="middle" justify="center" gutter={[32, 32]}>
                   <Col xs={22} lg={9}>
-                    <WhoIAmCard>
-                      <Row justify="center" gutter={[0, 24]}>
-                        <Col span={12} style={{ textAlign: 'center' }}>
-                          <Icon type="recruiter" width={64} />
-                        </Col>
-                        <Col span={24}>
-                          <Title
-                            level={4}
-                            transform="none"
-                            align="center"
-                            marginBottom="0"
-                            fontSize={fontSize.large}
-                            fontWeight={fontWeight.stronger}
-                          >
-                            Technical Recruiter
-                          </Title>
-                        </Col>
-                        <Col span={22}>
-                          <Paragraph align="center" size="preNormal">
-                            I enjoy brainstorming with candidates and sharing
-                            insights.
-                          </Paragraph>
-                        </Col>
-                        <Col span={20}>
-                          <Title level={5} align="center" transform="none">
-                            Experience
-                          </Title>
-                          <Paragraph
-                            align="center"
-                            size="preNormal"
-                            marginBottom="0"
-                          >
-                            2 years
-                          </Paragraph>
-                        </Col>
-                      </Row>
-                    </WhoIAmCard>
+                    <Slide right>
+                      <GatsbyLink to="/#bigsondev-newsletter-landing">
+                        <WhoIAmCard>
+                          <Row justify="center" gutter={[0, 24]}>
+                            <Col span={12} style={{ textAlign: 'center' }}>
+                              <Icon type="recruiter" width={64} />
+                            </Col>
+                            <Col span={24}>
+                              <Title
+                                level={4}
+                                transform="none"
+                                align="center"
+                                marginBottom="0"
+                                fontSize={fontSize.large}
+                                fontWeight={fontWeight.stronger}
+                              >
+                                Technical Recruiter
+                              </Title>
+                            </Col>
+                            <Col span={22}>
+                              <Paragraph align="center" size="preNormal">
+                                I enjoy brainstorming with candidates and
+                                sharing insights.
+                              </Paragraph>
+                            </Col>
+                            <Col span={20}>
+                              <Title level={5} align="center" transform="none">
+                                Experience
+                              </Title>
+                              <Paragraph
+                                align="center"
+                                size="preNormal"
+                                marginBottom="0"
+                              >
+                                2 years
+                              </Paragraph>
+                            </Col>
+                          </Row>
+                        </WhoIAmCard>
+                      </GatsbyLink>
+                    </Slide>
                   </Col>
                   <Col
-                    xs={22}
+                    xs={24}
                     lg={15}
                     style={{ alignSelf: 'center', textAlign: 'center' }}
                   >
@@ -259,30 +449,33 @@ export const WhoIAm = () => {
                       fontSize={fontSize.large}
                       fontWeight={fontWeight.stronger}
                     >
-                      Good for you, but why it matters?
+                      Why it matters to you?
                     </Title>
                     <Paragraph
                       size="normal"
                       textOpacity={opacity.title}
                       align="center"
                     >
-                      I've seen dozens of resumes and collected my own "good &
-                      bad" parts. I did theory & practical interviews as well as
-                      worked on preliminary tasks which you often get when
-                      applying for a job.{' '}
-                      <strong>
-                        All that knowledge lays in my head and I can't wait to
-                        share it with you
-                      </strong>
-                      .
+                      I've seen dozens of resumes, preliminary tasks, did
+                      theoretical, practical interviews, and collected my own
+                      "good & bad" parts.
+                    </Paragraph>
+                    <Paragraph align="center">
+                      <Row gutter={[8, 16]} justify="center">
+                        {recruiterSkills.map((skill) => (
+                          <Col xs={6} sm={4} key={skill.type}>
+                            <Skill {...skill} />
+                          </Col>
+                        ))}
+                      </Row>
                     </Paragraph>
                   </Col>
                 </Row>
               </ExceptLg>
               <LgOnly>
-                <Row align="center" gutter={[32, 32]}>
+                <Row align="middle" justify="center" gutter={[32, 32]}>
                   <Col
-                    xs={22}
+                    xs={24}
                     lg={15}
                     style={{ alignSelf: 'center', textAlign: 'center' }}
                   >
@@ -293,109 +486,123 @@ export const WhoIAm = () => {
                       fontSize={fontSize.large}
                       fontWeight={fontWeight.stronger}
                     >
-                      Good for you, but why it matters?
+                      Why it matters to you?
                     </Title>
                     <Paragraph
                       size="normal"
                       textOpacity={opacity.title}
                       align="center"
                     >
-                      I've seen dozens of resumes and collected my own "good &
-                      bad" parts. I did theory & practical interviews as well as
-                      worked on preliminary tasks which you often get when
-                      applying for a job.{' '}
-                      <strong>
-                        All that knowledge lays in my head and I can't wait to
-                        share it with you
-                      </strong>
-                      .
+                      I've seen dozens of resumes, preliminary tasks, did
+                      theory, practical interviews, and collected my own "good &
+                      bad" parts.
+                    </Paragraph>
+                    <Paragraph align="center">
+                      <Row gutter={[8, 16]} justify="center">
+                        {recruiterSkills.map((skill) => (
+                          <Col xs={6} sm={4} key={skill.type}>
+                            <Skill {...skill} />
+                          </Col>
+                        ))}
+                      </Row>
                     </Paragraph>
                   </Col>
                   <Col xs={22} lg={9}>
-                    <WhoIAmCard>
-                      <Row justify="center" gutter={[0, 24]}>
-                        <Col span={12} style={{ textAlign: 'center' }}>
-                          <Icon type="recruiter" width={64} />
-                        </Col>
-                        <Col span={24}>
-                          <Title
-                            level={4}
-                            transform="none"
-                            align="center"
-                            marginBottom="0"
-                            fontSize={fontSize.large}
-                            fontWeight={fontWeight.stronger}
-                          >
-                            Technical Recruiter
-                          </Title>
-                        </Col>
-                        <Col span={22}>
-                          <Paragraph align="center" size="preNormal">
-                            I enjoy brainstorming with candidates and sharing
-                            insights.
-                          </Paragraph>
-                        </Col>
-                        <Col span={20}>
-                          <Title level={5} align="center" transform="none">
-                            Experience
-                          </Title>
-                          <Paragraph
-                            align="center"
-                            size="preNormal"
-                            marginBottom="0"
-                          >
-                            2 years
-                          </Paragraph>
-                        </Col>
-                      </Row>
-                    </WhoIAmCard>
+                    <Slide right>
+                      <GatsbyLink to="/#bigsondev-newsletter-landing">
+                        <WhoIAmCard>
+                          <Row justify="center" gutter={[0, 24]}>
+                            <Col span={12} style={{ textAlign: 'center' }}>
+                              <Icon type="recruiter" width={64} />
+                            </Col>
+                            <Col span={24}>
+                              <Title
+                                level={4}
+                                transform="none"
+                                align="center"
+                                marginBottom="0"
+                                fontSize={fontSize.large}
+                                fontWeight={fontWeight.stronger}
+                              >
+                                Technical Recruiter
+                              </Title>
+                            </Col>
+                            <Col span={22}>
+                              <Paragraph align="center" size="preNormal">
+                                I enjoy brainstorming with candidates and
+                                sharing insights.
+                              </Paragraph>
+                            </Col>
+                            <Col span={20}>
+                              <Title level={5} align="center" transform="none">
+                                Experience
+                              </Title>
+                              <Paragraph
+                                align="center"
+                                size="preNormal"
+                                marginBottom="0"
+                              >
+                                2 years
+                              </Paragraph>
+                            </Col>
+                          </Row>
+                        </WhoIAmCard>
+                      </GatsbyLink>
+                    </Slide>
                   </Col>
                 </Row>
               </LgOnly>
             </Col>
             <Col span={24}>
-              <Row align="center" gutter={[32, 32]}>
+              <Row align="middle" justify="center" gutter={[32, 32]}>
                 <Col xs={22} lg={9}>
-                  <WhoIAmCard>
-                    <Row justify="center" gutter={[0, 24]}>
-                      <Col span={12} style={{ textAlign: 'center' }}>
-                        <Icon type="mentor" width={64} />
-                      </Col>
-                      <Col span={24}>
-                        <Title
-                          level={4}
-                          transform="none"
-                          align="center"
-                          marginBottom="0"
-                          fontSize={fontSize.large}
-                          fontWeight={fontWeight.stronger}
-                        >
-                          Frontend Mentor
-                        </Title>
-                      </Col>
-                      <Col span={22}>
-                        <Paragraph align="center" size="preNormal">
-                          I care about mentees and watching them succeed drives
-                          me.
-                        </Paragraph>
-                      </Col>
-                      <Col span={20}>
-                        <Title level={5} align="center" transform="none">
-                          Experience
-                        </Title>
-                        <Paragraph
-                          align="center"
-                          size="preNormal"
-                          marginBottom="0"
-                        >
-                          5 years (as a LoL Coach)
-                        </Paragraph>
-                      </Col>
-                    </Row>
-                  </WhoIAmCard>
+                  <Slide left>
+                    <Link
+                      href="https://www.codementor.io/@bigsondev"
+                      textDecoration="none"
+                    >
+                      <WhoIAmCard>
+                        <Row justify="center" gutter={[0, 24]}>
+                          <Col span={12} style={{ textAlign: 'center' }}>
+                            <Icon type="mentor" width={64} />
+                          </Col>
+                          <Col span={24}>
+                            <Title
+                              level={4}
+                              transform="none"
+                              align="center"
+                              marginBottom="0"
+                              fontSize={fontSize.large}
+                              fontWeight={fontWeight.stronger}
+                            >
+                              Frontend Mentor
+                            </Title>
+                          </Col>
+                          <Col span={22}>
+                            <Paragraph align="center" size="preNormal">
+                              I care about mentees and watching them succeed
+                              drives me.
+                            </Paragraph>
+                          </Col>
+                          <Col span={20}>
+                            <Title level={5} align="center" transform="none">
+                              Experience
+                            </Title>
+                            <Paragraph
+                              align="center"
+                              size="preNormal"
+                              marginBottom="0"
+                            >
+                              5 years
+                            </Paragraph>
+                          </Col>
+                        </Row>
+                      </WhoIAmCard>
+                    </Link>
+                  </Slide>
                 </Col>
                 <Col
-                  xxs={22}
+                  xs={24}
                   lg={15}
                   style={{ alignSelf: 'center', textAlign: 'center' }}
                 >
@@ -406,26 +613,37 @@ export const WhoIAm = () => {
                     fontSize={fontSize.large}
                     fontWeight={fontWeight.stronger}
                   >
-                    Ok, but why you?
+                    Why choose me as your Mentor?
                   </Title>
                   <Paragraph
                     size="normal"
                     textOpacity={opacity.title}
                     align="center"
                   >
-                    I love Mentoring. It's not just about work, I observe your
-                    progress, adjust your learning path individually, and always
-                    make sure you can grasp knowledge in the most effective way.{' '}
-                    <strong>
-                      Additionally, I'm leading a study group of my most active
-                      mentees which can skyrocket your progress even more
-                    </strong>
-                    .
+                    I always seek for maximum effectiveness of learning. I'm
+                    leading a study group of my most active mentees which can
+                    skyrocket your progress even more.
+                  </Paragraph>
+                  <Paragraph align="center">
+                    <Row gutter={[4, 24]} justify="center">
+                      {mentorSkills.map((skill) => (
+                        <Col xs={6} sm={4} key={skill.type}>
+                          <Skill {...skill} />
+                        </Col>
+                      ))}
+                    </Row>
                   </Paragraph>
                 </Col>
               </Row>
             </Col>
           </Row>
+          <Box margin={`${spacing.large} 0 0 0`}>
+            <Row justify="center">
+              <GatsbyLink to="/mentorship/">
+                <Button type="promo">Skyrocket your career</Button>
+              </GatsbyLink>
+            </Row>
+          </Box>
           <Box margin={`${spacing.large} 0 0 0`}>
             <Row justify="center">
               <Col xs={22} lg={12}>
@@ -471,7 +689,7 @@ export const WhoIAm = () => {
           </Box>
           <Box margin={`${spacing.large} 0 0 0`}>
             <Title level={4} transform="none" align="center">
-              Interested? Let's hop on a free call to discuss the details of
+              Unsure? Let's hop on a free call to discuss the details of
               Mentorship
             </Title>
             <Box

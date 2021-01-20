@@ -88,6 +88,9 @@ export const Footer = () => (
             style={{ marginTop: '0.9rem' }}
           >
             <Space size="large" direction="vertical">
+              <FooterLinkHolder to="/mentorship/">
+                <Text size="preNormal">Mentorship</Text>
+              </FooterLinkHolder>
               <FooterLinkHolder to="/blog/">
                 <Text size="preNormal">Blog</Text>
               </FooterLinkHolder>
@@ -96,9 +99,6 @@ export const Footer = () => (
               </FooterLinkHolder>
               <FooterLinkHolder to="/pills/">
                 <Text size="preNormal">Pills</Text>
-              </FooterLinkHolder>
-              <FooterLinkHolder to="/mentorship/">
-                <Text size="preNormal">Mentorship</Text>
               </FooterLinkHolder>
               <FooterLinkHolder to="/reach-out/">
                 <Text size="preNormal">Reach Out</Text>
@@ -145,7 +145,7 @@ export const Footer = () => (
           <Row justify="space-between">
             <Col xs={24} sm={8}>
               <Paragraph size="micro" type="secondary" marginBottom="0">
-                © 2021 BigsonDev
+                © 2020-2021 BigsonDev
               </Paragraph>
             </Col>
             <TermsLinksCol xs={24} sm={16}>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70.6mm" height="70.6mm" viewBox="0 0 200 200">
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_1-2" data-name="Warstwa 1">
+      <g>
+        <rect x="43.3" y="43.3" width="113.3" height="113.33" fill="#2a2a2b"/>
+        <g>
+          <circle cx="100" cy="100" r="94" fill="#f5f4f5"/>
+          <path d="M100,12a88,88,0,1,1-88,88,88,88,0,0,1,88-88m0-12A100,100,0,1,0,200,100,100.2,100.2,0,0,0,100,0Z" fill="#2a2a2b"/>
+        </g>
+        <g>
+          <path id="path10" d="M66.9,153.4H38.4L85.5,46.6h28.7Z" fill="#2696d4"/>
+          <polygon points="161.6 153.4 152.3 132.6 152.2 132.7 114.2 46.6 85.5 46.6 132.9 153.4 132.9 153.4 132.9 153.4 161.6 153.4" fill="#222"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70.6mm" height="70.6mm" viewBox="0 0 200 200">
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_1-2" data-name="Warstwa 1">
+      <g>
+        <g>
+          <circle cx="100" cy="100" r="94" fill="#f5f4f5"/>
+          <path d="M100,12a88,88,0,1,1-88,88,88,88,0,0,1,88-88m0-12A100,100,0,1,0,200,100,100.2,100.2,0,0,0,100,0Z" fill="#2a2a2b"/>
+        </g>
+        <g>
+          <path id="path0_fill" data-name="path0 fill" d="M76.7,170A23.4,23.4,0,0,0,100,146.7V123.3H76.7a23.4,23.4,0,1,0,0,46.7Z" fill="#4cb37d"/>
+          <path id="path1_fill" data-name="path1 fill" d="M53.3,100A23.3,23.3,0,0,1,76.7,76.7H100v46.6H76.7A23.3,23.3,0,0,1,53.3,100Z" fill="#765fa6"/>
+          <path id="path1_fill-2" data-name="path1 fill" d="M53.3,53.3A23.4,23.4,0,0,1,76.7,30H100V76.7H76.7A23.4,23.4,0,0,1,53.3,53.3Z" fill="#e95025"/>
+          <path id="path2_fill" data-name="path2 fill" d="M100,30h23.3a23.4,23.4,0,1,1,0,46.7H100Z" fill="#ee7265"/>
+          <path id="path3_fill" data-name="path3 fill" d="M146.7,100a23.4,23.4,0,1,1-23.4-23.3A23.3,23.3,0,0,1,146.7,100Z" fill="#46b7ea"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

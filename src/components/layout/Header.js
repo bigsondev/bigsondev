@@ -6,7 +6,7 @@ import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import Roll from 'react-reveal/Roll';
 import Fade from 'react-reveal/Fade';
 
-import { Text, SmallOnly, ExceptSmall } from '~components';
+import { Text, SmallOnly, ExceptSmall, theme } from '~components';
 import { LogoFooter } from '~assets';
 
 import { Logo } from './styled';
@@ -145,6 +145,11 @@ const RightMenu = ({
     </SmallOnly>
     <ExceptSmall>
       <MenuHolder theme="dark" mode="horizontal">
+        <MenuItem key="1" isSelected={pathname.includes('mentorship')}>
+          <Link to="/mentorship/">
+            <Text size="preNormal">Mentorship</Text>
+          </Link>
+        </MenuItem>
         <MenuItem key="2" isSelected={pathname.includes('blog')}>
           <Link to="/blog/">
             <Text size="preNormal">Blog</Text>
@@ -160,12 +165,7 @@ const RightMenu = ({
             <Text size="preNormal">Pills</Text>
           </Link>
         </MenuItem>
-        <MenuItem key="5" isSelected={pathname.includes('mentorship')}>
-          <Link to="/mentorship/">
-            <Text size="preNormal">Mentorship</Text>
-          </Link>
-        </MenuItem>
-        <MenuItem key="6" isSelected={pathname.includes('reach-out')}>
+        <MenuItem key="5" isSelected={pathname.includes('reach-out')}>
           <Link to="/reach-out/">
             <Text size="preNormal">Reach Out</Text>
           </Link>
@@ -212,6 +212,15 @@ export const Header = ({ pathname }) => {
             <Fade collapse duration={300} when={isExpanded}>
               <MenuHolder theme="dark" mode="inline">
                 <MobileMenuItem
+                  key="1"
+                  isSelected={pathname.includes('mentorship')}
+                  onClick={handleMobileMenuCloseClick}
+                >
+                  <Link to="/mentorship/">
+                    <Text size="preNormal">Mentorship</Text>
+                  </Link>
+                </MobileMenuItem>
+                <MobileMenuItem
                   key="2"
                   isSelected={pathname.includes('blog')}
                   onClick={handleMobileMenuCloseClick}
@@ -240,15 +249,6 @@ export const Header = ({ pathname }) => {
                 </MobileMenuItem>
                 <MobileMenuItem
                   key="5"
-                  isSelected={pathname.includes('mentorship')}
-                  onClick={handleMobileMenuCloseClick}
-                >
-                  <Link to="/mentorship/">
-                    <Text size="preNormal">Mentorship</Text>
-                  </Link>
-                </MobileMenuItem>
-                <MobileMenuItem
-                  key="6"
                   isSelected={pathname.includes('reach-out')}
                   onClick={handleMobileMenuCloseClick}
                 >

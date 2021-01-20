@@ -29,6 +29,7 @@
     "gatsby-source-filesystem": "^2.3.25",
     "gatsby-transformer-sharp": "^2.5.13",
     "highlight.js": "^10.2.0",
+    "js-search": "^2.0.0",
     "moment": "^2.27.0",
     "prop-types": "^15.7.2",
     "query-string": "^6.13.2",

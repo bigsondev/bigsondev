@@ -1,6 +1,7 @@
 import React from 'react';
-import { Row, Col, Space } from 'antd';
+import { Row, Col } from 'antd';
 import { Link } from 'gatsby';
+import Fade from 'react-reveal/Fade';
 
 import {
   theme,
@@ -59,34 +60,39 @@ const MobileScreenPromo = () => (
       </Title>
       <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
-          Learn HTML, CSS, JS, React.
-        </Text>{' '}
-        <br /> Become a Web Developer, find a well-paid job, and feel the real
-        progress.
+          Become a Web Developer.
+        </Text>
+        <br />
+        Join over 40 mentees.
       </Paragraph>
     </Col>
-    <Box margin={`0 auto ${spacing.large} auto`}>
-      <Link to="/mentorship/">
-        <Button type="promo">Get mentorship now</Button>
-      </Link>
-    </Box>
-    <Col span={24}>
-      <Illustration type="promo" />
+    <Col span={22}>
+      <Box margin={`0 0 ${spacing.large} 0`}>
+        <Link to="/mentorship/">
+          <Button type="promo">Explore mentorship now</Button>
+        </Link>
+      </Box>
+    </Col>
+    <Col span={22}>
+      <Fade delay={300}>
+        <Illustration type="promo" />
+      </Fade>
     </Col>
   </Row>
 );
 
 const MediumScreenPromo = () => (
-  <Row gutter={32}>
-    <Col span={16}>
+  <Row gutter={32} justify="center">
+    <Col span={22}>
       <Title
         transform="none"
         marginBottom="0"
         fontSize={fontSize.extraLarge}
         fontWeight={fontWeight.stronger}
         color={colors.primary}
+        align="center"
       >
-        Master coding faster
+        Master coding faster with
       </Title>
       <Title
         transform="none"
@@ -94,24 +100,33 @@ const MediumScreenPromo = () => (
         fontSize={fontSize.extraLarge}
         fontWeight={fontWeight.stronger}
         color={colors.primary}
+        align="center"
       >
-        with a seasoned Mentor.
+        a seasoned Mentor.
       </Title>
-      <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
+      <Paragraph
+        marginBottom={spacing.large}
+        textOpacity={opacity.title}
+        align="center"
+      >
         <Text strong textOpacity={opacity.title}>
-          Get out of tutorials hell - learn HTML, CSS, JS, React.
-        </Text>{' '}
-        <br /> Become a Web Developer, find a well-paid job, and feel the real
-        progress.
+          Become a Web Developer.
+        </Text>
+        <br /> Join over 40 mentees.
       </Paragraph>
-      <Box margin={`0 auto ${spacing.large} auto`}>
+      <Box
+        margin={`0 auto ${spacing.large} auto`}
+        style={{ textAlign: 'center' }}
+      >
         <Link to="/mentorship/">
-          <Button type="promo">Get mentorship now</Button>
+          <Button type="promo">Explore mentorship now</Button>
         </Link>
       </Box>
     </Col>
     <Col span={12} style={{ marginTop: '3rem', marginBottom: '5rem' }}>
-      <NotJumpingIllustration type="promo" />
+      <Fade delay={300}>
+        <NotJumpingIllustration type="promo" />
+      </Fade>
     </Col>
   </Row>
 );
@@ -139,19 +154,20 @@ const BigScreenPromo = () => (
       </Title>
       <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
-          Get out of tutorials hell - learn HTML, CSS, JS, React.
-        </Text>{' '}
-        <br /> Become a Web Developer, find a well-paid job, and feel the real
-        progress.
+          Join over 40 mentees and become a Web Developer.
+        </Text>
+        <br /> Pull yourself out of tutorials hell.
       </Paragraph>
       <Box margin={`0 auto ${spacing.large} auto`}>
         <Link to="/mentorship/">
-          <Button type="promo">Get mentorship now</Button>
+          <Button type="promo">Explore mentorship now</Button>
         </Link>
       </Box>
     </Col>
     <Col span={9}>
-      <NotJumpingIllustration type="promo" />
+      <Fade delay={300}>
+        <NotJumpingIllustration type="promo" />
+      </Fade>
     </Col>
   </Row>
 );

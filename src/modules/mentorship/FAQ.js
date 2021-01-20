@@ -32,7 +32,7 @@ export const FAQ = () => (
             fontSize={fontSize.large}
             fontWeight={fontWeight.stronger}
           >
-            What is the benefit of having a mentor?
+            What is the benefit of having a Mentor?
           </Title>
           <Paragraph size="small" textOpacity={opacity.title} align="center">
             When I landed my first Frontend job and had a dedicated Mentor, it
@@ -66,7 +66,7 @@ export const FAQ = () => (
             fontSize={fontSize.large}
             fontWeight={fontWeight.stronger}
           >
-            Why you as a mentor?
+            Why you as a Mentor?
           </Title>
           <Paragraph size="small" textOpacity={opacity.title} align="center">
             I love teaching. It fills me with excitement when I can share my

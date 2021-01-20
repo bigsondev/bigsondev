@@ -132,7 +132,7 @@ export const NewsletterSmallForm = () => {
                 onClick={() => setTriedToSubmit(true)}
                 type="promo"
               >
-                Subscribe & Get Guide
+                Subscribe & get guide
               </Button>
             </Form.Item>
           </Form>

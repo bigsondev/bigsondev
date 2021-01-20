@@ -6,12 +6,12 @@
  */
 
 import React from 'react';
-import { Row, Col, Space } from 'antd';
+import { Row, Col, Space, Divider } from 'antd';
 import styled from 'styled-components';
-import { graphql } from 'gatsby';
+import { graphql, Link as GatsbyLink } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import { AdrianImage } from '~assets';
+import { AdrianImage, BLOG_POST_IMAGES } from '~assets';
 import {
   shareOnReddit,
   shareOnTwitter,
@@ -31,6 +31,8 @@ import {
   ExceptXl,
   SEO,
   DirectionalLink,
+  Image,
+  theme,
 } from '..';
 import { NewsletterSmallForm } from './NewsletterSmallForm';
 import { Footer } from './Footer';
@@ -51,8 +53,26 @@ const IconHolder = styled(Link)({
   },
 });
 
-const AuthorImage = styled.img({
+const AdrianImageHolder = styled.img({
   width: '8rem',
+});
+
+const ImageHolder = styled.div({
+  position: 'relative',
+
+  '& > figure': {
+    margin: '0 auto 1rem auto',
+  },
+});
+
+const ImageCredit = styled.div({
+  position: 'absolute',
+  bottom: '-1.75rem',
+  left: '0.25rem',
+});
+
+const DividerHolder = styled(Divider)({
+  margin: '0.5rem 0',
 });
 
 export const pageQuery = graphql`
@@ -64,12 +84,18 @@ export const pageQuery = graphql`
         desc
         readTime
         tags
-        illustration
+        image
+        imageSource
+        imageSourceLink
+        author
+        authorLink
         date(formatString: "MMM D, YYYY")
       }
     }
   }
 `;
+
+const { colors } = theme;
 
 const BlogLayout = ({
   data: {
@@ -86,13 +112,13 @@ const BlogLayout = ({
             <XlOnly>
               <Box display="flex" align="center" direction="column">
                 <Paragraph>
-                  <AuthorImage
+                  <AdrianImageHolder
                     src={AdrianImage}
-                    alt="Image represents Adrian"
+                    alt="Image represents Adrian - Frontend Mentor"
                   />
                 </Paragraph>
                 <Paragraph transform="uppercase" size="preNormal" strong>
-                  about Adrian
+                  <GatsbyLink to="/#bigsondev-technologies">about</GatsbyLink>
                 </Paragraph>
                 <Paragraph
                   size="small"
@@ -100,24 +126,29 @@ const BlogLayout = ({
                   align="center"
                   style={{ width: '50%' }}
                 >
-                  Frontend Mentor. My goal is to share knowledge effectively and
-                  prepare you for the Frontend world in the best possible way.
+                  My goal is to share knowledge effectively and prepare you for
+                  the Frontend world in the best possible way -{' '}
+                  <GatsbyLink to="/mentorship/">
+                    discover Mentorship.
+                  </GatsbyLink>
                 </Paragraph>
               </Box>
             </XlOnly>
             <ExceptXl>
               <Box display="flex" align="center">
                 <Paragraph>
-                  <AuthorImage
+                  <AdrianImageHolder
                     src={AdrianImage}
-                    alt="Image represents Adrian"
+                    alt="Image represents Adrian - Frontend Mentor"
                   />
                 </Paragraph>
                 <Box margin="0 0 0 2rem">
                   <Paragraph size="small" fontStyle="italic">
-                    Adrian - Frontend Mentor. My goal is to share knowledge
-                    effectively and prepare you for the Frontend world in the
-                    best possible way.
+                    My goal is to share knowledge effectively and prepare you
+                    for the Frontend world in the best possible way -{' '}
+                    <GatsbyLink to="/mentorship/">
+                      discover Mentorship.
+                    </GatsbyLink>
                   </Paragraph>
                 </Box>
               </Box>
@@ -126,13 +157,39 @@ const BlogLayout = ({
           <Col xs={22} xl={12}>
             <Box mb={10}>
               <main>
+                <ImageHolder>
+                  <Image
+                    src={BLOG_POST_IMAGES[frontmatter.image]}
+                    alt={frontmatter.title}
+                  />
+                  <ImageCredit>
+                    <Paragraph size="preNormal" color={colors.white}>
+                      Image by{' '}
+                      <Link
+                        size="preNormal"
+                        href={frontmatter.authorLink}
+                        strong
+                      >
+                        {frontmatter.author}
+                      </Link>{' '}
+                      from{' '}
+                      <Link
+                        size="preNormal"
+                        href={frontmatter.imageSourceLink}
+                        strong
+                      >
+                        {frontmatter.imageSource}
+                      </Link>
+                    </Paragraph>
+                  </ImageCredit>
+                </ImageHolder>
                 <MDXRenderer frontmatter={frontmatter}>{body}</MDXRenderer>
                 <Box mt={10}>
                   <Row justify="space-between" gutter={[0, 16]}>
                     <Col xs={24} sm={12}>
                       {previous && (
                         <DirectionalLink left to={previous.fields.slug}>
-                          Previous:{' '}
+                          <DividerHolder />
                           <span style={{ textTransform: 'capitalize' }}>
                             {previous.frontmatter.title}
                           </span>
@@ -142,7 +199,7 @@ const BlogLayout = ({
                     <Col xs={24} sm={12} style={{ textAlign: 'right' }}>
                       {next && (
                         <DirectionalLink right to={next.fields.slug}>
-                          Next:{' '}
+                          <DividerHolder />
                           <span style={{ textTransform: 'capitalize' }}>
                             {next.frontmatter.title}
                           </span>
@@ -182,7 +239,7 @@ const BlogLayout = ({
             <Box margin="0 0 5rem 0">
               <PromoBanner
                 title="spread the word"
-                desc="Do you like this article? Share it with someone!"
+                desc="You don't need to, it's okay..."
                 id="bigsondev-spread-the-word"
                 content={
                   <Space size="small">

@@ -105,7 +105,7 @@ const PillsLayout = ({
           <Box margin="0 0 5rem 0">
             <PromoBanner
               title="spread the word"
-              desc="Do you like this pill? Share it with someone!"
+              desc="Please, don't eat all the pills by yourself!"
               id="bigsondev-spread-the-word"
               content={
                 <Space size="small">
