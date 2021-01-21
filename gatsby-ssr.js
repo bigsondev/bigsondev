@@ -15,6 +15,7 @@ import {
   ThemeProvider,
   Header,
   GlobalStyles,
+  GatsbySsrStyles,
   Content,
   ErrorBoundary,
 } from '~components';
@@ -27,6 +28,7 @@ export const wrapPageElement = ({
 }) => (
   <ErrorBoundary>
     <GlobalStyles />
+    <GatsbySsrStyles />
     <ThemeProvider>
       <Layout>
         <Header pathname={pathname} />

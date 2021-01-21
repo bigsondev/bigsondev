@@ -21,11 +21,31 @@ import MainImage from './main-image.png';
 import WaysToLearnEffectivelyBlog from './blog/5-ways-to-learn-effectively.jpg';
 import TechnicalInterviewTipsBlog from './blog/10-technical-interview-tips.jpg';
 import HowToImproveYourCodingSkillsBlog from './blog/how-to-improve-your-coding-skills.jpg';
+import ToolsToIncreaseYourConversionRateBlog from './blog/5-tools-to-increase-your-conversion-rate-and-website-quality.jpg';
+import ArraysAndHowToAvoidLoopsBlog from './blog/arrays-and-how-to-avoid-loops.jpg';
+import AutoformatCodeWithPrettierBlog from './blog/autoformat-code-with-prettier.jpg';
+import CollaborationBetweenOneBlog from './blog/collaboration-between-1.jpg';
+import CollaborationBetweenTwoBlog from './blog/collaboration-between-2.jpg';
+import CollaborationBetweenThreeBlog from './blog/collaboration-between-3.jpg';
+import CommandLineInterfaceAndATerminalBlog from './blog/command-line-interface-and-a-terminal.jpg';
+import ReactComponentsYouShouldStartUsingNowBlog from './blog/react-components-you-should-start-using-now.jpg';
+import VarLetConstBestPracticesBlog from './blog/var-let-const-best-practices-and-differences.jpg';
+import BooleanAndFriendsBlog from './blog/boolean-and-friends-tame-the-logic.jpg';
 
 const BLOG_POST_IMAGES = {
   'technical-interview-tips': TechnicalInterviewTipsBlog,
   'ways-to-learn-effectively': WaysToLearnEffectivelyBlog,
   'how-to-improve-your-coding-skills': HowToImproveYourCodingSkillsBlog,
+  'tools-to-increase-your-conversion-rate': ToolsToIncreaseYourConversionRateBlog,
+  'arrays-and-how-to-avoid-loops': ArraysAndHowToAvoidLoopsBlog,
+  'autoformat-code-with-prettier': AutoformatCodeWithPrettierBlog,
+  'collaboration-between-one': CollaborationBetweenOneBlog,
+  'collaboration-between-two': CollaborationBetweenTwoBlog,
+  'collaboration-between-three': CollaborationBetweenThreeBlog,
+  'command-line-interface-and-a-terminal': CommandLineInterfaceAndATerminalBlog,
+  'react-components-you-should-start-using-now': ReactComponentsYouShouldStartUsingNowBlog,
+  'var-let-const-best-practices': VarLetConstBestPracticesBlog,
+  'boolean-and-friends-tame-the-logic': BooleanAndFriendsBlog,
 };
 
 export * from './logo';

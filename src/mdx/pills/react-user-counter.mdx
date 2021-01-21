@@ -22,8 +22,8 @@ import {
 } from '~components';
 
 export const useCounterCode = `import { useState } from "react";\n
-export const useCounter = () => {
-  const [counter, setCounter] = useState(0);\n
+export const useCounter = (initialCounter = 0) => {
+  const [counter, setCounter] = useState(initialCounter);\n
   const handleIncrement = () => {
     setCounter((prevCounter) => prevCounter + 1);
   };\n
@@ -47,7 +47,7 @@ export default function App() {
     isDecrementDisabled,
     handleIncrement,
     handleDecrement
-  } = useCounter();\n
+  } = useCounter(10);\n
   return (
     <div>
       <h1>Simple React Counter</h1>
@@ -73,6 +73,11 @@ export const listData = [
     is used to keep track of the <Text code>counter</Text> value.
   </Text>,
   <Text>
+    We set the initial value of the <Text code>counter</Text> by using an{' '}
+    <Text code>initialCounter</Text> function parameter and if it's not
+    provided, we use 0 as a default.
+  </Text>,
+  <Text>
     <Text code>handleIncrement</Text> and <Text code>handleDecrement</Text>{' '}
     handlers are updating the value of <Text code>counter</Text> using{' '}
     <Text code>setCounter</Text> function.
@@ -80,7 +85,7 @@ export const listData = [
   <Text>
     <Text strong>IMPORTANT</Text>: We are relying on the previous value of the
     <Text code>counter</Text> while updating it, hence we use a function to access
-    previous state.
+    the previous state.
   </Text>,
   <Text>
     For simplicity, we are also exposing the{' '}
@@ -89,9 +94,9 @@ export const listData = [
   </Text>,
   <Text>
     Inside of the <Text code>App.js</Text> file, we are using our newly created,
-    custom <Text code>useCounter</Text> hook and build{' '}
-    <Text strong>AN ACTUAL</Text> application thanks to it which you could saw
-    in the above preview.
+    custom <Text code>useCounter</Text> hook with 10 as an initial{' '}
+    <Text code>counter</Text> value and build <Text strong>AN ACTUAL</Text>{' '}
+    application thanks to it which you could saw in the above preview.
   </Text>,
   <Text>How cool is that to build custom hooks? 😎</Text>,
 ];
