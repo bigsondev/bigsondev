@@ -7,7 +7,7 @@ module.exports = {
     keywords:
       'Frontend Mentor, Coding Help, React Expert, Top Developer, Learn How To Code, Web Developer, JavaScript, HTML, CSS, React, Change Your Career',
     author: `@BigsonDev`,
-},
+  },
   plugins: [
     'gatsby-plugin-mdx',
     `gatsby-plugin-react-helmet`,
@@ -24,6 +24,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/src/assets`,
       },
     },
     {

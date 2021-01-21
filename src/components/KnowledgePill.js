@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { BLOG_POST_IMAGES } from '~assets';
-
 import { Paragraph, MainCard, Post, Image, Link, theme } from '.';
 
 const ImageHolder = styled.div({
@@ -39,10 +37,11 @@ export const KnowledgePill = ({
   imageSource,
   children,
   desc,
+  fluid,
 }) => (
   <KnowledgePillCard>
     <ImageHolder>
-      <Image src={BLOG_POST_IMAGES[image]} alt={title} />
+      <Image fluid={fluid} alt={title} />
       <ImageCredit>
         <Paragraph size="preNormal" color={colors.white}>
           Image by{' '}

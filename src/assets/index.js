@@ -32,20 +32,50 @@ import ReactComponentsYouShouldStartUsingNowBlog from './blog/react-components-y
 import VarLetConstBestPracticesBlog from './blog/var-let-const-best-practices-and-differences.jpg';
 import BooleanAndFriendsBlog from './blog/boolean-and-friends-tame-the-logic.jpg';
 
+import AddEditDeleteArrayOfObjectsPill from './pills/add-edit-delete-array-of-objects.jpg';
+import BoxSizingPill from './pills/box-sizing.jpg';
+import ConvertDataStructuresPill from './pills/convert-data-structures.jpg';
+import CounterPill from './pills/counter.jpg';
+import CripsyFeaturesPill from './pills/crispy-features.jpg';
+import CssUnitsPill from './pills/css-units.jpg';
+import EqualHeightCardsPill from './pills/equal-height-cards.jpg';
+import MethodChainingPill from './pills/method-chaining.jpg';
+import MultipleConditionsChecksPill from './pills/multiple-condition-checks.jpg';
+import OutlinePill from './pills/outline.jpg';
+import ResetNormalizeCssPill from './pills/reset-normalize-css.jpg';
+import SearchThroughStringPill from './pills/search-through-string.jpg';
+import SumReducePill from './pills/sum-reduce.jpg';
+
 const BLOG_POST_IMAGES = {
-  'technical-interview-tips': TechnicalInterviewTipsBlog,
-  'ways-to-learn-effectively': WaysToLearnEffectivelyBlog,
-  'how-to-improve-your-coding-skills': HowToImproveYourCodingSkillsBlog,
-  'tools-to-increase-your-conversion-rate': ToolsToIncreaseYourConversionRateBlog,
-  'arrays-and-how-to-avoid-loops': ArraysAndHowToAvoidLoopsBlog,
-  'autoformat-code-with-prettier': AutoformatCodeWithPrettierBlog,
-  'collaboration-between-one': CollaborationBetweenOneBlog,
-  'collaboration-between-two': CollaborationBetweenTwoBlog,
-  'collaboration-between-three': CollaborationBetweenThreeBlog,
-  'command-line-interface-and-a-terminal': CommandLineInterfaceAndATerminalBlog,
-  'react-components-you-should-start-using-now': ReactComponentsYouShouldStartUsingNowBlog,
-  'var-let-const-best-practices': VarLetConstBestPracticesBlog,
-  'boolean-and-friends-tame-the-logic': BooleanAndFriendsBlog,
+  'technical-interview-tips.jpg': TechnicalInterviewTipsBlog,
+  '5-ways-to-learn-effectively.jpg': WaysToLearnEffectivelyBlog,
+  'how-to-improve-your-coding-skills.jpg': HowToImproveYourCodingSkillsBlog,
+  '5-tools-to-increase-your-conversion-rate-and-website-quality.jpg': ToolsToIncreaseYourConversionRateBlog,
+  'arrays-and-how-to-avoid-loops.jpg': ArraysAndHowToAvoidLoopsBlog,
+  'autoformat-code-with-prettier.jpg': AutoformatCodeWithPrettierBlog,
+  'collaboration-between-1.jpg': CollaborationBetweenOneBlog,
+  'collaboration-between-2.jpg': CollaborationBetweenTwoBlog,
+  'collaboration-between-3.jpg': CollaborationBetweenThreeBlog,
+  'command-line-interface-and-a-terminal.jpg': CommandLineInterfaceAndATerminalBlog,
+  'react-components-you-should-start-using-now.jpg': ReactComponentsYouShouldStartUsingNowBlog,
+  'var-let-const-best-practices-and-differences.jpg': VarLetConstBestPracticesBlog,
+  'boolean-and-friends-tame-the-logic.jpg': BooleanAndFriendsBlog,
+};
+
+const PILLS_IMAGES = {
+  'add-edit-delete-array-of-objects': AddEditDeleteArrayOfObjectsPill,
+  'box-sizing.jpg': BoxSizingPill,
+  'convert-data-structures.jpg': ConvertDataStructuresPill,
+  'counter.jpg': CounterPill,
+  'crispy-features.jpg': CripsyFeaturesPill,
+  'css-units.jpg': CssUnitsPill,
+  'equal-height-cards.jpg': EqualHeightCardsPill,
+  'method-chaining.jpg': MethodChainingPill,
+  'multiple-condition-checks.jpg': MultipleConditionsChecksPill,
+  'outline.jpg': OutlinePill,
+  'reset-normalize-css.jpg': ResetNormalizeCssPill,
+  'search-through-string.jpg': SearchThroughStringPill,
+  'sum-reduce.jpg': SumReducePill,
 };
 
 export * from './logo';
@@ -70,8 +100,6 @@ export {
   AngelTestimonial,
   ScottTestimonial,
   MainImage,
-  WaysToLearnEffectivelyBlog,
-  TechnicalInterviewTipsBlog,
-  HowToImproveYourCodingSkillsBlog,
   BLOG_POST_IMAGES,
+  PILLS_IMAGES,
 };

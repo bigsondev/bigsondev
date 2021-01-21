@@ -6,7 +6,6 @@ import { CalendarOutlined, SearchOutlined } from '@ant-design/icons';
 import moment from 'moment';
 import * as JsSearch from 'js-search';
 
-import { BLOG_POST_IMAGES } from '~assets';
 import {
   Layout,
   SEO,
@@ -45,6 +44,23 @@ export const query = graphql`
         }
       }
     }
+    blogFiles: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        relativeDirectory: { eq: "blog" }
+      }
+    ) {
+      edges {
+        node {
+          base
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -73,10 +89,10 @@ const BlogImage = styled(Image)({
   width: 'calc(100% + 6rem)',
 });
 
-const Article = ({ title, desc, path, image, tags, date }) => (
+const Article = ({ title, desc, path, fluid, tags, date }) => (
   <Link to={path}>
     <ArticleCard>
-      <BlogImage src={BLOG_POST_IMAGES[image]} />
+      <BlogImage fluid={fluid} alt="title" />
       <Box margin="0 0 1.5rem 0">
         <Row align="top" justify="start" gutter={64}>
           <Col xs={4} sm={3}>
@@ -134,6 +150,7 @@ const FilterButton = ({ isActive, name, onClick }) =>
 const Blog = ({
   data: {
     allMdx: { edges },
+    blogFiles,
   },
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -259,11 +276,21 @@ const Blog = ({
               frontmatter,
               fields: { slug: path },
             },
-          }) => (
-            <Col xs={24} md={12} key={frontmatter.id}>
-              <Article path={path} {...frontmatter} />
-            </Col>
-          )
+          }) => {
+            const {
+              node: {
+                childImageSharp: { fluid },
+              },
+            } = blogFiles.edges.find(
+              ({ node: { base } }) => base === frontmatter.image
+            );
+
+            return (
+              <Col xs={24} md={12} key={id}>
+                <Article path={path} fluid={fluid} {...frontmatter} />
+              </Col>
+            );
+          }
         )}
       </Row>
       <Box margin="5rem 0">

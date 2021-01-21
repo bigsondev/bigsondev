@@ -211,8 +211,6 @@ const Pills = ({
   const handleSortClick = (sortingStrategy) =>
     setSortingStrategy(sortingStrategy);
 
-  console.log(searchResult);
-
   return (
     <Layout>
       <SEO title="Pills | Knowledge Pills, Code Examples, Useful Tips & Tricks You Can Use On Daily Basis" />

@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import { AdrianImage, BLOG_POST_IMAGES } from '~assets';
+import { AdrianImage, BLOG_POST_IMAGES, PILLS_IMAGES } from '~assets';
 import {
   shareOnReddit,
   shareOnTwitter,
@@ -96,6 +96,40 @@ export const pageQuery = graphql`
         slug
       }
     }
+    blogFiles: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        relativeDirectory: { eq: "blog" }
+      }
+    ) {
+      edges {
+        node {
+          base
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
+    pillsFiles: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        relativeDirectory: { eq: "pills" }
+      }
+    ) {
+      edges {
+        node {
+          base
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -108,16 +142,30 @@ const BlogLayout = ({
       body,
       fields: { slug },
     },
+    blogFiles,
+    pillsFiles,
   },
   pageContext: { previous, next },
 }) => {
   const isBlogPost = slug.includes('/blog/');
 
+  const {
+    node: {
+      childImageSharp: { fluid },
+    },
+  } = isBlogPost
+    ? blogFiles.edges.find(({ node: { base } }) => base === frontmatter.image)
+    : pillsFiles.edges.find(({ node: { base } }) => base === frontmatter.image);
+
   return (
     <>
       <SEO
         title={`Blog | ${frontmatter.title}`}
-        image={BLOG_POST_IMAGES[frontmatter.image]}
+        image={
+          isBlogPost
+            ? BLOG_POST_IMAGES[frontmatter.image]
+            : PILLS_IMAGES[frontmatter.image]
+        }
       />
       <Box mt={5}>
         <Row justify="center" gutter={[0, 40]}>
@@ -172,23 +220,16 @@ const BlogLayout = ({
               <main>
                 {isBlogPost && (
                   <ImageHolder>
-                    <Image
-                      src={BLOG_POST_IMAGES[frontmatter.image]}
-                      alt={frontmatter.title}
-                    />
+                    <Image fluid={fluid} alt={frontmatter.title} />
                     <ImageCredit>
-                      <Paragraph size="preNormal" color={colors.white}>
+                      <Paragraph size="small" color={colors.white}>
                         Image by{' '}
-                        <Link
-                          size="preNormal"
-                          href={frontmatter.authorLink}
-                          strong
-                        >
+                        <Link size="small" href={frontmatter.authorLink} strong>
                           {frontmatter.author}
                         </Link>{' '}
                         from{' '}
                         <Link
-                          size="preNormal"
+                          size="small"
                           href={frontmatter.imageSourceLink}
                           strong
                         >
@@ -198,8 +239,10 @@ const BlogLayout = ({
                     </ImageCredit>
                   </ImageHolder>
                 )}
-                <MDXRenderer frontmatter={frontmatter}>{body}</MDXRenderer>
-                <Box mt={10}>
+                <MDXRenderer frontmatter={frontmatter} fluid={fluid}>
+                  {body}
+                </MDXRenderer>
+                <Box mt={isBlogPost ? 5 : 1}>
                   <Row justify="space-between" gutter={[0, 16]}>
                     <Col xs={24} sm={12}>
                       {previous && (

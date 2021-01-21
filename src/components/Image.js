@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Img from 'gatsby-image';
 
 import { Text } from './Typography';
 
@@ -13,15 +14,25 @@ const FigureCaption = styled.figcaption({
   marginTop: '0.25rem',
 });
 
-const Img = styled.img({
+const FluidImgHolder = styled(Img)({
   maxWidth: '100%',
   width: 'auto',
   height: 'auto',
 });
 
-export const Image = ({ src, alt, desc, ...restProps }) => (
+const ImgHolder = styled.img({
+  maxWidth: '100%',
+  width: 'auto',
+  height: 'auto',
+});
+
+export const Image = ({ fluid, src, alt, desc, ...restProps }) => (
   <Figure {...restProps}>
-    <Img src={src} alt={alt} />
+    {fluid ? (
+      <FluidImgHolder fluid={fluid} alt={alt} />
+    ) : (
+      <ImgHolder src={src} alt={alt} />
+    )}
     {desc && (
       <FigureCaption>
         <Text type="secondary" fontStyle="italic" size="small" align="center">
