@@ -2,97 +2,68 @@
 title: Adjust box sizing
 desc: Adjust box-sizing property to include padding and border to actual width or height. Simplifies overhead of the box model.
 date: 2020-12-03
-tags: html, css
-type: boy
-image: pillFour
+image: none
+imageSource: none
+imageSourceLink: none
+author: none
+authorLink: none
+tags: css
+difficulty: 1
 ---
 
 import {
   SyntaxHighlighter,
   Link,
-  CodeEditorRaw,
   KnowledgePill,
+  Title,
   Text,
+  Paragraph,
+  PostList,
 } from '~components';
 
 export const boxSizingCode = `*, *:before, *:after {
   box-sizing: border-box;
 }`;
 
-export const tabs = ['html', 'css'];
-export const initialHtml = `<div class="container">
-	<div class="firstBlock">120px:120px</div>
-	<div class="secondBlock">120px:120px</div>
-</div>`;
-export const initialCss = `*, *:before, *:after {
-  box-sizing: border-box;
-}\n
-.container {
-  display: flex;
-  height: 100vh;
-  justify-content: space-around;
-  align-items: center;
-}\n
-.firstBlock {
-  width: 120px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: blue;
-  color: rgba(255, 255, 255, 0.85);
-}\n
-.secondBlock {
-  width: 120px;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid red;
-  padding: 20px;
-  background: blue;
-  color: rgba(255, 255, 255, 0.85);
-}`;
+export const listData = [
+  <Text>Add the above code to your main CSS file to take effect.</Text>,
+  <Text>
+    <Link href="https://www.w3schools.com/cssref/sel_all.asp">
+      Select all selector
+    </Link>{' '}
+    targets all HTML elements, including all pseudo-elements.
+  </Text>,
+  <Text>
+    Then, the{' '}
+    <Link href="https://www.w3schools.com/css/css3_box-sizing.asp">
+      box-sizing
+    </Link>{' '}
+    property is overridden to <Text code>border-box</Text> instead of default{' '}
+    <Text code>content-box</Text>.
+  </Text>,
+];
 
-<KnowledgePill
-  code={
-    <SyntaxHighlighter language="css" showCopy>
-      {boxSizingCode}
-    </SyntaxHighlighter>
-  }
-  explanation={
-    <>
-      <Link
-        href="https://www.w3schools.com/cssref/sel_all.asp"
-        size="preNormal"
-      >
-        Select all selector
-      </Link>{' '}
-      targets all HTML elements, including all pseudo elements to override{' '}
-      <Link
-        href="https://www.w3schools.com/css/css3_box-sizing.asp"
-        size="preNormal"
-      >
-        box-sizing
-      </Link>{' '}
-      property to be{' '}
-      <Text size="preNormal" code>
-        border-box
-      </Text>{' '}
-      instead of default{' '}
-      <Text size="preNormal" code>
-        content-box
-      </Text>
-      .
-    </>
-  }
-  interactiveExample={
-    <CodeEditorRaw
-      tabs={tabs}
-      initialHtml={initialHtml}
-      initialCss={initialCss}
-    />
-  }
-  {...props}
-  {...props.frontmatter}
-/>
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Preview
+  </Title>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/sleepy-wind-sb1f9?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="sleepy-wind-sb1f9"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Title level={4} transform="none">
+    Border-box property
+  </Title>
+  <SyntaxHighlighter language="css" showCopy>
+    {boxSizingCode}
+  </SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Explanation
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

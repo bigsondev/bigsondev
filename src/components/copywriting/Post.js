@@ -12,7 +12,9 @@ export const Post = ({
   desc,
   date,
   readTime,
+  tags,
   children,
+  difficulty,
 }) => (
   <>
     {title && (
@@ -21,15 +23,17 @@ export const Post = ({
           title={title}
           date={date}
           readTime={readTime}
+          tags={tags}
+          difficulty={difficulty}
           showSubtitle={showSubtitle}
         />
       </Box>
     )}
     {desc && (
-      <Box mb={6}>
+      <>
         <QuickSummary desc={desc} />
         <Divider />
-      </Box>
+      </>
     )}
     {children}
   </>

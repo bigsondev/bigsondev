@@ -6,17 +6,16 @@
 import React from 'react';
 import { Layout } from 'antd';
 
-import 'highlight.js/styles/a11y-light.css';
-
 // The following two imports is for the theme.
 import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/material.css';
+import 'codemirror/theme/material-palenight.css';
 import 'codemirror/addon/hint/show-hint.css';
 
 // This import is for the language syntax highlighting.
 import 'codemirror/mode/javascript/javascript.js';
 import 'codemirror/mode/css/css.js';
 import 'codemirror/mode/htmlembedded/htmlembedded.js';
+// This import is for all the addons
 import 'codemirror/addon/edit/matchbrackets.js';
 import 'codemirror/addon/edit/closebrackets.js';
 import 'codemirror/addon/edit/matchtags.js';

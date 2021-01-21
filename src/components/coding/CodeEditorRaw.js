@@ -86,7 +86,7 @@ export const CodeEditorRaw = ({
     setTimeoutId(newTimeoutId);
 
     return () => clearTimeout(timeoutId);
-  }, [html, css, js]);
+  }, [html, css, js, timeoutId, updateIframe]);
 
   const TAB_MAPPER = {
     html: {
@@ -124,7 +124,7 @@ export const CodeEditorRaw = ({
                     mode,
                     lineNumbers: true,
                     lineWrapping: true,
-                    theme: 'material',
+                    theme: 'material-palenight',
                     tabSize: 2,
                     showCursorWhenSelecting: true,
                     autofocus: true,

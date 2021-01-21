@@ -2,30 +2,26 @@
 title: CSS Units
 desc: Do you only use pixels or % in CSS? Open yourself to more possibilities and best practices with other available units.
 date: 2021-01-14
-tags: html, css
-type: boy
-image: pillOne
+image: how-to-improve-your-coding-skills
+imageSource: none
+imageSourceLink: none
+author: none
+authorLink: none
+tags: css
+difficulty: 2
 ---
 
 import {
   SyntaxHighlighter,
   Link,
-  CodeEditorRaw,
   KnowledgePill,
   Text,
+  Title,
+  PostList,
+  Paragraph,
 } from '~components';
 
-export const cssUnitsCode = `CSS Units\n
-- em: relative to the closest font-size
-- rem: relative to font size of html root element
-- vw: viewport width
-- vh: viewport height
-- vmin: take what is smaller, vw or vh
-- vmax: take what is bigger, vw or vh`;
-
-export const tabs = ['html', 'css'];
-
-export const initialHtml = `<div class="wrapper">
+export const htmlCode = `<div class="wrapper">
    <!-- em unit - 2em * 8px = 16px -->
    <div class="emUnit">
       em: I'm relative to the closest font-size, in this case div "wrapper" parent element.
@@ -50,7 +46,7 @@ export const initialHtml = `<div class="wrapper">
    </div>
 </div>`;
 
-export const initialCss = `html {
+export const cssCode = `html {
   font-size: 12px;
 }\n
 .wrapper {
@@ -89,43 +85,57 @@ export const initialCss = `html {
   height: 7vmax;
 }`;
 
-<KnowledgePill
-  code={<SyntaxHighlighter>{cssUnitsCode}</SyntaxHighlighter>}
-  explanation={
-    <>
-      Each unit has its own use cases and best practices. I love using{' '}
-      <Text code size="preNormal">
-        rem
-      </Text>{' '}
-      as it's a scalable unit and consistent across devices (if proper media
-      queries are set in root HTML element). Additionally, a lot of duplication
-      is removed as e.g. font is changed in one place.{' '}
-      <Text code size="preNormal">
-        viewport
-      </Text>{' '}
-      units can be a good solution for full-page screens and other scenarios
-      where you need to take viewport size into consideration. Check supported
-      browsers on{' '}
-      <Link href="https://caniuse.com/" size="preNormal">
-        caniuse
-      </Link>{' '}
-      for the unit you use. Read more{' '}
-      <Link
-        href="https://gist.github.com/basham/2175a16ab7c60ce8e001"
-        size="preNormal"
-      >
-        best practices about CSS units
-      </Link>
-      .
-    </>
-  }
-  interactiveExample={
-    <CodeEditorRaw
-      tabs={tabs}
-      initialHtml={initialHtml}
-      initialCss={initialCss}
-    />
-  }
-  {...props}
-  {...props.frontmatter}
-/>
+export const listData = [
+  <Text> Each unit has its own use cases and best practices.</Text>,
+  <Text>
+    {' '}
+    I love using <Text code>rem</Text> as it's a scalable unit and consistent across
+    devices (if proper media queries are set in root HTML element). Also, a lot of
+    duplication is removed as e.g. font is changed in one place.{' '}
+  </Text>,
+  <Text>
+    <Text code>viewport</Text> units can be a good solution for full-page
+    screens and other scenarios where you need to take viewport size into
+    consideration.
+  </Text>,
+  <Text>
+    {' '}
+    Always Check supported browsers on <Link href="https://caniuse.com/">
+      caniuse
+    </Link> for the unit you use.
+  </Text>,
+  <Text>
+    {' '}
+    Read more <Link href="https://gist.github.com/basham/2175a16ab7c60ce8e001">
+      best practices about CSS units
+    </Link>.
+  </Text>,
+];
+
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Preview
+  </Title>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/fancy-https-opl2c?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="fancy-https-opl2c"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Title level={4} transform="none">
+    Relative units
+  </Title>
+  <SyntaxHighlighter language="htmlembedded" title="HTML">
+    {htmlCode}
+  </SyntaxHighlighter>
+  <SyntaxHighlighter language="css" title="CSS">
+    {cssCode}
+  </SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Explanation
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

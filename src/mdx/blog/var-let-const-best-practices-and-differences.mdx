@@ -46,6 +46,7 @@ export const summaryList = [
   desc={props.frontmatter.desc}
   date={props.frontmatter.date}
   readTime={props.frontmatter.readTime}
+  tags={props.frontmatter.tags}
   showSubtitle
 >
   <Title level={3}>Introduction</Title>
@@ -70,7 +71,7 @@ export const summaryList = [
     ❌ 🔥 ❌ Global
   </Title>
   <Paragraph>Globals are evil. 👿</Paragraph>
-  <SyntaxHighlighter showCopy>{globalVariableFirstExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{globalVariableFirstExample}</SyntaxHighlighter>
   <Paragraph>
     In the above example, we declared the <Text code>setTimeout</Text> variable
     without using any keyword and assigned the <Text code>Hello World</Text>{' '}

@@ -2,17 +2,22 @@
 title: Add, edit, delete operations
 desc: Learn how to add, edit and delete array of objects in semantic, declarative approach using rest spread operator and array methods.
 date: 2020-12-05
+image: none
+imageSource: none
+imageSourceLink: none
+author: none
+authorLink: none
 tags: js
-type: boy
-image: pillFive
+difficulty: 3
 ---
 
 import {
   SyntaxHighlighter,
   Link,
-  CodeEditorRaw,
   KnowledgePill,
   Text,
+  Title,
+  PostList,
 } from '~components';
 
 export const jsCode = `let items = [];\n
@@ -43,97 +48,28 @@ const deleteItem = (idToRemove) => {
 }
 `;
 
-export const tabs = ['js', 'html'];
-export const initialHtml = '<h1>Open console in your browser to see logs</h1>';
-export const initialJs = `/* Let's assume we have the below note structure
-   const note = {
-     id: 1,
-     text: 'Note text',
-     color: '#FAFAFA'
-   }
-   It's an object with 3 properties, id, text and a color.
-*/\n
-let notes = [];\n
-// Add note to the beginning of notes array using rest operator
-const addNoteToStart = (newNote) => {
-  notes = [newNote, ...notes];
-}\n
-// Add note to the end of notes array using rest operaotr
-const addNoteToEnd = (newNote) => {
-  notes = [...notes, newNote];
-}\n
-// Edit note using .map method, if id matches, use rest operator to override
-// note properties with updatedNote, otherwise return note as is
-const editNote = (updatedNote) => {
-  notes = notes.map((note) => {
-    if (updatedNote.id === note.id) {
-      return {
-        ...note,
-        ...updatedNote
-      }
-    }\n
-    return note;
-  })
-}\n
-// Delete note using .filter method, if id matches, delete it from notes array
-const deleteNote = (idToRemove) => {
-  notes = notes.filter((note) => note.id !== idToRemove);
-}\n
-const firstNote = {
-  id: 1,
-  text: 'Note text 1',
-  color: '#FAFAFA'
-}\n
-const secondNote = {
-  id: 2,
-  text: 'Note text 2',
-  color: '#F5F5F5'
-}\n
-const thirdNote = {
-  id: 3,
-  text: 'Note text 3',
-  color: '#F0F0F0'
-}\n
-const updatedSecondNote = {
-  id: 2,
-  text: 'Updated note text 2',
-  color: '#F5F5F5'
-};\n
-const idToRemove = 1;\n
-addNoteToStart(firstNote);
-console.log(notes); // 1 note\n
-addNoteToEnd(secondNote);
-console.log(notes); // 2 notes\n
-addNoteToEnd(thirdNote);
-console.log(notes); // 3 notes\n
-editNote(updatedSecondNote);
-console.log(notes) // 3 notes, 2nd updated\n
-deleteNote(1);
-console.log(notes) // 2 notes, first deleted\n
-`;
+export const listData = [
+  <Text>
+    <Link href="https://javascript.info/rest-parameters-spread">
+      Rest spread operator
+    </Link>{' '}
+    is helpful when it comes to working with arrays and objects.
+  </Text>,
+  <Text>
+    Add, edit, delete functions can be used on any object structure and should
+    work well with the array of those objects.
+  </Text>,
+];
 
-<KnowledgePill
-  code={<SyntaxHighlighter showCopy>{jsCode}</SyntaxHighlighter>}
-  explanation={
-    <>
-      <Link
-        href="https://javascript.info/rest-parameters-spread"
-        size="preNormal"
-      >
-        Rest spread operator
-      </Link>{' '}
-      is helpful when it comes to working with arrays and objects. Add, edit,
-      delete functions can be used on any object structure and should work well
-      with array of these objects.
-    </>
-  }
-  interactiveExample={
-    <CodeEditorRaw
-      tabs={tabs}
-      initialHtml={initialHtml}
-      initialJs={initialJs}
-    />
-  }
-  {...props}
-  {...props.frontmatter}
-/>
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Immutability with rest spread operator
+  </Title>
+  <SyntaxHighlighter language="javascript" showCopy>
+    {jsCode}
+  </SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Explanation
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

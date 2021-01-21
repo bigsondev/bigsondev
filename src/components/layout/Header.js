@@ -155,14 +155,14 @@ const RightMenu = ({
             <Text size="preNormal">Blog</Text>
           </Link>
         </MenuItem>
-        <MenuItem key="3" isSelected={pathname.includes('library')}>
-          <Link to="/library/">
-            <Text size="preNormal">Library</Text>
-          </Link>
-        </MenuItem>
-        <MenuItem key="4" isSelected={pathname.includes('mentorship')}>
+        <MenuItem key="3" isSelected={pathname.includes('pills')}>
           <Link to="/pills/">
             <Text size="preNormal">Pills</Text>
+          </Link>
+        </MenuItem>
+        <MenuItem key="4" isSelected={pathname.includes('library')}>
+          <Link to="/library/">
+            <Text size="preNormal">Library</Text>
           </Link>
         </MenuItem>
         <MenuItem key="5" isSelected={pathname.includes('reach-out')}>
@@ -231,20 +231,20 @@ export const Header = ({ pathname }) => {
                 </MobileMenuItem>
                 <MobileMenuItem
                   key="3"
+                  isSelected={pathname.includes('pills')}
+                  onClick={handleMobileMenuCloseClick}
+                >
+                  <Link to="/pills/">
+                    <Text size="preNormal">Pills</Text>
+                  </Link>
+                </MobileMenuItem>
+                <MobileMenuItem
+                  key="4"
                   isSelected={pathname.includes('library')}
                   onClick={handleMobileMenuCloseClick}
                 >
                   <Link to="/library/">
                     <Text size="preNormal">Library</Text>
-                  </Link>
-                </MobileMenuItem>
-                <MobileMenuItem
-                  key="4"
-                  isSelected={pathname.includes('mentorship')}
-                  onClick={handleMobileMenuCloseClick}
-                >
-                  <Link to="/pills/">
-                    <Text size="preNormal">Pills</Text>
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem

@@ -1,0 +1,125 @@
+---
+title: React counter hook
+desc: Let's create a custom hook for tracking the counter state and exposing the current counter value with increment, decrement handlers.
+date: 2021-01-21
+image: react-use-counter-hook
+imageSource: none
+imageSourceLink: none
+author: none
+authorLink: none
+tags: react
+difficulty: 2
+---
+
+import {
+  SyntaxHighlighter,
+  Link,
+  KnowledgePill,
+  Text,
+  Title,
+  PostList,
+  Paragraph,
+} from '~components';
+
+export const useCounterCode = `import { useState } from "react";\n
+export const useCounter = () => {
+  const [counter, setCounter] = useState(0);\n
+  const handleIncrement = () => {
+    setCounter((prevCounter) => prevCounter + 1);
+  };\n
+  const handleDecrement = () => {
+    setCounter((prevCounter) => prevCounter - 1);
+  };\n
+  return {
+    counter,
+    isDecrementDisabled: counter === 0,
+    handleIncrement,
+    handleDecrement
+  };
+};
+`;
+
+export const appCode = `import React from "react";\n
+import { useCounter } from "./useCounter";\n
+export default function App() {
+  const {
+    counter,
+    isDecrementDisabled,
+    handleIncrement,
+    handleDecrement
+  } = useCounter();\n
+  return (
+    <div>
+      <h1>Simple React Counter</h1>
+      <button onClick={handleIncrement}>+</button>
+      <h2>{counter}</h2>
+      <button onClick={handleDecrement} disabled={isDecrementDisabled}>
+        -
+      </button>
+    </div>
+  );
+}
+`;
+
+export const listData = [
+  <Text>
+    Inside the <Text code>useCounter.js</Text> file, we have our custom{' '}
+    <Text code>useCounter</Text>{' '}
+    <Link href="https://reactjs.org/docs/hooks-custom.html">hook</Link>.
+  </Text>,
+  <Text>
+    built-in React{' '}
+    <Link href="https://reactjs.org/docs/hooks-state.html">useState</Link> hook
+    is used to keep track of the <Text code>counter</Text> value.
+  </Text>,
+  <Text>
+    <Text code>handleIncrement</Text> and <Text code>handleDecrement</Text>{' '}
+    handlers are updating the value of <Text code>counter</Text> using{' '}
+    <Text code>setCounter</Text> function.
+  </Text>,
+  <Text>
+    <Text strong>IMPORTANT</Text>: We are relying on the previous value of the
+    <Text code>counter</Text> while updating it, hence we use a function to access
+    previous state.
+  </Text>,
+  <Text>
+    For simplicity, we are also exposing the{' '}
+    <Text code>isDecrementDisabled</Text> boolean to disable the decrement
+    button when the value of the <Text code>counter</Text> is 0.
+  </Text>,
+  <Text>
+    Inside of the <Text code>App.js</Text> file, we are using our newly created,
+    custom <Text code>useCounter</Text> hook and build{' '}
+    <Text strong>AN ACTUAL</Text> application thanks to it which you could saw
+    in the above preview.
+  </Text>,
+  <Text>How cool is that to build custom hooks? 😎</Text>,
+];
+
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Preview
+  </Title>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/infallible-resonance-odux8?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="infallible-resonance-odux8"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Title level={4} transform="none">
+    Tik, Tok, Tik, Tok
+  </Title>
+  <SyntaxHighlighter language="javascript" title="React - useCounter.js">
+    {useCounterCode}
+  </SyntaxHighlighter>
+  <SyntaxHighlighter language="javascript" title="React - App.js">
+    {appCode}
+  </SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Explanation
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

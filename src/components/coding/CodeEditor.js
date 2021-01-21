@@ -320,7 +320,7 @@ export const CodeEditor = ({
                       mode,
                       lineNumbers: true,
                       lineWrapping: true,
-                      theme: 'material',
+                      theme: 'material-palenight',
                       tabSize: 2,
                       showCursorWhenSelecting: true,
                       autofocus: true,

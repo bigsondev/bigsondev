@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
-import { Button, Popover } from 'antd';
-import Highlight from 'react-highlight/lib/optimized';
+import React from 'react';
 import styled from 'styled-components';
+import { Controlled as CodeMirror } from 'react-codemirror2';
 
-import { copyToClipboard } from '~utils';
-
-import { Text, Paragraph } from '.';
+import { Paragraph } from '.';
 
 const Holder = styled.div({
   position: 'relative',
+  marginBottom: '1rem',
   '& code': {
     backgroundColor: '#ecd9c26e',
     padding: 24,
@@ -17,55 +15,56 @@ const Holder = styled.div({
   },
 });
 
-const CopyButton = styled(Button)({
-  position: 'absolute',
-  borderRadius: 6,
-  top: 16,
-  right: 8,
-});
+const CodeMirrorHolder = styled(CodeMirror)(({ theme, title }) => ({
+  '& .CodeMirror': {
+    borderRadius: theme.borders.radius,
+    padding: title ? '1.5rem 0.5rem 0.5rem 0.5rem' : '0.5rem',
+    height: '100%',
+  },
+  '& .CodeMirror-cursor': { display: 'none !important' },
+}));
 
-const CodeTitle = styled(Paragraph)({
+const CodeTitle = styled(Paragraph)(({ theme }) => ({
   position: 'absolute',
   bottom: -24,
-  left: '50%',
-  transform: 'translate(-50%)',
-});
+  left: '0.75rem',
+  top: '0.25rem',
+  color: `#d9d9d9 !important`,
+  opacity: 0.85,
+  fontWeight: theme.fontWeight.medium,
+}));
 
 export const SyntaxHighlighter = ({
   language = 'javascript',
-  showCopy = false,
   title = '',
   children,
   ...props
 }) => {
-  const [visible, setVisible] = useState(false);
-
-  const handleCopyClick = () => {
-    copyToClipboard(children);
-    setVisible(true);
-    setTimeout(() => {
-      setVisible(false);
-    }, 500);
-  };
-
   return (
     <Holder>
-      <Highlight languages={[language]} {...props}>
-        {children}
-      </Highlight>
+      <CodeMirrorHolder
+        title={title}
+        value={children}
+        options={{
+          mode: language,
+          lineWrapping: true,
+          theme: 'material-palenight',
+          tabSize: 2,
+          showCursorWhenSelecting: false,
+          autofocus: false,
+          matchBrackets: false,
+          autoCloseBrackets: false,
+          matchTags: false,
+          autoCloseTags: false,
+          showHint: false,
+          readOnly: true,
+        }}
+      />
+
       {title && (
-        <CodeTitle type="secondary" fontStyle="italic" size="small">
+        <CodeTitle type="secondary" size="micro">
           {title}
         </CodeTitle>
-      )}
-      {showCopy && (
-        <Popover trigger="click" content="Copied!" visible={visible}>
-          <CopyButton onClick={handleCopyClick}>
-            <Text type="secondary" size="micro" strong>
-              Copy
-            </Text>
-          </CopyButton>
-        </Popover>
       )}
     </Holder>
   );

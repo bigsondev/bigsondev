@@ -100,7 +100,7 @@ export const Offer = () => {
             <Paragraph
               align="center"
               marginBottom={spacing.large}
-              fontWeight={fontWeight.stronger}
+              fontWeight={fontWeight.strong}
               size="medium"
             >
               It's easy to get stuck in tutorials hell. I've been there and I
@@ -464,13 +464,7 @@ export const Offer = () => {
             </SuperOfferCard>
           </Col>
           <Col span={22}>
-            <Paragraph
-              align="center"
-              strong
-              size="preNormal"
-              type="secondary"
-              marginBottom="0"
-            >
+            <Paragraph align="center" strong size="preNormal" marginBottom="0">
               I'm a verified Mentor on{' '}
               <Link
                 size="preNormal"

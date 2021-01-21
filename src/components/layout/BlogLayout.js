@@ -89,7 +89,11 @@ export const pageQuery = graphql`
         imageSourceLink
         author
         authorLink
+        difficulty
         date(formatString: "MMM D, YYYY")
+      }
+      fields {
+        slug
       }
     }
   }
@@ -99,13 +103,22 @@ const { colors } = theme;
 
 const BlogLayout = ({
   data: {
-    mdx: { frontmatter, body },
+    mdx: {
+      frontmatter,
+      body,
+      fields: { slug },
+    },
   },
   pageContext: { previous, next },
 }) => {
+  const isBlogPost = slug.includes('/blog/');
+
   return (
     <>
-      <SEO title={`Blog | ${frontmatter.title}`} />
+      <SEO
+        title={`Blog | ${frontmatter.title}`}
+        image={BLOG_POST_IMAGES[frontmatter.image]}
+      />
       <Box mt={5}>
         <Row justify="center" gutter={[0, 40]}>
           <Col xs={22} xl={6}>
@@ -157,32 +170,34 @@ const BlogLayout = ({
           <Col xs={22} xl={12}>
             <Box mb={10}>
               <main>
-                <ImageHolder>
-                  <Image
-                    src={BLOG_POST_IMAGES[frontmatter.image]}
-                    alt={frontmatter.title}
-                  />
-                  <ImageCredit>
-                    <Paragraph size="preNormal" color={colors.white}>
-                      Image by{' '}
-                      <Link
-                        size="preNormal"
-                        href={frontmatter.authorLink}
-                        strong
-                      >
-                        {frontmatter.author}
-                      </Link>{' '}
-                      from{' '}
-                      <Link
-                        size="preNormal"
-                        href={frontmatter.imageSourceLink}
-                        strong
-                      >
-                        {frontmatter.imageSource}
-                      </Link>
-                    </Paragraph>
-                  </ImageCredit>
-                </ImageHolder>
+                {isBlogPost && (
+                  <ImageHolder>
+                    <Image
+                      src={BLOG_POST_IMAGES[frontmatter.image]}
+                      alt={frontmatter.title}
+                    />
+                    <ImageCredit>
+                      <Paragraph size="preNormal" color={colors.white}>
+                        Image by{' '}
+                        <Link
+                          size="preNormal"
+                          href={frontmatter.authorLink}
+                          strong
+                        >
+                          {frontmatter.author}
+                        </Link>{' '}
+                        from{' '}
+                        <Link
+                          size="preNormal"
+                          href={frontmatter.imageSourceLink}
+                          strong
+                        >
+                          {frontmatter.imageSource}
+                        </Link>
+                      </Paragraph>
+                    </ImageCredit>
+                  </ImageHolder>
+                )}
                 <MDXRenderer frontmatter={frontmatter}>{body}</MDXRenderer>
                 <Box mt={10}>
                   <Row justify="space-between" gutter={[0, 16]}>

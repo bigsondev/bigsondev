@@ -50,8 +50,7 @@ console.log(exampleTruthyAndOperator); // true
 console.log(exampleFalsyAndOperator); // false
 console.log(exampleAndOperator); // 5`;
 
-export const orOperatorExample = `
-const exampleOrOperatorFirstValue = true || false || 5;
+export const orOperatorExample = `const exampleOrOperatorFirstValue = true || false || 5;
 const exampleOrOperatorMiddleValue = false || 5 || true;
 const exampleOrOperatorLastValue = false || false || true;\n
 console.log(exampleOrOperatorFirstValue); // true
@@ -62,8 +61,7 @@ console.log(exampleOrOperatorLastValue); // true
 export const notOperatorExample = `const iAmOppositeOfTrue = !true;\n
 console.log(iAmOppositeOfTrue); // false`;
 
-export const falsyValuesExample = `
-const revealTheLie = (falsyValue) => console.log(Boolean(falsyValue));\n
+export const falsyValuesExample = `const revealTheLie = (falsyValue) => console.log(Boolean(falsyValue));\n
 // empty/non-existing values
 revealTheLie(null); // false
 revealTheLie(undefined); // false\n
@@ -100,8 +98,7 @@ const isArrayEmpty = [].length === 0;\n
 console.log(isObjectEmpty); // true
 console.log(isArrayEmpty); // true`;
 
-export const conversionExample = `
-// ❌ BAD PRACTICE - Automatic type conversion
+export const conversionExample = `// ❌ BAD PRACTICE - Automatic type conversion
 console.log(false == ''); // true
 console.log(null == undefined); // true
 console.log(0 == '0'); // true
@@ -161,6 +158,7 @@ console.log(properZero); // 0`;
   desc={props.frontmatter.desc}
   date={props.frontmatter.date}
   readTime={props.frontmatter.readTime}
+  tags={props.frontmatter.tags}
   showSubtitle
 >
   <Title level={3}>Introduction</Title>

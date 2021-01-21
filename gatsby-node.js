@@ -9,16 +9,6 @@ const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 
 exports.onCreateWebpackConfig = ({ stage, actions, loaders, plugins }) => {
-  if (stage === 'build-javascript') {
-    actions.setWebpackConfig({
-      plugins: [
-        plugins.contextReplacement(
-          /highlight\.js\/lib\/languages$/,
-          new RegExp(`^./(javascript|json|markdown|xml|css|bash|typescript)$`)
-        ),
-      ],
-    });
-  }
   if (stage === 'develop-html' || stage === 'build-html') {
     actions.setWebpackConfig({
       module: {
@@ -214,7 +204,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       // (or `node.frontmatter.slug`)
       path: node.fields.slug,
       // This component will wrap our MDX content
-      component: path.resolve(`./src/components/layout/PillsLayout.js`),
+      component: path.resolve(`./src/components/layout/BlogLayout.js`),
       // You can use the values in this context in
       // our page layout component
       context: { id: node.id, next, previous },

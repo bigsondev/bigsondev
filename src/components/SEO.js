@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import { MainImage } from '~assets';
 
-export function SEO({ description, lang, meta, title }) {
+export function SEO({ description, lang, meta, title, image = MainImage }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -60,7 +60,7 @@ export function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `https://bigsondev.com${MainImage}`,
+          content: `https://bigsondev.com${image}`,
         },
         {
           name: `twitter:card`,
@@ -84,7 +84,7 @@ export function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:image`,
-          content: `https://bigsondev.com${MainImage}`,
+          content: `https://bigsondev.com${image}`,
         },
       ].concat(meta)}
     >

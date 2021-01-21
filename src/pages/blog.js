@@ -78,14 +78,14 @@ const Article = ({ title, desc, path, image, tags, date }) => (
     <ArticleCard>
       <BlogImage src={BLOG_POST_IMAGES[image]} />
       <Box margin="0 0 1.5rem 0">
-        <Row align="top" justify="start" gutter={32}>
-          <Col xs={6} lg={4}>
+        <Row align="top" justify="start" gutter={64}>
+          <Col xs={4} sm={3}>
             {/* Tags will be a single string for now, can be changed later
        into an array of tags */}
             <Icon type={`${tags}Tag`} width={48} />
           </Col>
-          <Col xs={18} lg={20}>
-            <Title level={5} transform="capitalize">
+          <Col xs={18} sm={19}>
+            <Title level={5} transform="capitalize" marginBottom="0">
               {title}
             </Title>
             <Space size="large">
@@ -99,9 +99,7 @@ const Article = ({ title, desc, path, image, tags, date }) => (
           </Col>
         </Row>
       </Box>
-      <Paragraph type="secondary" size="preNormal">
-        {truncate(desc, 120)}
-      </Paragraph>
+      <Paragraph size="preNormal">{truncate(desc, 120)}</Paragraph>
       <ArticleButton type="primary">Read more</ArticleButton>
     </ArticleCard>
   </Link>
@@ -262,7 +260,7 @@ const Blog = ({
               fields: { slug: path },
             },
           }) => (
-            <Col xs={24} sm={12} key={frontmatter.id}>
+            <Col xs={24} md={12} key={frontmatter.id}>
               <Article path={path} {...frontmatter} />
             </Col>
           )

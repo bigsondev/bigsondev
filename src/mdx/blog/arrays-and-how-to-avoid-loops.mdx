@@ -24,8 +24,7 @@ import {
   Box,
 } from '~components';
 
-export const arraysExample = `
-// Create an array of 3 items using [ ] brackets
+export const arraysExample = `// Create an array of 3 items using [ ] brackets
 const friends = ["John", "Joe", "Jane"];\n
 // Here we have a "collection" of friends declared as an array
 console.log(friends); // ["John", "Joe", "Jane"]\n
@@ -190,6 +189,7 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
   desc={props.frontmatter.desc}
   date={props.frontmatter.date}
   readTime={props.frontmatter.readTime}
+  tags={props.frontmatter.tags}
   showSubtitle
 >
   <Title level={3}>Introduction</Title>

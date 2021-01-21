@@ -59,7 +59,7 @@ export const cheatSheetData = [
       </Text>{' '}
       file.
     </Text>
-    <SyntaxHighlighter showCopy>
+    <SyntaxHighlighter language="markdown">
       npm install --save-dev --save-exact prettier
     </SyntaxHighlighter>
   </>,
@@ -80,7 +80,7 @@ export const cheatSheetData = [
       </Link>
       ):
     </Text>
-    <SyntaxHighlighter language="json" showCopy>
+    <SyntaxHighlighter language="javascript">
       {`{
   "singleQuote": true,
 }`}
@@ -95,7 +95,7 @@ export const cheatSheetData = [
       file with the following setup: (extend it if you have any specific files
       or directories in your project to ignore)
     </Text>
-    <SyntaxHighlighter language="markdown" showCopy>
+    <SyntaxHighlighter language="markdown">
       {`# Ignore files/directories that shouldn't be formatted
 \n.cache
 package.json
@@ -150,6 +150,7 @@ export const resourcesListData = [
   desc={props.frontmatter.desc}
   date={props.frontmatter.date}
   readTime={props.frontmatter.readTime}
+  tags={props.frontmatter.tags}
   showSubtitle
 >
   <Title level={3}>Prerequisites</Title>
@@ -167,7 +168,7 @@ export const resourcesListData = [
     For the purpose of this article, npm is used, but personally I prefer{' '}
     <Link href="https://yarnpkg.com/">yarn</Link> over npm, and the command to
     install Prettier with it would be:
-    <SyntaxHighlighter showCopy>
+    <SyntaxHighlighter language="markdown">
       yarn add --dev --exact prettier
     </SyntaxHighlighter>
   </Paragraph>
@@ -229,13 +230,13 @@ export const resourcesListData = [
     </Link>{' '}
     comes to the rescue, and turns all off the conflicting/unnecessary rules.
     Let's install it first by executing the following command:
-    <SyntaxHighlighter showCopy>
+    <SyntaxHighlighter language="markdown">
       npm install --save-dev eslint-config-prettier
     </SyntaxHighlighter>
     Then, in the <Text code>.eslintrc</Text> file add{' '}
     <Text code>"prettier"</Text> to the <Text code>"extends"</Text> array.
     Remember to put it last, so it gets the chance to override other configs.
-    <SyntaxHighlighter language="json" showCopy>
+    <SyntaxHighlighter language="javascript">
       {`{
   "extends": [
     "...",
@@ -270,7 +271,7 @@ export const resourcesListData = [
   </Paragraph>
   <Paragraph>
     Let's start by installing the following libraries:
-    <SyntaxHighlighter showCopy>
+    <SyntaxHighlighter language="markdown">
       npm install --save-dev husky pretty-quick
     </SyntaxHighlighter>
     There is a lot to consider when properly configuring the automation of
@@ -294,7 +295,7 @@ export const resourcesListData = [
   </Paragraph>
   <Paragraph lastParagraph>
     Next, add a new property to the <Text code>package.json</Text> file:
-    <SyntaxHighlighter language="json" showCopy>
+    <SyntaxHighlighter language="javascript">
       {`"husky": {
   "hooks": {
     "pre-push": "pretty-quick --staged"

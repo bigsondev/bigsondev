@@ -2,17 +2,22 @@
 title: Convert data structures
 desc: Converting data structures is a day-to-day job as a Developer - so is staying up-to-date with the language and it's features.
 date: 2020-12-17
+image: none
+imageSource: none
+imageSourceLink: none
+author: none
+authorLink: none
 tags: js
-type: boy
-image: pillEight
+difficulty: 2
 ---
 
 import {
   SyntaxHighlighter,
   Link,
-  CodeEditorRaw,
   KnowledgePill,
   Text,
+  Title,
+  PostList,
 } from '~components';
 
 export const codeSnippet = `const obj = {
@@ -26,57 +31,32 @@ export const codeSnippet = `const obj = {
 const keys = Object.keys(obj); // ['a', 'b', 'c']
 const values = Object.values(obj); // [1, 2, 3]
 const entries = Object.entries(obj); // [["a", 1], ["b", 2], ["c", 3]]`;
-export const initialHtml = '<h1>Open console in your browser to see logs</h1>';
-export const initialJs = `const obj = {
-  a: 1,
-  b: 2,
-  c: 3
-};\n
-// All of the below are now an array,
-// you can use all the array methods and properties, 
-// e.g. .reduce or .length
-const keys = Object.keys(obj);
-const values = Object.values(obj);
-const entries = Object.entries(obj);\n
-console.log(keys); // ['a', 'b', 'c']
-console.log(values); // [1, 2, 3]
-console.log(entries); // [["a", 1], ["b", 2], ["c", 3]]`;
 
-export const tabs = ['js', 'html'];
+export const listData = [
+  <Text>
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys">
+      Object.keys()
+    </Link>
+    , <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values">
+      Object.values()
+    </Link>, <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries">
+      Object.entries()
+    </Link>.
+  </Text>,
+  <Text>
+    The above are ES8 (ECMAScript 2017) new methods which are extremely helpful
+    when converting from an <Text code>Object</Text> into an{' '}
+    <Text code>Array</Text>.
+  </Text>,
+];
 
-<KnowledgePill
-  code={<SyntaxHighlighter showCopy>{codeSnippet}</SyntaxHighlighter>}
-  explanation={
-    <>
-      <Link
-        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"
-        size="preNormal"
-      >
-        Object.keys()
-      </Link>
-      , <Link
-        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values"
-        size="preNormal"
-      >
-        Object.values()
-      </Link>, <Link
-        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries"
-        size="preNormal"
-      >
-        Object.entries()
-      </Link> are ES8 (ECMAScript 2017) new methods which are extremely helpful when
-      converting from an <Text code>Object</Text> into an <Text code>
-        Array
-      </Text>.
-    </>
-  }
-  interactiveExample={
-    <CodeEditorRaw
-      tabs={tabs}
-      initialHtml={initialHtml}
-      initialJs={initialJs}
-    />
-  }
-  {...props}
-  {...props.frontmatter}
-/>
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    From object to array
+  </Title>
+  <SyntaxHighlighter>{codeSnippet}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Explanation
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

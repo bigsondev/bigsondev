@@ -6,11 +6,9 @@
 import React from 'react';
 import { Layout } from 'antd';
 
-import 'highlight.js/styles/a11y-light.css';
-
 // The following two imports is for the theme.
 import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/material.css';
+import 'codemirror/theme/material-palenight.css';
 import 'codemirror/addon/hint/show-hint.css';
 
 import {

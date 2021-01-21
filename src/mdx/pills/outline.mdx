@@ -2,68 +2,61 @@
 title: Outline HTML elements
 desc: Outline all your HTML elements with a single line of CSS. Helps with understanding layout by visualizing all elements outlines on the screen.
 date: 2020-11-30
-tags: html, css
-type: boy
-image: pillOne
+image: none
+imageSource: none
+imageSourceLink: none
+author: none
+authorLink: none
+tags: css
+difficulty: 1
 ---
 
 import {
   SyntaxHighlighter,
   Link,
-  CodeEditorRaw,
   KnowledgePill,
+  Title,
+  Paragraph,
+  PostList,
 } from '~components';
 
 export const outlineCode = `* {
   outline: 1px solid red;  
 }`;
 
-export const tabs = ['html', 'css'];
+export const listData = [
+  <Text>Add the above code to your main CSS file to take effect.</Text>,
+  <Text>
+    <Link href="https://www.w3schools.com/cssref/sel_all.asp">
+      Select all selector
+    </Link>{' '}
+    targets all HTML elements and adds{' '}
+    <Link href="https://www.w3schools.com/css/css_outline.asp">outline</Link> to
+    them.
+  </Text>,
+];
 
-export const initialHtml = `<div>Hello there, I'm a block element.</div>
-<span>Hello div, I'm inline.</span>`;
-
-export const initialCss = `* {
-  outline: 1px solid red;
-}\n
-body {
-  height: 100vh;
-}\n
-div {
-  margin-bottom: 1rem;
-}`;
-
-<KnowledgePill
-  code={
-    <SyntaxHighlighter language="css" showCopy>
-      {outlineCode}
-    </SyntaxHighlighter>
-  }
-  explanation={
-    <>
-      <Link
-        href="https://www.w3schools.com/cssref/sel_all.asp"
-        size="preNormal"
-      >
-        Select all selector
-      </Link>{' '}
-      targets all HTML elements and adds{' '}
-      <Link
-        href="https://www.w3schools.com/css/css_outline.asp"
-        size="preNormal"
-      >
-        outline
-      </Link>{' '}
-      to them.
-    </>
-  }
-  interactiveExample={
-    <CodeEditorRaw
-      tabs={tabs}
-      initialHtml={initialHtml}
-      initialCss={initialCss}
-    />
-  }
-  {...props}
-  {...props.frontmatter}
-/>
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Preview
+  </Title>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/awesome-poincare-zm78y?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="awesome-poincare-zm78y"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Title level={4} transform="none">
+    Select all selector and the outline
+  </Title>
+  <SyntaxHighlighter language="css" title="CSS" showCopy>
+    {outlineCode}
+  </SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Explanation
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

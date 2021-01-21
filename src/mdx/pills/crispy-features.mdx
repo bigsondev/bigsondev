@@ -2,21 +2,25 @@
 title: Crispy features
 desc: Null coalescing operator, optional chaining, and Array.flat method are all amazing. It's worth to follow ESNext features to be up-to-date with new possibilities.
 date: 2021-01-12
+image: none
+imageSource: none
+imageSourceLink: none
+author: none
+authorLink: none
 tags: js
-type: boy
-image: pillEleven
+difficulty: 2
 ---
 
 import {
   SyntaxHighlighter,
   Link,
-  CodeEditorRaw,
   KnowledgePill,
   Text,
+  Title,
+  PostList,
 } from '~components';
 
-export const initialHtml = '<h1>Open console in your browser to see logs</h1>';
-export const initialJs = `const data = {};
+export const codeSnippet = `const data = {};
 const person = {
   name: 'Adrian',
   age: 27
@@ -46,32 +50,31 @@ console.log(zero, five, ten); // 0, 5, 10\n
 const flattenAnimals = nestedAnimals.flat();\n
 console.log(flattenAnimals); // ["Dog", "Cat", "Horse"]`;
 
-export const tabs = ['js', 'html'];
+export const listData = [
+  <Text>
+    <Link href="https://en.wikipedia.org/wiki/ECMAScript">ECMAScript</Link>{' '}
+    brings up new features every year to the JavaScript world.{' '}
+  </Text>,
+  <Text>It's challenging to stay up-to-date but also rewarding.</Text>,
+  <Text>
+    {' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining">
+      Optional chaining
+    </Link> is a true game-changer for writing code.{' '}
+  </Text>,
+  <Text>
+    If it comes to arrays, worth taking a look at all the available methods e.g.
+    on <Link href="https://devdocs.io/javascript-array/">devdocs.io</Link>.
+  </Text>,
+];
 
-<KnowledgePill
-  code={<SyntaxHighlighter showCopy>{initialJs}</SyntaxHighlighter>}
-  explanation={
-    <>
-      <Link href="https://en.wikipedia.org/wiki/ECMAScript" size="preNormal">
-        ECMAScript
-      </Link>{' '}
-      brings up new features every year to the JavaScript world. It's
-      challenging to stay up-to-date but also rewarding. Optional chaining is a
-      true game-changer for writing code. If it comes to arrays, worth taking a
-      look at all the available methods e.g. on{' '}
-      <Link href="https://devdocs.io/javascript-array/" size="preNormal">
-        devdocs.io
-      </Link>
-      .
-    </>
-  }
-  interactiveExample={
-    <CodeEditorRaw
-      tabs={tabs}
-      initialHtml={initialHtml}
-      initialJs={initialJs}
-    />
-  }
-  {...props}
-  {...props.frontmatter}
-/>
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Explore ECMAScript
+  </Title>
+  <SyntaxHighlighter>{codeSnippet}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Explanation
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

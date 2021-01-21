@@ -27,7 +27,7 @@ import {
 
 const RateHolder = styled(Rate)({
   '& .ant-rate-star-full path': {
-    fill: '#fff566',
+    fill: '#F9B060',
   },
   '& .ant-rate-star-zero path': {
     fill: '#f0f0f0',

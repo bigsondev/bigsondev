@@ -43,13 +43,7 @@ const Testimonial = ({ desc, src, alt, name, title }) => (
       <TestimonialImage src={src} alt={alt} />
     </Col>
     <Col span={20}>
-      <Paragraph
-        align="center"
-        fontStyle="italic"
-        size="preNormal"
-        fontWeight={fontWeight.medium}
-        marginBottom="3rem"
-      >
+      <Paragraph align="center" size="preNormal" marginBottom="3rem">
         {desc}
       </Paragraph>
     </Col>
@@ -134,13 +128,7 @@ export const Testimonials = () => {
           title="Graphic Designer"
         />
       </CarouselHolder>
-      <Paragraph
-        align="center"
-        strong
-        size="preNormal"
-        type="secondary"
-        marginBottom="0"
-      >
+      <Paragraph align="center" size="preNormal" marginBottom="0">
         All testimonials about my services can be found on{' '}
         <Link
           size="preNormal"

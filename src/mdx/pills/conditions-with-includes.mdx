@@ -1,47 +1,26 @@
 ---
 title: Multiple condition checks
-desc: Checkng multiple values in JavaScript often leads to redundant, boilerplate code - let's use .includes method to fix that.
+desc: Checking multiple values in JavaScript often leads to redundant, boilerplate code - let's use .includes method to fix that.
 date: 2021-01-03
+image: none
+imageSource: none
+imageSourceLink: none
+author: none
+authorLink: none
 tags: js
-type: boy
-image: pillNine
+difficulty: 2
 ---
 
 import {
   SyntaxHighlighter,
   Link,
-  CodeEditorRaw,
   KnowledgePill,
   Text,
+  Title,
+  PostList,
 } from '~components';
 
-export const codeSnippet = `
-// It's common to check against multiple enums, strings, 
-// especially when the data comes from the server 
-// with all of them at once
-const TAGS = {
-  html: 'HTML',
-  css: 'CSS',
-  js: 'JS',
-  react: 'REACT',
-  vue: 'VUE',
-  angular: 'ANGULAR'
-}\n
-// For purposes of the example we set static tag,
-// would be dynamic in real scenario
-const currentTag = TAGS.react;\n
-// Let's leverage .includes method with custom function, 
-// to achieve the same result
-const checkForFrameworkTag = (tag) => {
- const frameworkTags = [TAGS.react, TAGS.vue, TAGS.angular];\n
- return frameworkTags.includes(tag);
-}\n
-const isFrameworkTag = checkForFrameworkTag(currentTag);\n
-if (isFrameworkTag) {
- console.log('Current tag is a framework tag!');
-}`;
-export const initialHtml = '<h1>Open console in your browser to see logs</h1>';
-export const initialJs = `// It's common to check against multiple enums, strings, 
+export const codeSnippet = `// It's common to check against multiple enums, strings, 
 // especially when the data comes from the server 
 // with all of them at once
 const TAGS = {
@@ -91,32 +70,27 @@ if (isFrameworkTag) {
  console.log('✅ Current tag is a framework tag - shorter, cleaner, semantic!');
 }`;
 
-export const tabs = ['js', 'html'];
+export const listData = [
+  <Text>
+    Avoid multiple if conditions, switch statements, as it's a redundant code
+    you don't need, and most of the time you can solve it with built-in methods.
+  </Text>,
+  <Text>
+    <Link href="https://www.w3schools.com/jsref/jsref_includes_array.asp">
+      .includes
+    </Link>{' '}
+    <Text code>Array</Text> method is useful to minimize additional, boilerplate
+    code when doing multiple condition checks.
+  </Text>,
+];
 
-<KnowledgePill
-  code={<SyntaxHighlighter showCopy>{codeSnippet}</SyntaxHighlighter>}
-  explanation={
-    <>
-      <Link
-        href="https://www.w3schools.com/jsref/jsref_includes_array.asp"
-        size="preNormal"
-      >
-        .includes
-      </Link>{' '}
-      <Text size="preNormal" code>
-        Array
-      </Text>{' '}
-      method is useful to minimize additional, boilerplate code when doing
-      multiple condition checks.
-    </>
-  }
-  interactiveExample={
-    <CodeEditorRaw
-      tabs={tabs}
-      initialHtml={initialHtml}
-      initialJs={initialJs}
-    />
-  }
-  {...props}
-  {...props.frontmatter}
-/>
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Handle multiple conditions with ease
+  </Title>
+  <SyntaxHighlighter>{codeSnippet}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Explanation
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

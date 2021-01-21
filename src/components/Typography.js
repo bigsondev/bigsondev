@@ -8,7 +8,7 @@ const TEXT_SIZE = {
   micro: '0.9375rem',
   small: '1rem',
   preNormal: '1.125rem',
-  normal: '1.27rem',
+  normal: '1.20rem',
   medium: '1.5rem',
   h1: '2.5rem',
   h3: '1.75rem',
@@ -25,7 +25,7 @@ export const Text = styled(Typography.Text)(
     transform = 'none',
     color,
     fontSize,
-    textOpacity = 0.65,
+    textOpacity = 1,
   }) => ({
     color: color || `rgba(0, 0, 0, ${textOpacity})`,
     textAlign: align,
@@ -34,6 +34,11 @@ export const Text = styled(Typography.Text)(
     fontWeight,
     fontStyle,
     textTransform: transform,
+
+    '& > code': {
+      background: '#71CC96',
+      color: 'rgba(255, 255, 255, 1)',
+    },
   })
 );
 
@@ -47,7 +52,7 @@ export const ParagraphHolder = styled(Typography.Paragraph)(
     color,
     transform,
     spacing,
-    textOpacity = 0.65,
+    textOpacity = 1,
   }) => ({
     color: color || `rgba(0, 0, 0, ${textOpacity})`,
     textAlign: align,
@@ -86,7 +91,7 @@ const LevelOneHolder = styled.div(
     fontSize = '2.5rem',
     marginBottom = '0.5em',
     color,
-    textOpacity = 0.85,
+    textOpacity = 1,
   }) => ({
     textAlign: align,
     '& h1': {
@@ -166,6 +171,7 @@ const LevelFiveHolder = styled.div(
     fontWeight,
     fontSize = '1.25rem',
     color,
+    marginBottom = '1rem',
   }) => ({
     textAlign: align,
     fontWeight,
@@ -173,6 +179,7 @@ const LevelFiveHolder = styled.div(
       color,
       textTransform: transform,
       fontSize,
+      marginBottom,
     },
   })
 );
@@ -191,7 +198,7 @@ export const Paragraph = ({
       {...props}
     />
     {lastParagraph && (
-      <Box mt={5} mb={5} display="flex" justify="center">
+      <Box margin="3rem 0" display="flex" justify="center">
         <Space>
           <Icon width={16} type="feather" />
           <Icon width={16} type="feather" />
@@ -273,7 +280,11 @@ export const Title = ({
       </LevelFourHolder>
     ),
     5: (
-      <LevelFiveHolder color={color} transform={transform}>
+      <LevelFiveHolder
+        color={color}
+        transform={transform}
+        marginBottom={marginBottom}
+      >
         <Typography.Title level={5} {...props} />
       </LevelFiveHolder>
     ),

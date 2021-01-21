@@ -36,7 +36,7 @@ export const theme = {
   },
   opacity: {
     base: 1,
-    title: 0.85,
+    title: 1,
   },
 };
 

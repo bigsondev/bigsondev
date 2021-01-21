@@ -42,4 +42,8 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 16px;
     }
   }
+
+  .react-reveal {
+    opacity: 0;
+  }
 `;

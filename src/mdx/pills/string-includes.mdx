@@ -2,17 +2,22 @@
 title: Search through string
 desc: Need to search for a character, word, or entire sentence? String .includes method to the rescue.
 date: 2021-01-04
+image: none
+imageSource: none
+imageSourceLink: none
+author: none
+authorLink: none
 tags: js
-type: boy
-image: pillTen
+difficulty: 2
 ---
 
 import {
   SyntaxHighlighter,
   Link,
-  CodeEditorRaw,
   KnowledgePill,
   Text,
+  Title,
+  PostList,
 } from '~components';
 
 export const codeSnippet = `// .includes method is also available for String type
@@ -29,49 +34,28 @@ console.log(isDogLover); // true
 console.log(isSpiderLover); // false\n
 console.log(searchFromStart); // true
 console.log(searchFromSecondWord); // false`;
-export const initialHtml = '<h1>Open console in your browser to see logs</h1>';
-export const initialJs = `// .includes method is also available for String type
-const sentence = "All animals are cute but I love cats and dogs the most. ❤️";\n
-// We can search for a particular character, word or even sentence
-const isCatLover = sentence.includes('cat');
-const isDogLover = sentence.includes('and dogs');
-const isSpiderLover = sentence.includes('spiders');\n
-// We can also drill down the search to start from particular position
-const searchFromStart = sentence.includes('All', 0);
-const searchFromSecondWord = sentence.includes('All', 4);\n
-console.log(isCatLover); // true
-console.log(isDogLover); // true
-console.log(isSpiderLover); // false\n
-console.log(searchFromStart); // true
-console.log(searchFromSecondWord); // false`;
 
-export const tabs = ['js', 'html'];
+export const listData = [
+  <Text>
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes">
+      .includes
+    </Link>{' '}
+    <Text code>String</Text> method can be used for searching a character, word,
+    or sentence in a string.{' '}
+  </Text>,
+  <Text>
+    Additionally, you can drill down the search to start from a particular
+    position.
+  </Text>,
+];
 
-<KnowledgePill
-  code={<SyntaxHighlighter showCopy>{codeSnippet}</SyntaxHighlighter>}
-  explanation={
-    <>
-      <Link
-        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes"
-        size="preNormal"
-      >
-        .includes
-      </Link>{' '}
-      <Text size="preNormal" code>
-        String
-      </Text>{' '}
-      method can be used for searching a character, word, or sentence in a
-      string. Additionally, you can drill down the search to start from a
-      particular position.
-    </>
-  }
-  interactiveExample={
-    <CodeEditorRaw
-      tabs={tabs}
-      initialHtml={initialHtml}
-      initialJs={initialJs}
-    />
-  }
-  {...props}
-  {...props.frontmatter}
-/>
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Find the words and sentences
+  </Title>
+  <SyntaxHighlighter>{codeSnippet}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Explanation
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

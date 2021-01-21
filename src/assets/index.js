@@ -18,17 +18,6 @@ import MiguelTestimonial from './miguel-testimonial.jpg';
 import AngelTestimonial from './angel-testimonial.jpeg';
 import ScottTestimonial from './scott-testimonial.png';
 import MainImage from './main-image.png';
-import PillOne from './pill-1.png';
-import PillTwo from './pill-2.png';
-import PillThree from './pill-3.png';
-import PillFour from './pill-4.png';
-import PillFive from './pill-5.png';
-import PillSix from './pill-6.png';
-import PillSeven from './pill-7.png';
-import PillEight from './pill-8.png';
-import PillNine from './pill-9.png';
-import PillTen from './pill-10.png';
-import PillEleven from './pill-11.png';
 import WaysToLearnEffectivelyBlog from './blog/5-ways-to-learn-effectively.jpg';
 import TechnicalInterviewTipsBlog from './blog/10-technical-interview-tips.jpg';
 import HowToImproveYourCodingSkillsBlog from './blog/how-to-improve-your-coding-skills.jpg';
@@ -61,17 +50,6 @@ export {
   AngelTestimonial,
   ScottTestimonial,
   MainImage,
-  PillOne,
-  PillTwo,
-  PillThree,
-  PillFour,
-  PillFive,
-  PillSix,
-  PillSeven,
-  PillEight,
-  PillNine,
-  PillTen,
-  PillEleven,
   WaysToLearnEffectivelyBlog,
   TechnicalInterviewTipsBlog,
   HowToImproveYourCodingSkillsBlog,

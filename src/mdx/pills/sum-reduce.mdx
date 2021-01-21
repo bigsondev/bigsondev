@@ -2,51 +2,51 @@
 title: Sum using reduce
 desc: Use the versatile .reduce method to sum an array of numbers.
 date: 2020-12-14
+image: none
+imageSource: none
+imageSourceLink: none
+author: none
+authorLink: none
 tags: js
-type: boy
-image: pillSix
+difficulty: 2
 ---
 
 import {
   SyntaxHighlighter,
   Link,
-  CodeEditorRaw,
   KnowledgePill,
   Text,
+  Title,
+  PostList,
 } from '~components';
 
 export const reduceCode = `const numbers = [5, 10, 15, 20];
 const sum = numbers.reduce((acc, value) => acc += value, 0);`;
-export const initialHtml = '<h1>Open console in your browser to see logs</h1>';
-export const initialJs = `const numbers = [5, 10, 15, 20];
-const sum = numbers.reduce((acc, value) => acc += value, 0);\n
-console.log(sum); // 50`;
 
-export const tabs = ['js', 'html'];
+export const listData = [
+  <Text>
+    <Link href="https://www.w3schools.com/jsref/jsref_reduce.asp">
+      Reduce method
+    </Link>{' '}
+    is very flexible and can help in all kinds of arrays transformations.{' '}
+  </Text>,
+  <Text>
+    It can reduce numbers to sum them up or calculate the average number for
+    example.{' '}
+  </Text>,
+  <Text>
+    It also works great with other data structures such as arrays of strings or
+    arrays of objects.
+  </Text>,
+];
 
-<KnowledgePill
-  code={<SyntaxHighlighter showCopy>{reduceCode}</SyntaxHighlighter>}
-  explanation={
-    <>
-      <Link
-        href="https://www.w3schools.com/jsref/jsref_reduce.asp"
-        size="preNormal"
-      >
-        Reduce method
-      </Link>{' '}
-      is very flexible and can help in all kinds of arrays transformations. It
-      can reduce numbers to sum them up or calculate the average number for
-      example. It also works great with other data structures such as arrays of
-      strings or arrays of objects.
-    </>
-  }
-  interactiveExample={
-    <CodeEditorRaw
-      tabs={tabs}
-      initialHtml={initialHtml}
-      initialJs={initialJs}
-    />
-  }
-  {...props}
-  {...props.frontmatter}
-/>
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Sum those numbers
+  </Title>
+  <SyntaxHighlighter>{reduceCode}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Explanation
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

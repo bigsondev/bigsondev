@@ -2,17 +2,22 @@
 title: Method chaining
 desc: Method chaining is a helpful pattern to learn in programming. It complies with the functional, declarative approach and reduces repetition.
 date: 2020-12-15
+image: none
+imageSource: none
+imageSourceLink: none
+author: none
+authorLink: none
 tags: js
-type: boy
-image: pillSeven
+difficulty: 3
 ---
 
 import {
   SyntaxHighlighter,
   Link,
-  CodeEditorRaw,
   KnowledgePill,
+  Title,
   Text,
+  PostList,
 } from '~components';
 
 export const methodChainingCode = `// Let's count vowels in a string using the method chaining
@@ -26,47 +31,33 @@ const countVowels = (sum, letter) => (VOWELS.includes(letter) ? ++sum : sum);\n
 const getVowelsCount = (string) =>
   string.replace(/ /g, '').split('').reduce(countVowels, 0);
 `;
-export const initialHtml = '<h1>Open console in your browser to see logs</h1>';
-export const initialJs = `// Let's count vowels in a string using the method chaining
-const VOWELS = ['a', 'e', 'i', 'o', 'u'];\n
-// Reduce an array of letters to get the sum of vowels
-// and pass a function to .reduce method to make it more readable
-const countVowels = (sum, letter) => (VOWELS.includes(letter) ? ++sum : sum);\n
-// 1. .replace returns a string without whitespaces
-// 2. .split returns an array of letters
-// 3. .reduce reduces an array of letters into a single number - the sum of vowels
-const getVowelsCount = (string) =>
-  string.replace(/ /g, '').split('').reduce(countVowels, 0);\n
-console.log(getVowelsCount('Hello World!')); // 3
-console.log(getVowelsCount('bbb')); // 0
-console.log(getVowelsCount('a b c d e')); // 2  
-`;
 
-export const tabs = ['js', 'html'];
+export const listData = [
+  <Text>
+    <Link href="https://www.tutorialspoint.com/method-chaining-in-javascript">
+      Method chaining
+    </Link>{' '}
+    is a really good pattern for avoiding repetition and making your code more
+    readable.
+  </Text>,
+  <Text>
+    {' '}
+    It plays well with functional programming and is often used in JavaScript.
+  </Text>,
+  <Text>
+    {' '}
+    Each of the methods needs to return something in order to call another
+    method on it. Hence the chaining name.
+  </Text>,
+];
 
-<KnowledgePill
-  code={<SyntaxHighlighter showCopy>{methodChainingCode}</SyntaxHighlighter>}
-  explanation={
-    <>
-      <Link
-        href="https://www.tutorialspoint.com/method-chaining-in-javascript"
-        size="preNormal"
-      >
-        Method chaining
-      </Link>{' '}
-      is a really good pattern for avoiding repetition and making your code more
-      readable. It plays well with functional programming and is often used in
-      JavaScript. Each of the methods needs to return something in order to call
-      another method on it. Hence the chaining name.
-    </>
-  }
-  interactiveExample={
-    <CodeEditorRaw
-      tabs={tabs}
-      initialHtml={initialHtml}
-      initialJs={initialJs}
-    />
-  }
-  {...props}
-  {...props.frontmatter}
-/>
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Chain them all
+  </Title>
+  <SyntaxHighlighter>{methodChainingCode}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Explanation
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>
