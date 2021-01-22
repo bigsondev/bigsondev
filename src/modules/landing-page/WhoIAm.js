@@ -637,13 +637,11 @@ export const WhoIAm = () => {
               </Row>
             </Col>
           </Row>
-          <Box margin={`${spacing.large} 0 0 0`}>
-            <Row justify="center">
-              <GatsbyLink to="/mentorship/">
-                <Button type="promo">Skyrocket your career</Button>
-              </GatsbyLink>
-            </Row>
-          </Box>
+          <Row justify="center">
+            <GatsbyLink to="/mentorship/">
+              <Button type="promo">Skyrocket your career</Button>
+            </GatsbyLink>
+          </Row>
           <Box margin={`${spacing.large} 0 0 0`}>
             <Row justify="center">
               <Col xs={22} lg={12}>
