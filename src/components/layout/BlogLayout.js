@@ -156,11 +156,12 @@ const BlogLayout = ({
   } = isBlogPost
     ? blogFiles.edges.find(({ node: { base } }) => base === frontmatter.image)
     : pillsFiles.edges.find(({ node: { base } }) => base === frontmatter.image);
+  const title = isBlogPost ? 'Blog' : 'Pills';
 
   return (
     <div style={{ overflowX: 'hidden' }}>
       <SEO
-        title={`Blog | ${frontmatter.title}`}
+        title={`${title} | ${frontmatter.title}`}
         image={
           isBlogPost
             ? BLOG_POST_IMAGES[frontmatter.image]
