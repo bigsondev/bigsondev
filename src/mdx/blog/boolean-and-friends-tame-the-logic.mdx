@@ -175,7 +175,7 @@ console.log(properZero); // 0`;
   <Paragraph>
     First, we'll start from a primitive <Text code>boolean</Text> type example.
   </Paragraph>
-  <SyntaxHighlighter showCopy>{booleanPrimitiveExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{booleanPrimitiveExample}</SyntaxHighlighter>
   <Paragraph>
     As we can observe in the above code snippet, <Text code>boolean</Text> has
     two possible values, <Text code>true</Text> and <Text code>false</Text>.
@@ -196,7 +196,7 @@ console.log(properZero); // 0`;
     Now, we can take a closer look at the wrapping <Text code>Boolean</Text>{' '}
     object.
   </Paragraph>
-  <SyntaxHighlighter showCopy>{booleanWrappingObjectExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{booleanWrappingObjectExample}</SyntaxHighlighter>
   <Paragraph lastParagraph>
     Things starting to get interesting. The important outcome of the above
     example is to avoid <Text code>new</Text> keyword when working with booleans
@@ -212,7 +212,7 @@ console.log(properZero); // 0`;
     <Text code>&& (AND)</Text>, <Text code>|| (OR)</Text>,{' '}
     <Text code>! (NOT)</Text>.
   </Paragraph>
-  <SyntaxHighlighter showCopy>{andOperatorExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{andOperatorExample}</SyntaxHighlighter>
   <Paragraph>
     We can explain <Text code>&&</Text> operator by the following sentence: "If
     this thing is truthy and that thing is truthy, and the last thing is truthy
@@ -221,14 +221,14 @@ console.log(properZero); // 0`;
     for assigning a value to a variable if all previous conditions are truthy.
     That's why <Text code>exampleAndOperator</Text> variable has a value of 5.
   </Paragraph>
-  <SyntaxHighlighter showCopy>{orOperatorExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{orOperatorExample}</SyntaxHighlighter>
   <Paragraph>
     <Text code>||</Text> operator looks for the first thing that is not{' '}
     <Text code>false</Text>. In the first example <Text code>true</Text> was set
     instantly, in the second example, it chose <Text code>5</Text> and in the
     last example, it chose <Text code>true</Text>.
   </Paragraph>
-  <SyntaxHighlighter showCopy>{notOperatorExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{notOperatorExample}</SyntaxHighlighter>
   <Paragraph lastParagraph>
     <Text code>!</Text> operator returns the inverse value. If used on{' '}
     <Text code>true</Text>, it returns <Text code>false</Text> and vice-versa.
@@ -240,14 +240,14 @@ console.log(properZero); // 0`;
     <Text code>revealTheLie</Text> function, focus on the output of falsy values
     (functions will be explained in the separate blog article).
   </Paragraph>
-  <SyntaxHighlighter showCopy>{falsyValuesExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{falsyValuesExample}</SyntaxHighlighter>
   <Paragraph>
     The above example presents all the falsy values JavaScript has. As we can
     see, after wrapping them with a <Text code>Boolean</Text> object, they all
     return <Text code>false</Text>.
   </Paragraph>
   <Paragraph>But why it's important to know them?</Paragraph>
-  <SyntaxHighlighter showCopy>{falsyValuesConditionsExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{falsyValuesConditionsExample}</SyntaxHighlighter>
   <Paragraph>
     In the above example, we used <Text code>||</Text> operator (or) which kept
     choosing the right falsy value until it jumped to the end.{' '}
@@ -278,9 +278,7 @@ console.log(properZero); // 0`;
     and empty array
     <Text code>[]</Text> are also truthy.
   </Paragraph>
-  <SyntaxHighlighter showCopy>
-    {truthyValuesConditionsExample}
-  </SyntaxHighlighter>
+  <SyntaxHighlighter>{truthyValuesConditionsExample}</SyntaxHighlighter>
   <Paragraph lastParagraph></Paragraph>
   <Title level={3}>== vs ===</Title>
   <Paragraph>
@@ -293,7 +291,7 @@ console.log(properZero); // 0`;
     .
   </Paragraph>
   <Paragraph>Let's see it in action.</Paragraph>
-  <SyntaxHighlighter showCopy>{conversionExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{conversionExample}</SyntaxHighlighter>
   <Paragraph lastParagraph>
     I never rely on <Text code>==</Text> as it's unpredictable, always try to
     use <Text code>===</Text> to avoid unwanted bugs, and make sure you are
@@ -305,7 +303,7 @@ console.log(properZero); // 0`;
     the below examples to do some practice. I'll use more comparison operators
     and some simple if statements, but I'm pretty sure you can figure them out.
   </Paragraph>
-  <SyntaxHighlighter showCopy>{examplesExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{examplesExample}</SyntaxHighlighter>
   <Paragraph lastParagraph></Paragraph>
   <Title level={3}>Bonus 🎁</Title>
   <Paragraph>
@@ -315,7 +313,7 @@ console.log(properZero); // 0`;
     <Text code>??</Text> nullish coalescing operator. They sound terrifying 😱,
     but let's see them in action to tame them a little. 🧐
   </Paragraph>
-  <SyntaxHighlighter showCopy>{bonusExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{bonusExample}</SyntaxHighlighter>
   <Paragraph lastParagraph></Paragraph>
   <Title level={3}>Closing Notes</Title>
   <Paragraph>

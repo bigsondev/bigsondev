@@ -18,7 +18,7 @@ export const Post = ({
 }) => (
   <>
     {title && (
-      <Box mb={5}>
+      <Box margin="0 0 2rem 0">
         <PostTitle
           title={title}
           date={date}

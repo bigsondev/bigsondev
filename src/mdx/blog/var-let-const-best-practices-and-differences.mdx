@@ -86,7 +86,7 @@ export const summaryList = [
     namespace with a unique key to not pollute global space and avoid overriding
     existing properties using an object:
   </Paragraph>
-  <SyntaxHighlighter showCopy>{globalVariableSecondExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{globalVariableSecondExample}</SyntaxHighlighter>
   <Paragraph breakParagraph>
     This way, the built-in <Text code>window.setTimeout</Text> is untouched and
     we can declare our variables in the namespace. We just added a new property
@@ -101,7 +101,7 @@ export const summaryList = [
     <Text code>var</Text> has the same problems as global variables, but it can
     be used in a function scope to not pollute the global one:
   </Paragraph>
-  <SyntaxHighlighter showCopy>{varVariableFirstExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{varVariableFirstExample}</SyntaxHighlighter>
   <Paragraph>
     It's good that we didn't overwrite the outer <Text code>message</Text>{' '}
     variable, but it still polluted the global scope.
@@ -111,7 +111,7 @@ export const summaryList = [
     redeclared and updated which breaks the immutability approach of functional,
     declarative programming I highly recommend:
   </Paragraph>
-  <SyntaxHighlighter showCopy>{varVariableSecondExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{varVariableSecondExample}</SyntaxHighlighter>
   <Paragraph breakParagraph>
     Let's see what improvements ES6 keywords bring to us.
   </Paragraph>
@@ -122,12 +122,12 @@ export const summaryList = [
     The first improvement is that <Text code>let</Text> has a block scope that
     doesn't pollute the global one anymore. 🥳
   </Paragraph>
-  <SyntaxHighlighter showCopy>{letVariableFirstExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{letVariableFirstExample}</SyntaxHighlighter>
   <Paragraph>
     Another improvement is that <Text code>let</Text> can't be redeclared, let's
     see what happens if we try to do that:
   </Paragraph>
-  <SyntaxHighlighter showCopy>{letVariableSecondExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{letVariableSecondExample}</SyntaxHighlighter>
   <Paragraph>
     We get an error that notifies us <Text code>canOnlyBeUpdated</Text> variable
     can't be redeclared.
@@ -136,7 +136,7 @@ export const summaryList = [
     But unfortunately, it can still be updated which contradicts the
     immutability concept:
   </Paragraph>
-  <SyntaxHighlighter showCopy>{letVariableThirdExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{letVariableThirdExample}</SyntaxHighlighter>
   <Paragraph breakParagraph>
     Let's jump to the perfect one (almost) which is a <Text code>const</Text>{' '}
     keyword.
@@ -149,7 +149,7 @@ export const summaryList = [
     properties from <Text code>let</Text> - block scoped, can't be redeclared
     and additionally, it can't be updated. 😍
   </Paragraph>
-  <SyntaxHighlighter showCopy>{constVariableFirstExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{constVariableFirstExample}</SyntaxHighlighter>
   <Paragraph>
     <Text code>const</Text> keyword perfectly fits in functional, declarative
     programming with immutability in mind.
@@ -158,7 +158,7 @@ export const summaryList = [
     An additional example of how good it feels to write code using{' '}
     <Text code>const</Text> can be found below.
   </Paragraph>
-  <SyntaxHighlighter showCopy>{constVariableSecondExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{constVariableSecondExample}</SyntaxHighlighter>
   <Paragraph lastParagraph>
     😎 Let's dive into the summary of recommendation & best practices.
   </Paragraph>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import { Link } from 'gatsby';
-import Fade from 'react-reveal/Fade';
 
 import {
   theme,
@@ -74,9 +73,7 @@ const MobileScreenPromo = () => (
       </Box>
     </Col>
     <Col span={22}>
-      <Fade delay={300}>
-        <Illustration type="promo" />
-      </Fade>
+      <Illustration type="promo" />
     </Col>
   </Row>
 );
@@ -124,9 +121,7 @@ const MediumScreenPromo = () => (
       </Box>
     </Col>
     <Col span={12} style={{ marginTop: '3rem', marginBottom: '5rem' }}>
-      <Fade delay={300}>
-        <NotJumpingIllustration type="promo" />
-      </Fade>
+      <NotJumpingIllustration type="promo" />
     </Col>
   </Row>
 );
@@ -165,9 +160,7 @@ const BigScreenPromo = () => (
       </Box>
     </Col>
     <Col span={9}>
-      <Fade delay={300}>
-        <NotJumpingIllustration type="promo" />
-      </Fade>
+      <NotJumpingIllustration type="promo" />
     </Col>
   </Row>
 );

@@ -198,7 +198,7 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
     study and execute it step by step. Mentioned bad practices will be more
     explained and solved in the following examples.
   </Paragraph>
-  <SyntaxHighlighter showCopy>{arraysExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{arraysExample}</SyntaxHighlighter>
   <Paragraph lastParagraph>
     Let's learn how to utilize array methods to avoid bad, mutation patterns and
     do useful operations on the entire collection.
@@ -221,9 +221,9 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
     <Text strong>Assignment:</Text> Multiply all numbers by 2.
   </Paragraph>
   <Paragraph>❌ Loop way with mutating:</Paragraph>
-  <SyntaxHighlighter showCopy>{mapBadExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{mapBadExample}</SyntaxHighlighter>
   <Paragraph>✅ Map numbers in an array without mutating:</Paragraph>
-  <SyntaxHighlighter showCopy>{mapGoodExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{mapGoodExample}</SyntaxHighlighter>
   <Title level={4} transform="none">
     2.{' '}
     <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/filter">
@@ -234,9 +234,9 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
     <Text strong>Assignment:</Text> Remove all numbers less or equal to 10.
   </Paragraph>
   <Paragraph>❌ Loop way with mutating:</Paragraph>
-  <SyntaxHighlighter showCopy>{filterBadExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{filterBadExample}</SyntaxHighlighter>
   <Paragraph>✅ Filter numbers in an array without mutating:</Paragraph>
-  <SyntaxHighlighter showCopy>{filterGoodExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{filterGoodExample}</SyntaxHighlighter>
   <Title level={4} transform="none">
     3.{' '}
     <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/reduce">
@@ -247,9 +247,9 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
     <Text strong>Assignment:</Text> Sum all numbers.
   </Paragraph>
   <Paragraph>❌ Loop way with mutating:</Paragraph>
-  <SyntaxHighlighter showCopy>{reduceBadExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{reduceBadExample}</SyntaxHighlighter>
   <Paragraph>✅ Reduce numbers to create a sum without mutating:</Paragraph>
-  <SyntaxHighlighter showCopy>{reduceGoodExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{reduceGoodExample}</SyntaxHighlighter>
   <Title level={4} transform="none">
     4.{' '}
     <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/indexOf">
@@ -260,11 +260,11 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
     <Text strong>Assignment:</Text> Find index of number 15.
   </Paragraph>
   <Paragraph>❌ Loop way with mutating:</Paragraph>
-  <SyntaxHighlighter showCopy>{indexOfBadExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{indexOfBadExample}</SyntaxHighlighter>
   <Paragraph>
     ✅ Find index by using an <Text code>indexOf</Text> method:
   </Paragraph>
-  <SyntaxHighlighter showCopy>{indexOfGoodExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{indexOfGoodExample}</SyntaxHighlighter>
   <Title level={4} transform="none">
     5.{' '}
     <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/every">
@@ -276,11 +276,11 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
     10.
   </Paragraph>
   <Paragraph>❌ Loop way with mutating:</Paragraph>
-  <SyntaxHighlighter showCopy>{everyBadExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{everyBadExample}</SyntaxHighlighter>
   <Paragraph>
     ✅ Check if condition is true to all numbers without mutating:
   </Paragraph>
-  <SyntaxHighlighter showCopy>{everyGoodExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{everyGoodExample}</SyntaxHighlighter>
   <Title level={4} transform="none">
     6.{' '}
     <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/some">
@@ -292,11 +292,11 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
     10.
   </Paragraph>
   <Paragraph>❌ Loop way with mutating:</Paragraph>
-  <SyntaxHighlighter showCopy>{someBadExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{someBadExample}</SyntaxHighlighter>
   <Paragraph>
     ✅ Check if condition is true to any number without mutating:
   </Paragraph>
-  <SyntaxHighlighter showCopy>{someGoodExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{someGoodExample}</SyntaxHighlighter>
   <Title level={4} transform="none">
     7.{' '}
     <Link href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Array/includes">
@@ -308,16 +308,16 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
     numbers array.
   </Paragraph>
   <Paragraph>❌ Loop way with mutating:</Paragraph>
-  <SyntaxHighlighter showCopy>{includesBadExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{includesBadExample}</SyntaxHighlighter>
   <Paragraph>✅ Check if number is included without mutating:</Paragraph>
-  <SyntaxHighlighter showCopy>{includesGoodExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{includesGoodExample}</SyntaxHighlighter>
   <Paragraph lastParagraph />
   <Title level={3}>Bonus</Title>
   <Paragraph>
     I described couple of more methods, techniques to work with arrays, example
     below:
   </Paragraph>
-  <SyntaxHighlighter showCopy>{bonusExample}</SyntaxHighlighter>
+  <SyntaxHighlighter>{bonusExample}</SyntaxHighlighter>
   <Paragraph lastParagraph />
   <Title level={3}>Closing Notes</Title>
   <Paragraph>
