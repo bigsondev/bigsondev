@@ -6,6 +6,8 @@
 import React from 'react';
 import { Layout } from 'antd';
 
+import config from 'react-reveal/globals';
+
 // The following two imports is for the theme.
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material-palenight.css';
@@ -15,10 +17,11 @@ import {
   ThemeProvider,
   Header,
   GlobalStyles,
-  GatsbySsrStyles,
   Content,
   ErrorBoundary,
 } from '~components';
+
+config({ ssrFadeout: true });
 
 export const wrapPageElement = ({
   element,
@@ -28,7 +31,6 @@ export const wrapPageElement = ({
 }) => (
   <ErrorBoundary>
     <GlobalStyles />
-    <GatsbySsrStyles />
     <ThemeProvider>
       <Layout>
         <Header pathname={pathname} />

@@ -5,6 +5,7 @@
  */
 import React from 'react';
 import { Layout } from 'antd';
+import config from 'react-reveal/globals';
 
 // The following two imports is for the theme.
 import 'codemirror/lib/codemirror.css';
@@ -35,6 +36,8 @@ import {
   Content,
 } from '~components';
 import { initializeStorageData } from '~utils';
+
+config({ ssrFadeout: true });
 
 initializeStorageData();
 
