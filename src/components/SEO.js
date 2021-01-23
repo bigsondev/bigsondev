@@ -12,7 +12,14 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import { MainImage } from '~assets';
 
-export function SEO({ description, lang, meta, title, image = MainImage }) {
+export function SEO({
+  desc,
+  lang,
+  meta,
+  type = 'website',
+  title,
+  image = MainImage,
+}) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -28,7 +35,7 @@ export function SEO({ description, lang, meta, title, image = MainImage }) {
     `
   );
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = desc || site.siteMetadata.description;
 
   return (
     <Helmet
@@ -55,8 +62,12 @@ export function SEO({ description, lang, meta, title, image = MainImage }) {
           content: metaDescription,
         },
         {
+          property: 'og:url',
+          content: window.location.href,
+        },
+        {
           property: `og:type`,
-          content: `website`,
+          content: type,
         },
         {
           property: `og:image`,
@@ -64,7 +75,7 @@ export function SEO({ description, lang, meta, title, image = MainImage }) {
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
         },
         {
           name: `twitter:title`,
@@ -72,7 +83,7 @@ export function SEO({ description, lang, meta, title, image = MainImage }) {
         },
         {
           name: `twitter:site`,
-          content: site.siteMetadata.domain,
+          content: site.siteMetadata.author,
         },
         {
           name: `twitter:creator`,

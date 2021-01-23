@@ -119,18 +119,17 @@ export const NewsletterSmallForm = () => {
               type="secondary"
               fontWeight="200"
               fontStyle="italic"
-              align="center"
             >
               From time to time, I'll send you messages about new blog posts,
-              coding challenges, and mentoring promotions. Only valuable
-              knowledge, no spam included. You can unsubscribe at any time.
+              knowledge pills, and mentoring promotions. Only valuable
+              information, no spam included. You can unsubscribe at any time.
             </Paragraph>
             <Form.Item>
               <Button
                 htmlType="submit"
                 loading={isSubmitting}
                 onClick={() => setTriedToSubmit(true)}
-                type="promo"
+                type="primary"
               >
                 Subscribe & get guide
               </Button>

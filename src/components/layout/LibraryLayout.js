@@ -12,6 +12,12 @@ import { Row, Col, Space } from 'antd';
 import styled from 'styled-components';
 
 import {
+  VegeLandingProject,
+  BookCoverProject,
+  TodoAppProject,
+  RealtimeChatProject,
+} from '~assets';
+import {
   shareOnReddit,
   shareOnTwitter,
   shareOnLinkedin,
@@ -54,6 +60,13 @@ export const pageQuery = graphql`
   }
 `;
 
+const PROJECTS_MAPPER = {
+  'vege-landing': VegeLandingProject,
+  'book-cover': BookCoverProject,
+  'todo-app': TodoAppProject,
+  'realtime-chat': RealtimeChatProject,
+};
+
 const LibraryLayout = ({
   data: {
     mdx: { frontmatter, body },
@@ -61,7 +74,12 @@ const LibraryLayout = ({
 }) => {
   return (
     <>
-      <SEO title={`Library | ${frontmatter.title}`} />
+      <SEO
+        title={`Library | ${frontmatter.title}`}
+        desc={frontmatter.desc}
+        type="article"
+        image={PROJECTS_MAPPER[frontmatter.image]}
+      />
       <Row justify="center" gutter={[0, 40]}>
         <Col xs={{ span: 22 }} md={{ span: 16 }} xl={{ span: 12 }}>
           <main>

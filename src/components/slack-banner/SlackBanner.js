@@ -21,12 +21,7 @@ export const SlackBanner = ({ ...props }) => (
         </Paragraph>
       </>
     }
-    desc={
-      <>
-        Let's chat, ask questions, share your project, review code. <br />
-        Build a community with me that will help each other in Frontend.
-      </>
-    }
+    desc={<>Let's build a community that will help each other.</>}
     content={
       <>
         <SlackForm />

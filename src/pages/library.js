@@ -195,7 +195,10 @@ const Library = ({
 
   return (
     <Layout>
-      <SEO title="Library | Practice With Projects, Coding Challenges, And Try Frontend Quiz" />
+      <SEO
+        title="Library"
+        desc="Practice With Projects, Coding Challenges, And Try Frontend Quiz"
+      />
       <Title level={2} align="center">
         Practice by building 👨‍💻
       </Title>

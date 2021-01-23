@@ -14,7 +14,7 @@ import {
 
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404 Error | Not Found Page" />
+    <SEO title="404 Error" desc="Not Found Page" />
     <Title level={2} align="center">
       The duck has failed - 404 Error
     </Title>

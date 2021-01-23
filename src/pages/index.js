@@ -14,7 +14,7 @@ const { colors } = theme;
 const Landing = () => {
   return (
     <Layout fixedContent={false}>
-      <SEO title="Frontend Mentor" />
+      <SEO title="Seasoned Frontend Mentor" />
       <Section>
         <Promo />
       </Section>

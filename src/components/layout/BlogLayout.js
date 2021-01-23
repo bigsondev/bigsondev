@@ -11,7 +11,7 @@ import styled from 'styled-components';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import { AdrianImage, BLOG_POST_IMAGES, PILLS_IMAGES } from '~assets';
+import { BLOG_POST_IMAGES, PILLS_IMAGES } from '~assets';
 import {
   shareOnReddit,
   shareOnTwitter,
@@ -25,7 +25,6 @@ import {
   PromoBanner,
   Link,
   Icon,
-  Illustration,
   XlOnly,
   SlackBanner,
   ExceptXl,
@@ -53,8 +52,12 @@ const IconHolder = styled(Link)({
   },
 });
 
-const AdrianImageHolder = styled.img({
+const AdrianImageHolder = styled(Image)({
   width: '8rem',
+});
+
+const DuckImageHolder = styled(Image)({
+  width: '10rem',
 });
 
 const ImageHolder = styled.div({
@@ -130,6 +133,20 @@ export const pageQuery = graphql`
         }
       }
     }
+    adrianImage: file(base: { eq: "adrian-image.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    duckSmallNewsletter: file(base: { eq: "duck-small-newsletter.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
   }
 `;
 
@@ -144,6 +161,8 @@ const BlogLayout = ({
     },
     blogFiles,
     pillsFiles,
+    adrianImage,
+    duckSmallNewsletter,
   },
   pageContext: { previous, next },
 }) => {
@@ -162,6 +181,8 @@ const BlogLayout = ({
     <div style={{ overflowX: 'hidden' }}>
       <SEO
         title={`${title} | ${frontmatter.title}`}
+        desc={frontmatter.desc}
+        type="article"
         image={
           isBlogPost
             ? BLOG_POST_IMAGES[frontmatter.image]
@@ -174,7 +195,7 @@ const BlogLayout = ({
             <Box display="flex" align="center" direction="column">
               <Paragraph>
                 <AdrianImageHolder
-                  src={AdrianImage}
+                  fluid={adrianImage.childImageSharp.fluid}
                   alt="Image represents Adrian - Frontend Mentor"
                 />
               </Paragraph>
@@ -197,7 +218,7 @@ const BlogLayout = ({
             <Box display="flex" align="center">
               <Paragraph>
                 <AdrianImageHolder
-                  src={AdrianImage}
+                  fluid={adrianImage.childImageSharp.fluid}
                   alt="Image represents Adrian - Frontend Mentor"
                 />
               </Paragraph>
@@ -270,7 +291,10 @@ const BlogLayout = ({
         <Col xs={22} xl={6}>
           <Box display="flex" align="center" direction="column">
             <Paragraph>
-              <Illustration type="newsletterSmall" width="10rem" />
+              <DuckImageHolder
+                fluid={duckSmallNewsletter.childImageSharp.fluid}
+                alt="Image represents yellow debugging duck"
+              />
             </Paragraph>
             <Paragraph
               transform="uppercase"
@@ -281,7 +305,7 @@ const BlogLayout = ({
             >
               THE GUIDE TO BEAT FRONTEND INTERVIEW
             </Paragraph>
-            <Paragraph align="center" style={{ width: '70%' }}>
+            <Paragraph style={{ width: '70%' }}>
               <Box margin="1rem 0 0 0">
                 <NewsletterSmallForm />
               </Box>

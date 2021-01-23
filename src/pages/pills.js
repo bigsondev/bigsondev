@@ -213,7 +213,10 @@ const Pills = ({
 
   return (
     <Layout>
-      <SEO title="Pills | Knowledge Pills, Code Examples, Useful Tips & Tricks You Can Use On Daily Basis" />
+      <SEO
+        title="Pills"
+        desc="Knowledge Pills, Code Examples, Useful Tips & Tricks You Can Use On Daily Basis"
+      />
       <Title level={2} align="center">
         We all need pills 💊
       </Title>

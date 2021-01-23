@@ -152,7 +152,7 @@ export const Offer = () => {
                         align="center"
                         color={colors.grayLevelNine}
                       >
-                        $60
+                        $59
                       </Title>
                     </Space>
                   </Box>
@@ -260,7 +260,7 @@ export const Offer = () => {
                         align="center"
                         color={colors.grayLevelNine}
                       >
-                        $220
+                        $219
                       </Title>
                     </Space>
                   </Box>
@@ -378,7 +378,7 @@ export const Offer = () => {
                         align="center"
                         color={colors.grayLevelNine}
                       >
-                        $600
+                        $599
                       </Title>
                     </Space>
                   </Box>

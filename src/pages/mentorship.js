@@ -7,7 +7,10 @@ const { colors } = theme;
 
 const Mentorship = () => (
   <Layout fixedContent={false}>
-    <SEO title="Mentorship | Find Your First Job in IT | Improve As A Frontend Developer" />
+    <SEO
+      title="Mentorship"
+      desc="Find Your First Job in IT & Improve As A Frontend Developer"
+    />
     <Section>
       <Offer />
     </Section>
