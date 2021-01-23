@@ -15,7 +15,7 @@ import {
 
 const PrivacyPolicy = () => (
   <Layout>
-    <SEO title="Privacy Policy" />
+    <SEO title="Privacy Policy" url="https://bigsondev.com/privacy-policy/" />
     <Title level={2} align="center">
       Privacy Policy
     </Title>

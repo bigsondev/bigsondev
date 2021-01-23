@@ -14,7 +14,10 @@ import {
 
 const TermsOfService = () => (
   <Layout>
-    <SEO title="Terms Of Service" />
+    <SEO
+      title="Terms Of Service"
+      url="https://bigsondev.com/terms-of-service/"
+    />
     <Title level={2} align="center">
       Terms of Service
     </Title>

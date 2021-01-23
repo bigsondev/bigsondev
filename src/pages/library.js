@@ -198,6 +198,7 @@ const Library = ({
       <SEO
         title="Library"
         desc="Practice With Projects, Coding Challenges, And Try Frontend Quiz"
+        url="https://bigsondev.com/library/"
       />
       <Title level={2} align="center">
         Practice by building 👨‍💻

@@ -5,7 +5,11 @@ import { FeedbackPollForm } from '~modules/feedback-poll';
 
 const FeedbackPoll = () => (
   <Layout>
-    <SEO title="Feedback Poll" desc="Thanks For Your Time" />
+    <SEO
+      title="Feedback Poll"
+      desc="Thanks For Your Time"
+      url="https://bigsondev.com/feedback-poll/"
+    />
     <Title level={2} align="center">
       Feedback Poll
     </Title>

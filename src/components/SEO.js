@@ -13,6 +13,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { MainImage } from '~assets';
 
 export function SEO({
+  url,
   desc,
   lang,
   meta,
@@ -25,10 +26,12 @@ export function SEO({
       query {
         site {
           siteMetadata {
+            siteUrl
             title
             description
             keywords
             author
+            domain
           }
         }
       }
@@ -36,6 +39,7 @@ export function SEO({
   );
 
   const metaDescription = desc || site.siteMetadata.description;
+  const metaUrl = url || site.siteMetadata.siteUrl;
 
   return (
     <Helmet
@@ -63,7 +67,11 @@ export function SEO({
         },
         {
           property: 'og:url',
-          content: window.location.href,
+          content: metaUrl,
+        },
+        {
+          property: 'og:site_name',
+          content: site.siteMetadata.domain,
         },
         {
           property: `og:type`,
@@ -83,7 +91,7 @@ export function SEO({
         },
         {
           name: `twitter:site`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.domain,
         },
         {
           name: `twitter:creator`,

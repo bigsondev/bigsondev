@@ -56,6 +56,9 @@ export const pageQuery = graphql`
         difficulty
         date(formatString: "MMM D")
       }
+      fields {
+        slug
+      }
     }
   }
 `;
@@ -69,14 +72,21 @@ const PROJECTS_MAPPER = {
 
 const LibraryLayout = ({
   data: {
-    mdx: { frontmatter, body },
+    mdx: {
+      frontmatter,
+      body,
+      fields: { slug },
+    },
   },
 }) => {
+  const url = `https://bigsondev.com${slug}`;
+
   return (
     <>
       <SEO
         title={`Library | ${frontmatter.title}`}
         desc={frontmatter.desc}
+        url={url}
         type="article"
         image={PROJECTS_MAPPER[frontmatter.image]}
       />

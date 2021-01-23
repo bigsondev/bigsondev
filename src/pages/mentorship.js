@@ -10,6 +10,7 @@ const Mentorship = () => (
     <SEO
       title="Mentorship"
       desc="Find Your First Job in IT & Improve As A Frontend Developer"
+      url="https://bigsondev.com/mentorship/"
     />
     <Section>
       <Offer />

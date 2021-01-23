@@ -205,6 +205,7 @@ const Blog = ({
       <SEO
         title="Blog"
         desc="Frontend, HTML, CSS, JS, React Tutorials, Sharing Knowledge, Tips & Tricks"
+        url="https://bigsondev.com/blog/"
       />
       <Title level={2} align="center">
         Knowledge is power 📖

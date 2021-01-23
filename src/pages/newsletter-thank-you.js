@@ -19,7 +19,7 @@ import {
 
 const NewsletterThankYou = () => (
   <Layout>
-    <SEO title="Newsletter Thank You" desc="Thanks For Subscribing" />
+    <SEO title="Newsletter Thank You" desc="Thanks For Subscribing"  url="https://bigsondev.com/newsletter-thank-you/"/>
     <Title level={2} align="center">
       Thank You!
     </Title>

@@ -176,12 +176,14 @@ const BlogLayout = ({
     ? blogFiles.edges.find(({ node: { base } }) => base === frontmatter.image)
     : pillsFiles.edges.find(({ node: { base } }) => base === frontmatter.image);
   const title = isBlogPost ? 'Blog' : 'Pills';
+  const url = `https://bigsondev.com${slug}`;
 
   return (
     <div style={{ overflowX: 'hidden' }}>
       <SEO
         title={`${title} | ${frontmatter.title}`}
         desc={frontmatter.desc}
+        url={url}
         type="article"
         image={
           isBlogPost
