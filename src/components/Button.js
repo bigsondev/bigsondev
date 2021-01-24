@@ -76,7 +76,7 @@ const LinkButton = styled(Link)(({ theme }) => ({
   fontSize: theme.fontSize.base,
   display: 'block',
   color: theme.colors.black,
-  textDecoration: 'underline',
+  textDecoration: 'underline !important',
 
   '&:hover': {
     color: theme.colors.black,

@@ -30,14 +30,14 @@ const ParagraphHolder = styled(Paragraph)({
   left: '50%',
   transform: 'translate(-50%, -50%)',
   marginBottom: 0,
-  color: 'white',
+  color: '#FFF !important',
   width: '100%',
   textAlign: 'center',
   padding: '0 0.25rem',
 });
 
 const LinkHolder = styled(Link)({
-  color: 'white !important',
+  color: '#FFF !important',
   textDecoration: 'underline !important',
 });
 
@@ -46,7 +46,7 @@ const CookieButton = styled(Button)({
   left: '50%',
   bottom: 0,
   transform: 'translate(-50%, -50%)',
-  color: 'white !important',
+  color: '#FFF !important',
   fontSize: '0.9375rem',
   fontWeight: 500,
   border: '1px solid #137099 !important',
