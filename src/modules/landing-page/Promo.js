@@ -7,8 +7,7 @@ import {
   Title,
   Text,
   Paragraph,
-  Illustration,
-  NotJumpingIllustration,
+  Image,
   Box,
   MobileOnly,
   TabletOnly,
@@ -18,7 +17,7 @@ import {
 
 const { colors, fontSize, fontWeight, spacing, opacity } = theme;
 
-const MobileScreenPromo = () => (
+const MobileScreenPromo = ({ fluid }) => (
   <Row align="middle" justify="center">
     <Col span={22}>
       <Title
@@ -50,14 +49,14 @@ const MobileScreenPromo = () => (
       </Title>
       <Title
         transform="none"
-        marginBottom={spacing.large}
+        marginBottom={spacing.medium}
         fontSize={fontSize.large}
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
         Mentor.
       </Title>
-      <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
+      <Paragraph marginBottom="1.25rem" textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
           Become a Web Developer.
         </Text>
@@ -73,12 +72,15 @@ const MobileScreenPromo = () => (
       </Box>
     </Col>
     <Col span={22}>
-      <Illustration type="promo" />
+      <Image
+        fluid={fluid}
+        alt="Image represents person shaking his head around how to learn web development - HTML, CSS & JS"
+      />
     </Col>
   </Row>
 );
 
-const MediumScreenPromo = () => (
+const MediumScreenPromo = ({ fluid }) => (
   <Row gutter={32} justify="center">
     <Col span={22}>
       <Title
@@ -93,7 +95,7 @@ const MediumScreenPromo = () => (
       </Title>
       <Title
         transform="none"
-        marginBottom={spacing.large}
+        marginBottom={spacing.medium}
         fontSize={fontSize.extraLarge}
         fontWeight={fontWeight.stronger}
         color={colors.primary}
@@ -102,7 +104,7 @@ const MediumScreenPromo = () => (
         a seasoned Mentor.
       </Title>
       <Paragraph
-        marginBottom={spacing.large}
+        marginBottom="1.25rem"
         textOpacity={opacity.title}
         align="center"
       >
@@ -111,23 +113,23 @@ const MediumScreenPromo = () => (
         </Text>
         <br /> Join over 40 mentees.
       </Paragraph>
-      <Box
-        margin={`0 auto ${spacing.large} auto`}
-        style={{ textAlign: 'center' }}
-      >
+      <Box style={{ textAlign: 'center' }}>
         <Link to="/mentorship/">
           <Button type="promo">Explore mentorship now</Button>
         </Link>
       </Box>
     </Col>
-    <Col span={12} style={{ marginTop: '3rem', marginBottom: '5rem' }}>
-      <NotJumpingIllustration type="promo" />
+    <Col span={10} style={{ marginTop: '3rem', marginBottom: '3rem' }}>
+      <Image
+        fluid={fluid}
+        alt="Image represents person shaking his head around how to learn web development - HTML, CSS & JS"
+      />
     </Col>
   </Row>
 );
 
-const BigScreenPromo = () => (
-  <Row gutter={64}>
+const BigScreenPromo = ({ fluid }) => (
+  <Row gutter={64} align="middle">
     <Col span={15}>
       <Title
         transform="none"
@@ -140,41 +142,44 @@ const BigScreenPromo = () => (
       </Title>
       <Title
         transform="none"
-        marginBottom={spacing.large}
+        marginBottom={spacing.medium}
         fontSize={fontSize.extraLarge}
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
         with a seasoned Mentor.
       </Title>
-      <Paragraph marginBottom={spacing.large} textOpacity={opacity.title}>
+      <Paragraph marginBottom="1.25rem" textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
           Join over 40 mentees and become a Web Developer.
         </Text>
         <br /> Pull yourself out of tutorials hell.
       </Paragraph>
-      <Box margin={`0 auto ${spacing.large} auto`}>
+      <Box margin={`0 auto ${spacing.medium} auto`}>
         <Link to="/mentorship/">
           <Button type="promo">Explore mentorship now</Button>
         </Link>
       </Box>
     </Col>
     <Col span={9}>
-      <NotJumpingIllustration type="promo" />
+      <Image
+        fluid={fluid}
+        alt="Image represents person shaking his head around how to learn web development - HTML, CSS & JS"
+      />
     </Col>
   </Row>
 );
 
-export const Promo = () => (
+export const Promo = ({ fluid }) => (
   <Box margin={`0 0 ${spacing.extraLarge} 0`}>
     <MobileOnly>
-      <MobileScreenPromo />
+      <MobileScreenPromo fluid={fluid} />
     </MobileOnly>
     <TabletOnly>
-      <MediumScreenPromo />
+      <MediumScreenPromo fluid={fluid} />
     </TabletOnly>
     <DesktopOnly>
-      <BigScreenPromo />
+      <BigScreenPromo fluid={fluid} />
     </DesktopOnly>
   </Box>
 );

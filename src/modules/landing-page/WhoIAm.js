@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Row, Col, Space } from 'antd';
 import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
@@ -194,29 +194,9 @@ const openFreeConsultationEvent = () => {
 };
 
 export const WhoIAm = () => {
-  const [showSocials, setShowSocials] = useState(false);
-
-  const handleScroll = () => {
-    const { top } = document
-      .querySelector('#bigsondev-who-i-am')
-      .getBoundingClientRect();
-
-    if (top <= 0) {
-      setShowSocials(true);
-    } else {
-      setShowSocials(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('scroll', handleScroll);
-
-    return () => document.removeEventListener('scroll', handleScroll);
-  });
-
   return (
     <>
-      <Holder id="bigsondev-who-i-am">
+      <Holder>
         <Box padding={`${spacing.extraLarge} 0`}>
           <Title
             transform="none"
@@ -724,7 +704,7 @@ export const WhoIAm = () => {
         </Box>
       </Holder>
       <DesktopOnly>
-        {showSocials && (
+        {false && (
           <SocialsHolder>
             <Space direction="vertical" size="small">
               <Link href="https://www.codementor.io/@bigsondev">
@@ -732,20 +712,16 @@ export const WhoIAm = () => {
                   <Icon type="codementor" width="2.5rem" />
                 </SocialLinkHolder>
               </Link>
-              <SocialLinkHolder href="https://github.com/bigsondev">
-                <Icon type="github" width="2.5rem" />
+              <Link href="https://mentorcruise.com/mentor/AdrianBigaj/">
+                <SocialLinkHolder>
+                  <Icon type="mentorCruise" width="2.5rem" />
+                </SocialLinkHolder>
+              </Link>
+              <SocialLinkHolder href="https://www.linkedin.com/in/adrian-bigaj-282277130/">
+                <Icon type="linkedin" width="2.5rem" />
               </SocialLinkHolder>
               <SocialLinkHolder href="https://twitter.com/BigsonDev">
                 <Icon type="twitter" width="2.5rem" />
-              </SocialLinkHolder>
-              <SocialLinkHolder href="https://www.facebook.com/BigsonDev-109789784229011">
-                <Icon type="facebook" width="2.5rem" />
-              </SocialLinkHolder>
-              <SocialLinkHolder href="https://www.instagram.com/bigsondev/">
-                <Icon type="instagram" width="2.5rem" />
-              </SocialLinkHolder>
-              <SocialLinkHolder href="https://www.linkedin.com/in/adrian-bigaj-282277130/">
-                <Icon type="linkedin" width="2.5rem" />
               </SocialLinkHolder>
             </Space>
           </SocialsHolder>

@@ -21,7 +21,7 @@ export const Banners = ({ pathname }) => {
   );
 
   const handleScroll = () => {
-    if (window.pageYOffset > 200) {
+    if (window.pageYOffset > 1000) {
       setHasScrolled(true);
     }
   };

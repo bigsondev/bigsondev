@@ -22,12 +22,12 @@ export const Newsletter = () => {
   return (
     <Holder>
       <Box padding={`${spacing.extraLarge} 0`}>
-        <Row justify="center" align="center" gutter={[16, 16]}>
+        <Row justify="center" align="top" gutter={[16, 16]}>
           <Col xs={22} md={16} lg={10}>
             <Illustration type="newsletter" />
           </Col>
           <Col xs={22} lg={12} offset={2}>
-            <Box margin="0.9rem 0 0 0">
+            <Box margin="0.5rem 0 0 0">
               <Title level={4} id="bigsondev-newsletter-landing">
                 the guide to beat frontend interview
               </Title>

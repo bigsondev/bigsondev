@@ -471,6 +471,13 @@ export const Offer = () => {
                 href="https://www.codementor.io/@bigsondev"
               >
                 codementor
+              </Link>{' '}
+              and{' '}
+              <Link
+                size="preNormal"
+                href="https://mentorcruise.com/mentor/AdrianBigaj/"
+              >
+                MentorCruise
               </Link>
               .
             </Paragraph>

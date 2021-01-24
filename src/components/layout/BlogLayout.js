@@ -195,49 +195,47 @@ const BlogLayout = ({
         <Col xs={22} xl={6}>
           <XlOnly>
             <Box display="flex" align="center" direction="column">
-              <Paragraph>
+              <Paragraph marginBottom="0">
                 <AdrianImageHolder
                   fluid={adrianImage.childImageSharp.fluid}
                   alt="Image represents Adrian - Frontend Mentor"
                 />
               </Paragraph>
-              <Paragraph transform="uppercase" size="preNormal" strong>
-                <GatsbyLink to="/#bigsondev-technologies">about</GatsbyLink>
-              </Paragraph>
-              <Paragraph
-                size="small"
-                fontStyle="italic"
-                align="center"
-                style={{ width: '50%' }}
-              >
-                My goal is to share knowledge effectively and prepare you for
-                the Frontend world in the best possible way -{' '}
-                <GatsbyLink to="/mentorship/">discover Mentorship.</GatsbyLink>
+              <Paragraph size="small" align="center" style={{ width: '80%' }}>
+                I'm obsessed with Frontend and teaching. Currently helping
+                people from the entire world become Web Developers. Living with
+                my fiancee and Yorkshire Terrier 🐶 in Poland. <br />
+                <GatsbyLink to="/mentorship/">Discover Mentorship</GatsbyLink>
               </Paragraph>
             </Box>
           </XlOnly>
           <ExceptXl>
-            <Box display="flex" align="center">
-              <Paragraph>
+            <Row>
+              <Col>
                 <AdrianImageHolder
                   fluid={adrianImage.childImageSharp.fluid}
                   alt="Image represents Adrian - Frontend Mentor"
+                  style={{ width: '10rem' }}
                 />
-              </Paragraph>
-              <Box margin="0 0 0 2rem">
-                <Paragraph size="small" fontStyle="italic">
-                  My goal is to share knowledge effectively and prepare you for
-                  the Frontend world in the best possible way -{' '}
-                  <GatsbyLink to="/mentorship/">
-                    discover Mentorship.
-                  </GatsbyLink>
+              </Col>
+              <Col xs={24} md={20}>
+                <Paragraph size="small">
+                  I'm obsessed with Frontend and teaching. Currently helping
+                  people from the entire world become Web Developers. Living
+                  with my fiancee and Yorkshire Terrier 🐶 in Poland.
+                  <br />
+                  <Box margin="0.5rem 0 0 0">
+                    <GatsbyLink to="/mentorship/">
+                      Discover Mentorship
+                    </GatsbyLink>
+                  </Box>
                 </Paragraph>
-              </Box>
-            </Box>
+              </Col>
+            </Row>
           </ExceptXl>
         </Col>
         <Col xs={22} xl={12}>
-          <Box mb={10}>
+          <Box margin="0 0 5rem 0">
             <main>
               {isBlogPost && (
                 <ImageHolder>
@@ -292,7 +290,7 @@ const BlogLayout = ({
         </Col>
         <Col xs={22} xl={6}>
           <Box display="flex" align="center" direction="column">
-            <Paragraph>
+            <Paragraph marginBottom="0">
               <DuckImageHolder
                 fluid={duckSmallNewsletter.childImageSharp.fluid}
                 alt="Image represents yellow debugging duck"
@@ -308,9 +306,7 @@ const BlogLayout = ({
               THE GUIDE TO BEAT FRONTEND INTERVIEW
             </Paragraph>
             <Paragraph style={{ width: '70%' }}>
-              <Box margin="1rem 0 0 0">
-                <NewsletterSmallForm />
-              </Box>
+              <NewsletterSmallForm />
             </Paragraph>
           </Box>
         </Col>

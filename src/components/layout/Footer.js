@@ -10,7 +10,7 @@ import { Row, Col, Space, Divider } from 'antd';
 import styled from 'styled-components';
 import { Link as GatsbyLink } from 'gatsby';
 
-import { LogoFooter } from '~assets';
+import { LogoBase } from '~assets';
 
 import { Link, Text } from '../Typography';
 import { Paragraph, Icon } from '..';
@@ -79,7 +79,7 @@ export const Footer = () => (
         <Row align="top" justify="space-between" gutter={[0, 32]}>
           <Col xs={24} sm={3}>
             <GatsbyLink to="/">
-              <FooterLogo src={LogoFooter} alt="BigsonDev Logo" />
+              <FooterLogo src={LogoBase} alt="BigsonDev Logo" />
             </GatsbyLink>
           </Col>
           <Col
@@ -112,29 +112,19 @@ export const Footer = () => (
                   <Icon type="codementor" width="3.125rem" />
                 </IconHolder>
               </Link>
-              <Link href="https://github.com/bigsondev">
+              <Link href="https://mentorcruise.com/mentor/AdrianBigaj/">
                 <IconHolder>
-                  <Icon type="github" width="3.125rem" />
-                </IconHolder>
-              </Link>
-              <Link href="https://twitter.com/BigsonDev">
-                <IconHolder>
-                  <Icon type="twitter" width="3.125rem" />
-                </IconHolder>
-              </Link>
-              <Link href="https://www.facebook.com/BigsonDev-109789784229011">
-                <IconHolder>
-                  <Icon type="facebook" width="3.125rem" />
-                </IconHolder>
-              </Link>
-              <Link href="https://www.instagram.com/bigsondev/">
-                <IconHolder>
-                  <Icon type="instagram" width="3.125rem" />
+                  <Icon type="mentorCruise" width="3.125rem" />
                 </IconHolder>
               </Link>
               <Link href="https://www.linkedin.com/in/adrian-bigaj-282277130/">
                 <IconHolder>
                   <Icon type="linkedin" width="3.125rem" />
+                </IconHolder>
+              </Link>
+              <Link href="https://twitter.com/BigsonDev">
+                <IconHolder>
+                  <Icon type="twitter" width="3.125rem" />
                 </IconHolder>
               </Link>
             </Space>

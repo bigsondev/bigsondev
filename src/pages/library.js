@@ -146,7 +146,7 @@ const Resource = ({
           <Row justify="center" gutter={[0, 16]}>
             <Col>
               <RateHolder
-                character={<Icon type="duck" />}
+                character={<Icon type="duck" width={24} />}
                 value={difficulty}
                 disabled
               />

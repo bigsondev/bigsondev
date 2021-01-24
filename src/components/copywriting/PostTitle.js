@@ -1,9 +1,10 @@
 import React from 'react';
-import { Space, Row, Col, Rate } from 'antd';
+import { Space, Rate } from 'antd';
 import moment from 'moment';
 import styled from 'styled-components';
 
-import { Title, Text, ShareIcons, Box, Icon, theme } from '..';
+import { Title, Text, ShareIcons, Box, theme } from '..';
+import { Icon } from '../Icon';
 
 const { fontSize } = theme;
 
@@ -16,6 +17,16 @@ const RateHolder = styled(Rate)({
   },
 });
 
+const TitleHolder = styled.div({
+  position: 'relative',
+  paddingLeft: '4.5rem',
+});
+
+const IconHolder = styled(Icon)({
+  position: 'absolute',
+  left: 0,
+});
+
 export const PostTitle = ({
   title,
   showSubtitle = false,
@@ -25,37 +36,33 @@ export const PostTitle = ({
   tags,
 }) => (
   <>
-    <Row align="top" justify="start" gutter={64}>
-      <Col xs={4} sm={2}>
-        {/* Tags will be a single string for now, can be changed later
+    {/* Tags will be a single string for now, can be changed later
 into an array of tags */}
-        <Icon type={`${tags}Tag`} width={48} />
-      </Col>
-      <Col xs={18} sm={20}>
-        <Title fontSize={fontSize.medium} marginBottom="0">
-          {title}
-        </Title>
-        <Space size="large">
-          {date && (
-            <Text type="secondary" size="small">
-              {moment(date).format('MMM D, YYYY')}
-            </Text>
-          )}
-          {readTime && (
-            <Text type="secondary" size="small">
-              {readTime} min read
-            </Text>
-          )}
-          {difficulty && (
-            <RateHolder
-              character={<Icon type="duck" width={16} />}
-              value={difficulty}
-              disabled
-            />
-          )}
-        </Space>
-      </Col>
-    </Row>
+    <TitleHolder>
+      <IconHolder type={`${tags}Tag`} width={48} />
+      <Title fontSize={fontSize.medium} marginBottom="0">
+        {title}
+      </Title>
+      <Space size="middle">
+        {date && (
+          <Text type="secondary" size="small">
+            {moment(date).format('MMM D, YYYY')}
+          </Text>
+        )}
+        {readTime && (
+          <Text type="secondary" size="small">
+            {readTime} min read
+          </Text>
+        )}
+        {difficulty && (
+          <RateHolder
+            character={<Icon type="duck" width={16} />}
+            value={difficulty}
+            disabled
+          />
+        )}
+      </Space>
+    </TitleHolder>
     {showSubtitle && (
       <>
         <Box mt={2} mb={1}>

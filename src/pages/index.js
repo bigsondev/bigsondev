@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import { theme, Layout, Section, SEO } from '~components';
 import {
@@ -11,12 +12,30 @@ import {
 
 const { colors } = theme;
 
-const Landing = () => {
+export const pageQuery = graphql`
+  query HomeQuery {
+    mainImage: file(base: { eq: "main-graphic.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`;
+
+const Landing = ({
+  data: {
+    mainImage: {
+      childImageSharp: { fluid },
+    },
+  },
+}) => {
   return (
     <Layout fixedContent={false}>
       <SEO title="Seasoned Frontend Mentor" />
       <Section>
-        <Promo />
+        <Promo fluid={fluid} />
       </Section>
       <Section backgroundColor={colors.grayLevelTwo}>
         <SkyrocketYourCareer />
@@ -25,7 +44,9 @@ const Landing = () => {
         <BlogLibrary />
       </Section>
       <Section backgroundColor={colors.grayLevelTwo}>
-        <WhoIAm />
+        <div id="pupa">
+          <WhoIAm />
+        </div>
       </Section>
       <Section>
         <Newsletter />

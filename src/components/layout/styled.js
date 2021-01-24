@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
-export const Logo = styled.img({
-  width: 96,
+export const LogoHolder = styled.img({
+  width: 128,
   height: 'auto',
-  marginLeft: -10,
+  marginLeft: -3,
   marginTop: -5,
 
   '@media (max-width: 576px)': {
     marginTop: 8,
-    marginLeft: 2,
+    marginLeft: 10,
   },
 });
 
 export const FooterLogo = styled.img({
-  width: 96,
+  width: 128,
   height: 'auto',
-  marginLeft: -16,
+  marginLeft: -8,
 
   '@media (max-width: 576px)': {
-    marginLeft: -12,
+    marginLeft: -6,
   },
 });

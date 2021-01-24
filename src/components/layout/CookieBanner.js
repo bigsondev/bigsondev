@@ -21,7 +21,7 @@ const Holder = styled.div({
   bottom: 0,
 
   '@media (max-width: 768px)': {
-    padding: '2.25rem 0.25rem 5.5rem 0.25rem',
+    padding: '2.5rem 0.25rem 6rem 0.25rem',
   },
 });
 
@@ -30,15 +30,14 @@ const ParagraphHolder = styled(Paragraph)({
   left: '50%',
   transform: 'translate(-50%, -50%)',
   marginBottom: 0,
-  color: 'rgba(255, 255, 255, 0.65)',
+  color: 'white',
   width: '100%',
   textAlign: 'center',
   padding: '0 0.25rem',
-  fontStyle: 'italic',
 });
 
 const LinkHolder = styled(Link)({
-  color: 'rgba(255, 255, 255, 0.65) !important',
+  color: 'white !important',
   textDecoration: 'underline !important',
 });
 
@@ -47,9 +46,8 @@ const CookieButton = styled(Button)({
   left: '50%',
   bottom: 0,
   transform: 'translate(-50%, -50%)',
-  color: 'rgba(255, 255, 255, 0.85) !important',
+  color: 'white !important',
   fontSize: '0.9375rem',
-  fontStyle: 'italic',
   fontWeight: 500,
   border: '1px solid #137099 !important',
   backgroundColor: '#137099 !important',

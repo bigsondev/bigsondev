@@ -6,10 +6,10 @@ import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 import Roll from 'react-reveal/Roll';
 import Fade from 'react-reveal/Fade';
 
-import { Text, SmallOnly, ExceptSmall, theme } from '~components';
-import { LogoFooter } from '~assets';
+import { Text, SmallOnly, ExceptSmall } from '~components';
+import { LogoBase } from '~assets';
 
-import { Logo } from './styled';
+import { LogoHolder } from './styled';
 
 const Holder = styled(Layout.Header)({
   padding: 0,
@@ -112,7 +112,7 @@ const CloseIcon = styled(CloseOutlined)({
 
 const LeftMenu = () => (
   <Link to="/">
-    <Logo src={LogoFooter} alt="BigsonDev Logo" loading="eager" />
+    <LogoHolder src={LogoBase} alt="BigsonDev Logo" loading="eager" />
   </Link>
 );
 

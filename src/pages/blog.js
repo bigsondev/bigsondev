@@ -89,31 +89,42 @@ const BlogImage = styled(Image)({
   width: 'calc(100% + 6rem)',
 });
 
+const TitleHolder = styled.div({
+  position: 'relative',
+  paddingLeft: '4.5rem',
+});
+
+const IconHolder = styled(Icon)({
+  position: 'absolute',
+  left: 0,
+});
+
 const Article = ({ title, desc, path, fluid, tags, date }) => (
   <Link to={path}>
     <ArticleCard>
       <BlogImage fluid={fluid} alt="title" />
       <Box margin="0 0 1.5rem 0">
-        <Row align="top" justify="start" gutter={64}>
-          <Col xs={4} sm={3}>
-            {/* Tags will be a single string for now, can be changed later
+        {/* Tags will be a single string for now, can be changed later
        into an array of tags */}
-            <Icon type={`${tags}Tag`} width={48} />
-          </Col>
-          <Col xs={18} sm={19}>
-            <Title level={5} transform="capitalize" marginBottom="0">
-              {title}
-            </Title>
-            <Space size="large">
-              <Text size="micro" type="secondary">
-                <Space>
-                  <CalendarOutlined />
-                  <span>{moment(date).format('MMM D, YYYY')}</span>
-                </Space>
-              </Text>
-            </Space>
-          </Col>
-        </Row>
+        <TitleHolder>
+          <IconHolder type={`${tags}Tag`} width={48} />
+          <Title
+            level={5}
+            transform="capitalize"
+            marginBottom="0"
+            style={{ display: 'inline-block' }}
+          >
+            {title}
+          </Title>
+          <Space size="large">
+            <Text size="micro" type="secondary">
+              <Space>
+                <CalendarOutlined />
+                <span>{moment(date).format('MMM D, YYYY')}</span>
+              </Space>
+            </Text>
+          </Space>
+        </TitleHolder>
       </Box>
       <Paragraph size="preNormal">{truncate(desc, 120)}</Paragraph>
       <ArticleButton type="primary">Read more</ArticleButton>

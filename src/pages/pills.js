@@ -110,27 +110,33 @@ const FilterButton = ({ isActive, name, onClick }) =>
     </SecondaryButtonHolder>
   );
 
+const TitleHolder = styled.div({
+  position: 'relative',
+  paddingLeft: '4.5rem',
+});
+
+const IconHolder = styled(Icon)({
+  position: 'absolute',
+  left: 0,
+});
+
 const Pill = ({ title, desc, path, tags, difficulty }) => (
   <GatsbyLink to={path}>
     <PillCard>
       <Box margin="0 0 1.5rem 0">
-        <Row align="top" justify="start" gutter={32}>
-          <Col xs={6} lg={4}>
-            {/* Tags will be a single string for now, can be changed later
+        {/* Tags will be a single string for now, can be changed later
        into an array of tags */}
-            <Icon type={`${tags}Tag`} width={48} />
-          </Col>
-          <Col xs={18} lg={20}>
-            <Title level={5} transform="capitalize" marginBottom="0">
-              {title}
-            </Title>
-            <RateHolder
-              character={<Icon type="duck" width={16} />}
-              value={difficulty}
-              disabled
-            />
-          </Col>
-        </Row>
+        <TitleHolder>
+          <IconHolder type={`${tags}Tag`} width={48} />
+          <Title level={5} transform="capitalize" marginBottom="0">
+            {title}
+          </Title>
+          <RateHolder
+            character={<Icon type="duck" width={16} />}
+            value={difficulty}
+            disabled
+          />
+        </TitleHolder>
       </Box>
       <Paragraph size="preNormal">{truncate(desc, 120)}</Paragraph>
       <PillButton type="primary">Eat pill</PillButton>
