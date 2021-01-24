@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col, Space } from 'antd';
 import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
@@ -194,9 +194,29 @@ const openFreeConsultationEvent = () => {
 };
 
 export const WhoIAm = () => {
+  const [showSocials, setShowSocials] = useState(false);
+
+  const handleScroll = () => {
+    const { top } = document
+      .querySelector('#bigsondev-who-i-am')
+      .getBoundingClientRect();
+
+    if (top <= 0) {
+      setShowSocials(true);
+    } else {
+      setShowSocials(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll);
+
+    return () => document.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
-      <Holder>
+      <Holder id="bigsondev-who-i-am">
         <Box padding={`${spacing.extraLarge} 0`}>
           <Title
             transform="none"
@@ -704,7 +724,7 @@ export const WhoIAm = () => {
         </Box>
       </Holder>
       <DesktopOnly>
-        {false && (
+        {showSocials && (
           <SocialsHolder>
             <Space direction="vertical" size="small">
               <Link href="https://www.codementor.io/@bigsondev">

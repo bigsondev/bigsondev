@@ -73,13 +73,17 @@ export const LinkHolder = styled.span(
     size = 'normal',
     display = 'inline',
     fontSize,
-    textDecoration = 'none',
+    textDecoration = 'underline',
   }) => ({
     textAlign: align,
     fontSize: fontSize || TEXT_SIZE[size],
     fontWeight,
     display,
-    textDecoration,
+    textDecoration: 'none',
+
+    '&:hover': {
+      textDecoration,
+    },
   })
 );
 
