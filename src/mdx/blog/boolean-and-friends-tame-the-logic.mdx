@@ -29,7 +29,7 @@ const iAmFalsy = false;\n
 console.log(iAmTruthy); // true
 console.log(iAmFalsy); // false\n
 console.log(typeof iAmTruthy); // "boolean"
-console.log(typeof iAmFalsy); // "bolean"\n
+console.log(typeof iAmFalsy); // "boolean"\n
 console.log(iAmTruthy.toString()); // "true"
 `;
 
@@ -39,7 +39,7 @@ const iAmTruthy = Boolean(true);
 const iAmFalsy = new Boolean(false);\n
 console.log(iAmTruthy); // true
 // as you can see, it returned true which is not an expected result
-console.log(iAmFalsy); // true - as it's an object and not a boolean type anymore\n
+console.log(iAmFalsy); // Boolean {false} - as it's an object and not a boolean type anymore\n
 console.log(typeof iAmTruthy); // "boolean"
 console.log(typeof iAmFalsy); // "object"`;
 
