@@ -26,14 +26,7 @@ import {
   Box,
 } from '~components';
 
-<Post
-  title={props.frontmatter.title}
-  desc={props.frontmatter.desc}
-  date={props.frontmatter.date}
-  readTime={props.frontmatter.readTime}
-  tags={props.frontmatter.tags}
-  showSubtitle
->
+<Post {...props.frontmatter} showSubtitle>
   <Title level={3}>Problem - Chaos in planning</Title>
   <Paragraph>
     You can be at different stages in your project.{' '}

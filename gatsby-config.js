@@ -3,10 +3,25 @@ module.exports = {
     siteUrl: 'https://bigsondev.com/',
     domain: 'bigsondev.com',
     title: `| Adrian Bigaj | bigsondev.com`,
+    twitterHandle: '@BigsonDev',
     description: `Master coding faster with a seasoned Mentor. Get out of tutorials hell - learn HTML, CSS, JS, React. Become a Web Developer, find a well-paid job, and feel the real progress.`,
-    keywords:
-      'Frontend Mentor, Coding Help, React Expert, Top Developer, Learn How To Code, Web Developer, JavaScript, HTML, CSS, React, Change Your Career',
-    author: `@BigsonDev`,
+    keywords: [
+      'Frontend Mentor',
+      'React Expert',
+      'Learn How To Code',
+      'Coding Help',
+      'Top Developer',
+      'Web Developer',
+      'Software Engineer',
+      'JavaScript',
+      'HTML',
+      'CSS',
+      'React',
+    ],
+    author: `Adrian Bigaj`,
+    social: {
+      twitter: '@BigsonDev',
+    },
   },
   plugins: [
     'gatsby-plugin-mdx',
@@ -85,6 +100,25 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-webpack-bundle-analyser-v2',
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          getBlogFeed({
+            filePathRegex: `//mdx/blog//`,
+            blogUrl: 'https://bigsondev.com/blog',
+            output: '/blog/rss.xml',
+            title: 'BigsonDev Blog RSS Feed',
+          }),
+          getBlogFeed({
+            filePathRegex: `//mdx/pills//`,
+            blogUrl: 'https://bigsondev.com/pills',
+            output: '/pills/rss.xml',
+            title: 'BigsonDev Pills RSS Feed',
+          }),
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // {
@@ -103,3 +137,70 @@ module.exports = {
     // },
   ],
 };
+
+function getBlogFeed({ filePathRegex, blogUrl, ...overrides }) {
+  /**
+   * These RSS feeds can be quite expensive to generate. Limiting the number of
+   * posts and keeping each item's template lightweight (only using frontmatter,
+   * avoiding the html/excerpt fields) helps negate this.
+   */
+  return {
+    serialize: ({ query: { allMdx } }) => {
+      const stripSlash = (slug) =>
+        slug.startsWith('/') ? slug.slice(1) : slug;
+      return allMdx.edges.map((edge) => {
+        const url = `https://bigsondev.com/${stripSlash(
+          edge.node.fields.slug
+        )}`;
+
+        return {
+          author: 'Adrian Bigaj',
+          title: edge.node.frontmatter.title,
+          description: edge.node.frontmatter.desc,
+          date: edge.node.frontmatter.date,
+          url,
+          guid: url,
+          custom_elements: [
+            {
+              'content:encoded': `<div style="width: 100%; margin: 0 auto; max-width: 800px; padding: 40px 40px;">
+                  <p>
+                    Hello. I've just added a new article: <strong>"${edge.node.frontmatter.title}"</strong>, you can also: <a href="${url}">read it online</a>.
+                    <br>
+                    ${edge.node.frontmatter.desc}
+                    <br>
+                    If you would like to stay up to date with new articles, website updates, promotions, tips & tricks, you can <a href="https://bigsondev.com/#bigsondev-newsletter-landing">subscribe</a> to the newsletter.<br>
+                    Happy coding!
+                  </p>
+                </div>`,
+            },
+          ],
+        };
+      });
+    },
+    query: `
+       {
+         allMdx(
+           limit: 25,
+           filter: {
+             fileAbsolutePath: {regex: "${filePathRegex}"}
+           }
+           sort: { order: DESC, fields: [frontmatter___date] }
+         ) {
+           edges {
+             node {
+               fields {
+                 slug
+               }
+               frontmatter {
+                 title
+                 desc
+                 date
+               }
+             }
+           }
+         }
+       }
+     `,
+    ...overrides,
+  };
+}

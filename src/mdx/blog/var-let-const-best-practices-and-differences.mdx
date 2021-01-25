@@ -41,14 +41,7 @@ export const summaryList = [
   `Stick to semantic, functional programming with immutability in mind, free of side effects, not redeclaring, and updating existing variables`,
 ];
 
-<Post
-  title={props.frontmatter.title}
-  desc={props.frontmatter.desc}
-  date={props.frontmatter.date}
-  readTime={props.frontmatter.readTime}
-  tags={props.frontmatter.tags}
-  showSubtitle
->
+<Post {...props.frontmatter} showSubtitle>
   <Title level={3}>Introduction</Title>
   <Paragraph>
     Before the advent of ES6, there were only two ways to declare variables -

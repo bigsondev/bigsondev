@@ -73,14 +73,7 @@ export const codingCoursesBooksWebistes = [
   </Text>,
 ];
 
-<Post
-  title={props.frontmatter.title}
-  desc={props.frontmatter.desc}
-  date={props.frontmatter.date}
-  readTime={props.frontmatter.readTime}
-  tags={props.frontmatter.tags}
-  showSubtitle
->
+<Post {...props.frontmatter} showSubtitle>
   <Title level={3}>Introduction</Title>
   <Paragraph lastParagraph>
     We all want to learn coding fast, get our dream jobs and earn money quickly

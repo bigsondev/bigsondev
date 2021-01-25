@@ -172,14 +172,7 @@ export const implementationLinks = (mui, antd) => {
   return [muiLink, antdLink].filter((link) => link);
 };
 
-<Post
-  title={props.frontmatter.title}
-  desc={props.frontmatter.desc}
-  date={props.frontmatter.date}
-  readTime={props.frontmatter.readTime}
-  tags={props.frontmatter.tags}
-  showSubtitle
->
+<Post {...props.frontmatter} showSubtitle>
   <Title level={3}>Prerequisites</Title>
   <PostList data={postListData} />
   <PostCard title="Cheat Sheet" data={cheatSheetData} />

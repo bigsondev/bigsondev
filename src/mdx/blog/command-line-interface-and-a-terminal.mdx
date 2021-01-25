@@ -46,14 +46,7 @@ export const whatYouWillLearnPoints = [
   `Best practices and recommendations`,
 ];
 
-<Post
-  title={props.frontmatter.title}
-  desc={props.frontmatter.desc}
-  date={props.frontmatter.date}
-  readTime={props.frontmatter.readTime}
-  tags={props.frontmatter.tags}
-  showSubtitle
->
+<Post {...props.frontmatter} showSubtitle>
   <Title level={3}>What You'll Learn</Title>
   <PostList data={whatYouWillLearnPoints} />
   <Paragraph lastParagraph />

@@ -59,14 +59,7 @@ export const mindmapSteps = [
   'Get in shape and repeat the process several times',
 ];
 
-<Post
-  title={props.frontmatter.title}
-  desc={props.frontmatter.desc}
-  date={props.frontmatter.date}
-  readTime={props.frontmatter.readTime}
-  tags={props.frontmatter.tags}
-  showSubtitle
->
+<Post {...props.frontmatter} showSubtitle>
   <Title level={3}>Introduction</Title>
   <Paragraph lastParagraph>
     I love to learn new things and it became my hobby to find new ways for

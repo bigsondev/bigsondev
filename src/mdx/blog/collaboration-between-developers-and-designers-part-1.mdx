@@ -26,14 +26,7 @@ import {
   Box,
 } from '~components';
 
-<Post
-  title={props.frontmatter.title}
-  desc={props.frontmatter.desc}
-  date={props.frontmatter.date}
-  readTime={props.frontmatter.readTime}
-  tags={props.frontmatter.tags}
-  showSubtitle
->
+<Post {...props.frontmatter} showSubtitle>
   <Title level={3}>Introduction</Title>
   <Paragraph>
     I worked in an{' '}
@@ -106,8 +99,8 @@ import {
     When starting a new project, getting to know each other, ask for a workshop
     to go through the design and implementation processes. On-site with a client
     or remotely, brainstorm about some{' '}
-    <Link href="https://en.wikipedia.org/wiki/Minimum_viable_product">MVP</Link>,
-    internal application consisting of 2 to 3 views.
+    <Link href="https://en.wikipedia.org/wiki/Minimum_viable_product">MVP</Link>
+    , internal application consisting of 2 to 3 views.
   </Paragraph>
   <Paragraph>
     Create a design together with developers, ask common questions, pay

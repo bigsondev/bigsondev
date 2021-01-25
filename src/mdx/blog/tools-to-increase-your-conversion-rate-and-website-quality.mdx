@@ -59,14 +59,7 @@ export const keyFeaturesFive = [
   'Outstanding Electron Simulator App - fully-packed environment for writing tests locally',
 ];
 
-<Post
-  title={props.frontmatter.title}
-  desc={props.frontmatter.desc}
-  date={props.frontmatter.date}
-  readTime={props.frontmatter.readTime}
-  tags={props.frontmatter.tags}
-  showSubtitle
->
+<Post {...props.frontmatter} showSubtitle>
   <Title level={3}>Introduction</Title>
   <Paragraph>
     What if there was a way to track users on the website, serve them different

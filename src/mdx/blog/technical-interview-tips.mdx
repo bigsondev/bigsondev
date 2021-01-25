@@ -35,14 +35,7 @@ export const homeworkData = [
   'Do Mock Interview',
 ];
 
-<Post
-  title={props.frontmatter.title}
-  desc={props.frontmatter.desc}
-  date={props.frontmatter.date}
-  readTime={props.frontmatter.readTime}
-  tags={props.frontmatter.tags}
-  showSubtitle
->
+<Post {...props.frontmatter} showSubtitle>
   <Title level={3}>Introduction</Title>
   <Paragraph>
     I have been working as a <Text>Technical Recruiter for almost 2 years</Text>.

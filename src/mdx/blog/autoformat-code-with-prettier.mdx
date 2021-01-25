@@ -145,14 +145,7 @@ export const resourcesListData = [
   <Link href="https://github.com/typicode/husky">Husky Reference</Link>,
 ];
 
-<Post
-  title={props.frontmatter.title}
-  desc={props.frontmatter.desc}
-  date={props.frontmatter.date}
-  readTime={props.frontmatter.readTime}
-  tags={props.frontmatter.tags}
-  showSubtitle
->
+<Post {...props.frontmatter} {...props} showSubtitle>
   <Title level={3}>Prerequisites</Title>
   <PostList data={postListData} />
   <PostCard title="Cheat Sheet" data={cheatSheetData} />

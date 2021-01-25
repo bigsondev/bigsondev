@@ -153,14 +153,7 @@ const properZero = 0 ?? 5;\n
 // not all possible falsy values
 console.log(properZero); // 0`;
 
-<Post
-  title={props.frontmatter.title}
-  desc={props.frontmatter.desc}
-  date={props.frontmatter.date}
-  readTime={props.frontmatter.readTime}
-  tags={props.frontmatter.tags}
-  showSubtitle
->
+<Post {...props.frontmatter} showSubtitle>
   <Title level={3}>Introduction</Title>
   <Paragraph>
     We all know <Link href="https://wtfjs.com/">wtfjs</Link>. There is a lot of
