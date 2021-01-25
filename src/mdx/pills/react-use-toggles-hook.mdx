@@ -1,0 +1,224 @@
+---
+title: React toggles hook
+desc: Having too many dialogs, modals, popups in one component and state starts to become repetitive? Solution - write a custom hook for it.
+date: 2021-01-25
+image: popup.jpg
+imageSource: Unsplash
+imageSourceLink: http://unsplash.com/
+author: Kelly Sikkema
+authorLink: https://unsplash.com/photos/-1_RZL8BGBM?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
+tags: react
+difficulty: 2
+---
+
+import {
+  SyntaxHighlighter,
+  Link,
+  KnowledgePill,
+  Text,
+  Title,
+  PostList,
+  Paragraph,
+} from '~components';
+
+export const useTogglesCode = `import { useState } from "react";\n
+export const useToggles = (initialToggles) => {
+  const [toggles, setToggles] = useState(initialToggles);\n
+  const handleToggles = (name, value) => {
+    setToggles({ ...toggles, [name]: value });
+  };\n
+  return {
+    toggles,
+    handleToggles
+  };
+};
+`;
+
+export const appCode = `import {
+  Dialog,
+  DialogTitle,
+  DialogActions,
+  Button,
+  Grid
+} from "@material-ui/core";\n
+import { useToggles } from "./useToggles";
+import "./styles.css";\n
+const ExampleDialog = ({ name, isOpen, onClose }) => (
+  <Dialog open={isOpen} onClose={onClose}>
+    <DialogTitle>{name}</DialogTitle>
+    <DialogActions>
+      <Button onClick={onClose} color="primary">
+        Close
+      </Button>
+    </DialogActions>
+  </Dialog>
+);\n
+export default function App() {
+  const { toggles, handleToggles } = useToggles({
+    isDialogOneOpen: false,
+    isDialogTwoOpen: false
+  });\n
+  return (
+    <div className="App">
+      <Grid justify="center" container spacing={1}>
+        <Grid item>
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={() => handleToggles("isDialogOneOpen", true)}
+          >
+            Open Dialog 1
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button
+            variant="outlined"
+            color="primary"
+            onClick={() => handleToggles("isDialogTwoOpen", true)}
+          >
+            Open Dialog 2
+          </Button>
+        </Grid>
+      </Grid>
+      <ExampleDialog
+        name="Dialog 1"
+        isOpen={toggles.isDialogOneOpen}
+        onClose={() => handleToggles("isDialogOneOpen", false)}
+      />
+      <ExampleDialog
+        name="Dialog 2"
+        isOpen={toggles.isDialogTwoOpen}
+        onClose={() => handleToggles("isDialogTwoOpen", false)}
+      />
+    </div>
+  );
+}
+`;
+
+export const useTogglesListData = [
+  <Text>
+    First, we import the{' '}
+    <Link href="https://reactjs.org/docs/hooks-state.html">useState</Link> hook
+    from React.
+  </Text>,
+  <Text>
+    Then, we create
+    <Text code>useToggles</Text> hook function which is accepting <Text code>
+      initialToggles
+    </Text> object as a parameter.
+  </Text>,
+  <Text>
+    <Text code>initialToggles</Text> could look like that: <br />
+    <Text code>{`{ isDialogOneOpen: false, isDialogTwoOpen: true }`}</Text>.
+  </Text>,
+  <Text>
+    Then, we use the above object as a default value in the{' '}
+    <Text code>useState</Text> hook which returns <Text code>toggles</Text>{' '}
+    object and <Text code>setToggles</Text> function to update them.
+  </Text>,
+  <Text>
+    <Text code>handleToggles</Text> function handler is updating the state of
+    the <Text code>toggles</Text> using <Text code>setToggles</Text> function,
+    the <Text code>name</Text> parameter is a <Text>string</Text> name of the
+    toggle to update, and the <Text code>value</Text> parameter is a{' '}
+    <Text>boolean</Text>.
+  </Text>,
+  <Text>
+    <Text code>...</Text> spread operator is used to clone existing{' '}
+    <Text code>toggles</Text> object and update a boolean{' '}
+    <Text code>value</Text> of one concrete toggle by a string{' '}
+    <Text code>name</Text> parameter.
+  </Text>,
+  <Text>
+    Lastly, we return <Text code>toggles</Text> and{' '}
+    <Text code>handleToggles</Text> as an object from the hook function.
+  </Text>,
+];
+
+export const appListData = [
+  <Text>
+    Our app code looks a bit intimidating but mostly it's just a boilerplate
+    code for rendering purposes. 😅
+  </Text>,
+  <Text>First, we import all the necessary pieces.</Text>,
+  <Text>
+    Then, we create <Text code>ExampleDialog</Text> component to avoid
+    duplication as we use 2 dialogs later on.
+  </Text>,
+  <Text>
+    We use our sweet <Text code>useToggles</Text> hook to control the state of
+    our dialogs.
+  </Text>,
+  <Text>
+    We render{' '}
+    <Link href="https://material-ui.com/components/dialogs/">Dialog</Link>,{' '}
+    <Link href="https://material-ui.com/components/buttons/#button">
+      Button
+    </Link>
+    , and <Link href="https://material-ui.com/components/grid/#grid">
+      Grid
+    </Link> components from Material UI mentioned before.
+  </Text>,
+  <Text>
+    <Text code>toggles</Text> and <Text code>handleToggles</Text> are used in
+    the above components to handle dialogs state.
+  </Text>,
+];
+
+export const listData = [
+  <Text>
+    Extracting repetitive logic is a perfect use case for hooks in React.
+  </Text>,
+  <Text>
+    The above solution should work with any library and any dialog/modal/popup
+    components as it's just a React state with extracted logic.
+  </Text>,
+  <Text>
+    It's also scalable and will work with any amount of dialog/modal/popup
+    components.
+  </Text>,
+  <Text>
+    Whenever you notice a duplicated code - think of a hook but just don't
+    refactor too early, try to balance it.
+  </Text>,
+];
+
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Introduction
+  </Title>
+  <Paragraph>
+    I'll use a bunch of <Link href="https://material-ui.com">Material UI</Link>{' '}
+    components for preview example but <Text code>useToggles</Text> hook works
+    with any dialog/modal/popup component as it's just an encapsulated, reusable
+    React state code.
+  </Paragraph>
+  <Title level={4} transform="none">
+    Preview
+  </Title>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/agitated-ganguly-d5ooq?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="agitated-ganguly-d5ooq"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Title level={4} transform="none">
+    useToggles hook
+  </Title>
+  <Text size="small">React - useToggles.js</Text>
+  <SyntaxHighlighter language="javascript">{useTogglesCode}</SyntaxHighlighter>
+  <PostList data={useTogglesListData} />
+  <Title level={4} transform="none">
+    App - 2 dialogs
+  </Title>
+  <Text size="small">React - app.js</Text>
+  <SyntaxHighlighter language="javascript">{appCode}</SyntaxHighlighter>
+  <PostList data={appListData} />
+  <Title level={4} transform="none">
+    Summary
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>
