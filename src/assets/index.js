@@ -31,6 +31,7 @@ import CommandLineInterfaceAndATerminalBlog from './blog/command-line-interface-
 import ReactComponentsYouShouldStartUsingNowBlog from './blog/react-components-you-should-start-using-now.jpg';
 import VarLetConstBestPracticesBlog from './blog/var-let-const-best-practices-and-differences.jpg';
 import BooleanAndFriendsBlog from './blog/boolean-and-friends-tame-the-logic.jpg';
+import ApiClientServerBlog from './blog/api-client-server.jpg';
 
 import AddEditDeleteArrayOfObjectsPill from './pills/add-edit-delete-array-of-objects.jpg';
 import BoxSizingPill from './pills/box-sizing.jpg';
@@ -45,6 +46,7 @@ import OutlinePill from './pills/outline.jpg';
 import ResetNormalizeCssPill from './pills/reset-normalize-css.jpg';
 import SearchThroughStringPill from './pills/search-through-string.jpg';
 import SumReducePill from './pills/sum-reduce.jpg';
+import PopupPill from './pills/popup.jpg';
 
 const BLOG_POST_IMAGES = {
   'technical-interview-tips.jpg': TechnicalInterviewTipsBlog,
@@ -60,6 +62,7 @@ const BLOG_POST_IMAGES = {
   'react-components-you-should-start-using-now.jpg': ReactComponentsYouShouldStartUsingNowBlog,
   'var-let-const-best-practices-and-differences.jpg': VarLetConstBestPracticesBlog,
   'boolean-and-friends-tame-the-logic.jpg': BooleanAndFriendsBlog,
+  'api-client-server.jpg': ApiClientServerBlog,
 };
 
 const PILLS_IMAGES = {
@@ -76,6 +79,7 @@ const PILLS_IMAGES = {
   'reset-normalize-css.jpg': ResetNormalizeCssPill,
   'search-through-string.jpg': SearchThroughStringPill,
   'sum-reduce.jpg': SumReducePill,
+  'popup.jpg': PopupPill,
 };
 
 export * from './logo';
