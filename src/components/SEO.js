@@ -48,6 +48,7 @@ export function SEO({
       title={title}
       titleTemplate={`%s ${site.siteMetadata.title}`}
       meta={[
+        { name: 'ir-site-verification-token', content: 2014477023 },
         {
           name: `description`,
           content: metaDescription,
