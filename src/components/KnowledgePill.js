@@ -30,9 +30,9 @@ export const KnowledgePill = ({
   title,
   tags,
   difficulty,
-  image,
-  authorLink,
-  author,
+  date,
+  imageAuthorLink,
+  imageAuthorName,
   imageSourceLink,
   imageSource,
   children,
@@ -45,8 +45,8 @@ export const KnowledgePill = ({
       <ImageCredit>
         <Paragraph size="preNormal" color={colors.white}>
           Image by{' '}
-          <Link size="preNormal" href={authorLink} strong>
-            {author}
+          <Link size="preNormal" href={imageAuthorLink} strong>
+            {imageAuthorName}
           </Link>{' '}
           from{' '}
           <Link size="preNormal" href={imageSourceLink} strong>
@@ -60,6 +60,7 @@ export const KnowledgePill = ({
       tags={tags}
       difficulty={difficulty}
       desc={desc}
+      date={date}
       showSubtitle
     >
       {children}

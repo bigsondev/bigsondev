@@ -10,6 +10,10 @@ const DuckSlackIllustration = styled(Illustration)({
   width: '20%',
   left: '5%',
   bottom: '25%',
+
+  '@media (min-width: 2000px)': {
+    width: '10%',
+  },
 });
 
 export const SlackBanner = ({ ...props }) => (

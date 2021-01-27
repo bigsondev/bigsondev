@@ -88,6 +88,7 @@ import {
   ReactTagIcon,
   ToolsTagIcon,
   UxuiTagIcon,
+  RssIcon,
 } from '~svg';
 
 const Holder = styled(AntdIcon)(({ width = 32 }) => ({
@@ -184,6 +185,7 @@ const ICON_MAPPER = {
   reactTag: ReactTagIcon,
   toolsTag: ToolsTagIcon,
   uxuiTag: UxuiTagIcon,
+  rss: RssIcon,
 };
 
 export const Icon = ({ type, ...props }) => {

@@ -35,7 +35,7 @@ export const query = graphql`
             desc
             readTime
             tags
-            image
+            imagePath
             date(formatString: "MMM D, YYYY")
           }
           fields {
@@ -297,7 +297,7 @@ const Blog = ({
                 childImageSharp: { fluid },
               },
             } = blogFiles.edges.find(
-              ({ node: { base } }) => base === frontmatter.image
+              ({ node: { base } }) => base === frontmatter.imagePath
             );
 
             return (

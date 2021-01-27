@@ -14,7 +14,14 @@ const { colors } = theme;
 
 export const pageQuery = graphql`
   query HomeQuery {
-    mainImage: file(base: { eq: "main-graphic.png" }) {
+    mainImage: file(base: { eq: "main-image.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    adrianImage: file(base: { eq: "adrian-image.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
@@ -28,6 +35,9 @@ const Landing = ({
   data: {
     mainImage: {
       childImageSharp: { fluid },
+    },
+    adrianImage: {
+      childImageSharp: { fluid: adrianImageFluid },
     },
   },
 }) => {
@@ -45,7 +55,7 @@ const Landing = ({
       </Section>
       <Section backgroundColor={colors.grayLevelTwo}>
         <div id="pupa">
-          <WhoIAm />
+          <WhoIAm fluid={adrianImageFluid} />
         </div>
       </Section>
       <Section>

@@ -62,6 +62,15 @@ module.exports = {
         path: `${__dirname}/src/mdx/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: '#137099',
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify`,
@@ -71,6 +80,8 @@ module.exports = {
         name: `BigsonDev`,
         short_name: `BigsonDev`,
         start_url: `/`,
+        description: `Master coding faster with a seasoned Mentor. Get out of tutorials hell - learn HTML, CSS, JS, React. Become a Web Developer, find a well-paid job, and feel the real progress.`,
+        lang: 'en',
         background_color: `#5BAAE7`,
         theme_color: `#5BAAE7`,
         display: `minimal-ui`,
@@ -95,6 +106,17 @@ module.exports = {
             classIdPrefix: true,
           },
         },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-page-progress',
+      options: {
+        includePaths: [{ regex: '^/blog' }, { regex: '^/pills' }],
+        excludePaths: ['/blog/', '/pills/'],
+        height: 5,
+        prependToBody: false,
+        color: `#137099`,
+        footerHeight: 1000,
       },
     },
     'gatsby-plugin-sitemap',

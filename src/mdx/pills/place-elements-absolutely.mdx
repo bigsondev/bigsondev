@@ -1,0 +1,131 @@
+---
+title: Place elements absolutely
+desc: Use a combination of position relative and absolute to place text on the image (cute cat included) card.
+date: 2021-01-26
+imagePath: css-positions.jpg
+imageSource: pixabay
+imageSourceLink: https://pixabay.com/
+imageAuthorName: CreativeMagic
+imageAuthorLink: https://pixabay.com/illustrations/kostki-assorted-losowe-zabawki-677092/
+tags: css
+difficulty: 1
+---
+
+import {
+  SyntaxHighlighter,
+  Link,
+  KnowledgePill,
+  Title,
+  Text,
+  Paragraph,
+  PostList,
+} from '~components';
+
+export const cssCode = `.container {
+  position: relative;
+  margin: 0 auto;
+}\n
+.title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 0;
+  color: #fff;
+}\n
+.catImage {
+  width: 100%;
+  height: auto;
+}
+`;
+
+export const htmlCode = `<div class="container">
+  <img src="https://cataas.com/cat/cute" class="catImage" />
+  <h2 class="title">I'm cute</h2>
+</div>`;
+
+export const cssListData = [
+  <Text>
+    Position <Text code>relative</Text> is used on <Text code>.container</Text>{' '}
+    class to place content relatively to it.
+  </Text>,
+  <Text>
+    Position <Text code>absolute</Text> is used on <Text code>.title</Text>{' '}
+    class with <Text code>top</Text>, <Text code>left</Text>, and{' '}
+    <Text code>transform</Text> properties.
+  </Text>,
+  <Text>
+    More about centering on{' '}
+    <Link href="https://css-tricks.com/centering-css-complete-guide/">
+      CSS-TRICKS
+    </Link>
+    .
+  </Text>,
+  <Text>
+    More about positions in CSS on{' '}
+    <Link href="https://www.w3schools.com/css/css_positioning.asp">
+      w3schools
+    </Link>
+    .
+  </Text>,
+];
+
+export const htmlListData = [
+  <Text>
+    First, we wrap everything with <Text code>div class="container"</Text>.
+  </Text>,
+  <Text>
+    Then, we render our cute cat image with <Text code>{`<img src.../>`}</Text>.
+  </Text>,
+  <Text>
+    Lastly, <Text code>h2</Text> has a <Text code>.title</Text> class which is
+    positioned absolutely.
+  </Text>,
+  <Text>
+    The above <Text code>h2</Text> element will look for the closest container
+    that has a <Text code>relative</Text> or <Text code>absolute</Text> position
+    which is our <Text code>div</Text> with <Text code>.container</Text> class
+    and position absolutely to it.
+  </Text>,
+];
+
+export const listData = [
+  <Text>
+    Understanding CSS positions is a crucial aspect to succeed in creating
+    application layouts.
+  </Text>,
+  <Text>
+    Transforms can be useful for centering content vertically or horizontally.
+  </Text>,
+  <Text>
+    Never skip your CSS day as it'll hit you earlier than you think. 😅
+  </Text>,
+];
+
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Preview
+  </Title>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/practical-violet-1icj7?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="practical-violet-1icj7"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Title level={4} transform="none">
+    Combination of positions
+  </Title>
+  <Text size="small">CSS</Text>
+  <SyntaxHighlighter language="css">{cssCode}</SyntaxHighlighter>
+  <PostList data={cssListData} />
+  <Text size="small">HTML</Text>
+  <SyntaxHighlighter language="css">{htmlCode}</SyntaxHighlighter>
+  <PostList data={htmlListData} />
+  <Title level={4} transform="none">
+    Summary
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+  <g id="Warstwa_2" data-name="Warstwa 2">
+    <g id="Warstwa_1-2" data-name="Warstwa 1">
+      <g>
+        <rect width="88" height="88" rx="7.1" fill="#f9b060"/>
+        <g>
+          <circle cx="23.6" cy="64.4" r="11.6" fill="#fff"/>
+          <g>
+            <path d="M12,29.7v7.4A38.9,38.9,0,0,1,50.9,76h7.4A46.5,46.5,0,0,0,12,29.7Z" fill="#fff"/>
+            <path d="M12,12V22.1A54.1,54.1,0,0,1,65.9,76H76A64.2,64.2,0,0,0,12,12Z" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

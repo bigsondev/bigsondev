@@ -83,6 +83,7 @@ import JsTagIcon from './tag-icons/js.svg';
 import ReactTagIcon from './tag-icons/react-icon.svg';
 import ToolsTagIcon from './tag-icons/tools.svg';
 import UxuiTagIcon from './tag-icons/uxui.svg';
+import RssIcon from './rss-icon.svg';
 
 export {
   HomeworkIcon,
@@ -170,4 +171,5 @@ export {
   ReactTagIcon,
   ToolsTagIcon,
   UxuiTagIcon,
+  RssIcon,
 };

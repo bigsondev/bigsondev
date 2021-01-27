@@ -52,7 +52,7 @@ export const pageQuery = graphql`
         desc
         type
         tags
-        image
+        imagePath
         difficulty
         date(formatString: "MMM D")
       }
@@ -88,7 +88,7 @@ const LibraryLayout = ({
         desc={frontmatter.desc}
         url={url}
         type="article"
-        image={PROJECTS_MAPPER[frontmatter.image]}
+        imagePath={PROJECTS_MAPPER[frontmatter.imagePath]}
       />
       <Row justify="center" gutter={[0, 40]}>
         <Col xs={{ span: 22 }} md={{ span: 16 }} xl={{ span: 12 }}>
@@ -100,7 +100,7 @@ const LibraryLayout = ({
           <SlackBanner id="bigsondev-slack" />
         </Col>
         <Col xs={22} xl={20} xxl={18}>
-          <Box margin="0 0 5rem 0">
+          <Box margin="0 0 3rem 0">
             <PromoBanner
               title="spread the word"
               desc="Are you enjoying the content? Share it with someone!"

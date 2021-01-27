@@ -45,7 +45,7 @@ export const query = graphql`
             desc
             type
             tags
-            image
+            imagePath
             difficulty
             date(formatString: "MMM D")
           }
@@ -96,7 +96,7 @@ const Resource = ({
   title,
   desc,
   path,
-  image,
+  imagePath,
   tags,
   difficulty,
   buttonText,
@@ -126,10 +126,10 @@ const Resource = ({
             {title}
           </Title>
         </Col>
-        {image && (
+        {imagePath && (
           <Col span={24}>
             <Image
-              src={PROJECTS_MAPPER[image]}
+              src={PROJECTS_MAPPER[imagePath]}
               alt={desc}
               style={{ margin: '0 auto 1rem auto' }}
             />

@@ -30,7 +30,6 @@ export function SEO({
             title
             description
             keywords
-            author
             domain
           }
         }
@@ -95,7 +94,7 @@ export function SEO({
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: 'Adrian Bigaj',
         },
         {
           name: `twitter:description`,

@@ -193,7 +193,7 @@ const openFreeConsultationEvent = () => {
   });
 };
 
-export const WhoIAm = () => {
+export const WhoIAm = ({ fluid }) => {
   const [showSocials, setShowSocials] = useState(false);
 
   const handleScroll = () => {
@@ -216,7 +216,7 @@ export const WhoIAm = () => {
 
   return (
     <>
-      <Holder id="bigsondev-who-i-am">
+      <Holder>
         <Box padding={`${spacing.extraLarge} 0`}>
           <Title
             transform="none"
@@ -225,6 +225,7 @@ export const WhoIAm = () => {
             color={colors.primary}
             fontSize={fontSize.superLarge}
             fontWeight={fontWeight.stronger}
+            id="bigsondev-who-i-am"
           >
             About
           </Title>
@@ -232,7 +233,7 @@ export const WhoIAm = () => {
             <Col xs={16} sm={8} md={6} lg={5}>
               <Flip>
                 <Image
-                  src={AdrianImage}
+                  fluid={fluid}
                   alt="Image represents Adrian - Frontend Mentor"
                 />
               </Flip>

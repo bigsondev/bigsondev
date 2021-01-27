@@ -54,14 +54,16 @@ into an array of tags */}
             {readTime} min read
           </Text>
         )}
-        {difficulty && (
+      </Space>
+      {difficulty && (
+        <div>
           <RateHolder
             character={<Icon type="duck" width={16} />}
             value={difficulty}
             disabled
           />
-        )}
-      </Space>
+        </div>
+      )}
     </TitleHolder>
     {showSubtitle && (
       <>

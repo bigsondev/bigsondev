@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { Row, Col, Space, Divider } from 'antd';
+import { Row, Col, Space, Divider, Breadcrumb as AntdBreadcrumb } from 'antd';
 import styled from 'styled-components';
 import { graphql, Link as GatsbyLink } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -17,15 +17,19 @@ import {
   shareOnTwitter,
   shareOnLinkedin,
   shareOnFacebook,
+  truncate,
 } from '~utils';
 
 import {
   Paragraph,
   Box,
   PromoBanner,
+  Text,
   Link,
   Icon,
   XlOnly,
+  LgOnly,
+  ExceptLg,
   SlackBanner,
   ExceptXl,
   SEO,
@@ -52,8 +56,23 @@ const IconHolder = styled(Link)({
   },
 });
 
+const Breadcrumb = styled(AntdBreadcrumb)({
+  marginBottom: '0.5rem',
+  fontSize: '1rem',
+});
+
+const BreadcrumbItem = styled(AntdBreadcrumb.Item)({
+  '& > a': {
+    color: '#000',
+  },
+});
+
 const AdrianImageHolder = styled(Image)({
   width: '8rem',
+  transition: 'all .3s',
+  '&:hover': {
+    transform: 'scale(1.2)',
+  },
 });
 
 const DuckImageHolder = styled(Image)({
@@ -87,11 +106,11 @@ export const pageQuery = graphql`
         desc
         readTime
         tags
-        image
+        imagePath
         imageSource
         imageSourceLink
-        author
-        authorLink
+        imageAuthorName
+        imageAuthorLink
         difficulty
         date(formatString: "MMM D, YYYY")
       }
@@ -167,14 +186,18 @@ const BlogLayout = ({
   pageContext: { previous, next },
 }) => {
   const isBlogPost = slug.includes('/blog/');
-
+  const feedLink = isBlogPost ? '/blog/rss.xml' : '/pills/rss.xml';
   const {
     node: {
       childImageSharp: { fluid },
     },
   } = isBlogPost
-    ? blogFiles.edges.find(({ node: { base } }) => base === frontmatter.image)
-    : pillsFiles.edges.find(({ node: { base } }) => base === frontmatter.image);
+    ? blogFiles.edges.find(
+        ({ node: { base } }) => base === frontmatter.imagePath
+      )
+    : pillsFiles.edges.find(
+        ({ node: { base } }) => base === frontmatter.imagePath
+      );
   const title = isBlogPost ? 'Blog' : 'Pills';
   const url = `https://bigsondev.com${slug}`;
 
@@ -187,8 +210,8 @@ const BlogLayout = ({
         type="article"
         image={
           isBlogPost
-            ? BLOG_POST_IMAGES[frontmatter.image]
-            : PILLS_IMAGES[frontmatter.image]
+            ? BLOG_POST_IMAGES[frontmatter.imagePath]
+            : PILLS_IMAGES[frontmatter.imagePath]
         }
       />
       <Row justify="center" gutter={[0, 40]}>
@@ -196,30 +219,44 @@ const BlogLayout = ({
           <XlOnly>
             <Box display="flex" align="center" direction="column">
               <Paragraph marginBottom="0">
-                <AdrianImageHolder
-                  fluid={adrianImage.childImageSharp.fluid}
-                  alt="Image represents Adrian - Frontend Mentor"
-                />
+                <GatsbyLink to="/#bigsondev-who-i-am">
+                  <AdrianImageHolder
+                    fluid={adrianImage.childImageSharp.fluid}
+                    alt="Image represents Adrian - Frontend Mentor"
+                  />
+                </GatsbyLink>
               </Paragraph>
-              <Paragraph size="small" align="center" style={{ width: '80%' }}>
+              <Paragraph
+                size="small"
+                align="center"
+                style={{ width: '80%' }}
+                marginBottom="0"
+              >
                 I'm obsessed with Frontend and teaching. Currently helping
                 people from the entire world become Web Developers. Living with
                 my fiancee and Yorkshire Terrier 🐶 in Poland. <br />
                 <GatsbyLink to="/mentorship/">Discover Mentorship</GatsbyLink>
               </Paragraph>
+              <Paragraph marginBottom="0">
+                <GatsbyLink to={feedLink}>
+                  <Icon type="rss" />
+                </GatsbyLink>
+              </Paragraph>
             </Box>
           </XlOnly>
           <ExceptXl>
             <Row>
-              <Col>
-                <AdrianImageHolder
-                  fluid={adrianImage.childImageSharp.fluid}
-                  alt="Image represents Adrian - Frontend Mentor"
-                  style={{ width: '10rem' }}
-                />
+              <Col xs={4} sm={4}>
+                <GatsbyLink to="/#bigsondev-who-i-am">
+                  <AdrianImageHolder
+                    fluid={adrianImage.childImageSharp.fluid}
+                    alt="Image represents Adrian - Frontend Mentor"
+                    style={{ width: '10rem' }}
+                  />
+                </GatsbyLink>
               </Col>
-              <Col xs={24} md={20}>
-                <Paragraph size="small">
+              <Col xs={24} md={21}>
+                <Paragraph size="small" marginBottom="0">
                   I'm obsessed with Frontend and teaching. Currently helping
                   people from the entire world become Web Developers. Living
                   with my fiancee and Yorkshire Terrier 🐶 in Poland.
@@ -229,64 +266,109 @@ const BlogLayout = ({
                       Discover Mentorship
                     </GatsbyLink>
                   </Box>
+                  <Box margin="0.5rem 0 0 0">
+                    <Paragraph marginBottom="0">
+                      <GatsbyLink to={feedLink}>
+                        <Icon type="rss" />
+                      </GatsbyLink>
+                    </Paragraph>
+                  </Box>
                 </Paragraph>
               </Col>
             </Row>
           </ExceptXl>
         </Col>
         <Col xs={22} xl={12}>
-          <Box margin="0 0 5rem 0">
-            <main>
-              {isBlogPost && (
-                <ImageHolder>
-                  <Image fluid={fluid} alt={frontmatter.title} />
-                  <ImageCredit>
-                    <Paragraph size="small" color={colors.white}>
-                      Image by{' '}
-                      <Link size="small" href={frontmatter.authorLink} strong>
-                        {frontmatter.author}
-                      </Link>{' '}
-                      from{' '}
-                      <Link
-                        size="small"
-                        href={frontmatter.imageSourceLink}
-                        strong
-                      >
-                        {frontmatter.imageSource}
-                      </Link>
-                    </Paragraph>
-                  </ImageCredit>
-                </ImageHolder>
-              )}
-              <MDXRenderer frontmatter={frontmatter} fluid={fluid}>
-                {body}
-              </MDXRenderer>
-              <Box mt={isBlogPost ? 5 : 1}>
-                <Row justify="space-between" gutter={[0, 16]}>
-                  <Col xs={24} sm={12}>
-                    {previous && (
-                      <DirectionalLink left to={previous.fields.slug}>
-                        <DividerHolder />
-                        <span style={{ textTransform: 'capitalize' }}>
-                          {previous.frontmatter.title}
-                        </span>
-                      </DirectionalLink>
-                    )}
-                  </Col>
-                  <Col xs={24} sm={12} style={{ textAlign: 'right' }}>
-                    {next && (
-                      <DirectionalLink right to={next.fields.slug}>
-                        <DividerHolder />
-                        <span style={{ textTransform: 'capitalize' }}>
-                          {next.frontmatter.title}
-                        </span>
-                      </DirectionalLink>
-                    )}
-                  </Col>
-                </Row>
-              </Box>
-            </main>
-          </Box>
+          <main>
+            <LgOnly>
+              <Breadcrumb>
+                <BreadcrumbItem>
+                  <GatsbyLink to="/">Home</GatsbyLink>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                  <GatsbyLink to={isBlogPost ? '/blog/' : '/pills'}>
+                    {isBlogPost ? 'Blog' : 'Pills'}
+                  </GatsbyLink>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                  <Text size="small" style={{ color: 'rgba(0, 0, 0, 0.85)' }}>
+                    {' '}
+                    {isBlogPost ? 'Article - ' : 'Pill - '} {frontmatter.title}
+                  </Text>
+                </BreadcrumbItem>
+              </Breadcrumb>
+            </LgOnly>
+            <ExceptLg>
+              <Breadcrumb>
+                <BreadcrumbItem>
+                  <GatsbyLink to="/">Home</GatsbyLink>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                  <GatsbyLink to={isBlogPost ? '/blog/' : '/pills'}>
+                    {isBlogPost ? 'Blog' : 'Pills'}
+                  </GatsbyLink>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                  <Text size="small" style={{ color: 'rgba(0, 0, 0, 0.85)' }}>
+                    {isBlogPost ? 'Article - ' : 'Pill - '}
+                    {truncate(frontmatter.title, isBlogPost ? 15 : 20)}
+                  </Text>
+                </BreadcrumbItem>
+              </Breadcrumb>
+            </ExceptLg>
+            {isBlogPost && (
+              <ImageHolder>
+                <Image fluid={fluid} alt={frontmatter.title} />
+                <ImageCredit>
+                  <Paragraph size="small" color={colors.white}>
+                    Image by{' '}
+                    <Link
+                      size="small"
+                      href={frontmatter.imageAuthorLink}
+                      strong
+                    >
+                      {frontmatter.imageAuthorName}
+                    </Link>{' '}
+                    from{' '}
+                    <Link
+                      size="small"
+                      href={frontmatter.imageSourceLink}
+                      strong
+                    >
+                      {frontmatter.imageSource}
+                    </Link>
+                  </Paragraph>
+                </ImageCredit>
+              </ImageHolder>
+            )}
+            <MDXRenderer frontmatter={frontmatter} fluid={fluid}>
+              {body}
+            </MDXRenderer>
+            <Box mt={isBlogPost ? 5 : 1}>
+              <Row justify="space-between" gutter={[0, 16]}>
+                <Col xs={24} sm={12}>
+                  {previous && (
+                    <DirectionalLink left to={previous.fields.slug}>
+                      <DividerHolder />
+                      <span style={{ textTransform: 'capitalize' }}>
+                        {previous.frontmatter.title}
+                      </span>
+                    </DirectionalLink>
+                  )}
+                </Col>
+                <Col xs={24} sm={12} style={{ textAlign: 'right' }}>
+                  {next && (
+                    <DirectionalLink right to={next.fields.slug}>
+                      <DividerHolder />
+                      <span style={{ textTransform: 'capitalize' }}>
+                        {next.frontmatter.title}
+                      </span>
+                    </DirectionalLink>
+                  )}
+                </Col>
+              </Row>
+            </Box>
+          </main>
         </Col>
         <Col xs={22} xl={6}>
           <Box display="flex" align="center" direction="column">
@@ -314,7 +396,7 @@ const BlogLayout = ({
           <SlackBanner id="bigsondev-slack" />
         </Col>
         <Col xs={22} xl={20} xxl={18}>
-          <Box margin="0 0 5rem 0">
+          <Box margin="0 0 3rem 0">
             <PromoBanner
               title="spread the word"
               desc="You don't need to, it's okay..."

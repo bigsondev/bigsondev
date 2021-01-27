@@ -2,11 +2,11 @@
 title: React toggles hook
 desc: Having too many dialogs, modals, popups in one component and state starts to become repetitive? Solution - write a custom hook for it.
 date: 2021-01-25
-image: popup.jpg
+imagePath: popup.jpg
 imageSource: Unsplash
 imageSourceLink: http://unsplash.com/
-author: Kelly Sikkema
-authorLink: https://unsplash.com/photos/-1_RZL8BGBM?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
+imageAuthorName: Kelly Sikkema
+imageAuthorLink: https://unsplash.com/photos/-1_RZL8BGBM?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
 tags: react
 difficulty: 2
 ---
@@ -174,12 +174,16 @@ export const listData = [
     components as it's just a React state with extracted logic.
   </Text>,
   <Text>
-    It's also scalable and will work with any amount of dialog/modal/popup
-    components.
+    To make it more scalable and include additional actions, e.g.{' '}
+    <Text code>toggleAll</Text>,{' '}
+    <Link href="https://reactjs.org/docs/hooks-reference.html#usereducer">
+      useReducer
+    </Link>{' '}
+    hook would be a more appropriate solution than <Text code>useState</Text>.
   </Text>,
   <Text>
-    Whenever you notice a duplicated code - think of a hook but just don't
-    refactor too early, try to balance it.
+    The point of this pill is to grasp the ability to create custom hooks rather
+    than presenting a concrete solution.
   </Text>,
 ];
 

@@ -1,0 +1,80 @@
+---
+title: How To Fetch Data In React From API
+desc: Let's learn how to fetch data in React using fetch, axios, and react-query. We'll create a custom useApi hook and build a simple Pokemon application using pokeAPI.
+readTime: 6
+imagePath: api-client-server.jpg
+imageSource: Unsplash
+imageSourceLink: http://unsplash.com/
+imageAuthorName: Arūnas Naujokas
+imageAuthorLink: https://unsplash.com/photos/agCabF9tpKA?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
+tags: react
+date: 2021-01-25
+---
+
+import { Space, Alert } from 'antd';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  PostFooter,
+  SyntaxHighlighter,
+  Link,
+  Box,
+} from '~components';
+
+<Post {...props.frontmatter} showSubtitle>
+  <Title level={3}>Introduction</Title>
+  <Paragraph>
+    In this article, we'll build a Pokemon application using{' '}
+    <Link href="https://pokeapi.co/">PokeAPI</Link> and{' '}
+    <Link href="https://material-ui.com/components/grid-list/">
+      Material UI GridList
+    </Link>{' '}
+    component. To do that, I'll guide you through{' '}
+    <Text strong>how to fetch data in React with hooks</Text>.
+  </Paragraph>
+  <Paragraph>
+    Function components in <Link href="https://reactjs.org/">React</Link> are
+    great but data fetching with them can be cumbersome at first. When I moved
+    into using hooks it took me some time to grasp what's going on. If you're
+    starting out, check out{' '}
+    <Link href="https://reactjs.org/docs/hooks-intro.html">
+      Hooks introduction
+    </Link>{' '}
+    from the official documentation. Additionally, read about{' '}
+    <Link href="https://reactjs.org/docs/hooks-state.html">useState</Link> and{' '}
+    <Link href="https://reactjs.org/docs/hooks-effect.html">useEffect</Link>{' '}
+    hooks as we'll need them.
+  </Paragraph>
+  <Paragraph>
+    I'll start from using{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">
+      fetch
+    </Link>{' '}
+    to get the data from PokeAPI, then refactor the code for using a custom{' '}
+    <Text code>useApi</Text> hook with{' '}
+    <Link href="https://github.com/axios/axios">axios</Link>, and end up with{' '}
+    <Link href="">react-query</Link> as it's an amazing library.
+  </Paragraph>
+  <Paragraph strong>
+    In the end, you should have a fair understanding of hooks, data fetching in
+    React and build the below cool application about Pokemons. 😎
+  </Paragraph>
+  <Paragraph>PREVIEW APP</Paragraph>
+  <Paragraph lastParagraph>
+    <Text strong>Important:</Text> React devs are working on{' '}
+    <Link href="https://pl.reactjs.org/docs/concurrent-mode-suspense.html">
+      Suspense API
+    </Link>{' '}
+    and{' '}
+    <Link href="https://addyosmani.com/blog/react-server-components/">
+      server-side components
+    </Link>
+    , both of these exciting features can impact the ideology behind data fetching
+    - still, hooks are instrumental to understand all of these concepts and I highly
+    encourage you to dive into this article.
+  </Paragraph>
+  <Title level={3}>Fetch PokeAPI data with hooks</Title>
+</Post>
