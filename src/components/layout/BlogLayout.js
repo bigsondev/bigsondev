@@ -186,7 +186,9 @@ const BlogLayout = ({
   pageContext: { previous, next },
 }) => {
   const isBlogPost = slug.includes('/blog/');
-  const feedLink = isBlogPost ? '/blog/rss.xml' : '/pills/rss.xml';
+  const feedLink = isBlogPost
+    ? 'https://bigsondev.com/blog/rss.xml'
+    : 'https://bigsondev.com/pills/rss.xml';
   const {
     node: {
       childImageSharp: { fluid },
@@ -238,9 +240,9 @@ const BlogLayout = ({
                 <GatsbyLink to="/mentorship/">Discover Mentorship</GatsbyLink>
               </Paragraph>
               <Paragraph marginBottom="0">
-                <GatsbyLink to={feedLink}>
+                <Link href={feedLink}>
                   <Icon type="rss" />
-                </GatsbyLink>
+                </Link>
               </Paragraph>
             </Box>
           </XlOnly>
@@ -265,13 +267,6 @@ const BlogLayout = ({
                     <GatsbyLink to="/mentorship/">
                       Discover Mentorship
                     </GatsbyLink>
-                  </Box>
-                  <Box margin="0.5rem 0 0 0">
-                    <Paragraph marginBottom="0">
-                      <GatsbyLink to={feedLink}>
-                        <Icon type="rss" />
-                      </GatsbyLink>
-                    </Paragraph>
                   </Box>
                 </Paragraph>
               </Col>
