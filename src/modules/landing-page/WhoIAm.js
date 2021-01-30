@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import { openPopupWidget } from 'react-calendly';
 import Flip from 'react-reveal/Flip';
 import Slide from 'react-reveal/Slide';
+import Fade from 'react-reveal/Fade';
 
-import { AdrianImage } from '~assets';
 import {
   theme,
   Title,
@@ -686,42 +686,50 @@ export const WhoIAm = ({ fluid }) => {
               </Col>
             </Row>
           </Box>
-          <Box margin={`${spacing.large} 0 0 0`}>
-            <Title level={4} transform="none" align="center">
-              Unsure? Let's hop on a free call to discuss the details of
-              Mentorship
-            </Title>
-            <Box
-              display="flex"
-              justify="center"
-              margin={`${spacing.large} 0 0 0`}
-            >
-              <SmallOnly>
-                <Space size="large" direction="vertical">
-                  <Button type="secondary" onClick={openFreeConsultationEvent}>
-                    Reserve meeting via Calendly
-                  </Button>
-                  <Button
-                    type="link"
-                    to="/reach-out/"
-                    style={{ textAlign: 'center' }}
-                  >
-                    or email me
-                  </Button>
-                </Space>
-              </SmallOnly>
-              <ExceptSmall>
-                <Space size="large">
-                  <Button type="secondary" onClick={openFreeConsultationEvent}>
-                    Reserve meeting via Calendly
-                  </Button>
-                  <Button type="link" to="/reach-out/">
-                    or email me
-                  </Button>
-                </Space>
-              </ExceptSmall>
+          <Fade>
+            <Box margin={`${spacing.large} 0 0 0`}>
+              <Paragraph align="center" marginBottom="0">
+                Unsure? Let's hop on a <Text strong>free 15-minute call</Text>{' '}
+                to discuss the details of Mentorship
+              </Paragraph>
+              <Box
+                display="flex"
+                justify="center"
+                margin={`${spacing.large} 0 0 0`}
+              >
+                <SmallOnly>
+                  <Space size="large" direction="vertical">
+                    <Button
+                      type="secondary"
+                      onClick={openFreeConsultationEvent}
+                    >
+                      Reserve meeting via Calendly
+                    </Button>
+                    <Button
+                      type="link"
+                      to="/reach-out/"
+                      style={{ textAlign: 'center' }}
+                    >
+                      or email me
+                    </Button>
+                  </Space>
+                </SmallOnly>
+                <ExceptSmall>
+                  <Space size="large">
+                    <Button
+                      type="secondary"
+                      onClick={openFreeConsultationEvent}
+                    >
+                      Reserve meeting via Calendly
+                    </Button>
+                    <Button type="link" to="/reach-out/">
+                      or email me
+                    </Button>
+                  </Space>
+                </ExceptSmall>
+              </Box>
             </Box>
-          </Box>
+          </Fade>
         </Box>
       </Holder>
       <DesktopOnly>

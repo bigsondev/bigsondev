@@ -1,5 +1,5 @@
 ---
-title: Arrays And How To Avoid Loops
+title: JavaScript Arrays And How To Avoid Loops
 desc: Arrays exist in every programming language. It's a data structure best suited for storing multiple values. And, for doing various operations on these values, often called as a collection.
 readTime: 6
 imagePath: arrays-and-how-to-avoid-loops.jpg
@@ -52,14 +52,12 @@ console.log(friends); // ["Pedro", "Joe", "Jane"]
 
 export const mapBadExample = `const numbers = [5, 10, 15, 20];\n
 for (let i = 0; i < numbers.length; i++) {
-  // directly changing items of original array
   numbers[i] = numbers[i] * 2;
 }\n
 console.log(numbers); // [10, 20, 30, 40]`;
 
 export const mapGoodExample = `const numbers = [5, 10, 15, 20];
 const multipliedNumbers = numbers.map((number) => number * 2);\n
-// original array remains unchanged
 console.log(numbers); // [5, 10, 15, 20];
 console.log(multipliedNumbers); // [10, 20, 30, 40]`;
 
@@ -68,7 +66,6 @@ const filteredNumbers = [];\n
 for (let i = 0; i < numbers.length; i++) {
   const currentNumber = numbers[i];\n   
   if (currentNumber > 10) {
-    // Directly pushing to an array
     filteredNumbers.push(currentNumber);
   } 
 }\n
@@ -77,20 +74,17 @@ console.log(filteredNumbers); // [15, 20]`;
 
 export const filterGoodExample = `const numbers = [5, 10, 15, 20];
 const filteredNumbers = numbers.filter((number) => number > 10);\n
-// no direct push to an array
 console.log(numbers); // [5, 10, 15, 20]
 console.log(filteredNumbers); // [15, 20]`;
 
 export const reduceBadExample = `const numbers = [5, 10, 15, 20];
 let sum = 0;\n
 for (let i = 0; i < numbers.length; i++) {
-  // mutating a variable
   sum += numbers[i];
 }\n
 console.log(sum); // 50`;
 
 export const reduceGoodExample = `const numbers = [5, 10, 15, 20];
-// no direct mutation = clean code
 const sum = numbers.reduce((accumulator, number) => accumulator += number, 0);\n
 console.log(sum); // 50
 `;
@@ -100,7 +94,6 @@ const numberToFind = 15;
 let numberToFindIndex = undefined;\n
 for (let i = 0; i < numbers.length; i++) {
   if (numbers[i] === numberToFind) {
-    // mutating a variable and using a break statement
     numberToFindIndex = i;
     break;
   }
@@ -110,7 +103,6 @@ console.log(numberToFindIndex); // 2, remember that array is indexed from 0
 
 export const indexOfGoodExample = `const numbers = [5, 10, 15, 20];
 const numberToFind = 15;
-// no direct mutation = clean code
 const numberToFindIndex = numbers.indexOf(numberToFind);\n
 console.log(numberToFindIndex); // 2, remember that array is indexed from 0
 `;
@@ -120,7 +112,6 @@ const minimumValue = 10;
 let isBigEnough = true;\n
 for (let i = 0; i < numbers.length; i++) {
   if (numbers[i] < minimumValue) {
-    // mutating a variable and using a break statement
     isBigEnough = false;
     break;
   }
@@ -129,7 +120,6 @@ console.log(isBigEnough); // false`;
 
 export const everyGoodExample = `const numbers = [5, 10, 15, 20];
 const minimumValue = 10;
-// no direct mutation = clean code
 const isBigEnough = numbers.every((number) => number >= minimumValue);\n
 console.log(isBigEnough); // false
 `;
@@ -138,7 +128,6 @@ export const someBadExample = `const numbers = [5, 10, 15, 20];
 const minimumValue = 10;
 let isBigEnough = false;\n
 for (let i = 0; i < numbers.length; i++) {
-  // mutating a variable and using a break statement
   if (numbers[i] >= minimumValue) {
     isBigEnough = true;
     break;
@@ -148,7 +137,6 @@ console.log(isBigEnough); // true`;
 
 export const someGoodExample = `const numbers = [5, 10, 15, 20];
 const minimumValue = 10;
-// no direct mutation = clean code
 const isBigEnough = numbers.some((number) => number >= minimumValue);\n
 console.log(isBigEnough); // true
 `;
@@ -158,7 +146,6 @@ const numberToFind = 15;
 let isNumberIncluded = false;\n
 for (let i = 0; i < numbers.length; i++) {
 if (numbers[i] === numberToFind) {
-  // mutating a variable and using a break statement
   isNumberIncluded = true;
   break;
   }
@@ -188,13 +175,12 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
   <Title level={3}>Introduction</Title>
   <Paragraph>
     It's always best to learn by doing. Take a look at the below code example,
-    study and execute it step by step. Mentioned bad practices will be more
-    explained and solved in the following examples.
+    study and execute it step by step.
   </Paragraph>
   <SyntaxHighlighter>{arraysExample}</SyntaxHighlighter>
   <Paragraph lastParagraph>
-    Let's learn how to utilize array methods to avoid bad, mutation patterns and
-    do useful operations on the entire collection.
+    Let's learn how to utilize array methods to do useful operations on the
+    entire collections.
   </Paragraph>
   <Title level={3}>Useful array methods & avoiding loops</Title>
   <Paragraph breakParagraph>
@@ -213,9 +199,9 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
   <Paragraph>
     <Text strong>Assignment:</Text> Multiply all numbers by 2.
   </Paragraph>
-  <Paragraph>Loop way with mutating:</Paragraph>
+  <Paragraph>Loop solution:</Paragraph>
   <SyntaxHighlighter>{mapBadExample}</SyntaxHighlighter>
-  <Paragraph>✅ Map numbers in an array without mutating:</Paragraph>
+  <Paragraph>✅ Map numbers in an array:</Paragraph>
   <SyntaxHighlighter>{mapGoodExample}</SyntaxHighlighter>
   <Title level={4} transform="none">
     2.{' '}
@@ -226,9 +212,9 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
   <Paragraph>
     <Text strong>Assignment:</Text> Remove all numbers less or equal to 10.
   </Paragraph>
-  <Paragraph>Loop way with mutating:</Paragraph>
+  <Paragraph>Loop solution:</Paragraph>
   <SyntaxHighlighter>{filterBadExample}</SyntaxHighlighter>
-  <Paragraph>✅ Filter numbers in an array without mutating:</Paragraph>
+  <Paragraph>✅ Filter numbers in an array:</Paragraph>
   <SyntaxHighlighter>{filterGoodExample}</SyntaxHighlighter>
   <Title level={4} transform="none">
     3.{' '}
@@ -239,9 +225,9 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
   <Paragraph>
     <Text strong>Assignment:</Text> Sum all numbers.
   </Paragraph>
-  <Paragraph>Loop way with mutating:</Paragraph>
+  <Paragraph>Loop solution:</Paragraph>
   <SyntaxHighlighter>{reduceBadExample}</SyntaxHighlighter>
-  <Paragraph>✅ Reduce numbers to create a sum without mutating:</Paragraph>
+  <Paragraph>✅ Reduce numbers to create a sum:</Paragraph>
   <SyntaxHighlighter>{reduceGoodExample}</SyntaxHighlighter>
   <Title level={4} transform="none">
     4.{' '}
@@ -252,7 +238,7 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
   <Paragraph>
     <Text strong>Assignment:</Text> Find index of number 15.
   </Paragraph>
-  <Paragraph>Loop way with mutating:</Paragraph>
+  <Paragraph>Loop solution:</Paragraph>
   <SyntaxHighlighter>{indexOfBadExample}</SyntaxHighlighter>
   <Paragraph>
     ✅ Find index by using an <Text code>indexOf</Text> method:
@@ -268,11 +254,9 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
     <Text strong>Assignment:</Text> Check if all numbers are greater or equal to
     10.
   </Paragraph>
-  <Paragraph>Loop way with mutating:</Paragraph>
+  <Paragraph>Loop solution:</Paragraph>
   <SyntaxHighlighter>{everyBadExample}</SyntaxHighlighter>
-  <Paragraph>
-    ✅ Check if condition is true to all numbers without mutating:
-  </Paragraph>
+  <Paragraph>✅ Check if condition is true to all numbers:</Paragraph>
   <SyntaxHighlighter>{everyGoodExample}</SyntaxHighlighter>
   <Title level={4} transform="none">
     6.{' '}
@@ -284,11 +268,9 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
     <Text strong>Assignment:</Text> Check if any number is greater or equal to
     10.
   </Paragraph>
-  <Paragraph>Loop way with mutating:</Paragraph>
+  <Paragraph>Loop solution:</Paragraph>
   <SyntaxHighlighter>{someBadExample}</SyntaxHighlighter>
-  <Paragraph>
-    ✅ Check if condition is true to any number without mutating:
-  </Paragraph>
+  <Paragraph>✅ Check if condition is true to any number:</Paragraph>
   <SyntaxHighlighter>{someGoodExample}</SyntaxHighlighter>
   <Title level={4} transform="none">
     7.{' '}
@@ -300,9 +282,9 @@ console.log(flatArray); // [1, 2, 3, 4, 5, 6]`;
     <Text strong>Assignment:</Text> Check if number 15 is included in the
     numbers array.
   </Paragraph>
-  <Paragraph>Loop way with mutating:</Paragraph>
+  <Paragraph>Loop solution:</Paragraph>
   <SyntaxHighlighter>{includesBadExample}</SyntaxHighlighter>
-  <Paragraph>✅ Check if number is included without mutating:</Paragraph>
+  <Paragraph>✅ Check if number is included:</Paragraph>
   <SyntaxHighlighter>{includesGoodExample}</SyntaxHighlighter>
   <Paragraph lastParagraph />
   <Title level={3}>Bonus</Title>

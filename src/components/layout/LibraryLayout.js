@@ -84,7 +84,7 @@ const LibraryLayout = ({
   return (
     <>
       <SEO
-        title={`Library | ${frontmatter.title}`}
+        title={`${frontmatter.title}`}
         desc={frontmatter.desc}
         url={url}
         type="article"

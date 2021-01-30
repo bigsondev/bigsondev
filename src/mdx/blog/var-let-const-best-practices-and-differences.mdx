@@ -1,6 +1,6 @@
 ---
-title: Var, Let, Const - Best Practices
-desc: Everyone needs variables in JavaScript. Let's learn the best ways to use them and how to avoid pitfalls which might cause unwanted side effects or introduce bugs in the code.
+title: Var, Let, Const in JavaScript
+desc: Everyone needs variables in JavaScript. Let's learn the best ways to use them and how to avoid pitfalls that might cause unwanted side effects or introduce bugs in the code.
 readTime: 4
 imagePath: var-let-const-best-practices-and-differences.jpg
 imageSource: Unsplash
@@ -24,20 +24,57 @@ import {
   Box,
 } from '~components';
 
-export const globalVariableFirstExample = `console.log(window.setTimeout); // function setTimeout() { [native code] } \n\nsetTimeout = 'Hello World';\n\nconsole.log(setTimeout); // "Hello World"\nconsole.log(window.setTimeout); // OVERRIDDEN GLOBAL SCOPE: "Hello World"`;
+export const globalVariableFirstExample = `console.log(window.setTimeout); // function setTimeout() { [native code] } \n\nsetTimeout = 'Hello World';\n\nconsole.log(setTimeout); // POLLUTED GLOBAL SCOPE: "Hello World"\nconsole.log(window.setTimeout); // OVERRIDDEN WINDOW VARIABLE: "Hello World"`;
 export const globalVariableSecondExample = `window.MY_NAMESPACE = {};\nwindow.MY_NAMESPACE.setTimeout = 'Hello World';\n\nconsole.log(window.setTimeout); // function setTimeout() { [native code] }\nconsole.log(window.MY_NAMESPACE.setTimeout) // "Hello World"`;
-export const varVariableFirstExample = `var hello = () => {\n  var message = 'Hello World';\n\n  return message; \n};\n\nvar message = 'Hello People';\n\nconsole.log(message); // "Hello People"\nconsole.log(window.message); // POLLUTED GLOBAL SCOPE: "Hello People"\nconsole.log(hello()); // "Hello World";`;
+export const varVariableFirstExample = `// message variable has a function scope, \n// it'll only be available in the hello function\nvar hello = () => {\n  var message = 'Hello World';\n\n  return message; \n};\n\n// message variable has a global scope,\n// it'll be included in the window object\nvar message = 'Hello People';\n\nconsole.log(message); // POLLUTED GLOBAL SCOPE: "Hello People"\nconsole.log(window.message); // ADDED TO WINDOW: "Hello People"\nconsole.log(hello()); // "Hello World";`;
 export const varVariableSecondExample = `var canBeChangedAndUpdated = 42;\nvar canBeChangedAndUpdated = 43;\n\nif (true) {\n  var canBeChangedAndUpdated = 44;\n}\n\nconsole.log(canBeChangedAndUpdated); // 44`;
-export const letVariableFirstExample = `console.log(window.setTimeout); // function setTimeout() { [native code] } \n\nlet setTimeout = 'Hello World';\n\nconsole.log(setTimeout); // "Hello World"\nconsole.log(window.setTimeout); // ALL GUCCI, GLOBAL SCOPE UNTOUCHED: function setTimeout() { [native code] }`;
+export const letVariableFirstExample = `console.log(window.setTimeout); // function setTimeout() { [native code] } \n\nlet setTimeout = 'Hello World';\n\nconsole.log(setTimeout); // POLLUTED GLOBAL SCOPE: "Hello World"\nconsole.log(window.setTimeout); // ALL GUCCI, WINDOW OBJECT UNTOUCHED: function setTimeout() { [native code] }`;
 export const letVariableSecondExample = `let canOnlyBeUpdated = 42;\nlet canOnlyBeUpdated = 43; // Uncaught SyntaxError: Identifier 'canOnlyBeUpdated' has already been declared`;
 export const letVariableThirdExample =
   'let canOnlyBeUpdated = 42;\ncanOnlyBeUpdated = 43;\n\nconsole.log(canOnlyBeUpdated); // VARIABLE UPDATED: 43';
 export const constVariableFirstExample = `const canOnlyBeUpdated = 42;\n\ncanOnlyBeUpdated = 43; // Uncaught TypeError: Assignment to constant variable."`;
 export const constVariableSecondExample = `const multiply = (a, b) => a * b;\n\nconst price = 100;\nconst numberOfPeople = 5;\n\nconst amount = multiply(price, numberOfPeople);\n\nconsole.log(amount); // 500`;
 
+export const varHoisting = `console.log(x); // undefined
+console.log(y); // ReferenceError: y is not defined\n
+var x = 5;`;
+export const varHoistingGood = `var x = 5;\n
+console.log(x); // 5
+console.log(y); // ReferenceError: y is not defined
+`;
+export const letScope = `// global firstName variable
+let firstName = 'John';\n
+// another firstName variable is declared inside
+// of the if block, it won't change the 
+// global firstName
+if (true) {
+  let firstName = 'Jane';\n
+  console.log(firstName); // "Jane"
+}\n
+// firstName is still "John"
+console.log(firstName); // "John"`;
+
+export const letHoisting = `console.log(x); // ReferenceError: Cannot access 'x'\n
+let x = 1;`;
+
+export const avoidGlobalsList = [
+  <Link href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE">
+    IIFE
+  </Link>,
+  <Link href="https://css-tricks.com/implementing-private-variables-in-javascript/#the-module-design-pattern">
+    Module and Revealing Module patterns
+  </Link>,
+  <Link href="https://css-tricks.com/implementing-private-variables-in-javascript/#enter-es6-classes">
+    ES6 Classes
+  </Link>,
+  <Link href="https://medium.com/webpack/brief-introduction-to-scope-hoisting-in-webpack-8435084c171f">
+    Webpack variables hoisting
+  </Link>,
+];
+
 export const summaryList = [
-  `Always try to use const as it's a declarative, functional approach, free of global scope pollution, and unwanted side effects`,
-  `Avoid globals & var almost always, minimize let to the bare minimum`,
+  `Aim for const in most cases and block scope, minimize let to the bare minimum, don't use var`,
+  `Strive away from global scope pollution, use e.g. webpack in your projects`,
   `Stick to semantic, functional programming with immutability in mind, free of side effects, not redeclaring, and updating existing variables`,
 ];
 
@@ -50,54 +87,58 @@ export const summaryList = [
   </Paragraph>
   <Paragraph lastParagraph>
     With ES6, <Text code>let</Text> and <Text code>const</Text> keywords were
-    introduced. Both have block scope. <Text code>let</Text> can be updated, but
-    not redeclared. <Text code>const</Text> as the name implies, can't either be
-    updated or redeclared.
+    introduced. Both can either have a global or block scope.{' '}
+    <Text code>let</Text> can be updated, but not redeclared.{' '}
+    <Text code>const</Text> as the name implies, can't either be updated or
+    redeclared.
   </Paragraph>
   <Title level={3}>Variables</Title>
   <Paragraph breakParagraph>
     Let's learn the details about each of the above keywords by looking at the
-    code examples. After that, we will sum up recommendations and best
-    practices.
+    code examples. After that, we'll sum up recommendations and best practices.
   </Paragraph>
   <Title level={4} transform="none">
-    ❌ 🔥 ❌ Global
+    👿 Global
   </Title>
-  <Paragraph>Globals are evil. 👿</Paragraph>
+  <Paragraph>Globals are evil.</Paragraph>
   <SyntaxHighlighter>{globalVariableFirstExample}</SyntaxHighlighter>
   <Paragraph>
     In the above example, we declared the <Text code>setTimeout</Text> variable
     without using any keyword and assigned the <Text code>Hello World</Text>{' '}
-    string to it. This way, the variable became <Text strong>global</Text>.{' '}
-    <Link href="https://www.w3schools.com/jsref/obj_window.asp">Window</Link>{' '}
-    object has a lot of built-in properties which shouldn't be overridden. But,
-    we accidentally overwrote <Text code>setTimeout</Text> and it will cause
-    unwanted behavior.
+    string to it. This way, the variable became <Text strong>global</Text>.
+    Additionally, we accidentally overwrote the existing{' '}
+    <Text code>setTimeout</Text> function and it'll cause unwanted behavior.
   </Paragraph>
   <Paragraph>
-    If you really need to create global variables it's best to create a
-    namespace with a unique key to not pollute global space and avoid overriding
-    existing properties using an object:
+    The{' '}
+    <Link href="https://www.w3schools.com/jsref/obj_window.asp">window</Link>{' '}
+    object has a lot of built-in properties that shouldn't be overridden. Unless
+    you have a good reason (
+    <Link href="https://developer.mozilla.org/en-US/docs/Glossary/Polyfill">
+      polyfill
+    </Link>
+    , custom implementation), you should strive away from overriding existing variables,
+    functions in the <Text code>window</Text> object.
   </Paragraph>
-  <SyntaxHighlighter>{globalVariableSecondExample}</SyntaxHighlighter>
   <Paragraph breakParagraph>
-    This way, the built-in <Text code>window.setTimeout</Text> is untouched and
-    we can declare our variables in the namespace. We just added a new property
-    to the <Text code>window</Text>, but the name should be unique - best to
-    check if it doesn't exist in the <Text code>window</Text> before declaring
-    it.
+    In the later sections, I'll explain how to avoid global variables overrides,
+    for now, try to study <Text code>window</Text> object and make sure you
+    don't come up with the exact same name when naming your variables.
   </Paragraph>
   <Title level={4} transform="none">
     ❌ Var
   </Title>
   <Paragraph>
     <Text code>var</Text> has the same problems as global variables, but it can
-    be used in a function scope to not pollute the global one:
+    be used in a function scope to not pollute the global one.
   </Paragraph>
   <SyntaxHighlighter>{varVariableFirstExample}</SyntaxHighlighter>
   <Paragraph>
     It's good that we didn't overwrite the outer <Text code>message</Text>{' '}
-    variable, but it still polluted the global scope.
+    variable inside of the <Text code>hello</Text> function as the inner{' '}
+    <Text code>message</Text> variable had a function scope which is helpful in
+    avoiding leaking of the variables to outer scopes. However, the outer{' '}
+    <Text code>message</Text> variable still polluted the global scope.
   </Paragraph>
   <Paragraph>
     Another bad thing about using <Text code>var</Text> is that it can be
@@ -105,6 +146,38 @@ export const summaryList = [
     declarative programming I highly recommend:
   </Paragraph>
   <SyntaxHighlighter>{varVariableSecondExample}</SyntaxHighlighter>
+  <Paragraph>
+    We redeclared and updated <Text code>canBeChangedAndUpdated</Text> variable
+    3 times and it was applied to the global scope.
+  </Paragraph>
+  <Paragraph>
+    In JavaScript, there is a concept of{' '}
+    <Link href="https://developer.mozilla.org/pl/docs/Glossary/Hoisting">
+      Hoisting
+    </Link>{' '}
+    which <Text code>var</Text> also can't handle properly. 🙈 It means that
+    variable declarations are moved all the way to the top of the global scope
+    or function scope. Let's see how that works.
+  </Paragraph>
+  <SyntaxHighlighter>{varHoisting}</SyntaxHighlighter>
+  <Paragraph>
+    <Text strong>
+      Only the declaration of <Text code>x</Text> was hoisted as it printed{' '}
+      <Text code>undefined</Text>
+    </Text>
+    . The best practice is to always include variable declarations and assigning
+    values to them (in most scenarios) at the top as using hoisting is confusing
+    and difficult to reason about. It should look like below.
+  </Paragraph>
+  <SyntaxHighlighter>{varHoistingGood}</SyntaxHighlighter>
+  <Paragraph>
+    We got 5 when printing it through <Text code>console.log</Text> which is
+    good. <Text code>y</Text> variable throws an error as it never was defined.
+  </Paragraph>
+  <Paragraph strong>
+    <Text code>var</Text> keyword gives too much "flexibility" and doesn't have
+    strict rules. I don't use it anymore and couldn't be happier.
+  </Paragraph>
   <Paragraph breakParagraph>
     Let's see what improvements ES6 keywords bring to us.
   </Paragraph>
@@ -112,13 +185,25 @@ export const summaryList = [
     ⚠️ Let
   </Title>
   <Paragraph>
-    The first improvement is that <Text code>let</Text> has a block scope that
-    doesn't pollute the global one anymore. 🥳
+    The first improvement is that <Text code>let</Text> doesn't add to the{' '}
+    <Text code>window</Text> object when declared as a global variable. However,
+    it's still polluting the global scope if used like below.
   </Paragraph>
   <SyntaxHighlighter>{letVariableFirstExample}</SyntaxHighlighter>
   <Paragraph>
-    Another improvement is that <Text code>let</Text> can't be redeclared, let's
-    see what happens if we try to do that:
+    The second improvement is a block scope of <Text code>let</Text>. Let's see
+    it in action.
+  </Paragraph>
+  <SyntaxHighlighter>{letScope}</SyntaxHighlighter>
+  <Paragraph>
+    Outer <Text code>name</Text> variable polluted global scope but inner
+    (inside <Text code>if</Text> statement) lived only there. Block scope is
+    helpful in avoiding leaking of variables to outer scopes similar to function
+    scope.
+  </Paragraph>
+  <Paragraph>
+    The third improvement is that <Text code>let</Text> can't be redeclared,
+    let's see what happens if we try to do that.
   </Paragraph>
   <SyntaxHighlighter>{letVariableSecondExample}</SyntaxHighlighter>
   <Paragraph>
@@ -126,10 +211,22 @@ export const summaryList = [
     can't be redeclared.
   </Paragraph>
   <Paragraph>
-    But unfortunately, it can still be updated which contradicts the
-    immutability concept:
+    It can still be updated which contradicts the immutability concept.
   </Paragraph>
   <SyntaxHighlighter>{letVariableThirdExample}</SyntaxHighlighter>
+  <Paragraph>
+    And if it comes to hoisting, <Text code>let</Text> deals with it in a bit
+    more strict way than <Text code>var</Text>.
+  </Paragraph>
+  <SyntaxHighlighter>{letHoisting}</SyntaxHighlighter>
+  <Paragraph>
+    Hoisting still occurs but <Text code>let</Text> lands in{' '}
+    <Link href="https://www.freecodecamp.org/news/what-is-the-temporal-dead-zone/">
+      Temporal Dead Zone
+    </Link>{' '}
+    thus it's not accessible and we get an error. <Text code>x</Text> should be
+    declared and assigned (in most cases) before it's used.
+  </Paragraph>
   <Paragraph breakParagraph>
     Let's jump to the perfect one (almost) which is a <Text code>const</Text>{' '}
     keyword.
@@ -152,8 +249,27 @@ export const summaryList = [
     <Text code>const</Text> can be found below.
   </Paragraph>
   <SyntaxHighlighter>{constVariableSecondExample}</SyntaxHighlighter>
+  <Paragraph lastParagraph />
+  <Title level={3} transform="none">
+    Avoiding global scope
+  </Title>
+  <Paragraph>
+    The simplest solution is to use a function or block scope. If you need
+    something more organized, create a namespace to avoid name collisions.
+  </Paragraph>
+  <SyntaxHighlighter>{globalVariableSecondExample}</SyntaxHighlighter>
+  <Paragraph>
+    This way, the built-in <Text code>window.setTimeout</Text> is untouched and
+    we can declare our variables in the namespace.
+  </Paragraph>
+  <Paragraph>
+    There are more solutions for avoiding global variables in JavaScript.
+    Similarly like in CSS there are CSS-in-JS solutions, BEM, SMACSS. Study the
+    below list to avoid creating global variables.
+  </Paragraph>
+  <PostList data={avoidGlobalsList} />
   <Paragraph lastParagraph>
-    😎 Let's dive into the summary of recommendation & best practices.
+    Let's dive into the summary of recommendation & best practices.
   </Paragraph>
   <Title level={3}>Summary</Title>
   <Paragraph>
@@ -162,9 +278,10 @@ export const summaryList = [
   </Paragraph>
   <Title level={3}>Closing Notes</Title>
   <Paragraph>
-    I hope it was something and you could learn a ton from the article. We
-    skipped an in-depth explanation of hoisting, scopes, and focused on the
-    variable keywords.
+    I hope it was something and you could've learned a ton from the article. We
+    went through an explanation of hoisting, scopes, and variable keywords.
+    Additionally, you've acknowledged best practices and proposed solutions to
+    avoid global scope pollution.
   </Paragraph>
   <PostFooter />
 </Post>

@@ -2,21 +2,20 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://bigsondev.com/',
     domain: 'bigsondev.com',
-    title: `| Adrian Bigaj | bigsondev.com`,
+    title: `| BigsonDev - bigsondev.com`,
     twitterHandle: '@BigsonDev',
-    description: `Master coding faster with a seasoned Mentor. Get out of tutorials hell - learn HTML, CSS, JS, React. Become a Web Developer, find a well-paid job, and feel the real progress.`,
+    description: `Master React faster with a seasoned Mentor. Get out of tutorials hell - learn HTML, CSS, JS, React. Become a Frontend Developer, find a well-paid job, and feel the real progress.`,
     keywords: [
       'Frontend Mentor',
       'React Expert',
-      'Learn How To Code',
-      'Coding Help',
-      'Top Developer',
-      'Web Developer',
+      'React',
+      'Frontend Developer',
+      'Frontend projects',
+      'Frontend blog',
       'Software Engineer',
       'JavaScript',
       'HTML',
       'CSS',
-      'React',
     ],
     author: `Adrian Bigaj`,
     social: {
@@ -80,7 +79,7 @@ module.exports = {
         name: `BigsonDev`,
         short_name: `BigsonDev`,
         start_url: `/`,
-        description: `Master coding faster with a seasoned Mentor. Get out of tutorials hell - learn HTML, CSS, JS, React. Become a Web Developer, find a well-paid job, and feel the real progress.`,
+        description: `Master React faster with a seasoned Mentor. Get out of tutorials hell - learn HTML, CSS, JS, React. Become a Frontend Developer, find a well-paid job, and feel the real progress.`,
         lang: 'en',
         background_color: `#5BAAE7`,
         theme_color: `#5BAAE7`,
@@ -191,7 +190,7 @@ function getBlogFeed({ filePathRegex, blogUrl, ...overrides }) {
                     ${edge.node.frontmatter.desc}
                     <br>
                     If you would like to stay up to date with new articles, website updates, promotions, tips & tricks, you can <a href="https://bigsondev.com/#bigsondev-newsletter-landing">subscribe</a> to the newsletter.<br>
-                    Happy coding!
+                    Happy Frontend coding!
                   </p>
                 </div>`,
             },

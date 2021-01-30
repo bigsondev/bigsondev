@@ -131,7 +131,7 @@ export const SkyrocketYourCareer = () => {
                       size="small"
                       textOpacity={opacity.title}
                     >
-                      Become a Web Developer by building{' '}
+                      Become a Frontend Developer by building{' '}
                       <strong>3 unique projects</strong> for your portfolio.
                     </Text>
                   </Col>

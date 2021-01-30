@@ -15,7 +15,7 @@ export const PostFooter = () => (
   <>
     <Paragraph lastParagraph />
     <Paragraph>
-      <strong>Big</strong> thanks for reading the article, you are awesome! 🙇‍♂️
+      <strong>Big</strong> thanks for reading the article, you're awesome! 🙇‍♂️
     </Paragraph>
     <Paragraph>You can also find me on:</Paragraph>
     <PostList data={data} />

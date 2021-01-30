@@ -124,12 +124,12 @@ export const NewsletterSmallForm = () => {
               knowledge pills, and mentoring promotions. Only valuable
               information, no spam included. You can unsubscribe at any time.
             </Paragraph>
-            <Form.Item>
+            <Form.Item style={{ textAlign: 'center' }}>
               <Button
                 htmlType="submit"
                 loading={isSubmitting}
                 onClick={() => setTriedToSubmit(true)}
-                type="primary"
+                type="promo"
               >
                 Subscribe & get guide
               </Button>

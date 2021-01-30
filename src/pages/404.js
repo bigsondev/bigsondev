@@ -40,7 +40,7 @@ const NotFoundPage = () => (
                 Read an article on the <Link to="/blog/">Blog</Link>.
               </Text>,
               <Text size="preNormal" type="primary">
-                Do coding challenge in the <Link to="/library/">Library</Link>.
+                Boost Frontend in the <Link to="/library/">Library</Link>.
               </Text>,
               <Text size="preNormal" type="primary">
                 Grab some <Link to="/mentorship/">Mentorship</Link> from me.

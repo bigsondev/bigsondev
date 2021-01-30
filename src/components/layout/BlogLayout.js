@@ -200,13 +200,12 @@ const BlogLayout = ({
     : pillsFiles.edges.find(
         ({ node: { base } }) => base === frontmatter.imagePath
       );
-  const title = isBlogPost ? 'Blog' : 'Pills';
   const url = `https://bigsondev.com${slug}`;
 
   return (
     <div style={{ overflowX: 'hidden' }}>
       <SEO
-        title={`${title} | ${frontmatter.title}`}
+        title={`${frontmatter.title}`}
         desc={frontmatter.desc}
         url={url}
         type="article"
@@ -234,9 +233,9 @@ const BlogLayout = ({
                 style={{ width: '80%' }}
                 marginBottom="0"
               >
-                I'm obsessed with Frontend and teaching. Currently helping
-                people from the entire world become Web Developers. Living with
-                my fiancee and Yorkshire Terrier 🐶 in Poland. <br />
+                Obsessed with React and teaching. I help people become Frontend
+                Developers. Living with my fiancee and Yorkshire Terrier 🐶 in
+                Poland. <br />
                 <GatsbyLink to="/mentorship/">Discover Mentorship</GatsbyLink>
               </Paragraph>
               <Paragraph marginBottom="0">
@@ -259,9 +258,9 @@ const BlogLayout = ({
               </Col>
               <Col xs={24} md={21}>
                 <Paragraph size="small" marginBottom="0">
-                  I'm obsessed with Frontend and teaching. Currently helping
-                  people from the entire world become Web Developers. Living
-                  with my fiancee and Yorkshire Terrier 🐶 in Poland.
+                  Obsessed with React and teaching. I help people become
+                  Frontend Developers. Living with my fiancee and Yorkshire
+                  Terrier 🐶 in Poland.
                   <br />
                   <Box margin="0.5rem 0 0 0">
                     <GatsbyLink to="/mentorship/">

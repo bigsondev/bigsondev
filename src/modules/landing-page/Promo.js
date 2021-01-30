@@ -27,7 +27,7 @@ const MobileScreenPromo = ({ fluid }) => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        Master coding
+        Master React
       </Title>
       <Title
         transform="none"
@@ -58,7 +58,7 @@ const MobileScreenPromo = ({ fluid }) => (
       </Title>
       <Paragraph marginBottom="1.25rem" textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
-          Become a Web Developer.
+          Become a Frontend Developer.
         </Text>
         <br />
         Join over 40 mentees.
@@ -91,7 +91,7 @@ const MediumScreenPromo = ({ fluid }) => (
         color={colors.primary}
         align="center"
       >
-        Master coding faster with
+        Master React faster with
       </Title>
       <Title
         transform="none"
@@ -109,7 +109,7 @@ const MediumScreenPromo = ({ fluid }) => (
         align="center"
       >
         <Text strong textOpacity={opacity.title}>
-          Become a Web Developer.
+          Become a Frontend Developer.
         </Text>
         <br /> Join over 40 mentees.
       </Paragraph>
@@ -138,7 +138,7 @@ const BigScreenPromo = ({ fluid }) => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        Master coding faster
+        Master React faster
       </Title>
       <Title
         transform="none"
@@ -151,7 +151,7 @@ const BigScreenPromo = ({ fluid }) => (
       </Title>
       <Paragraph marginBottom="1.25rem" textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
-          Join over 40 mentees and become a Web Developer.
+          Join over 40 mentees and become a Frontend Developer.
         </Text>
         <br /> Pull yourself out of tutorials hell.
       </Paragraph>

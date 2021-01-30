@@ -92,7 +92,7 @@ export const BlogLibrary = () => {
           fontSize={fontSize.superLarge}
           fontWeight={fontWeight.stronger}
         >
-          Boost your coding skills
+          Boost your Frontend skills
         </Title>
         <Title
           level={3}

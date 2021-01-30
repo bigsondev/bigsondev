@@ -43,7 +43,7 @@ const Landing = ({
 }) => {
   return (
     <Layout fixedContent={false}>
-      <SEO title="Seasoned Frontend Mentor" />
+      <SEO title="Frontend Mentor" />
       <Section>
         <Promo fluid={fluid} />
       </Section>
