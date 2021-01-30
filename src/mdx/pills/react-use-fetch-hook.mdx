@@ -1,0 +1,232 @@
+---
+title: React fetch hook
+desc: Let's create a custom hook for fetching data with the browser fetch from an API which we'll use for getting some Pokemons with pokeAPI.
+date: 2021-01-30
+imagePath: use-fetch.jpg
+imageSource: Unsplash
+imageSourceLink: http://unsplash.com/
+imageAuthorName: Lisa Vanthournout
+imageAuthorLink: https://unsplash.com/photos/jezQ2hqsWHc?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
+tags: react
+difficulty: 3
+---
+
+import {
+  SyntaxHighlighter,
+  Link,
+  KnowledgePill,
+  Text,
+  Title,
+  PostList,
+  Paragraph,
+} from '~components';
+
+export const useFetchCode = `import { useReducer, useEffect } from "react";\n
+const ACTIONS = {
+  fetchPending: "FETCH_PENDING",
+  fetchSuccess: "FETCH_SUCCESS",
+  fetchError: "FETCH_ERROR"
+};\n
+// We set isLoading to true initially,
+// this way we won't get data as undefined
+// on the first render. You can adjust
+// initialState as you need, just remember
+// about handling the undefined case for data\n
+// Alternative way would be to set initial data,
+// different than undefined, and still have isLoading
+// as false initially
+const createInitialState = (initialState) => ({
+  error: undefined,
+  isLoading: true,
+  data: undefined,
+  ...initialState
+});\n
+const fetchReducer = (state, action) => {
+  const { type, payload } = action;\n
+  switch (type) {
+    case ACTIONS.fetchPending:
+      return { ...state, isLoading: true, error: undefined };
+    case ACTIONS.fetchSuccess:
+      return { ...state, ...payload, isLoading: false };
+    case ACTIONS.fetchError:
+      return { ...state, ...payload, isLoading: false };
+    default:
+      throw new Error("Not recognized action type in fetchReducer! Typo?");
+  }
+};\n
+export const useFetch = (endpoint, initialState = {}, config = {}) => {
+  const [state, dispatch] = useReducer(
+    fetchReducer,
+    createInitialState(initialState)
+  );\n
+  useEffect(() => {
+    if (!endpoint) {
+      throw new Error("Please, provide an endpoint in order to use this hook!");
+    }\n
+    const fetchData = async () => {
+      dispatch({ type: ACTIONS.fetchPending });\n
+      try {
+        const response = await fetch(endpoint, config);\n
+        // Workaround to catch all the errors
+        // https://stackoverflow.com/questions/38235715/fetch-reject-promise-and-catch-the-error-if-status-is-not-ok
+        if (!response.ok) {
+          return dispatch({
+            type: ACTIONS.fetchError,
+            payload: { error: response.statusText }
+          });
+        }\n
+        const data = await response.json();\n
+        dispatch({ type: ACTIONS.fetchSuccess, payload: { data } });
+      } catch (e) {
+        dispatch({
+          type: ACTIONS.fetchError,
+          payload: { error: e.message || "Something went wrong" }
+        });
+      }
+    };\n
+    fetchData();
+  }, []);\n
+  return state;
+};`;
+
+export const appCode = `import React from "react";
+import {
+  CircularProgress,
+  Card,
+  CardContent,
+  Typography,
+  Grid
+} from "@material-ui/core";
+import { Alert } from "@material-ui/lab";\n
+import { useFetch } from "./useFetch";
+import "./styles.css";\n
+const PokemonCard = ({ pokemon }) => {
+  const { error, isLoading, data } = useFetch(
+    \`https://pokeapi.co/api/v2/pokemon/\${pokemon}\`
+  );\n
+  if (error) {
+    return <Alert severity="error">{error}</Alert>;
+  }\n
+  if (isLoading) {
+    return (
+      <Grid container justify="center">
+        <CircularProgress />
+      </Grid>
+    );
+  }\n
+  const {
+    name,
+    sprites: { front_default: frontDefault }
+  } = data;\n
+  return (
+    <Card>
+      <img src={frontDefault} />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          {name}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+};\n
+export default function App() {
+  return (
+    <div className="App">
+      <h1>useFetch with pokeAPI</h1>
+      <Grid container justify="center" spacing={1}>
+        <Grid item xs={8} sm={6}>
+          <PokemonCard pokemon="charizard" />
+        </Grid>
+        <Grid item xs={8} sm={6}>
+          <PokemonCard pokemon="pikachu" />
+        </Grid>
+        <Grid item xs={8} sm={6}>
+          <PokemonCard pokemon="psyduck" />
+        </Grid>
+        <Grid item xs={8} sm={6}>
+          <PokemonCard pokemon="squirtle" />
+        </Grid>
+      </Grid>
+    </div>
+  );
+}`;
+
+export const listData = [
+  <Text>
+    We used a combination of{' '}
+    <Link href="https://reactjs.org/docs/hooks-reference.html#usereducer">
+      useReducer
+    </Link>{' '}
+    and{' '}
+    <Link href="https://reactjs.org/docs/hooks-reference.html#useeffect">
+      useEffect
+    </Link>{' '}
+    hooks to create our custom <Text code>useFetch</Text> hook.
+  </Text>,
+  <Text>
+    Additionally, browser{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">
+      fetch
+    </Link>{' '}
+    with{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await">
+      async/await
+    </Link>{' '}
+    and{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch">
+      try...catch
+    </Link>{' '}
+    was used to get the data from an API through an endpoint.
+  </Text>,
+  <Text>
+    Then, we created an example application using{' '}
+    <Link href="https://pokeapi.co/">pokeAPI</Link> and{' '}
+    <Link href="https://material-ui.com/">Material UI</Link>.
+  </Text>,
+  <Text>
+    As <Text code>fetch</Text> requires a little bit of boilerplate and doesn't
+    catch all the possible errors (need to use <Text code>.ok</Text> check), you
+    might consider <Link href="https://github.com/axios/axios">axios</Link>{' '}
+    instead for the <Text code>useFetch</Text> hook (and call it e.g.{' '}
+    <Text code>useApi</Text> 😀)
+  </Text>,
+  <Text>
+    There is a way to completely omit this custom hook by using{' '}
+    <Link href="https://react-query.tanstack.com/">react-query</Link> 🙈. It's
+    an amazing library for data fetching with support for cache, etc.
+  </Text>,
+  <Text>
+    Feel free to extend the app as you need - maybe create astonishing Pokedex
+    online? (just throwing an idea)
+  </Text>,
+];
+
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Preview
+  </Title>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/objective-archimedes-d2dz1?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="objective-archimedes-d2dz1"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Title level={4} transform="none">
+    Fetch them all!
+  </Title>
+  <Text size="small">React - useFetch.js</Text>
+  <SyntaxHighlighter language="javascript" title="React - useFetch.js">
+    {useFetchCode}
+  </SyntaxHighlighter>
+  <Text size="small">React - App.js</Text>
+  <SyntaxHighlighter language="javascript" title="React - App.js">
+    {appCode}
+  </SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Summary
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

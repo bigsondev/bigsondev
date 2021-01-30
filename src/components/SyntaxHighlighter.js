@@ -45,7 +45,9 @@ export const SyntaxHighlighter = ({
           autoCloseTags: false,
           showHint: false,
           readOnly: true,
+          lineNumbers: false,
         }}
+        {...props}
       />
     </Holder>
   );

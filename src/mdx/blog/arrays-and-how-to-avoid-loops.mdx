@@ -47,8 +47,7 @@ friends.push('Max');
 console.log(friends); // ["Pedro", "Joe", "Jane", "Max"]\n
 // Directly remove the item from an array
 friends.pop();
-console.log(friends); // ["Pedro", "Joe", "Jane"]
-`;
+console.log(friends); // ["Pedro", "Joe", "Jane"]`;
 
 export const mapBadExample = `const numbers = [5, 10, 15, 20];\n
 for (let i = 0; i < numbers.length; i++) {
@@ -86,8 +85,7 @@ console.log(sum); // 50`;
 
 export const reduceGoodExample = `const numbers = [5, 10, 15, 20];
 const sum = numbers.reduce((accumulator, number) => accumulator += number, 0);\n
-console.log(sum); // 50
-`;
+console.log(sum); // 50`;
 
 export const indexOfBadExample = `const numbers = [5, 10, 15, 20];
 const numberToFind = 15;
@@ -98,14 +96,12 @@ for (let i = 0; i < numbers.length; i++) {
     break;
   }
 }\n
-console.log(numberToFindIndex); // 2, remember that array is indexed from 0
-`;
+console.log(numberToFindIndex); // 2, remember that array is indexed from 0`;
 
 export const indexOfGoodExample = `const numbers = [5, 10, 15, 20];
 const numberToFind = 15;
 const numberToFindIndex = numbers.indexOf(numberToFind);\n
-console.log(numberToFindIndex); // 2, remember that array is indexed from 0
-`;
+console.log(numberToFindIndex); // 2, remember that array is indexed from 0`;
 
 export const everyBadExample = `const numbers = [5, 10, 15, 20];
 const minimumValue = 10;
@@ -121,8 +117,7 @@ console.log(isBigEnough); // false`;
 export const everyGoodExample = `const numbers = [5, 10, 15, 20];
 const minimumValue = 10;
 const isBigEnough = numbers.every((number) => number >= minimumValue);\n
-console.log(isBigEnough); // false
-`;
+console.log(isBigEnough); // false`;
 
 export const someBadExample = `const numbers = [5, 10, 15, 20];
 const minimumValue = 10;
@@ -138,8 +133,7 @@ console.log(isBigEnough); // true`;
 export const someGoodExample = `const numbers = [5, 10, 15, 20];
 const minimumValue = 10;
 const isBigEnough = numbers.some((number) => number >= minimumValue);\n
-console.log(isBigEnough); // true
-`;
+console.log(isBigEnough); // true`;
 
 export const includesBadExample = `const numbers = [5, 10, 15, 20];
 const numberToFind = 15;
@@ -150,8 +144,7 @@ if (numbers[i] === numberToFind) {
   break;
   }
 }\n
-console.log(isNumberIncluded); // true
-`;
+console.log(isNumberIncluded); // true`;
 
 export const includesGoodExample = `const numbers = [5, 10, 15, 20];
 const numberToFind = 15;

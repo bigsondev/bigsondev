@@ -48,6 +48,7 @@ import SearchThroughStringPill from './pills/search-through-string.jpg';
 import SumReducePill from './pills/sum-reduce.jpg';
 import PopupPill from './pills/popup.jpg';
 import CssPositionsPill from './pills/css-positions.jpg';
+import UseFetchPill from './pills/use-fetch.jpg';
 
 const BLOG_POST_IMAGES = {
   'technical-interview-tips.jpg': TechnicalInterviewTipsBlog,
@@ -82,6 +83,7 @@ const PILLS_IMAGES = {
   'sum-reduce.jpg': SumReducePill,
   'popup.jpg': PopupPill,
   'css-positions.jpg': CssPositionsPill,
+  'use-fetch.jpg': UseFetchPill,
 };
 
 export * from './logo';

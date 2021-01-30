@@ -70,6 +70,5 @@ yarn-error.log
 
 # Temporary Files
 .temp/
-src/mdx/blog/how-to-fetch-data-in-react-using-pokeapi.mdx
 
 # In Progress

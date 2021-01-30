@@ -29,8 +29,7 @@ const countVowels = (sum, letter) => (VOWELS.includes(letter) ? ++sum : sum);\n
 // 2. .split returns an array of letters
 // 3. .reduce reduces an array of letters into a single number - the sum of vowels
 const getVowelsCount = (string) =>
-  string.replace(/ /g, '').split('').reduce(countVowels, 0);
-`;
+  string.replace(/ /g, '').split('').reduce(countVowels, 0);`;
 
 export const listData = [
   <Text>

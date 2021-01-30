@@ -1,0 +1,724 @@
+---
+title: How To Fetch Data In React From API
+desc: Let's learn how to fetch data in React using fetch, axios, and react-query. We'll create a custom useApi hook and build a simple Pokemon application using pokeAPI.
+readTime: 20
+imagePath: api-client-server.jpg
+imageSource: Unsplash
+imageSourceLink: http://unsplash.com/
+imageAuthorName: Arūnas Naujokas
+imageAuthorLink: https://unsplash.com/photos/agCabF9tpKA?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
+tags: react
+date: 2021-01-30
+---
+
+import { Space, Alert } from 'antd';
+import { Link as GatsbyLink } from 'gatsby';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  PostFooter,
+  SyntaxHighlighter,
+  Link,
+  Box,
+} from '~components';
+
+export const getDataUsingFetchFailed = `import React, { useState, useEffect } from "react";\n
+export const App = () => {
+  const [pokemons, setPokemons] = useState([]);\n
+  useEffect(async () => {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
+    const data = await response.json();\n
+    setPokemons(data.results);
+  });\n
+  return (
+    <ul>
+      {pokemons.map(({ name, url }) => (
+        <li key={url}>{name}</li>
+      ))}
+    </ul>
+  );
+};`;
+
+export const getDataUsingFetchWarning = `import React, { useState, useEffect } from "react";\n
+export const App = () => {
+  const [pokemons, setPokemons] = useState([]);\n
+  useEffect(async () => {
+    const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
+    const data = await response.json();\n
+    setPokemons(data.results);
+  }, []);\n
+  return (
+    <ul>
+      {pokemons.map(({ name, url }) => (
+        <li key={url}>{name}</li>
+      ))}
+    </ul>
+  );
+};`;
+
+export const getDataUsingFetchGood = `import React, { useState, useEffect } from "react";\n
+export const App = () => {
+  const [pokemons, setPokemons] = useState([]);\n
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://pokeapi.co/api/v2/pokemon?limit=100"
+      );
+      const data = await response.json();\n
+      setPokemons(data.results);
+    };\n
+    fetchData();
+  }, []);\n
+  return (
+    <ul>
+      {pokemons.map(({ name, url }) => (
+        <li key={url}>{name}</li>
+      ))}
+    </ul>
+  );
+};`;
+
+export const getDataUsingFetchLoadingError = `import React, { useState, useEffect } from "react";
+import { Grid, CircularProgress } from "@material-ui/core";
+import { Alert } from "@material-ui/lab";\n
+export const App = () => {
+  const [error, setError] = useState(undefined);
+  const [isLoading, setIsLoading] = useState(true);
+  const [pokemons, setPokemons] = useState([]);\n
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://pokeapi.co/api/v2/pokemon?limit=100"
+        );
+        const data = await response.json();\n
+        setPokemons(data.results);
+      } catch (e) {
+        setError(e.message || "Something went wrong");
+      }\n
+      setIsLoading(false);
+    };\n
+    fetchData();
+  }, []);\n
+  if (error) {
+    return <Alert severity="error">{error}</Alert>;
+  }\n
+  if (isLoading) {
+    return (
+      <Grid container justify="center">
+        <CircularProgress />
+      </Grid>
+    );
+  }\n
+  return (
+    <ul>
+      {pokemons.map(({ name, url }) => (
+        <li key={url}>{name}</li>
+      ))}
+    </ul>
+  );
+};`;
+
+export const useApi = `import { useReducer, useEffect } from "react";
+import axios from "axios";\n
+const ACTIONS = {
+  fetchPending: "FETCH_PENDING",
+  fetchSuccess: "FETCH_SUCCESS",
+  fetchError: "FETCH_ERROR"
+};\n
+// We set isLoading to true initially,
+// this way we won't get data as undefined
+// on the first render. You can adjust
+// initialState as you need, just remember
+// about handling the undefined case for data\n
+// Alternative way would be to set initial data,
+// different than undefined, and still have isLoading
+// as false initially
+const createInitialState = (initialState) => ({
+  error: undefined,
+  isLoading: true,
+  data: undefined,
+  ...initialState
+});\n
+const fetchReducer = (state, action) => {
+  const { type, payload } = action;\n
+  switch (type) {
+    case ACTIONS.fetchPending:
+      return { ...state, isLoading: true, error: undefined };
+    case ACTIONS.fetchSuccess:
+      return { ...state, ...payload, isLoading: false };
+    case ACTIONS.fetchError:
+      return { ...state, ...payload, isLoading: false };
+    default:
+      throw new Error("Not recognized action type in fetchReducer! Typo?");
+  }
+};\n
+export const useApi = (endpoint, initialState = {}, config = {}) => {
+  const [state, dispatch] = useReducer(
+    fetchReducer,
+    createInitialState(initialState)
+  );\n
+  useEffect(() => {
+    if (!endpoint) {
+      throw new Error("Please, provide an endpoint in order to use this hook!");
+    }\n
+    const fetchData = async () => {
+      dispatch({ type: ACTIONS.fetchPending });\n
+      try {
+        const { data } = await axios.get(endpoint, config);\n
+        dispatch({ type: ACTIONS.fetchSuccess, payload: { data } });
+      } catch (e) {
+        dispatch({
+          type: ACTIONS.fetchError,
+          payload: { error: e.message || "Something went wrong" }
+        });
+      }
+    };\n
+    fetchData();
+  }, []);\n
+  return state;
+};`;
+
+export const useApiCodeApp = `import React from "react";
+import { Grid, CircularProgress } from "@material-ui/core";
+import { Alert } from "@material-ui/lab";\n
+import { useApi } from "./useApi";\n
+export const App = () => {
+  const { error, isLoading, data } = useApi(
+    "https://pokeapi.co/api/v2/pokemon?limit=100"
+  );\n
+  if (error) {
+    return <Alert severity="error">{error}</Alert>;
+  }\n
+  if (isLoading) {
+    return (
+      <Grid container justify="center">
+        <CircularProgress />
+      </Grid>
+    );
+  }\n
+  const { results: pokemons } = data;\n
+  return (
+    <ul>
+      {pokemons.map(({ name, url }) => (
+        <li key={url}>{name}</li>
+      ))}
+    </ul>
+  );
+};`;
+
+export const reactQueryApp = `import React from "react";
+import { Grid, CircularProgress } from "@material-ui/core";
+import { Alert } from "@material-ui/lab";
+import { useQuery } from "react-query";\n
+const getPokemons = async () => {
+  const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
+  const data = await response.json();\n
+  return data;
+};\n
+export const App = () => {
+  const { error, isLoading, data } = useQuery("pokemons", getPokemons);
+  );\n
+  if (error) {
+    return <Alert severity="error">{error}</Alert>;
+  }\n
+  if (isLoading) {
+    return (
+      <Grid container justify="center">
+        <CircularProgress />
+      </Grid>
+    );
+  }\n
+  const { results: pokemons } = data;\n
+  return (
+    <ul>
+      {pokemons.map(({ name, url }) => (
+        <li key={url}>{name}</li>
+      ))}
+    </ul>
+  );
+};`;
+
+export const fullAppCode = `import React from "react";
+import {
+  Grid,
+  CircularProgress,
+  GridList,
+  GridListTile,
+  GridListTileBar
+} from "@material-ui/core";
+import { Alert } from "@material-ui/lab";
+import { useQuery } from "react-query";\n
+const getPokemons = async () => {
+  const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
+  const data = await response.json();\n
+  return data;
+};\n
+const getPokemon = async (url) => {
+  const response = await fetch(url);
+  const data = await response.json();\n
+  return data;
+};\n
+const PokemonTile = ({ name, url }) => {
+  const { error, isLoading, data } = useQuery(\`pokemon\${name}\`, () =>
+    getPokemon(url)
+  );\n
+  if (error) {
+    return <Alert severity="error">{error}</Alert>;
+  }\n
+  if (isLoading) {
+    return (
+      <Grid container justify="center">
+        <CircularProgress />
+      </Grid>
+    );
+  }\n
+  const {
+    sprites: { front_default }
+  } = data;\n
+  return (
+    <GridListTile>
+      <img src={front_default} alt={name} />
+      <GridListTileBar title={name} />
+    </GridListTile>
+  );
+};\n
+export const App = () => {
+  const { error, isLoading, data } = useQuery("pokemons", getPokemons);\n
+  if (error) {
+    return <Alert severity="error">{error}</Alert>;
+  }\n
+  if (isLoading) {
+    return (
+      <Grid container justify="center">
+        <CircularProgress />
+      </Grid>
+    );
+  }\n
+  const { results: pokemons } = data;\n
+  return (
+    <GridList cellHeight={300}>
+      {pokemons.map((pokemon) => (
+        <PokemonTile key={pokemon.name} {...pokemon} />
+      ))}
+    </GridList>
+  );
+};`;
+
+<Post {...props.frontmatter} showSubtitle>
+  <Title level={3}>Introduction</Title>
+  <Paragraph>
+    In this article, we'll build a Pokemon application using{' '}
+    <Link href="https://pokeapi.co/">PokeAPI</Link> and{' '}
+    <Link href="https://material-ui.com/components/grid-list/">
+      Material UI GridList
+    </Link>{' '}
+    component. To do that, I'll guide you through{' '}
+    <Text strong>how to fetch data in React with hooks</Text>.
+  </Paragraph>
+  <Paragraph>
+    Function components in{' '}
+    <Link href="https://reactjs.org/docs/components-and-props.html">React</Link>{' '}
+    are great but data fetching with them can be cumbersome at first. When I
+    moved to using hooks it took me some time to grasp what's going on. If
+    you're starting out, check out{' '}
+    <Link href="https://reactjs.org/docs/hooks-intro.html">
+      Hooks introduction
+    </Link>{' '}
+    from the official documentation. Additionally, read about{' '}
+    <Link href="https://reactjs.org/docs/hooks-state.html">useState</Link> and{' '}
+    <Link href="https://reactjs.org/docs/hooks-effect.html">useEffect</Link>{' '}
+    hooks as we'll need them.
+  </Paragraph>
+  <Paragraph>
+    I'll start from using{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">
+      fetch
+    </Link>{' '}
+    to get the data from PokeAPI, then refactor the code for using a custom{' '}
+    <Text code>useApi</Text> hook with{' '}
+    <Link href="https://github.com/axios/axios">axios</Link>, and end up with{' '}
+    <Link href="https://react-query.tanstack.com/">react-query</Link> as it's an
+    amazing library.
+  </Paragraph>
+  <Paragraph strong>
+    In the end, you should have a fair understanding of hooks, data fetching in
+    React and build the below Pokemon list application. 😎
+  </Paragraph>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/musing-kapitsa-jue4b?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="musing-kapitsa-jue4b"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Paragraph lastParagraph>
+    <Text strong>Important:</Text> React devs are working on{' '}
+    <Link href="https://pl.reactjs.org/docs/concurrent-mode-suspense.html">
+      Suspense API
+    </Link>{' '}
+    and{' '}
+    <Link href="https://addyosmani.com/blog/react-server-components/">
+      server-side components
+    </Link>
+    , both of these exciting features can impact the ideology behind data fetching
+    - still, hooks are instrumental to understand all of these concepts and I highly
+    encourage you to dive into this article.
+  </Paragraph>
+  <Title level={3}>Fetch PokeAPI data with hooks</Title>
+  <Paragraph>
+    Let's start from the mentioned <Text code>fetch</Text>, we'll use it with{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await">
+      async/await
+    </Link>{' '}
+    syntax. It's pretty much a syntatic sugar built on top of promises.
+  </Paragraph>
+  <Paragraph breakParagraph>
+    <Text strong>Note:</Text> I'm using a{' '}
+    <Link href="https://codesandbox.io/s/musing-kapitsa-jue4b">
+      codesandbox
+    </Link>{' '}
+    to develop this application but you could set up a local repository with
+    e.g. <Link href="https://create-react-app.dev/">CRA</Link> or any favorite
+    boilerplate you want.
+  </Paragraph>
+  <Title level={4} transform="none">
+    Fetching data is not so straightforward
+  </Title>
+  <SyntaxHighlighter language="javascript">
+    {getDataUsingFetchFailed}
+  </SyntaxHighlighter>
+  <Paragraph>
+    First, we're setting the initial <Text code>pokemons</Text> state variable
+    to <Text code>[]</Text> (empty array) using the <Text code>useState</Text>{' '}
+    hook. Then, using <Text code>useEffect</Text> hook and{' '}
+    <Text code>fetch</Text> with <Text code>async/await</Text> (please, notice
+    the usage of <Text code>.json()</Text> to get an actual JSON from HTTP
+    response), we get the data from pokeAPI, limiting it to the first 100
+    Pokemons. After that, we save <Text code>data.results</Text> using{' '}
+    <Text code>setPokemons</Text> function. In the end, we return a simple{' '}
+    <Text code>JSX</Text> to render the list of Pokemon names.
+  </Paragraph>
+  <Paragraph>
+    <Text strong>However, we end up in an infinity loop.</Text>{' '}
+    <Text code>useEffect</Text> hook runs when the component mounts and when it
+    updates. We're setting the data of Pokemons after we receive it from the{' '}
+    <Text code>fetch</Text> which updates the state and triggers{' '}
+    <Text code>useEffect</Text> to run again.
+  </Paragraph>
+  <Paragraph>
+    To prevent that, we need to add an empty list of dependencies to{' '}
+    <Text code>useEffect</Text> hook, then it'll run only once - when the
+    component mounts. And that's what we need.
+  </Paragraph>
+  <SyntaxHighlighter
+    selection={{
+      ranges: [
+        {
+          anchor: { ch: 0, line: 10 },
+          head: { line: 11 },
+        },
+      ],
+    }}
+    language="javascript"
+  >
+    {getDataUsingFetchWarning}
+  </SyntaxHighlighter>
+  <Paragraph>
+    No more infinity loop. 🎉 But still, when I run the above code in the
+    sandbox environment, we get this warning: "Effect callbacks are synchronous
+    to prevent race conditions. Put the async function inside".{' '}
+    <Text code>async/await</Text> returns a promise but{' '}
+    <Text code>useEffect</Text> should return either nothing or a cleanup
+    function. Let's fix that.
+  </Paragraph>
+  <SyntaxHighlighter
+    selection={{
+      ranges: [
+        {
+          anchor: { ch: 0, line: 5 },
+          head: { line: 15 },
+        },
+      ],
+    }}
+    language="javascript"
+  >
+    {getDataUsingFetchGood}
+  </SyntaxHighlighter>
+  <Paragraph>
+    Thanks to our <Text code>fetchData</Text> function inside of the{' '}
+    <Text code>useEffect</Text> hook, we got rid of the warning. 🎉 If you'd
+    like to get the data when a user types something in the search box (e.g. to
+    find a particular Pokemon), you can pass additional dependencies to the{' '}
+    <Text code>[]</Text> dependency list on <Text code>useEffect</Text>.{' '}
+  </Paragraph>
+  <Paragraph breakParagraph>
+    If you need to get the data on button click, create an async function
+    without <Text code>useEffect</Text> hook and assign it to the{' '}
+    <Text code>onClick</Text> event.
+  </Paragraph>
+  <Title level={4} transform="none">
+    What about error handling and loading state?
+  </Title>
+  <Paragraph>
+    In a real-world project, you can't let the application crash when something
+    goes wrong. There should be a gently alert to the user which is often called
+    a fallback UI. We won't use{' '}
+    <Link href="https://reactjs.org/docs/error-boundaries.html">
+      React ErrorBoundary
+    </Link>{' '}
+    for this project for simplicity reasons but instead, we'll handle the error
+    inside of the component directly using the{' '}
+    <Link href="https://material-ui.com/components/alert/">Alert</Link>{' '}
+    component.
+  </Paragraph>
+  <Paragraph>
+    For loading, we'll show a spinner component when data is still being fetched
+    using the{' '}
+    <Link href="https://material-ui.com/components/circular-progress/">
+      CircularProgress
+    </Link>{' '}
+    and <Link href="https://material-ui.com/components/grid/#grid">Grid</Link>{' '}
+    components.
+  </Paragraph>
+  <SyntaxHighlighter
+    selection={{
+      ranges: [
+        {
+          anchor: { ch: 0, line: 1 },
+          head: { line: 3 },
+        },
+        {
+          anchor: { ch: 0, line: 5 },
+          head: { line: 6 },
+        },
+        {
+          anchor: { ch: 0, line: 10 },
+          head: { line: 24 },
+        },
+        {
+          anchor: { ch: 0, line: 28 },
+          head: { line: 39 },
+        },
+      ],
+    }}
+    language="javascript"
+  >
+    {getDataUsingFetchLoadingError}
+  </SyntaxHighlighter>
+  <Paragraph>
+    We've added state responsible for error and loading, introduced{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch">
+      try...catch
+    </Link>{' '}
+    to make sure we catch all the possible states. When the error happens, we'll
+    show the <Text code>Alert</Text> component with an error message.
+  </Paragraph>
+  <Paragraph>
+    Loading is a bit more tricky as we set a default value to{' '}
+    <Text code>true</Text>. It was intended as we don't want to render an empty
+    page when there is no data yet. Instead, <Text code>CircularProgress</Text>{' '}
+    will show up.
+  </Paragraph>
+  <Paragraph breakParagraph>
+    Everything is almost perfect but we're mixing logic with rendering in one
+    component. You're guessing right, it's time to create our custom{' '}
+    <Text code>useApi</Text> hook component and refactor the code a little bit.
+  </Paragraph>
+  <Title level={4} transform="none">
+    useApi hook with axios
+  </Title>
+  <Paragraph>
+    Let's have a bit of fresh air and switch to{' '}
+    <Link href="https://github.com/axios/axios">axios</Link> for data fetching.
+    It's a nice library similar to <Text code>fetch</Text> but has less
+    boilerplate, better error handling, and can monitor data loading (totally
+    not needed for our case 😅).
+  </Paragraph>
+  <SyntaxHighlighter language="javascript">{useApi}</SyntaxHighlighter>
+  <Paragraph>
+    I've written a{' '}
+    <GatsbyLink to="/pills/react-use-fetch-hook/">Knowledge Pill</GatsbyLink>{' '}
+    for fetching data from an API using <Text code>fetch</Text> via a custom
+    hook. The above code snippet is almost identical with the exception that it
+    uses <Text code>axios.get</Text> (less boilerplate, no check for{' '}
+    <Text code>.ok</Text>) instead and is named <Text code>useApi</Text> and not{' '}
+    <Text code>useFetch</Text> like in the pill. For purposes of our Pokemon
+    application, we don't need to use any other methods than the{' '}
+    <Text code>.get</Text> method from <Text code>axios</Text>.
+  </Paragraph>
+  <Paragraph>
+    To learn more about custom <Text code>useApi</Text> hook I highly recommend
+    going through the above pill and comparing both solutions (please, play a
+    little bit in the{' '}
+    <Link href="https://codesandbox.io/s/objective-archimedes-d2dz1">
+      codesandbox
+    </Link>{' '}
+    with pokeAPI too).
+  </Paragraph>
+  <SyntaxHighlighter
+    selection={{
+      ranges: [
+        {
+          anchor: { ch: 0, line: 4 },
+          head: { line: 5 },
+        },
+        {
+          anchor: { ch: 0, line: 7 },
+          head: { line: 9 },
+        },
+        {
+          anchor: { ch: 0, line: 23 },
+          head: { line: 24 },
+        },
+      ],
+    }}
+    language="javascript"
+  >
+    {useApiCodeApp}
+  </SyntaxHighlighter>
+  <Paragraph breakParagraph>
+    It looks clearer when all the logic is extracted in our{' '}
+    <Text code>useApi</Text> hook. As you can see on the highlighted code,{' '}
+    <Text code>useApi</Text> returns <Text code>error</Text>,{' '}
+    <Text code>isLoading</Text>, and <Text code>data</Text>. We need to extract{' '}
+    <Text code>results</Text> from <Text code>data</Text>, rename it for
+    declarativity purposes to <Text code>pokemons</Text> and render as before.
+  </Paragraph>
+  <Title level={4} transform="none">
+    What if there already exists a hook for data fetching? 🙈
+  </Title>
+  <Paragraph>
+    Unfortunately (for me), I'm not a precursor of custom hooks for data
+    fetching. We mentioned <Text code>react-query</Text> in the introduction.
+    Let's see how that can simplify our life. (I'll still leave{' '}
+    <Text code>useApi</Text> hook in the code sandbox for reference).
+  </Paragraph>
+  <SyntaxHighlighter
+    selection={{
+      ranges: [
+        {
+          anchor: { ch: 0, line: 3 },
+          head: { line: 4 },
+        },
+        {
+          anchor: { ch: 0, line: 5 },
+          head: { line: 10 },
+        },
+        {
+          anchor: { ch: 0, line: 13 },
+          head: { line: 15 },
+        },
+      ],
+    }}
+    language="javascript"
+  >
+    {reactQueryApp}
+  </SyntaxHighlighter>
+  <Paragraph>
+    I skipped the setup of the <Text code>QueryClientProvider</Text> from the{' '}
+    <Text code>react-query</Text> and focused on <Text code>useQuery</Text>. You
+    can read{' '}
+    <Link href="https://react-query.tanstack.com/overview">documentation</Link>{' '}
+    to configure it in your project or take a look in the{' '}
+    <Link href="https://codesandbox.io/s/musing-kapitsa-jue4b?file=/src/index.js">
+      codesandbox
+    </Link>{' '}
+    (index.js).
+  </Paragraph>
+  <Paragraph>
+    <Text code>useQuery</Text> hook has a very similar structure to our custom
+    hook with small exceptions. The first parameter is the query name, in our
+    case <Text code>"pokemons"</Text> string argument. The second parameter is a
+    function to execute the query, it could be <Text code>.get</Text> method
+    from <Text code>axios</Text> but we used <Text code>fetch</Text> in{' '}
+    <Text code>getPokemons</Text> function to showcase{' '}
+    <Text code>useQuery</Text> hook works with it.
+  </Paragraph>
+  <Paragraph>
+    It appears, we didn't really need to write any of the data fetching code and
+    just use <Text code>react-query</Text>. Although, I hope this data fetching
+    journey opened your eyes, and either it's an abstraction or not, you know
+    what you're doing when writing asynchronous code in React. 🙇‍♂️
+  </Paragraph>
+  <Paragraph lastParagraph>
+    As we spent quite some time on the data, let's make it pretty and shiny with
+    the <Text code>GridList</Text> component.
+  </Paragraph>
+  <Title level={3} transform="none">
+    Using GridList and fetching Pokemon image
+  </Title>
+  <SyntaxHighlighter
+    selection={{
+      ranges: [
+        {
+          anchor: { ch: 0, line: 4 },
+          head: { line: 7 },
+        },
+        {
+          anchor: { ch: 0, line: 18 },
+          head: { line: 23 },
+        },
+        {
+          anchor: { ch: 0, line: 25 },
+          head: { line: 52 },
+        },
+        {
+          anchor: { ch: 0, line: 71 },
+          head: { line: 77 },
+        },
+      ],
+    }}
+    language="javascript"
+  >
+    {fullAppCode}
+  </SyntaxHighlighter>
+  <Paragraph>
+    Going from the top, I added a couple of <Text code>GridList</Text> related
+    components for styling purposes. Then, I've implemented{' '}
+    <Text code>getPokemon</Text> function to receive the Pokemon data based on
+    provided <Text code>url</Text>. The function was used inside of a newly
+    created <Text code>PokemonTile</Text> component with a combination of{' '}
+    <Text code>react-query</Text> (please, notice anonymous function usage to
+    pass an additional <Text code>url</Text> argument).
+  </Paragraph>
+  <Paragraph lastParagraph>
+    After getting Pokemon data, I was able to render the{' '}
+    <Text code>PokemonTile</Text> to present it on the screen. Outer{' '}
+    <Text code>App</Text> component renders a list of{' '}
+    <Text code>PokemonTile</Text> components based on the{' '}
+    <Text code>pokemons</Text> query (limited to 100).
+  </Paragraph>
+  <Title level={3} transform="none">
+    Summary
+  </Title>
+  <Paragraph>
+    The Frontend journey never ends. To become a top-quality React Developer you
+    need to get a good hang of data fetching. This was my first big series about
+    explaining crucial topics based on project building, hopefully, you had some
+    fun and finished the project with me along the way. 😊
+  </Paragraph>
+  <Paragraph>
+    ... but if not, let's take a look at the preview of it one more time to
+    avoid scrolling all the way top.
+  </Paragraph>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/musing-kapitsa-jue4b?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="musing-kapitsa-jue4b"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Paragraph>
+    As I already mentioned in the related pill, time for you to turn this
+    project into the best Pokedex online ever created! 🔥
+  </Paragraph>
+  <PostFooter />
+</Post>
