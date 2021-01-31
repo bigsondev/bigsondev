@@ -423,11 +423,14 @@ export const App = () => {
       ranges: [
         {
           anchor: { ch: 0, line: 10 },
+          head: { line: 10 },
+        },
+        {
+          anchor: { ch: 0, line: 10 },
           head: { line: 11 },
         },
       ],
     }}
-    lineWrapping={false}
     language="javascript"
   >
     {getDataUsingFetchWarning}
@@ -445,11 +448,14 @@ export const App = () => {
       ranges: [
         {
           anchor: { ch: 0, line: 5 },
+          head: { line: 5 },
+        },
+        {
+          anchor: { ch: 0, line: 5 },
           head: { line: 15 },
         },
       ],
     }}
-    lineWrapping={false}
     language="javascript"
   >
     {getDataUsingFetchGood}
@@ -513,6 +519,10 @@ export const App = () => {
       ranges: [
         {
           anchor: { ch: 0, line: 1 },
+          head: { line: 1 },
+        },
+        {
+          anchor: { ch: 0, line: 1 },
           head: { line: 3 },
         },
         {
@@ -529,7 +539,6 @@ export const App = () => {
         },
       ],
     }}
-    lineWrapping={false}
     language="javascript"
   >
     {getDataUsingFetchLoadingError}
@@ -589,6 +598,10 @@ export const App = () => {
       ranges: [
         {
           anchor: { ch: 0, line: 4 },
+          head: { line: 4 },
+        },
+        {
+          anchor: { ch: 0, line: 4 },
           head: { line: 5 },
         },
         {
@@ -601,7 +614,6 @@ export const App = () => {
         },
       ],
     }}
-    lineWrapping={false}
     language="javascript"
   >
     {useApiCodeApp}
@@ -628,6 +640,10 @@ export const App = () => {
       ranges: [
         {
           anchor: { ch: 0, line: 3 },
+          head: { line: 3 },
+        },
+        {
+          anchor: { ch: 0, line: 3 },
           head: { line: 4 },
         },
         {
@@ -640,7 +656,6 @@ export const App = () => {
         },
       ],
     }}
-    lineWrapping={false}
     language="javascript"
   >
     {reactQueryApp}
@@ -683,6 +698,10 @@ export const App = () => {
       ranges: [
         {
           anchor: { ch: 0, line: 4 },
+          head: { line: 4 },
+        },
+        {
+          anchor: { ch: 0, line: 4 },
           head: { line: 7 },
         },
         {
@@ -699,7 +718,6 @@ export const App = () => {
         },
       ],
     }}
-    lineWrapping={false}
     language="javascript"
   >
     {fullAppCode}

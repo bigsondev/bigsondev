@@ -25,7 +25,6 @@ const CodeMirrorHolder = styled(CodeMirror)(({ theme, title }) => ({
 export const SyntaxHighlighter = ({
   language = 'javascript',
   title = '',
-  lineWrapping = true,
   children,
   ...props
 }) => {
@@ -35,7 +34,7 @@ export const SyntaxHighlighter = ({
         value={children}
         options={{
           mode: language,
-          lineWrapping,
+          lineWrapping: true,
           theme: 'material-palenight',
           tabSize: 2,
           showCursorWhenSelecting: false,
