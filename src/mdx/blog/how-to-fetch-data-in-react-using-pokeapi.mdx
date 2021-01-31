@@ -23,6 +23,7 @@ import {
   SyntaxHighlighter,
   Link,
   Box,
+  ScrollToTop,
 } from '~components';
 
 export const getDataUsingFetchFailed = `import React, { useState, useEffect } from "react";\n
@@ -309,6 +310,7 @@ export const App = () => {
 };`;
 
 <Post {...props.frontmatter} showSubtitle>
+  <ScrollToTop />
   <Title level={3}>Introduction</Title>
   <Paragraph>
     In this article, we'll build a Pokemon application using{' '}
@@ -425,6 +427,7 @@ export const App = () => {
         },
       ],
     }}
+    lineWrapping={false}
     language="javascript"
   >
     {getDataUsingFetchWarning}
@@ -446,21 +449,40 @@ export const App = () => {
         },
       ],
     }}
+    lineWrapping={false}
     language="javascript"
   >
     {getDataUsingFetchGood}
   </SyntaxHighlighter>
   <Paragraph>
     Thanks to our <Text code>fetchData</Text> function inside of the{' '}
-    <Text code>useEffect</Text> hook, we got rid of the warning. 🎉 If you'd
-    like to get the data when a user types something in the search box (e.g. to
-    find a particular Pokemon), you can pass additional dependencies to the{' '}
-    <Text code>[]</Text> dependency list on <Text code>useEffect</Text>.{' '}
+    <Text code>useEffect</Text> hook, we got rid of the warning. 🎉
+  </Paragraph>
+  <Paragraph>
+    If you'd like to get the data when a user types something in the search box
+    (e.g. to find a particular Pokemon), you can pass additional dependencies to
+    the <Text code>[]</Text> dependency list on <Text code>useEffect</Text>.
+    This will be a bit problematic as each time the user types in,{' '}
+    <Text code>useEffect</Text> will fetch the data. You'll need to use some{' '}
+    <Link href="https://lodash.com/docs/#debounce">debounce</Link> technique to
+    solve it.
+  </Paragraph>
+  <Paragraph>
+    If you need to get the data on button click, create an async function with{' '}
+    <Link href="https://reactjs.org/docs/hooks-reference.html#usecallback">
+      useCallback
+    </Link>{' '}
+    hook and assign it to the <Text code>onClick</Text> event. You can read more
+    about it{' '}
+    <Link href="https://stackoverflow.com/questions/55647287/how-to-send-request-on-click-react-hooks-way">
+      here
+    </Link>
+    .
   </Paragraph>
   <Paragraph breakParagraph>
-    If you need to get the data on button click, create an async function
-    without <Text code>useEffect</Text> hook and assign it to the{' '}
-    <Text code>onClick</Text> event.
+    The above solutions are out of the scope of this guide. I might cover them
+    in a separate article in the future as there are not too many "out of the
+    box" resources to cover these topics.
   </Paragraph>
   <Title level={4} transform="none">
     What about error handling and loading state?
@@ -507,6 +529,7 @@ export const App = () => {
         },
       ],
     }}
+    lineWrapping={false}
     language="javascript"
   >
     {getDataUsingFetchLoadingError}
@@ -578,6 +601,7 @@ export const App = () => {
         },
       ],
     }}
+    lineWrapping={false}
     language="javascript"
   >
     {useApiCodeApp}
@@ -616,6 +640,7 @@ export const App = () => {
         },
       ],
     }}
+    lineWrapping={false}
     language="javascript"
   >
     {reactQueryApp}
@@ -674,6 +699,7 @@ export const App = () => {
         },
       ],
     }}
+    lineWrapping={false}
     language="javascript"
   >
     {fullAppCode}
