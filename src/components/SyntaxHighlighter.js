@@ -34,7 +34,7 @@ const isMobile = () => {
     /Windows Phone/i,
   ];
 
-  if (window !== 'undefined') {
+  if (typeof window !== 'undefined') {
     return toMatch.some((toMatchItem) => {
       return navigator.userAgent.match(toMatchItem);
     });
