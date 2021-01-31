@@ -1,0 +1,572 @@
+---
+title: Fetch Data In React As User Types Or Clicks
+desc: Let's dive into a bit more complex examples of real-world scenarios. We'll fetch data when the user types in the search field or clicks on the button.
+readTime: 10
+imagePath: search-type-api.jpg
+imageSource: Pexels
+imageSourceLink: https://www.pexels.com/
+imageAuthorName: Vincent M.A. Janssen
+imageAuthorLink: https://www.pexels.com/photo/person-holding-pokemon-ball-toy-1310847/
+tags: react
+date: 2021-01-31
+---
+
+import { Space, Alert } from 'antd';
+import { Link as GatsbyLink } from 'gatsby';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  PostFooter,
+  SyntaxHighlighter,
+  Link,
+  Box,
+  ScrollToTop,
+} from '~components';
+
+export const initialFetch = `import React, { useState, useEffect } from "react";\n
+import "./styles.css";\n
+export const App = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [pokemon, setPokemon] = useState(undefined);\n
+  useEffect(() => {
+    if (!searchQuery) {
+      return setPokemon(undefined);
+    }\n
+    const fetchData = async () => {
+      const response = await fetch(
+        \`https://pokeapi.co/api/v2/pokemon/\${searchQuery.toLowerCase()}\`
+      );
+      const data = await response.json();
+      setPokemon(data);
+    };\n
+    fetchData();
+  }, [searchQuery]);\n
+  return <div className="App"></div>;
+};`;
+
+export const initialFetchSearchField = `import React, { useState, useEffect } from "react";
+import { TextField, InputAdornment } from "@material-ui/core";
+import { SearchOutlined } from "@material-ui/icons";\n
+import "./styles.css";\n
+export const App = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [pokemon, setPokemon] = useState(undefined);\n
+  useEffect(() => {
+    if (!searchQuery) {
+      return setPokemon(undefined);
+    }\n
+    const fetchData = async () => {
+      const response = await fetch(
+        \`https://pokeapi.co/api/v2/pokemon/\${searchQuery.toLowerCase()}\`
+      );
+      const data = await response.json();
+      setPokemon(data);
+    };\n
+    fetchData();
+  }, [searchQuery]);\n
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
+  };\n
+  return (
+    <div className="App">
+      <TextField
+        value={searchQuery}
+        onChange={handleChange}
+        variant="outlined"
+        placeholder="Search Pokemons..."
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="start">
+              <SearchOutlined />
+            </InputAdornment>
+          )
+        }}
+        fullWidth
+      />
+    </div>
+  );
+};`;
+
+export const missingPieces = `import React, { useState, useEffect } from "react";
+import {
+  TextField,
+  InputAdornment,
+  Card,
+  CardContent,
+  Typography,
+  Box
+} from "@material-ui/core";
+import { SearchOutlined } from "@material-ui/icons";\n
+import "./styles.css";\n
+export const App = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [pokemon, setPokemon] = useState(undefined);\n
+  useEffect(() => {
+    if (!searchQuery) {
+      return setPokemon(undefined);
+    }\n
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          \`https://pokeapi.co/api/v2/pokemon/\${searchQuery.toLowerCase()}\`
+        );
+        const data = await response.json();
+        setPokemon(data);
+      } catch (e) {
+        setPokemon(undefined);
+      }
+    };\n
+    fetchData();
+  }, [searchQuery]);\n
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
+  };\n
+  return (
+    <div className="App">
+      <TextField
+        value={searchQuery}
+        onChange={handleChange}
+        variant="outlined"
+        placeholder="Search Pokemons..."
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="start">
+              <SearchOutlined />
+            </InputAdornment>
+          )
+        }}
+        fullWidth
+      />
+      <Box mt={1}>
+        {pokemon ? (
+          <Card>
+            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {pokemon.name}
+              </Typography>
+            </CardContent>
+          </Card>
+        ) : (
+          <Typography>Pika, pika...</Typography>
+        )}
+      </Box>
+    </div>
+  );
+};`;
+
+export const useDebouncedEffect = `import { useCallback, useEffect } from "react";\n
+export const useDebouncedEffect = (effect, delay, deps) => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const callback = useCallback(effect, deps);\n
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      callback();
+    }, delay);\n
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [callback, delay]);
+};`;
+
+export const endCode = `import React, { useState } from "react";
+import {
+  TextField,
+  InputAdornment,
+  Card,
+  CardContent,
+  Typography,
+  Box
+} from "@material-ui/core";
+import { SearchOutlined } from "@material-ui/icons";\n
+import { useDebouncedEffect } from "./useDebouncedEffect";
+import "./styles.css";\n
+export const App = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [pokemon, setPokemon] = useState(undefined);\n
+  useDebouncedEffect(
+    () => {
+      if (!searchQuery) {
+        return setPokemon(undefined);
+      }\n
+      const fetchData = async () => {
+        try {
+          const response = await fetch(
+            \`https://pokeapi.co/api/v2/pokemon/\${searchQuery.toLowerCase()}\`
+          );
+          const data = await response.json();
+          setPokemon(data);
+        } catch (e) {
+          setPokemon(undefined);
+        }
+      };\n
+      fetchData();
+    },
+    300,
+    [searchQuery]
+  );\n
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
+  };\n
+  return (
+    <div className="App">
+      <TextField
+        value={searchQuery}
+        onChange={handleChange}
+        variant="outlined"
+        placeholder="Search Pokemons..."
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="start">
+              <SearchOutlined />
+            </InputAdornment>
+          )
+        }}
+        fullWidth
+      />
+      <Box mt={1}>
+        {pokemon ? (
+          <Card>
+            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {pokemon.name}
+              </Typography>
+            </CardContent>
+          </Card>
+        ) : (
+          <Typography>Pika, pika...</Typography>
+        )}
+      </Box>
+    </div>
+  );
+};`;
+
+export const buttonCode = `import React, { useState } from "react";
+import {
+  Grid,
+  TextField,
+  Card,
+  CardContent,
+  Typography,
+  Box,
+  Button
+} from "@material-ui/core";
+import { SearchOutlined } from "@material-ui/icons";\n
+import "./styles.css";\n
+export const App = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [pokemon, setPokemon] = useState(undefined);\n
+  const handleChange = (e) => {
+    setSearchQuery(e.target.value);
+  };\n
+  const handlePokemonFetchClick = async () => {
+    try {
+      const response = await fetch(
+        \`https://pokeapi.co/api/v2/pokemon/\${searchQuery.toLowerCase()}\`
+      );
+      const data = await response.json();
+      setPokemon(data);
+    } catch (e) {
+      setPokemon(undefined);
+    }
+  };\n
+  return (
+    <div className="App">
+      <Grid container alignItems="center" spacing={2}>
+        <Grid item xs={8}>
+          <TextField
+            value={searchQuery}
+            onChange={handleChange}
+            variant="outlined"
+            placeholder="Search Pokemons..."
+            fullWidth
+          />
+        </Grid>
+        <Grid item xs={4}>
+          <Button
+            variant="contained"
+            color="primary"
+            disabled={!searchQuery}
+            startIcon={<SearchOutlined />}
+            onClick={handlePokemonFetchClick}
+          >
+            Search
+          </Button>
+        </Grid>
+      </Grid>
+      <Box mt={1}>
+        {pokemon ? (
+          <Card>
+            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {pokemon.name}
+              </Typography>
+            </CardContent>
+          </Card>
+        ) : (
+          <Typography>Pika, pika...</Typography>
+        )}
+      </Box>
+    </div>
+  );
+};`;
+
+<Post {...props.frontmatter} showSubtitle>
+  <ScrollToTop />
+  <Title level={3}>Introduction</Title>
+  <Paragraph lastParagraph>
+    In the previous{' '}
+    <GatsbyLink to="/blog/how-to-fetch-data-in-react-using-pokeapi/">
+      How To Fetch Data In React From API
+    </GatsbyLink>{' '}
+    guide, we covered data fetching topics in{' '}
+    <Link href="https://reactjs.org/docs/hooks-effect.html">useEffect</Link>{' '}
+    hook when the component mounts. I skipped the explanation of fetching data
+    when the component updates (e.g. by typing in) or by clicking on something
+    and triggering the event. I'll implement these 2 approaches and thoroughly
+    explain them for you in this article.
+  </Paragraph>
+  <Title level={3}>Fetch data as we type</Title>
+  <Paragraph>
+    Please, take a look at below example application and refer to it as we'll
+    recreate the exact same version step by step.
+  </Paragraph>
+  <iframe
+    src="https://codesandbox.io/embed/mystifying-sunset-7kmfu?fontsize=14&hidenavigation=1&theme=dark"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    title="mystifying-sunset-7kmfu"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  ></iframe>
+  <Paragraph breakParagraph />
+  <Title level={4} transform="none">
+    Prepare data fetching
+  </Title>
+  <SyntaxHighlighter>{initialFetch}</SyntaxHighlighter>
+  <Paragraph>
+    We're recreating a similar code as in the previous article with some small
+    but crucial differences. <Text code>searchQuery</Text> will track what user
+    types in our search field (we'll add it soon). <Text code>useEffect</Text>{' '}
+    instead of empty dependencies <Text code>[]</Text> has{' '}
+    <Text code>[searchQuery]</Text>. It means, it'll run every time{' '}
+    <Text code>searchQuery</Text> is updated. When <Text code>searchQuery</Text>{' '}
+    is an empty string, we return the initial state of <Text code>pokemon</Text>{' '}
+    data which is <Text code>undefined</Text>.
+  </Paragraph>
+  <Paragraph breakParagraph>
+    As previously, we're using <Link href="https://pokeapi.co/">pokeAPI</Link>{' '}
+    and when <Text code>searchQuery</Text> is updated, we use{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">
+      browser fetch
+    </Link>{' '}
+    with{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await">
+      async/await
+    </Link>{' '}
+    to get particular Pokemon data and save it in the state with{' '}
+    <Text code>setPokemon</Text> function. Again, please notice{' '}
+    <Text code>response.json()</Text> to get an actual JSON from the HTTP
+    response. All of that happens inside of <Text code>fetchData</Text> async.
+    function as <Text code>useEffect</Text> should return either nothing or
+    cleanup function.
+  </Paragraph>
+  <Title level={4} transform="none">
+    Adding search field
+  </Title>
+  <SyntaxHighlighter
+    selection={{
+      ranges: [
+        {
+          anchor: { ch: 0, line: 1 },
+          head: { line: 2 },
+        },
+        {
+          anchor: { ch: 0, line: 26 },
+          head: { line: 28 },
+        },
+        {
+          anchor: { ch: 0, line: 32 },
+          head: { line: 45 },
+        },
+      ],
+    }}
+  >
+    {initialFetchSearchField}
+  </SyntaxHighlighter>
+  <Paragraph>
+    For rapid prototyping, we're using{' '}
+    <Link href="https://material-ui.com/">Material UI</Link> components and its
+    icon package to include a nice search icon on the right of our search field.
+  </Paragraph>
+  <Paragraph breakParagraph>
+    An important aspect is about{' '}
+    <Link href="https://reactjs.org/docs/forms.html#controlled-components">
+      Controlled Components
+    </Link>{' '}
+    in React as we added <Text code>handleChange</Text> function and attached it
+    to the <Text code>TextField</Text> component. Please, note <Text code>{`value={searchQuery}`}</Text>{' '}
+    too. With all of it, we'll be able to track what user types and update it
+    appropriately to trigger a new query to pokeAPI.
+  </Paragraph>
+  <Title level={4} transform="none">
+    Adding missing pieces
+  </Title>
+  <SyntaxHighlighter
+    selection={{
+      ranges: [
+        {
+          anchor: { ch: 0, line: 1 },
+          head: { line: 8 },
+        },
+        {
+          anchor: { ch: 0, line: 23 },
+          head: { line: 31 },
+        },
+        {
+          anchor: { ch: 0, line: 57 },
+          head: { line: 70 },
+        },
+      ],
+    }}
+  >
+    {missingPieces}
+  </SyntaxHighlighter>
+  <Paragraph>
+    I've added more Material UI components to render our searched Pokemon in a
+    card (name, image). To prevent unexpected errors (e.g. when pokemon doesn't
+    exist and we won't receive data from the pokeAPI), there is a{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch">
+      try...catch
+    </Link>{' '}
+    clause.
+  </Paragraph>
+  <Paragraph breakParagraph>All gucci but wait a moment...</Paragraph>
+  <Title level={4} transform="none">
+    Are we hitting the API with each character typed in? 🙈
+  </Title>
+  <Paragraph>
+    Yes, we're currently fetching data from the API on every character being
+    typed in by the user. It'll hit the performance and if you're using APIs
+    with limits (e.g. 100 or 1000 per hour), it'll quickly burn out.
+  </Paragraph>
+  <Paragraph>
+    To solve it, we'll use{' '}
+    <Link href="https://stackoverflow.com/questions/54666401/how-to-use-throttle-or-debounce-with-react-hook">
+      useDebouncedEffect
+    </Link>{' '}
+    (big thanks to the author of it), debounce technique is useful if you want
+    to execute the function only after some cooling period (in our case, fetch)
+    instead of doing it after every key pressed. Read{' '}
+    <Link href="https://www.telerik.com/blogs/debouncing-and-throttling-in-javascript">
+      Debounce vs Throttle
+    </Link>{' '}
+    to learn more about it.
+  </Paragraph>
+  <SyntaxHighlighter>{useDebouncedEffect}</SyntaxHighlighter>
+  <Paragraph>
+    I won't dive into the details of this hook as you can find an in-depth
+    explanation in the above link. Create a file called{' '}
+    <Text code>useDebouncedEffect.js</Text> as we'll import the{' '}
+    <Text code>useDebouncedEffect</Text> hook from it in our code below.
+  </Paragraph>
+  <SyntaxHighlighter
+    selection={{
+      ranges: [
+        {
+          anchor: { ch: 0, line: 0 },
+          head: { line: 0 },
+        },
+        {
+          anchor: { ch: 0, line: 11 },
+          head: { line: 11 },
+        },
+        {
+          anchor: { ch: 0, line: 18 },
+          head: { line: 40 },
+        },
+      ],
+    }}
+  >
+    {endCode}
+  </SyntaxHighlighter>
+  <Paragraph>
+    We replaced <Text code>useEffect</Text> hook with the{' '}
+    <Text code>useDebouncedEffect</Text>. The first argument is still a function
+    but the second one is a number, we provided <Text code>300</Text>, the last
+    argument is a list of dependencies as in <Text code>useEffect</Text> hook.
+  </Paragraph>
+  <Paragraph>
+    The crucial part is about the number as we're not going to fetch the data
+    unless there was 300 milliseconds cooling period (the user didn't type any
+    letter for that time).
+  </Paragraph>
+  <Paragraph>
+    Wow, I understand know why there are so few resources available on the Web
+    about this technique. It's quite difficult to explain. 😅 I hope it'll be
+    useful to you at some point. Let's take a look at our finished application
+    one more time for reference. Try to search for your favorite Pokemon, let's
+    bring back the memories. (I think I love Charizard the most ❤️).
+  </Paragraph>
+  <iframe
+    src="https://codesandbox.io/embed/mystifying-sunset-7kmfu?fontsize=14&hidenavigation=1&theme=dark"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    title="mystifying-sunset-7kmfu"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  ></iframe>
+  <Paragraph lastParagraph />
+  <Title level={3}>Fetch data on click</Title>
+  <Paragraph>
+    This part should be much easier 😀, I'll refactor the above code to achieve
+    the end result.
+  </Paragraph>
+  <SyntaxHighlighter>{buttonCode}</SyntaxHighlighter>
+  <Paragraph>
+    I've used couple of additional Material UI components, including{' '}
+    <Text code>Grid</Text> and <Text code>Button</Text> to create the example
+    application.
+  </Paragraph>
+  <Paragraph>
+    <Text code>useDebouncedEffect</Text> was completely replaced by{' '}
+    <Text code>handlePokemonFetchClick</Text> async. function. We're using{' '}
+    almost the same code in it as previously, and it's triggered when the user
+    clicks the button (please, notice <Text code>{`onClick={handlePokemonFetchClick}`}</Text>{' '}
+    on the <Text code>Button</Text> component). Additionally, we disable the
+    button when there is nothing in the search field. Let's look at our
+    application.
+  </Paragraph>
+  <iframe
+    src="https://codesandbox.io/embed/zealous-haslett-3xs7c?fontsize=14&hidenavigation=1&theme=dark"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    title="zealous-haslett-3xs7c"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  ></iframe>
+  <Paragraph lastParagraph />
+  <Title level={3}>Summary</Title>
+  <Paragraph>
+    Perfect, you should be good now in all kinds of data fetching
+    implementations, from standard one to the one when something needs to be
+    typed in, ending with the button click. Good job! 🙇‍♂️
+  </Paragraph>
+  <Paragraph>
+    There are more optimizations apart from debouncing we could add including{' '}
+    <Link href="https://dev.to/adancarrasco/caching-api-requests-in-javascript-mc4">
+      caching
+    </Link>{' '}
+    or{' '}
+    <Link href="https://www.freecodecamp.org/news/understanding-memoize-in-javascript-51d07d19430e/">
+      memoizing
+    </Link>{' '}
+    concepts. <Link href="https://react-query.tanstack.com/">react-query</Link>{' '}
+    handles them well and I'd recommend it instead of custom solutions. However,
+    as you now know the buzzwords, nothing stops you from digging in. I won't
+    promise to make another article about it but who knows... 👀
+  </Paragraph>
+  <PostFooter />
+</Post>

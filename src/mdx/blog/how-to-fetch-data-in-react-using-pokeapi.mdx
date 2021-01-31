@@ -457,30 +457,24 @@ export const App = () => {
     <Text code>useEffect</Text> hook, we got rid of the warning. 🎉
   </Paragraph>
   <Paragraph>
-    If you'd like to get the data when a user types something in the search box
-    (e.g. to find a particular Pokemon), you can pass additional dependencies to
-    the <Text code>[]</Text> dependency list on <Text code>useEffect</Text>.
-    This will be a bit problematic as each time the user types in,{' '}
-    <Text code>useEffect</Text> will fetch the data. You'll need to use some{' '}
-    <Link href="https://lodash.com/docs/#debounce">debounce</Link> technique to
-    solve it.
+    If you'd like to get the data when a user types something in the search
+    field (e.g. to find a particular Pokemon), you can pass additional
+    dependencies to the <Text code>[]</Text> dependency list on{' '}
+    <Text code>useEffect</Text>. This will be a bit problematic as each time the
+    user types in, <Text code>useEffect</Text> will fetch the data. You'll need
+    to use some <Link href="https://lodash.com/docs/#debounce">debounce</Link>{' '}
+    technique to solve it.
   </Paragraph>
   <Paragraph>
-    If you need to get the data on button click, create an async function with{' '}
-    <Link href="https://reactjs.org/docs/hooks-reference.html#usecallback">
-      useCallback
-    </Link>{' '}
-    hook and assign it to the <Text code>onClick</Text> event. You can read more
-    about it{' '}
-    <Link href="https://stackoverflow.com/questions/55647287/how-to-send-request-on-click-react-hooks-way">
-      here
-    </Link>
-    .
+    If you need to get the data on button click, create an async. function and
+    assign it to the <Text code>onClick</Text> event.
   </Paragraph>
   <Paragraph breakParagraph>
-    The above solutions are out of the scope of this guide. I might cover them
-    in a separate article in the future as there are not too many "out of the
-    box" resources to cover these topics.
+    The above solutions are out of the scope of this guide. I covered them in a{' '}
+    <GatsbyLink to="/blog/fetch-data-in-react-as-user-types-or-clicks/">
+      separate article
+    </GatsbyLink>{' '}
+    as there are not too many "out of the box" resources to cover these topics.
   </Paragraph>
   <Title level={4} transform="none">
     What about error handling and loading state?

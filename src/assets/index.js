@@ -32,6 +32,7 @@ import ReactComponentsYouShouldStartUsingNowBlog from './blog/react-components-y
 import VarLetConstBestPracticesBlog from './blog/var-let-const-best-practices-and-differences.jpg';
 import BooleanAndFriendsBlog from './blog/boolean-and-friends-tame-the-logic.jpg';
 import ApiClientServerBlog from './blog/api-client-server.jpg';
+import SearchTypeApiBlog from './blog/search-type-api.jpg';
 
 import AddEditDeleteArrayOfObjectsPill from './pills/add-edit-delete-array-of-objects.jpg';
 import BoxSizingPill from './pills/box-sizing.jpg';
@@ -49,6 +50,7 @@ import SumReducePill from './pills/sum-reduce.jpg';
 import PopupPill from './pills/popup.jpg';
 import CssPositionsPill from './pills/css-positions.jpg';
 import UseFetchPill from './pills/use-fetch.jpg';
+import DarkModePill from './pills/dark-mode.jpg';
 
 const BLOG_POST_IMAGES = {
   'technical-interview-tips.jpg': TechnicalInterviewTipsBlog,
@@ -65,6 +67,7 @@ const BLOG_POST_IMAGES = {
   'var-let-const-best-practices-and-differences.jpg': VarLetConstBestPracticesBlog,
   'boolean-and-friends-tame-the-logic.jpg': BooleanAndFriendsBlog,
   'api-client-server.jpg': ApiClientServerBlog,
+  'search-type-api.jpg': SearchTypeApiBlog,
 };
 
 const PILLS_IMAGES = {
@@ -84,6 +87,7 @@ const PILLS_IMAGES = {
   'popup.jpg': PopupPill,
   'css-positions.jpg': CssPositionsPill,
   'use-fetch.jpg': UseFetchPill,
+  'dark-mode.jpg': DarkModePill,
 };
 
 export * from './logo';
