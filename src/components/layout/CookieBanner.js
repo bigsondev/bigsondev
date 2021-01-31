@@ -14,26 +14,20 @@ const AnimationHolder = styled.div`
 
 const Holder = styled.div({
   background: 'rgba(0, 0, 0, 0.85)',
-  padding: '1.5rem 0.25rem 4.5rem 0.25rem',
+  padding: '1rem 0.25rem 4rem 0.25rem',
   zIndex: 9999,
   width: '100vw',
   position: 'fixed',
   bottom: 0,
 
   '@media (max-width: 768px)': {
-    padding: '2.5rem 0.25rem 6rem 0.25rem',
+    padding: '1rem 0.25rem 4.5rem 0.25rem',
   },
 });
 
 const ParagraphHolder = styled(Paragraph)({
-  position: 'absolute',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  marginBottom: 0,
   color: '#FFF !important',
-  width: '100%',
   textAlign: 'center',
-  padding: '0 0.25rem',
 });
 
 const LinkHolder = styled(Link)({
@@ -71,7 +65,7 @@ export const CookieBanner = ({ hasScrolled, onClick }) => {
   return (
     <AnimationHolder>
       <Holder>
-        <ParagraphHolder size="micro">
+        <ParagraphHolder size="micro" marginBottom="0">
           I use cookies for improving your experience when using the site. If
           you want to know more check{' '}
           <LinkHolder to="/privacy-policy/" size="micro">
