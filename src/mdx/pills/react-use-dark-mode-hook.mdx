@@ -1,0 +1,192 @@
+---
+title: React Dark Mode hook
+desc: We'll create useDarkMode hook to switch between light and dark themes. Our application will be built on top of styled-components and the Material UI Switch component.
+date: 2021-02-01
+imagePath: dark-mode.jpg
+imageSource: Pexels
+imageSourceLink: https://www.pexels.com/
+imageAuthorName: Alex Andrews
+imageAuthorLink: https://www.pexels.com/photo/phases-of-the-moon-1983032/
+tags: react
+difficulty: 2
+---
+
+import {
+  SyntaxHighlighter,
+  Link,
+  KnowledgePill,
+  Text,
+  Title,
+  PostList,
+  Paragraph,
+} from '~components';
+
+export const useDarkModeCode = `import { useState } from "react";\n
+const THEME = {
+  default: "default",
+  dark: "dark"
+};\n
+const defaultTheme = {
+  background: "#FAFAFA",
+  text: "#212121"
+};
+const darkModeTheme = {
+  background: "#212121",
+  text: "#FAFAFA"
+};\n
+const THEME_MAPPER = {
+  [THEME.default]: defaultTheme,
+  [THEME.dark]: darkModeTheme
+};\n
+export const useDarkMode = () => {
+  const [theme, setTheme] = useState(THEME.default);\n
+  const toggleTheme = () => {
+    theme === THEME.default ? setTheme(THEME.dark) : setTheme(THEME.default);
+  };\n
+  return {
+    theme: THEME_MAPPER[theme],
+    toggleTheme,
+    isDarkMode: theme === THEME.dark
+  };
+};`;
+
+export const appCode = `import React from "react";
+import { Switch } from "@material-ui/core";
+import { createGlobalStyle, ThemeProvider } from "styled-components";\n
+import { useDarkMode } from "./useDarkMode";\n
+const GlobalStyles = createGlobalStyle\`
+  html {
+    background: \${({ theme }) => theme.background};
+    color: \${({ theme }) => theme.text};
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.3s;
+    text-align: center;
+  }
+\`;\n
+export const App = () => {
+  const { theme, toggleTheme, isDarkMode } = useDarkMode();\n
+  return (
+    <div className="App">
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <h1>Switch themes</h1>
+        <h2>With useDarkMode hook</h2>
+        <h2>and styled-components!</h2>
+        <p>
+          <strong>{isDarkMode ? "Dark Mode" : "Light Mode"}</strong>
+        </p>
+        <Switch
+          checked={isDarkMode}
+          onChange={toggleTheme}
+          name="darkModeSwitch"
+          color="primary"
+        />
+      </ThemeProvider>
+    </div>
+  );
+};`;
+
+export const useDarkModeList = [
+  <Text>
+    To avoid magic strings we create a <Text code>THEME</Text> mapper to keep
+    our string values.
+  </Text>,
+  <Text>
+    Then we add <Text code>defaultTheme</Text> and{' '}
+    <Text code>darkModeTheme</Text> objects with CSS properties.
+  </Text>,
+  <Text>
+    Additionally, there is a <Text code>THEME_MAPPER</Text> to map string value
+    to a <Text code>theme</Text> object.
+  </Text>,
+  <Text>
+    <Text code>useDarkMode</Text> hook uses <Text code>useState</Text> to keep
+    track of the currently selected theme string value.
+  </Text>,
+  <Text>
+    <Text code>toggleTheme</Text> switches currently selected{' '}
+    <Text code>theme</Text> string value.
+  </Text>,
+  <Text>
+    Lastly, we return the <Text code>theme</Text> object based on the string
+    value (using <Text code>THEME_MAPPER</Text>), <Text code>toggleTheme</Text>{' '}
+    function, and <Text code>isDarkMode</Text> boolean which we'll use in our{' '}
+    <Text code>App.js</Text>.
+  </Text>,
+];
+
+export const appList = [
+  <Text>
+    We're using{' '}
+    <Link href="https://styled-components.com/">styled-components</Link>,{' '}
+    <Link href="https://material-ui.com/components/switches/#switch">
+      Material UI Switch Component
+    </Link>
+    , and a little bit of JSX to create our example application.
+  </Text>,
+  <Text>
+    <Text code>GlobalStyles</Text> component is used to apply CSS to{' '}
+    <Text code>html</Text> tag based on the selected theme.
+  </Text>,
+  <Text>
+    Inside of the <Text code>App</Text> component we use our{' '}
+    <Text code>useDarkMode</Text> hook to get all 3 previously mentioned
+    properties.
+  </Text>,
+  <Text>
+    Then, we supply the currently selected theme to the{' '}
+    <Text code>ThemeProvider</Text>, thanks to that, the theme can be used in
+    the <Text code>GlobalStyles</Text> component.
+  </Text>,
+  <Text>
+    Toggle is created using <Text code>Switch</Text> component and we assign{' '}
+    <Text code>{`checked={isDarkMode}`}</Text> and <Text code>{`onChange={toggleTheme}`}</Text>{' '}
+    to it.
+  </Text>,
+  <Text>
+    Lastly, we finish the rest of our application with simple HTML tags.
+  </Text>,
+];
+
+export const summaryList = [
+  <Text>
+    We created a simple theme switcher application using less than 100 lines of
+    code.
+  </Text>,
+  <Text>
+    Feel free to extend the number of themes and create some theme selector to
+    practice a little bit more.
+  </Text>,
+  <Text>
+    Combining various tools can speed up the development process like crazy.
+    (use with caution 😅)
+  </Text>,
+];
+
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Preview
+  </Title>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/interesting-drake-ngzhx?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="interesting-drake-ngzhx"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Title level={4} transform="none">
+    Switch themes
+  </Title>
+  <Text size="small">React - useDarkMode.js</Text>
+  <SyntaxHighlighter language="javascript">{useDarkModeCode}</SyntaxHighlighter>
+  <PostList data={useDarkModeList} />
+  <Text size="small">React - App.js</Text>
+  <SyntaxHighlighter language="javascript">{appCode}</SyntaxHighlighter>
+  <PostList data={appList} />
+  <Title level={4} transform="none">
+    Summary
+  </Title>
+  <PostList data={summaryList} />
+</KnowledgePill>
