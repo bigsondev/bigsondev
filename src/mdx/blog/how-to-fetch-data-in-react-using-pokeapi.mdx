@@ -1,5 +1,5 @@
 ---
-title: How To Fetch Data In React From API
+title: How To Fetch Data In React From REST API
 desc: Let's learn how to fetch data in React using fetch, axios, and react-query. We'll create a custom useApi hook and build a simple Pokemon application using pokeAPI.
 readTime: 20
 imagePath: api-client-server.jpg
@@ -474,7 +474,8 @@ export const App = () => {
     <GatsbyLink to="/blog/fetch-data-in-react-as-user-types-or-clicks/">
       separate article
     </GatsbyLink>{' '}
-    as there are not too many "out of the box" resources to cover these topics.
+    as there are not too many "out of the box" resources to explain these
+    topics.
   </Paragraph>
   <Title level={4} transform="none">
     What about error handling and loading state?
@@ -707,6 +708,38 @@ export const App = () => {
     <Text code>App</Text> component renders a list of{' '}
     <Text code>PokemonTile</Text> components based on the{' '}
     <Text code>pokemons</Text> query (limited to 100).
+  </Paragraph>
+  <Title level={3} transform="none">
+    REST API, GraphQL, gRPC?
+  </Title>
+  <Paragraph>
+    All our API calls were based on{' '}
+    <Link href="https://www.tutorialspoint.com/nodejs/nodejs_restful_api.htm">
+      REST API
+    </Link>{' '}
+    so far but <Link href="https://graphql.org/">GraphQL</Link> is a great
+    alternative. There is also a <Link href="https://grpc.io/">gRPC</Link>{' '}
+    buzzword but I didn't work with it at all.
+  </Paragraph>
+  <Paragraph>
+    GraphQL is great as it has a single endpoint to rule them all, the client
+    (you, browser) can decide how much data should be fetched, everything
+    happens through queries and mutations. Additionally, it has an
+    auto-generated schema feature (helps a lot to understand API structure,
+    similar to e.g. <Link href="https://swagger.io/">Swagger</Link>, just
+    built-in). On top of that, there is e.g.{' '}
+    <Link href="https://www.apollographql.com/docs/react/">apollo-client</Link>{' '}
+    library for React which supports cache management (you know, cache
+    invalidation and naming things... 🙈) and has amazing hooks support out of
+    the box.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    Not going into the details. However, I've written{' '}
+    <GatsbyLink to="/blog/fetch-data-in-react-with-graphql/">
+      another article
+    </GatsbyLink>{' '}
+    to present simple usage of GraphQL query through pokeAPI with browser fetch.
+    Interested? Check it out!
   </Paragraph>
   <Title level={3} transform="none">
     Summary

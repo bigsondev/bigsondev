@@ -3,6 +3,7 @@ const KEY_MAPPER = {
   codeTutorialJs: 'code-tutorial-js',
   quizQuestionLookup: 'quiz-question-lookup',
   cookiesAcknowledged: 'cookies-acknowledged',
+  trialAcknowledged: 'trial-acknowledged',
 };
 
 export const getItem = (key) =>
@@ -22,5 +23,6 @@ export const initializeStorageData = () => {
     setItem('codeTutorialJs', false);
     setItem('quizQuestionLookup', false);
     setItem('cookiesAcknowledged', false);
+    setItem('trialAcknowledged', false);
   }
 };

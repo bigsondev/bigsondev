@@ -33,6 +33,7 @@ import VarLetConstBestPracticesBlog from './blog/var-let-const-best-practices-an
 import BooleanAndFriendsBlog from './blog/boolean-and-friends-tame-the-logic.jpg';
 import ApiClientServerBlog from './blog/api-client-server.jpg';
 import SearchTypeApiBlog from './blog/search-type-api.jpg';
+import GraphqlBlog from './blog/graphql.jpg';
 
 import AddEditDeleteArrayOfObjectsPill from './pills/add-edit-delete-array-of-objects.jpg';
 import BoxSizingPill from './pills/box-sizing.jpg';
@@ -51,6 +52,8 @@ import PopupPill from './pills/popup.jpg';
 import CssPositionsPill from './pills/css-positions.jpg';
 import UseFetchPill from './pills/use-fetch.jpg';
 import DarkModePill from './pills/dark-mode.jpg';
+import ReversePill from './pills/reverse.jpg';
+import DuplicatePill from './pills/duplicate.jpg';
 
 const BLOG_POST_IMAGES = {
   'technical-interview-tips.jpg': TechnicalInterviewTipsBlog,
@@ -68,6 +71,7 @@ const BLOG_POST_IMAGES = {
   'boolean-and-friends-tame-the-logic.jpg': BooleanAndFriendsBlog,
   'api-client-server.jpg': ApiClientServerBlog,
   'search-type-api.jpg': SearchTypeApiBlog,
+  'graphql.jpg': GraphqlBlog,
 };
 
 const PILLS_IMAGES = {
@@ -88,6 +92,8 @@ const PILLS_IMAGES = {
   'css-positions.jpg': CssPositionsPill,
   'use-fetch.jpg': UseFetchPill,
   'dark-mode.jpg': DarkModePill,
+  'reverse.jpg': ReversePill,
+  'duplicate.jpg': DuplicatePill,
 };
 
 export * from './logo';

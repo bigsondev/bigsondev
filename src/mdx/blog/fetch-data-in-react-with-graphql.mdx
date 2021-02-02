@@ -1,0 +1,225 @@
+---
+title: Fetch Data In React With GraphQL
+desc: GraphQL introduces totally new concept for data fetching. One endpoint to rule them all, let's see how we can use it in React.
+readTime: 5
+imagePath: graphql.jpg
+imageSource: Unsplash
+imageSourceLink: https://unsplash.com/
+imageAuthorName: Joshua Sortino
+imageAuthorLink: https://unsplash.com/photos/LqKhnDzSF-8?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
+tags: react
+date: 2021-02-01
+---
+
+import { Space, Alert } from 'antd';
+import { Link as GatsbyLink } from 'gatsby';
+import {
+  Title,
+  Paragraph,
+  Text,
+  Post,
+  PostList,
+  PostFooter,
+  SyntaxHighlighter,
+  Link,
+  Box,
+  ScrollToTop,
+} from '~components';
+
+export const query = `const charizardQuery = \`query {
+  pokemon(name: "charizard") {
+    name
+    sprites {
+      front_default
+    }
+  }
+}\`;`;
+
+export const fetchQuery = `const response = await fetch(
+  "https://graphql-pokeapi.vercel.app/api/graphql",
+  {
+    credentials: "omit",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      query: charizardQuery
+    }),
+    method: "POST"
+  }
+);
+const data = await response.json();`;
+
+export const exampleApp = `import React, { useState, useEffect } from "react";
+import {
+  CircularProgress,
+  Card,
+  CardContent,
+  Typography,
+  Grid
+} from "@material-ui/core";\n
+const charizardQuery = \`query {
+  pokemon(name: "charizard") {
+    name
+    sprites {
+      front_default
+    }
+  }
+}\`;\n
+export const App = () => {
+  const [charizard, setCharizard] = useState(undefined);\n
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://graphql-pokeapi.vercel.app/api/graphql",
+        {
+          credentials: "omit",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            query: charizardQuery
+          }),
+          method: "POST"
+        }
+      );
+      const data = await response.json();\n
+      setCharizard(data.data.pokemon);
+    };\n
+    fetchData();
+  }, []);\n
+  if (!charizard) {
+    return (
+      <Grid container justify="center">
+        <CircularProgress />
+      </Grid>
+    );
+  }\n
+  const {
+    name,
+    sprites: { front_default: frontDefault }
+  } = charizard;\n
+  return (
+    <Card style={{ textAlign: "center" }}>
+      <img src={frontDefault} />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          {name}
+        </Typography>
+      </CardContent>
+    </Card>
+  );
+};`;
+
+<Post {...props.frontmatter} showSubtitle>
+  <ScrollToTop />
+  <Title level={3}>Introduction</Title>
+  <Paragraph>
+    So far we've covered various solutions for fetching data in React from{' '}
+    <Link href="https://www.tutorialspoint.com/nodejs/nodejs_restful_api.htm">
+      REST API
+    </Link>{' '}
+    in{' '}
+    <GatsbyLink to="/blog/how-to-fetch-data-in-react-using-pokeapi/">
+      this article
+    </GatsbyLink>
+    . Additionally, I explained fetching data as user types in or clicks e.g. on
+    a button in <GatsbyLink to="/blog/fetch-data-in-react-as-user-types-or-clicks/">
+      another article
+    </GatsbyLink>. However, <Link href="https://graphql.org/">GraphQL</Link> is an
+    amazing alternative to REST (at least from the Frontend perspective 😅) that
+    I enjoyed working with for the last 3 years and I couldn't stop myself from introducing
+    you to the concept.
+  </Paragraph>
+  <Paragraph lastParagraph>
+    This article is a supplementary example for fetching data using{' '}
+    <Link href="https://graphql-pokeapi.vercel.app/">GraphQL pokeAPI</Link> and{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">
+      browser fetch
+    </Link>
+    . I'll introduce you to the basics of it and we'll fetch my favorite Pokemon
+    data which is OBVIOUSLY <Text strong>Charizard</Text>. 🔥 🔥 🔥
+  </Paragraph>
+  <Title level={3}>Get what you want</Title>
+  <Paragraph breakParagraph>
+    Wait for a second, one endpoint to rule them all? Get what you want? Yes,
+    that's the beauty of GraphQL indeed.
+  </Paragraph>
+  <Title level={4} transform="none">
+    The Query
+  </Title>
+  <SyntaxHighlighter>{query}</SyntaxHighlighter>
+  <Paragraph>
+    GraphQL works with queries (fetching data) and mutations (add/delete/update
+    data). We're solely focusing on queries in this article. As you can see in
+    the above code, I'm just "telling" the server what I want to get, using the{' '}
+    <Text code>query</Text> keyword, <Text code>pokemon</Text> name of the query
+    with <Text code>name</Text> variable as <Text code>"charizard"</Text>.
+    Lastly, I'm specifying what to get from that <Text code>pokemon</Text> query
+    which is the <Text code>name</Text> and <Text code>front_default</Text>{' '}
+    sprite.
+  </Paragraph>
+  <Paragraph breakParagraph>
+    Take a look at the{' '}
+    <Link href="https://graphql-pokeapi.vercel.app/api/graphql">
+      pokeAPI Playground
+    </Link>{' '}
+    to "play" more with the concept. In REST, you would need to create separate
+    endpoints for fetching different data and you'd always get all of it. (w/o
+    filtering, pagination features, etc.) GraphQL query is elastic, you can
+    minimize data fetching to what you need and write different queries for the
+    same "query" (<Text code>pokemon</Text> in this case). You could e.g. fetch
+    more data on the details page and have just name and sprite on e.g. list
+    page.
+  </Paragraph>
+  <Title level={4} transform="none">
+    How to use the Query?
+  </Title>
+  <SyntaxHighlighter>{fetchQuery}</SyntaxHighlighter>
+  <Paragraph>
+    We're using the previously mentioned browser <Text code>fetch</Text>. If it
+    comes to GraphQL, you can check the{' '}
+    <Link href="https://graphql-pokeapi.vercel.app/">GraphQL pokeAPI</Link>{' '}
+    documentation for more information but <Text code>body</Text> and{' '}
+    <Text code>method</Text> are the most important ones. We're still using the{' '}
+    <Text code>POST</Text> HTTP method as we would in REST API, but, when using
+    it with GraphQL it's for fetching data (with a query) and not adding as it'd
+    be with the REST API one. Our <Text code>query</Text> is sent as part of the{' '}
+    <Text code>body</Text> using <Text code>JSON.stringify</Text> as we don't
+    want to send a JS direct object. Also, take a look at the endpoint, it'll
+    always be the same, no <Text code>/pokemon</Text> or{' '}
+    <Text code>/pokemons</Text>, just <Text code>/graphql</Text> (always - yes,
+    you can rename it). That's it.
+  </Paragraph>
+  <Paragraph breakParagraph>
+    For more complex GraphQL data management, I highly recommend{' '}
+    <Link href="https://github.com/apollographql/apollo-client">
+      apollo-client
+    </Link>
+    . Loading, error handling is out of the scope of this article. You could go through
+    the 2 others previously mentioned to learn these topics. (with REST API but it's
+    similar as apollo-client also has a <Text code>useQuery</Text> hook)
+  </Paragraph>
+  <Title level={4} transform="none">
+    Example Application
+  </Title>
+  <SyntaxHighlighter>{exampleApp}</SyntaxHighlighter>
+  <Paragraph>
+    We've added a little bit of{' '}
+    <Link href="https://material-ui.com/">Material UI</Link> components,{' '}
+    <Link href="https://reactjs.org/docs/hooks-intro.html">React hooks</Link>{' '}
+    and displayed Charizard on the screen. Let's look at our result below.
+  </Paragraph>
+  <iframe
+    src="https://codesandbox.io/embed/loving-pine-0ooql?fontsize=14&hidenavigation=1&theme=dark"
+    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    title="loving-pine-0ooql"
+    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  ></iframe>
+  <Paragraph lastParagraph />
+  <Title level={3}>Summary</Title>
+  <Paragraph>
+    Ok... 😅 The data fetching journey was fun. I still have caching and
+    memoization concepts in my mind but there are just so many other things to
+    write about. In the modern Frontend world there is a lot of exciting
+    technologies, ain't it?
+  </Paragraph>
+  <PostFooter />
+</Post>

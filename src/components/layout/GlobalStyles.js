@@ -42,4 +42,17 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 16px;
     }
   }
+
+  .bigsondev-trial-notification {
+    @media (max-width: 480px) {
+      width: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+  .ant-notification {
+    @media (max-width: 480px) {
+      margin-right: 16px;
+    }
+  }
 `;

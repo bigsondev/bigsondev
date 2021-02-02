@@ -56,6 +56,13 @@ console.log(firstName); // "John"`;
 export const letHoisting = `console.log(x); // ReferenceError: Cannot access 'x'\n
 let x = 1;`;
 
+export const almostPerfect = `const person = {
+ age: 28,
+ name: 'Adrian'
+}\n
+person.name = 'Banana';\n
+console.log(person); // { age: 28, name: "Banana" }`;
+
 export const avoidGlobalsList = [
   <Link href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE">
     IIFE
@@ -142,7 +149,7 @@ export const summaryList = [
   <Paragraph>
     Another bad thing about using <Text code>var</Text> is that it can be
     redeclared and updated which breaks the immutability approach of functional,
-    declarative programming I highly recommend:
+    declarative programming:
   </Paragraph>
   <SyntaxHighlighter>{varVariableSecondExample}</SyntaxHighlighter>
   <Paragraph>
@@ -244,6 +251,18 @@ export const summaryList = [
     programming with immutability in mind.
   </Paragraph>
   <Paragraph>
+    But the <Text strong>almost</Text> mentioned before.
+  </Paragraph>
+  <SyntaxHighlighter>{almostPerfect}</SyntaxHighlighter>
+  <Paragraph>
+    Whoops, we updated the property of the <Text code>person</Text> object, not
+    so immutable. There are caveats you'll face in JavaScript, take a look at{' '}
+    <Link href="https://medium.com/better-programming/javascript-prevent-objects-from-being-changed-d1ca82f02975">
+      this article
+    </Link>{' '}
+    about preventing modifications to an object.
+  </Paragraph>
+  <Paragraph>
     An additional example of how good it feels to write code using{' '}
     <Text code>const</Text> can be found below.
   </Paragraph>
@@ -272,9 +291,17 @@ export const summaryList = [
   </Paragraph>
   <Title level={3}>Summary</Title>
   <Paragraph>
-    <PostList data={summaryList} />
-    <Paragraph lastParagraph />
+    You probably guessed my preference about <Text code>const</Text> but
+    honestly, as Dan Abramov said in{' '}
+    <Link href="https://overreacted.io/on-let-vs-const/">his post</Link>, "I
+    don't care". It's all about conventions agreed with the entire team. Make
+    sure it fits all of you and set linters appropriately.
   </Paragraph>
+  <Paragraph>Below you can find my recommendations:</Paragraph>
+  <Paragraph>
+    <PostList data={summaryList} />
+  </Paragraph>
+  <Paragraph lastParagraph />
   <Title level={3}>Closing Notes</Title>
   <Paragraph>
     I hope it was something and you could've learned a ton from the article. We
