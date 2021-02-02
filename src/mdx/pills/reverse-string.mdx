@@ -1,0 +1,82 @@
+---
+title: Reverse String in JavaScript
+desc: There is no-built in method on string type to reverse it in JavaScript, let's see how we can overcome it with a one-liner solution.
+date: 2021-02-02
+imagePath: reverse.jpg
+imageSource: Pexels
+imageSourceLink: https://www.pexels.com/
+imageAuthorName: zhugewala
+imageAuthorLink: https://www.pexels.com/photo/crop-male-holding-glass-bulb-in-hand-2522611/
+tags: js
+difficulty: 2
+---
+
+import {
+  SyntaxHighlighter,
+  Link,
+  KnowledgePill,
+  Title,
+  Paragraph,
+  PostList,
+} from '~components';
+
+export const reverseCode = `const reverseString = (string) => [...string].reverse().join("");`;
+
+export const listData = [
+  <Text>
+    We created <Text code>reverseString</Text> function which accepts a{' '}
+    <Text code>string</Text> argument.
+  </Text>,
+  <Text>
+    Using{' '}
+    <Link href="https://javascript.info/rest-parameters-spread#spread-syntax">
+      Rest spread operator
+    </Link>{' '}
+    and array syntax, we're spreading letters of string into array, e.g. "abc"
+    -> ["a", "b", "c"].
+  </Text>,
+  <Text>
+    Then, we're calling <Text code>.reverse()</Text> built-in array method (it
+    doesn't exist on string type 😭), ["a", "b", "c"] -> ["c", "b", "a"].
+  </Text>,
+  <Text>
+    After that we're combining array items (letters) using{' '}
+    <Text code>.join()</Text> array method with <Text code>""</Text> argument to
+    avoid commas into our final reversed string, ["c", "b", "a"] -> "cba".
+  </Text>,
+  <Text>
+    It's a nice one-liner code but not the fastest one,{' '}
+    <Link href="https://www.freecodecamp.org/news/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb/">
+      here
+    </Link>{' '}
+    you can read about more solutions to this problem.
+  </Text>,
+  <Text>
+    I still chose the one-liner solution as it looks clean - declarative code is
+    more important than the performant one unless performance really hits. 😅
+  </Text>,
+];
+
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Preview
+  </Title>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/priceless-keller-kpdh2?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="priceless-keller-kpdh2"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Title level={4} transform="none">
+    reverseString one-liner
+  </Title>
+  <Text size="small">JavaScript</Text>
+  <SyntaxHighlighter>{reverseCode}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Summary
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>

@@ -1,0 +1,74 @@
+---
+title: Remove duplicates in JavaScript
+desc: Clones might take over the world, we - as JavaScript guardians need to learn how to remove duplicates from an array.
+date: 2021-02-02
+imagePath: duplicate.jpg
+imageSource: Unsplash
+imageSourceLink: http://unsplash.com/
+imageAuthorName: Matthew Henry
+imageAuthorLink: https://unsplash.com/photos/fPxOowbR6ls?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
+tags: js
+difficulty: 2
+---
+
+import {
+  SyntaxHighlighter,
+  Link,
+  KnowledgePill,
+  Title,
+  Paragraph,
+  PostList,
+} from '~components';
+
+export const duplicatesCode = `const removeDuplicates = (array) => [...new Set(array)];`;
+
+export const listData = [
+  <Text>
+    We created <Text code>removeDuplicates</Text> function which accepts an{' '}
+    <Text code>array</Text> argument.
+  </Text>,
+  <Text>
+    The above code needs to be read from the right. We're transforming our
+    duplicates <Text code>array</Text> into a <Text code>new Set</Text>.{' '}
+    <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/Set">
+      Set
+    </Link>{' '}
+    is a specific data structure that accepts only unique values.
+  </Text>,
+  <Text>
+    After that, we're getting back to an array, using the{' '}
+    <Link href="https://javascript.info/rest-parameters-spread#spread-syntax">
+      Rest spread operator
+    </Link>{' '}
+    with array syntax, <Text code>[...]</Text>.
+  </Text>,
+  <Text>
+    One-liner, clean and modern, one more time: duplicates array -> new
+    Set(array) = only unique values -> [...] spread into an array again = no
+    more clones!
+  </Text>,
+];
+
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Preview
+  </Title>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/billowing-haze-qx7o5?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="billowing-haze-qx7o5"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Title level={4} transform="none">
+    removeDuplicates one-liner
+  </Title>
+  <Text size="small">JavaScript</Text>
+  <SyntaxHighlighter>{duplicatesCode}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Summary
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>
