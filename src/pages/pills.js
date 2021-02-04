@@ -221,10 +221,10 @@ const Pills = ({
     <Layout>
       <SEO
         title="Pills"
-        desc="Knowledge Pills, Code Examples, Useful Tips & Tricks You Can Use On Daily Basis"
+        desc="Compacted Knowledge Pills loved by Frontend Developers. Grasp HTML, CSS, JS, and React concepts quickly with minimal code examples and thorough explanation."
         url="https://bigsondev.com/pills/"
       />
-      <Title level={2} align="center">
+      <Title level={1} fontSize="2rem" align="center">
         We all need pills 💊
       </Title>
       <Paragraph align="center">

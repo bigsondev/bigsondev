@@ -132,8 +132,8 @@ export const Offer = () => {
                     align="center"
                     style={{ minHeight: '8rem' }}
                   >
-                    1 hour of conversation with targeted feedback, proposed
-                    development path, and exemplary assignments.
+                    1 hour - targeted feedback with proposed development path
+                    and exemplary assignments.
                   </Paragraph>
                   <Paragraph
                     size="small"
@@ -242,8 +242,8 @@ export const Offer = () => {
                     align="center"
                     style={{ minHeight: '8rem' }}
                   >
-                    4 hours in total over course of a month. Build a project
-                    with modern technologies and best practices.
+                    4 hours - build a project with modern technologies and best
+                    practices.
                   </Paragraph>
                   <Paragraph
                     size="small"
@@ -360,8 +360,8 @@ export const Offer = () => {
                     align="center"
                     style={{ minHeight: '8rem' }}
                   >
-                    12 hours in total over course of 3 months. Create a
-                    portfolio with projects and find dream Frontend job.
+                    12 hours - create a portfolio with projects and find a dream
+                    Frontend job.
                   </Paragraph>
                   <Paragraph
                     size="small"

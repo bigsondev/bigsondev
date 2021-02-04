@@ -8,10 +8,6 @@ import LsImage from './ls.png';
 import CdImage from './cd.png';
 import MkdirImage from './mkdir.png';
 import OtherCommandsImage from './other-commands.png';
-import BookCoverProject from './book-cover-project.png';
-import TodoAppProject from './todo-app-project.png';
-import RealtimeChatProject from './realtime-chat-project.png';
-import VegeLandingProject from './vege-landing-project.jpg';
 import MesfinTestimonial from './mesfin-testimonial.jpeg';
 import BenjaminTestimonial from './benjamin-testimonial.jpeg';
 import MiguelTestimonial from './miguel-testimonial.jpg';
@@ -55,6 +51,10 @@ import DarkModePill from './pills/dark-mode.jpg';
 import ReversePill from './pills/reverse.jpg';
 import DuplicatePill from './pills/duplicate.jpg';
 
+import BusinessCardProject from './projects/business-card.jpg';
+import FoodtruckProject from './projects/business-card.jpg';
+import NoteAppProject from './projects/note-app.jpg';
+
 const BLOG_POST_IMAGES = {
   'technical-interview-tips.jpg': TechnicalInterviewTipsBlog,
   '5-ways-to-learn-effectively.jpg': WaysToLearnEffectivelyBlog,
@@ -96,6 +96,12 @@ const PILLS_IMAGES = {
   'duplicate.jpg': DuplicatePill,
 };
 
+const PROJECTS_IMAGES = {
+  'business-card.jpg': BusinessCardProject,
+  'foodtruck.jpg': FoodtruckProject,
+  'note-app.jpg': NoteAppProject,
+};
+
 export * from './logo';
 export {
   AdrianImage,
@@ -108,10 +114,6 @@ export {
   CdImage,
   MkdirImage,
   OtherCommandsImage,
-  BookCoverProject,
-  TodoAppProject,
-  RealtimeChatProject,
-  VegeLandingProject,
   MesfinTestimonial,
   BenjaminTestimonial,
   MiguelTestimonial,
@@ -120,4 +122,5 @@ export {
   MainImage,
   BLOG_POST_IMAGES,
   PILLS_IMAGES,
+  PROJECTS_IMAGES,
 };

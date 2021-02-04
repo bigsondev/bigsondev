@@ -1,0 +1,132 @@
+---
+title: Business Card
+desc: Create your own Business Card with HTML and CSS. Dive into Frontend development and produce a very first, yet beautiful website.
+date: 2021-02-01
+type: project
+icon: css
+tags: html, css
+imagePath: business-card.jpg
+designLink: https://xd.adobe.com/view/d057387e-6fa4-4cf2-94bf-428dd3d48e1c-8504/
+difficulty: 1
+---
+
+import { Row, Col } from 'antd';
+
+import { Text, Link, Button, Project } from '~components';
+
+export const features = [
+  <Text size="small">
+    The website looks similar to the design (Desktop and Mobile) and is
+    available for users through a link.
+  </Text>,
+  <Text size="small">
+    Icons should be clickable and redirect users to external pages in a new tab.
+  </Text>,
+];
+
+export const additionalFeatures = [
+  <Text size="small">
+    Users can click on the email and the email client will open.
+  </Text>,
+  <Text size="small">
+    Users can click on phone and it'll start the call (on a mobile device).
+  </Text>,
+  <Text size="small">Best to introduce icons next to text for the above.</Text>,
+  <Text size="small">
+    Introduce e.g.{' '}
+    <Link size="small" href="https://www.w3schools.com/w3css/w3css_animate.asp">
+      Fade In
+    </Link>{' '}
+    animation.
+  </Text>,
+];
+
+export const technologies = [
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/html/">
+      HTML
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/css/">
+      CSS
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://fontawesome.com/">
+      fontawesome
+    </Link>{' '}
+    (additional icons)
+  </Text>,
+];
+
+export const coreConcepts = [
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+    >
+      Flexbox
+    </Link>
+    , <Link
+      size="small"
+      href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+    >
+      Grid
+    </Link> for the layout.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://www.w3schools.com/html/html_responsive.asp"
+    >
+      RWD
+    </Link>{' '}
+    and{' '}
+    <Link
+      size="small"
+      href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp"
+    >
+      Media Queries
+    </Link>{' '}
+    for displaying on different devices.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/css/css_positioning.asp">
+      CSS Positions
+    </Link>{' '}
+    for placing elements.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://www.w3schools.com/html/html_images_background.asp"
+    >
+      Background Images
+    </Link>{' '}
+    and{' '}
+    <Link size="small" href="https://www.w3schools.com/css/css3_images.asp">
+      Images
+    </Link>{' '}
+    in general.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation"
+    >
+      Text orientation
+    </Link>{' '}
+    for vertical text.
+  </Text>,
+];
+
+<Project
+  features={features}
+  additionalFeatures={additionalFeatures}
+  technologies={technologies}
+  coreConcepts={coreConcepts}
+  scrollTip={false}
+  {...props}
+  {...props.frontmatter}
+/>

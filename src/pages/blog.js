@@ -102,7 +102,7 @@ const IconHolder = styled(Icon)({
 const Article = ({ title, desc, path, fluid, tags, date }) => (
   <Link to={path}>
     <ArticleCard>
-      <BlogImage fluid={fluid} alt="title" />
+      <BlogImage fluid={fluid} alt={title} />
       <Box margin="0 0 1.5rem 0">
         {/* Tags will be a single string for now, can be changed later
        into an array of tags */}
@@ -215,10 +215,10 @@ const Blog = ({
     <Layout>
       <SEO
         title="Blog"
-        desc="Frontend, HTML, CSS, JS, React Tutorials, Sharing Knowledge, Tips & Tricks"
+        desc="Read about the modern Frontend world - I write guides, share insights, and explain how to skyrocket skills in no time."
         url="https://bigsondev.com/blog/"
       />
-      <Title level={2} align="center">
+      <Title level={1} fontSize="2rem" align="center">
         Knowledge is power 📖
       </Title>
       <Paragraph align="center">

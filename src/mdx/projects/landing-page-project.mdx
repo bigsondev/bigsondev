@@ -1,0 +1,149 @@
+---
+title: Landing Page
+desc: Create a fully-fledged Landing Page both for Desktop and Mobile devices. Add a sticky, responsive menu and all the cool sections. This project will skyrocket your CSS skills.
+date: 2021-02-02
+type: project
+icon: css
+tags: html, css, js
+imagePath: foodtruck.jpg
+designLink: https://xd.adobe.com/view/6657be63-9693-4062-980a-c418267fa64f-3304/
+difficulty: 2
+---
+
+import { Row, Col } from 'antd';
+
+import { Text, Link, Button, Project } from '~components';
+
+export const features = [
+  <Text size="small">
+    The website looks similar to the design (Desktop and Mobile) and is
+    available for users through a link.
+  </Text>,
+  <Text size="small">
+    Menu items should be clickable and move the user to corresponding sections.
+    Additionally, the menu should be interactive on mobile with a Hamburger
+    icon.
+  </Text>,
+  <Text size="small">
+    Footer icons should be clickable and redirect the user to external pages in
+    a new tab.
+  </Text>,
+];
+
+export const additionalFeatures = [
+  <Text size="small">
+    Users can click on phone and it'll start the call (on a mobile device).
+  </Text>,
+  <Text size="small">
+    Introduce some fancy animations as user scrolls, using e.g.{' '}
+    <Link size="small" href="https://animate.style/">
+      Animate.css
+    </Link>
+    .
+  </Text>,
+];
+
+export const technologies = [
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/html/">
+      HTML
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/css/">
+      CSS
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://tailwindcss.com/">
+      tailwindcss
+    </Link>{' '}
+    (optionally for easier styling)
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://javascript.info/">
+      JavaScript
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://jquery.com/">
+      jQuery
+    </Link>{' '}
+    (optionally for easier DOM manipulation)
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://fontawesome.com/">
+      fontawesome icons
+    </Link>
+  </Text>,
+];
+
+export const coreConcepts = [
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+    >
+      Flexbox
+    </Link>
+    , <Link
+      size="small"
+      href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+    >
+      Grid
+    </Link> for the layout.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://www.w3schools.com/html/html_responsive.asp"
+    >
+      RWD
+    </Link>{' '}
+    and{' '}
+    <Link
+      size="small"
+      href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp"
+    >
+      Media Queries
+    </Link>{' '}
+    for displaying on different devices.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://www.w3schools.com/html/html_images_background.asp"
+    >
+      Background Images
+    </Link>{' '}
+    and{' '}
+    <Link size="small" href="https://www.w3schools.com/css/css3_images.asp">
+      Images
+    </Link>{' '}
+    in general.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/html/html5_svg.asp">
+      SVG Shapes
+    </Link>{' '}
+    for the background.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://www.w3schools.com/howto/howto_js_topnav_responsive.asp"
+    >
+      Interactive Menu
+    </Link>{' '}
+    for mobile.
+  </Text>,
+];
+
+<Project
+  features={features}
+  additionalFeatures={additionalFeatures}
+  technologies={technologies}
+  coreConcepts={coreConcepts}
+  {...props}
+  {...props.frontmatter}
+/>

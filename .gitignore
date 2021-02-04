@@ -70,5 +70,6 @@ yarn-error.log
 
 # Temporary Files
 .temp/
+temp/**/*
 
 # In Progress

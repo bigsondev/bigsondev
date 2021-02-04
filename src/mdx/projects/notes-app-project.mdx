@@ -1,0 +1,179 @@
+---
+title: Notes App
+desc: Manage your work, home, personal tasks with notes. Add ability to add, edit, delete, and mark them as completed. Additional features include searching, filtering and visualizing completion progress. Perfect project for Aspiring React Developers.
+date: 2021-02-03
+type: project
+icon: react
+tags: css, js, react
+imagePath: note-app.jpg
+designLink: https://xd.adobe.com/view/e71116ac-9286-4aa1-97c1-98407b830c5c-b242/
+difficulty: 3
+---
+
+import { Row, Col } from 'antd';
+
+import { Text, Link, Button, Project } from '~components';
+
+export const features = [
+  <Text size="small">
+    If not using CodeSandbox, boilerplate the application with{' '}
+    <Link
+      size="small"
+      href="https://reactjs.org/docs/create-a-new-react-app.html"
+    >
+      CRA
+    </Link>
+    .
+  </Text>,
+  <Text size="small">
+    The application looks similar to the design and is available for users
+    through a link.
+  </Text>,
+  <Text size="small">Users can both search and filter notes.</Text>,
+  <Text size="small">Users can add new notes.</Text>,
+  <Text size="small">
+    When adding a new note, users can fill title, description, and category. The
+    date should be created under the hood using the current time.
+  </Text>,
+  <Text size="small">
+    Users can see created, colored notes sorted by date as well as an empty UI
+    with illustration when there are no notes or couldn't be found.
+  </Text>,
+  <Text size="small">
+    Users can see how many notes are completed including the visual progression
+    indicator.
+  </Text>,
+  <Text size="small">
+    Users can mark notes as complete, edit, and delete them.
+  </Text>,
+  <Text size="small">
+    When completing notes, they should have strikethrough text and become grayed
+    out. Also, they should be moved into the end.
+  </Text>,
+  <Text size="small">
+    When editing notes, the date of note should also be updated altogether with
+    other fields.
+  </Text>,
+  <Text size="small">When deleting notes confirmation should pop up.</Text>,
+];
+
+export const additionalFeatures = [
+  <Text size="small">
+    Save and read notes, using e.g.{' '}
+    <Link
+      size="small"
+      href="https://www.w3schools.com/jsref/prop_win_localstorage.asp"
+    >
+      localStorage
+    </Link>
+    .
+  </Text>,
+  <Text size="small">
+    Add unit tests to your code, using e.g.{' '}
+    <Link size="small" href="https://jestjs.io/">
+      jest
+    </Link>
+    .
+  </Text>,
+  <Text size="small">
+    Add e2e tests to your code, using e.g.{' '}
+    <Link size="small" href="https://www.cypress.io/">
+      cypress
+    </Link>
+    .
+  </Text>,
+];
+
+export const technologies = [
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/css/">
+      CSS
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://javascript.info/">
+      JavaScript
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/">
+      React
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://material-ui.com/">
+      Material UI
+    </Link>{' '}
+    (Recommended components for this project)
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://material-ui.com/components/icons/#icons">
+      Material UI Icons
+    </Link>{' '}
+    (Recommended icons for this project, need above dependency)
+  </Text>,
+];
+
+export const coreConcepts = [
+  <Text size="small">
+    <Link size="small" href="https://material.io/design">
+      Material Design System
+    </Link>{' '}
+    and its components.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://material-ui.com/components/grid/">
+      Grid
+    </Link>
+    , <Link
+      size="small"
+      href="https://material-ui.com/components/text-fields/#text-field"
+    >
+      TextField
+    </Link>, <Link
+      size="small"
+      href="https://material-ui.com/components/buttons/#button"
+    >
+      Button
+    </Link>, <Link
+      size="small"
+      href="https://material-ui.com/components/dialogs/#dialog"
+    >
+      Dialog
+    </Link>, <Link
+      size="small"
+      href="https://material-ui.com/components/tabs/#tabs"
+    >
+      Tabs
+    </Link>, <Link
+      size="small"
+      href="https://material-ui.com/components/cards/#card"
+    >
+      Card
+    </Link>, and more Material UI components.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://reactjs.org/docs/uncontrolled-components.html"
+    >
+      Controlled Components
+    </Link>{' '}
+    in React.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/hooks-intro.html">
+      Hooks
+    </Link>{' '}
+    in React.
+  </Text>,
+];
+
+<Project
+  features={features}
+  additionalFeatures={additionalFeatures}
+  technologies={technologies}
+  coreConcepts={coreConcepts}
+  {...props}
+  {...props.frontmatter}
+/>

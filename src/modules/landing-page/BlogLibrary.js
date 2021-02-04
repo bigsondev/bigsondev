@@ -5,11 +5,6 @@ import { Link } from 'gatsby';
 import Zoom from 'react-reveal/Zoom';
 
 import {
-  VegeLandingProject,
-  TodoAppProject,
-  RealtimeChatProject,
-} from '~assets';
-import {
   theme,
   Title,
   Paragraph,
@@ -18,6 +13,7 @@ import {
   SmallOnly,
   ExceptSmall,
   MainCard,
+  Image,
 } from '~components';
 
 const Holder = styled.div({
@@ -27,11 +23,14 @@ const Holder = styled.div({
 const Card = styled(MainCard)(({ theme }) => ({
   cursor: 'pointer',
   padding: 0,
-  transition: 'all 0.2s ease-in-out',
+  transition: 'all 0.3s ease-in-out',
+  '& > figure': {
+    margin: 0,
+  },
 
   '&:hover': {
     background: theme.colors.primary,
-    '& > img': {
+    '& > figure': {
       opacity: 0,
     },
     '& > div, & > a, & > div > h1': {
@@ -40,10 +39,9 @@ const Card = styled(MainCard)(({ theme }) => ({
   },
 }));
 
-const ProjectImage = styled.img(({ theme }) => ({
+const ProjectImage = styled(Image)(({ theme }) => ({
   width: '100%',
-  borderRadius: theme.borders.radius,
-  transition: 'all 0.2s ease-in-out',
+  transition: 'all 0.3s ease-in-out',
 }));
 
 const ProjectTitle = styled(Title)(({ theme }) => ({
@@ -53,7 +51,7 @@ const ProjectTitle = styled(Title)(({ theme }) => ({
   transform: 'translate(-50%, -50%)',
   width: '100%',
   textAlign: 'center',
-  transition: 'all 0.2s ease-in-out',
+  transition: 'all 0.3s ease-in-out',
 
   opacity: 0,
 }));
@@ -65,7 +63,7 @@ const ProjectDescription = styled(Paragraph)(({ theme }) => ({
   transform: 'translate(-50%, -50%)',
   width: '80%',
   textAlign: 'center',
-  transition: 'all 0.2s ease-in-out',
+  transition: 'all 0.3s ease-in-out',
 
   opacity: 0,
 }));
@@ -81,7 +79,7 @@ const ProjectLink = styled(Link)({
 
 const { colors, fontSize, fontWeight, spacing } = theme;
 
-export const BlogLibrary = () => {
+export const BlogLibrary = ({ firstProject, secondProject, thirdProject }) => {
   return (
     <Holder>
       <Box padding={`${spacing.extraLarge} 0`}>
@@ -108,63 +106,70 @@ export const BlogLibrary = () => {
           <Row justify="center" gutter={[24, 24]}>
             <Col xs={22} sm={16} md={13} lg={8}>
               <Card>
-                <ProjectImage src={VegeLandingProject} />
+                <ProjectImage
+                  fluid={firstProject}
+                  alt="Business Card Project"
+                />
                 <ProjectTitle
                   color={colors.white}
                   fontWeight={fontWeight.stronger}
                 >
-                  Vege Landing
+                  Business Card
                 </ProjectTitle>
                 <ProjectDescription
                   color={colors.white}
                   fontWeight={fontWeight.stronger}
                   size="small"
                 >
-                  Create beautiful landing page with HTML and CSS
+                  Create your own Business Card with HTML and CSS
                 </ProjectDescription>
-                <ProjectLink to="/library/vege-landing-project/">
+                <ProjectLink to="/projects/business-card-project/">
                   <Button type="ghost">View project</Button>
                 </ProjectLink>
               </Card>
             </Col>
             <Col xs={22} sm={16} md={13} lg={8}>
               <Card>
-                <ProjectImage src={TodoAppProject} />
+                <ProjectImage
+                  fluid={secondProject}
+                  alt="Landing Page Project"
+                />
                 <ProjectTitle
                   color={colors.white}
                   fontWeight={fontWeight.stronger}
                 >
-                  Todo App
+                  Landing Page
                 </ProjectTitle>
                 <ProjectDescription
                   color={colors.white}
                   fontWeight={fontWeight.stronger}
                   size="small"
                 >
-                  A classic, must-have project for all beginners in Frontend
+                  Build a real-world Landing Page just as you would for the
+                  client
                 </ProjectDescription>
-                <ProjectLink to="/library/todo-app-project/">
+                <ProjectLink to="/projects/landing-page-project/">
                   <Button type="ghost">View project</Button>
                 </ProjectLink>
               </Card>
             </Col>
             <Col xs={22} sm={16} md={13} lg={8}>
               <Card>
-                <ProjectImage src={RealtimeChatProject} />
+                <ProjectImage fluid={thirdProject} alt="Notes App Project" />
                 <ProjectTitle
                   color={colors.white}
                   fontWeight={fontWeight.stronger}
                 >
-                  Realtime Chat
+                  Notes App
                 </ProjectTitle>
                 <ProjectDescription
                   color={colors.white}
                   fontWeight={fontWeight.stronger}
                   size="small"
                 >
-                  Learn fullstack development with Next.js and Express
+                  Learn React by building your first serious project in it
                 </ProjectDescription>
-                <ProjectLink to="/library/realtime-chat-project/">
+                <ProjectLink to="/projects/notes-app-project/">
                   <Button type="ghost">View project</Button>
                 </ProjectLink>
               </Card>

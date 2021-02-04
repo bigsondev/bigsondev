@@ -11,7 +11,7 @@ const ReachOut = () => (
       desc="Let's Talk About Your Frontend Career & Ask About Anything"
       url="https://bigsondev.com/reach-out/"
     />
-    <Title level={2} align="center">
+    <Title level={1} fontSize="2rem" align="center">
       It never hurts to ask
     </Title>
     <Paragraph align="center">

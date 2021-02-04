@@ -226,7 +226,7 @@ export const CodeEditor = ({
             extra={
               hasNextChallenge
                 ? [
-                    <Link to={`/library/${next}/`}>
+                    <Link to={`/projects/${next}/`}>
                       <Button key="next-challenge" type="primary">
                         Start Next Challenge
                       </Button>
@@ -240,9 +240,9 @@ export const CodeEditor = ({
                     </Button>,
                   ]
                 : [
-                    <Link to="/library/">
-                      <Button key="back-to-library" type="primary">
-                        Back to Library
+                    <Link to="/projects/">
+                      <Button key="back-to-projects" type="primary">
+                        Back to Projects
                       </Button>
                     </Link>,
                     <Button

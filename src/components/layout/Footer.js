@@ -97,8 +97,8 @@ export const Footer = () => (
               <FooterLinkHolder to="/pills/">
                 <Text size="preNormal">Pills</Text>
               </FooterLinkHolder>
-              <FooterLinkHolder to="/library/">
-                <Text size="preNormal">Library</Text>
+              <FooterLinkHolder to="/projects/">
+                <Text size="preNormal">Projects</Text>
               </FooterLinkHolder>
               <FooterLinkHolder to="/reach-out/">
                 <Text size="preNormal">Reach Out</Text>

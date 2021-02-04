@@ -95,10 +95,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     }
   `);
-  const libraryQueryResult = await graphql(`
+  const projectsQueryResult = await graphql(`
     query {
       allMdx(
-        filter: { fileAbsolutePath: { regex: "/library/" } }
+        filter: { fileAbsolutePath: { regex: "/projects/" } }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
@@ -164,14 +164,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (
     blogQueryResult.errors ||
-    libraryQueryResult.errors ||
+    projectsQueryResult.errors ||
     pillsQueryResult.errors
   ) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query');
   }
   // Create blog post pages.
   const posts = blogQueryResult.data.allMdx.edges;
-  const libraryContent = libraryQueryResult.data.allMdx.edges;
+  const projectsContent = projectsQueryResult.data.allMdx.edges;
   const pills = pillsQueryResult.data.allMdx.edges;
   // you'll call `createPage` for each result
   posts.forEach(({ node, next, previous }) => {
@@ -186,13 +186,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: { id: node.id, next, previous },
     });
   });
-  libraryContent.forEach(({ node, next, previous }) => {
+  projectsContent.forEach(({ node, next, previous }) => {
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
       path: node.fields.slug,
       // This component will wrap our MDX content
-      component: path.resolve(`./src/components/layout/LibraryLayout.js`),
+      component: path.resolve(`./src/components/layout/ProjectsLayout.js`),
       // You can use the values in this context in
       // our page layout component
       context: { id: node.id, next, previous },

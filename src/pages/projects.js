@@ -29,7 +29,7 @@ const RateHolder = styled(Rate)({
 });
 
 export const query = graphql`
-  query LibraryQuery {
+  query ProjectsQuery {
     allMdx(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
       edges {
         node {
@@ -150,7 +150,7 @@ const Project = ({ path, fluid, title, desc, icon, tags, difficulty }) => (
   </Link>
 );
 
-const Library = ({
+const Projects = ({
   data: {
     allMdx: { edges },
     projectFiles,
@@ -178,7 +178,7 @@ const Library = ({
         desc="Get better at Frontend by building projects based on free, high-quality designs, share them and land on the wall of fame. Rinse and repeat."
         url="https://bigsondev.com/projects/"
       />
-      <Title level={2} align="center">
+      <Title level={1} fontSize="2rem" align="center">
         Practice by building 👨‍💻
       </Title>
       <Paragraph align="center">
@@ -217,4 +217,4 @@ const Library = ({
   );
 };
 
-export default Library;
+export default Projects;

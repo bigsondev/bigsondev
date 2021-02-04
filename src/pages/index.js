@@ -28,6 +28,27 @@ export const pageQuery = graphql`
         }
       }
     }
+    firstProject: file(base: { eq: "business-card.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    secondProject: file(base: { eq: "foodtruck.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+    thirdProject: file(base: { eq: "note-app.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
   }
 `;
 
@@ -38,6 +59,15 @@ const Landing = ({
     },
     adrianImage: {
       childImageSharp: { fluid: adrianImageFluid },
+    },
+    firstProject: {
+      childImageSharp: { fluid: firstProjectFluid },
+    },
+    secondProject: {
+      childImageSharp: { fluid: secondProjectFluid },
+    },
+    thirdProject: {
+      childImageSharp: { fluid: thirdProjectFluid },
     },
   },
 }) => {
@@ -51,7 +81,11 @@ const Landing = ({
         <SkyrocketYourCareer />
       </Section>
       <Section>
-        <BlogLibrary />
+        <BlogLibrary
+          firstProject={firstProjectFluid}
+          secondProject={secondProjectFluid}
+          thirdProject={thirdProjectFluid}
+        />
       </Section>
       <Section backgroundColor={colors.grayLevelTwo}>
         <div id="pupa">

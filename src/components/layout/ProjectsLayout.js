@@ -11,12 +11,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Row, Col, Space } from 'antd';
 import styled from 'styled-components';
 
-import {
-  VegeLandingProject,
-  BookCoverProject,
-  TodoAppProject,
-  RealtimeChatProject,
-} from '~assets';
+import { PROJECTS_IMAGES } from '~assets';
 import {
   shareOnReddit,
   shareOnTwitter,
@@ -44,14 +39,16 @@ const IconHolder = styled(Link)({
 });
 
 export const pageQuery = graphql`
-  query LibraryLayoutQuery($id: String) {
+  query ProjectsLayoutQuery($id: String) {
     mdx(id: { eq: $id }) {
       body
       frontmatter {
         title
         desc
         type
+        icon
         tags
+        designLink
         imagePath
         difficulty
         date(formatString: "MMM D")
@@ -60,25 +57,43 @@ export const pageQuery = graphql`
         slug
       }
     }
+    projectsFiles: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        relativeDirectory: { eq: "projects" }
+      }
+    ) {
+      edges {
+        node {
+          base
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
-const PROJECTS_MAPPER = {
-  'vege-landing': VegeLandingProject,
-  'book-cover': BookCoverProject,
-  'todo-app': TodoAppProject,
-  'realtime-chat': RealtimeChatProject,
-};
-
-const LibraryLayout = ({
+const ProjectsLayout = ({
   data: {
     mdx: {
       frontmatter,
       body,
       fields: { slug },
     },
+    projectsFiles,
   },
 }) => {
+  const {
+    node: {
+      childImageSharp: { fluid },
+    },
+  } = projectsFiles.edges.find(
+    ({ node: { base } }) => base === frontmatter.imagePath
+  );
   const url = `https://bigsondev.com${slug}`;
 
   return (
@@ -88,12 +103,14 @@ const LibraryLayout = ({
         desc={frontmatter.desc}
         url={url}
         type="article"
-        imagePath={PROJECTS_MAPPER[frontmatter.imagePath]}
+        image={PROJECTS_IMAGES[frontmatter.imagePath]}
       />
       <Row justify="center" gutter={[0, 40]}>
-        <Col xs={{ span: 22 }} md={{ span: 16 }} xl={{ span: 12 }}>
+        <Col xs={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 18 }}>
           <main>
-            <MDXRenderer frontmatter={frontmatter}>{body}</MDXRenderer>
+            <MDXRenderer frontmatter={frontmatter} fluid={fluid} slug={slug}>
+              {body}
+            </MDXRenderer>
           </main>
         </Col>
         <Col xs={22} xl={20} xxl={18}>
@@ -130,4 +147,4 @@ const LibraryLayout = ({
   );
 };
 
-export default LibraryLayout;
+export default ProjectsLayout;

@@ -9,7 +9,7 @@ const Mentorship = () => (
   <Layout fixedContent={false}>
     <SEO
       title="Mentorship"
-      desc="Find Your First Job in IT & Improve As A Frontend Developer"
+      desc="Stop getting stuck in tutorials hell, learn Frontend with a seasoned Mentor, ex Lead Frontend Developer, and change your career for good."
       url="https://bigsondev.com/mentorship/"
     />
     <Section>
