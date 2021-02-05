@@ -36,7 +36,7 @@ const IconHolder = styled(Icon)({
   left: 0,
 });
 
-const { colors } = theme;
+const { colors, fontSize } = theme;
 
 const TAG_COLOR_MAPPER = {
   html: '#ffc069',
@@ -53,7 +53,7 @@ const howToStartList = [
   </Text>,
   <Text size="small">
     Get familiar with design, it contains all the assets (except icons sometimes
-    - use e.g. fontawesome listed below), CSS properties you'll need to use.
+    - use e.g. fontawesome), CSS properties you'll need to use.
   </Text>,
   <Text size="small">
     After deciding on either CodeSandbox or GitHub repo, set your project with
@@ -115,7 +115,11 @@ export const Project = ({
           <Col xs={24} md={12}>
             <TitleHolder>
               <IconHolder type={`${icon}Tag`} width={48} />
-              <Title level={4} marginBottom="0" transform="capitalize">
+              <Title
+                marginBottom="0"
+                fontSize={fontSize.medium}
+                transform="capitalize"
+              >
                 {title}
               </Title>
               <Space size="middle">
@@ -238,7 +242,7 @@ export const Project = ({
               this project.
             </Paragraph>
             <Paragraph size="preNormal">
-              I'll be happy to assist you with this project, you can try out my{' '}
+              I'll be happy to assist you, try out my{' '}
               <GatsbyLink to="/mentorship/">Mentorship</GatsbyLink> or/and
               connect to a study group on{' '}
               <GatsbyLink to={`${slug}#bigsondev-slack`}>Slack</GatsbyLink>{' '}
@@ -283,7 +287,7 @@ export const Project = ({
               Before you share the completed project, feel free to post it on{' '}
               <GatsbyLink to={`${slug}#bigsondev-slack`}>Slack</GatsbyLink> for
               review, someone might pick it up and give honest feedback, maybe
-              even propose better code. After all, we all want to improve as
+              even propose code improvements. After all, we want to improve as
               Developers.
             </Paragraph>
           </Col>
@@ -302,9 +306,10 @@ export const Project = ({
           </Col>
           <Divider />
           <Col xs={24}>
-            <Title level={4} transform="none">
+            <Title level={3} transform="none">
               Wall of Fame
             </Title>
+            <Divider />
             <List
               itemLayout="vertical"
               split={false}
@@ -312,7 +317,39 @@ export const Project = ({
               locale={{
                 emptyText: 'Be the first one to land on the Wall of Fame.',
               }}
-              renderItem={(item) => <div />}
+              renderItem={({ nickname, preview, code, portfolio }) => (
+                <List.Item key={nickname}>
+                  <Row justify="space-between">
+                    <Box margin="0 0 1rem 0">
+                      <Col>
+                        <Link
+                          href={portfolio}
+                          style={{
+                            fontWeight: 'bold',
+                            fontSize: fontSize.medium,
+                          }}
+                        >
+                          {nickname}
+                        </Link>
+                      </Col>
+                    </Box>
+                    <Col>
+                      <Row gutter={[24, 24]}>
+                        <Col xs={24} md={12}>
+                          <Link href={preview}>
+                            <Button type="secondary">Preview</Button>
+                          </Link>
+                        </Col>
+                        <Col xs={24} md={12}>
+                          <Link href={code}>
+                            <Button type="secondary">Code</Button>
+                          </Link>
+                        </Col>
+                      </Row>
+                    </Col>
+                  </Row>
+                </List.Item>
+              )}
             />
             <Box margin="2rem 0 0 0">
               <Paragraph size="preNormal">

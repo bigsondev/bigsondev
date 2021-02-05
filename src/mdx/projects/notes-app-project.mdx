@@ -153,9 +153,33 @@ export const coreConcepts = [
     </Link>, and more Material UI components.
   </Text>,
   <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/getting-started.html">
+      Getting Started
+    </Link>{' '}
+    with React.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/thinking-in-react.html">
+      Thinking in React
+    </Link>
+    .
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/lists-and-keys.html">
+      Lists and Keys
+    </Link>{' '}
+    in React.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/lifting-state-up.html">
+      Lifting State Up
+    </Link>{' '}
+    in React.
+  </Text>,
+  <Text size="small">
     <Link
       size="small"
-      href="https://reactjs.org/docs/uncontrolled-components.html"
+      href="https://reactjs.org/docs/forms.html#controlled-components"
     >
       Controlled Components
     </Link>{' '}
@@ -169,11 +193,21 @@ export const coreConcepts = [
   </Text>,
 ];
 
+export const solutions = [
+  {
+    nickname: 'MesfinT',
+    preview: 'https://notes-taking-app1.netlify.app/',
+    code: 'https://github.com/mesfint/note-app',
+    portfolio: 'https://github.com/mesfint',
+  },
+];
+
 <Project
   features={features}
   additionalFeatures={additionalFeatures}
   technologies={technologies}
   coreConcepts={coreConcepts}
+  solutions={solutions}
   {...props}
   {...props.frontmatter}
 />
