@@ -189,11 +189,11 @@ export const Project = ({
               along the way.
             </Paragraph>
             <Paragraph size="preNormal" strong>
-              Project requirements:
+              Project requirements
             </Paragraph>
             <PostList data={features} />
             <Paragraph size="preNormal" strong>
-              Additional requirements:
+              Additional requirements
             </Paragraph>
             <PostList data={additionalFeatures} />
           </Col>
@@ -221,7 +221,7 @@ export const Project = ({
               Deploy" section.
             </Paragraph>
             <Paragraph size="preNormal" strong>
-              First steps:
+              First steps
             </Paragraph>
             <PostList data={howToStartList} />
           </Col>

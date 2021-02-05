@@ -121,6 +121,7 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-webpack-bundle-analyser-v2',
+    `gatsby-plugin-twitter`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {

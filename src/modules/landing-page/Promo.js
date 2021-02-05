@@ -61,7 +61,7 @@ const MobileScreenPromo = ({ fluid }) => (
           Become a Frontend Developer.
         </Text>
         <br />
-        Join over 40 mentees.
+        Join over 100 mentees.
       </Paragraph>
     </Col>
     <Col span={22}>
@@ -111,7 +111,7 @@ const MediumScreenPromo = ({ fluid }) => (
         <Text strong textOpacity={opacity.title}>
           Become a Frontend Developer.
         </Text>
-        <br /> Join over 40 mentees.
+        <br /> Join over 100 mentees.
       </Paragraph>
       <Box style={{ textAlign: 'center' }}>
         <Link to="/mentorship/">
@@ -151,7 +151,7 @@ const BigScreenPromo = ({ fluid }) => (
       </Title>
       <Paragraph marginBottom="1.25rem" textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
-          Join over 40 mentees and become a Frontend Developer.
+          Join over 100 mentees and become a Frontend Developer.
         </Text>
         <br /> Pull yourself out of tutorials hell.
       </Paragraph>

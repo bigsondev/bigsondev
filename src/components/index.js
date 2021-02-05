@@ -29,3 +29,4 @@ export { ShareIcons } from './ShareIcons';
 export { DirectionalLink } from './DirectionalLink';
 export { Project } from './Project';
 export { ScrollToTop } from './ScrollToTop';
+export { TwitterFollowButton } from './TwitterFollowButton';

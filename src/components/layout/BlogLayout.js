@@ -36,6 +36,7 @@ import {
   DirectionalLink,
   Image,
   theme,
+  TwitterFollowButton,
 } from '..';
 import { NewsletterSmallForm } from './NewsletterSmallForm';
 import { Footer } from './Footer';
@@ -238,10 +239,17 @@ const BlogLayout = ({
                 Poland. <br />
                 <GatsbyLink to="/mentorship/">Discover Mentorship</GatsbyLink>
               </Paragraph>
-              <Paragraph marginBottom="0">
+              <Paragraph marginBottom="1rem">
                 <Link href={feedLink}>
                   <Icon type="rss" />
                 </Link>
+              </Paragraph>
+              <Paragraph marginBottom="0">
+                <TwitterFollowButton
+                  twitterAccount="@BigsonDev"
+                  showName={true}
+                  showCount={true}
+                />
               </Paragraph>
             </Box>
           </XlOnly>
@@ -257,7 +265,7 @@ const BlogLayout = ({
                 </GatsbyLink>
               </Col>
               <Col xs={24} md={21}>
-                <Paragraph size="small" marginBottom="0">
+                <Paragraph size="small" marginBottom="1rem">
                   Obsessed with React and teaching. I help people become
                   Frontend Developers. Living with my fiancee and Yorkshire
                   Terrier 🐶 in Poland.
@@ -267,6 +275,13 @@ const BlogLayout = ({
                       Discover Mentorship
                     </GatsbyLink>
                   </Box>
+                </Paragraph>
+                <Paragraph marginBottom="0">
+                  <TwitterFollowButton
+                    twitterAccount="@BigsonDev"
+                    showName={true}
+                    showCount={true}
+                  />
                 </Paragraph>
               </Col>
             </Row>
