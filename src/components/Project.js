@@ -143,7 +143,7 @@ export const Project = ({
             </Box>
             <Box margin="2.5rem 0 0 0">
               <Row justify="space-between" gutter={[0, 24]}>
-                <Col>
+                <Col xs={24} md={12}>
                   <Title level={5} marginBottom="0" transform="none">
                     Designed by
                   </Title>
@@ -188,9 +188,13 @@ export const Project = ({
               use different ones if you're more familiar with them. Have fun
               along the way.
             </Paragraph>
-            <Paragraph size="preNormal">Project requirements:</Paragraph>
+            <Paragraph size="preNormal" strong>
+              Project requirements:
+            </Paragraph>
             <PostList data={features} />
-            <Paragraph size="preNormal">Additional requirements:</Paragraph>
+            <Paragraph size="preNormal" strong>
+              Additional requirements:
+            </Paragraph>
             <PostList data={additionalFeatures} />
           </Col>
           <Col xs={24} md={12}>
@@ -216,7 +220,9 @@ export const Project = ({
               repository with custom deployment. More about it in the "Build &
               Deploy" section.
             </Paragraph>
-            <Paragraph size="preNormal">First steps:</Paragraph>
+            <Paragraph size="preNormal" strong>
+              First steps:
+            </Paragraph>
             <PostList data={howToStartList} />
           </Col>
           <Divider />
@@ -335,12 +341,12 @@ export const Project = ({
                     </Box>
                     <Col>
                       <Row gutter={[24, 24]}>
-                        <Col xs={24} md={12}>
+                        <Col>
                           <Link href={preview}>
                             <Button type="secondary">Preview</Button>
                           </Link>
                         </Col>
-                        <Col xs={24} md={12}>
+                        <Col>
                           <Link href={code}>
                             <Button type="secondary">Code</Button>
                           </Link>

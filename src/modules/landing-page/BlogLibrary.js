@@ -105,74 +105,80 @@ export const BlogLibrary = ({ firstProject, secondProject, thirdProject }) => {
         <Zoom right>
           <Row justify="center" gutter={[24, 24]}>
             <Col xs={22} sm={16} md={13} lg={8}>
-              <Card>
-                <ProjectImage
-                  fluid={firstProject}
-                  alt="Business Card Project"
-                />
-                <ProjectTitle
-                  color={colors.white}
-                  fontWeight={fontWeight.stronger}
-                >
-                  Business Card
-                </ProjectTitle>
-                <ProjectDescription
-                  color={colors.white}
-                  fontWeight={fontWeight.stronger}
-                  size="small"
-                >
-                  Create your own Business Card with HTML and CSS
-                </ProjectDescription>
-                <ProjectLink to="/projects/business-card-project/">
-                  <Button type="ghost">View project</Button>
-                </ProjectLink>
-              </Card>
+              <Link to="/projects/business-card-project/">
+                <Card>
+                  <ProjectImage
+                    fluid={firstProject}
+                    alt="Business Card Project"
+                  />
+                  <ProjectTitle
+                    color={colors.white}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    Business Card
+                  </ProjectTitle>
+                  <ProjectDescription
+                    color={colors.white}
+                    fontWeight={fontWeight.stronger}
+                    size="small"
+                  >
+                    Create your own Business Card with HTML and CSS
+                  </ProjectDescription>
+                  <ProjectLink to="/projects/business-card-project/">
+                    <Button type="ghost">View project</Button>
+                  </ProjectLink>
+                </Card>
+              </Link>
             </Col>
             <Col xs={22} sm={16} md={13} lg={8}>
-              <Card>
-                <ProjectImage
-                  fluid={secondProject}
-                  alt="Landing Page Project"
-                />
-                <ProjectTitle
-                  color={colors.white}
-                  fontWeight={fontWeight.stronger}
-                >
-                  Landing Page
-                </ProjectTitle>
-                <ProjectDescription
-                  color={colors.white}
-                  fontWeight={fontWeight.stronger}
-                  size="small"
-                >
-                  Build a real-world Landing Page just as you would for the
-                  client
-                </ProjectDescription>
-                <ProjectLink to="/projects/landing-page-project/">
-                  <Button type="ghost">View project</Button>
-                </ProjectLink>
-              </Card>
+              <Link to="/projects/landing-page-project/">
+                <Card>
+                  <ProjectImage
+                    fluid={secondProject}
+                    alt="Landing Page Project"
+                  />
+                  <ProjectTitle
+                    color={colors.white}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    Landing Page
+                  </ProjectTitle>
+                  <ProjectDescription
+                    color={colors.white}
+                    fontWeight={fontWeight.stronger}
+                    size="small"
+                  >
+                    Build a real-world Landing Page just as you would for the
+                    client
+                  </ProjectDescription>
+                  <ProjectLink to="/projects/landing-page-project/">
+                    <Button type="ghost">View project</Button>
+                  </ProjectLink>
+                </Card>
+              </Link>
             </Col>
             <Col xs={22} sm={16} md={13} lg={8}>
-              <Card>
-                <ProjectImage fluid={thirdProject} alt="Notes App Project" />
-                <ProjectTitle
-                  color={colors.white}
-                  fontWeight={fontWeight.stronger}
-                >
-                  Notes App
-                </ProjectTitle>
-                <ProjectDescription
-                  color={colors.white}
-                  fontWeight={fontWeight.stronger}
-                  size="small"
-                >
-                  Learn React by building your first serious project in it
-                </ProjectDescription>
-                <ProjectLink to="/projects/notes-app-project/">
-                  <Button type="ghost">View project</Button>
-                </ProjectLink>
-              </Card>
+              <Link to="/projects/notes-app-project/">
+                <Card>
+                  <ProjectImage fluid={thirdProject} alt="Notes App Project" />
+                  <ProjectTitle
+                    color={colors.white}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    Notes App
+                  </ProjectTitle>
+                  <ProjectDescription
+                    color={colors.white}
+                    fontWeight={fontWeight.stronger}
+                    size="small"
+                  >
+                    Learn React by building your first serious project in it
+                  </ProjectDescription>
+                  <ProjectLink to="/projects/notes-app-project/">
+                    <Button type="ghost">View project</Button>
+                  </ProjectLink>
+                </Card>
+              </Link>
             </Col>
           </Row>
         </Zoom>
