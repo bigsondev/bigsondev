@@ -142,7 +142,8 @@ export const Offer = () => {
                     strong
                     style={{ minHeight: '3.5rem' }}
                   >
-                    1 hour (Zoom session) that covers 1 week of Mentorship.
+                    One opening session (1 hour) in total to get started. Covers
+                    one week of Mentorship.
                   </Paragraph>
                 </Col>
                 <Col span={24}>
@@ -252,7 +253,8 @@ export const Offer = () => {
                     strong
                     style={{ minHeight: '3.5rem' }}
                   >
-                    4 hours (Zoom sessions) that covers 1 month of Mentorship.
+                    Four sessions (1 hour each) in total, one per week. Covers
+                    one month of Mentorship.
                   </Paragraph>
                 </Col>
                 <Col span={24}>
@@ -370,7 +372,8 @@ export const Offer = () => {
                     strong
                     style={{ minHeight: '3.5rem' }}
                   >
-                    12 hours (Zoom sessions) that covers 3 months of Mentorship.
+                    Twelve sessions (1 hour each) in total, one per week. Covers
+                    three months of Mentorship.
                   </Paragraph>
                 </Col>
                 <Col span={24}>
