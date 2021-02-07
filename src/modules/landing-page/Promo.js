@@ -27,7 +27,7 @@ const MobileScreenPromo = ({ fluid }) => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        Master coding
+        Master Frontend
       </Title>
       <Title
         transform="none"
@@ -91,7 +91,7 @@ const MediumScreenPromo = ({ fluid }) => (
         color={colors.primary}
         align="center"
       >
-        Master coding faster with
+        Master Frontend faster with
       </Title>
       <Title
         transform="none"
@@ -138,7 +138,7 @@ const BigScreenPromo = ({ fluid }) => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        Master coding faster
+        Master Frontend faster
       </Title>
       <Title
         transform="none"

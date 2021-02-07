@@ -49,6 +49,28 @@ const TAG_COLOR_MAPPER = {
 
 const howToStartList = [
   <Text size="small">
+    Be{' '}
+    <Link size="small" href="https://www.atlassian.com/agile">
+      Agile!
+    </Link>{' '}
+    Plan your work upfront either with{' '}
+    <Link size="small" href="https://www.scrum.org/resources/what-is-scrum">
+      Scrum
+    </Link>{' '}
+    or{' '}
+    <Link
+      size="small"
+      href="https://kanbanize.com/kanban-resources/getting-started/what-is-kanban"
+    >
+      Kanban
+    </Link>{' '}
+    by creating e.g.{' '}
+    <Link size="small" href="https://trello.com/">
+      Trello
+    </Link>{' '}
+    board for this project.
+  </Text>,
+  <Text size="small">
     Open the design by clicking the button under the above image.
   </Text>,
   <Text size="small">
@@ -170,7 +192,8 @@ export const Project = ({
             <Box margin="2rem 0 0 0">
               <Paragraph size="preNormal" strong>
                 It's free and always will. You can use this design for your
-                portfolio/website without any limitations.
+                portfolio/website without any limitations. Additionally, you can
+                share the completed project wherever you want.
               </Paragraph>
             </Box>
           </Col>

@@ -6,9 +6,9 @@
  */
 
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link as GatsbyLink } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Row, Col, Space } from 'antd';
+import { Row, Col, Space, Breadcrumb as AntdBreadcrumb } from 'antd';
 import styled from 'styled-components';
 
 import { PROJECTS_IMAGES } from '~assets';
@@ -17,10 +17,23 @@ import {
   shareOnTwitter,
   shareOnLinkedin,
   shareOnFacebook,
+  truncate,
 } from '~utils';
 
-import { SEO, SlackBanner, Box, Link, PromoBanner, Icon } from '..';
+import { Newsletter } from '../../modules/projects';
+import { SEO, Box, Link, PromoBanner, Icon, LgOnly, ExceptLg, Text } from '..';
 import { Footer } from './Footer';
+
+const Breadcrumb = styled(AntdBreadcrumb)({
+  marginBottom: '0.5rem',
+  fontSize: '1rem',
+});
+
+const BreadcrumbItem = styled(AntdBreadcrumb.Item)({
+  '& > a': {
+    color: '#000',
+  },
+});
 
 const IconHolder = styled(Link)({
   color: '#FAFAFA !important',
@@ -105,22 +118,53 @@ const ProjectsLayout = ({
         type="article"
         image={PROJECTS_IMAGES[frontmatter.imagePath]}
       />
-      <Row justify="center" gutter={[0, 40]}>
+      <Row justify="center" gutter={[0, 0]}>
         <Col xs={{ span: 22 }} xl={{ span: 20 }} xxl={{ span: 18 }}>
           <main>
+            <LgOnly>
+              <Breadcrumb>
+                <BreadcrumbItem>
+                  <GatsbyLink to="/">Home</GatsbyLink>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                  <GatsbyLink to="/projects/">Projects</GatsbyLink>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                  <Text size="small" style={{ color: 'rgba(0, 0, 0, 0.85)' }}>
+                    {' '}
+                    Project - {frontmatter.title}
+                  </Text>
+                </BreadcrumbItem>
+              </Breadcrumb>
+            </LgOnly>
+            <ExceptLg>
+              <Breadcrumb>
+                <BreadcrumbItem>
+                  <GatsbyLink to="/">Home</GatsbyLink>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                  <GatsbyLink to="/projects/">Projects</GatsbyLink>
+                </BreadcrumbItem>
+                <BreadcrumbItem>
+                  <Text size="small" style={{ color: 'rgba(0, 0, 0, 0.85)' }}>
+                    Project - {truncate(frontmatter.title, 20)}
+                  </Text>
+                </BreadcrumbItem>
+              </Breadcrumb>
+            </ExceptLg>
             <MDXRenderer frontmatter={frontmatter} fluid={fluid} slug={slug}>
               {body}
             </MDXRenderer>
           </main>
         </Col>
         <Col xs={22} xl={20} xxl={18}>
-          <SlackBanner id="bigsondev-slack" />
+          <Newsletter />
         </Col>
         <Col xs={22} xl={20} xxl={18}>
           <Box margin="0 0 3rem 0">
             <PromoBanner
               title="spread the word"
-              desc="Are you enjoying the content? Share it with someone!"
+              desc="Do you think this project is cool? Share it with someone!"
               id="bigsondev-spread-the-word"
               content={
                 <Space size="small">

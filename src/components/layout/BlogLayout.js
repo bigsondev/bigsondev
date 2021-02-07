@@ -295,7 +295,7 @@ const BlogLayout = ({
                   <GatsbyLink to="/">Home</GatsbyLink>
                 </BreadcrumbItem>
                 <BreadcrumbItem>
-                  <GatsbyLink to={isBlogPost ? '/blog/' : '/pills'}>
+                  <GatsbyLink to={isBlogPost ? '/blog/' : '/pills/'}>
                     {isBlogPost ? 'Blog' : 'Pills'}
                   </GatsbyLink>
                 </BreadcrumbItem>
@@ -313,7 +313,7 @@ const BlogLayout = ({
                   <GatsbyLink to="/">Home</GatsbyLink>
                 </BreadcrumbItem>
                 <BreadcrumbItem>
-                  <GatsbyLink to={isBlogPost ? '/blog/' : '/pills'}>
+                  <GatsbyLink to={isBlogPost ? '/blog/' : '/pills/'}>
                     {isBlogPost ? 'Blog' : 'Pills'}
                   </GatsbyLink>
                 </BreadcrumbItem>

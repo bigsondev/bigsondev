@@ -4,7 +4,7 @@ module.exports = {
     domain: 'bigsondev.com',
     title: `| BigsonDev - bigsondev.com`,
     twitterHandle: '@BigsonDev',
-    description: `Master React faster with a seasoned Mentor. Get out of tutorials hell - learn HTML, CSS, JS, React. Become a Frontend Developer, find a well-paid job, and feel the real progress.`,
+    description: `Master Frontend faster with a seasoned Mentor, pull yourself out of tutorials hell - learn HTML, CSS, JS, and React the right way.`,
     keywords: [
       'Frontend Mentor',
       'React Expert',

@@ -132,8 +132,8 @@ export const Offer = () => {
                     align="center"
                     style={{ minHeight: '8rem' }}
                   >
-                    1 hour - targeted feedback with proposed development path
-                    and exemplary assignments.
+                    Targeted feedback with proposed development path and
+                    exemplary assignments.
                   </Paragraph>
                   <Paragraph
                     size="small"
@@ -142,7 +142,7 @@ export const Offer = () => {
                     strong
                     style={{ minHeight: '3.5rem' }}
                   >
-                    Good for existing developers who seek to improve.
+                    1 hour (Zoom session) that covers 1 week of Mentorship.
                   </Paragraph>
                 </Col>
                 <Col span={24}>
@@ -242,8 +242,8 @@ export const Offer = () => {
                     align="center"
                     style={{ minHeight: '8rem' }}
                   >
-                    4 hours - build a project with modern technologies and best
-                    practices.
+                    Build a project together with a Mentor using modern
+                    technologies and best practices.
                   </Paragraph>
                   <Paragraph
                     size="small"
@@ -252,7 +252,7 @@ export const Offer = () => {
                     strong
                     style={{ minHeight: '3.5rem' }}
                   >
-                    Better for beginners who seek to dive into Frontend.
+                    4 hours (Zoom sessions) that covers 1 month of Mentorship.
                   </Paragraph>
                 </Col>
                 <Col span={24}>
@@ -360,8 +360,8 @@ export const Offer = () => {
                     align="center"
                     style={{ minHeight: '8rem' }}
                   >
-                    12 hours - create a portfolio with projects and find a dream
-                    Frontend job.
+                    Create a portfolio with projects, skyrocket your skills, and
+                    find a dream Frontend job.
                   </Paragraph>
                   <Paragraph
                     size="small"
@@ -370,7 +370,7 @@ export const Offer = () => {
                     strong
                     style={{ minHeight: '3.5rem' }}
                   >
-                    Best for career switchers who seek real progress.
+                    12 hours (Zoom sessions) that covers 3 months of Mentorship.
                   </Paragraph>
                 </Col>
                 <Col span={24}>
