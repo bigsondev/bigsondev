@@ -1,0 +1,113 @@
+---
+title: Event handlers arguments in React
+desc: onClick, onChange, onBlur... We usually pass a reference to the function handler but how do we add more arguments instead of just the event itself?
+date: 2021-02-09
+imagePath: event-control.jpg
+imageSource: Unsplash
+imageSourceLink: http://unsplash.com/
+imageAuthorName: Austin Neill
+imageAuthorLink: https://unsplash.com/photos/4pHcmcPsP8A?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink
+tags: react
+difficulty: 2
+---
+
+import {
+  SyntaxHighlighter,
+  Link,
+  KnowledgePill,
+  Title,
+  Paragraph,
+  PostList,
+} from '~components';
+
+export const appCode = `const ExampleButton = ({ onClick, children }) => (
+  <button onClick={onClick}>{children}</button>
+);\n
+export default function App() {
+  // 1.
+  // Our handler gets just an event,
+  // as we pass it as a reference to the onClick
+  // how do we include more parameters???
+  const handleClick = (event) => {
+    console.log("We just get an event (Synthetic): ", event);
+  };\n
+  // 2.
+  // We have a name parameter, but no event?
+  const handleClickCustomArguments = (name) => {
+    alert(\`My name is: \${name}\`);
+  };\n
+  // 3.
+  // We can have both, custom parameter and an event
+  const handleClickCustomArgumentsAndEvent = (event, name) => {
+    console.log("Event: (Synthetic)", event);
+    alert(\`My name is: \${name}\`);
+  };\n
+  return (
+    <>
+      <ExampleButton onClick={handleClick}>Just an event</ExampleButton>
+      {/* We're using an anonymous function to pass our custom argument */}
+      <ExampleButton onClick={() => handleClickCustomArguments("Adrian")}>
+        Custom name argument
+      </ExampleButton>
+      {/* We can still pass both */}
+      <ExampleButton
+        onClick={(event) => handleClickCustomArgumentsAndEvent(event, "Adrian")}
+      >
+        Event + custom argument
+      </ExampleButton>
+    </>
+  );
+}`;
+
+export const listData = [
+  <Text>
+    The first function <Text code>handleClick</Text> is accepting an{' '}
+    <Text code>event</Text> only as a parameter. We used it as a reference to
+    the <Text code>onClick</Text> event handler.
+  </Text>,
+  <Text>
+    The second function <Text code>handleClickCustomArguments</Text> is
+    accepting <Text code>name</Text> only as a parameter. We used an anonymous
+    function on the <Text code>onClick</Text> event handler and provided our
+    custom <Text code>Adrian</Text> string argument.
+  </Text>,
+  <Text>
+    The third function <Text code>handleClickCustomArgumentsAndEvent</Text> is
+    accepting both <Text code>event</Text> and <Text code>name</Text> as
+    parameters. We again used the anonymous function on the{' '}
+    <Text code>onClick</Text> and provided the <Text code>event</Text> and our
+    custom <Text code>Adrian</Text> string argument.
+  </Text>,
+  <Text>
+    All the event handlers have underlying events associated with them, when we
+    pass a function reference to e.g. <Text code>onClick</Text> it will call
+    this function with an underlying event. You shouldn't pass a function call
+    never, e.g. <Text code>{`onClick={handleClick()}`}</Text> as it would be
+    wrong. However, you can use an anonymous function as we did to pass
+    additional arguments or even skip the event entirely.
+  </Text>,
+];
+
+<KnowledgePill {...props} {...props.frontmatter}>
+  <Title level={4} transform="none">
+    Preview
+  </Title>
+  <Paragraph>
+    <iframe
+      src="https://codesandbox.io/embed/friendly-lederberg-tsxsv?fontsize=14&hidenavigation=1&theme=dark"
+      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+      title="friendly-lederberg-tsxsv"
+      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+    ></iframe>
+  </Paragraph>
+  <Title level={4} transform="none">
+    3 ways for event handlers in React
+  </Title>
+  <Text size="small">React</Text>
+  <SyntaxHighlighter>{appCode}</SyntaxHighlighter>
+  <Title level={4} transform="none">
+    Summary
+  </Title>
+  <PostList data={listData} />
+</KnowledgePill>
