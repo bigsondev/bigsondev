@@ -36,7 +36,7 @@ const IconHolder = styled(Icon)({
   left: 0,
 });
 
-const { colors, fontSize } = theme;
+const { fontSize } = theme;
 
 const TAG_COLOR_MAPPER = {
   html: '#ffc069',
@@ -195,9 +195,24 @@ export const Project = ({
                 portfolio/website without any limitations. Additionally, you can
                 share the completed project wherever you want.
               </Paragraph>
+              <Paragraph size="preNormal" strong>
+                However, beer or two won't hurt. 👀
+              </Paragraph>
+              <a
+                href="https://www.buymeacoffee.com/bigsondev"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <img
+                  src="https://img.buymeacoffee.com/button-api/?text=Buy us a beer&emoji=🍺&slug=bigsondev&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
+                  alt="BigsonDev donation button - Buy us a beer"
+                />
+              </a>
             </Box>
           </Col>
-          <Divider />
+          <Col xs={24}>
+            <Divider />
+          </Col>
           <Col xs={24} md={12}>
             <Title level={4} transform="none">
               Read me first
@@ -248,7 +263,9 @@ export const Project = ({
             </Paragraph>
             <PostList data={howToStartList} />
           </Col>
-          <Divider />
+          <Col xs={24}>
+            <Divider />
+          </Col>
           <Col xs={24} md={12}>
             <Title level={4} transform="none">
               Technologies & Tools
@@ -261,7 +278,9 @@ export const Project = ({
             </Title>
             <PostList data={coreConcepts} />
           </Col>
-          <Divider />
+          <Col xs={24}>
+            <Divider />
+          </Col>
           <Col xs={24} md={12}>
             <Title level={4} transform="none">
               Stuck, can't progress?
@@ -307,7 +326,9 @@ export const Project = ({
               for it.
             </Paragraph>
           </Col>
-          <Divider />
+          <Col xs={24}>
+            <Divider />
+          </Col>
           <Col xs={24} md={12}>
             <Title level={4} transform="none">
               Review & Feedback
@@ -333,12 +354,13 @@ export const Project = ({
               mentees would love to see what you've built (and me too).
             </Paragraph>
           </Col>
-          <Divider />
+          <Col xs={24}>
+            <Divider />
+          </Col>
           <Col xs={24}>
             <Title level={3} transform="none">
               Wall of Fame
             </Title>
-            <Divider />
             <List
               itemLayout="vertical"
               split={false}

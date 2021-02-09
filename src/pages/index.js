@@ -28,14 +28,14 @@ export const pageQuery = graphql`
         }
       }
     }
-    firstProject: file(base: { eq: "business-card.jpg" }) {
+    firstProject: file(base: { eq: "foodtruck.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
-    secondProject: file(base: { eq: "foodtruck.jpg" }) {
+    secondProject: file(base: { eq: "calculator-app.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG

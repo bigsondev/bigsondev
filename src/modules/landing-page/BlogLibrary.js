@@ -105,36 +105,10 @@ export const BlogLibrary = ({ firstProject, secondProject, thirdProject }) => {
         <Zoom right>
           <Row justify="center" gutter={[24, 24]}>
             <Col xs={22} sm={16} md={13} lg={8}>
-              <Link to="/projects/business-card-project/">
-                <Card>
-                  <ProjectImage
-                    fluid={firstProject}
-                    alt="Business Card Project"
-                  />
-                  <ProjectTitle
-                    color={colors.white}
-                    fontWeight={fontWeight.stronger}
-                  >
-                    Business Card
-                  </ProjectTitle>
-                  <ProjectDescription
-                    color={colors.white}
-                    fontWeight={fontWeight.stronger}
-                    size="small"
-                  >
-                    Create your own Business Card with HTML and CSS
-                  </ProjectDescription>
-                  <ProjectLink to="/projects/business-card-project/">
-                    <Button type="ghost">View project</Button>
-                  </ProjectLink>
-                </Card>
-              </Link>
-            </Col>
-            <Col xs={22} sm={16} md={13} lg={8}>
               <Link to="/projects/landing-page-project/">
                 <Card>
                   <ProjectImage
-                    fluid={secondProject}
+                    fluid={firstProject}
                     alt="Landing Page Project"
                   />
                   <ProjectTitle
@@ -152,6 +126,32 @@ export const BlogLibrary = ({ firstProject, secondProject, thirdProject }) => {
                     client
                   </ProjectDescription>
                   <ProjectLink to="/projects/landing-page-project/">
+                    <Button type="ghost">View project</Button>
+                  </ProjectLink>
+                </Card>
+              </Link>
+            </Col>
+            <Col xs={22} sm={16} md={13} lg={8}>
+              <Link to="/projects/calculator-app-project/">
+                <Card>
+                  <ProjectImage
+                    fluid={secondProject}
+                    alt="Calculator App Project"
+                  />
+                  <ProjectTitle
+                    color={colors.white}
+                    fontWeight={fontWeight.stronger}
+                  >
+                    Calculator App
+                  </ProjectTitle>
+                  <ProjectDescription
+                    color={colors.white}
+                    fontWeight={fontWeight.stronger}
+                    size="small"
+                  >
+                    Create your own calculator with the ability to switch themes
+                  </ProjectDescription>
+                  <ProjectLink to="/projects/calculator-app-project/">
                     <Button type="ghost">View project</Button>
                   </ProjectLink>
                 </Card>

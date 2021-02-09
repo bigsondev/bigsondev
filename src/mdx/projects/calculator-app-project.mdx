@@ -1,0 +1,195 @@
+---
+title: Calculator App
+desc: Create your own Calculator in JavaScript available on the web with a beautiful design. Additionally, Add an ability to switch between dark and light modes.
+date: 2021-02-09
+type: project
+icon: js
+tags: css, js
+imagePath: calculator-app.jpg
+designLink: https://xd.adobe.com/view/1624d6fb-a304-42c5-b123-4c1d645b7747-4377/
+difficulty: 2
+order: 3
+---
+
+import { Row, Col } from 'antd';
+
+import { Text, Link, Button, Project } from '~components';
+
+export const features = [
+  <Text size="small">
+    The application looks similar to the design and is available for users
+    through a link.
+  </Text>,
+  <Text size="small">The calculator should be initialized with 0.</Text>,
+  <Text size="small">
+    Previous operations should show above the output value (break line on long
+    ones).
+  </Text>,
+  <Text size="small">
+    AC stands for "All Clear", it should clear previous operations, incoming
+    operations as well as the output value and bring back Calculator to the
+    initial state with 0.
+  </Text>,
+  <Text size="small">
+    C stands for "Clear", it should only delete the last entry.
+  </Text>,
+  <Text size="small">
+    Users should be able to input numbers and execute all the available
+    operations (change signs, calculate percentage value, divide, multiply,
+    subtract and add).
+  </Text>,
+  <Text size="small">
+    Users should be able to get the correct result by pressing the "=" operator
+    and add a decimal by pressing "," (maximum one decimal in the number should
+    be present).
+  </Text>,
+  <Text size="small">
+    The calculator shouldn't allow a number to begin with multiple zeros.
+  </Text>,
+  <Text size="small">
+    Watch out for other gotchas, e.g. multiple operations (always execute
+    "number operation number", don't evaluate more than a single pair of
+    numbers), round long decimals, don't allow "=" on empty input, don't let to
+    divide by 0. You'll probably find more gotchas while coding 🙈.
+  </Text>,
+];
+
+export const additionalFeatures = [
+  <Text size="small">
+    Users should be able to toggle between dark and light modes.
+  </Text>,
+  <Text size="small">
+    When something "wrong" happens, display a nice error message to the user.
+    (e.g. when the user tries to divide by 0).
+  </Text>,
+  <Text size="small">
+    Add hover effects, animations, transitions. Experiment with it.
+  </Text>,
+  <Text size="small">
+    Add unit tests to your code, using e.g.{' '}
+    <Link size="small" href="https://jestjs.io/">
+      jest
+    </Link>
+    .
+  </Text>,
+];
+
+export const technologies = [
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/css/">
+      CSS
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://javascript.info/">
+      JavaScript
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://jquery.com/">
+      jQuery
+    </Link>{' '}
+    (optionally for easier DOM Manipulation)
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="http://numeraljs.com/">
+      numeral
+    </Link>{' '}
+    (optionally - handling numbers in native JavaScript is scary)
+  </Text>,
+];
+
+export const coreConcepts = [
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+    >
+      Flexbox
+    </Link>
+    , <Link
+      size="small"
+      href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+    >
+      Grid
+    </Link> for the layout.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://www.w3schools.com/html/html_responsive.asp"
+    >
+      RWD
+    </Link>{' '}
+    and{' '}
+    <Link
+      size="small"
+      href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp"
+    >
+      Media Queries
+    </Link>{' '}
+    for displaying on different devices.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://www.w3schools.com/html/html_images_background.asp"
+    >
+      Background Images
+    </Link>{' '}
+    and{' '}
+    <Link size="small" href="https://www.w3schools.com/css/css3_images.asp">
+      Images
+    </Link>{' '}
+    in general.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://css-tricks.com/using-svg/">
+      Using SVG
+    </Link>{' '}
+    in HTML.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://medium.com/@haxzie/dark-and-light-theme-switcher-using-css-variables-and-pure-javascript-zocada-dd0059d72fa2"
+    >
+      Theme switching
+    </Link>{' '}
+    in JavaScript .
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/js/js_htmldom.asp">
+      What is DOM
+    </Link>{' '}
+    in JavaScript.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents"
+    >
+      DOM Manipulation
+    </Link>{' '}
+    in JavaScript.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://www.freecodecamp.org/news/how-to-start-unit-testing-javascript/"
+    >
+      Unit testing
+    </Link>{' '}
+    in JavaScript.
+  </Text>,
+];
+
+<Project
+  features={features}
+  additionalFeatures={additionalFeatures}
+  technologies={technologies}
+  coreConcepts={coreConcepts}
+  solutions={[]}
+  {...props}
+  {...props.frontmatter}
+/>

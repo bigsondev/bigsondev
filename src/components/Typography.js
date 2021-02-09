@@ -214,7 +214,7 @@ export const Paragraph = ({
 );
 
 export const Link = ({
-  rel = 'noopener norefferer',
+  rel = 'noopener noreferrer',
   target = '_blank',
   align,
   fontWeight,

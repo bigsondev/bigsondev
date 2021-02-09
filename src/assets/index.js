@@ -53,6 +53,7 @@ import DuplicatePill from './pills/duplicate.jpg';
 
 import BusinessCardProject from './projects/business-card.jpg';
 import FoodtruckProject from './projects/business-card.jpg';
+import CalculatorAppProject from './projects/calculator-app.jpg';
 import NoteAppProject from './projects/note-app.jpg';
 
 const BLOG_POST_IMAGES = {
@@ -100,6 +101,7 @@ const PROJECTS_IMAGES = {
   'business-card.jpg': BusinessCardProject,
   'foodtruck.jpg': FoodtruckProject,
   'note-app.jpg': NoteAppProject,
+  'calculator-app.jpg': CalculatorAppProject,
 };
 
 export * from './logo';

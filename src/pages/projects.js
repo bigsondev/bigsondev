@@ -42,6 +42,7 @@ export const query = graphql`
             tags
             imagePath
             difficulty
+            order
             date(formatString: "MMM D")
           }
           fields {
@@ -168,7 +169,7 @@ const Projects = ({
       (
         { node: { frontmatter: prevFrontmatter } },
         { node: { frontmatter: nextFrontmatter } }
-      ) => prevFrontmatter.difficulty - nextFrontmatter.difficulty
+      ) => prevFrontmatter.order - nextFrontmatter.order
     );
 
   return (

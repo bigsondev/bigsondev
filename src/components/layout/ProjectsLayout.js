@@ -64,6 +64,7 @@ export const pageQuery = graphql`
         designLink
         imagePath
         difficulty
+        order
         date(formatString: "MMM D")
       }
       fields {
