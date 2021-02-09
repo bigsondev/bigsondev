@@ -50,6 +50,7 @@ import UseFetchPill from './pills/use-fetch.jpg';
 import DarkModePill from './pills/dark-mode.jpg';
 import ReversePill from './pills/reverse.jpg';
 import DuplicatePill from './pills/duplicate.jpg';
+import EventControlPill from './pills/event-control.jpg';
 
 import BusinessCardProject from './projects/business-card.jpg';
 import FoodtruckProject from './projects/business-card.jpg';
@@ -95,6 +96,7 @@ const PILLS_IMAGES = {
   'dark-mode.jpg': DarkModePill,
   'reverse.jpg': ReversePill,
   'duplicate.jpg': DuplicatePill,
+  'event-control.jpg': EventControlPill,
 };
 
 const PROJECTS_IMAGES = {
