@@ -196,7 +196,7 @@ export const Project = ({
                 share the completed project wherever you want.
               </Paragraph>
               <Paragraph size="preNormal" strong>
-                However, beer or two won't hurt. 👀
+                However, beer or two won't hurt.
               </Paragraph>
               <a
                 href="https://www.buymeacoffee.com/bigsondev"
