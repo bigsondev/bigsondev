@@ -52,6 +52,7 @@ export const codingProjectsWebsites = [
   <Link href="https://www.freecodecamp.org/">freeCodeCamp</Link>,
   <Link href="https://www.frontendmentor.io/">Frontend Mentor</Link>,
   <Link href="https://www.theodinproject.com/">The Odin Project</Link>,
+  <Link href="https://codeunicorn.io/">Code Unicorn</Link>,
 ];
 
 export const codingCoursesBooksWebistes = [
@@ -75,20 +76,48 @@ export const freeBooks = [
   </Link>,
 ];
 
+export const plan = [
+  '10% - code challenges',
+  '10% - read articles',
+  '30% - courses, videos, books',
+  '50% - build projects',
+];
+
 <Post {...props.frontmatter} showSubtitle>
   <Title level={3}>Introduction</Title>
+  <Paragraph>
+    We all want to learn to code fast, get our dream jobs, and earn money
+    quickly 🤑. Firstly, we have to be systematic. Secondly, our brain can't
+    receive the same learning method over and over again.
+  </Paragraph>
+  <Paragraph>
+    I created my own development plan that helped me achieve the Lead Frontend
+    Developer position in the past and I'll happily share it with you down
+    below.
+  </Paragraph>
+  <Paragraph>
+    <Text strong>My plan to master Frontend:</Text>
+    <br />
+    10% = ~max. 1 hour per day
+  </Paragraph>
+  <PostList data={plan} />
+  <Paragraph>
+    It's flexible, can be less or much more dedicated time per day 😅. IMO, it's
+    important to mix often so your brain won't get bored or you won't feel the
+    burnout. It's always best to learn by hands-on coding and building projects.
+    Additionally, the <Link href="https://www.forestapp.cc/">forestapp</Link> is
+    amazing for productivity.
+  </Paragraph>
   <Paragraph lastParagraph>
-    We all want to learn coding fast, get our dream jobs and earn money quickly
-    🤑. Firstly, we have to be systematic. Secondly, our brain can't receive the
-    same learning method over and over again. Let's find out what different
-    approaches we can take to improve as developers.
+    Ok, let's dive into all the individual sections from the plan.
   </Paragraph>
   <Title level={3}>Practice Coding Challenges</Title>
   <Paragraph>
-    It’s good to practice algorithms, solve problems as a Developer. Logical
-    thinking is a crucial ability to succeed and grow in the IT field. Focusing
-    on only one project can lead to quicker burnout, hence switching context can
-    help to keep the right balance.
+    It’s good to practice algorithms, solve problems, and{' '}
+    <Text strong>think fast</Text> as a Developer. Logical thinking is a crucial
+    ability to succeed and grow in the IT field. Focusing on only one project
+    can lead to quicker burnout, hence switching context can help to keep the
+    right balance.
   </Paragraph>
   <Paragraph strong>
     Don’t overload yourself with coding challenges, try to do at least one per
@@ -192,6 +221,11 @@ export const freeBooks = [
     learning process to skyrocket in Frontend Development. 🚀
   </Paragraph>
   <Title level={3}>Closing Notes</Title>
+  <Paragraph strong>
+    Remember, learning to code is hard. You'll fail non-stop, want to quit, and
+    throw it away. Survive and one day everything will "click" together and out
+    of nowhere, you'll start enjoying it to the max. It's worth it.
+  </Paragraph>
   <Paragraph>
     I have faith in you, shall you not give up and continue this tough, Frontend
     journey to improve your skills.
