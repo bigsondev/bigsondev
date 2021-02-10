@@ -42,6 +42,12 @@ export default function App() {
     console.log("Event: (Synthetic)", event);
     alert(\`My name is: \${name}\`);
   };\n
+  // 4.
+  // Currying
+  const handleClickCurrying = (name) => (event) => {
+    console.log("Event: (Synthetic)", event);
+    alert(\`My name is: \${name}\`);
+  };\n
   return (
     <>
       <ExampleButton onClick={handleClick}>Just an event</ExampleButton>
@@ -54,6 +60,9 @@ export default function App() {
         onClick={(event) => handleClickCustomArgumentsAndEvent(event, "Adrian")}
       >
         Event + custom argument
+      </ExampleButton>
+      <ExampleButton onClick={handleClickCurrying("Adrian")}>
+        Currying
       </ExampleButton>
     </>
   );
@@ -79,6 +88,15 @@ export const listData = [
     custom <Text code>Adrian</Text> string argument.
   </Text>,
   <Text>
+    The fourth function <Text code>handleClickCurrying</Text> is accepting both{' '}
+    <Text code>name</Text> and <Text code>event</Text> as parameters (first we
+    call the function with just name, then <Text code>onClick</Text> will call
+    the same function with the underlying event). We used a function call +
+    function reference similar to the first example. The big difference is the{' '}
+    <Link href="https://javascript.info/currying-partials">Currying</Link>{' '}
+    pattern to achieve the result.
+  </Text>,
+  <Text>
     All the event handlers have underlying events associated with them, when we
     pass a function reference to e.g. <Text code>onClick</Text> it will call
     this function with an underlying event. You shouldn't pass a function call
@@ -102,7 +120,7 @@ export const listData = [
     ></iframe>
   </Paragraph>
   <Title level={4} transform="none">
-    3 ways for event handlers in React
+    4 ways for event handlers in React
   </Title>
   <Text size="small">React</Text>
   <SyntaxHighlighter>{appCode}</SyntaxHighlighter>
