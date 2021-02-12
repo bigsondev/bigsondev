@@ -14,6 +14,7 @@ import MiguelTestimonial from './miguel-testimonial.jpg';
 import AngelTestimonial from './angel-testimonial.jpeg';
 import ScottTestimonial from './scott-testimonial.png';
 import MainImage from './main-image.png';
+import OgMainImage from './og-main-image.jpg';
 import WaysToLearnEffectivelyBlog from './blog/5-ways-to-learn-effectively.jpg';
 import TechnicalInterviewTipsBlog from './blog/10-technical-interview-tips.jpg';
 import HowToImproveYourCodingSkillsBlog from './blog/how-to-improve-your-coding-skills.jpg';
@@ -124,6 +125,7 @@ export {
   AngelTestimonial,
   ScottTestimonial,
   MainImage,
+  OgMainImage,
   BLOG_POST_IMAGES,
   PILLS_IMAGES,
   PROJECTS_IMAGES,

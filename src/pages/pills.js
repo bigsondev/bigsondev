@@ -229,7 +229,7 @@ const Pills = ({
       </Title>
       <Paragraph align="center">
         To become a great Developer, <br />
-        you have to eat my knowledge pills.
+        you have to take pills.
       </Paragraph>
       <Divider />
       <Row justify="center">

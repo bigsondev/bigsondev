@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { MainImage } from '~assets';
+import { OgMainImage } from '~assets';
 
 export function SEO({
   url,
@@ -19,7 +19,7 @@ export function SEO({
   meta,
   type = 'website',
   title,
-  image = MainImage,
+  image = OgMainImage,
 }) {
   const { site } = useStaticQuery(
     graphql`

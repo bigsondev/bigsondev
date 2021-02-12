@@ -119,7 +119,7 @@ const MediumScreenPromo = ({ fluid }) => (
         </Link>
       </Box>
     </Col>
-    <Col span={10} style={{ marginTop: '3rem', marginBottom: '3rem' }}>
+    <Col span={12} style={{ marginTop: '3rem', marginBottom: '3rem' }}>
       <Image
         fluid={fluid}
         alt="Image represents person shaking his head around how to learn web development - HTML, CSS & JS"
