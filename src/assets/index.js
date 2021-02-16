@@ -54,9 +54,10 @@ import DuplicatePill from './pills/duplicate.jpg';
 import EventControlPill from './pills/event-control.jpg';
 
 import BusinessCardProject from './projects/business-card.jpg';
-import FoodtruckProject from './projects/business-card.jpg';
+import FoodtruckProject from './projects/foodtruck.jpg';
 import CalculatorAppProject from './projects/calculator-app.jpg';
 import NoteAppProject from './projects/note-app.jpg';
+import FindMoviesProject from './projects/find-movies.jpg';
 
 const BLOG_POST_IMAGES = {
   'technical-interview-tips.jpg': TechnicalInterviewTipsBlog,
@@ -103,8 +104,9 @@ const PILLS_IMAGES = {
 const PROJECTS_IMAGES = {
   'business-card.jpg': BusinessCardProject,
   'foodtruck.jpg': FoodtruckProject,
-  'note-app.jpg': NoteAppProject,
   'calculator-app.jpg': CalculatorAppProject,
+  'note-app.jpg': NoteAppProject,
+  'find-movies.jpg': FindMoviesProject,
 };
 
 export * from './logo';

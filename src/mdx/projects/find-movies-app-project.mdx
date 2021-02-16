@@ -1,0 +1,259 @@
+---
+title: Find Movies App
+desc: Show the "you might like" section, implement finding movies by search term, and show details in a dialog window. Code it all using free OMDb API.
+date: 2021-02-16
+type: project
+icon: react
+tags: css, js, react, api
+imagePath: find-movies.jpg
+designLink: https://xd.adobe.com/view/806e921d-bc44-430e-859e-9230efd519a9-d53d/
+difficulty: 4
+order: 5
+---
+
+import { Row, Col } from 'antd';
+import { Link as GatsbyLink } from 'gatsby';
+
+import { Text, Link, Button, Project } from '~components';
+
+export const features = [
+  <Text size="small">
+    If not using CodeSandbox, boilerplate the application with{' '}
+    <Link
+      size="small"
+      href="https://reactjs.org/docs/create-a-new-react-app.html"
+    >
+      CRA
+    </Link>
+    .
+  </Text>,
+  <Text size="small">
+    Get your free API key from{' '}
+    <Link size="small" href="http://www.omdbapi.com/apikey.aspx">
+      OMDb API
+    </Link>
+    , (or any similar movies API you can find). Study the <Link
+      href="http://www.omdbapi.com/"
+      size="small"
+    >
+      documentation
+    </Link> before starting implementation.
+  </Text>,
+  <Text size="small">
+    The website looks similar to the design (Desktop and Mobile) and is
+    available for users through a link.
+  </Text>,
+  <Text size="small">
+    On the initial page load, the "YOU MIGHT LIKE" section should be filled with
+    either random movies or predefined ones. (prepare a list of movies upfront
+    and trigger API request to fetch them before rendering the page)
+  </Text>,
+  <Text size="small">
+    Users can find movies using the search bar, request to the API should
+    trigger after entering a minimum of 2 characters and be debounced to prevent
+    too many requests at once. (no enter click, listen to keypress and fetch
+    data after e.g. 300 milliseconds delay, try to avoid fetch on the first
+    character typed in)
+  </Text>,
+  <Text size="small">
+    When users use the search bar, the "YOU MIGHT LIKE" section should be
+    replaced by search results (movies that were found in the API), if the
+    search bar is cleared, bring back the "YOU MIGHT LIKE" section again.
+  </Text>,
+  <Text size="small">
+    When users click on the movie, a full-page dialog window should show up,
+    hiding the current page content and presenting a particular movie (get
+    details from the API) in a card component. Users should be able to close the
+    dialog by clicking the "X" icon and/or on the background around the card.
+  </Text>,
+  <Text size="small">
+    Handle loading and errors in the code appropriately. (handle error first,
+    then loading, then data)
+  </Text>,
+];
+
+export const additionalFeatures = [
+  <Text size="small">
+    To avoid working on a real API and burning its daily limits, implement a{' '}
+    <Link href="https://github.com/typicode/json-server" size="small">
+      mock server
+    </Link>{' '}
+    first (try to recreate original schema/data format), code the app, and when
+    it'll be ready switch to the real movies API (e.g. OMDb) for final testing
+    if all works nicely together.
+  </Text>,
+  <Text size="small">
+    Improve loading and error handling by using e.g. additional components,
+    texts, assets as presented on the last views of the design.
+  </Text>,
+  <Text size="small">
+    Implement more fields from the API, explore, discover what's available and
+    make it as robust as it's possible. Use all the data! 🔥
+  </Text>,
+  <Text size="small">
+    Don't show too many movies at once, limit to e.g. 10 of them, use{' '}
+    <Link
+      size="small"
+      href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading"
+    >
+      lazy loading
+    </Link>{' '}
+    for fetching more.
+  </Text>,
+  <Text size="small">
+    Add API tests to your code, using e.g.{' '}
+    <Link size="small" href="https://jestjs.io/">
+      jest
+    </Link>
+    .
+  </Text>,
+  <Text size="small">
+    Add e2e tests to your code, using e.g.{' '}
+    <Link size="small" href="https://www.cypress.io/">
+      cypress
+    </Link>
+    .
+  </Text>,
+];
+
+export const technologies = [
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/css/">
+      CSS
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://javascript.info/">
+      JavaScript
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/">
+      React
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://material-ui.com/">
+      Material UI
+    </Link>{' '}
+    (Recommended components for this project)
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://material-ui.com/components/icons/#icons">
+      Material UI Icons
+    </Link>{' '}
+    (Recommended icons for this project, need above dependency)
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+    >
+      fetch
+    </Link>
+    , <Link size="small" href="https://github.com/axios/axios">
+      axios
+    </Link>, or <Link
+      size="small"
+      href="https://github.com/tannerlinsley/react-query"
+    >
+      react-query
+    </Link> for data fetching
+  </Text>,
+];
+
+export const coreConcepts = [
+  <Text size="small">
+    <GatsbyLink to="/blog/how-to-fetch-data-in-react-using-pokeapi/">
+      Fetching data in React from API
+    </GatsbyLink>
+    .
+  </Text>,
+  <Text size="small">
+    <GatsbyLink to="/blog/fetch-data-in-react-as-user-types-or-clicks/">
+      Fetching data in React as user types or clicks
+    </GatsbyLink>
+    .
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://material-ui.com/components/container/">
+      Container
+    </Link>
+    , <Link size="small" href="https://material-ui.com/components/grid/">
+      Grid
+    </Link>, <Link
+      size="small"
+      href="https://material-ui.com/components/text-fields/#text-field"
+    >
+      TextField
+    </Link>, <Link
+      size="small"
+      href="https://material-ui.com/components/dialogs/#dialog"
+    >
+      Dialog
+    </Link>, <Link
+      size="small"
+      href="https://material-ui.com/components/cards/#card"
+    >
+      Card
+    </Link>, and more Material UI components.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/getting-started.html">
+      Getting Started
+    </Link>{' '}
+    with React.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/thinking-in-react.html">
+      Thinking in React
+    </Link>
+    .
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/lists-and-keys.html">
+      Lists and Keys
+    </Link>{' '}
+    in React.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/lifting-state-up.html">
+      Lifting State Up
+    </Link>{' '}
+    in React.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://reactjs.org/docs/forms.html#controlled-components"
+    >
+      Controlled Components
+    </Link>{' '}
+    in React.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/hooks-intro.html">
+      Hooks
+    </Link>{' '}
+    in React.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://hackernoon.com/api-testing-with-jest-d1ab74005c0a"
+    >
+      API testing
+    </Link>{' '}
+    in JavaScript.
+  </Text>,
+];
+
+<Project
+  features={features}
+  additionalFeatures={additionalFeatures}
+  technologies={technologies}
+  coreConcepts={coreConcepts}
+  solutions={[]}
+  {...props}
+  {...props.frontmatter}
+/>

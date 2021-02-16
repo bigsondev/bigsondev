@@ -43,7 +43,7 @@ const TAG_COLOR_MAPPER = {
   css: '#91d5ff',
   js: '#ffec3d',
   react: '#73adf5',
-  express: '#43853D',
+  api: '#43853D',
   'socket.io': '#000',
 };
 
@@ -128,7 +128,7 @@ export const Project = ({
             {scrollTip && (
               <Box margin="1rem 0 0 0">
                 <Paragraph size="preNormal" align="center">
-                  <Text strong>Note: </Text> Zoom out the design to see its all
+                  <Text strong>Note: </Text> Scroll the design to see its all
                   parts.
                 </Paragraph>
               </Box>
