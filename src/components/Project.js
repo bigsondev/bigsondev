@@ -98,6 +98,28 @@ const wallOfFameRequirements = [
   </Text>,
 ];
 
+const designModo = [
+  <Text size="small">
+    You can quickly scaffold a project using prebuilt components.
+  </Text>,
+  <Text size="small">
+    They have 3 apps, one for email design, one for animated websites, and one
+    for startup projects.
+  </Text>,
+  <Text size="small">
+    This can work both ways, you could come up with a beautiful design and
+    present it to the client before coding, and learn coding as{' '}
+    <Text size="small" strong>
+      each project you create can be downloaded with all corresponding HTML,
+      CSS, JS files.
+    </Text>
+  </Text>,
+  <Text size="small">
+    I tested it and even with a free plan you can experiment a bit, learn both
+    coding & design faster by looking at generated content/code.
+  </Text>,
+];
+
 export const Project = ({
   fluid,
   title,
@@ -195,19 +217,6 @@ export const Project = ({
                 portfolio/website without any limitations. Additionally, you can
                 share the completed project wherever you want.
               </Paragraph>
-              <Paragraph size="preNormal" strong>
-                However, beer or two won't hurt.
-              </Paragraph>
-              <a
-                href="https://www.buymeacoffee.com/bigsondev"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <img
-                  src="https://img.buymeacoffee.com/button-api/?text=Buy us a beer&emoji=🍺&slug=bigsondev&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff"
-                  alt="BigsonDev donation button - Buy us a beer"
-                />
-              </a>
             </Box>
           </Col>
           <Col xs={24}>
@@ -353,6 +362,45 @@ export const Project = ({
               with the link to the completed project and/or GitHub repo. All the
               mentees would love to see what you've built (and me too).
             </Paragraph>
+          </Col>
+          <Col xs={24}>
+            <Divider />
+          </Col>
+          <Col xs={24} md={12}>
+            <Title level={4} transform="none">
+              Building Your Own Project
+            </Title>
+            <Paragraph size="preNormal" marginBottom="1rem">
+              If this project doesn't fit your needs and you don't feel like a
+              Designer but want to prototype something fun quickly, a designmodo
+              tool might help with that.
+            </Paragraph>
+            <a
+              href="https://designmodo.com/startup/?u=4244"
+              rel="nofollow"
+              title="Startup Framework by Designmodo"
+              target="_blank"
+            >
+              <img
+                src="https://designmodo.com/img/affiliate/startup3_250_250.jpg"
+                border="0"
+                width="220"
+                height="220"
+                alt="Startup Framework by Designmodo"
+              />
+            </a>
+            <Box margin="1rem 0 0 0">
+              <Paragraph size="micro" type="secondary" fontStyle="italic">
+                The above is an affiliate link, if you buy something I'll get a
+                small commission at no extra charge to you.
+              </Paragraph>
+            </Box>
+          </Col>
+          <Col xs={24} md={12}>
+            <Title level={4} transform="none">
+              Why designmodo?
+            </Title>
+            <PostList data={designModo} />
           </Col>
           <Col xs={24}>
             <Divider />

@@ -360,6 +360,14 @@ const PrivacyPolicy = () => (
             you may contact the Information Commissioner’s Office in your
             country of residence.
           </Paragraph>
+          <Title level={3}>Affiliate links</Title>
+          <Paragraph lastParagraph>
+            You can find affiliate links on the BigsonDev website. These links
+            will track you to a merchant's site but they do not track any
+            personal data. If you buy something through my affiliate link, I
+            will earn a commission on the sale. It won't cost you any extra
+            money at all.
+          </Paragraph>
           <Title level={3}>What about cookies?</Title>
           <Paragraph>
             BigsonDev website, like almost all other websites, uses cookies and
