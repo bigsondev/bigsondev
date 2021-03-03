@@ -58,6 +58,7 @@ import FoodtruckProject from './projects/foodtruck.jpg';
 import CalculatorAppProject from './projects/calculator-app.jpg';
 import NoteAppProject from './projects/note-app.jpg';
 import FindMoviesProject from './projects/find-movies.jpg';
+import WeatherAppProject from './projects/weather-app.jpg';
 
 const BLOG_POST_IMAGES = {
   'technical-interview-tips.jpg': TechnicalInterviewTipsBlog,
@@ -107,6 +108,7 @@ const PROJECTS_IMAGES = {
   'calculator-app.jpg': CalculatorAppProject,
   'note-app.jpg': NoteAppProject,
   'find-movies.jpg': FindMoviesProject,
+  'weather-app.jpg': WeatherAppProject,
 };
 
 export * from './logo';

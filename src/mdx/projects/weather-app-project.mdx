@@ -1,14 +1,14 @@
 ---
-title: Find Movies App
-desc: Show the "you might like" section, implement finding movies by search term, and show details in a dialog window. Code it all using free OMDb API.
-date: 2021-02-16
+title: Weather App
+desc: Check daily weather in your city or in any place in the world. Include details such as if it's snowing, raining, and craft your own Weather App.
+date: 2021-03-03
 type: project
 icon: react
 tags: css, js, react, api
-imagePath: find-movies.jpg
-designLink: https://xd.adobe.com/view/23b76bd5-f4c3-4d60-ab38-a5b138600865-76e4/
-difficulty: 4
-order: 6
+imagePath: weather-app.jpg
+designLink: https://xd.adobe.com/view/13597958-8900-431d-9bd4-76742876eb9d-460a/
+difficulty: 3
+order: 5
 ---
 
 import { Row, Col } from 'antd';
@@ -29,11 +29,11 @@ export const features = [
   </Text>,
   <Text size="small">
     Get your free API key from{' '}
-    <Link size="small" href="http://www.omdbapi.com/apikey.aspx">
-      OMDb API
+    <Link size="small" href="https://openweathermap.org/appid">
+      OpenWeather API
     </Link>
-    , (or any similar movies API you can find). Study the <Link
-      href="http://www.omdbapi.com/"
+    , (or any similar weather API you can find). Study the <Link
+      href="https://openweathermap.org/api"
       size="small"
     >
       documentation
@@ -44,27 +44,24 @@ export const features = [
     available for users through a link.
   </Text>,
   <Text size="small">
-    On the initial page load, the "YOU MIGHT LIKE" section should be filled with
-    either random movies or predefined ones. (prepare a list of movies upfront
-    and trigger API request to fetch them before rendering the page)
+    On the initial page load, weather for either hardcoded city (e.g. London) is
+    shown or geolocation logic checks which city should be presented.
   </Text>,
   <Text size="small">
-    Users can find movies using the search bar, request to the API should
-    trigger after entering a minimum of 2 characters and be debounced to prevent
-    too many requests at once. (no enter click, listen to keypress and fetch
-    data after e.g. 300 milliseconds delay, try to avoid fetch on the first
-    character typed in)
+    Users can check the weather of cities using the search bar, request to the
+    API should trigger after entering a minimum of 2 characters and be debounced
+    to prevent too many requests at once. (no enter click, listen to keypress
+    and fetch data after e.g. 300 milliseconds delay, try to avoid fetch on the
+    first character typed in)
   </Text>,
   <Text size="small">
-    When users use the search bar, the "YOU MIGHT LIKE" section should be
-    replaced by search results (movies that were found in the API), if the
-    search bar is cleared, bring back the "YOU MIGHT LIKE" section again.
+    When users use the search bar, current weather should be replaced by the
+    search result, if the city couldn't be found, an appropriate message to the
+    user shall be displayed.
   </Text>,
   <Text size="small">
-    When users click on the movie, a full-page dialog window should show up,
-    hiding the current page content and presenting a particular movie (get
-    details from the API) in a card component. Users should be able to close the
-    dialog by clicking the "X" icon and/or on the background around the card.
+    Users can change between Celsius and Fahrenheit temperatures to get more
+    adequate results.
   </Text>,
   <Text size="small">
     Handle loading and errors in the code appropriately. (handle error first,
@@ -79,26 +76,12 @@ export const additionalFeatures = [
       mock server
     </Link>{' '}
     first (try to recreate original schema/data format), code the app, and when
-    it'll be ready switch to the real movies API (e.g. OMDb) for final testing
-    if all works nicely together.
-  </Text>,
-  <Text size="small">
-    Improve loading and error handling by using e.g. additional components,
-    texts, assets as presented on the last views of the design.
+    it'll be ready switch to the real Weather API (e.g. OpenWeather) for final
+    testing if all works nicely together.
   </Text>,
   <Text size="small">
     Implement more fields from the API, explore, discover what's available and
     make it as robust as it's possible. Use all the data! 🔥
-  </Text>,
-  <Text size="small">
-    Don't show too many movies at once, limit to e.g. 10 of them, use{' '}
-    <Link
-      size="small"
-      href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading"
-    >
-      lazy loading
-    </Link>{' '}
-    for fetching more.
   </Text>,
   <Text size="small">
     Add API tests to your code, using e.g.{' '}
@@ -133,14 +116,14 @@ export const technologies = [
     </Link>
   </Text>,
   <Text size="small">
-    <Link size="small" href="https://material-ui.com/">
-      Material UI
+    <Link size="small" href="https://ant.design/">
+      Ant Design
     </Link>{' '}
     (Recommended components for this project)
   </Text>,
   <Text size="small">
-    <Link size="small" href="https://material-ui.com/components/icons/#icons">
-      Material UI Icons
+    <Link size="small" href="https://ant.design/components/icon/">
+      Ant Design Icons
     </Link>{' '}
     (Recommended icons for this project, need above dependency)
   </Text>,
@@ -176,27 +159,26 @@ export const coreConcepts = [
     .
   </Text>,
   <Text size="small">
-    <Link size="small" href="https://material-ui.com/components/container/">
-      Container
+    <Link
+      size="small"
+      href="https://stackoverflow.com/questions/6797569/get-city-name-using-geolocation"
+    >
+      Get city name using geolocation
     </Link>
-    , <Link size="small" href="https://material-ui.com/components/grid/">
+    .
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://ant.design/components/grid/#header">
       Grid
+    </Link>
+    , <Link size="small" href="https://ant.design/components/form/#header">
+      Form
     </Link>, <Link
       size="small"
-      href="https://material-ui.com/components/text-fields/#text-field"
-    >
-      TextField
-    </Link>, <Link
-      size="small"
-      href="https://material-ui.com/components/dialogs/#dialog"
-    >
-      Dialog
-    </Link>, <Link
-      size="small"
-      href="https://material-ui.com/components/cards/#card"
+      href="https://ant.design/components/card/#header"
     >
       Card
-    </Link>, and more Material UI components.
+    </Link>, and more Ant Design components.
   </Text>,
   <Text size="small">
     <Link size="small" href="https://reactjs.org/docs/getting-started.html">
@@ -248,12 +230,21 @@ export const coreConcepts = [
   </Text>,
 ];
 
+export const solutions = [
+  {
+    nickname: 'MesfinT',
+    preview: 'https://weather-app10.netlify.app/',
+    code: 'https://github.com/mesfint/weather-app',
+    portfolio: 'https://github.com/mesfint',
+  },
+];
+
 <Project
   features={features}
   additionalFeatures={additionalFeatures}
   technologies={technologies}
   coreConcepts={coreConcepts}
-  solutions={[]}
+  solutions={solutions}
   {...props}
   {...props.frontmatter}
 />
