@@ -118,22 +118,23 @@ const Project = ({ path, fluid, title, desc, icon, tags, difficulty }) => (
       <Box margin="0 0 1.5rem 0">
         <TitleHolder>
           <IconHolder type={`${icon}Tag`} width={48} />
-          <Title level={5} marginBottom="0" transform="capitalize">
+          <Title level={5} marginBottom="0.25rem" transform="capitalize">
             {title}
           </Title>
-          <Space size="middle">
+          <Row gutter={[16, 8]}>
             {tags.split(',').map((tag) => (
-              <Text
-                key={tag}
-                transform="uppercase"
-                strong
-                size="small"
-                color={TAG_COLOR_MAPPER[tag.trim()]}
-              >
-                {tag}
-              </Text>
+              <Col key={tag}>
+                <Text
+                  transform="uppercase"
+                  strong
+                  size="small"
+                  color={TAG_COLOR_MAPPER[tag.trim()]}
+                >
+                  {tag}
+                </Text>
+              </Col>
             ))}
-          </Space>
+          </Row>
         </TitleHolder>
       </Box>
       <Paragraph size="preNormal" marginBottom="0">

@@ -160,25 +160,26 @@ export const Project = ({
             <TitleHolder>
               <IconHolder type={`${icon}Tag`} width={48} />
               <Title
-                marginBottom="0"
+                marginBottom="0.25rem"
                 fontSize={fontSize.medium}
                 transform="capitalize"
               >
                 {title}
               </Title>
-              <Space size="middle">
+              <Row gutter={[16, 8]}>
                 {tags.split(',').map((tag) => (
-                  <Text
-                    key={tag}
-                    transform="uppercase"
-                    strong
-                    size="small"
-                    color={TAG_COLOR_MAPPER[tag.trim()]}
-                  >
-                    {tag}
-                  </Text>
+                  <Col key={tag}>
+                    <Text
+                      transform="uppercase"
+                      strong
+                      size="small"
+                      color={TAG_COLOR_MAPPER[tag.trim()]}
+                    >
+                      {tag}
+                    </Text>
+                  </Col>
                 ))}
-              </Space>
+              </Row>
             </TitleHolder>
             <Box margin="1.5rem 0 0 0">
               <Paragraph size="preNormal" marginBottom="0">

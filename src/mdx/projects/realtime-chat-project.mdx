@@ -1,0 +1,235 @@
+---
+title: Chat App
+desc: Create a Full-stack Realtime Chat App, implement Group Chat as well as direct messages. Do the first step to become a Full-stack Developer and have fun coding this project.
+date: 2021-03-10
+type: project
+icon: react
+tags: css, js, react, socket.io
+imagePath: realtime-chat-app.jpg
+designLink: https://xd.adobe.com/view/be6f9ce2-8760-4991-b7df-c3ade3c11d0a-eb3c/
+difficulty: 4
+order: 7
+---
+
+import { Row, Col } from 'antd';
+import { Link as GatsbyLink } from 'gatsby';
+
+import { Text, Link, Button, Project } from '~components';
+
+export const features = [
+  <Text size="small">
+    If not using CodeSandbox, boilerplate the application with{' '}
+    <Link
+      size="small"
+      href="https://reactjs.org/docs/create-a-new-react-app.html"
+    >
+      CRA
+    </Link>
+    .
+  </Text>,
+  <Text size="small">
+    The website looks similar to the design (Desktop and Mobile) and is
+    available for users through a link.
+  </Text>,
+  <Text size="small">
+    When a new user visits the Chat App, present welcome, Wizard UI to guide him
+    through creating an account including avatar and nickname selection.
+  </Text>,
+  <Text size="small">
+    When an existing user visits the Chat App, read the account data e.g. from{' '}
+    <Link
+      size="small"
+      href="https://www.w3schools.com/jsref/prop_win_localstorage.asp"
+    >
+      localStorage
+    </Link>{' '}
+    (compare it with server) and present the Chat App immediately instead of the
+    welcome, Wizard UI.
+  </Text>,
+  <Text size="small">
+    When a user opens the Chat App, Group Chat should be presented (user shall
+    be added to it automatically), and the people counter will be increased by
+    one.
+  </Text>,
+  <Text size="small">
+    When a user lefts the Chat App, the people counter will be decreased by one.
+  </Text>,
+  <Text size="small">
+    Group Chat should show the number of users being online, messages from all
+    the users (note: optionally can skip historical messages for new users or
+    keep all the history as you will), information about new users joining,
+    existing users leaving and an online dot indicator (green - online, gray -
+    offline).
+  </Text>,
+  <Text size="small">
+    Users should be able to add messages through the input with the ability to
+    select emoji using an emoji picker. Messages should be sent by clicking on a
+    button or/and e.g. by using Enter key.
+  </Text>,
+  <Text size="small">
+    "My" messages should show on the right, other user's messages should show on
+    the left.
+  </Text>,
+];
+
+export const additionalFeatures = [
+  <Text size="small">Show "is typing" UI when a user is typing.</Text>,
+  <Text size="small">Show "unread" messages indicator.</Text>,
+  <Text size="small">Add ability to start a direct chat with a user.</Text>,
+  <Text size="small">
+    Add ability to block a user to prevent seeing his/her messages on Group Chat
+    and prevent him/her from starting a direct chat with you or/and end any
+    started direct chat.
+  </Text>,
+  <Text size="small">
+    Add sound notification when a new message is received and add mute
+    functionality to mute either group or private (DM) chat.
+  </Text>,
+  <Text size="small">
+    Add API tests to your code, using e.g.{' '}
+    <Link
+      size="small"
+      href="https://www.digitalocean.com/community/tutorials/test-a-node-restful-api-with-mocha-and-chai"
+    >
+      Mocha & Chai
+    </Link>
+    .
+  </Text>,
+  <Text size="small">
+    Add e2e tests to your code, using e.g.{' '}
+    <Link size="small" href="https://www.cypress.io/">
+      cypress
+    </Link>
+    .
+  </Text>,
+];
+
+export const technologies = [
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/css/">
+      CSS
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://javascript.info/">
+      JavaScript
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/">
+      React
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://chakra-ui.com/">
+      Chakra UI
+    </Link>{' '}
+    (Recommended components for this project)
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://chakra-ui.com/docs/media-and-icons/icon">
+      Chakra Icons
+    </Link>{' '}
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://socket.io/">
+      socket.io
+    </Link>{' '}
+    (realtime communication between client and server)
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://expressjs.com/">
+      Express
+    </Link>{' '}
+    (host a socket.io server)
+  </Text>,
+];
+
+export const coreConcepts = [
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/getting-started.html">
+      Getting Started
+    </Link>{' '}
+    with React.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/thinking-in-react.html">
+      Thinking in React
+    </Link>
+    .
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/lists-and-keys.html">
+      Lists and Keys
+    </Link>{' '}
+    in React.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/lifting-state-up.html">
+      Lifting State Up
+    </Link>{' '}
+    in React.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://reactjs.org/docs/forms.html#controlled-components"
+    >
+      Controlled Components
+    </Link>{' '}
+    in React.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://reactjs.org/docs/hooks-intro.html">
+      Hooks
+    </Link>{' '}
+    in React.
+  </Text>,
+  <Text size="small">
+    Creating{' '}
+    <Link size="small" href="https://socket.io/get-started/chat">
+      socket.io
+    </Link>{' '}
+    server.{' '}
+  </Text>,
+  <Text size="small">
+    Boilerplate{' '}
+    <Link size="small" href="https://www.valentinog.com/blog/socket-react/">
+      React + socket.io
+    </Link>{' '}
+    server.
+  </Text>,
+  <Text size="small">
+    Setting up a{' '}
+    <Link
+      size="small"
+      href="https://coursework.vschool.io/setting-up-a-full-stack-react-application/
+"
+    >
+      proxy
+    </Link>{' '}
+    server.
+  </Text>,
+  <Text size="small">
+    Deploying{' '}
+    <Link
+      size="small"
+      href="https://devcenter.heroku.com/articles/node-websockets"
+    >
+      socket.io
+    </Link>{' '}
+    server to Heroku.{' '}
+  </Text>,
+];
+
+export const solutions = [];
+
+<Project
+  features={features}
+  additionalFeatures={additionalFeatures}
+  technologies={technologies}
+  coreConcepts={coreConcepts}
+  solutions={solutions}
+  {...props}
+  {...props.frontmatter}
+/>
