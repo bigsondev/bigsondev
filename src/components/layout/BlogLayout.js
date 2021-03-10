@@ -272,22 +272,6 @@ const BlogLayout = ({
                 />
               </Paragraph>
             </Box>
-            <Link href="https://gumroad.com/a/184685683">
-              <Image
-                fluid={affiliateTallFluid}
-                alt="Frontend Unicorn book promotion banner"
-                style={{ width: 250, margin: '2rem auto 0.5rem auto' }}
-              />
-            </Link>
-            <Paragraph
-              size="micro"
-              type="secondary"
-              fontStyle="italic"
-              style={{ padding: '0 3rem', textAlign: 'center' }}
-            >
-              The above is an affiliate link, if you buy the book I'll get a
-              small commission at no extra charge to you.
-            </Paragraph>
           </XlOnly>
           <ExceptXl>
             <Row>
@@ -319,24 +303,6 @@ const BlogLayout = ({
                     showCount={true}
                   />
                 </Paragraph>
-                <Box margin="3rem 0 0 0">
-                  <Link href="https://gumroad.com/a/184685683">
-                    <Image
-                      fluid={affiliateWideFluid}
-                      alt="Frontend Unicorn book promotion banner"
-                      style={{ margin: 0 }}
-                    />
-                  </Link>
-                  <Paragraph
-                    size="micro"
-                    type="secondary"
-                    fontStyle="italic"
-                    marginBottom="0"
-                  >
-                    The above is an affiliate link, if you buy the book I'll get
-                    a small commission at no extra charge to you.
-                  </Paragraph>
-                </Box>
               </Col>
             </Row>
           </ExceptXl>

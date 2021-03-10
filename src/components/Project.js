@@ -367,45 +367,6 @@ export const Project = ({
           <Col xs={24}>
             <Divider />
           </Col>
-          <Col xs={24} md={12}>
-            <Title level={4} transform="none">
-              Building Your Own Project
-            </Title>
-            <Paragraph size="preNormal" marginBottom="1rem">
-              If this project doesn't fit your needs and you don't feel like a
-              Designer but want to prototype something fun quickly, a designmodo
-              tool might help with that.
-            </Paragraph>
-            <a
-              href="https://designmodo.com/startup/?u=4244"
-              rel="nofollow"
-              title="Startup Framework by Designmodo"
-              target="_blank"
-            >
-              <img
-                src="https://designmodo.com/img/affiliate/startup3_250_250.jpg"
-                border="0"
-                width="220"
-                height="220"
-                alt="Startup Framework by Designmodo"
-              />
-            </a>
-            <Box margin="1rem 0 0 0">
-              <Paragraph size="micro" type="secondary" fontStyle="italic">
-                The above is an affiliate link, if you buy something I'll get a
-                small commission at no extra charge to you.
-              </Paragraph>
-            </Box>
-          </Col>
-          <Col xs={24} md={12}>
-            <Title level={4} transform="none">
-              Why designmodo?
-            </Title>
-            <PostList data={designModo} />
-          </Col>
-          <Col xs={24}>
-            <Divider />
-          </Col>
           <Col xs={24}>
             <Title level={3} transform="none">
               Wall of Fame
