@@ -221,8 +221,12 @@ const BlogLayout = ({
   pageContext: { previous, next },
 }) => {
   useCarbonAds();
-  const exceptXl = window && window.matchMedia('(max-width: 1199px)').matches;
-  const xlOnly = window && window.matchMedia('(min-width: 1200px)').matches;
+  const exceptXl =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(max-width: 1199px)').matches;
+  const xlOnly =
+    typeof window !== 'undefined' &&
+    window.matchMedia('(min-width: 1200px)').matches;
   const isBlogPost = slug.includes('/blog/');
   const feedLink = isBlogPost
     ? 'https://bigsondev.com/blog/rss.xml'
