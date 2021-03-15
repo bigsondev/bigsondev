@@ -139,7 +139,7 @@ const Pill = ({ title, desc, path, tags, difficulty }) => (
         </TitleHolder>
       </Box>
       <Paragraph size="preNormal">{truncate(desc, 120)}</Paragraph>
-      <PillButton type="primary">Eat pill</PillButton>
+      <PillButton type="primary">Take pill</PillButton>
     </PillCard>
   </GatsbyLink>
 );

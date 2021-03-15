@@ -100,7 +100,7 @@ export const BlogLibrary = ({ firstProject, secondProject, thirdProject }) => {
           fontSize={fontSize.large}
           strong
         >
-          Projects
+          Projects to practice
         </Title>
         <Zoom right>
           <Row justify="center" gutter={[24, 24]}>
@@ -206,7 +206,7 @@ export const BlogLibrary = ({ firstProject, secondProject, thirdProject }) => {
                     <Button type="primary">Read articles on Blog</Button>
                   </Link>
                   <Link to="/pills/">
-                    <Button type="secondary">Eat knowledge pills</Button>
+                    <Button type="secondary">Take knowledge pills</Button>
                   </Link>
                 </Space>
               </Col>
@@ -224,7 +224,7 @@ export const BlogLibrary = ({ firstProject, secondProject, thirdProject }) => {
                     <Button type="primary">Read articles on Blog</Button>
                   </Link>
                   <Link to="/pills/">
-                    <Button type="secondary">Eat knowledge pills</Button>
+                    <Button type="secondary">Take knowledge pills</Button>
                   </Link>
                 </Space>
               </Col>
