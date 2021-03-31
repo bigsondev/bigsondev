@@ -140,10 +140,9 @@ export const Offer = () => {
                     textOpacity={opacity.title}
                     align="center"
                     strong
-                    style={{ minHeight: '3.5rem' }}
+                    style={{ minHeight: '2rem' }}
                   >
-                    One opening session (1 hour) in total to get started. Covers
-                    one week of Mentorship.
+                    Covers 7 days of Mentorship.
                   </Paragraph>
                 </Col>
                 <Col span={24}>
@@ -154,7 +153,7 @@ export const Offer = () => {
                         align="center"
                         color={colors.grayLevelNine}
                       >
-                        $49
+                        $60
                       </Title>
                     </Space>
                   </Box>
@@ -251,10 +250,9 @@ export const Offer = () => {
                     textOpacity={opacity.title}
                     align="center"
                     strong
-                    style={{ minHeight: '3.5rem' }}
+                    style={{ minHeight: '2rem' }}
                   >
-                    Four sessions (1 hour each) in total, one per week. Covers
-                    one month of Mentorship.
+                    Covers 30 days of Mentorship.
                   </Paragraph>
                 </Col>
                 <Col span={24}>
@@ -265,7 +263,7 @@ export const Offer = () => {
                         align="center"
                         color={colors.grayLevelNine}
                       >
-                        $169
+                        $210
                       </Title>
                     </Space>
                   </Box>
@@ -370,10 +368,9 @@ export const Offer = () => {
                     textOpacity={opacity.title}
                     align="center"
                     strong
-                    style={{ minHeight: '3.5rem' }}
+                    style={{ minHeight: '2rem' }}
                   >
-                    Twelve sessions (1 hour each) in total, one per week. Covers
-                    three months of Mentorship.
+                    Covers 90 days of Mentorship.
                   </Paragraph>
                 </Col>
                 <Col span={24}>
@@ -384,7 +381,7 @@ export const Offer = () => {
                         align="center"
                         color={colors.grayLevelNine}
                       >
-                        $489
+                        $600
                       </Title>
                     </Space>
                   </Box>
