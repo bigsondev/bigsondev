@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import { Row, Col, Space, Rate, Divider, List } from 'antd';
+import { Row, Col, Rate, Divider, List } from 'antd';
 import styled from 'styled-components';
-
-import { useCarbonAds } from './hooks';
 
 import {
   theme,
@@ -120,7 +118,6 @@ export const Project = ({
   solutions = [],
   scrollTip = true,
 }) => {
-  useCarbonAds();
   return (
     <Row>
       <Col xs={24}>

@@ -20,8 +20,6 @@ import {
   truncate,
 } from '~utils';
 
-import { useCarbonAds } from '../hooks';
-
 import {
   Paragraph,
   Box,
@@ -98,18 +96,6 @@ const ImageCredit = styled.div({
 
 const DividerHolder = styled(Divider)({
   margin: '0.5rem 0',
-});
-
-const DesktopAdHolder = styled.span({
-  margin: '1.25rem',
-});
-
-const MobileAdHolder = styled.div({
-  marginTop: '1.5rem',
-
-  '& #carbonads': {
-    margin: '0',
-  },
 });
 
 export const pageQuery = graphql`
@@ -220,13 +206,6 @@ const BlogLayout = ({
   },
   pageContext: { previous, next },
 }) => {
-  useCarbonAds();
-  const exceptXl =
-    typeof window !== 'undefined' &&
-    window.matchMedia('(max-width: 1199px)').matches;
-  const xlOnly =
-    typeof window !== 'undefined' &&
-    window.matchMedia('(min-width: 1200px)').matches;
   const isBlogPost = slug.includes('/blog/');
   const feedLink = isBlogPost
     ? 'https://bigsondev.com/blog/rss.xml'
@@ -293,7 +272,6 @@ const BlogLayout = ({
                   showCount={true}
                 />
               </Paragraph>
-              {xlOnly && <DesktopAdHolder id="bigsondev-ad-holder" />}
             </Box>
           </XlOnly>
           <ExceptXl>
@@ -326,7 +304,6 @@ const BlogLayout = ({
                     showCount={true}
                   />
                 </Paragraph>
-                {exceptXl && <MobileAdHolder id="bigsondev-mobile-ad-holder" />}
               </Col>
             </Row>
           </ExceptXl>

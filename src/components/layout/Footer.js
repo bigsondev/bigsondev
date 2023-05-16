@@ -135,7 +135,7 @@ export const Footer = () => (
           <Row justify="space-between">
             <Col xs={24} sm={8}>
               <Paragraph size="micro" type="secondary" marginBottom="0">
-                © 2020-2021 BigsonDev
+                © 2020-2023 BigsonDev
               </Paragraph>
             </Col>
             <TermsLinksCol xs={24} sm={16}>
