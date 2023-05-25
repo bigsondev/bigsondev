@@ -145,9 +145,9 @@ const RightMenu = ({
     </SmallOnly>
     <ExceptSmall>
       <MenuHolder theme="dark" mode="horizontal">
-        <MenuItem key="1" isSelected={pathname.includes('mentorship')}>
-          <Link to="/mentorship/">
-            <Text size="preNormal">Mentorship</Text>
+        <MenuItem key="1" isSelected={pathname.includes('projects')}>
+          <Link to="/projects/">
+            <Text size="preNormal">Projects</Text>
           </Link>
         </MenuItem>
         <MenuItem key="2" isSelected={pathname.includes('blog')}>
@@ -160,12 +160,7 @@ const RightMenu = ({
             <Text size="preNormal">Pills</Text>
           </Link>
         </MenuItem>
-        <MenuItem key="4" isSelected={pathname.includes('projects')}>
-          <Link to="/projects/">
-            <Text size="preNormal">Projects</Text>
-          </Link>
-        </MenuItem>
-        <MenuItem key="5" isSelected={pathname.includes('reach-out')}>
+        <MenuItem key="4" isSelected={pathname.includes('reach-out')}>
           <Link to="/reach-out/">
             <Text size="preNormal">Reach Out</Text>
           </Link>
@@ -213,11 +208,11 @@ export const Header = ({ pathname }) => {
               <MenuHolder theme="dark" mode="inline">
                 <MobileMenuItem
                   key="1"
-                  isSelected={pathname.includes('mentorship')}
+                  isSelected={pathname.includes('projects')}
                   onClick={handleMobileMenuCloseClick}
                 >
-                  <Link to="/mentorship/">
-                    <Text size="preNormal">Mentorship</Text>
+                  <Link to="/projects/">
+                    <Text size="preNormal">Projects</Text>
                   </Link>
                 </MobileMenuItem>
                 <MobileMenuItem
@@ -240,15 +235,6 @@ export const Header = ({ pathname }) => {
                 </MobileMenuItem>
                 <MobileMenuItem
                   key="4"
-                  isSelected={pathname.includes('projects')}
-                  onClick={handleMobileMenuCloseClick}
-                >
-                  <Link to="/projects/">
-                    <Text size="preNormal">Projects</Text>
-                  </Link>
-                </MobileMenuItem>
-                <MobileMenuItem
-                  key="5"
                   isSelected={pathname.includes('reach-out')}
                   onClick={handleMobileMenuCloseClick}
                 >

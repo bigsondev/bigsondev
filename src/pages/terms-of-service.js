@@ -61,10 +61,8 @@ const TermsOfService = () => (
               'Tailored mentoring - 12 (twelve) hours in total. Tutoring based on creating a portfolio with projects via Zoom meeting followed by e-mail or Slack feedback on Client’s knowledge, exemplary assignments related to the portfolio or/and projects, next steps, and possible progress',
               'Other service - individually agreed with Client Service plan containing above matters in taylored offer',
               'Blog - regularly posted, free of charge, articles and guidelines considering services provided by BigsonDev available on BigsonDev web page',
-              'Projects - set of free of charge coding exercises prepared for the users of BigsonDev web page',
+              'Projects - set of coding exercises prepared for the users of BigsonDev web page',
               'Pills - set of free of charge knowledge pills prepared for the users of BigsonDev web page',
-              'Newsletter - a free of charge bulletin issued periodically via e-mail to Clients who subscribed on BigsonDev web page',
-              'Discussion  - free of charge brainstorming developers group organized via Slack which Client subscribed on BigsonDev web page may take part in',
             ]}
           />
           <Paragraph lastParagraph />

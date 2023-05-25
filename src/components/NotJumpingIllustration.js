@@ -6,9 +6,6 @@ import {
   MentorIllustration,
   MockInterview,
   DevelopmentPlan,
-  Newsletter,
-  NewsletterSmall,
-  DuckSlack,
 } from '~svg';
 
 // https://itnext.io/how-to-stop-content-jumping-when-images-load-7c915e47f576
@@ -31,9 +28,6 @@ const ILLUSTRATION_MAPPER = {
   mentor: <MentorIllustration />,
   mockInterview: <MockInterview />,
   developmentPlan: <DevelopmentPlan />,
-  newsletter: <Newsletter />,
-  newsletterSmall: <NewsletterSmall />,
-  duckSlack: <DuckSlack />,
 };
 
 export const NotJumpingIllustration = ({ type, ...props }) => {

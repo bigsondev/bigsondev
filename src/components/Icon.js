@@ -22,8 +22,6 @@ import {
   GitHubIcon,
   GirlPillIcon,
   BoyPillIcon,
-  CodementorIcon,
-  MentorCruiseIcon,
   CallIcon,
   SupportIcon,
   BuildIcon,
@@ -89,6 +87,9 @@ import {
   ToolsTagIcon,
   UxuiTagIcon,
   RssIcon,
+  BdsIcon,
+  DevtoIcon,
+  RedditSocialIcon,
 } from '~svg';
 
 const Holder = styled(AntdIcon)(({ width = 32 }) => ({
@@ -111,6 +112,9 @@ const ICON_MAPPER = {
   facebook: FacebookIcon,
   twitter: TwitterIcon,
   reddit: RedditIcon,
+  redditSocial: RedditSocialIcon,
+  devto: DevtoIcon,
+  bds: BdsIcon,
   linkedin: LinkedinIcon,
   quote: QuoteIcon,
   behance: BehanceIcon,
@@ -119,8 +123,6 @@ const ICON_MAPPER = {
   github: GitHubIcon,
   girlPill: GirlPillIcon,
   boyPill: BoyPillIcon,
-  codementor: CodementorIcon,
-  mentorCruise: MentorCruiseIcon,
   call: CallIcon,
   support: SupportIcon,
   build: BuildIcon,

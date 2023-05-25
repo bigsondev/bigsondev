@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import { Row, Col, Rate, Divider, List } from 'antd';
+import { Row, Col, Rate, Divider, List, Space } from 'antd';
 import styled from 'styled-components';
 
 import {
@@ -91,17 +91,6 @@ const howToStartList = [
   </Text>,
 ];
 
-const wallOfFameRequirements = [
-  <Text size="small">
-    Link to the completed project (CodeSandbox link or completed project link
-    with GitHub repo link).
-  </Text>,
-  <Text size="small">Your nickname. (brand name, something spicy 🔥)</Text>,
-  <Text size="small">
-    Portfolio/Website/GitHub link you would like to share with the world.
-  </Text>,
-];
-
 export const Project = ({
   fluid,
   title,
@@ -109,15 +98,17 @@ export const Project = ({
   icon,
   desc,
   designLink,
+  bdsLink,
   difficulty,
   slug,
+  isLegacy,
+  isComingSoon,
   features = [],
   additionalFeatures = [],
   coreConcepts = [],
   technologies = [],
-  solutions = [],
-  scrollTip = true,
 }) => {
+  console.log(bdsLink, isLegacy, isComingSoon);
   return (
     <Row>
       <Col xs={24}>
@@ -126,9 +117,22 @@ export const Project = ({
             <Col xs={24} md={12}>
               <Image fluid={fluid} alt={title} style={{ margin: 0 }} />
               <Box margin="1rem 0 0 0" style={{ textAlign: 'center' }}>
-                <Link href={designLink}>
-                  <Button type="promo">View Adobe XD design</Button>
-                </Link>
+                <Space size="large" direction="vertical">
+                  <Text>
+                    {isComingSoon
+                      ? 'This project will be available soon in my new application.'
+                      : isLegacy
+                      ? 'A revamped version of this project is available in my new application.'
+                      : 'This is a brand-new project only available in my application.'}
+                  </Text>
+                  <Link href={bdsLink}>
+                    <Button type="promo">
+                      {isComingSoon
+                        ? 'Preview on BigDevSoon'
+                        : 'Try out on BigDevSoon'}
+                    </Button>
+                  </Link>
+                </Space>
               </Box>
               <Box margin="1.5rem 0 0 0">
                 <span id="bigsondev-ad-holder" />
@@ -190,221 +194,168 @@ export const Project = ({
                   </Col>
                 </Row>
               </Box>
-              <Box margin="2rem 0 0 0">
-                <Paragraph size="preNormal" strong>
-                  It's free and always will. You can use this design for your
-                  portfolio/website without any limitations. Additionally, you
-                  can share the completed project wherever you want.
-                </Paragraph>
-              </Box>
+              {isLegacy && (
+                <Box margin="2rem 0 0rem 0">
+                  <Link href={designLink}>
+                    <Button>View Adobe XD design (legacy)</Button>
+                  </Link>
+                  <Box pt={2}>
+                    <Paragraph size="preNormal">
+                      Adobe XD design is free. You can use this design for your
+                      portfolio/website without any limitations. Additionally,
+                      you can share the completed project wherever you want.
+                    </Paragraph>
+                    <Paragraph size="preNormal">
+                      <Text strong>Note</Text>: All new designs will be coming
+                      through BigDevSoon with Figma. This one is considered a
+                      legacy design but will always be here.
+                    </Paragraph>
+                  </Box>
+                </Box>
+              )}
             </Col>
             <Col xs={24}>
               <Divider />
             </Col>
-            <Col xs={24} md={12}>
-              <Title level={4} transform="none">
-                Read me first
-              </Title>
-              <Paragraph size="preNormal">
-                The goal of this project is to build a {title} similar to the
-                design above.
-              </Paragraph>
-              <Paragraph size="preNormal">
-                Technologies & tools will be proposed down below but feel free
-                to use different ones if you're more familiar with them. Have
-                fun along the way.
-              </Paragraph>
-              <Paragraph size="preNormal" strong>
-                Project requirements
-              </Paragraph>
-              <PostList data={features} />
-              <Paragraph size="preNormal" strong>
-                Additional requirements
-              </Paragraph>
-              <PostList data={additionalFeatures} />
-            </Col>
-            <Col xs={24} md={12}>
-              <Title level={4} transform="none">
-                How to start
-              </Title>
-              <Paragraph size="preNormal">
-                In most cases,{' '}
-                <Link size="preNormal" href="https://codesandbox.io/">
-                  CodeSandbox
-                </Link>{' '}
-                will be the best place for starting out rapidly.
-              </Paragraph>
-              <Paragraph size="preNormal">
-                You could also use an IDE,{' '}
-                <Link size="preNormal" href="https://code.visualstudio.com/">
-                  VSCode
-                </Link>{' '}
-                for example, and create e.g. a{' '}
-                <Link size="preNormal" href="https://github.com/">
-                  GitHub
-                </Link>{' '}
-                repository with custom deployment. More about it in the "Build &
-                Deploy" section.
-              </Paragraph>
-              <Paragraph size="preNormal" strong>
-                First steps
-              </Paragraph>
-              <PostList data={howToStartList} />
-            </Col>
-            <Col xs={24}>
-              <Divider />
-            </Col>
-            <Col xs={24} md={12}>
-              <Title level={4} transform="none">
-                Technologies & Tools
-              </Title>
-              <PostList data={technologies} />
-            </Col>
-            <Col xs={24} md={12}>
-              <Title level={4} transform="none">
-                Core concepts
-              </Title>
-              <PostList data={coreConcepts} />
-            </Col>
-            <Col xs={24}>
-              <Divider />
-            </Col>
-            <Col xs={24} md={12}>
-              <Title level={4} transform="none">
-                Stuck, can't progress?
-              </Title>
-              <Paragraph size="preNormal">
-                Take a break, think about all the pieces you need to build for
-                this project.
-              </Paragraph>
-              <Paragraph size="preNormal">
-                I'll be happy to assist you, try out my{' '}
-                <GatsbyLink to="/mentorship/">Mentorship</GatsbyLink> or/and
-                connect to a study group on{' '}
-                <GatsbyLink to={`${slug}#bigsondev-slack`}>Slack</GatsbyLink>{' '}
-                where I and mentees will be able to answer your questions.
-              </Paragraph>
-            </Col>
-            <Col xs={24} md={12}>
-              <Title level={4} transform="none">
-                Build & Deploy
-              </Title>
-              <Paragraph size="preNormal">
-                If you decided on CodeSandbox, there should be a "Share" button
-                that you can use as a link for your completed project.{' '}
-              </Paragraph>
-              <Paragraph size="preNormal">
-                Otherwise, for simple, static projects (HTML, CSS, JavaScript)
-                you can try{' '}
-                <Link size="preNormal" href="https://pages.github.com/">
-                  GitHub Pages
-                </Link>
-                . For more complex deployments (React, etc.),{' '}
-                <Link size="preNormal" href="https://www.netlify.com/">
-                  Netlify
-                </Link>{' '}
-                or{' '}
-                <Link size="preNormal" href="https://vercel.com/">
-                  Vercel
-                </Link>{' '}
-                should be good. If the project has a little bit of Backend, try{' '}
-                <Link size="preNormal" href="https://heroku.com/">
-                  Heroku
-                </Link>{' '}
-                for it.
-              </Paragraph>
-            </Col>
-            <Col xs={24}>
-              <Divider />
-            </Col>
-            <Col xs={24} md={12}>
-              <Title level={4} transform="none">
-                Review & Feedback
-              </Title>
-              <Paragraph size="preNormal">
-                Before you share the completed project, feel free to post it on{' '}
-                <GatsbyLink to={`${slug}#bigsondev-slack`}>Slack</GatsbyLink>{' '}
-                for review, someone might pick it up and give honest feedback,
-                maybe even propose code improvements. After all, we want to
-                improve as Developers.
-              </Paragraph>
-            </Col>
-            <Col xs={24} md={12}>
-              <Title level={4} transform="none">
-                Share your solution
-              </Title>
-              <Paragraph size="preNormal">
-                It would be amazing if you can tweet{' '}
-                <Link size="preNormal" href="https://twitter.com/BigsonDev">
-                  @BigsonDev
-                </Link>{' '}
-                with the link to the completed project and/or GitHub repo. All
-                the mentees would love to see what you've built (and me too).
-              </Paragraph>
-            </Col>
-            <Col xs={24}>
-              <Divider />
-            </Col>
-            <Col xs={24}>
-              <Title level={3} transform="none">
-                Wall of Fame
-              </Title>
-              <List
-                itemLayout="vertical"
-                split={false}
-                dataSource={solutions}
-                locale={{
-                  emptyText: 'Be the first one to land on the Wall of Fame.',
-                }}
-                renderItem={({ nickname, preview, code, portfolio }) => (
-                  <List.Item key={nickname}>
-                    <Row justify="space-between">
-                      <Box margin="0 0 1rem 0">
-                        <Col>
-                          <Link
-                            href={portfolio}
-                            style={{
-                              fontWeight: 'bold',
-                              fontSize: fontSize.medium,
-                            }}
-                          >
-                            {nickname}
-                          </Link>
-                        </Col>
-                      </Box>
-                      <Col>
-                        <Row gutter={[24, 24]}>
-                          <Col>
-                            <Link href={preview}>
-                              <Button type="secondary">Preview</Button>
-                            </Link>
-                          </Col>
-                          <Col>
-                            <Link href={code}>
-                              <Button type="secondary">Code</Button>
-                            </Link>
-                          </Col>
-                        </Row>
-                      </Col>
-                    </Row>
-                  </List.Item>
-                )}
-              />
-              <Box margin="2rem 0 0 0">
-                <Paragraph size="preNormal">
-                  To get in the Wall of Fame, I'll need a couple of things.
-                </Paragraph>
-                <PostList data={wallOfFameRequirements} />
-                <Paragraph size="preNormal">
-                  If I missed your solution, please, contact me via the{' '}
-                  <GatsbyLink to="/reach-out/">Reach Out form</GatsbyLink>.{' '}
-                </Paragraph>
-                <Paragraph size="preNormal" strong>
-                  I can't promise every solution will land on the Wall of Fame,
-                  it needs to be neat and crispy.
-                </Paragraph>
-              </Box>
-            </Col>
+            {isLegacy && (
+              <>
+                <Col xs={24} md={12}>
+                  <Title level={4} transform="none">
+                    Read me first
+                  </Title>
+                  <Paragraph size="preNormal">
+                    The goal of this project is to build a {title} similar to
+                    the design above.
+                  </Paragraph>
+                  <Paragraph size="preNormal">
+                    Technologies & tools will be proposed down below but feel
+                    free to use different ones if you're more familiar with
+                    them. Have fun along the way.
+                  </Paragraph>
+                  <Paragraph size="preNormal" strong>
+                    Project requirements
+                  </Paragraph>
+                  <PostList data={features} />
+                  <Paragraph size="preNormal" strong>
+                    Additional requirements
+                  </Paragraph>
+                  <PostList data={additionalFeatures} />
+                </Col>
+                <Col xs={24} md={12}>
+                  <Title level={4} transform="none">
+                    How to start
+                  </Title>
+                  <Paragraph size="preNormal">
+                    In most cases,{' '}
+                    <Link size="preNormal" href="https://codesandbox.io/">
+                      CodeSandbox
+                    </Link>{' '}
+                    will be the best place for starting out rapidly.
+                  </Paragraph>
+                  <Paragraph size="preNormal">
+                    You could also use an IDE,{' '}
+                    <Link
+                      size="preNormal"
+                      href="https://code.visualstudio.com/"
+                    >
+                      VSCode
+                    </Link>{' '}
+                    for example, and create e.g. a{' '}
+                    <Link size="preNormal" href="https://github.com/">
+                      GitHub
+                    </Link>{' '}
+                    repository with custom deployment. More about it in the
+                    "Build & Deploy" section.
+                  </Paragraph>
+                  <Paragraph size="preNormal" strong>
+                    First steps
+                  </Paragraph>
+                  <PostList data={howToStartList} />
+                </Col>
+                <Col xs={24}>
+                  <Divider />
+                </Col>
+                <Col xs={24} md={12}>
+                  <Title level={4} transform="none">
+                    Technologies & Tools
+                  </Title>
+                  <PostList data={technologies} />
+                </Col>
+                <Col xs={24} md={12}>
+                  <Title level={4} transform="none">
+                    Core concepts
+                  </Title>
+                  <PostList data={coreConcepts} />
+                </Col>
+                <Col xs={24}>
+                  <Divider />
+                </Col>
+                <Col xs={24} md={12}>
+                  <Title level={4} transform="none">
+                    Stuck, can't progress?
+                  </Title>
+                  <Paragraph size="preNormal">
+                    Take a break, think about all the pieces you need to build
+                    for this project.
+                  </Paragraph>
+                  <Paragraph size="preNormal">
+                    You can try out the{' '}
+                    <Link size="preNormal" href="https://bigdevsoon.me/">
+                      BigDevSoon
+                    </Link>{' '}
+                    platform to maximize your learning effectiveness.
+                  </Paragraph>
+                </Col>
+                <Col xs={24} md={12}>
+                  <Title level={4} transform="none">
+                    Build & Deploy
+                  </Title>
+                  <Paragraph size="preNormal">
+                    If you decided on CodeSandbox, there should be a "Share"
+                    button that you can use as a link for your completed
+                    project.{' '}
+                  </Paragraph>
+                  <Paragraph size="preNormal">
+                    Otherwise, for simple, static projects (HTML, CSS,
+                    JavaScript) you can try{' '}
+                    <Link size="preNormal" href="https://pages.github.com/">
+                      GitHub Pages
+                    </Link>
+                    . For more complex deployments (React, etc.),{' '}
+                    <Link size="preNormal" href="https://www.netlify.com/">
+                      Netlify
+                    </Link>{' '}
+                    or{' '}
+                    <Link size="preNormal" href="https://vercel.com/">
+                      Vercel
+                    </Link>{' '}
+                    should be good. If the project has a little bit of Backend,
+                    try{' '}
+                    <Link size="preNormal" href="https://heroku.com/">
+                      Heroku
+                    </Link>{' '}
+                    for it.
+                  </Paragraph>
+                </Col>
+                <Col xs={24}>
+                  <Divider />
+                </Col>
+                <Col xs={24} md={12}>
+                  <Title level={4} transform="none">
+                    Share your solution
+                  </Title>
+                  <Paragraph size="preNormal">
+                    It would be amazing if you can tweet{' '}
+                    <Link size="preNormal" href="https://twitter.com/BigsonDev">
+                      @BigsonDev
+                    </Link>{' '}
+                    with the link to the completed project and/or GitHub repo.
+                    All the mentees would love to see what you've built (and me
+                    too).
+                  </Paragraph>
+                </Col>
+              </>
+            )}
           </Row>
         </MainCardHolder>
       </Col>

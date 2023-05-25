@@ -6,9 +6,12 @@ import DeveloperIcon from './developer.svg';
 import RecruiterIcon from './recruiter.svg';
 import MentorIcon from './mentor.svg';
 import DotIcon from './dot.svg';
+import BdsIcon from './bds.svg';
+import DevtoIcon from './devto.svg';
 import FacebookIcon from './facebook.svg';
 import LinkedinIcon from './linkedin.svg';
 import RedditIcon from './reddit.svg';
+import RedditSocialIcon from './reddit-social.svg';
 import TwitterIcon from './twitter.svg';
 import QuoteIcon from './quote.svg';
 import BehanceIcon from './behance.svg';
@@ -17,8 +20,6 @@ import InstagramIcon from './instagram.svg';
 import GitHubIcon from './github.svg';
 import GirlPillIcon from './knowledge-pill-red.svg';
 import BoyPillIcon from './knowledge-pill-blue.svg';
-import CodementorIcon from './codementor.svg';
-import MentorCruiseIcon from './mentor-cruise.svg';
 import CallIcon from './call.svg';
 import SupportIcon from './support.svg';
 import BuildIcon from './build.svg';
@@ -105,8 +106,9 @@ export {
   GitHubIcon,
   GirlPillIcon,
   BoyPillIcon,
-  CodementorIcon,
-  MentorCruiseIcon,
+  BdsIcon,
+  DevtoIcon,
+  RedditSocialIcon,
   CallIcon,
   SupportIcon,
   BuildIcon,

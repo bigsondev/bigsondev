@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
 import { Link as GatsbyLink } from 'gatsby';
 
-import { Box, failMessage, Button, SlackBanner, Paragraph } from '~components';
+import { Box, failMessage, Button, Paragraph } from '~components';
 import { encode } from '~utils';
 
 import { FEEDBACK_POLL_FORM_NAME } from './constants';
@@ -178,9 +178,6 @@ export const FeedbackPollForm = () => {
               </Box>
             </Form.Item>
           </Form>
-          <Box mt={10} mb={10}>
-            <SlackBanner />
-          </Box>
         </>
       )}
     </>

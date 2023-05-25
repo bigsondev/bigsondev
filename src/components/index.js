@@ -17,7 +17,6 @@ export { Icon } from './Icon';
 export * from './MediaQueries';
 export { TutorialTooltip } from './TutorialTooltip';
 export { PromoBanner } from './PromoBanner';
-export { SlackBanner } from './slack-banner';
 export { ErrorBoundary } from './ErrorBoundary';
 export { Banners } from './Banners';
 export * from './keyframes';

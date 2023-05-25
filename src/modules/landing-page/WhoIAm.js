@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Space } from 'antd';
-import { Link as GatsbyLink } from 'gatsby';
 import styled from 'styled-components';
-import { openPopupWidget } from 'react-calendly';
 import Flip from 'react-reveal/Flip';
 import Slide from 'react-reveal/Slide';
-import Fade from 'react-reveal/Fade';
 
 import {
   theme,
@@ -18,10 +15,7 @@ import {
   Link,
   Image,
   MainCard,
-  Button,
   Illustration,
-  SmallOnly,
-  ExceptSmall,
   LgOnly,
   ExceptLg,
 } from '~components';
@@ -183,16 +177,6 @@ const mentorSkills = [
   { type: 'supportMentor', name: 'Support' },
 ];
 
-const openFreeConsultationEvent = () => {
-  openPopupWidget({
-    url: 'https://calendly.com/bigsondev/free-consultation',
-    pageSettings: {
-      hideEventTypeDetails: true,
-      hideLandingPageDetails: true,
-    },
-  });
-};
-
 export const WhoIAm = ({ fluid }) => {
   const [showSocials, setShowSocials] = useState(false);
 
@@ -232,21 +216,18 @@ export const WhoIAm = ({ fluid }) => {
           <Row justify="center" align="center" gutter={[24, 24]}>
             <Col xs={16} sm={8} md={6} lg={5}>
               <Flip>
-                <Image
-                  fluid={fluid}
-                  alt="Image represents Adrian - Frontend Mentor"
-                />
+                <Image fluid={fluid} alt="Image represents Adrian" />
               </Flip>
             </Col>
             <Col xs={22} lg={16} offset={1} style={{ alignSelf: 'center' }}>
               <Paragraph align="center" marginBottom="0">
-                <Text strong>Hi, I'm Adrian - Frontend Mentor.</Text> I love
-                sharing my knowledge with others. I was a League of Legends
-                Coach for nearly 5 years. After that, switched my career into IT
-                field. From a Java Tester to Lead Frontend Developer -
-                recruiting candidates and mentoring folks around me. I
-                collaborated with big companies, startups and always had lots of
-                fun building things from the scratch.
+                <Text strong>Hello there, I'm Adrian.</Text> I love sharing my
+                knowledge with others. I was a League of Legends Coach for
+                nearly 5 years. After that, switched my career into IT field.
+                From a Java Tester to Lead Frontend Developer - recruiting
+                candidates and mentoring folks around me. I collaborated with
+                big companies, startups and always had lots of fun building
+                things from the scratch.
               </Paragraph>
             </Col>
           </Row>
@@ -255,47 +236,42 @@ export const WhoIAm = ({ fluid }) => {
               <Row align="middle" justify="center" gutter={[32, 32]}>
                 <Col xs={22} lg={9}>
                   <Slide left>
-                    <Link
-                      href="https://www.linkedin.com/in/adrian-bigaj-282277130/"
-                      textDecoration="none"
-                    >
-                      <WhoIAmCard>
-                        <Row justify="center" gutter={[0, 24]}>
-                          <Col span={12} style={{ textAlign: 'center' }}>
-                            <Icon type="developer" width={64} />
-                          </Col>
-                          <Col span={24}>
-                            <Title
-                              level={4}
-                              transform="none"
-                              align="center"
-                              marginBottom="0"
-                              fontSize={fontSize.large}
-                              fontWeight={fontWeight.stronger}
-                            >
-                              Lead Frontend Developer
-                            </Title>
-                          </Col>
-                          <Col span={22}>
-                            <Paragraph align="center" size="preNormal">
-                              I love challenges and learning new technologies.
-                            </Paragraph>
-                          </Col>
-                          <Col span={20}>
-                            <Title level={5} align="center" transform="none">
-                              Experience
-                            </Title>
-                            <Paragraph
-                              align="center"
-                              size="preNormal"
-                              marginBottom="0"
-                            >
-                              5 years
-                            </Paragraph>
-                          </Col>
-                        </Row>
-                      </WhoIAmCard>
-                    </Link>
+                    <WhoIAmCard>
+                      <Row justify="center" gutter={[0, 24]}>
+                        <Col span={12} style={{ textAlign: 'center' }}>
+                          <Icon type="developer" width={64} />
+                        </Col>
+                        <Col span={24}>
+                          <Title
+                            level={4}
+                            transform="none"
+                            align="center"
+                            marginBottom="0"
+                            fontSize={fontSize.large}
+                            fontWeight={fontWeight.stronger}
+                          >
+                            Lead Frontend Developer
+                          </Title>
+                        </Col>
+                        <Col span={22}>
+                          <Paragraph align="center" size="preNormal">
+                            I love challenges and learning new technologies.
+                          </Paragraph>
+                        </Col>
+                        <Col span={20}>
+                          <Title level={5} align="center" transform="none">
+                            Experience
+                          </Title>
+                          <Paragraph
+                            align="center"
+                            size="preNormal"
+                            marginBottom="0"
+                          >
+                            8+ years
+                          </Paragraph>
+                        </Col>
+                      </Row>
+                    </WhoIAmCard>
                   </Slide>
                 </Col>
                 <Col
@@ -311,15 +287,15 @@ export const WhoIAm = ({ fluid }) => {
                     fontWeight={fontWeight.stronger}
                     id="bigsondev-technologies"
                   >
-                    Why should you care?
+                    Professional Expertise
                   </Title>
                   <Paragraph
                     size="normal"
                     textOpacity={opacity.title}
                     align="center"
                   >
-                    I've faced many challenges and got stuck a lot of times
-                    without a mentor - let's make sure I'm here to support you.
+                    I've faced many challenges and got stuck a lot of times -
+                    now I'm doing my best efforts so you can learn with ease.
                   </Paragraph>
                   <Paragraph
                     size="preNormal"
@@ -397,45 +373,43 @@ export const WhoIAm = ({ fluid }) => {
                 <Row align="middle" justify="center" gutter={[32, 32]}>
                   <Col xs={22} lg={9}>
                     <Slide right>
-                      <GatsbyLink to="/#bigsondev-newsletter-landing">
-                        <WhoIAmCard>
-                          <Row justify="center" gutter={[0, 24]}>
-                            <Col span={12} style={{ textAlign: 'center' }}>
-                              <Icon type="recruiter" width={64} />
-                            </Col>
-                            <Col span={24}>
-                              <Title
-                                level={4}
-                                transform="none"
-                                align="center"
-                                marginBottom="0"
-                                fontSize={fontSize.large}
-                                fontWeight={fontWeight.stronger}
-                              >
-                                Technical Recruiter
-                              </Title>
-                            </Col>
-                            <Col span={22}>
-                              <Paragraph align="center" size="preNormal">
-                                I enjoy brainstorming with candidates and
-                                sharing insights.
-                              </Paragraph>
-                            </Col>
-                            <Col span={20}>
-                              <Title level={5} align="center" transform="none">
-                                Experience
-                              </Title>
-                              <Paragraph
-                                align="center"
-                                size="preNormal"
-                                marginBottom="0"
-                              >
-                                2 years
-                              </Paragraph>
-                            </Col>
-                          </Row>
-                        </WhoIAmCard>
-                      </GatsbyLink>
+                      <WhoIAmCard>
+                        <Row justify="center" gutter={[0, 24]}>
+                          <Col span={12} style={{ textAlign: 'center' }}>
+                            <Icon type="recruiter" width={64} />
+                          </Col>
+                          <Col span={24}>
+                            <Title
+                              level={4}
+                              transform="none"
+                              align="center"
+                              marginBottom="0"
+                              fontSize={fontSize.large}
+                              fontWeight={fontWeight.stronger}
+                            >
+                              Technical Recruiter
+                            </Title>
+                          </Col>
+                          <Col span={22}>
+                            <Paragraph align="center" size="preNormal">
+                              I enjoy brainstorming with candidates and sharing
+                              insights.
+                            </Paragraph>
+                          </Col>
+                          <Col span={20}>
+                            <Title level={5} align="center" transform="none">
+                              Experience
+                            </Title>
+                            <Paragraph
+                              align="center"
+                              size="preNormal"
+                              marginBottom="0"
+                            >
+                              3+ years
+                            </Paragraph>
+                          </Col>
+                        </Row>
+                      </WhoIAmCard>
                     </Slide>
                   </Col>
                   <Col
@@ -510,62 +484,10 @@ export const WhoIAm = ({ fluid }) => {
                   </Col>
                   <Col xs={22} lg={9}>
                     <Slide right>
-                      <GatsbyLink to="/#bigsondev-newsletter-landing">
-                        <WhoIAmCard>
-                          <Row justify="center" gutter={[0, 24]}>
-                            <Col span={12} style={{ textAlign: 'center' }}>
-                              <Icon type="recruiter" width={64} />
-                            </Col>
-                            <Col span={24}>
-                              <Title
-                                level={4}
-                                transform="none"
-                                align="center"
-                                marginBottom="0"
-                                fontSize={fontSize.large}
-                                fontWeight={fontWeight.stronger}
-                              >
-                                Technical Recruiter
-                              </Title>
-                            </Col>
-                            <Col span={22}>
-                              <Paragraph align="center" size="preNormal">
-                                I enjoy brainstorming with candidates and
-                                sharing insights.
-                              </Paragraph>
-                            </Col>
-                            <Col span={20}>
-                              <Title level={5} align="center" transform="none">
-                                Experience
-                              </Title>
-                              <Paragraph
-                                align="center"
-                                size="preNormal"
-                                marginBottom="0"
-                              >
-                                2 years
-                              </Paragraph>
-                            </Col>
-                          </Row>
-                        </WhoIAmCard>
-                      </GatsbyLink>
-                    </Slide>
-                  </Col>
-                </Row>
-              </LgOnly>
-            </Col>
-            <Col span={24}>
-              <Row align="middle" justify="center" gutter={[32, 32]}>
-                <Col xs={22} lg={9}>
-                  <Slide left>
-                    <Link
-                      href="https://www.codementor.io/@bigsondev"
-                      textDecoration="none"
-                    >
                       <WhoIAmCard>
                         <Row justify="center" gutter={[0, 24]}>
                           <Col span={12} style={{ textAlign: 'center' }}>
-                            <Icon type="mentor" width={64} />
+                            <Icon type="recruiter" width={64} />
                           </Col>
                           <Col span={24}>
                             <Title
@@ -576,13 +498,13 @@ export const WhoIAm = ({ fluid }) => {
                               fontSize={fontSize.large}
                               fontWeight={fontWeight.stronger}
                             >
-                              Frontend Mentor
+                              Technical Recruiter
                             </Title>
                           </Col>
                           <Col span={22}>
                             <Paragraph align="center" size="preNormal">
-                              I care about mentees and watching them succeed
-                              drives me.
+                              I enjoy brainstorming with candidates and sharing
+                              insights.
                             </Paragraph>
                           </Col>
                           <Col span={20}>
@@ -594,12 +516,57 @@ export const WhoIAm = ({ fluid }) => {
                               size="preNormal"
                               marginBottom="0"
                             >
-                              5 years
+                              3+ years
                             </Paragraph>
                           </Col>
                         </Row>
                       </WhoIAmCard>
-                    </Link>
+                    </Slide>
+                  </Col>
+                </Row>
+              </LgOnly>
+            </Col>
+            <Col span={24}>
+              <Row align="middle" justify="center" gutter={[32, 32]}>
+                <Col xs={22} lg={9}>
+                  <Slide left>
+                    <WhoIAmCard>
+                      <Row justify="center" gutter={[0, 24]}>
+                        <Col span={12} style={{ textAlign: 'center' }}>
+                          <Icon type="mentor" width={64} />
+                        </Col>
+                        <Col span={24}>
+                          <Title
+                            level={4}
+                            transform="none"
+                            align="center"
+                            marginBottom="0"
+                            fontSize={fontSize.large}
+                            fontWeight={fontWeight.stronger}
+                          >
+                            Startup Owner
+                          </Title>
+                        </Col>
+                        <Col span={22}>
+                          <Paragraph align="center" size="preNormal">
+                            It's exciting to have something on your own that
+                            drives you.
+                          </Paragraph>
+                        </Col>
+                        <Col span={20}>
+                          <Title level={5} align="center" transform="none">
+                            Experience
+                          </Title>
+                          <Paragraph
+                            align="center"
+                            size="preNormal"
+                            marginBottom="0"
+                          >
+                            2+ years
+                          </Paragraph>
+                        </Col>
+                      </Row>
+                    </WhoIAmCard>
                   </Slide>
                 </Col>
                 <Col
@@ -614,16 +581,16 @@ export const WhoIAm = ({ fluid }) => {
                     fontSize={fontSize.large}
                     fontWeight={fontWeight.stronger}
                   >
-                    Why choose me as your Mentor?
+                    Why BigDevSoon is different?
                   </Title>
                   <Paragraph
                     size="normal"
                     textOpacity={opacity.title}
                     align="center"
                   >
-                    I always seek for maximum effectiveness of learning. I'm
-                    leading a study group of my most active mentees which can
-                    skyrocket your progress even more.
+                    Real-world project building allows gaining that necessary
+                    experience in the IT field, learning to estimate and work on
+                    tasks one by one, on top of the GitHub flow.
                   </Paragraph>
                   <Paragraph align="center">
                     <Row gutter={[4, 24]} justify="center">
@@ -637,11 +604,6 @@ export const WhoIAm = ({ fluid }) => {
                 </Col>
               </Row>
             </Col>
-          </Row>
-          <Row justify="center">
-            <GatsbyLink to="/mentorship/">
-              <Button type="promo">Skyrocket your career</Button>
-            </GatsbyLink>
           </Row>
           <Box margin={`${spacing.large} 0 0 0`}>
             <Row justify="center">
@@ -686,64 +648,20 @@ export const WhoIAm = ({ fluid }) => {
               </Col>
             </Row>
           </Box>
-          <Fade>
-            <Box margin={`${spacing.large} 0 0 0`}>
-              <Paragraph align="center" marginBottom="0">
-                Unsure? Let's hop on a <Text strong>free 15-minute call</Text>{' '}
-                to discuss the details of Mentorship
-              </Paragraph>
-              <Box
-                display="flex"
-                justify="center"
-                margin={`${spacing.large} 0 0 0`}
-              >
-                <SmallOnly>
-                  <Space size="large" direction="vertical">
-                    <Button
-                      type="secondary"
-                      onClick={openFreeConsultationEvent}
-                    >
-                      Reserve meeting via Calendly
-                    </Button>
-                    <Button
-                      type="link"
-                      to="/reach-out/"
-                      style={{ textAlign: 'center' }}
-                    >
-                      or email me
-                    </Button>
-                  </Space>
-                </SmallOnly>
-                <ExceptSmall>
-                  <Space size="large">
-                    <Button
-                      type="secondary"
-                      onClick={openFreeConsultationEvent}
-                    >
-                      Reserve meeting via Calendly
-                    </Button>
-                    <Button type="link" to="/reach-out/">
-                      or email me
-                    </Button>
-                  </Space>
-                </ExceptSmall>
-              </Box>
-            </Box>
-          </Fade>
         </Box>
       </Holder>
       <DesktopOnly>
         {showSocials && (
           <SocialsHolder>
             <Space direction="vertical" size="small">
-              <Link href="https://www.codementor.io/@bigsondev">
+              <Link href="https://bigdevsoon.me/">
                 <SocialLinkHolder>
-                  <Icon type="codementor" width="2.5rem" />
+                  <Icon type="bds" width="2.5rem" />
                 </SocialLinkHolder>
               </Link>
-              <Link href="https://mentorcruise.com/mentor/AdrianBigaj/">
+              <Link href="https://dev.to/bigsondev">
                 <SocialLinkHolder>
-                  <Icon type="mentorCruise" width="2.5rem" />
+                  <Icon type="devto" width="2.5rem" />
                 </SocialLinkHolder>
               </Link>
               <SocialLinkHolder href="https://www.linkedin.com/in/adrian-bigaj-282277130/">

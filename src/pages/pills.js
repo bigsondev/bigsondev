@@ -12,13 +12,13 @@ import {
   Paragraph,
   Text,
   Box,
-  SlackBanner,
   Button,
   MainCard,
   Icon,
   theme,
 } from '~components';
 import { truncate } from '~utils';
+import { BdsPlug, Section } from '~components/layout';
 
 const PillCard = styled(MainCard)({
   transition: 'box-shadow 0.3s',
@@ -328,9 +328,9 @@ const Pills = ({
           )
         )}
       </Row>
-      <Box margin="5rem 0">
-        <SlackBanner />
-      </Box>
+      <Section>
+        <BdsPlug />
+      </Section>
     </Layout>
   );
 };

@@ -3,14 +3,7 @@ import { Row, Col } from 'antd';
 
 import { getJs } from '~utils';
 
-import {
-  CodeEditor,
-  Title,
-  Paragraph,
-  Text,
-  Box,
-  Link,
-} from '.';
+import { CodeEditor, Title, Paragraph, Text, Box, Link } from '.';
 
 const tasksListData = [
   <Text size="small" color="#FAFAFA">
@@ -76,9 +69,6 @@ export class ErrorBoundary extends Component {
                 help={[
                   <Link size="small" target="_self" href="/">
                     Refresh
-                  </Link>,
-                  <Link size="small" target="_self" href="/mentorship/">
-                    I need a Mentor!
                   </Link>,
                 ]}
                 tabs={tabs}

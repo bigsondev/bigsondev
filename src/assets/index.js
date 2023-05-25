@@ -53,13 +53,15 @@ import ReversePill from './pills/reverse.jpg';
 import DuplicatePill from './pills/duplicate.jpg';
 import EventControlPill from './pills/event-control.jpg';
 
-import BusinessCardProject from './projects/business-card.jpg';
-import FoodtruckProject from './projects/foodtruck.jpg';
-import CalculatorAppProject from './projects/calculator-app.jpg';
-import NoteAppProject from './projects/note-app.jpg';
-import FindMoviesProject from './projects/find-movies.jpg';
-import WeatherAppProject from './projects/weather-app.jpg';
-import RealtimeChatAppProject from './projects/realtime-chat-app.jpg';
+import BusinessCardProject from './projects/business-card.png';
+import CalculatorAppProject from './projects/calculator-app.png';
+import CodeEditorAppProject from './projects/code-editor.png';
+import ColorMemoryAppProject from './projects/color-memory.png';
+import FoodtruckProject from './projects/foodtruck.png';
+import NoteAppProject from './projects/note-app.png';
+import FindMoviesProject from './projects/find-movies.png';
+import WeatherAppProject from './projects/weather-app.png';
+import RealtimeChatAppProject from './projects/realtime-chat-app.png';
 
 const BLOG_POST_IMAGES = {
   'technical-interview-tips.jpg': TechnicalInterviewTipsBlog,
@@ -104,13 +106,15 @@ const PILLS_IMAGES = {
 };
 
 const PROJECTS_IMAGES = {
-  'business-card.jpg': BusinessCardProject,
-  'foodtruck.jpg': FoodtruckProject,
-  'calculator-app.jpg': CalculatorAppProject,
-  'note-app.jpg': NoteAppProject,
-  'find-movies.jpg': FindMoviesProject,
-  'weather-app.jpg': WeatherAppProject,
-  'realtime-chat-app.jpg': RealtimeChatAppProject,
+  'business-card.png': BusinessCardProject,
+  'foodtruck.png': FoodtruckProject,
+  'calculator-app.png': CalculatorAppProject,
+  'note-app.png': NoteAppProject,
+  'find-movies.png': FindMoviesProject,
+  'weather-app.png': WeatherAppProject,
+  'realtime-chat-app.png': RealtimeChatAppProject,
+  'code-editor.png': CodeEditorAppProject,
+  'color-memory.png': ColorMemoryAppProject,
 };
 
 export * from './logo';

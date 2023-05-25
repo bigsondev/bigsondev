@@ -1,17 +1,17 @@
 ---
-title: Landing Page
-desc: Create a fully-fledged Landing Page both for Desktop and Mobile devices. Add a sticky, responsive menu and all the cool sections. This project will skyrocket your CSS skills.
-date: 2021-02-02
+title: Color Memory
+desc: Create a game inspired by Simon, where users can test their memory skills by remembering and reproducing the correct order of colors.
+date: 2021-05-19
 type: project
 icon: css
 tags: html, css, js
-imagePath: foodtruck.png
-designLink: https://xd.adobe.com/view/b1a3be51-1037-4f21-8b01-5b6a9fee0a92-e4f0/
-bdsLink: https://bigdevsoon.me/projects-showcase/the-veggie-king/
+imagePath: color-memory.png
+designLink: https://xd.adobe.com/view/86bac3fe-0481-461b-9959-cd722c0eedb8-d3e9/
+bdsLink: https://bigdevsoon.me/projects-showcase/color-memory/
 isComingSoon: false
-isLegacy: true
+isLegacy: false
 difficulty: 2
-order: 4
+order: 2
 ---
 
 import { Row, Col } from 'antd';
@@ -24,26 +24,24 @@ export const features = [
     available for users through a link.
   </Text>,
   <Text size="small">
-    Menu items should be clickable and move the user to corresponding sections.
-    Additionally, the menu should be interactive on mobile with a Hamburger
-    icon.
-  </Text>,
-  <Text size="small">
-    Footer icons should be clickable and redirect the user to external pages in
-    a new tab.
+    Icons should be clickable and redirect users to external pages in a new tab.
   </Text>,
 ];
 
 export const additionalFeatures = [
   <Text size="small">
-    Users can click on phone and it'll start the call (on a mobile device).
+    Users can click on the email and the email client will open.
   </Text>,
   <Text size="small">
-    Introduce some fancy animations as user scrolls, using e.g.{' '}
-    <Link size="small" href="https://animate.style/">
-      Animate.css
-    </Link>
-    .
+    Users can click on phone and it'll start the call (on a mobile device).
+  </Text>,
+  <Text size="small">Best to introduce icons next to text for the above.</Text>,
+  <Text size="small">
+    Introduce e.g.{' '}
+    <Link size="small" href="https://www.w3schools.com/w3css/w3css_animate.asp">
+      Fade In
+    </Link>{' '}
+    animation.
   </Text>,
 ];
 
@@ -59,20 +57,16 @@ export const technologies = [
     </Link>
   </Text>,
   <Text size="small">
-    <Link size="small" href="https://tailwindcss.com/">
-      tailwindcss
+    <Link size="small" href="https://getbootstrap.com/">
+      Bootstrap
     </Link>{' '}
     (optionally for easier styling)
   </Text>,
   <Text size="small">
-    <Link size="small" href="https://javascript.info/">
-      JavaScript
-    </Link>
-  </Text>,
-  <Text size="small">
     <Link size="small" href="https://fontawesome.com/">
-      fontawesome icons
-    </Link>
+      fontawesome
+    </Link>{' '}
+    (additional icons)
   </Text>,
 ];
 
@@ -108,6 +102,12 @@ export const coreConcepts = [
     for displaying on different devices.
   </Text>,
   <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/css/css_positioning.asp">
+      CSS Positions
+    </Link>{' '}
+    for placing elements.
+  </Text>,
+  <Text size="small">
     <Link
       size="small"
       href="https://www.w3schools.com/html/html_images_background.asp"
@@ -121,25 +121,19 @@ export const coreConcepts = [
     in general.
   </Text>,
   <Text size="small">
-    <Link size="small" href="https://www.w3schools.com/html/html5_svg.asp">
-      SVG Shapes
+    <Link
+      size="small"
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation"
+    >
+      Text orientation
     </Link>{' '}
-    for the background.
+    for vertical text.
   </Text>,
   <Text size="small">
     <Link size="small" href="https://css-tricks.com/using-svg/">
       Using SVG
     </Link>{' '}
     in HTML.
-  </Text>,
-  <Text size="small">
-    <Link
-      size="small"
-      href="https://www.w3schools.com/howto/howto_js_topnav_responsive.asp"
-    >
-      Interactive Menu
-    </Link>{' '}
-    for mobile.
   </Text>,
 ];
 
@@ -148,6 +142,7 @@ export const coreConcepts = [
   additionalFeatures={additionalFeatures}
   technologies={technologies}
   coreConcepts={coreConcepts}
+  scrollTip={false}
   {...props}
   {...props.frontmatter}
 />

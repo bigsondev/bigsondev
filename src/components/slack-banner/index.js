@@ -1,1 +1,0 @@
-export { SlackBanner } from './SlackBanner';

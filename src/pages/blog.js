@@ -13,13 +13,13 @@ import {
   Paragraph,
   Text,
   Box,
-  SlackBanner,
   Button,
   MainCard,
   Icon,
   Image,
 } from '~components';
 import { truncate } from '~utils';
+import { BdsPlug, Section } from '~components/layout';
 
 export const query = graphql`
   query BlogQuery {
@@ -308,9 +308,9 @@ const Blog = ({
           }
         )}
       </Row>
-      <Box margin="5rem 0">
-        <SlackBanner />
-      </Box>
+      <Section>
+        <BdsPlug />
+      </Section>
     </Layout>
   );
 };

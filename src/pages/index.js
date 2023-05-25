@@ -1,14 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import { theme, Layout, Section, SEO } from '~components';
-import {
-  Promo,
-  SkyrocketYourCareer,
-  BlogLibrary,
-  WhoIAm,
-  Newsletter,
-} from '~modules/landing-page';
+import { theme, Layout, Section, SEO, BdsPlug } from '~components';
+import { Promo, BlogLibrary, WhoIAm } from '~modules/landing-page';
 
 const { colors } = theme;
 
@@ -28,21 +22,21 @@ export const pageQuery = graphql`
         }
       }
     }
-    firstProject: file(base: { eq: "foodtruck.jpg" }) {
+    firstProject: file(base: { eq: "foodtruck.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
-    secondProject: file(base: { eq: "calculator-app.jpg" }) {
+    secondProject: file(base: { eq: "calculator-app.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
-    thirdProject: file(base: { eq: "note-app.jpg" }) {
+    thirdProject: file(base: { eq: "note-app.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
@@ -73,12 +67,9 @@ const Landing = ({
 }) => {
   return (
     <Layout fixedContent={false}>
-      <SEO title="Frontend Mentor" />
+      <SEO title="Adrian Bigaj" />
       <Section>
         <Promo fluid={fluid} />
-      </Section>
-      <Section backgroundColor={colors.grayLevelTwo}>
-        <SkyrocketYourCareer />
       </Section>
       <Section>
         <BlogLibrary
@@ -88,12 +79,10 @@ const Landing = ({
         />
       </Section>
       <Section backgroundColor={colors.grayLevelTwo}>
-        <div id="pupa">
-          <WhoIAm fluid={adrianImageFluid} />
-        </div>
+        <WhoIAm fluid={adrianImageFluid} />
       </Section>
       <Section>
-        <Newsletter />
+        <BdsPlug />
       </Section>
     </Layout>
   );

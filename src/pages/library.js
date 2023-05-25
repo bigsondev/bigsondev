@@ -12,7 +12,6 @@ import {
   Text,
   Box,
   Icon,
-  SlackBanner,
   Button,
   MainCard,
   Image,
@@ -210,9 +209,6 @@ const Library = ({
           }
         )}
       </Row>
-      <Box margin="5rem 0">
-        <SlackBanner />
-      </Box>
     </Layout>
   );
 };

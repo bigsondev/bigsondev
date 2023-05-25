@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'antd';
-import { Link } from 'gatsby';
 
 import {
   theme,
@@ -13,6 +12,7 @@ import {
   TabletOnly,
   DesktopOnly,
   Button,
+  Link,
 } from '~components';
 
 const { colors, fontSize, fontWeight, spacing, opacity } = theme;
@@ -36,16 +36,7 @@ const MobileScreenPromo = ({ fluid }) => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        faster with a
-      </Title>
-      <Title
-        transform="none"
-        marginBottom="0"
-        fontSize={fontSize.large}
-        fontWeight={fontWeight.stronger}
-        color={colors.primary}
-      >
-        seasoned
+        with real-world
       </Title>
       <Title
         transform="none"
@@ -54,20 +45,18 @@ const MobileScreenPromo = ({ fluid }) => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        Mentor.
+        projects
       </Title>
       <Paragraph marginBottom="1.25rem" textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
-          Become a Frontend Developer.
+          Level up with stunning Figma designs.
         </Text>
-        <br />
-        Join over 100 mentees.
       </Paragraph>
     </Col>
     <Col span={22}>
       <Box margin={`0 0 ${spacing.large} 0`}>
-        <Link to="/mentorship/">
-          <Button type="promo">Get mentorship now</Button>
+        <Link href="https://bigdevsoon.me/">
+          <Button type="promo">Try out BigDevSoon</Button>
         </Link>
       </Box>
     </Col>
@@ -91,7 +80,7 @@ const MediumScreenPromo = ({ fluid }) => (
         color={colors.primary}
         align="center"
       >
-        Master Frontend faster with
+        Master Frontend with
       </Title>
       <Title
         transform="none"
@@ -101,7 +90,7 @@ const MediumScreenPromo = ({ fluid }) => (
         color={colors.primary}
         align="center"
       >
-        a seasoned Mentor.
+        real-world projects
       </Title>
       <Paragraph
         marginBottom="1.25rem"
@@ -109,13 +98,12 @@ const MediumScreenPromo = ({ fluid }) => (
         align="center"
       >
         <Text strong textOpacity={opacity.title}>
-          Become a Frontend Developer.
+          Level up with stunning Figma designs.
         </Text>
-        <br /> Join over 100 mentees.
       </Paragraph>
       <Box style={{ textAlign: 'center' }}>
-        <Link to="/mentorship/">
-          <Button type="promo">Get mentorship now</Button>
+        <Link href="https://bigdevsoon.me/">
+          <Button type="promo">Try out BigDevSoon</Button>
         </Link>
       </Box>
     </Col>
@@ -138,7 +126,7 @@ const BigScreenPromo = ({ fluid }) => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        Master Frontend faster
+        Master Frontend
       </Title>
       <Title
         transform="none"
@@ -147,17 +135,17 @@ const BigScreenPromo = ({ fluid }) => (
         fontWeight={fontWeight.stronger}
         color={colors.primary}
       >
-        with a seasoned Mentor.
+        with real-world projects
       </Title>
       <Paragraph marginBottom="1.25rem" textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
-          Join over 100 mentees and become a Frontend Developer.
+          Level up with stunning Figma designs and GitHub automation.
         </Text>
         <br /> Pull yourself out of tutorials hell.
       </Paragraph>
       <Box margin={`0 auto ${spacing.medium} auto`}>
-        <Link to="/mentorship/">
-          <Button type="promo">Get mentorship now</Button>
+        <Link href="https://bigdevsoon.me/">
+          <Button type="promo">Try out BigDevSoon</Button>
         </Link>
       </Box>
     </Col>

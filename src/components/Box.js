@@ -1,40 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// type Justify =
-//   | 'start'
-//   | 'center'
-//   | 'end'
-//   | 'left'
-//   | 'right'
-//   | 'flex-start'
-//   | 'space-between'
-//   | 'space-around'
-//   | 'flex-end';
-
-// type Alignment = 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
-
-// export interface IBoxProps {
-//   margin?: string;
-//   m?: number;
-//   mt?: number;
-//   mr?: number;
-//   mb?: number;
-//   ml?: number;
-//   padding?: string;
-//   p?: number;
-//   pt?: number;
-//   pr?: number;
-//   pb?: number;
-//   pl?: number;
-//   children?: ReactNode;
-//   display?: 'block' | 'flex';
-//   justify?: Justify;
-//   align?: Alignment;
-//   className?: string;
-//   maxWidth?: number;
-// }
-
 const SPACING_SCALE = 8;
 
 const BoxWrapper = styled.div(
@@ -57,6 +23,8 @@ const BoxWrapper = styled.div(
     pl,
     maxWidth,
     width,
+    background,
+    borderRadius,
   }) => ({
     display,
     justifyContent: justify,
@@ -74,6 +42,8 @@ const BoxWrapper = styled.div(
     paddingLeft: pl && pl * SPACING_SCALE,
     maxWidth,
     width,
+    background,
+    borderRadius,
   })
 );
 

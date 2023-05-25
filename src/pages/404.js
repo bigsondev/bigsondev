@@ -37,17 +37,14 @@ const NotFoundPage = () => (
           <PostList
             data={[
               <Text size="preNormal" type="primary">
-                Grab some <Link to="/mentorship/">Mentorship</Link> from me.
+                Boost Frontend skills in the{' '}
+                <Link to="/projects/">Projects</Link>.
               </Text>,
               <Text size="preNormal" type="primary">
                 Read an article on the <Link to="/blog/">Blog</Link>.
               </Text>,
               <Text size="preNormal" type="primary">
                 Grasp knowledge through the <Link to="/pills/">Pills</Link>.
-              </Text>,
-              <Text size="preNormal" type="primary">
-                Boost Frontend skills in the <Link to="/projects/">Projects</Link>
-                .
               </Text>,
               <Text size="preNormal" type="primary">
                 <Link to="/reach-out/">Reach Out</Link> to me.

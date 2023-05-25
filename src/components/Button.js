@@ -16,12 +16,14 @@ const BaseButton = styled(AntdButton)(({ theme }) => ({
 }));
 
 const PromoButton = styled(BaseButton)(({ theme }) => ({
-  backgroundColor: `${theme.colors.promo} !important`,
+  background:
+    'linear-gradient(90deg, rgba(159, 122, 234, 0.87) 0%, rgba(237, 137, 54, 0.87) 100%)',
+  transition: 'all 0.2s ease-out',
 
-  '&:hover': {
-    boxShadow: `0px 0px 5px 0px ${theme.colors.promo}`,
-    backgroundColor: `${theme.colors.promo} !important`,
-    color: `${theme.colors.white} !important`,
+  '&:hover, &:focus, &:active': {
+    background:
+      'linear-gradient(90deg, rgba(159, 122, 234, 0.87) 0%, rgba(237, 137, 54, 0.87) 100%)',
+    opacity: 0.9,
   },
 }));
 

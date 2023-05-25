@@ -88,8 +88,8 @@ export const Footer = () => (
             style={{ marginTop: '0.9rem' }}
           >
             <Space size="large" direction="vertical">
-              <FooterLinkHolder to="/mentorship/">
-                <Text size="preNormal">Mentorship</Text>
+              <FooterLinkHolder to="/projects/">
+                <Text size="preNormal">Projects</Text>
               </FooterLinkHolder>
               <FooterLinkHolder to="/blog/">
                 <Text size="preNormal">Blog</Text>
@@ -97,37 +97,32 @@ export const Footer = () => (
               <FooterLinkHolder to="/pills/">
                 <Text size="preNormal">Pills</Text>
               </FooterLinkHolder>
-              <FooterLinkHolder to="/projects/">
-                <Text size="preNormal">Projects</Text>
-              </FooterLinkHolder>
               <FooterLinkHolder to="/reach-out/">
                 <Text size="preNormal">Reach Out</Text>
               </FooterLinkHolder>
             </Space>
           </Col>
           <Col>
-            <Space size="small">
-              <Link href="https://www.codementor.io/@bigsondev">
-                <IconHolder>
-                  <Icon type="codementor" width="3.125rem" />
-                </IconHolder>
-              </Link>
-              <Link href="https://mentorcruise.com/mentor/AdrianBigaj/">
-                <IconHolder>
-                  <Icon type="mentorCruise" width="3.125rem" />
-                </IconHolder>
-              </Link>
-              <Link href="https://www.linkedin.com/in/adrian-bigaj-282277130/">
-                <IconHolder>
-                  <Icon type="linkedin" width="3.125rem" />
-                </IconHolder>
-              </Link>
-              <Link href="https://twitter.com/BigsonDev">
-                <IconHolder>
-                  <Icon type="twitter" width="3.125rem" />
-                </IconHolder>
-              </Link>
-            </Space>
+            <Link href="https://bigdevsoon.me/">
+              <IconHolder>
+                <Icon type="bds" width="3.125rem" />
+              </IconHolder>
+            </Link>
+            <Link href="https://dev.to/bigsondev">
+              <IconHolder>
+                <Icon type="devto" width="3.125rem" />
+              </IconHolder>
+            </Link>
+            <Link href="https://www.linkedin.com/in/adrian-bigaj-282277130/">
+              <IconHolder>
+                <Icon type="linkedin" width="3.125rem" />
+              </IconHolder>
+            </Link>
+            <Link href="https://twitter.com/BigsonDev">
+              <IconHolder>
+                <Icon type="twitter" width="3.125rem" />
+              </IconHolder>
+            </Link>
           </Col>
         </Row>
         <Divider />

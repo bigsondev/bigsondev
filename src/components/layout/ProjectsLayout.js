@@ -20,7 +20,6 @@ import {
   truncate,
 } from '~utils';
 
-import { Newsletter } from '../../modules/projects';
 import { SEO, Box, Link, PromoBanner, Icon, LgOnly, ExceptLg, Text } from '..';
 import { Footer } from './Footer';
 
@@ -61,7 +60,10 @@ export const pageQuery = graphql`
         type
         icon
         tags
+        bdsLink
         designLink
+        isComingSoon
+        isLegacy
         imagePath
         difficulty
         order
@@ -159,13 +161,10 @@ const ProjectsLayout = ({
           </main>
         </Col>
         <Col xs={22} xl={20} xxl={18}>
-          <Newsletter />
-        </Col>
-        <Col xs={22} xl={20} xxl={18}>
-          <Box margin="0 0 3rem 0">
+          <Box margin="1.5rem 0 3rem 0">
             <PromoBanner
               title="spread the word"
-              desc="Do you think this project is cool? Share it with someone!"
+              desc="Do you think this project is cool? Share it with someone! 👀"
               id="bigsondev-spread-the-word"
               content={
                 <Space size="small">

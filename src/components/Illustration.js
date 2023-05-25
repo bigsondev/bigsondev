@@ -6,9 +6,6 @@ import {
   MentorIllustration,
   MockInterview,
   DevelopmentPlan,
-  Newsletter,
-  NewsletterSmall,
-  DuckSlack,
   WaysToLearnEffectively,
   BuildProject,
   EricssonLogo,
@@ -22,6 +19,7 @@ import {
   LargeRocket,
   GirlPill,
   BoyPill,
+  BdsProjects,
 } from '~svg';
 
 const Holder = styled.div(({ width = '100%' }) => ({
@@ -37,9 +35,6 @@ const ILLUSTRATION_MAPPER = {
   mentor: <MentorIllustration />,
   mockInterview: <MockInterview />,
   developmentPlan: <DevelopmentPlan />,
-  newsletter: <Newsletter />,
-  newsletterSmall: <NewsletterSmall />,
-  duckSlack: <DuckSlack />,
   waysToLearnEffectively: <WaysToLearnEffectively />,
   buildProject: <BuildProject />,
   ericsson: <EricssonLogo />,
@@ -53,6 +48,7 @@ const ILLUSTRATION_MAPPER = {
   largeRocket: <LargeRocket />,
   girlPill: <GirlPill />,
   boyPill: <BoyPill />,
+  bdsProjects: <BdsProjects />,
 };
 
 export const Illustration = ({ type, ...props }) => {

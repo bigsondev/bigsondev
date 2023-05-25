@@ -12,6 +12,7 @@ import { graphql, Link as GatsbyLink } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import { BLOG_POST_IMAGES, PILLS_IMAGES } from '~assets';
+import { BdsLogoImage } from '~assets/logo';
 import {
   shareOnReddit,
   shareOnTwitter,
@@ -30,15 +31,16 @@ import {
   XlOnly,
   LgOnly,
   ExceptLg,
-  SlackBanner,
   ExceptXl,
   SEO,
   DirectionalLink,
   Image,
   theme,
   TwitterFollowButton,
+  Illustration,
+  Title,
+  Button,
 } from '..';
-import { NewsletterSmallForm } from './NewsletterSmallForm';
 import { Footer } from './Footer';
 
 const IconHolder = styled(Link)({
@@ -74,10 +76,6 @@ const AdrianImageHolder = styled(Image)({
   '&:hover': {
     transform: 'scale(1.2)',
   },
-});
-
-const DuckImageHolder = styled(Image)({
-  width: '10rem',
 });
 
 const ImageHolder = styled.div({
@@ -153,28 +151,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    frontendUnicornTall: file(base: { eq: "tall.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    frontendUnicornWide: file(base: { eq: "wide.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
     adrianImage: file(base: { eq: "adrian-image.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-    duckSmallNewsletter: file(base: { eq: "duck-small-newsletter.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
@@ -196,13 +173,6 @@ const BlogLayout = ({
     blogFiles,
     pillsFiles,
     adrianImage,
-    duckSmallNewsletter,
-    frontendUnicornTall: {
-      childImageSharp: { fluid: affiliateTallFluid },
-    },
-    frontendUnicornWide: {
-      childImageSharp: { fluid: affiliateWideFluid },
-    },
   },
   pageContext: { previous, next },
 }) => {
@@ -238,14 +208,14 @@ const BlogLayout = ({
         }
       />
       <Row justify="center" gutter={[0, 40]}>
-        <Col xs={22} xl={6}>
+        <Col xs={22} xl={5}>
           <XlOnly>
             <Box display="flex" align="center" direction="column">
               <Paragraph marginBottom="0">
                 <GatsbyLink to="/#bigsondev-who-i-am">
                   <AdrianImageHolder
                     fluid={adrianImage.childImageSharp.fluid}
-                    alt="Image represents Adrian - Frontend Mentor"
+                    alt="Image represents Adrian"
                   />
                 </GatsbyLink>
               </Paragraph>
@@ -258,7 +228,6 @@ const BlogLayout = ({
                 Obsessed with React and teaching. I help people become Frontend
                 Developers. Living with my fiancee and Yorkshire Terrier 🐶 in
                 Poland. <br />
-                <GatsbyLink to="/mentorship/">Discover Mentorship</GatsbyLink>
               </Paragraph>
               <Paragraph marginBottom="1rem">
                 <Link href={feedLink}>
@@ -280,7 +249,7 @@ const BlogLayout = ({
                 <GatsbyLink to="/#bigsondev-who-i-am">
                   <AdrianImageHolder
                     fluid={adrianImage.childImageSharp.fluid}
-                    alt="Image represents Adrian - Frontend Mentor"
+                    alt="Image represents Adrian"
                     style={{ width: '10rem' }}
                   />
                 </GatsbyLink>
@@ -290,12 +259,6 @@ const BlogLayout = ({
                   Obsessed with React and teaching. I help people become
                   Frontend Developers. Living with my fiancee and Yorkshire
                   Terrier 🐶 in Poland.
-                  <br />
-                  <Box margin="0.5rem 0 0 0">
-                    <GatsbyLink to="/mentorship/">
-                      Discover Mentorship
-                    </GatsbyLink>
-                  </Box>
                 </Paragraph>
                 <Paragraph marginBottom="0">
                   <TwitterFollowButton
@@ -400,36 +363,47 @@ const BlogLayout = ({
             </Box>
           </main>
         </Col>
-        <Col xs={22} xl={6}>
-          <Box display="flex" align="center" direction="column">
-            <Paragraph marginBottom="0">
-              <DuckImageHolder
-                fluid={duckSmallNewsletter.childImageSharp.fluid}
-                alt="Image represents yellow debugging duck"
-              />
-            </Paragraph>
-            <Paragraph
-              transform="uppercase"
+        <Col xs={22} xl={7}>
+          <Box
+            borderRadius="8px"
+            p={4}
+            mt={3.75}
+            margin="0 auto"
+            background="#E9D8FD"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            width="90%"
+          >
+            <Space
+              size="large"
+              direction="vertical"
               align="center"
-              size="preNormal"
-              strong
-              style={{ width: '70%' }}
+              justify="center"
             >
-              THE GUIDE TO BEAT FRONTEND INTERVIEW
-            </Paragraph>
-            <Paragraph style={{ width: '70%' }}>
-              <NewsletterSmallForm />
-            </Paragraph>
+              <img
+                src={BdsLogoImage}
+                alt="logo with a rocket of the BigDevSoon application"
+              />
+              <Illustration type="bdsProjects" />
+              <Title level={3} align="center">
+                Level up your Frontend skills
+              </Title>
+              <Paragraph align="center" strong>
+                Build real-world projects with professional designs, powered by
+                GitHub automation.
+              </Paragraph>
+              <Link href="https://bigdevsoon.me/">
+                <Button type="promo">Change your career</Button>
+              </Link>
+            </Space>
           </Box>
-        </Col>
-        <Col xs={22} xl={20} xxl={18}>
-          <SlackBanner id="bigsondev-slack" />
         </Col>
         <Col xs={22} xl={20} xxl={18}>
           <Box margin="0 0 3rem 0">
             <PromoBanner
               title="spread the word"
-              desc="You don't need to, it's okay..."
+              desc="Did you like this post? Share it with the world! 🌐"
               id="bigsondev-spread-the-word"
               content={
                 <Space size="small">

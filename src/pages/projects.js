@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Row, Col, Space, Rate, Divider } from 'antd';
+import { Row, Col, Rate, Divider } from 'antd';
 
 import styled from 'styled-components';
 
@@ -12,12 +12,12 @@ import {
   Text,
   Box,
   Icon,
-  SlackBanner,
   Button,
   MainCard,
   Image,
 } from '~components';
 import { truncate } from '~utils';
+import { BdsPlug, Section } from '~components/layout';
 
 const RateHolder = styled(Rate)({
   '& .ant-rate-star-full path': {
@@ -212,9 +212,9 @@ const Projects = ({
           }
         )}
       </Row>
-      <Box margin="5rem 0">
-        <SlackBanner />
-      </Box>
+      <Section>
+        <BdsPlug />
+      </Section>
     </Layout>
   );
 };
