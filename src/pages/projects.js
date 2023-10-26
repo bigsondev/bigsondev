@@ -170,7 +170,7 @@ const Projects = ({
       (
         { node: { frontmatter: prevFrontmatter } },
         { node: { frontmatter: nextFrontmatter } }
-      ) => prevFrontmatter.order - nextFrontmatter.order
+      ) => nextFrontmatter.order - prevFrontmatter.order
     );
 
   return (

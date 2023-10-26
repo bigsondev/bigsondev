@@ -62,7 +62,6 @@ export const pageQuery = graphql`
         tags
         bdsLink
         designLink
-        isComingSoon
         isLegacy
         imagePath
         difficulty

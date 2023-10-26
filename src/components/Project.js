@@ -102,13 +102,11 @@ export const Project = ({
   difficulty,
   slug,
   isLegacy,
-  isComingSoon,
   features = [],
   additionalFeatures = [],
   coreConcepts = [],
   technologies = [],
 }) => {
-  console.log(bdsLink, isLegacy, isComingSoon);
   return (
     <Row>
       <Col xs={24}>
@@ -119,18 +117,12 @@ export const Project = ({
               <Box margin="1rem 0 0 0" style={{ textAlign: 'center' }}>
                 <Space size="large" direction="vertical">
                   <Text>
-                    {isComingSoon
-                      ? 'This project will be available soon in my new application.'
-                      : isLegacy
+                    {isLegacy
                       ? 'A revamped version of this project is available in my new application.'
                       : 'This is a brand-new project only available in my application.'}
                   </Text>
                   <Link href={bdsLink}>
-                    <Button type="promo">
-                      {isComingSoon
-                        ? 'Preview on BigDevSoon'
-                        : 'Try out on BigDevSoon'}
-                    </Button>
+                    <Button type="promo">Try out on BigDevSoon</Button>
                   </Link>
                 </Space>
               </Box>

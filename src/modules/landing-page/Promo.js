@@ -49,7 +49,7 @@ const MobileScreenPromo = ({ fluid }) => (
       </Title>
       <Paragraph marginBottom="1.25rem" textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
-          Level up with stunning Figma designs.
+          Code projects based on Figma designs.
         </Text>
       </Paragraph>
     </Col>
@@ -98,7 +98,7 @@ const MediumScreenPromo = ({ fluid }) => (
         align="center"
       >
         <Text strong textOpacity={opacity.title}>
-          Level up with stunning Figma designs.
+          Code projects based on Figma designs.
         </Text>
       </Paragraph>
       <Box style={{ textAlign: 'center' }}>
@@ -139,9 +139,9 @@ const BigScreenPromo = ({ fluid }) => (
       </Title>
       <Paragraph marginBottom="1.25rem" textOpacity={opacity.title}>
         <Text strong textOpacity={opacity.title}>
-          Level up with stunning Figma designs and GitHub automation.
+          Code projects based on Figma designs.
         </Text>
-        <br /> Pull yourself out of tutorials hell.
+        <br /> Time to escape tutorial hell.
       </Paragraph>
       <Box margin={`0 auto ${spacing.medium} auto`}>
         <Link href="https://bigdevsoon.me/">

@@ -390,8 +390,7 @@ const BlogLayout = ({
                 Level up your Frontend skills
               </Title>
               <Paragraph align="center" strong>
-                Build real-world projects with professional designs, powered by
-                GitHub automation.
+                Code real-world projects based on Figma designs.
               </Paragraph>
               <Link href="https://bigdevsoon.me/">
                 <Button type="promo">Change your career</Button>

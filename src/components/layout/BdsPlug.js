@@ -18,9 +18,7 @@ export const BdsPlug = () => {
             alt="logo with a rocket of the BigDevSoon application"
           />
           <Paragraph align="center" marginTop="0" marginBottom="0">
-            Build real-world projects with{' '}
-            <Text strong>stunning Figma designs</Text>, powered by GitHub
-            automation.
+            Code real-world projects based on <Text strong>Figma designs</Text>.
           </Paragraph>
           <Link href="https://bigdevsoon.me/">
             <Button type="promo">Try out BigDevSoon</Button>
