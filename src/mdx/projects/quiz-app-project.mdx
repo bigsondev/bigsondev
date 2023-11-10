@@ -1,0 +1,147 @@
+---
+title: Quiz App
+desc: Interactive web quiz with 10 new questions in each playthrough.
+date: 2023-11-10
+type: project
+icon: react
+tags: js, react, api
+imagePath: quiz-app.png
+designLink: https://xd.adobe.com/view/be6f9ce2-8760-4991-b7df-c3ade3c11d0a-eb3c/
+bdsLink: https://app.bigdevsoon.me/projects/quiz-app/
+isLegacy: false
+difficulty: 3
+order: 15
+---
+
+import { Row, Col } from 'antd';
+
+import { Text, Link, Button, Project } from '~components';
+
+export const features = [
+  <Text size="small">
+    The website looks similar to the design (Desktop and Mobile) and is
+    available for users through a link.
+  </Text>,
+  <Text size="small">
+    Icons should be clickable and redirect users to external pages in a new tab.
+  </Text>,
+];
+
+export const additionalFeatures = [
+  <Text size="small">
+    Users can click on the email and the email client will open.
+  </Text>,
+  <Text size="small">
+    Users can click on phone and it'll start the call (on a mobile device).
+  </Text>,
+  <Text size="small">Best to introduce icons next to text for the above.</Text>,
+  <Text size="small">
+    Introduce e.g.{' '}
+    <Link size="small" href="https://www.w3schools.com/w3css/w3css_animate.asp">
+      Fade In
+    </Link>{' '}
+    animation.
+  </Text>,
+];
+
+export const technologies = [
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/html/">
+      HTML
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/css/">
+      CSS
+    </Link>
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://getbootstrap.com/">
+      Bootstrap
+    </Link>{' '}
+    (optionally for easier styling)
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://fontawesome.com/">
+      fontawesome
+    </Link>{' '}
+    (additional icons)
+  </Text>,
+];
+
+export const coreConcepts = [
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+    >
+      Flexbox
+    </Link>
+    , <Link
+      size="small"
+      href="https://css-tricks.com/snippets/css/complete-guide-grid/"
+    >
+      Grid
+    </Link> for the layout.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://www.w3schools.com/html/html_responsive.asp"
+    >
+      RWD
+    </Link>{' '}
+    and{' '}
+    <Link
+      size="small"
+      href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp"
+    >
+      Media Queries
+    </Link>{' '}
+    for displaying on different devices.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://www.w3schools.com/css/css_positioning.asp">
+      CSS Positions
+    </Link>{' '}
+    for placing elements.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://www.w3schools.com/html/html_images_background.asp"
+    >
+      Background Images
+    </Link>{' '}
+    and{' '}
+    <Link size="small" href="https://www.w3schools.com/css/css3_images.asp">
+      Images
+    </Link>{' '}
+    in general.
+  </Text>,
+  <Text size="small">
+    <Link
+      size="small"
+      href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-orientation"
+    >
+      Text orientation
+    </Link>{' '}
+    for vertical text.
+  </Text>,
+  <Text size="small">
+    <Link size="small" href="https://css-tricks.com/using-svg/">
+      Using SVG
+    </Link>{' '}
+    in HTML.
+  </Text>,
+];
+
+<Project
+  features={features}
+  additionalFeatures={additionalFeatures}
+  technologies={technologies}
+  coreConcepts={coreConcepts}
+  scrollTip={false}
+  {...props}
+  {...props.frontmatter}
+/>

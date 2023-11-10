@@ -22,21 +22,21 @@ export const pageQuery = graphql`
         }
       }
     }
-    firstProject: file(base: { eq: "foodtruck.png" }) {
+    firstProject: file(base: { eq: "quiz-app.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
-    secondProject: file(base: { eq: "calculator-app.png" }) {
+    secondProject: file(base: { eq: "music-player.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
-    thirdProject: file(base: { eq: "note-app.png" }) {
+    thirdProject: file(base: { eq: "level-editor.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG

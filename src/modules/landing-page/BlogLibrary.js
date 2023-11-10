@@ -105,76 +105,78 @@ export const BlogLibrary = ({ firstProject, secondProject, thirdProject }) => {
         <Zoom right>
           <Row justify="center" gutter={[24, 24]}>
             <Col xs={22} sm={16} md={13} lg={8}>
-              <Link to="/projects/landing-page-project/">
+              <Link to="/projects/quiz-app-project/">
                 <Card>
-                  <ProjectImage
-                    fluid={firstProject}
-                    alt="Landing Page Project"
-                  />
+                  <ProjectImage fluid={firstProject} alt="Quiz App Project" />
                   <ProjectTitle
                     color={colors.white}
                     fontWeight={fontWeight.stronger}
                   >
-                    Landing Page
+                    Quiz App
                   </ProjectTitle>
                   <ProjectDescription
                     color={colors.white}
                     fontWeight={fontWeight.stronger}
                     size="small"
                   >
-                    Build a real-world Landing Page just as you would for the
-                    client
+                    Interactive web quiz with 10 new questions in each
+                    playthrough.
                   </ProjectDescription>
-                  <ProjectLink to="/projects/landing-page-project/">
+                  <ProjectLink to="/projects/quiz-app-project/">
                     <Button type="ghost">View project</Button>
                   </ProjectLink>
                 </Card>
               </Link>
             </Col>
             <Col xs={22} sm={16} md={13} lg={8}>
-              <Link to="/projects/calculator-app-project/">
+              <Link to="/projects/music-player-project/">
                 <Card>
                   <ProjectImage
                     fluid={secondProject}
-                    alt="Calculator App Project"
+                    alt="Music Player Project"
                   />
                   <ProjectTitle
                     color={colors.white}
                     fontWeight={fontWeight.stronger}
                   >
-                    Calculator App
+                    Music Player
                   </ProjectTitle>
                   <ProjectDescription
                     color={colors.white}
                     fontWeight={fontWeight.stronger}
                     size="small"
                   >
-                    Create your own calculator with the ability to switch themes
+                    Application for seamless song playback with fundamental
+                    controls.
                   </ProjectDescription>
-                  <ProjectLink to="/projects/calculator-app-project/">
+                  <ProjectLink to="/projects/music-player-project/">
                     <Button type="ghost">View project</Button>
                   </ProjectLink>
                 </Card>
               </Link>
             </Col>
             <Col xs={22} sm={16} md={13} lg={8}>
-              <Link to="/projects/notes-app-project/">
+              <Link to="/projects/level-editor-project/">
                 <Card>
-                  <ProjectImage fluid={thirdProject} alt="Notes App Project" />
+                  <ProjectImage
+                    fluid={thirdProject}
+                    alt="Level Editor Project"
+                  />
                   <ProjectTitle
                     color={colors.white}
                     fontWeight={fontWeight.stronger}
                   >
-                    Notes App
+                    Level Editor
                   </ProjectTitle>
                   <ProjectDescription
                     color={colors.white}
                     fontWeight={fontWeight.stronger}
                     size="small"
                   >
-                    Learn React by building your first serious project in it
+                    Web-based editor designed for creating game levels with
+                    ease.
                   </ProjectDescription>
-                  <ProjectLink to="/projects/notes-app-project/">
+                  <ProjectLink to="/projects/level-editor-project/">
                     <Button type="ghost">View project</Button>
                   </ProjectLink>
                 </Card>
