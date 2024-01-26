@@ -1,5 +1,5 @@
 # Hi, I'm Adrian Bigaj 👋
-Senior Full-Stack Developer and Technical Leader.
+Senior JavaScript Developer | Full-Stack Enthusiast | Crafting Innovative Frontend Solutions.
 
 🔭 Currently building: [BigDevSoon](https://bigdevsoon.me) - an innovative project-based education platform for aspiring web developers.
 
@@ -21,9 +21,4 @@ Passionate about coding and creating diverse solutions like online SVG tools, ch
 - [LinkedIn](https://www.linkedin.com/in/adrian-bigaj-282277130/)
 - [Twitter](https://twitter.com/BigsonDev)
 - [Portfolio](https://bigsondev.com/)
-
-## Open to Opportunities
-I'm open to new challenges in Full-Stack Development, especially in React and AI-based projects. Let's build something amazing together!
-
-[Contact me](mailto:bigson.dev@gmail.com)
 
