@@ -1,9 +1,9 @@
 # Hi, I'm Adrian Bigaj 👋
 Senior JavaScript Developer | Full-Stack Enthusiast | Crafting Innovative Frontend Solutions.
 
-🔭 Currently building: [BigDevSoon](https://bigdevsoon.me) - an innovative project-based education platform for aspiring web developers.
-
-📝 Also, I'm a little bit of a Technical Writer: [Check out my profile on dev.to](https://dev.to/bigsondev)
+- 🔭 Currently building [BigDevSoon](https://bigdevsoon.me) - an innovative project-based education platform for aspiring web developers.
+- 👨‍💻 Working for [PSPDFKit](https://pspdfkit.com/) on Web - [50k+ weekly npm downloads](https://www.npmjs.com/package/pspdfkit), super cool SDK product if you want to create a SaaS around Documents & PDFs!
+- 📝 Also, I'm a little bit of a Technical Writer: [Check out my profile on dev.to](https://dev.to/bigsondev)
 
 ## About Me
 Passionate about coding and creating diverse solutions like online SVG tools, chat apps, and CPaaS dashboards. With over 8 years of experience, I specialize in the JavaScript (React/Node.js) ecosystem, blending technical skills with a mentoring spirit.
@@ -18,7 +18,15 @@ Passionate about coding and creating diverse solutions like online SVG tools, ch
 - **Management**: Proven Technical Leader, Proactive Problem Solver, Strong Communicator, Excellent Time Management, Easily Adaptable in Uncertain Environments, Great Remote Worker, Mentor with Ease of Knowledge Sharing, Agile Expert (Scrum, Kanban).
 
 ## Connect With Me
+Say Hi: adrian@bigdevsoon.me
+
 - [LinkedIn](https://www.linkedin.com/in/adrian-bigaj-282277130/)
 - [Twitter](https://twitter.com/BigsonDev)
+
+
+## My Projects
+- Coming Soon: RemoteJobBoards 👀
+- [BigDevSoon App](https://app.bigdevsoon.me/)
+- [BigDevSoon Landing Page](https://bigdevsoon.me/)
 - [Portfolio](https://bigsondev.com/)
 
