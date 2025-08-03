@@ -1,8 +1,8 @@
 # Hi, I'm Adrian Bigaj 👋
 Senior JavaScript Developer | Full-Stack Enthusiast | Crafting Innovative Frontend Solutions.
 
-- 🔭 Currently building [BigDevSoon](https://bigdevsoon.me) - an innovative project-based education platform for aspiring web developers.
-- 👨‍💻 Working for [PSPDFKit](https://pspdfkit.com/) on Web - [50k+ weekly npm downloads](https://www.npmjs.com/package/pspdfkit), super cool SDK product if you want to create a SaaS around Documents & PDFs!
+- 🔭 Currently building a few projects, including [BigDevSoon | $1k/m](https://bigdevsoon.me) - an innovative project-based education platform for aspiring web developers.
+- 👨‍💻 Working for [Nutrient](https://www.nutrient.io/sdk) on Web - [50k+ weekly npm downloads](https://www.npmjs.com/package/pspdfkit), super cool SDK product if you want to create a SaaS around Documents & PDFs!
 - 📝 Also, I'm a little bit of a Technical Writer: [Check out my profile on dev.to](https://dev.to/bigsondev)
 
 ## About Me
@@ -23,10 +23,8 @@ Say Hi: adrian@bigdevsoon.me
 - [LinkedIn](https://www.linkedin.com/in/adrian-bigaj-282277130/)
 - [Twitter](https://twitter.com/BigsonDev)
 
-
 ## My Projects
-- Coming Soon: RemoteJobBoards 👀
+- Coming Soon: BigHireSoon.me, RemoteJobBoards.io, LoopedIn.games, LoopedInGames.com 👀
 - [BigDevSoon App](https://app.bigdevsoon.me/)
 - [BigDevSoon Landing Page](https://bigdevsoon.me/)
 - [Portfolio](https://bigsondev.com/)
-
