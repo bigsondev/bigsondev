@@ -21,7 +21,7 @@ Passionate about coding and creating diverse solutions like online SVG tools, ch
 Say Hi: adrian@bigdevsoon.me
 
 - [LinkedIn](https://www.linkedin.com/in/adrian-bigaj-282277130/)
-- [Twitter](https://twitter.com/BigsonDev)
+- [X](https://x.com/BigsonDev)
 
 ## My Projects
 - Coming Soon: BigHireSoon.me, RemoteJobBoards.io, LoopedIn.games, LoopedInGames.com 👀
