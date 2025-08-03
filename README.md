@@ -1,5 +1,5 @@
-# Hi, I'm Adrian Bigaj 👋
-Senior JavaScript Developer | Full-Stack Enthusiast | Crafting Innovative Frontend Solutions.
+# Hi, I'm Adrian 👋
+Senior JavaScript Developer | Full-Stack Enthusiast | Indie Hacker Crafting Innovative Solutions | Builder Who Likes To Create.
 
 - 🔭 Currently building a few projects, including [BigDevSoon | $1k/m](https://bigdevsoon.me) - an innovative project-based education platform for aspiring web developers.
 - 👨‍💻 Working for [Nutrient](https://www.nutrient.io/sdk) on Web - [50k+ weekly npm downloads](https://www.npmjs.com/package/pspdfkit), super cool SDK product if you want to create a SaaS around Documents & PDFs!
