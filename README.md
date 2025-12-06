@@ -1,8 +1,8 @@
 # Hi, I'm Adrian 👋
 Senior JavaScript Developer | Full-Stack Enthusiast | Indie Hacker Crafting Innovative Solutions | Builder Who Likes To Create.
 
-- 🔭 Currently building a few projects, including [BigDevSoon | $1k/m](https://bigdevsoon.me) - an innovative project-based education platform for aspiring web developers.
-- 👨‍💻 Working for [Nutrient](https://www.nutrient.io/sdk) on Web - [50k+ weekly npm downloads](https://www.npmjs.com/package/pspdfkit), super cool SDK product if you want to create a SaaS around Documents & PDFs!
+- 🔭 Currently building a few projects using the latest vibe coding skills with Claude Code and learning AI along the way!
+- 👨‍💻 Working for [Mimica](https://www.mimica.ai/) on Web App - Instantly capture, map, and optimize your processes with GenAI.
 - 📝 Also, I'm a little bit of a Technical Writer: [Check out my profile on dev.to](https://dev.to/bigsondev)
 
 ## About Me
@@ -18,13 +18,13 @@ Passionate about coding and creating diverse solutions like online SVG tools, ch
 - **Management**: Proven Technical Leader, Proactive Problem Solver, Strong Communicator, Excellent Time Management, Easily Adaptable in Uncertain Environments, Great Remote Worker, Mentor with Ease of Knowledge Sharing, Agile Expert (Scrum, Kanban).
 
 ## Connect With Me
-Say Hi: adrian@bigdevsoon.me
+Say Hi: bigson.dev@gmail.com
 
 - [LinkedIn](https://www.linkedin.com/in/adrian-bigaj-282277130/)
 - [X](https://x.com/BigsonDev)
 
 ## My Projects
-- Coming Soon: BigHireSoon.me, RemoteJobBoards.io, LoopedIn.games, LoopedInGames.com 👀
+- Coming Soon: Edgar AI, LoopedInGames 👀
 - [BigDevSoon App](https://app.bigdevsoon.me/)
 - [BigDevSoon Landing Page](https://bigdevsoon.me/)
 - [Portfolio](https://bigsondev.com/)
