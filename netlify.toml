@@ -1,0 +1,3 @@
+[build]
+  publish = "static"
+  command = "echo 'Redirect-only site, no build needed'"

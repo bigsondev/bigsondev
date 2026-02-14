@@ -1,0 +1,79 @@
+# BigDevSoon.com consolidation - 301 redirects from bigsondev.com to bigdevsoon.me
+# All content has been migrated to bigdevsoon.me
+
+# Blog posts (1:1 slug mapping)
+/blog/arrays-and-how-to-avoid-loops/                              https://bigdevsoon.me/blog/arrays-and-how-to-avoid-loops/                              301!
+/blog/autoformat-code-with-prettier/                              https://bigdevsoon.me/blog/autoformat-code-with-prettier/                              301!
+/blog/boolean-and-friends-tame-the-logic/                         https://bigdevsoon.me/blog/boolean-and-friends-tame-the-logic/                         301!
+/blog/collaboration-between-developers-and-designers-part-1/      https://bigdevsoon.me/blog/collaboration-between-developers-and-designers-part-1/      301!
+/blog/collaboration-between-developers-and-designers-part-2/      https://bigdevsoon.me/blog/collaboration-between-developers-and-designers-part-2/      301!
+/blog/collaboration-between-developers-and-designers-part-3/      https://bigdevsoon.me/blog/collaboration-between-developers-and-designers-part-3/      301!
+/blog/command-line-interface-and-a-terminal/                       https://bigdevsoon.me/blog/command-line-interface-and-a-terminal/                       301!
+/blog/fetch-data-in-react-as-user-types-or-clicks/                https://bigdevsoon.me/blog/fetch-data-in-react-as-user-types-or-clicks/                301!
+/blog/fetch-data-in-react-with-graphql/                           https://bigdevsoon.me/blog/fetch-data-in-react-with-graphql/                           301!
+/blog/how-to-fetch-data-in-react-using-pokeapi/                   https://bigdevsoon.me/blog/how-to-fetch-data-in-react-using-pokeapi/                   301!
+/blog/how-to-improve-your-coding-skills/                          https://bigdevsoon.me/blog/how-to-improve-your-coding-skills/                          301!
+/blog/react-components-you-should-start-using-now/                https://bigdevsoon.me/blog/react-components-you-should-start-using-now/                301!
+/blog/technical-interview-tips/                                   https://bigdevsoon.me/blog/technical-interview-tips/                                   301!
+/blog/tools-to-increase-your-conversion-rate-and-website-quality/ https://bigdevsoon.me/blog/tools-to-increase-your-conversion-rate-and-website-quality/ 301!
+/blog/var-let-const-best-practices-and-differences/               https://bigdevsoon.me/blog/var-let-const-best-practices-and-differences/               301!
+/blog/ways-to-learn-effectively/                                  https://bigdevsoon.me/blog/ways-to-learn-effectively/                                  301!
+
+# Pills (1:1 slug mapping)
+/pills/add-edit-delete-array-of-objects/   https://bigdevsoon.me/pills/add-edit-delete-array-of-objects/   301!
+/pills/box-sizing/                         https://bigdevsoon.me/pills/box-sizing/                         301!
+/pills/conditions-with-includes/           https://bigdevsoon.me/pills/conditions-with-includes/           301!
+/pills/convert-objects-into-arrays/        https://bigdevsoon.me/pills/convert-objects-into-arrays/        301!
+/pills/crispy-features/                    https://bigdevsoon.me/pills/crispy-features/                    301!
+/pills/css-units/                          https://bigdevsoon.me/pills/css-units/                          301!
+/pills/equal-height-cards/                 https://bigdevsoon.me/pills/equal-height-cards/                 301!
+/pills/method-chaining/                    https://bigdevsoon.me/pills/method-chaining/                    301!
+/pills/outline/                            https://bigdevsoon.me/pills/outline/                            301!
+/pills/place-elements-absolutely/          https://bigdevsoon.me/pills/place-elements-absolutely/          301!
+/pills/react-arguments-in-event-handlers/  https://bigdevsoon.me/pills/react-arguments-in-event-handlers/  301!
+/pills/react-use-counter-hook/             https://bigdevsoon.me/pills/react-use-counter-hook/             301!
+/pills/react-use-dark-mode-hook/           https://bigdevsoon.me/pills/react-use-dark-mode-hook/           301!
+/pills/react-use-fetch-hook/               https://bigdevsoon.me/pills/react-use-fetch-hook/               301!
+/pills/react-use-toggles-hook/             https://bigdevsoon.me/pills/react-use-toggles-hook/             301!
+/pills/remove-duplicates/                  https://bigdevsoon.me/pills/remove-duplicates/                  301!
+/pills/reset-normalize-css/                https://bigdevsoon.me/pills/reset-normalize-css/                301!
+/pills/reverse-string/                     https://bigdevsoon.me/pills/reverse-string/                     301!
+/pills/string-includes/                    https://bigdevsoon.me/pills/string-includes/                    301!
+/pills/sum-reduce/                         https://bigdevsoon.me/pills/sum-reduce/                         301!
+
+# Projects (slug remapping to BDS equivalents)
+/projects/ai-post-generator-project/  https://bigdevsoon.me/projects/ai-post-generator/  301!
+/projects/business-card-project/      https://bigdevsoon.me/projects/business-card/       301!
+/projects/calculator-app-project/     https://bigdevsoon.me/projects/calculator/           301!
+/projects/code-editor-project/        https://bigdevsoon.me/projects/code-editor/          301!
+/projects/color-memory-project/       https://bigdevsoon.me/projects/color-memory/         301!
+/projects/find-movies-app-project/    https://bigdevsoon.me/projects/find-movies/          301!
+/projects/giftok-project/             https://bigdevsoon.me/projects/giftok/               301!
+/projects/landing-page-project/       https://bigdevsoon.me/projects/                      301!
+/projects/level-editor-project/       https://bigdevsoon.me/projects/level-editor/         301!
+/projects/music-player-project/       https://bigdevsoon.me/projects/music-player/         301!
+/projects/notes-app-project/          https://bigdevsoon.me/projects/notely/               301!
+/projects/quiz-app-project/           https://bigdevsoon.me/projects/quiz-app/             301!
+/projects/realtime-chat-project/      https://bigdevsoon.me/projects/                      301!
+/projects/weather-app-project/        https://bigdevsoon.me/projects/just-weather/         301!
+
+# Listing pages
+/blog/      https://bigdevsoon.me/blog/      301!
+/pills/     https://bigdevsoon.me/pills/     301!
+/projects/  https://bigdevsoon.me/projects/  301!
+
+# Other pages
+/library/        https://bigdevsoon.me/projects/  301!
+/reach-out/      https://bigdevsoon.me/            301!
+/feedback-poll/  https://bigdevsoon.me/            301!
+
+# RSS feeds
+/blog/rss.xml   https://bigdevsoon.me/blog/rss.xml   301!
+/pills/rss.xml  https://bigdevsoon.me/pills/rss.xml  301!
+
+# Legal pages (redirected to Iubenda)
+/privacy-policy/     https://www.iubenda.com/privacy-policy/78614077          301!
+/terms-of-service/   https://www.iubenda.com/terms-and-conditions/78614077    301!
+
+# Catch-all
+/*  https://bigdevsoon.me/  301!
