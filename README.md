@@ -29,6 +29,7 @@ Say Hi: bigson.dev@gmail.com
 
 ## My Projects
 
-- Coming Soon: GlitchApp, adrianbig
-- [BigDevSoon 2.0](https://bigdevsoon.me/)
-- [BullAlert](https://bullalert.ai/)
+- [GlitchApp] COMING SOON
+- [adrianbig.ai](https://adrianbig.ai/) | 1 MVP = $10k
+- [BigDevSoon 2.0](https://bigdevsoon.me/) | $8/m $64/y $200 LIFETIME
+- [BullAlert](https://bullalert.ai/) | LAUNCH COMING SOON 
